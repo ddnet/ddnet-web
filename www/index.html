@@ -1,0 +1,245 @@
+---
+layout: default
+title: DDraceNetwork
+menu: |
+  <ul>
+    <li><a href="#news">News</a></li>
+    <li><a href="#server-features">Server&nbsp;Features</a></li>
+    <li><a href="#client-features">Client&nbsp;Features</a></li>
+    <li><a href="#map-features">Map&nbsp;Features</a></li>
+    <li><a href="#mapper-rules">Mapper&nbsp;Rules</a></li>
+    <li><a href="#how-to-map">How&nbsp;to&nbsp;Map</a></li>
+    <li><a href="#staff">Staff</a></li>
+    <li><a href="#downloads">Downloads</a></li>
+  </ul>
+---
+<div class="block">
+<h2>DDRace Servers and much more!</h2>
+<div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/LggaeXL66eA?autoplay=0"></iframe></div>
+<p class="download"><span class="big"><a href="ddnet.zip">Download DDraceNetwork 2.18</a></span><br/><a href="#downloads">More Downloads</a></p>
+</div>
+<div class="block">
+<h2 id="news">News</h2>
+<ul>
+  <li>Website has been redesigned</li>
+  <li>bind s <strong>+showhookcoll</strong> to see where hook will hit exactly<br/>
+  <img class="demo" alt="Demo" src="showhookcoll.png"/></li>
+  <li>New German Network Servers: HTF, Survival, zCatch</li>
+  <li>Official DDNet Tiles by 645654 &amp; Phacrum<br/>
+  <img class="demo" alt="Demo" src="ddnet-tiles.png" width="300"/></li>
+  <li>Display teams in scoreboard<br/>
+  <img class="demo" alt="Demo" src="scoreboardteams.png"/></li>
+  <li>Render players in other teams half transparent (/showothers)<br/>
+  <img class="demo" alt="Demo" src="showothers.png"/></li>
+  <li><strong>Undo function in editor</strong> (initial work by MAP94)<br/>
+  <img class="demo" alt="Demo" src="undo.png"/></li>
+  <li><strong><a href="/tournament/6/">Quick Tournament #2</a> was on Sunday, January 19, 20:00 CET (19:00 UTC)!</strong> (<a href="http://www.teeworlds.com/forum/viewtopic.php?id=10745">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&amp;threadID=7655">German Info</a>)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="server-features">Server Features</h2>
+<ul>
+  <li>64 player server (initial work by eeeee, get <a href="#downloads">DDNet client</a> to see all)</li>
+  <li>Servers in <img src="/status/countryflags/DE.png" alt="GER" height="20"/> <img src="/status/countryflags/US.png" alt="USA" height="20"/> <img src="/status/countryflags/RU.png" alt="RUS" height="20"/> <img src="/status/countryflags/IR.png" alt="Persian" height="20"/></li>
+  <li><strong>/dnd</strong> to disable global chat and server messages</li>
+  <li><strong>/mappoints</strong> to find out how many points finishing a map will give you</li>
+  <li><strong>/lock</strong> to lock your team</li>
+  <li>Keep conversing with whispers by using <strong>/converse</strong> (short: /c) or binding it</li>
+  <li><strong>/rankteam</strong> and <strong>/top5team</strong>: When you play in a team your team will get a team rank.<br/>
+  <img class="demo" alt="Demo" src="rankteam.png"/></li>
+  <li><strong>/points</strong> and <strong>/top5points</strong>: <a href="ranks/#points">Map points</a><br/>
+  <img class="demo" alt="Demo" src="points.png"/></li>
+  <li><strong>/whisper</strong> (short: /w) with other players<br/>
+  <img class="demo" alt="Demo" src="whisper.png"/></li>
+  <li>You can zoom out and still see all players<br/>
+  <img class="demo" alt="Demo" src="zoomout1.png"/></li>
+  <li>Ninja doesn't work through team and solo anymore</li>
+  <li>Clients can't kick people or kill the server by spamming</li>
+  <li>AFK players are excluded from votes</li>
+  <li>Needs less CPU when noone is connected</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="client-features">Client Features</h2>
+<ul>
+  <li>Better and faster server list refresh (by Pata94)</li>
+  <li>64 player client (initial work by eeeee)<br/>
+  <img class="demo" alt="Demo" src="scoreboard64.png"/></li>
+  <li>More advanced automapper rules and some for ddnet-tiles, round-tiles, grass_main (Freeze, Unfreeze, Tele) and fadeout<br/>
+    <figure class="quarterwidth">
+      <img src="automapper/source.png"/>
+      <figcaption>Source (set by mapper)</figcaption>
+    </figure>
+    <figure class="quarterwidth">
+      <img src="automapper/grass_main.png"/>
+      <figcaption>Automapped (grass_main)</figcaption>
+    </figure>
+    <figure class="quarterwidth">
+      <img src="automapper/fadeout.png"/>
+      <figcaption>Automapped (fadeout)</figcaption>
+    </figure>
+    <figure class="quarterwidth">
+      <img src="automapper/round-tiles.png"/>
+      <figcaption>Automapped (round-tiles)</figcaption>
+    </figure></li>
+  <li>Maps load 30 times faster than in DDRace client</li>
+  <li>AntiPing (Prediction for grenades and other tees)</li>
+  <li>More friends and favorites</li>
+  <li>Better looking entities to play with</li>
+  <li>Vote window gets moved to scoreboard after you voted</li>
+  <li><a href="http://bandanabrothers.shivtr.com/">Bandana Brothers</a> skins included</li>
+  <li><strong>Map using extended teleports</strong> and our other new features</li>
+  <li>Zoom out in all mods (not just Race and DDRace) when you're a spectator<br/>
+  <img class="demo" alt="Demo" src="zoomout2.png"/></li>
+  <li>Disable sound notification for server messages</li>
+  <li>Disable quads for weaker computers, annoying map backgrounds, or to zoom out nicely in maps</li>
+  <li>Set a map's background color</li>
+  <li>More responsive with cl_throttle_cpu</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="map-features">Map Features</h2>
+<ul>
+  <li>Switches work in Solo maps! (sv_team 3)<br/>
+  <video class="fullvideo" controls>
+    <source src="switches.mp4" type="video/mp4">
+    <source src="switches.ogg" type="video/ogg">
+  </video></li>
+  <li>Use gun as <strong>Jetpack</strong>! (idea by <a href="/players/-238-ltr-243-f-8482-/">îltróf™</a>)<br/>
+  <video class="fullvideo" controls>
+    <source src="jetpack.mp4" type="video/mp4">
+    <source src="jetpack.ogg" type="video/ogg">
+  </video></li>
+  <li>New entity: Set <strong>number of jumps</strong> (0 upwards) in Switch layer<br/>
+  <video class="fullvideo" controls>
+    <source src="jumps.mp4" type="video/mp4">
+    <source src="jumps.ogg" type="video/ogg">
+  </video></li>
+  <li><strong>Teleports for weapons and hook</strong><br/>
+  <video class="halfvideo" controls>
+    <source src="weapontele.mp4" type="video/mp4">
+    <source src="weapontele.ogg" type="video/ogg">
+  </video>
+  <video class="halfvideo" controls>
+    <source src="hooktele.mp4" type="video/mp4">
+    <source src="hooktele.ogg" type="video/ogg">
+  </video></li>
+  <li>New entities: Start and stop <strong>Player Collision, Hooking, Super Jump</strong> (PNGs included in <a href="#downloads">Download</a>)</li>
+  <li>Set maximum players for each team using sv_max_team_size</li>
+</ul>
+<h3 id="map-testing">Map Testing</h3>
+<ul>
+  <li><strong>totele x</strong> to go to the teleporter with the number x</li>
+  <li><strong>tele x y</strong> to teleport player x to player y</li>
+  <li>If your player id is x you can /pause and teleport yourself to the position you're watching with <strong>tele x x</strong></li>
+</ul>
+</div>
+<div class="block">
+<h2 id="mapper-rules">Mapper Rules</h2>
+<p>
+  Mappers mapping for DDraceNetwork have to follow these rules, or their map will not be accepted:
+</p>
+<h3>Content</h3>
+<ol>
+  <li><strong>Be creative!</strong> Do not steal parts or create parts that are very similar to parts on other maps. Instead use your fantasy and create something unique or improve existing parts significantly.</li>
+  <li><strong>Make your map fun!</strong> Your map is supposed to be fun for players, not to bore them. Avoid time wasting parts.</li>
+  <li>Do something else than simple (stupid) dummy drag parts</li>
+  <li>Think about the intended players of your map. A map for moderate should not be a mix of novice and brutal parts. Try to keep the difficulty reasonably homogenous so players don't get bored or frustrated.</li>
+  <li>Use faily parts very rarely on novice maps</li>
+  <li>Use faily solo parts very rarely on everything else than brutal maps</li>
+</ol>
+<h3>Design</h3>
+<ol>
+  <li>Mark every entity the player has to know about with a visible tile.</li>
+  <li>Your map's design should have some contrast so it's playable without perfect light conditions. On the other hand the contrast shouldn't be too high or it will be painful to look at.</li>
+  <li>The finish line should be reachable from the winner room so a team can finish if the last one dies</li>
+</ol>
+<p>Make sure your map works, design is done, and when you feel like it's ready for release, <a href="http://trac.ddnet.tw/">send us your map</a>.
+</p>
+</div>
+<div class="block">
+<h2 id="how-to-map">How to Map</h2>
+<h3>Graphics Tutorials by gB. | Kintaro*</h3>
+<ul>
+  <li><a href="http://youtu.be/SZRhZuRlHC8">How to create your own Sun</a></li>
+  <li><a href="http://youtu.be/kcevIAsLA6w">How to create a simple Background</a></li>
+  <li><a href="http://youtu.be/ZYyZxRbTDEg">How to create a Background like in Lost Story</a></li>
+</ul>
+</div>
+<div class="block">
+<h2 id="staff">Staff</h2>
+<p>DDraceNetwork was founded by <a href="/players/Megaman-32--124--32-Cold/">Megaman</a> with support by <a href="/players/Delo/">Delo</a> and <a href="/players/-46-me-39-/">.me'</a>. <a href="/players/deen/">deen</a> manages the servers and developes DDraceNetwork. <a href="/players/Broken/">Broken</a> supplies the USA server, <a href="/players/Chicken/">Chicken</a> the Persian server. For new features or bugs get in touch with deen or talk about them on <a href="http://trac.ddnet.tw/">Trac</a>. New maps can also be submitted on Trac or to one of our testers:</p>
+<h3>Testers</h3>
+<ul class="staff">
+  <li><a href="/players/645654/">645654</a></li>
+  <li><a href="/players/gB-46--32--124--32-Ante-46-/">gB. | Ante.</a></li>
+  <li><a href="/players/gB-46--32--124--32-Kintaro-42-/">gB. | Kintaro*</a></li>
+  <li><a href="/players/gB-46--32--124--32-Loop-32--58-3/">gB. | Loop :3</a></li>
+  <li><a href="/players/-295--943--628--598--434-/">ħίɴɖƲ</a></li>
+  <li><a href="/players/phacrum/">phacrum</a></li>
+  <li><a href="/players/Lady-32-Saavik/">Lady Saavik</a></li>
+  <li><a href="/players/Sky-45-Bear/">Sky-Bear</a></li>
+</ul>
+<h3>Mappers</h3>
+<ul class="staff">
+  <li>gB. | Loop :3</li>
+  <li>Silex</li>
+  <li>gB. | Ante.</li>
+  <li>Chicken</li>
+  <li>Gianth</li>
+  <li>MaDLeX</li>
+  <li>gB. | Kintaro*</li>
+  <li>DoNe</li>
+  <li>YeahxX</li>
+  <li>Destoros</li>
+  <li>Welf</li>
+  <li>Elephant</li>
+  <li>Wolƒ.▲</li>
+  <li>Lady Saavik</li>
+  <li>Knight :3</li>
+  <li>Aoe</li>
+  <li>Con.'</li>
+  <li>Maple</li>
+  <li>Trinkflasche</li>
+  <li>Zerodin</li>
+  <li>FakeDeath</li>
+  <li>Broken</li>
+  <li>[*MC*]-DuBai-.?</li>
+  <li>Sky-Bear</li>
+  <li>KBeeeR</li>
+  <li>Ama</li>
+  <li>Hitomi</li>
+  <li>=Stalker=</li>
+  <li>Megaman</li>
+  <li>.me'</li>
+  <li>*WuDL*</li>
+  <li>Delo</li>
+  <li>ħίɴɖƲ</li>
+  <li>artkis</li>
+  <li>Cenarrius</li>
+  <li>mikey12</li>
+  <li>Pipou</li>
+  <li>Bee</li>
+  <li>Suppe</li>
+  <li>٭ıƞdex&#39;&lt;3</li>
+  <li>Cøke</li>
+  <li>DarkHeaven</li>
+  <li>Phacrum</li>
+</ul>
+<h3>Getting in Touch</h3>
+<p>You can often find us on the <a href="/status">DDraceNetwork servers</a> of course. Otherwise you can post on <a href="http://trac.ddnet.tw/">Trac</a> for suggestions and questions. There's also an IRC channel <a href="irc://irc.quakenet.org/ddnet">#ddnet</a> on Quakenet (<a href="http://webchat.quakenet.org/?channels=ddnet&amp;uio=d4">Webchat</a>). deen can be reached by email at <a href="mailto:deen@ddnet.tw">deen@ddnet.tw</a>.
+</div>
+<div class="block">
+<h2 id="downloads">Downloads</h2>
+<ul>
+  <li>2014-02-03: <a href="ddnet.zip">DDraceNetwork Client and Server 2.18</a></li>
+  <li><a href="DDRace.exe">DDRace.exe only</a></li>
+  <li><a href="ddnet.dmg">DDraceNetwork (Mac OS X version)</a></li>
+  <li><a href="maps.zip">DDraceNetwork Maps</a></li>
+</ul>
+<h3>Information</h3>
+<ul>
+  <li><a href="http://github.com/def-/teeworlds/compare/2.17...2.18">What's new</a></li>
+  <li><a href="http://github.com/def-/teeworlds">DDraceNetwork Git Repository</a></li>
+</ul>
+</div>

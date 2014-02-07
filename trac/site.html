@@ -1,0 +1,32 @@
+<html xmlns:py="http://genshi.edgewall.org/" py:strip="">
+  <head py:match="head" py:attrs="select('@*')">
+    ${select('*|comment()|text()')}
+    <link rel="stylesheet" type="text/css"
+          href="//ddnet.tw/css.css" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body py:match="body" py:attrs="select('@*')">
+    <article>
+    <div class="title"><h1><a href="//ddnet.tw"><img class="logobig" alt="DDraceNetwork" src="//ddnet.tw/ddnet2.svg"/><img class="logosmall" alt="DDraceNetwork" src="//ddnet.tw/ddnet.svg"/></a></h1></div>
+    <menu class="contentleft">
+    <ul class="big">
+      <li><a href="//ddnet.tw/status/">Status</a></li>
+      <li><a href="//ddnet.tw/ranks/">Ranks</a></li>
+      <li><a href="//ddnet.tw/tournament/">Tournaments</a></li>
+      <li><a href="//trac.ddnet.tw/">Trac</a></li>
+    </ul>
+    <ul>
+      <li><a href="/report">View Tickets</a></li>
+      <li><a href="/newticket">New Ticket</a></li>
+      <li><a href="/wiki">Wiki</a></li>
+      <li><a href="/timeline">Timeline</a></li>
+    </ul>
+    </menu>
+    <section>
+    <div class="block">
+    ${select('*|text()')}
+    </div>
+    </section>
+    </article>
+  </body>
+</html>
