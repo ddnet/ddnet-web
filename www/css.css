@@ -183,7 +183,7 @@ br {
 .block3 {
   float: left;
   display: inline-block;
-  width: 50%;
+  min-width: 20em;
   font-size: 88%;
   text-align: left;
 }
@@ -197,7 +197,6 @@ br {
 .block2 {
   float: left;
   display: inline-block;
-  width: 33%;
   font-size: 88%;
   text-align: left;
   min-width: 13em;
@@ -209,14 +208,6 @@ br {
 
 .div-ranks p {
   margin-right: 1em;
-}
-
-.teamrecords {
-  width: 40%;
-}
-
-.records {
-  width: 25%;
 }
 
 .info {
@@ -246,18 +237,13 @@ br {
   min-width: 50em;
 }
 
-.status td {
-  margin: 0;
-  padding: 0;
-}
-
 .time {
   width: 4em;
   text-align: right;
 }
 
 .name {
-  width: 10em;
+  width: 11em;
 }
 
 .clan {
