@@ -1,12 +1,15 @@
 *, *:before, *:after {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
-body {
+html, body {
   background-color: #d8efff;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 100%;
 }
 
 .block {
