@@ -246,10 +246,6 @@ br {
   min-width: 50em;
 }
 
-.status td {
-  line-height: 0;
-}
-
 .time {
   width: 4em;
   text-align: right;
