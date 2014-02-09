@@ -340,6 +340,16 @@ menu {
   left: 39em;
   margin-top: -7em;
 }
+
+.startvideo {
+  float: left;
+  width: 70%;
+}
+
+.startimages {
+  float: right;
+  width: 28%;
+}
 }
 
 @media (max-width: 1099px), (max-height: 609px) {
@@ -391,6 +401,13 @@ article {
 
 section {
   width: 100%;
+}
+
+.startvideo {
+}
+
+.startimages {
+  display: none;
 }
 }
 
