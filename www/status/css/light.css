@@ -1,4 +1,4 @@
-.table { background: #ffffff; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; }
+.table { background: #ffffff; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; min-width: 55em; }
 .table th, .table td { text-align: center; }
 .progress { margin-bottom: 0; }
 .progress-bar { color: #000; }
@@ -11,4 +11,6 @@
 #location { max-width: 3em }
 #uptime { max-width: 2.5em }
 #load { max-width: 2em }
+#network { max-width: 3.5em }
 thead #name { text-align: center; }
+.expandRow > td { padding: 0 !important; border-top: 0px !important; }
