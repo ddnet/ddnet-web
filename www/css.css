@@ -122,6 +122,10 @@ a:hover {
   min-width: 4em;
 }
 
+#points div.block2 {
+  max-width: 20em;
+}
+
 .smallpoints {
   text-align: right;
   min-width: 2em;
@@ -132,8 +136,15 @@ a:hover {
   min-width: 2em;
 }
 
+img {
+  border: 0 none;
+  vertical-align: middle;
+}
+
 table {
   margin: 1em;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 td {
