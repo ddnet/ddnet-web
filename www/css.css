@@ -12,6 +12,10 @@ html, body {
   font-size: 100%;
 }
 
+html {
+  overflow-y: auto;
+}
+
 .block {
   background-color: #ffffff;
   background-image: -moz-linear-gradient(center top , rgba(240, 242, 244, 0.2), rgba(240, 242, 244, 0.05) 145px, rgba(18, 20, 22, 0.2));
