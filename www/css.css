@@ -178,7 +178,7 @@ td {
 }
 
 br {
-  clear: left;
+  clear: both;
 }
 
 .screenshot {
@@ -263,6 +263,16 @@ br {
 
 .clan {
   width: 8em;
+}
+
+.rightimages {
+  float: right;
+  width: 20em;
+}
+
+.rightimages img {
+  margin-top: 1em;
+  margin-left: 1em;
 }
 
 .video-container {
