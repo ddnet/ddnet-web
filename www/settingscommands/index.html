@@ -1,0 +1,398 @@
+---
+layout: default
+title: DDraceNetwork Settings & Commands
+menu: |
+  <ul>
+    <li><a href="#server-settings">Server Settings</a></li>
+    <li><a href="#server-commands">Server Commands</a></li>
+    <li><a href="#client-settings">Client Settings</a></li>
+    <li><a href="#client-commands">Client Commands</a></li>
+  </ul>
+---
+<div class="block">
+<h2 id="server-settings">Server Settings</h2>
+<table class="settingscommands">
+  <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+  <tr><td>password</td><td>Password to the server</td><td>""</td></tr>
+  <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
+  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
+  <tr><td>sv_name</td><td>Server name</td><td>"unnamed server"</td></tr>
+  <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
+  <tr><td>sv_port</td><td>Port to use for the server</td><td>8303</td></tr>
+  <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
+  <tr><td>sv_map</td><td>Map to use on the server</td><td>"dm1"</td></tr>
+  <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>16</td></tr>
+  <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>2</td></tr>
+  <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td></tr>
+  <tr><td>sv_register</td><td>Register server with master server for public listing</td><td>1</td></tr>
+  <tr><td>sv_rcon_password</td><td>Remote console password (full access)</td><td>""</td></tr>
+  <tr><td>sv_rcon_mod_password</td><td>Remote console password for moderators (limited access)</td><td>""</td></tr>
+  <tr><td>sv_rcon_max_tries</td><td>Maximum number of tries for remote console authentication</td><td>30</td></tr>
+  <tr><td>sv_rcon_bantime</td><td>The time a client gets banned if remote console authentication fails. 0 makes it just use kick</td><td>5</td></tr>
+  <tr><td>sv_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
+  <tr><td>sv_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
+  <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
+  <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
+  <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
+  <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td></tr>
+  <tr><td>dbg_hitch</td><td>Hitch warnings</td><td>0</td></tr>
+  <tr><td>sv_welcome</td><td>Message that will be displayed to players who join the server</td><td>""</td></tr>
+  <tr><td>sv_reserved_slots</td><td>The number of slots that are reserved for special players</td><td>0</td></tr>
+  <tr><td>sv_reserved_slots_pass</td><td>The password that is required to use a reserved slot</td><td>""</td></tr>
+  <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser eachother or not</td><td>1</td></tr>
+  <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td></tr>
+  <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td><td>0</td></tr>
+  <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer & deepfreeze)</td><td>3</td></tr>
+  <tr><td>sv_endless_super_hook</td><td>Endless hook for super players on/off</td><td>0</td></tr>
+  <tr><td>sv_hide_score</td><td>Whether players scores will be announced or not</td><td>0</td></tr>
+  <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
+  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
+  <tr><td>sv_pause_time</td><td>Whether '/pause' and 'sv_max_dc_restore' pauses the time of player or not</td><td>0</td></tr>
+  <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between pauses</td><td>1</td></tr>
+  <tr><td>sv_emotional_tees</td><td>Whether eye change of tees is enabled with emoticons = 1, not = 0, -1 not at all</td><td>1</td></tr>
+  <tr><td>sv_emoticon_delay</td><td>The time in seconds between over-head emoticons</td><td>3</td></tr>
+  <tr><td>sv_eye_emote_change_delay</td><td>The time in seconds between eye emoticons change</td><td>1</td></tr>
+  <tr><td>sv_chat_delay</td><td>The time in seconds between chat messages</td><td>1</td></tr>
+  <tr><td>sv_team_change_delay</td><td>The time in seconds between team changes (spectator/in game)</td><td>3</td></tr>
+  <tr><td>sv_info_change_delay</td><td>The time in seconds between info changes (name/skin/color), to avoid ranbow mod set this to a very high time</td><td>0</td></tr>
+  <tr><td>sv_vote_map_delay</td><td>The minimum time in seconds between map votes</td><td>0</td></tr>
+  <tr><td>sv_vote_delay</td><td>The time in seconds between any vote</td><td>3</td></tr>
+  <tr><td>sv_vote_kick_delay</td><td>The minimum time in seconds between kick votes</td><td>0</td></tr>
+  <tr><td>sv_vote_yes_percentage</td><td>The percent of people that need to agree or deny for the vote to succeed/fail</td><td>50</td></tr>
+  <tr><td>sv_vote_majority</td><td>Whether No. of Yes is compared to No. of No votes or to number of total Players ( Default is 0 Y compare N)</td><td>0</td></tr>
+  <tr><td>sv_spectator_votes</td><td>Choose if spectators are allowed to start votes</td><td>1</td></tr>
+  <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>3</td></tr>
+  <tr><td>sv_suicide_penalty</td><td>The minimum time in seconds between kill or /kills and respawn</td><td>0</td></tr>
+  <tr><td>sv_map_window</td><td>Map downloading send-ahead window</td><td>15</td></tr>
+  <tr><td>sv_fast_download</td><td>Enables fast download of maps</td><td>0</td></tr>
+  <tr><td>sv_shotgun_bullet_sound</td><td>Crazy shotgun bullet sound on/off</td><td>0</td></tr>
+  <tr><td>sv_checkpoint_save</td><td>Whether to save checkpoint times to the score file</td><td>1</td></tr>
+  <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>"records"</td></tr>
+  <tr><td>sv_use_sql</td><td>Enables SQL DB instead of record file</td><td>0</td></tr>
+  <tr><td>sv_sql_user</td><td>SQL User</td><td>"nameless"</td></tr>
+  <tr><td>sv_sql_pw</td><td>SQL Password</td><td>"tee"</td></tr>
+  <tr><td>sv_sql_ip</td><td>SQL Database IP</td><td>"127.0.0.1"</td></tr>
+  <tr><td>sv_sql_port</td><td>SQL Database port</td><td>3306</td></tr>
+  <tr><td>sv_sql_database</td><td>SQL Database name</td><td>"teeworlds"</td></tr>
+  <tr><td>sv_sql_prefix</td><td>SQL Database table prefix</td><td>"record"</td></tr>
+  <tr><td>sv_ddrace_rules</td><td>Whether the default mod rules are displayed or not</td><td>1</td></tr>
+  <tr><td>sv_rules_line1</td><td>Rules line 1</td><td>""</td></tr>
+  <tr><td>sv_rules_line2</td><td>Rules line 2</td><td>""</td></tr>
+  <tr><td>sv_rules_line3</td><td>Rules line 3</td><td>""</td></tr>
+  <tr><td>sv_rules_line4</td><td>Rules line 4</td><td>""</td></tr>
+  <tr><td>sv_rules_line5</td><td>Rules line 5</td><td>""</td></tr>
+  <tr><td>sv_rules_line6</td><td>Rules line 6</td><td>""</td></tr>
+  <tr><td>sv_rules_line7</td><td>Rules line 7</td><td>""</td></tr>
+  <tr><td>sv_rules_line8</td><td>Rules line 8</td><td>""</td></tr>
+  <tr><td>sv_rules_line9</td><td>Rules line 9</td><td>""</td></tr>
+  <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>""</td></tr>
+  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>CFGFLAG_SERVER</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>16</td></tr>
+  <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>"announcement.txt"</td></tr>
+  <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td></tr>
+  <tr><td>sv_announcement_random</td><td>Whether announcements are sequential or random</td><td>1</td></tr>
+  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for DDRace Beta) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
+  <tr><td>sv_slash_me</td><td>Whether /me is active on the server or not</td><td>0</td></tr>
+  <tr><td>conn_timeout</td><td>Network timeout</td><td>15</td></tr>
+  <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
+  <tr><td>sv_show_others</td><td>Whether players can user the command showothers or not</td><td>1</td></tr>
+  <tr><td>sv_show_others_default</td><td>Whether players see others by default</td><td>0</td></tr>
+  <tr><td>sv_show_all_default</td><td>Whether players see all tees by default</td><td>0</td></tr>
+  <tr><td>sv_max_afk_time</td><td>The time in seconds a player is allowed to be afk (0 = disabled)</td><td>0</td></tr>
+  <tr><td>sv_max_afk_vote_time</td><td>The time in seconds a player can be afk and his votes still count (0 = disabled)</td><td>300</td></tr>
+  <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td></tr>
+  <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td></tr>
+  <tr><td>sv_vote_pause</td><td>Allow voting to pause players (instead of moving to spectators)</td><td>1</td></tr>
+  <tr><td>sv_vote_pause_time</td><td>The time (in seconds) players have to wait in pause when paused by vote</td><td>10</td></tr>
+  <tr><td>sv_tune_reset</td><td>Whether tuning is reset after each map change or not</td><td>0</td></tr>
+  <tr><td>sv_reset_file</td><td>File to execute on map change or reload to set the default server settings</td><td>"reset.cfg"</td></tr>
+  <tr><td>sv_input_fifo</td><td>Fifo file to use as input</td><td>""</td></tr>
+  <tr><td>sv_ddrace_tune_reset</td><td>Whether DDRace tuning(sv_hit, Sv_Endless_Drag & Sv_Old_Laser) is reset after each map change or not</td><td>0</td></tr>
+  <tr><td>sv_nameless_score</td><td>Whether nameless tee has a score or not</td><td>0</td></tr>
+  <tr><td>sv_time_in_broadcast_interval</td><td>How often to update the broadcast time</td><td>1</td></tr>
+  <tr><td>sv_default_timer_type</td><td>Default way of displaying time either game/round timer or broadcast. 0 = game/round timer, 1 = broadcast</td><td>0</td></tr>
+  <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>50</td></tr>
+  <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>50</td></tr>
+  <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>0</td></tr>
+  <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>0</td></tr>
+  <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
+  <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
+  <tr><td>sv_jetpack</td><td>Jetpack strength</td><td>400</td></tr>
+  <tr><td>sv_warmup</td><td>Number of seconds to do warmup before round starts</td><td>0</td></tr>
+  <tr><td>sv_motd</td><td>Message of the day to display for the clients</td><td>""</td></tr>
+  <tr><td>sv_teamdamage</td><td>Team damage</td><td>0</td></tr>
+  <tr><td>sv_maprotation</td><td>Maps to rotate between</td><td>""</td></tr>
+  <tr><td>sv_rounds_per_map</td><td>Number of rounds on each map before rotating</td><td>1</td></tr>
+  <tr><td>sv_round_swap</td><td>Swap teams between rounds</td><td>1</td></tr>
+  <tr><td>sv_powerups</td><td>Allow powerups like ninja</td><td>1</td></tr>
+  <tr><td>sv_scorelimit</td><td>Score limit (0 disables)</td><td>20</td></tr>
+  <tr><td>sv_timelimit</td><td>Time limit in minutes (0 disables)</td><td>0</td></tr>
+  <tr><td>sv_gametype</td><td>Game type (dm, tdm, ctf)</td><td>"dm"</td></tr>
+  <tr><td>sv_tournament_mode</td><td>Tournament mode. When enabled, players joins the server as spectator</td><td>0</td></tr>
+  <tr><td>sv_spamprotection</td><td>Spam protection</td><td>1</td></tr>
+  <tr><td>sv_respawn_delay_tdm</td><td>Time needed to respawn after death in tdm gametype</td><td>3</td></tr>
+  <tr><td>sv_spectator_slots</td><td>Number of slots to reserve for spectators</td><td>0</td></tr>
+  <tr><td>sv_teambalance_time</td><td>How many minutes to wait before autobalancing teams</td><td>1</td></tr>
+  <tr><td>sv_inactivekick_time</td><td>How many minutes to wait before taking care of inactive players</td><td>0</td></tr>
+  <tr><td>sv_inactivekick</td><td>How to deal with inactive players (0=move to spectator, 1=move to free spectator slot/kick, 2=kick)</td><td>2</td></tr>
+  <tr><td>sv_strict_spectate_mode</td><td>Restricts information in spectator mode</td><td>0</td></tr>
+  <tr><td>sv_vote_spectate</td><td>Allow voting to move players to spectators</td><td>1</td></tr>
+  <tr><td>sv_vote_spectate_rejoindelay</td><td>How many minutes to wait before a player can rejoin after being moved to spectators by vote</td><td>3</td></tr>
+  <tr><td>sv_vote_kick</td><td>Allow voting to kick players</td><td>1</td></tr>
+  <tr><td>sv_vote_kick_min</td><td>Minimum number of players required to start a kick vote</td><td>0</td></tr>
+  <tr><td>sv_vote_kick_bantime</td><td>The time to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td></tr>
+  <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
+  <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
+  <tr><td>sv_mapupdaterate</td><td>(Tw32) real id <-> vanilla id players map update rate</td><td>5</td></tr>
+  <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
+  <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
+</table>
+</div>
+<div class="block">
+<h2 id="server-commands">Server Commands</h2>
+<table class="settingscommands">
+  <tr><th>Command</th><th>Description</th></tr>
+  <tr><td>echo</td><td>Echo the text</td></tr>
+  <tr><td>exec</td><td>Execute the specified file</td></tr>
+  <tr><td>toggle</td><td>Toggle config value</td></tr>
+  <tr><td>mod_command</td><td>Specify command accessibility for moderators</td></tr>
+  <tr><td>mod_status</td><td>List all commands which are accessible for moderators</td></tr>
+  <tr><td>user_status</td><td>List all commands which are accessible for users</td></tr>
+  <tr><td>cmdlist</td><td>List all commands which are accessible for users</td></tr>
+  <tr><td>ban</td><td>Ban ip for x minutes for any reason</td></tr>
+  <tr><td>ban_range</td><td>Ban ip range for x minutes for any reason</td></tr>
+  <tr><td>unban</td><td>Unban ip/banlist entry</td></tr>
+  <tr><td>unban_range</td><td>Unban ip range</td></tr>
+  <tr><td>unban_all</td><td>Unban all entries</td></tr>
+  <tr><td>bans</td><td>Show banlist</td></tr>
+  <tr><td>bans_save</td><td>Save banlist in a file</td></tr>
+  <tr><td>ban</td><td>Ban player with ip/client id for x minutes for any reason</td></tr>
+  <tr><td>kick</td><td>Kick player with specified id for any reason</td></tr>
+  <tr><td>status</td><td>List players</td></tr>
+  <tr><td>shutdown</td><td>Shut down</td></tr>
+  <tr><td>logout</td><td>Logout of rcon</td></tr>
+  <tr><td>record</td><td>Record to a file</td></tr>
+  <tr><td>stoprecord</td><td>Stop recording</td></tr>
+  <tr><td>reload</td><td>Reload the map</td></tr>
+  <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td></tr>
+  <tr><td>tune</td><td>Tune variable to value</td></tr>
+  <tr><td>tune_reset</td><td>Reset tuning</td></tr>
+  <tr><td>tune_dump</td><td>Dump tuning</td></tr>
+  <tr><td>pause_game</td><td>Pause/unpause game</td></tr>
+  <tr><td>change_map</td><td>Change map</td></tr>
+  <tr><td>random_map</td><td>Random map</td></tr>
+  <tr><td>restart</td><td>Restart in x seconds (0 = abort)</td></tr>
+  <tr><td>broadcast</td><td>Broadcast message</td></tr>
+  <tr><td>say</td><td>Say in chat</td></tr>
+  <tr><td>set_team</td><td>Set team of player to team</td></tr>
+  <tr><td>set_team_all</td><td>Set team of all players to team</td></tr>
+  <tr><td>add_vote</td><td>Add a voting option</td></tr>
+  <tr><td>remove_vote</td><td>remove a voting option</td></tr>
+  <tr><td>force_vote</td><td>Force a voting option</td></tr>
+  <tr><td>clear_votes</td><td>Clears the voting options</td></tr>
+  <tr><td>vote</td><td>Force a vote to yes/no</td></tr>
+  <tr><td>dbg_dumpmem</td><td>Dump the memory</td></tr>
+  <tr><td>dbg_lognetwork</td><td>Log the network</td></tr>
+</table>
+</div>
+<div class="block">
+<h2 id="client-settings">Client Settings</h2>
+<table class="settingscommands">
+  <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+  <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td></tr>
+  <tr><td>cl_antiping</td><td>Antiping (predict other players' movements)</td><td>0</td></tr>
+  <tr><td>cl_antiping_grenade</td><td>Antiping (predict grenades)</td><td>0</td></tr>
+  <tr><td>cl_nameplates</td><td>Show name plates</td><td>1</td></tr>
+  <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td></tr>
+  <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td></tr>
+  <tr><td>cl_nameplates_size</td><td>Size of the name plates from 0 to 100%</td><td>50</td></tr>
+  <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>0</td></tr>
+  <tr><td>cl_showhud</td><td>Show ingame HUD</td><td>1</td></tr>
+  <tr><td>cl_showhud_healthammo</td><td>Show ingame HUD (Health + Ammo)</td><td>1</td></tr>
+  <tr><td>cl_showhud_score</td><td>Show ingame HUD (Score)</td><td>1</td></tr>
+  <tr><td>cl_showrecord</td><td>Show old style DDRace client records</td><td>0</td></tr>
+  <tr><td>cl_showchat</td><td>Show chat</td><td>1</td></tr>
+  <tr><td>cl_show_chat_friends</td><td>Show only chat messages from friends</td><td>0</td></tr>
+  <tr><td>cl_showkillmessages</td><td>Show kill messages</td><td>1</td></tr>
+  <tr><td>cl_show_votes_after_voting</td><td>Show votes window after voting</td><td>0</td></tr>
+  <tr><td>cl_showfps</td><td>Show ingame FPS counter</td><td>0</td></tr>
+  <tr><td>cl_airjumpindicator</td><td></td><td>1</td></tr>
+  <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td></tr>
+  <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td></tr>
+  <tr><td>cl_mouse_deadzone</td><td></td><td>300</td></tr>
+  <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
+  <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
+  <tr><td>ed_showkeys</td><td></td><td>0</td></tr>
+  <tr><td>cl_flow</td><td></td><td>0</td></tr>
+  <tr><td>cl_show_welcome</td><td></td><td>1</td></tr>
+  <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
+  <tr><td>cl_version_server</td><td>Server to use to check for new versions</td><td>"version.teeworlds.com"</td></tr>
+  <tr><td>cl_ddnet_version_server</td><td>Server to use to check for new ddnet versions</td><td>"version.ddnet.tw"</td></tr>
+  <tr><td>cl_languagefile</td><td>What language file to use</td><td>""</td></tr>
+  <tr><td>cl_show_special_skins</td><td>Show special skins in UI</td><td>0</td></tr>
+  <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
+  <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
+  <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
+  <tr><td>player_skin</td><td>Player skin</td><td>"default"</td></tr>
+  <tr><td>ui_page</td><td>Interface page</td><td>6</td></tr>
+  <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td></tr>
+  <tr><td>ui_server_address</td><td>Interface server address</td><td>"localhost:8303"</td></tr>
+  <tr><td>ui_scale</td><td>Interface scale</td><td>100</td></tr>
+  <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>100</td></tr>
+  <tr><td>ui_color_hue</td><td>Interface color hue</td><td>160</td></tr>
+  <tr><td>ui_color_sat</td><td>Interface color saturation</td><td>70</td></tr>
+  <tr><td>ui_color_lht</td><td>Interface color lightness</td><td>175</td></tr>
+  <tr><td>ui_color_alpha</td><td>Interface alpha</td><td>228</td></tr>
+  <tr><td>gfx_noclip</td><td>Disable clipping</td><td>0</td></tr>
+  <tr><td>dbg_focus</td><td></td><td>0</td></tr>
+  <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
+  <tr><td>player_name</td><td>Name of the player</td><td>"nameless tee"</td></tr>
+  <tr><td>player_clan</td><td>Clan of the player</td><td>""</td></tr>
+  <tr><td>player_country</td><td>Country of the player</td><td>-1</td></tr>
+  <tr><td>password</td><td>Password to the server</td><td>""</td></tr>
+  <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
+  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
+  <tr><td>cl_cpu_throttle</td><td></td><td>0</td></tr>
+  <tr><td>cl_editor</td><td></td><td>0</td></tr>
+  <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td></tr>
+  <tr><td>cl_load_country_flags</td><td>Load and show country flags</td><td>1</td></tr>
+  <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
+  <tr><td>cl_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
+  <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>0</td></tr>
+  <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td></tr>
+  <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
+  <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>0</td></tr>
+  <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>""</td></tr>
+  <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
+  <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>1</td></tr>
+  <tr><td>br_filter_spectators</td><td>Filter out spectators from player numbers</td><td>0</td></tr>
+  <tr><td>br_filter_friends</td><td>Filter out servers with no friends</td><td>0</td></tr>
+  <tr><td>br_filter_country</td><td>Filter out servers with non-matching player country</td><td>0</td></tr>
+  <tr><td>br_filter_country_index</td><td>Player country to filter by in the server browser</td><td>-1</td></tr>
+  <tr><td>br_filter_pw</td><td>Filter out password protected servers in browser</td><td>0</td></tr>
+  <tr><td>br_filter_ping</td><td>Ping to filter by in the server browser</td><td>999</td></tr>
+  <tr><td>br_filter_gametype</td><td>Game types to filter</td><td>""</td></tr>
+  <tr><td>br_filter_gametype_strict</td><td>Strict gametype filter</td><td>0</td></tr>
+  <tr><td>br_filter_serveraddress</td><td>Server address to filter</td><td>""</td></tr>
+  <tr><td>br_filter_pure</td><td>Filter out non-standard servers in browser</td><td>0</td></tr>
+  <tr><td>br_filter_pure_map</td><td>Filter out non-standard maps in browser</td><td>0</td></tr>
+  <tr><td>br_filter_compatversion</td><td>Filter out non-compatible servers in browser</td><td>0</td></tr>
+  <tr><td>br_sort</td><td></td><td>1</td></tr>
+  <tr><td>br_sort_order</td><td></td><td>0</td></tr>
+  <tr><td>br_max_requests</td><td>Number of requests to use when refreshing server browser</td><td>25</td></tr>
+  <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td></tr>
+  <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td></tr>
+  <tr><td>snd_enable</td><td>Sound enable</td><td>1</td></tr>
+  <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td></tr>
+  <tr><td>snd_volume</td><td>Sound volume</td><td>100</td></tr>
+  <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>-1</td></tr>
+  <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
+  <tr><td>snd_chat</td><td></td><td>1</td></tr>
+  <tr><td>snd_name_only</td><td></td><td>0</td></tr>
+  <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
+  <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
+  <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td></tr>
+  <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>0</td></tr>
+  <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>0</td></tr>
+  <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td></tr>
+  <tr><td>gfx_clear</td><td>Clear screen before rendering</td><td>1</td></tr>
+  <tr><td>gfx_vsync</td><td>Vertical sync</td><td>1</td></tr>
+  <tr><td>gfx_display_all_modes</td><td></td><td>0</td></tr>
+  <tr><td>gfx_texture_compression</td><td>Use texture compression</td><td>0</td></tr>
+  <tr><td>gfx_high_detail</td><td>High detail</td><td>1</td></tr>
+  <tr><td>gfx_texture_quality</td><td></td><td>1</td></tr>
+  <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>0</td></tr>
+  <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td></tr>
+  <tr><td>gfx_finish</td><td></td><td>1</td></tr>
+  <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
+  <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
+  <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
+  <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
+  <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
+  <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
+  <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td></tr>
+  <tr><td>dbg_stress_server</td><td>Server to stress</td><td>"localhost"</td></tr>
+  <tr><td>dbg_resizable</td><td>Enables window resizing</td><td>0</td></tr>
+  <tr><td>cl_race_binds</td><td>Enable Default DDRace builds when pressing the reset binds button</td><td>1</td></tr>
+  <tr><td>cl_race_binds_set</td><td>Whether the DDRace binds set or not (this is automated you don't need to use this)</td><td>0</td></tr>
+  <tr><td>conn_timeout</td><td>Network timeout</td><td>15</td></tr>
+  <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
+  <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
+  <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td></tr>
+  <tr><td>cl_race_ghost</td><td>Enable ghost</td><td>1</td></tr>
+  <tr><td>cl_race_show_ghost</td><td>Show ghost</td><td>1</td></tr>
+  <tr><td>cl_race_save_ghost</td><td>Save ghost</td><td>1</td></tr>
+  <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard </td><td>1</td></tr>
+  <tr><td>cl_show_others</td><td>Show players in other teams</td><td>1</td></tr>
+  <tr><td>cl_show_entities</td><td>Cheat to show game tiles</td><td>0</td></tr>
+  <tr><td>cl_show_quads</td><td>Show quads</td><td>1</td></tr>
+  <tr><td>cl_background_hue</td><td>Background color hue</td><td>0</td></tr>
+  <tr><td>cl_background_sat</td><td>Background color saturation</td><td>0</td></tr>
+  <tr><td>cl_background_lht</td><td>Background color lightness</td><td>128</td></tr>
+  <tr><td>cl_background_entities_hue</td><td>Background (entities) color hue</td><td>0</td></tr>
+  <tr><td>cl_background_entities_sat</td><td>Background (entities) color saturation</td><td>0</td></tr>
+  <tr><td>cl_background_entities_lht</td><td>Background (entities) color lightness</td><td>128</td></tr>
+</table>
+</div>
+<div class="block">
+<h2 id="client-commands">Client Commands</h2>
+<table class="settingscommands">
+  <tr><th>Command</th><th>Description</th></tr>
+  <tr><td>echo</td><td>Echo the text</td></tr>
+  <tr><td>exec</td><td>Execute the specified file</td></tr>
+  <tr><td>toggle</td><td>Toggle config value</td></tr>
+  <tr><td>+toggle</td><td>Toggle config value via keypress</td></tr>
+  <tr><td>toggle_local_console</td><td>Toggle local console</td></tr>
+  <tr><td>toggle_remote_console</td><td>Toggle remote console</td></tr>
+  <tr><td>clear_local_console</td><td>Clear local console</td></tr>
+  <tr><td>clear_remote_console</td><td>Clear remote console</td></tr>
+  <tr><td>dump_local_console</td><td>Dump local console</td></tr>
+  <tr><td>dump_remote_console</td><td>Dump remote console</td></tr>
+  <tr><td>callvote</td><td>Call vote</td></tr>
+  <tr><td>vote</td><td>Vote yes/no</td></tr>
+  <tr><td>+emote</td><td>Open emote selector</td></tr>
+  <tr><td>emote</td><td>Use emote</td></tr>
+  <tr><td>+spectate</td><td>Open spectator mode selector</td></tr>
+  <tr><td>spectate</td><td>Switch spectator mode</td></tr>
+  <tr><td>spectate_next</td><td>Spectate the next player</td></tr>
+  <tr><td>spectate_previous</td><td>Spectate the previous player</td></tr>
+  <tr><td>zoom+</td><td>Zoom increase</td></tr>
+  <tr><td>zoom-</td><td>Zoom decrease</td></tr>
+  <tr><td>zoom</td><td>Zoom reset</td></tr>
+  <tr><td>say</td><td>Say in chat</td></tr>
+  <tr><td>say_team</td><td>Say in team chat</td></tr>
+  <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
+  <tr><td>+show_chat</td><td>Show chat</td></tr>
+  <tr><td>+left</td><td>Move left</td></tr>
+  <tr><td>+right</td><td>Move right</td></tr>
+  <tr><td>+jump</td><td>Jump</td></tr>
+  <tr><td>+hook</td><td>Hook</td></tr>
+  <tr><td>+fire</td><td>Fire</td></tr>
+  <tr><td>+showhookcoll</td><td>Show Hook Collision</td></tr>
+  <tr><td>+weapon1</td><td>Switch to hammer</td></tr>
+  <tr><td>+weapon2</td><td>Switch to gun</td></tr>
+  <tr><td>+weapon3</td><td>Switch to shotgun</td></tr>
+  <tr><td>+weapon4</td><td>Switch to grenade</td></tr>
+  <tr><td>+weapon5</td><td>Switch to rifle</td></tr>
+  <tr><td>+nextweapon</td><td>Switch to next weapon</td></tr>
+  <tr><td>+prevweapon</td><td>Switch to previous weapon</td></tr>
+  <tr><td>add_friend</td><td>Add a friend</td></tr>
+  <tr><td>remove_friend</td><td>Remove a friend</td></tr>
+  <tr><td>team</td><td>Switch team</td></tr>
+  <tr><td>kill</td><td>Kill yourself</td></tr>
+  <tr><td>quit</td><td>Quit Teeworlds</td></tr>
+  <tr><td>exit</td><td>Quit Teeworlds</td></tr>
+  <tr><td>minimize</td><td>Minimize Teeworlds</td></tr>
+  <tr><td>connect</td><td>Connect to the specified host/ip</td></tr>
+  <tr><td>disconnect</td><td>Disconnect from the server</td></tr>
+  <tr><td>ping</td><td>Ping the current server</td></tr>
+  <tr><td>screenshot</td><td>Take a screenshot</td></tr>
+  <tr><td>rcon</td><td>Send specified command to rcon</td></tr>
+  <tr><td>rcon_auth</td><td>Authenticate to rcon</td></tr>
+  <tr><td>play</td><td>Play the file specified</td></tr>
+  <tr><td>record</td><td>Record to the file</td></tr>
+  <tr><td>stoprecord</td><td>Stop recording</td></tr>
+  <tr><td>add_demomarker</td><td>Add demo timeline marker</td></tr>
+  <tr><td>add_favorite</td><td>Add a server as a favorite</td></tr>
+  <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
+</table>

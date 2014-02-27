@@ -37,6 +37,10 @@ html {
   max-width: 100%;
 }
 
+.settingscommands tr {
+  border-bottom: 1px solid #cccccc;
+}
+
 a:link, a:visited {
   font-weight: bold;
   color: #aa4444;
