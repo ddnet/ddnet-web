@@ -9,13 +9,14 @@ menu: |
     <li><a href="#map-features">Map&nbsp;Features</a></li>
     <li><a href="#mapper-rules">Mapper&nbsp;Rules</a></li>
     <li><a href="#how-to-map">How&nbsp;to&nbsp;Map</a></li>
+    <li><a href="#binds">Useful&nbsp;Binds</a></li>
     <li><a href="#staff">Staff</a></li>
     <li><a href="#downloads">Downloads</a></li>
   </ul>
 ---
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/R9Y92_bYO0c?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/vp3amEZxy1c?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="tower.png"/></li></div>
 <br/>
 <p class="download"><span class="big"><a href="ddnet.zip">Download DDraceNetwork 2.23</a></span><br/><a href="#downloads">More Downloads</a></p>
@@ -23,7 +24,8 @@ menu: |
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="/tournament/9/">Koule Tournament</a></strong> from Friday, March 7 to Tuesday, March 11 (<a href="https://www.teeworlds.com/forum/viewtopic.php?pid=109638#p109638">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&postID=171700#post171700">German Info</a>)</li>
+  <li><strong><a href="/tournament/10/">Quick Tournament #4</a> with Ice Cave 1</strong> on Sunday, March 23 at 20:00 CET (<a href="https://www.teeworlds.com/forum/viewtopic.php?pid=109638#p109638">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&postID=171700#post171700">German Info</a>)</li>
+  <li><a href="#how-to-map">Mapping Tips by Lady Saavik</a></li>
   <li>List of all <a href="settingscommands/">Settings &amp; Commands</a></li>
   <li><strong>/map</strong> to vote a map. For example <strong>/map adr3</strong> for Adrenaline 3<br/>The first character has to be the first in the map name, all others following somewhere in that order. In our case the map has to start with 'a' and contain 'd', 'r', and '3' in that order. To leave out the first character use % like this: <strong>/map %castle</strong> to vote for Out of Castle</li>
   <li>Freeze and Solo prediction (by HMH)</li>
@@ -170,6 +172,15 @@ menu: |
 <ul>
   <li><a href="http://youtu.be/xnm-Yi--ucQ">Tips for a good Map in Teeworlds</a></li>
 </ul>
+<h3>Mapping Tips by Lady Saavik</h3>
+<ol>
+  <li>Create multiple spawn points so that they can not be blocked. Don't place spawns directly on the ground for the same reason.</li>
+  <li>Don't place teleporter destination (TO) tiles on the ground, as they can make players bounce away unexpectedly. Better lift them up by one tile and set more than one tile.</li>
+  <li>Make your layers as small as possible. This makes your map faster to load for clients and use less resources on the server. Note that all game layers have the same size.</li>
+  <li>Make sure automapper works as you think. Don't turn small freeze corners into freeze tiles and make sure your walls don't have holes.</li>
+  <li>Parts should have enough space for multiple tees. Often tees don't play in groups of two!</li>
+  <li>Sometimes it makes sense to have unfreezes when you get teleported back, especially in parts where you need many tries.</li>
+</ol>
 <h3>Graphics Tutorials by gB. | Kintaro*</h3>
 <ul>
   <li><a href="http://youtu.be/SZRhZuRlHC8">How to create your own Sun</a></li>
@@ -187,6 +198,25 @@ menu: |
   <li>Hit F2 to open RCON and log in with the password <strong>rcon</strong></li>
   <li>In RCON type <strong>change_map YourMapName</strong> to load your map</li>
   <li>If you want your server online setup port forwarding on your router</li>
+</div>
+<div class="block">
+<h2 id="binds">Useful Binds</h2>
+<dl>
+  <dt><pre>bind 7 toggle cl_showhud 0 1</pre></dt>
+  <dt><pre>bind 8 toggle gfx_high_detail 0 1</pre></dt>
+  <dt><pre>bind 9 toggle cl_show_quads 0 1</pre></dt>
+  <dt><pre>bind 0 toggle cl_show_entities 0 1</pre></dt>
+  <dt><pre>bind s +showhookcoll</pre></dt>
+  <dd>Get a line for aiming</dd>
+  <dt><pre>bind x +toggle inp_mousesens 100 1</pre></dt>
+  <dd>Low mouse sense for improved hooking when you hold x</dd>
+  <dt><pre>bind c toggle cl_antiping 0 1</pre></dt>
+  <dd>Toggle antiping</dd>
+  <dt><pre>bind minus "zoom-; say /showall 1"</pre></dt>
+  <dd>Enable seeing everyone when you zoom out</dd>
+  <dt><pre>bind i chat all /c</pre></dt>
+  <dd>Whisper to the last person you whispered to</dd>
+</dl>
 </div>
 <div class="block">
 <h2 id="staff">Staff</h2>
