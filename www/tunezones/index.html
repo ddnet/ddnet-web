@@ -1,0 +1,30 @@
+---
+layout: default
+title: DDraceNetwork Tune Zones Tutorial
+---
+<div class="block">
+<h2>Tune Zones Tutorial by Maple</h2>
+<p>Welcome to the tune zone tutorial!</p>
+<p>In this tutorial I will explain you how to use the new and awesome feature for DDNet. It is simpler that you might think, just read the following steps:</p>
+<ol>
+<li><p>Load up client, open editor and right click Game Group</p>
+<img class="demo" src="tunezones1.png"/>
+<p>You will see that there is a new kind of layer that has been added, the Tune layer. Create a new one.</p></li>
+<li><p>By clicking the Tune button at the top of screen , you will be able to select different Zone numbers.</p>
+<img class="demo" src="tunezones2.png"/>
+<p>To put the zone wherever you want, press space and select the light blue square, and treat it as if it were a normal tile. The player will be in the specific zone as long as it touches the respective tile.</p></li>
+<li><p>Now that you have put your zones, it should look like this:</p>
+<img class="demo" src="tunezones3.png"/></li>
+<li><p>Now that you have specified the different zones, you have to attribute special physics for each of them. You will need to create a new file in your map folder, called "(yourmapname).cfg". If the .cfg file isn't named the same as the map or if it isnt in your map folder, it wont work.</p>
+<img class="demo" src="tunezones4.png"/>
+<p>Open up the file , and try the following. Zone 0 is the default zone, and zone 1 and 2 are the zones that I have put. There are 3 types of commands for zones:</p>
+<pre>
+tune_zone_enter "zone num." "text on enter"
+tune_zone_leave "zone num." "text when leaving"
+tune_zone "zone num." "tune setting" "value"
+</pre>
+<p>It is possible to change more than one setting by zones, for example gravity and ground friction , like shown in the picture above. If you want to find all the settings you can change, look them up in <a href="https://www.teeworlds.com/?page=docs&wiki=ServerTuning">the official list</a>.</p></li>
+<li><p>There you go!</p>
+<img class="demo" src="tunezones5.png"/></li>
+</ol>
+</div>
