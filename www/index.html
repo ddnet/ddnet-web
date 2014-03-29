@@ -16,27 +16,43 @@ menu: |
 ---
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/vp3amEZxy1c?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/-ZeVjecUT4w?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="tower.png"/></li></div>
 <br/>
-<p class="download"><span class="big"><a href="ddnet.zip">Download DDraceNetwork 2.23</a></span><br/><a href="#downloads">More Downloads</a></p>
+<p class="download"><span class="big"><a href="#downloads">Download DDraceNetwork 3.0</a></span></p>
 </div>
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="/tournament/10/">Quick Tournament #4</a> with Ice Cave 1</strong> on Sunday, March 23 at 20:00 CET (<a href="https://www.teeworlds.com/forum/viewtopic.php?pid=109638#p109638">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&postID=171700#post171700">German Info</a>)</li>
+  <li><strong>Quick Tournament #5</strong> with a solo map on Sunday, March 30 from 20:00 to 22:00 CEST (<a href="https://www.teeworlds.com/forum/viewtopic.php?pid=109638#p109638">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&postID=171700#post171700">German Info</a>)</li>
+  <li><strong>DDNet 3.0</strong>:<br/>
+  <ul>
+    <li>Feature: Tuning Zones allow you to have different physics in each part of map (by HMH)</li>
+    <li>Feature: Prediction for stoppers and speedups (by v)</li>
+    <li>Feature: When a server has more than 16 players, the first 16 voters count</li>
+    <li>Feature: Mapres preview in editor</li>
+    <li>Feature: Show unpredicted shadow tee</li>
+    <li>Feature: Optionally don't show Ninja</li>
+    <li>Feature: New skins</li>
+    <li>Fix: Mac OS X version should work without extra libraries</li>
+    <li>Fix: Doors are properly reset in locked teams</li>
+    <li>Fix: Sounds settings make sense</li>
+    <li>Fix: Editor copy &amp; paste is less buggy (by HMH)</li>
+    <li>Fix: No more annoying "player paused" and "player unpaused" messages</li>
+    <li>Fix: Newly joined players see ongoing votes</li>
+    <li>Fix: Crash on strange user inputs in console (by HMH)</li>
+    <li>Fix: Crash on screenshot</li>
+  </ul>
+  </li>
   <li><a href="#how-to-map">Mapping Tips by Lady Saavik</a></li>
   <li>List of all <a href="settingscommands/">Settings &amp; Commands</a></li>
-  <li><strong>/map</strong> to vote a map. For example <strong>/map adr3</strong> for Adrenaline 3<br/>The first character has to be the first in the map name, all others following somewhere in that order. In our case the map has to start with 'a' and contain 'd', 'r', and '3' in that order. To leave out the first character use % like this: <strong>/map %castle</strong> to vote for Out of Castle</li>
-  <li>Freeze and Solo prediction (by HMH)</li>
-  <li>Walls and automapper for them by Broken</li>
-  <li>Tiles for Penalty Time on touch on Switch layer. Touch the tile and time is added to your game time: (left is 1 second, right is 20 minutes, 4 seconds)<br/>
-  <img class="demo" alt="Demo" src="penalty.png"/></li>
 </ul>
 </div>
 <div class="block">
 <h2 id="server-features">Server Features</h2>
 <ul>
+  <li><strong>/map</strong> to vote a map. For example <strong>/map adr3</strong> for Adrenaline 3<br/>The first character has to be the first in the map name, all others following somewhere in that order. In our case the map has to start with 'a' and contain 'd', 'r', and '3' in that order. To leave out the first character use % like this: <strong>/map %castle</strong> to vote for Out of Castle</li>
+  <li>Solo prediction (Thanks to HMH)</li>
   <li>AFK players close their eyes<br/>
   <img class="demo" alt="Demo" src="afk.png"/></li>
   <li>64 player server (initial work by eeeee, get <a href="#downloads">DDNet client</a> to see all)</li>
@@ -63,6 +79,7 @@ menu: |
 <div class="block">
 <h2 id="client-features">Client Features</h2>
 <ul>
+  <li>Walls and automapper for them by Broken</li>
   <li>bind s <strong>+showhookcoll</strong> to see where hook will hit exactly<br/>
   <img class="demo" alt="Demo" src="showhookcoll.png"/></li>
   <li>Official DDNet Tiles by 645654 &amp; Phacrum<br/>
@@ -110,6 +127,8 @@ menu: |
 <div class="block">
 <h2 id="map-features">Map Features</h2>
 <ul>
+  <li>Tiles for Penalty Time on touch on Switch layer. Touch the tile and time is added to your game time: (left is 1 second, right is 20 minutes, 4 seconds)<br/>
+  <img class="demo" alt="Demo" src="penalty.png"/></li>
   <li>Switches work in Solo maps! (sv_team 3)<br/>
   <video class="fullvideo" controls>
     <source src="switches.mp4" type="video/mp4">
@@ -187,6 +206,7 @@ menu: |
   <li><a href="http://youtu.be/kcevIAsLA6w">How to create a simple Background</a></li>
   <li><a href="http://youtu.be/ZYyZxRbTDEg">How to create a Background like in Lost Story</a></li>
   <li><a href="http://youtu.be/ohMIz7EnkmQ">How to create simple Rain</a></li>
+  <li><a href="http://youtu.be/owp_qn0z1-g">How to create Rainbow Freeze</a></li>
 </ul>
 <h3>Mapping for DDraceNetwork</h3>
 <p>If you want to use special DDraceNetwork features, map using the <a href="ddnet.zip">DDraceNetwork Client</a>, otherwise the DDRace client also works.</p>
@@ -226,6 +246,7 @@ menu: |
   <li><a href="/players/645654/">645654</a></li>
   <li><a href="/players/gB-46--32--124--32-Ante-46-/">gB. | Ante.</a></li>
   <li><a href="/players/gB-46--32--124--32-Kintaro-42-/">gB. | Kintaro*</a></li>
+  <li><a href="/players/gB-46--32--124--32-LanuX/">gB. | LanuX</a></li>
   <li><a href="/players/gB-46--32--124--32-Loop-32--58-3/">gB. | Loop :3</a></li>
   <li><a href="/players/gB-46--32--124--32-Stalker/">gB. | Stalker</a></li>
   <li><a href="/players/-295--943--628--598--434-/">ħίɴɖƲ</a></li>
@@ -286,15 +307,13 @@ menu: |
 <div class="block">
 <h2 id="downloads">Downloads</h2>
 <ul>
-  <li>2014-03-09: <a href="ddnet.zip">DDraceNetwork Client and Server 2.23</a></li>
-  <li>2014-02-03: <a href="ddnet-2.18.zip">DDraceNetwork Client and Server 2.18</a></li>
-  <li><a href="ddnet.dmg">DDraceNetwork (Mac OS X version)</a></li>
+  <li>2014-03-29: DDraceNetwork Client and Server 3.0: <a href="DDNet-3.0-win32.zip">Windows</a>, <a href="DDNet-3.0-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.0-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.0-osx.dmg">Mac OS X</a>
   <li><a href="maps.zip">DDraceNetwork Maps</a></li>
 </ul>
 <h3>Information</h3>
 <ul>
   <li><a href="settingscommands/">Settings &amp; Commands</a></li>
-  <li><a href="http://github.com/def-/teeworlds/compare/2.22...2.23">What's new</a></li>
+  <li><a href="http://github.com/def-/teeworlds/compare/2.23...3.0">What's new</a></li>
   <li><a href="http://github.com/def-/teeworlds">DDraceNetwork Git Repository</a></li>
 </ul>
 </div>
