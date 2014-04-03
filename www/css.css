@@ -97,6 +97,12 @@ a:hover {
   background-color: #444444;
 }
 
+.textimg {
+  max-width: 100%;
+  float: right;
+  background-color: #444444;
+}
+
 .block li {
   margin-bottom: 1em;
 }
