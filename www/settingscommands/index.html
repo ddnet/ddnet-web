@@ -7,6 +7,7 @@ menu: |
     <li><a href="#server-commands">Server Commands</a></li>
     <li><a href="#client-settings">Client Settings</a></li>
     <li><a href="#client-commands">Client Commands</a></li>
+    <li><a href="#tunings">Tunings</a></li>
   </ul>
 ---
 <div class="block">
@@ -47,6 +48,7 @@ menu: |
   <tr><td>sv_hide_score</td><td>Whether players scores will be announced or not</td><td>0</td></tr>
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
   <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
+  <tr><td>sv_pause_messages</td><td>Whether to show messages when a player pauses and resumes</td><td>0</td></tr>
   <tr><td>sv_pause_time</td><td>Whether '/pause' and 'sv_max_dc_restore' pauses the time of player or not</td><td>0</td></tr>
   <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between pauses</td><td>1</td></tr>
   <tr><td>sv_emotional_tees</td><td>Whether eye change of tees is enabled with emoticons = 1, not = 0, -1 not at all</td><td>1</td></tr>
@@ -60,6 +62,7 @@ menu: |
   <tr><td>sv_vote_kick_delay</td><td>The minimum time in seconds between kick votes</td><td>0</td></tr>
   <tr><td>sv_vote_yes_percentage</td><td>The percent of people that need to agree or deny for the vote to succeed/fail</td><td>50</td></tr>
   <tr><td>sv_vote_majority</td><td>Whether No. of Yes is compared to No. of No votes or to number of total Players ( Default is 0 Y compare N)</td><td>0</td></tr>
+  <tr><td>sv_vote_max_total</td><td>How many people can participate in a vote at max (0 = no limit by default)</td><td>0</td></tr>
   <tr><td>sv_spectator_votes</td><td>Choose if spectators are allowed to start votes</td><td>1</td></tr>
   <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>3</td></tr>
   <tr><td>sv_suicide_penalty</td><td>The minimum time in seconds between kill or /kills and respawn</td><td>0</td></tr>
@@ -88,6 +91,7 @@ menu: |
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>""</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>CFGFLAG_SERVER</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>16</td></tr>
+  <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
   <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>"announcement.txt"</td></tr>
   <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td></tr>
   <tr><td>sv_announcement_random</td><td>Whether announcements are sequential or random</td><td>1</td></tr>
@@ -117,7 +121,6 @@ menu: |
   <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>0</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
-  <tr><td>sv_jetpack</td><td>Jetpack strength</td><td>400</td></tr>
   <tr><td>sv_warmup</td><td>Number of seconds to do warmup before round starts</td><td>0</td></tr>
   <tr><td>sv_motd</td><td>Message of the day to display for the clients</td><td>""</td></tr>
   <tr><td>sv_teamdamage</td><td>Team damage</td><td>0</td></tr>
@@ -143,6 +146,7 @@ menu: |
   <tr><td>sv_vote_kick_bantime</td><td>The time to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
+  <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
   <tr><td>sv_mapupdaterate</td><td>(Tw32) real id <-> vanilla id players map update rate</td><td>5</td></tr>
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
@@ -178,6 +182,11 @@ menu: |
   <tr><td>tune</td><td>Tune variable to value</td></tr>
   <tr><td>tune_reset</td><td>Reset tuning</td></tr>
   <tr><td>tune_dump</td><td>Dump tuning</td></tr>
+  <tr><td>tune_zone</td><td>Tune in zone a variable to value</td></tr>
+  <tr><td>tune_zone_dump</td><td>Dump zone tuning in zone x</td></tr>
+  <tr><td>tune_zone_reset</td><td>reset zone tuning in zone x or in all zones</td></tr>
+  <tr><td>tune_zone_enter</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_leave</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
   <tr><td>pause_game</td><td>Pause/unpause game</td></tr>
   <tr><td>change_map</td><td>Change map</td></tr>
   <tr><td>random_map</td><td>Random map</td></tr>
@@ -287,8 +296,10 @@ menu: |
   <tr><td>snd_volume</td><td>Sound volume</td><td>100</td></tr>
   <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>-1</td></tr>
   <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
-  <tr><td>snd_chat</td><td></td><td>1</td></tr>
-  <tr><td>snd_name_only</td><td></td><td>0</td></tr>
+  <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td></tr>
+  <tr><td>snd_chat</td><td>Enable regular chat sound</td><td>1</td></tr>
+  <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
+  <tr><td>snd_highlight</td><td>Enable highlighted chat sound</td><td>1</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td></tr>
@@ -305,6 +316,7 @@ menu: |
   <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td></tr>
   <tr><td>gfx_finish</td><td></td><td>1</td></tr>
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
+  <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
@@ -332,6 +344,10 @@ menu: |
   <tr><td>cl_background_entities_hue</td><td>Background (entities) color hue</td><td>0</td></tr>
   <tr><td>cl_background_entities_sat</td><td>Background (entities) color saturation</td><td>0</td></tr>
   <tr><td>cl_background_entities_lht</td><td>Background (entities) color lightness</td><td>128</td></tr>
+  <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee to estimate your delay</td><td>0</td></tr>
+  <tr><td>cl_predict_ddrace</td><td>Predict some DDRace tiles</td><td>1</td></tr>
+  <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
+  <tr><td>cl_show_other_hook_coll</td><td>Show other players' hook collision line</td><td>1</td></tr>
 </table>
 </div>
 <div class="block">
@@ -396,3 +412,47 @@ menu: |
   <tr><td>add_favorite</td><td>Add a server as a favorite</td></tr>
   <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
 </table>
+</div>
+<div class="block">
+<h2 id="tunings">Tunings</h2>
+<table>
+  <tr><th>Tuning</th><th>Default</th></tr>
+  <tr><td>ground_control_speed</td><td>10.0f</td></tr>
+  <tr><td>ground_control_accel</td><td>100.0f</td></tr>
+  <tr><td>ground_friction</td><td>0.5f</td></tr>
+  <tr><td>ground_jump_impulse</td><td>13.2f</td></tr>
+  <tr><td>air_jump_impulse</td><td>12.0f</td></tr>
+  <tr><td>air_control_speed</td><td>250.0f</td></tr>
+  <tr><td>air_control_accel</td><td>1.5f</td></tr>
+  <tr><td>air_friction</td><td>0.95f</td></tr>
+  <tr><td>hook_length</td><td>380.0f</td></tr>
+  <tr><td>hook_fire_speed</td><td>80.0f</td></tr>
+  <tr><td>hook_drag_accel</td><td>3.0f</td></tr>
+  <tr><td>hook_drag_speed</td><td>15.0f</td></tr>
+  <tr><td>gravity</td><td>0.5f</td></tr>
+  <tr><td>velramp_start</td><td>550</td></tr>
+  <tr><td>velramp_range</td><td>2000</td></tr>
+  <tr><td>velramp_curvature</td><td>1.4f</td></tr>
+  <tr><td>gun_curvature</td><td>1.25f</td></tr>
+  <tr><td>gun_speed</td><td>2200.0f</td></tr>
+  <tr><td>gun_lifetime</td><td>2.0f</td></tr>
+  <tr><td>shotgun_curvature</td><td>1.25f</td></tr>
+  <tr><td>shotgun_speed</td><td>2750.0f</td></tr>
+  <tr><td>shotgun_speeddiff</td><td>0.8f</td></tr>
+  <tr><td>shotgun_lifetime</td><td>0.20f</td></tr>
+  <tr><td>grenade_curvature</td><td>7.0f</td></tr>
+  <tr><td>grenade_speed</td><td>1000.0f</td></tr>
+  <tr><td>grenade_lifetime</td><td>2.0f</td></tr>
+  <tr><td>laser_reach</td><td>800.0f</td></tr>
+  <tr><td>laser_bounce_delay</td><td>150</td></tr>
+  <tr><td>laser_bounce_num</td><td>1</td></tr>
+  <tr><td>laser_bounce_cost</td><td>0</td></tr>
+  <tr><td>laser_damage</td><td>5</td></tr>
+  <tr><td>player_collision</td><td>1</td></tr>
+  <tr><td>player_hooking</td><td>1</td></tr>
+  <tr><td>jetpack_strength</td><td>400.0f</td></tr>
+  <tr><td>shotgun_strength</td><td>10.0f</td></tr>
+  <tr><td>explosion_strength</td><td>6.0f</td></tr>
+  <tr><td>hammer_strength</td><td>1.0f</td></tr>
+</table>
+</div>
