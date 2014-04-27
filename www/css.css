@@ -56,6 +56,10 @@ html {
   display:block;
 }
 
+h1 {
+  font-size: 125%;
+}
+
 .settingscommands tr {
   border-bottom: 1px solid #cccccc;
 }
