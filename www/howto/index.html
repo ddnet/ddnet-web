@@ -1,0 +1,55 @@
+---
+layout: default
+title: How to Map - DDraceNetwork
+menu: |
+  <ul>
+    <li><a href="/#news">News</a></li>
+    <li><a href="/server/">Server&nbsp;Features</a></li>
+    <li><a href="/client/">Client&nbsp;Features</a></li>
+    <li><a href="/map/">Map&nbsp;Features</a></li>
+    <li><a href="/rules/">Mapper&nbsp;Rules</a></li>
+    <li><a href="/howto/">How&nbsp;to&nbsp;Map</a></li>
+    <li><a href="/binds/">Useful&nbsp;Binds</a></li>
+    <li><a href="/staff/">Staff</a></li>
+    <li><a href="/downloads/">Downloads</a></li>
+  </ul>
+---
+<div class="block">
+<h2 id="how-to-map">How to Map</h2>
+<ul>
+  <li><a href="http://youtu.be/xnm-Yi--ucQ">Tips for a good Map in Teeworlds</a></li>
+</ul>
+<h3>Mapping Tips by Lady Saavik</h3>
+<ol>
+  <li>Create multiple spawn points so that they can not be blocked. Don't place spawns directly on the ground for the same reason.</li>
+  <li>Don't place teleporter destination (TO) tiles on the ground, as they can make players bounce away unexpectedly. Better lift them up by one tile and set more than one tile.</li>
+  <li>Make your layers as small as possible. This makes your map faster to load for clients and use less resources on the server. Note that all game layers have the same size.</li>
+  <li>Make sure automapper works as you think. Don't turn small freeze corners into freeze tiles and make sure your walls don't have holes.</li>
+  <li>Parts should have enough space for multiple tees. Often tees don't play in groups of two!</li>
+  <li>Sometimes it makes sense to have unfreezes when you get teleported back, especially in parts where you need many tries.</li>
+  <li>Avoid using checkpoints, because it's more difficult and easier to cheat.</li>
+</ol>
+<h3>Graphics Tutorials by gB. | Kintaro*</h3>
+<ul>
+  <li><a href="http://youtu.be/SZRhZuRlHC8">How to create your own Sun</a></li>
+  <li><a href="http://youtu.be/kcevIAsLA6w">How to create a simple Background</a></li>
+  <li><a href="http://youtu.be/ZYyZxRbTDEg">How to create a Background like in Lost Story</a></li>
+  <li><a href="http://youtu.be/ohMIz7EnkmQ">How to create simple Rain</a></li>
+  <li><a href="http://youtu.be/owp_qn0z1-g">How to create Rainbow Freeze</a></li>
+</ul>
+<h3>Mapping for DDraceNetwork</h3>
+<p>If you want to use special DDraceNetwork features, map using the <a href="ddnet.zip">DDraceNetwork Client</a>, otherwise the DDRace client also works.</p>
+<p>We have some nice tiles (ddnet-tiles) by 645654 &amp; phacrum. Here's how to use them:<br/>
+<img width="15%" class="demo" alt="Demo" src="ddnet-tiles-howto.png"/>
+<img width="15%" class="demo" alt="Demo" src="ddnet-tiles-bad.png"/>
+<img width="15%" class="demo" alt="Demo" src="ddnet-tiles-good.png"/>
+</p>
+<h3>Testing your Map</h3>
+<ol>
+  <li>Download the <a href="ddnet.zip">DDraceNetwork Server</a> (and Client)</li>
+  <li>Run the included server, <strong>DDRace-Server.exe</strong> on Windows</li>
+  <li>Connect to it using the IP address <strong>localhost:8303</strong></li>
+  <li>Hit F2 to open RCON and log in with the password <strong>rcon</strong></li>
+  <li>In RCON type <strong>change_map YourMapName</strong> to load your map</li>
+  <li>If you want your server online setup port forwarding on your router</li>
+</div>

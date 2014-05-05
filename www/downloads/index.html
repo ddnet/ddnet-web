@@ -1,0 +1,81 @@
+---
+layout: default
+title: Downloads - DDraceNetwork
+menu: |
+  <ul>
+    <li><a href="/#news">News</a></li>
+    <li><a href="/server/">Server&nbsp;Features</a></li>
+    <li><a href="/client/">Client&nbsp;Features</a></li>
+    <li><a href="/map/">Map&nbsp;Features</a></li>
+    <li><a href="/rules/">Mapper&nbsp;Rules</a></li>
+    <li><a href="/howto/">How&nbsp;to&nbsp;Map</a></li>
+    <li><a href="/binds/">Useful&nbsp;Binds</a></li>
+    <li><a href="/staff/">Staff</a></li>
+    <li><a href="/downloads/">Downloads</a></li>
+  </ul>
+---
+<div class="block">
+<h2 id="downloads">Downloads</h2>
+<ul>
+  <li>2014-05-03: DDraceNetwork Client and Server 3.7.3: <a href="DDNet-3.7.3-win32.zip">Windows</a>, <a href="DDNet-3.7.3-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.7.3-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.7.3-osx.dmg">Mac OS X</a>
+  <li>2014-04-30: DDraceNetwork Client and Server 3.6: <a href="DDNet-3.6-win32.zip">Windows</a>, <a href="DDNet-3.6-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.6-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.6-osx.dmg">Mac OS X</a>
+  <li>2014-04-29: DDraceNetwork Client and Server 3.5: <a href="DDNet-3.5-win32.zip">Windows</a>, <a href="DDNet-3.5-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.5-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.5-osx.dmg">Mac OS X</a>
+  <li>2014-04-28: DDraceNetwork Client and Server 3.4: <a href="DDNet-3.4-win32.zip">Windows</a>, <a href="DDNet-3.4-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.4-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.4-osx.dmg">Mac OS X</a>
+  <li>2014-04-16: DDraceNetwork Client and Server 3.3: <a href="DDNet-3.3-win32.zip">Windows</a>, <a href="DDNet-3.3-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.3-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.3-osx.dmg">Mac OS X</a>
+  <li>2014-04-14: DDraceNetwork Client and Server 3.2: <a href="DDNet-3.2-win32.zip">Windows</a>, <a href="DDNet-3.2-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.2-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.2-osx.dmg">Mac OS X</a>
+  <li>2014-03-31: DDraceNetwork Client and Server 3.1: <a href="DDNet-3.1-win32.zip">Windows</a>, <a href="DDNet-3.1-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.1-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.1-osx.dmg">Mac OS X</a>
+  <li>2014-03-29: DDraceNetwork Client and Server 3.0: <a href="DDNet-3.0-win32.zip">Windows</a>, <a href="DDNet-3.0-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-3.0-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-3.0-osx.dmg">Mac OS X</a>
+  <li><a href="maps.zip">All DDraceNetwork Maps</a> (including configs)</li>
+  <li><a href="http://github.com/def-/teeworlds">DDraceNetwork Git Repository</a></li>
+</ul>
+<h3>Changelogs</h3>
+<ul>
+  <li><strong>DDNet 3.7</strong>:<br/>
+  <ul>
+    <li>Feature: cl_overlay_entities (0-100) instead of cl_show_entities</li>
+    <li>Feature: More colors in serverbrowser (thanks to NooBxGockeL &amp; GamerClient)</li>
+    <li>Fix: Draw player direction arrows at different positions</li>
+    <li>Fix: Tunes with dummies (by HMH)</li>
+    <li>Fix: Better switching with dummy</li>
+  </ul>
+  <li><strong>DDNet 3.6</strong>:<br/>
+  <ul>
+    <li>Feature: Inputs always work in freeze (on any DDRace server)</li>
+    <li>Feature: Hammerfly with dummy tee (more accurate now)</li>
+    <li>Feature: Dummy tee (thanks to //toast and Monsta, more stable now)</li>
+    <li>Feature: Show key presses (by unsigned char*)</li>
+    <li>Feature: Auto-Updater (thanks to unsigned char*)</li>
+  </ul>
+  <li><strong>DDNet 3.2</strong>:<br/>
+  <ul>
+    <li>Feature: Jetpack prediction</li>
+    <li>Feature: More tunings for tune zones (jetpack_strength, hammer_strength, shotgun_strength, explosion_strength)</li>
+    <li>Feature: Better team differentiation ingame (colored nameplates and more transparency)</li>
+    <li>Feature: Add cl_show_other_hook_coll</li>
+    <li>Feature: Add sv_teleport_hold_hook</li>
+    <li>Fix: Timeouts, disconnects and game leaves no longer kill your entire locked team</li>
+    <li>Fix: Players don't disappear without 64 player client</li>
+    <li>Fix: hook collision line of other players works on yourself when you're paused</li>
+    <li>Fix: Show the server you're connected to in the server browser too</li>
+    <li>Fix: Remove projectiles when player dies</li>
+  </ul>
+  <li><strong>DDNet 3.0</strong>:<br/>
+  <ul>
+    <li>Feature: Tune Zones allow you to have different physics in each part of map (by HMH) (<a href="tunezones/">Tutorial</a>, Example <a href="gravity.map">gravity.map</a>, <a href="gravity.cfg">gravity.cfg</a> (put it into data/maps right where your DDNet-Server binary is))</li>
+    <li>Feature: Prediction for stoppers and speedups (by v)</li>
+    <li>Feature: When a server has more than 16 players, the first 16 voters count</li>
+    <li>Feature: Mapres preview in editor</li>
+    <li>Feature: Show unpredicted shadow tee</li>
+    <li>Feature: Optionally don't show Ninja</li>
+    <li>Feature: New skins</li>
+    <li>Fix: Mac OS X version should work without extra libraries</li>
+    <li>Fix: Doors are properly reset in locked teams</li>
+    <li>Fix: Sounds settings make sense</li>
+    <li>Fix: Editor copy &amp; paste is less buggy (by HMH)</li>
+    <li>Fix: No more annoying "player paused" and "player unpaused" messages</li>
+    <li>Fix: Newly joined players see ongoing votes</li>
+    <li>Fix: Crash on strange user inputs in console (by HMH)</li>
+    <li>Fix: Crash on screenshot</li>
+  </ul>
+</ul>
+</div>
