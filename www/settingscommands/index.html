@@ -237,6 +237,7 @@ menu: |
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
   <tr><td>cl_version_server</td><td>Server to use to check for new versions</td><td>"version.teeworlds.com"</td></tr>
   <tr><td>cl_ddnet_version_server</td><td>Server to use to check for new ddnet versions</td><td>"version.ddnet.tw"</td></tr>
+  <tr><td>cl_ddnet_update_server</td><td>Server to use to update new ddnet versions</td><td>"update.ddnet.tw"</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>""</td></tr>
   <tr><td>cl_show_special_skins</td><td>Show special skins in UI</td><td>0</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
@@ -252,7 +253,18 @@ menu: |
   <tr><td>ui_color_sat</td><td>Interface color saturation</td><td>70</td></tr>
   <tr><td>ui_color_lht</td><td>Interface color lightness</td><td>175</td></tr>
   <tr><td>ui_color_alpha</td><td>Interface alpha</td><td>228</td></tr>
+  <tr><td>ui_colorize_ping</td><td>Highlight ping</td><td>1</td></tr>
+  <tr><td>ui_colorize_gametype</td><td>Highlight gametype</td><td>1</td></tr>
   <tr><td>gfx_noclip</td><td>Disable clipping</td><td>0</td></tr>
+  <tr><td>dummy_name</td><td>Name of the Dummy</td><td>"brainless tee"</td></tr>
+  <tr><td>dummy_clan</td><td>Clan of the Dummy</td><td>""</td></tr>
+  <tr><td>dummy_country</td><td>Country of the Dummy</td><td>-1</td></tr>
+  <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
+  <tr><td>dummy_color_body</td><td>Dummy body color</td><td>65408</td></tr>
+  <tr><td>dummy_color_feet</td><td>Dummy feet color</td><td>65408</td></tr>
+  <tr><td>dummy_skin</td><td>Dummy skin</td><td>"default"</td></tr>
+  <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td></tr>
+  <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td></tr>
   <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>"nameless tee"</td></tr>
@@ -298,6 +310,7 @@ menu: |
   <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
   <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td></tr>
   <tr><td>snd_chat</td><td>Enable regular chat sound</td><td>1</td></tr>
+  <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
   <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
   <tr><td>snd_highlight</td><td>Enable highlighted chat sound</td><td>1</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
@@ -336,7 +349,7 @@ menu: |
   <tr><td>cl_race_save_ghost</td><td>Save ghost</td><td>1</td></tr>
   <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard </td><td>1</td></tr>
   <tr><td>cl_show_others</td><td>Show players in other teams</td><td>1</td></tr>
-  <tr><td>cl_show_entities</td><td>Cheat to show game tiles</td><td>0</td></tr>
+  <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td></tr>
   <tr><td>cl_show_quads</td><td>Show quads</td><td>1</td></tr>
   <tr><td>cl_background_hue</td><td>Background color hue</td><td>0</td></tr>
   <tr><td>cl_background_sat</td><td>Background color saturation</td><td>0</td></tr>
@@ -348,6 +361,9 @@ menu: |
   <tr><td>cl_predict_ddrace</td><td>Predict some DDRace tiles</td><td>1</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_other_hook_coll</td><td>Show other players' hook collision line</td><td>1</td></tr>
+  <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
+  <tr><td>cl_show_direction</td><td>Show tee direction</td><td>1</td></tr>
+  <tr><td>cl_auto_update</td><td>Auto-Update</td><td>1</td></tr>
 </table>
 </div>
 <div class="block">
@@ -396,6 +412,8 @@ menu: |
   <tr><td>remove_friend</td><td>Remove a friend</td></tr>
   <tr><td>team</td><td>Switch team</td></tr>
   <tr><td>kill</td><td>Kill yourself</td></tr>
+  <tr><td>dummy_connect</td><td>connect dummy</td></tr>
+  <tr><td>dummy_disconnect</td><td>disconnect dummy</td></tr>
   <tr><td>quit</td><td>Quit Teeworlds</td></tr>
   <tr><td>exit</td><td>Quit Teeworlds</td></tr>
   <tr><td>minimize</td><td>Minimize Teeworlds</td></tr>
@@ -418,11 +436,11 @@ menu: |
 <table class="settingscommands">
   <tr><th>Tuning</th><th>Default</th></tr>
   <tr><td>ground_control_speed</td><td>10.0</td></tr>
-  <tr><td>ground_control_accel</td><td>100.0 / TicksPerSecond</td></tr>
+  <tr><td>ground_control_accel</td><td>100.0f / TicksPerSecond</td></tr>
   <tr><td>ground_friction</td><td>0.5</td></tr>
   <tr><td>ground_jump_impulse</td><td>13.2</td></tr>
   <tr><td>air_jump_impulse</td><td>12.0</td></tr>
-  <tr><td>air_control_speed</td><td>250.0 / TicksPerSecond</td></tr>
+  <tr><td>air_control_speed</td><td>250.0f / TicksPerSecond</td></tr>
   <tr><td>air_control_accel</td><td>1.5</td></tr>
   <tr><td>air_friction</td><td>0.95</td></tr>
   <tr><td>hook_length</td><td>380.0</td></tr>
