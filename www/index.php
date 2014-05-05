@@ -62,6 +62,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/">Official DDraceNetwork Forum!</a></li>
   <li><strong><a href="/tournament/15/">"Ice Cave 2" Tournament</a></strong> (moderate difficulty) on Sunday, May 4 at 19:00 CEST (<a href="https://www.teeworlds.com/forum/viewtopic.php?pid=109638#p109638">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&postID=171700#post171700">German Info</a>)</li>
   <li><strong>DDNet 3.7</strong>:<br/>
   <ul>
