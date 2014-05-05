@@ -65,18 +65,27 @@ if ($user_os == 'win') {
   <li><strong><a href="/tournament/15/">"Ice Cave 2" Tournament</a></strong> (moderate difficulty) on Sunday, May 4 at 19:00 CEST (<a href="https://www.teeworlds.com/forum/viewtopic.php?pid=109638#p109638">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&postID=171700#post171700">German Info</a>)</li>
   <li><strong>DDNet 3.7</strong>:<br/>
   <ul>
-    <li>Feature: cl_overlay_entities (0-100) instead of cl_show_entities</li>
-    <li>Feature: More colors in serverbrowser (thanks to NooBxGockeL &amp; GamerClient)</li>
+    <li>Feature: cl_overlay_entities (0-100) instead of cl_show_entities<br/>
+    <img class="demo" src="/client/overlayentities.png"/></li>
+    <li>Feature: More colors in serverbrowser (thanks to NooBxGockeL &amp; GamerClient)<br/>
+    <img class="demo" src="/client/scoreboard2.png"/></li>
     <li>Fix: Draw player direction arrows at different positions</li>
     <li>Fix: Tunes with dummies (by HMH)</li>
     <li>Fix: Better switching with dummy</li>
   </ul>
   <li><strong>DDNet 3.6</strong>:<br/>
   <ul>
-    <li>Feature: Inputs always work in freeze (on any DDRace server)</li>
-    <li>Feature: Hammerfly with dummy tee (more accurate now)</li>
+    <li>Feature: Inputs always work in freeze (on any DDRace server)<br/>
+    <video class="fullvideo" controls>
+      <source src="/map/freezeinput.mp4" type="video/mp4">
+      <source src="/map/freezeinput.ogg" type="video/ogg">
+    </video></li>
+    </li>
+    <li>Feature: Hammerfly with dummy tee (more accurate now)<br/>
+    <img class="demo" src="/client/dummyhammer.png"/></li>
     <li>Feature: Dummy tee (thanks to //toast and Monsta, more stable now)</li>
-    <li>Feature: Show key presses (by unsigned char*)</li>
+    <li>Feature: Show key presses (by unsigned char*)<br/>
+    <img class="demo" src="/client/showkeypresses.png"/></li>
     <li>Feature: Auto-Updater (thanks to unsigned char*)</li>
   </ul>
   <li>New logo thanks to Landil and Saavik</li>
