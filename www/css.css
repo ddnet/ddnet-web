@@ -56,6 +56,12 @@ html {
   display:block;
 }
 
+.download-button {
+  float: left;
+  height: 2.5em;
+  margin-right: 0.5em;
+}
+
 h1 {
   font-size: 125%;
 }
@@ -226,6 +232,10 @@ td {
 
 br {
   clear: both;
+}
+
+.download br {
+  clear: none;
 }
 
 .screenshot {
