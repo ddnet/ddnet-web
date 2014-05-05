@@ -1,16 +1,40 @@
-.table { background: #ffffff; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; min-width: 55em; }
+.table { background: #ffffff; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; margin-left: 0; margin-right: 0; }
 .table th, .table td { text-align: center; }
 .progress { margin-bottom: 0; }
 .progress-bar { color: #000; }
-#cpu, #ram, #hdd { min-width: 35px; }
 #online6, #status6			{ display:none; visibility:hidden; }
 #host , tr td:nth-child(5)			{ display:none; visibility:hidden; }
 #online4, #status4 {max-width: 1.5em }
-#name { max-width: 8em; text-align: left; }
-#type { max-width: 4em; text-align: right; }
-#location { max-width: 3em; padding-left: 0.5em; text-align: left; }
-#uptime { max-width: 3em; text-align: right; }
+#name { max-width: 6.5em; text-align: left; }
+#type { max-width: 4.5em; text-align: right; }
+#location { max-width: 3.5em; padding-left: 0.5em; text-align: left; }
+#uptime { max-width: 3.5em; text-align: right; }
 #load { max-width: 2em }
 #network { max-width: 3.5em }
 thead #name, thead #type, thead #uptime, thead #location { text-align: center; }
 .expandRow > td { padding: 0 !important; border-top: 0px !important; }
+
+@media (max-width: 930px) {
+#hdd { display:none; visibility:hidden; }
+}
+@media (max-width: 830px) {
+#uptime { display:none; visibility:hidden; }
+}
+@media (max-width: 730px) {
+#memory, #ram { display:none; visibility:hidden; }
+}
+@media (max-width: 640px) {
+#load { display:none; visibility:hidden; }
+}
+@media (max-width: 590px) {
+#cpu { display:none; visibility:hidden; }
+}
+@media (max-width: 530px) {
+#location { display:none; visibility:hidden; }
+}
+@media (max-width: 450px) {
+#type { display:none; visibility:hidden; }
+}
+@media (max-width: 340px) {
+#network { display:none; visibility:hidden; }
+}

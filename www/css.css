@@ -32,6 +32,10 @@ html {
   margin: 0 0 1em 0;
 }
 
+.block h2, .block h3 {
+  text-align: left;
+}
+
 .longblock {
   background-color: #ffffff;
   box-shadow: 0 0 8px rgba(38, 40, 42, 0.45), 0 0 4px #303234 inset;
