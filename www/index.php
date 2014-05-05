@@ -46,15 +46,15 @@ function getOS() {
 $user_os = getOS();
 
 if ($user_os == 'win') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-win32.zip">Download DDNet Client &amp; Server 3.7.3 for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-win32.zip">Download DDraceNetwork Client &amp; Server 3.7.3 for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'mac') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-osx.dmg">Download DDNet Client &amp; Server 3.7.3 for Mac OS X</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-osx.dmg">Download DDraceNetwork Client &amp; Server 3.7.3 for Mac OS X</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'lin32') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86.tar.gz">Download DDNet Client &amp; Server 3.7.3 for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86.tar.gz">Download DDraceNetwork Client &amp; Server 3.7.3 for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'lin64') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86_64.tar.gz">Download DDNet Client &amp; Server 3.7.3 for Linux x86_64</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86_64.tar.gz">Download DDraceNetwork Client &amp; Server 3.7.3 for Linux x86_64</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } else {
-  print '<p class="download"><span class="big"><a href="/downloads/">Download DDNet Client &amp; Server 3.7.3</a></span></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server 3.7.3</a></span></p>';
 }
 ?>
 </div>
