@@ -1,0 +1,85 @@
+---
+layout: default
+title: DDraceNetwork
+menu: |
+  <ul>
+    <li><a href="/#news">News</a></li>
+    <li><a href="/server/">Server&nbsp;Features</a></li>
+    <li><a href="/client/">Client&nbsp;Features</a></li>
+    <li><a href="/map/">Map&nbsp;Features</a></li>
+    <li><a href="/rules/">Mapper&nbsp;Rules</a></li>
+    <li><a href="/howto/">How&nbsp;to&nbsp;Map</a></li>
+    <li><a href="/binds/">Useful&nbsp;Binds</a></li>
+    <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
+    <li><a href="/staff/">Staff</a></li>
+    <li><a href="/downloads/">Downloads</a></li>
+  </ul>
+---
+<div class="block">
+<h2>DDRace Servers and much more!</h2>
+<p>
+DDraceNetwork is a special version of DDRace, a <a href="http://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China and Chile. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
+</p>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/ApCo64AnIuI?autoplay=0&hd=1"></iframe></div></div>
+<div class="startimages"><img class="demo" alt="Demo" src="tower.png"/></li></div>
+<br/>
+<div class="download"><img class="download-button" src="download.svg"/>
+<?php
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+function getOS() {
+  global $user_agent;
+  $os_platform = "unk";
+
+  if (preg_match('/windows/i', $user_agent))
+    $os_platform = 'win';
+  elseif (preg_match('/linux.*x86_64/i', $user_agent))
+    $os_platform = 'lin64';
+  elseif (preg_match('/linux.*i686/i', $user_agent))
+    $os_platform = 'lin32';
+  elseif (preg_match('/macintosh|mac os/i', $user_agent))
+    $os_platform = 'mac';
+
+  return $os_platform;
+}
+
+$user_os = getOS();
+
+if ($user_os == 'win') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-win32.zip">Download DDNet Client &amp; Server 3.7.3 for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+} elseif ($user_os == 'mac') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-osx.dmg">Download DDNet Client &amp; Server 3.7.3 for Mac OS X</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+} elseif ($user_os == 'lin32') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86.tar.gz">Download DDNet Client &amp; Server 3.7.3 for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+} elseif ($user_os == 'lin64') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86_64.tar.gz">Download DDNet Client &amp; Server 3.7.3 for Linux x86_64</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+} else {
+  print '<p class="download"><span class="big"><a href="/downloads/">Download DDNet Client &amp; Server 3.7.3</a></span></p>';
+}
+?>
+</div>
+</div>
+<div class="block">
+<h2 id="news">News</h2>
+<ul>
+  <li><strong><a href="/tournament/15/">"Ice Cave 2" Tournament</a></strong> (moderate difficulty) on Sunday, May 4 at 19:00 CEST (<a href="https://www.teeworlds.com/forum/viewtopic.php?pid=109638#p109638">English Info</a>, <a href="http://teeworlds-friends.de/Forum/index.php?page=Thread&postID=171700#post171700">German Info</a>)</li>
+  <li><strong>DDNet 3.7</strong>:<br/>
+  <ul>
+    <li>Feature: cl_overlay_entities (0-100) instead of cl_show_entities</li>
+    <li>Feature: More colors in serverbrowser (thanks to NooBxGockeL &amp; GamerClient)</li>
+    <li>Fix: Draw player direction arrows at different positions</li>
+    <li>Fix: Tunes with dummies (by HMH)</li>
+    <li>Fix: Better switching with dummy</li>
+  </ul>
+  <li><strong>DDNet 3.6</strong>:<br/>
+  <ul>
+    <li>Feature: Inputs always work in freeze (on any DDRace server)</li>
+    <li>Feature: Hammerfly with dummy tee (more accurate now)</li>
+    <li>Feature: Dummy tee (thanks to //toast and Monsta, more stable now)</li>
+    <li>Feature: Show key presses (by unsigned char*)</li>
+    <li>Feature: Auto-Updater (thanks to unsigned char*)</li>
+  </ul>
+  <li>New logo thanks to Landil and Saavik</li>
+  <li><a href="http://inspectors.ddnet.tw/">The Inspectors</a><br/>
+</ul>
+</div>
