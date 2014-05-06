@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+{META}
+<title><!-- IF UNREAD_NOTIFICATIONS_COUNT -->({UNREAD_NOTIFICATIONS_COUNT}) <!-- ENDIF --><!-- IF not S_VIEWTOPIC and not S_VIEWFORUM -->{SITENAME} - <!-- ENDIF --><!-- IF S_IN_MCP -->{L_MCP} - <!-- ELSEIF S_IN_UCP -->{L_UCP} - <!-- ENDIF -->{PAGE_TITLE}<!-- IF S_VIEWTOPIC or S_VIEWFORUM --> - {SITENAME}<!-- ENDIF --></title>
+
+<link rel="stylesheet" type="text/css" href="//ddnet.tw/css.css" />
+<link rel="apple-touch-icon" sizes="57x57" href="//ddnet.tw/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="//ddnet.tw/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="//ddnet.tw/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//ddnet.tw/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="//ddnet.tw/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="//ddnet.tw/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="//ddnet.tw/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="//ddnet.tw/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="//ddnet.tw/favicon-196x196.png" sizes="196x196">
+<link rel="icon" type="image/png" href="//ddnet.tw/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="//ddnet.tw/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="//ddnet.tw/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="//ddnet.tw/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="msapplication-TileImage" content="//ddnet.tw/mstile-144x144.png">
+<meta name="viewport" content="width=device-width" />
+
+<!-- IF S_ENABLE_FEEDS -->
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+<!-- ENDIF -->
+
+<!--
+	phpBB style name: prosilver
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<link href="{T_THEME_PATH}/print.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<!-- IF S_ALLOW_CDN --><link href="//fonts.googleapis.com/css?family=Open+Sans:600&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,greek,vietnamese" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF -->
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+<link href="{T_STYLESHEET_LANG_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+<link href="{T_THEME_PATH}/responsive.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="only screen and (max-width: 1099px), only screen and (max-device-width: 1099px)" />
+
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+	<link href="{T_THEME_PATH}/bidi.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+<!-- IF S_PLUPLOAD -->
+	<link href="{T_THEME_PATH}/plupload.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+<!--[if lte IE 8]>
+	<link href="{T_THEME_PATH}/tweaks.css?assets_version={T_ASSETS_VERSION}" rel="stylesheet" type="text/css" media="screen, projection" />
+<![endif]-->
+
+<!-- EVENT overall_header_head_append -->
+
+{$STYLESHEETS}
+
+</head>
+<body id="phpbb" class="nojs section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+<article>
+
+<!-- EVENT overall_header_body_before -->
+
+<div class="title"><h1><a href="//ddnet.tw"><img class="logobig" alt="DDraceNetwork" src="//ddnet.tw/ddnet2.svg"/><img class="logosmall" alt="DDraceNetwork" src="//ddnet.tw/ddnet.svg"/></a></h1></div>
+<menu class="contentleft">
+<ul class="big">
+  <li><a href="//ddnet.tw/status/">Status</a></li>
+  <li><a href="//ddnet.tw/ranks/">Ranks</a></li>
+  <li><a href="//ddnet.tw/tournament/">Tournaments</a></li>
+  <li><a href="//forum.ddnet.tw/">Forum</a></li>
+</ul>
+</menu>
+<section>
+<div class="block">
+
+<div id="wrap">
+	<a id="top" accesskey="t"></a>
+	<div id="page-header">
+		<div class="navbar">
+		<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+			<div id="search-box">
+				<form action="{U_SEARCH}" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="inputbox search" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}" />
+					<input class="button2" value="{L_SEARCH}" type="submit" /><br />
+					<a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a> {S_SEARCH_HIDDEN_FIELDS}
+				</fieldset>
+				</form>
+			</div>
+		<!-- ENDIF -->
+
+			<div class="inner">
+
+			<ul class="linklist navlinks">
+				<!-- DEFINE $MICRODATA = ' itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""' -->
+				<li class="small-icon icon-home breadcrumbs"><!-- IF U_SITE_HOME --><span class="crumb"><a href="{U_SITE_HOME}"{$MICRODATA}>{L_SITE_HOME}</a> <strong>&#8249;</strong></span> <!-- ENDIF -->
+					<span class="crumb"><a href="{U_INDEX}" accesskey="h"{$MICRODATA}>{L_INDEX}</a></span> 
+					<!-- BEGIN navlinks --> <span class="crumb"><strong>&#8249;</strong> <a href="{navlinks.U_VIEW_FORUM}"{$MICRODATA}>{navlinks.FORUM_NAME}</a></span><!-- END navlinks -->
+					<!-- EVENT overall_header_breadcrumb_append -->
+				</li>
+
+				<!-- IF U_EMAIL_TOPIC --><li class="rightside"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_EMAIL_PM --><li class="rightside"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
+				<!-- IF U_PRINT_TOPIC --><li class="rightside"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_PRINT_PM --><li class="rightside"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
+				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH --><li class="responsive-search rightside" style="display: none;"><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH}</a></li><!-- ENDIF -->
+			</ul>
+
+			<ul class="linklist bulletin">
+			<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+				<!-- IF S_NOTIFICATIONS_DISPLAY -->
+				<li class="small-icon icon-notification" data-skip-responsive="true">
+					<a href="{U_VIEW_ALL_NOTIFICATIONS}" id="notification_list_button"><span>{L_NOTIFICATIONS} [</span><strong>{NOTIFICATIONS_COUNT}</strong><span>]</span></a>
+					<div id="notification_list" class="dropdown dropdown-extended notification_list">
+						<div class="pointer"><div class="pointer-inner"></div></div>
+						<div class="dropdown-contents">
+							<div class="header">
+								{L_NOTIFICATIONS}
+								<span class="header_settings">
+									<a href="{U_NOTIFICATION_SETTINGS}">{L_SETTINGS}</a>
+									<!-- IF NOTIFICATIONS_COUNT -->
+										<span id="mark_all_notifications"> &bull; <a href="{U_MARK_ALL_NOTIFICATIONS}" data-ajax="notification.mark_all_read">{L_MARK_ALL_READ}</a></span>
+									<!-- ENDIF -->
+								</span>
+							</div>
+
+							<ul>
+								<!-- IF not .notifications -->
+									<li>
+										{L_NO_NOTIFICATIONS}
+									</li>
+								<!-- ENDIF -->
+								<!-- BEGIN notifications -->
+									<li class="<!-- IF notifications.UNREAD --> bg2<!-- ENDIF -->">
+										<!-- IF notifications.URL -->
+											<a href="<!-- IF notifications.UNREAD -->{notifications.U_MARK_READ}" data-real-url="{notifications.URL}<!-- ELSE -->{notifications.URL}<!-- ENDIF -->">
+										<!-- ENDIF -->
+											<!-- IF notifications.AVATAR -->{notifications.AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF -->
+											<div class="notification_text">
+												<p>{notifications.FORMATTED_TITLE}</p>
+												<p>&raquo; {notifications.TIME}</p>
+											</div>
+										<!-- IF notifications.URL --></a><!-- ENDIF -->
+										<!-- IF notifications.UNREAD -->
+											<a href="{notifications.U_MARK_READ}" class="mark_read icon-mark" data-ajax="notification.mark_read" title="{L_MARK_READ}"></a>
+										<!-- ENDIF -->
+									</li>
+					   			<!-- END notifications -->
+							</ul>
+
+							<div class="footer">
+								<a href="{U_VIEW_ALL_NOTIFICATIONS}"><span>{L_SEE_ALL}</span></a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<!-- ENDIF -->
+				<!-- IF S_DISPLAY_PM -->
+					<li class="small-icon icon-pm">
+						<a href="{U_PRIVATEMSGS}"><span>{L_PRIVATE_MESSAGES} [</span><strong>{PRIVATE_MESSAGE_COUNT}</strong><span>]</span></a>
+					</li>
+				<!-- ENDIF -->
+				<li class="small-icon icon-ucp">
+					<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a>
+				</li>
+				<!-- IF S_DISPLAY_SEARCH -->
+					<li class="icon-search-self"><a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a></li>
+				<!-- ENDIF -->
+				<!-- IF U_RESTORE_PERMISSIONS -->
+					<li class="icon-restore-permissions"><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
+				<!-- ENDIF -->
+			<!-- ENDIF -->
+
+				<!-- EVENT overall_header_navigation_append -->
+				<!-- IF not S_IS_BOT -->
+					<li class="small-icon icon-logout rightside no-bulletin"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
+					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="small-icon icon-register rightside no-bulletin"><a href="{U_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+					<!-- IF S_DISPLAY_MEMBERLIST --><li class="small-icon icon-members rightside no-bulletin"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+				<!-- ENDIF -->
+				<li class="small-icon icon-faq rightside no-bulletin"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+				<!-- EVENT overall_header_navigation_prepend -->
+			</ul>
+			</div>
+		</div>
+
+	</div>
+
+	<a id="start_here"></a>
+	<div id="page-body">
+		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+		<div id="information" class="rules">
+			<div class="inner">
+				<strong>{L_INFORMATION}{L_COLON}</strong> {L_BOARD_DISABLED}
+			</div>
+		</div>
+		<!-- ENDIF -->
+
+		<!-- EVENT overall_header_content_before -->
