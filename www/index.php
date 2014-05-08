@@ -66,7 +66,8 @@ if ($user_os == 'win') {
   <li><strong>DDNet 3.8</strong>:<br/>
   <ul>
     <li>Feature: Guns and draggers work for each player in a solo part individually</li>
-    <li>Feature: Old gun holding position</li>
+    <li>Feature: Old gun holding position<br/>
+    <img class="demo" src="client/oldgun.png" /></li>
     <li>Fix: Still receive dummy whispers and team messages</li>
     <li>Fix: Dummy should behave better</li>
     <li>Fix: Key presses more visible</li>
