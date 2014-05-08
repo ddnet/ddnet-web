@@ -44,17 +44,18 @@ function getOS() {
 }
 
 $user_os = getOS();
+$version = '3.8';
 
 if ($user_os == 'win') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-win32.zip">Download DDraceNetwork Client &amp; Server 3.7.3 for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'mac') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-osx.dmg">Download DDraceNetwork Client &amp; Server 3.7.3 for Mac OS X</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-osx.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for Mac OS X</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'lin32') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86.tar.gz">Download DDraceNetwork Client &amp; Server 3.7.3 for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-linux_x86.tar.gz">Download DDraceNetwork Client &amp; Server ' . $version . ' for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'lin64') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-3.7.3-linux_x86_64.tar.gz">Download DDraceNetwork Client &amp; Server 3.7.3 for Linux x86_64</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-linux_x86_64.tar.gz">Download DDraceNetwork Client &amp; Server ' . $version . ' for Linux x86_64</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } else {
-  print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server 3.7.3</a></span></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span></p>';
 }
 ?>
 </div>
@@ -62,6 +63,14 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 3.8</strong>:<br/>
+  <ul>
+    <li>Feature: Guns and draggers work for each player in a solo part individually</li>
+    <li>Feature: Old gun holding position</li>
+    <li>Fix: Still receive dummy whispers and team messages</li>
+    <li>Fix: Dummy should behave better</li>
+    <li>Fix: Key presses more visible</li>
+  </ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=25">Call for Testers</a></strong></li>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=5">Quick Tournament #10: Novice</a></strong> on Sunday, May 11 at 19:00 CEST</li>
   <li><a href="http://forum.ddnet.tw/">Official DDraceNetwork Forum!</a></li>
