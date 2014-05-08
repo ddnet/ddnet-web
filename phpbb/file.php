@@ -276,7 +276,7 @@ else if ($download_id)
 		}
 	}
 
-	if ($post_row['forum_id'] == 9 && $attachment['extension'] == 'map' &&
+	if ($post_row['forum_id'] == 9 && ($attachment['extension'] == 'map' || $attachment['extension'] == 'cfg') &&
 		($user->data['group_id'] != 5 && $user->data['group_id'] != 4 && $user->data['group_id'] != 8))
 	{
 		send_status_line(403, 'Forbidden');
