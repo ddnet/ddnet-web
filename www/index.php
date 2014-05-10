@@ -44,7 +44,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '3.8.2';
+$version = '3.8.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -65,6 +65,7 @@ if ($user_os == 'win') {
 <ul>
   <li><strong>DDNet 3.8</strong>:<br/>
   <ul>
+    <li>Feature: Separate inputs for dummy and player</li>
     <li>Feature: Guns and draggers work for each player in a solo part individually</li>
     <li>Feature: Old gun holding position<br/>
     <img class="demo" src="client/oldgun.png" /></li>
