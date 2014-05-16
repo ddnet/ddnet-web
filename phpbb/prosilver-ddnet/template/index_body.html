@@ -47,9 +47,12 @@
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
 	<!-- IF U_VIEWONLINE --><h3><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h3><!-- ELSE --><h3>{L_WHO_IS_ONLINE}</h3><!-- ENDIF -->
-	<p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
+	<p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br /> <br />{LOGGED_IN_USER_LIST}
 	<!-- IF LEGEND --><br /><em>{L_LEGEND}{L_COLON} {LEGEND}</em><!-- ENDIF --></p>
 <!-- ENDIF -->
+
+	<h3>Chat (IRC)</h3>
+	<p>There's an IRC channel <a href="irc://irc.quakenet.org/ddnet">#ddnet</a> on Quakenet (<a href="http://webchat.quakenet.org/?channels=ddnet&uio=d4">Webchat</a>) if you feel like chatting outside of Teeworlds.</p>
 
 <!-- IF S_DISPLAY_BIRTHDAY_LIST -->
 	<h3>{L_BIRTHDAYS}</h3>

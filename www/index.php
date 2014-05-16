@@ -44,7 +44,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '3.8.3';
+$version = '3.9';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -63,6 +63,16 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>After a disk failure German server is back</strong><br/>The records and forum entries from 2014-05-15 were unfortunately lost</li>
+  <li>New Chilean server</li>
+  <li><strong>DDNet 3.9</strong>:<br/>
+  <ul>
+    <li>Fix: gfx_threaded_old 0 and gfx_asyncrender_old 0 for old computers</li>
+    <li>Fix: Image selection popups always visible in editor</li>
+    <li>Fix: Info with grid and animations works in editor</li>
+    <li>Fix: Dummy only connects to server when we're connected too</li>
+  </ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=9&t=49&p=215">The Great Testing Guide by Lady Saavik & deen</a></li>
   <li><strong>DDNet 3.8</strong>:<br/>
   <ul>
     <li>Feature: Separate inputs for dummy and player</li>
@@ -74,7 +84,7 @@ if ($user_os == 'win') {
     <li>Fix: Key presses more visible</li>
   </ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=25">Call for Testers</a></strong></li>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=5">Quick Tournament #10: Novice</a></strong> on Sunday, May 11 at 19:00 CEST</li>
+  <li><strong><a href="/tournament/16/">Quick Tournament #10: Novice</a></strong> on Sunday, May 11 at 19:00 CEST</li>
   <li><a href="http://forum.ddnet.tw/">Official DDraceNetwork Forum!</a></li>
   <li><strong>DDNet 3.7</strong>:<br/>
   <ul>
