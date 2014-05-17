@@ -44,7 +44,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '3.9';
+$version = '3.9.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -67,6 +67,12 @@ if ($user_os == 'win') {
   <li>New Chilean server</li>
   <li><strong>DDNet 3.9</strong>:<br/>
   <ul>
+    <li>Feature: Autoupdater asks before updating</li>
+    <li>Feature: Autoupdater doesn't hang when server is unreachable</li>
+    <li>Feature: Show in editor if tele or switch number are used already</li>
+    <li>Feature: Choose person to spectate before spectating (spectate -1; say /pause)</li>
+    <li>Fix: Joining with dummy should always work</li>
+    <li>Fix: 64 player servers should show up properly in serverbrowser</li>
     <li>Fix: gfx_threaded_old 0 and gfx_asyncrender_old 0 for old computers</li>
     <li>Fix: Image selection popups always visible in editor</li>
     <li>Fix: Info with grid and animations works in editor</li>
