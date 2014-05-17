@@ -442,6 +442,7 @@ menu {
 .startimages {
   float: right;
   width: 28%;
+  margin-top: 0.8em;
 }
 }
 
@@ -500,8 +501,10 @@ section {
 }
 
 .startimages {
-  display: none;
-}
+  float: left;
+  margin: 0.5em;
+  width: 31%;
+  min-width: 20em;
 }
 
 #mainnav {

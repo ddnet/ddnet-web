@@ -21,7 +21,9 @@ menu: |
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China and Chile. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
 <div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/ApCo64AnIuI?autoplay=0&hd=1"></iframe></div></div>
-<div class="startimages"><img class="demo" alt="Demo" src="tower.png"/></li></div>
+<div class="startimages"><img class="demo" alt="Demo" src="ddnetusa.png"/></div>
+<div class="startimages"><img class="demo" alt="Demo" src="bus.png"/></div>
+<div class="startimages"><img class="demo" alt="Demo" src="ddnetchl.png"/></div>
 <br/>
 <div class="download"><img class="download-button" src="download.svg"/>
 <?php
@@ -44,7 +46,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '3.9.1';
+$version = '3.9.2';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
