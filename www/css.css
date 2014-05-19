@@ -360,6 +360,10 @@ br {
   width: 49%;
 }
 
+.content img {
+  max-width: 100%;
+}
+
 @media (min-width: 1100px) and (min-height: 710px) {
 article {
   margin: 0 auto;

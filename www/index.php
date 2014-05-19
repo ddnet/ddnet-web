@@ -65,7 +65,8 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong>After a disk failure German server is back</strong><br/>The records and forum entries from 2014-05-15 were unfortunately lost</li>
+  <li>Persian server is back</li>
+  <li><strong>After a disk failure German server is back</strong><br/>The records and forum entries from 2014-05-15 were unfortunately lost<br/><strong>Update: Records have been restored</strong></li>
   <li>New Chilean server</li>
   <li><strong>DDNet 3.9</strong>:<br/>
   <ul>
