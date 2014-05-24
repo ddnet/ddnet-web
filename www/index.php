@@ -11,16 +11,16 @@ menu: |
     <li><a href="/howto/">How&nbsp;to&nbsp;Map</a></li>
     <li><a href="/binds/">Useful&nbsp;Binds</a></li>
     <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
-    <li><a href="/staff/">Staff</a></li>
+    <li><a href="/staff/">Staff&nbsp;&amp;&nbsp;Contact</a></li>
     <li><a href="/downloads/">Downloads</a></li>
   </ul>
 ---
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
 <p>
-DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China and Chile. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
+DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/ApCo64AnIuI?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/6tui9XJxOdg?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="ddnetusa.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="bus.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="ddnetchl.png"/></div>
@@ -46,7 +46,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '3.9.2';
+$version = '3.9.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -65,6 +65,14 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=89">Quick Tournament #11: Brutal Solo Jetpack</a></strong> on Sunday, May 25 at 19:00 CEST</li>
+  <li>New servers in South Africa thanks to <a href="/players/goo/">goo</a>, <a href="/players/lordtheuns/">lordtheuns</a>, Lexy with hosting sponsored by Afrihost! All DDNet locations now:<br/>
+    <img class="demo" src="/locations.png" /></li>
+  <li>How to hookfly with dummy: Hold the keys for hook and run and switch. Use hammerfly toggle key to make your dummy hook and stop hooking:<br/>
+    <video class="fullvideo" controls>
+      <source src="/client/dummyhookfly.mp4" type="video/mp4">
+      <source src="/client/dummyhookfly.ogg" type="video/ogg">
+    </video></li>
   <li>Persian server is back</li>
   <li><strong>After a disk failure German server is back</strong><br/>The records and forum entries from 2014-05-15 were unfortunately lost<br/><strong>Update: Records have been restored</strong></li>
   <li>New Chilean server</li>
@@ -109,8 +117,8 @@ if ($user_os == 'win') {
   <ul>
     <li>Feature: Inputs always work in freeze (on any DDRace server)<br/>
     <video class="fullvideo" controls>
-      <source src="/map/freezeinput.mp4" type="video/mp4">
-      <source src="/map/freezeinput.ogg" type="video/ogg">
+      <source src="/client/freezeinput.mp4" type="video/mp4">
+      <source src="/client/freezeinput.ogg" type="video/ogg">
     </video></li>
     </li>
     <li>Feature: Hammerfly with dummy tee (more accurate now)<br/>
