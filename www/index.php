@@ -65,8 +65,9 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>German Blocker servers</li>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=89">Quick Tournament #11: Brutal Solo Jetpack</a></strong> on Sunday, May 25 at 19:00 CEST</li>
-  <li>New servers in South Africa thanks to <a href="/players/goo/">goo</a>, <a href="/players/lordtheuns/">lordtheuns</a>, Lexy with hosting sponsored by Afrihost! All DDNet locations now:<br/>
+  <li>New servers in South Africa thanks to <a href="/players/goo/">goo</a>, <a href="/players/lordtheuns/">lordtheuns</a>, <a href="/players/Lexy/">Lexy</a> with hosting sponsored by Afrihost! All DDNet locations now:<br/>
     <img class="demo" src="/locations.png" /></li>
   <li>How to hookfly with dummy: Hold the keys for hook and run and switch. Use hammerfly toggle key to make your dummy hook and stop hooking:<br/>
     <video class="fullvideo" controls>
