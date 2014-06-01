@@ -45,7 +45,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '3.9.5';
+$version = '3.9.6';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -64,6 +64,11 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 3.9.6</strong>:<br/>
+  <ul>
+    <li>Feature: Set how far to shift a layer in editor</lI>
+    <li>Feature: Server works on older Linux systems</li>
+  </ul>
   <li>New servers in South Africa thanks to <a href="/players/goo/">goo</a>, <a href="/players/lordtheuns/">lordtheuns</a>, <a href="/players/Lexy/">Lexy</a> with hosting sponsored by Afrihost! All DDNet locations now:<br/>
     <img class="demo" src="/locations.png" /></li>
   <li><strong><a href="/tournament/17/">Quick Tournament #11: Brutal Solo Jetpack</a></strong> on Sunday, May 25 at 19:00 CEST</li>
