@@ -45,7 +45,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.0';
+$version = '4.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -65,7 +65,7 @@ if ($user_os == 'win') {
 <h2 id="news">News</h2>
 <ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=114">Quick Tournament #12: Moderate (1 star)</a></strong> on Saturday, June 7 at 20:00 CEST</li>
-  <li><strong>DDNet 4.0</strong>:<br/>
+  <li><strong>DDNet 4.1</strong>:<br/>
   <ul>
     <li>Feature: News in client</lI>
     <li>Fix: Jetpack tuning works with tunezones</li>
