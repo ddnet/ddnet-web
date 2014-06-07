@@ -64,7 +64,8 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=114">Quick Tournament #12: Moderate (1 star)</a></strong> on Saturday, June 7 at 20:00 CEST</li>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&p=848">Brutal Tournament: Naufrage 2</a></strong> on Saturday, June 14 at 20:00 CEST</li>
+  <li><strong><a href="/tournament/18/">Quick Tournament #12: Moderate (1 star)</a></strong> on Saturday, June 7 at 20:00 CEST</li>
   <li><strong>DDNet 4.1</strong>:<br/>
   <ul>
     <li>Feature: News in client</lI>
