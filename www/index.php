@@ -20,7 +20,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/YxXyhoWnL5U?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><img class="demo" alt="Demo" src="full.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="ddnetusa.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="triangle.png"/></div>
 <br/>
@@ -64,7 +64,42 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&p=848">Brutal Tournament: Naufrage 2</a></strong> on Saturday, June 14 at 20:00 CEST</li>
+  <li><strong>1 year DDraceNetwork!</strong><br/>
+    DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
+    <table>
+    <tr>
+    <td><strong>Current prize money: 0 €</strong></td>
+    <td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="7WT2PXW6V2C3C">
+      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+      <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+    </form></td>
+    </tr>
+    </table>
+    For alternative payment methods ask deen. All donations will entirely go to the winners. Depending on how much prize money we get, we will decide how to split it and whether to host a third map! If you like some statistics, these were the first finishes on DDNet:
+    <table>
+    <tr><th>Date</th><th>Map</th><th>Player</th><th>Time</th></tr>
+    <tr><td>2013-07-18 03:38</td><td>Rainbow Sunrise</td><td>.me'</td><td>72:01</td></tr>
+    <tr><td>2013-07-18 03:38</td><td>Rainbow Sunrise</td><td>Rigmu</td><td>74:36</td></tr>
+    <tr><td>2013-07-18 17:05</td><td>Challenge</td><td>.me'</td><td>23:38</td></tr>
+    <tr><td>2013-07-18 17:05</td><td>Challenge</td><td>deen</td><td>23:32</td></tr>
+    <tr><td>2013-07-21 23:21</td><td>[SI] SELEN</td><td>Megaman | Cold</td><td>09:21</td></tr>
+    <tr><td>2013-07-21 23:21</td><td>[SI] SELEN</td><td>Hitomi</td><td>09:19</td></tr>
+    <tr><td>2013-07-21 23:35</td><td>[SI] KABOO</td><td>phacrum</td><td>12:18</td></tr>
+    <tr><td>2013-07-21 23:36</td><td>[SI] KABOO</td><td>Megaman | Cold</td><td>08:29</td></tr>
+    <tr><td>2013-07-21 23:36</td><td>[SI] KABOO</td><td>Hitomi</td><td>14:48</td></tr>
+    <tr><td>2013-07-21 23:36</td><td>[SI] KABOO</td><td>potsnacew</td><td>09:01</td></tr>
+    </table>
+    In the last 11 months DDNet got <strong>492 maps</strong>. By then <strong>126373 ranks</strong> were made, an average of <strong>257 ranks per map</strong> with an average time of <strong>22 minutes per map</strong> (excluding Flappy Bird). About <strong>900 people</strong> use DDNet client every day. There are about <strong>2500 players on GER server</strong> every day, <strong>900 in Chile</strong>, <strong>500 in South Africa</strong>, <strong>500 in Russia</strong>, <strong>300 in USA</strong> and <strong>150 in China</strong>. (DDNet and Blocker only)
+    <br/>
+    Thanks to everyone who helped build DDNet during this first year and all the players who found their ways on our servers. Special thanks to:<br/>
+    <ul>
+      <li>Lady Saavik for testing and fixing maps the entire time,</li>
+      <li>Broken for financing the USA server for 8 months now,</li>
+      <li>and all the testers and mappers, without which this would have been impossible.</li>
+    </ul></li>
+  <li><strong><a href="/tournament/19/">Brutal Tournament: Naufrage 2</a></strong> on Saturday, June 14 at 20:00 CEST</li>
   <li><strong>DDNet 4.2</strong>:<br/>
   <ul>
     <li>[Client] Fix: Don't crash when standing on start line and connecting dummy</li>
