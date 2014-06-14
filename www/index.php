@@ -45,7 +45,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.1';
+$version = '4.2';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -65,10 +65,18 @@ if ($user_os == 'win') {
 <h2 id="news">News</h2>
 <ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&p=848">Brutal Tournament: Naufrage 2</a></strong> on Saturday, June 14 at 20:00 CEST</li>
+  <li><strong>DDNet 4.2</strong>:<br/>
+  <ul>
+    <li>[Client] Fix: Don't crash when standing on start line and connecting dummy</li>
+    <li>[Editor] Fix: Shifting front layer works</li>
+    <li>[Editor] Fix: Allow adding more than 33 images</li>
+    <li>[Editor] Fix: Show all images, no matter how many</li>
+    <li>[Server] Feature: undeep, unsolo on test server</li>
+  </ul>
   <li><strong><a href="/tournament/18/">Quick Tournament #12: Moderate (1 star)</a></strong> on Saturday, June 7 at 20:00 CEST</li>
   <li><strong>DDNet 4.1</strong>:<br/>
   <ul>
-    <li>Feature: News in client</lI>
+    <li>Feature: News in client</li>
     <li>Fix: News in correct directory</li>
     <li>Fix: Jetpack tuning works with tunezones</li>
     <li>Fix: Dummy can see 64 players on non-DDNet servers</li>
