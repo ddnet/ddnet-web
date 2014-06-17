@@ -20,9 +20,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><img class="demo" alt="Demo" src="full.png"/></div>
-<div class="startimages"><img class="demo" alt="Demo" src="ddnetusa.png"/></div>
-<div class="startimages"><img class="demo" alt="Demo" src="triangle.png"/></div>
+<div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/GJU2gYsp3gA?autoplay=0&vq=hd720&hd=1"></iframe></div>
 <br/>
 <div class="download"><img class="download-button" src="download.svg"/>
 <?php
@@ -32,7 +30,9 @@ function getOS() {
   global $user_agent;
   $os_platform = "unk";
 
-  if (preg_match('/windows/i', $user_agent))
+  if (preg_match('/android/i', $user_agent))
+    $os_platform = 'and';
+  elseif (preg_match('/windows/i', $user_agent))
     $os_platform = 'win';
   elseif (preg_match('/linux.*x86_64/i', $user_agent))
     $os_platform = 'lin64';
@@ -55,6 +55,8 @@ if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-linux_x86.tar.gz">Download DDraceNetwork Client &amp; Server ' . $version . ' for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'lin64') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-linux_x86_64.tar.gz">Download DDraceNetwork Client &amp; Server ' . $version . ' for Linux x86_64</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+} elseif ($user_os == 'and') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '.apk">Download DDraceNetwork Client ' . $version . ' for Android</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } else {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span></p>';
 }
@@ -64,7 +66,9 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong>1 year DDraceNetwork!</strong><br/>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=149">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
+  <li><a href="/downloads/DDNet-4.2.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
+  <li><strong>1 Year DDraceNetwork!</strong><br/>
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
     <table>
     <tr>
@@ -91,7 +95,7 @@ if ($user_os == 'win') {
     <tr><td>2013-07-21 23:36</td><td>[SI] KABOO</td><td>Hitomi</td><td>14:48</td></tr>
     <tr><td>2013-07-21 23:36</td><td>[SI] KABOO</td><td>potsnacew</td><td>09:01</td></tr>
     </table>
-    In the last 11 months DDNet got <strong>492 maps</strong>. By then <strong>126373 ranks</strong> were made, an average of <strong>257 ranks per map</strong> with an average time of <strong>22 minutes per map</strong> (excluding Flappy Bird). About <strong>900 people</strong> use DDNet client every day. There are about <strong>2500 players on GER server</strong> every day, <strong>900 in Chile</strong>, <strong>500 in South Africa</strong>, <strong>500 in Russia</strong>, <strong>300 in USA</strong> and <strong>150 in China</strong>. (DDNet and Blocker only)
+    In the last 11 months DDNet got <strong>492 maps</strong>. By then <strong>126373 ranks</strong> were made, an average of <strong>257 ranks per map</strong> with an average time of <strong>22 minutes per map</strong> (excluding Flappy Bird). About <strong>900 people</strong> use DDNet client every day. At a good time <strong>350 players</strong> are online on DDNet at the same time. There are about <strong>2600 players on GER server</strong> every day, <strong>1200 in Chile</strong>, <strong>600 in South Africa</strong>, <strong>500 in Russia</strong>, <strong>300 in USA</strong> and <strong>150 in China</strong>. (DDNet and Blocker only)
     <br/>
     Thanks to everyone who helped build DDNet during this first year and all the players who found their ways on our servers. Special thanks to:<br/>
     <ul>
