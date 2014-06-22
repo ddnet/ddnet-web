@@ -47,7 +47,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.3';
+$version = '4.3.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -72,13 +72,12 @@ if ($user_os == 'win') {
   <ul>
     <li>[Mapping] Feature: Wall jump tiles (put it next to wall)</li>
     <li>[Client] Feature: CPU throttle in Settings → General</li>
-    <li>[Client] Fix: Working on DDWar server</li>
     <li>[Server] Feature: Vote a random map you haven't finished yet</li>
     <li>[Server] Fix: Don't show draggers of players in solo part</li>
     <li>[Server] Fix: You can keep pistol when going through armor entities</li>
   </ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=149">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
-  <li><a href="/downloads/DDNet-4.3.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
+  <li><a href="/downloads/DDNet-4.3.1.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
   <li><strong>1 Year DDraceNetwork!</strong><br/>
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
     <table>
