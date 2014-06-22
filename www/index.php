@@ -76,13 +76,13 @@ if ($user_os == 'win') {
     <li>[Server] Fix: Don't show draggers of players in solo part</li>
     <li>[Server] Fix: You can keep pistol when going through armor entities</li>
   </ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=149">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
+  <li><strong><a href="/tournament/20/">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
   <li><a href="/downloads/DDNet-4.3.1.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
   <li><strong>1 Year DDraceNetwork!</strong><br/>
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
     <table>
     <tr>
-    <td><strong>Current prize money: 20 €</strong></td>
+    <td><strong>Current prize money: 25 €</strong></td>
     <td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="cmd" value="_s-xclick">
       <input type="hidden" name="hosted_button_id" value="7WT2PXW6V2C3C">
