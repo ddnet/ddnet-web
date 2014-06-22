@@ -70,11 +70,12 @@ if ($user_os == 'win') {
 <ul>
   <li><strong>DDNet 4.3</strong>:<br/>
   <ul>
-    <li>[Client] Fix: Don't crash when standing on start line and connecting dummy</li>
-    <li>[Editor] Fix: Shifting front layer works</li>
-    <li>[Editor] Fix: Allow adding more than 33 images</li>
-    <li>[Editor] Fix: Show all images, no matter how many</li>
-    <li>[Server] Feature: undeep, unsolo on test server</li>
+    <li>[Mapping] Feature: Wall jump tiles (put it next to wall)</li>
+    <li>[Client] Feature: CPU throttle in Settings → General</li>
+    <li>[Client] Fix: Working on DDWar server</li>
+    <li>[Server] Feature: Vote a random map you haven't finished yet</li>
+    <li>[Server] Fix: Don't show draggers of players in solo part</li>
+    <li>[Server] Fix: You can keep pistol when going through armor entities</li>
   </ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=149">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
   <li><a href="/downloads/DDNet-4.3.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
