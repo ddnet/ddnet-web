@@ -20,7 +20,9 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/GJU2gYsp3gA?autoplay=0&vq=hd720&hd=1"></iframe></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/e2F95d-guUc?autoplay=0&vq=hd720&hd=1"></iframe></div></div>
+<div class="startimages"><img class="demo" alt="Demo" src="ddnetusa.png"/></div>
+<div class="startimages"><img class="demo" alt="Demo" src="full.png"/></div>
 <br/>
 <div class="download"><img class="download-button" src="download.svg"/>
 <?php
@@ -45,7 +47,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.2';
+$version = '4.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -66,13 +68,21 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 4.3</strong>:<br/>
+  <ul>
+    <li>[Client] Fix: Don't crash when standing on start line and connecting dummy</li>
+    <li>[Editor] Fix: Shifting front layer works</li>
+    <li>[Editor] Fix: Allow adding more than 33 images</li>
+    <li>[Editor] Fix: Show all images, no matter how many</li>
+    <li>[Server] Feature: undeep, unsolo on test server</li>
+  </ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=149">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
-  <li><a href="/downloads/DDNet-4.2.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
+  <li><a href="/downloads/DDNet-4.3.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
   <li><strong>1 Year DDraceNetwork!</strong><br/>
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
     <table>
     <tr>
-    <td><strong>Current prize money: 0 €</strong></td>
+    <td><strong>Current prize money: 20 €</strong></td>
     <td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="cmd" value="_s-xclick">
       <input type="hidden" name="hosted_button_id" value="7WT2PXW6V2C3C">
