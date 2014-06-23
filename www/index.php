@@ -95,7 +95,7 @@ if ($user_os == 'win') {
     </form></td>
     </tr>
     </table>
-    For alternative payment methods ask deen. All donations will entirely go to the winners. Depending on how much prize money we get, we will decide how to split it and whether to host a third map! If you like some statistics, these were the first finishes on DDNet:
+    PayPal has high fees for donations, so if you want to donate without losing 4% to PayPal, send me a mail at <a href="mailto:deen@ddnet.tw">deen@ddnet.tw</a> and I'll give you my bank information. All donations will entirely go to the winners. Depending on how much prize money we get, we will decide how to split it and whether to host a third map! If you like some statistics, these were the first finishes on DDNet:
     <table>
     <tr><th>Date</th><th>Map</th><th>Player</th><th>Time</th></tr>
     <tr><td>2013-07-18 03:38</td><td>Rainbow Sunrise</td><td>.me'</td><td>72:01</td></tr>
