@@ -70,7 +70,11 @@ if ($user_os == 'win') {
 <ul>
   <li><strong>DDNet 4.3</strong>:<br/>
   <ul>
-    <li>[Mapping] Feature: Wall jump tiles (put it next to wall)</li>
+    <li>[Mapping] Feature: Wall jump tiles (put it next to wall):<br/>
+    <video class="fullvideo" controls>
+      <source src="/map/walljumpmp4" type="video/mp4">
+      <source src="/map/walljumpogg" type="video/ogg">
+    </video></li>
     <li>[Client] Feature: CPU throttle in Settings → General</li>
     <li>[Server] Feature: Vote a random map you haven't finished yet</li>
     <li>[Server] Fix: Don't show draggers of players in solo part</li>
@@ -82,7 +86,7 @@ if ($user_os == 'win') {
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
     <table>
     <tr>
-    <td><strong>Current prize money: 25 €</strong></td>
+    <td><strong>Current prize money: 67.61€</strong></td>
     <td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="cmd" value="_s-xclick">
       <input type="hidden" name="hosted_button_id" value="7WT2PXW6V2C3C">
