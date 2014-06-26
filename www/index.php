@@ -20,7 +20,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/QWLyp-3Mqhg?autoplay=0&vq=hd720&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/QWLyp-3Mqhg?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="ddnetusa.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="full.png"/></div>
 <br/>
@@ -72,8 +72,8 @@ if ($user_os == 'win') {
   <ul>
     <li>[Mapping] Feature: Wall jump tiles (put it next to wall):<br/>
     <video class="fullvideo" controls>
-      <source src="/map/walljumpmp4" type="video/mp4">
-      <source src="/map/walljumpogg" type="video/ogg">
+      <source src="/map/walljump.mp4" type="video/mp4">
+      <source src="/map/walljump.ogg" type="video/ogg">
     </video></li>
     <li>[Client] Feature: CPU throttle in Settings → General</li>
     <li>[Server] Feature: Vote a random map you haven't finished yet</li>
