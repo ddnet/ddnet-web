@@ -20,7 +20,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/e2F95d-guUc?autoplay=0&vq=hd720&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/QWLyp-3Mqhg?autoplay=0&vq=hd720&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="ddnetusa.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="full.png"/></div>
 <br/>
