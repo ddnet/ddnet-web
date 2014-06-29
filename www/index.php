@@ -68,12 +68,12 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=182">Quick Tournament #15: Brutal</a></strong> on Saturday, June 28 at 20:00 CEST</li>
+  <li><strong><a href="/tournament/21/">Quick Tournament #15: Brutal</a></strong> on Saturday, June 28 at 20:00 CEST</li>
   <li><strong>DDNet 4.4</strong>:<br/>
   <ul>
     <li>[Client] Feature: Auto-Reconnect (by CookieMichal)</li>
     <li>[Mapping] Add some Teeworlds 0.7 mapres</li>
-    <li>[Server] Feature: Show who locked an unlocked a team</li>
+    <li>[Server] Feature: Show who locked and unlocked a team</li>
     <li>[Server] Fix: Walljump works properly</li>
   </ul>
   <li><strong>DDNet 4.3</strong>:<br/>
