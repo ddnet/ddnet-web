@@ -68,33 +68,12 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="/tournament/21/">Quick Tournament #15: Brutal</a></strong> on Saturday, June 28 at 20:00 CEST</li>
-  <li><strong>DDNet 4.4</strong>:<br/>
-  <ul>
-    <li>[Client] Feature: Auto-Reconnect (by CookieMichal)</li>
-    <li>[Mapping] Add some Teeworlds 0.7 mapres</li>
-    <li>[Server] Feature: Show who locked and unlocked a team</li>
-    <li>[Server] Fix: Walljump works properly</li>
-  </ul>
-  <li><strong>DDNet 4.3</strong>:<br/>
-  <ul>
-    <li>[Mapping] Feature: Wall jump tiles (put it next to wall):<br/>
-    <video class="fullvideo" controls>
-      <source src="/map/walljump.mp4" type="video/mp4">
-      <source src="/map/walljump.ogg" type="video/ogg">
-    </video></li>
-    <li>[Client] Feature: CPU throttle in Settings → General</li>
-    <li>[Server] Feature: Vote a random map you haven't finished yet</li>
-    <li>[Server] Fix: Don't show draggers of players in solo part</li>
-    <li>[Server] Fix: You can keep pistol when going through armor entities</li>
-  </ul>
-  <li><strong><a href="/tournament/20/">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
-  <li><a href="/downloads/DDNet-4.4.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
+  <li><strong><a href="/tournament/22/">Quick Tournament #16: Moderate</a></strong> on Sunday, July 6 at 20:00 CEST (We had <a href="/over400.png">over 400</a> players on DDNet for the first time!)</li>
   <li><strong>1 Year DDraceNetwork!</strong><br/>
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
     <table>
     <tr>
-    <td><strong>Current prize money: 67.61€</strong></td>
+    <td><strong>2 donations so far. Current prize money: 67.61€</strong></td>
     <td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="cmd" value="_s-xclick">
       <input type="hidden" name="hosted_button_id" value="7WT2PXW6V2C3C">
@@ -117,7 +96,7 @@ if ($user_os == 'win') {
     <tr><td>2013-07-21 23:36</td><td>[SI] KABOO</td><td>Hitomi</td><td>14:48</td></tr>
     <tr><td>2013-07-21 23:36</td><td>[SI] KABOO</td><td>potsnacew</td><td>09:01</td></tr>
     </table>
-    In the last 11 months DDNet got <strong>492 maps</strong>. By then <strong>126373 ranks</strong> were made, an average of <strong>257 ranks per map</strong> with an average time of <strong>22 minutes per map</strong> (excluding Flappy Bird). About <strong>900 people</strong> use DDNet client every day. At a good time <strong>350 players</strong> are online on DDNet at the same time. There are about <strong>2600 players on GER server</strong> every day, <strong>1200 in Chile</strong>, <strong>600 in South Africa</strong>, <strong>500 in Russia</strong>, <strong>300 in USA</strong> and <strong>150 in China</strong>. (DDNet and Blocker only)
+    In the last 12 months DDNet got <strong>522 maps</strong>. By then <strong>154238 ranks</strong> were made, an average of <strong>295 ranks per map</strong> with an average time of <strong>19 minutes per map</strong> (excluding Flappy Bird). These ranks took a total of <strong>6 man-years</strong> (and that's without all the times where players don't finish!). About <strong>1200 people</strong> use DDNet client every day. At a good time <strong>350 players</strong> are online on DDNet at the same time. There are about <strong>2600 players on GER server</strong> every day, <strong>1300 in Chile</strong>, <strong>650 in South Africa</strong>, <strong>500 in Russia</strong>, <strong>350 in USA</strong> and <strong>150 in China</strong>. (DDNet and Blocker only)
     <br/>
     Thanks to everyone who helped build DDNet during this first year and all the players who found their ways on our servers. Special thanks to:<br/>
     <ul>
@@ -125,6 +104,28 @@ if ($user_os == 'win') {
       <li>Broken for financing the USA server for 8 months now,</li>
       <li>and all the testers and mappers, without which this would have been impossible.</li>
     </ul></li>
+  <li><strong><a href="/tournament/21/">Quick Tournament #15: Brutal</a></strong> on Saturday, June 28 at 20:00 CEST</li>
+  <li><strong>DDNet 4.4</strong>:<br/>
+  <ul>
+    <li>[Client] Feature: Auto-Reconnect (by CookieMichal)</li>
+    <li>[Mapping] Add some Teeworlds 0.7 mapres</li>
+    <li>[Server] Feature: Show who locked and unlocked a team</li>
+    <li>[Server] Fix: Walljump works properly</li>
+  </ul>
+  <li><strong>DDNet 4.3</strong>:<br/>
+  <ul>
+    <li>[Mapping] Feature: Wall jump tiles (put it next to wall):<br/>
+    <video class="fullvideo" controls>
+      <source src="/map/walljump.mp4" type="video/mp4">
+      <source src="/map/walljump.ogg" type="video/ogg">
+    </video></li>
+    <li>[Client] Feature: CPU throttle in Settings → General</li>
+    <li>[Server] Feature: Vote a random map you haven't finished yet</li>
+    <li>[Server] Fix: Don't show draggers of players in solo part</li>
+    <li>[Server] Fix: You can keep pistol when going through armor entities</li>
+  </ul>
+  <li><strong><a href="/tournament/20/">Quick Tournament #14: Novice</a></strong> on Sunday, June 22 at 20:00 CEST</li>
+  <li><a href="/downloads/DDNet-4.4.apk">Android version</a> of DDraceNetwork Client released (mainly for spectating and chatting; thanks to Pelya for porting Teeworlds to Android)</li>
   <li><strong><a href="/tournament/19/">Brutal Tournament: Naufrage 2</a></strong> on Saturday, June 14 at 20:00 CEST</li>
   <li><strong>DDNet 4.2</strong>:<br/>
   <ul>
