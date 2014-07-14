@@ -47,7 +47,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.4';
+$version = '4.5.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -68,6 +68,21 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=219">Birthday Tournament</a></strong> with:
+    <ul>
+      <li>Solo map <strong>Chill Let's Climb 2</strong> by Chill [TD] on <strong>Friday, July 18 at 20:00 CEST</strong></li>
+      <li>Novice map <strong>Planet Venus</strong> by Aoe &amp; Knight :3 on <strong>July 20 at 20:00 CEST</strong></li>
+    </ul></li>
+  <li><strong>DDNet 4.5</strong>:<br/>
+  <ul>
+    <li>[Client] Added editor button, Cleanup of some menus, Ask before disconnect</li>
+    <li>[Client] Feature: Add cl_dummy_resetonswitch to reset dummy keys</li>
+    <li>[Client] Feature: Lots of color customization (by CookieMichal)</li>
+    <li>[Client] Major skin cleanup</li>
+    <li>[Client] Fix a few hangs</li>
+    <li>[Server] Players join team 0 after finishing in team (without /lock)</li>
+  </ul>
+  <li>DDNet's planned successor <a href="http://hookrace.net/">HookRace</a> got a development blog</li>
   <li><strong><a href="/tournament/22/">Quick Tournament #16: Moderate</a></strong> on Sunday, July 6 at 20:00 CEST (We had <a href="/over400.png">over 400</a> players on DDNet for the first time!)</li>
   <li><strong>1 Year DDraceNetwork!</strong><br/>
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
