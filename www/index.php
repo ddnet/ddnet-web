@@ -47,7 +47,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.5.1';
+$version = '4.5.2';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -68,7 +68,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=219">Birthday Tournament</a></strong> with:
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=219">Birthday Tournament</a></strong> with 120 € to win:
     <ul>
       <li>Solo map <strong>Chill Let's Climb 2</strong> by Chill [TD] on <strong>Friday, July 18 at 20:00 CEST</strong></li>
       <li>Novice map <strong>Planet Venus</strong> by Aoe &amp; Knight :3 on <strong>July 20 at 20:00 CEST</strong></li>
@@ -88,7 +88,7 @@ if ($user_os == 'win') {
     DDraceNetwork will celebrate its first birthday on July 19 and 20 by holding a tournament with two maps. For the first time there will be prizes to be won. If you want to help, you can donate via PayPal:<br/>
     <table>
     <tr>
-    <td><strong>2 donations so far. Current prize money: 67.61€</strong></td>
+    <td><strong>2 donations so far. Current prize money: 116.31€</strong></td>
     <td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
       <input type="hidden" name="cmd" value="_s-xclick">
       <input type="hidden" name="hosted_button_id" value="7WT2PXW6V2C3C">
