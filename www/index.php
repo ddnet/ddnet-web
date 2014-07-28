@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.5.2';
+$version = '4.6.2';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,6 +69,15 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 4.6</strong>:<br/>
+  <ul>
+    <li>[Server] Save a game in team using /save password (by HMH)</li>
+    <li>[Client] Fix some default binds (pageup, pagedown)</li>
+    <li>[Client] Prevent dummy from reconnecting too often</li>
+    <li>[Blocker] Disable rejoin to team 0 after finish</li>
+    <li>[Blocker] Add freeze hammer</li>
+    <li>and many more fixes</li>
+  </ul>
   <li><a href="https://ddnet.spreadshirt.net/">Get a DDNet T-Shirt</a></li>
   <li><strong>Watch <a href="http://www.twitch.tv/Hallowed1986">Hallowed1986's livestream</a> of the Tournament on Sunday at 20:00</strong> (in German)</li>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=219">Birthday Tournament</a></strong> with 120 € to win:
