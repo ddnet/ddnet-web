@@ -69,6 +69,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=258">Quick Tournament #17: Brutal</a></strong> on Sunday, August 3 at 20:00 CEST</li>
   <li><strong>DDNet 4.6</strong>:<br/>
   <ul>
     <li>[Server] Save a game in team using /save password (by HMH)</li>
