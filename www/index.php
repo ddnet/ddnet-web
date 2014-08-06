@@ -69,6 +69,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&p=2170">Quick Tournament #18: Moderate: Neverwhere by Bixes &amp; Themix</a></strong> on Sunday, August 10 at 19:00 CEST</li>
   <li><strong><a href="/tournament/23/">Quick Tournament #17: Brutal</a></strong> on Sunday, August 3 at 20:00 CEST</li>
   <li><strong>DDNet 4.6.3</strong>:<br/>
   <ul>
