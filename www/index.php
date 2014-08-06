@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.6.2';
+$version = '4.6.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,7 +69,14 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=258">Quick Tournament #17: Brutal</a></strong> on Sunday, August 3 at 20:00 CEST</li>
+  <li><strong><a href="/tournament/23/">Quick Tournament #17: Brutal</a></strong> on Sunday, August 3 at 20:00 CEST</li>
+  <li><strong>DDNet 4.6.3</strong>:<br/>
+  <ul>
+    <li>[Client] Case insensitive player sort</li>
+    <li>[Client] Removed buggy speedup prediction</li>
+    <li>[Server] Bugs in /save fixed</li>
+    <li>[Server] Message about joining team 0 after you finish in team</li>
+  </ul>
   <li><strong>DDNet 4.6</strong>:<br/>
   <ul>
     <li>[Server] Save a game in team using /save password (by HMH)</li>
