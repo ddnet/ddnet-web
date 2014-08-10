@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.6.3';
+$version = '4.7.2';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,6 +69,17 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>How to use the new timeout protection:<br/>
+    If you have DDNet client, after a timeout, you will automatically be reconnected to your tee when you rejoin. If it doesn't work, wait a bit more (100 seconds) and rejoin server.<br/>
+    If you don't have DDNet client you can still use timeout protection, by typing /timeout MYSECRETCODE every time you join a DDNet server. Then after you had a timeout you can type /timeout MYSECRETCODE again to get your tee back.</li>
+  <li><strong>DDNet 4.7</strong>:<br/>
+  <ul>
+    <li>[Client] Automatic timeout protection on DDNet servers</li>
+    <li>[Server] /timeout protection for all clients</li>
+    <li>[Server] /specteam to only see players from your team when spectating</li>
+    <li>[Server] 1 minute punishment for saving to prevent abuse</li>
+    <li>[Server] Fixes for /save and /load</li>
+  </ul>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&p=2170">Quick Tournament #18: Moderate: Neverwhere by Bixes &amp; Themix</a></strong> on Sunday, August 10 at 19:00 CEST:<br/>
     <img class="demo" src="neverwhere.png"/></li>
   <li><strong><a href="/tournament/23/">Quick Tournament #17: Brutal</a></strong> on Sunday, August 3 at 20:00 CEST</li>
