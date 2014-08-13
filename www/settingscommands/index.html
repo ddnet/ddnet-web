@@ -23,8 +23,8 @@ menu: |
   <tr><td>sv_port</td><td>Port to use for the server</td><td>8303</td></tr>
   <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
   <tr><td>sv_map</td><td>Map to use on the server</td><td>"dm1"</td></tr>
-  <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>16</td></tr>
-  <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>2</td></tr>
+  <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>MAX_CLIENTS</td></tr>
+  <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>4</td></tr>
   <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td></tr>
   <tr><td>sv_register</td><td>Register server with master server for public listing</td><td>1</td></tr>
   <tr><td>sv_rcon_password</td><td>Remote console password (full access)</td><td>""</td></tr>
@@ -58,6 +58,7 @@ menu: |
   <tr><td>sv_chat_delay</td><td>The time in seconds between chat messages</td><td>1</td></tr>
   <tr><td>sv_team_change_delay</td><td>The time in seconds between team changes (spectator/in game)</td><td>3</td></tr>
   <tr><td>sv_info_change_delay</td><td>The time in seconds between info changes (name/skin/color), to avoid ranbow mod set this to a very high time</td><td>0</td></tr>
+  <tr><td>sv_vote_time</td><td>The time in seconds a vote lasts</td><td>25</td></tr>
   <tr><td>sv_vote_map_delay</td><td>The minimum time in seconds between map votes</td><td>0</td></tr>
   <tr><td>sv_vote_delay</td><td>The time in seconds between any vote</td><td>3</td></tr>
   <tr><td>sv_vote_kick_delay</td><td>The minimum time in seconds between kick votes</td><td>0</td></tr>
@@ -68,7 +69,7 @@ menu: |
   <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>3</td></tr>
   <tr><td>sv_suicide_penalty</td><td>The minimum time in seconds between kill or /kills and respawn</td><td>0</td></tr>
   <tr><td>sv_map_window</td><td>Map downloading send-ahead window</td><td>15</td></tr>
-  <tr><td>sv_fast_download</td><td>Enables fast download of maps</td><td>0</td></tr>
+  <tr><td>sv_fast_download</td><td>Enables fast download of maps</td><td>1</td></tr>
   <tr><td>sv_shotgun_bullet_sound</td><td>Crazy shotgun bullet sound on/off</td><td>0</td></tr>
   <tr><td>sv_checkpoint_save</td><td>Whether to save checkpoint times to the score file</td><td>1</td></tr>
   <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>"records"</td></tr>
@@ -79,6 +80,7 @@ menu: |
   <tr><td>sv_sql_port</td><td>SQL Database port</td><td>3306</td></tr>
   <tr><td>sv_sql_database</td><td>SQL Database name</td><td>"teeworlds"</td></tr>
   <tr><td>sv_sql_prefix</td><td>SQL Database table prefix</td><td>"record"</td></tr>
+  <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td></tr>
   <tr><td>sv_ddrace_rules</td><td>Whether the default mod rules are displayed or not</td><td>1</td></tr>
   <tr><td>sv_rules_line1</td><td>Rules line 1</td><td>""</td></tr>
   <tr><td>sv_rules_line2</td><td>Rules line 2</td><td>""</td></tr>
@@ -91,14 +93,16 @@ menu: |
   <tr><td>sv_rules_line9</td><td>Rules line 9</td><td>""</td></tr>
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>""</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>CFGFLAG_SERVER</td></tr>
-  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>16</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
   <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>"announcement.txt"</td></tr>
   <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td></tr>
   <tr><td>sv_announcement_random</td><td>Whether announcements are sequential or random</td><td>1</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for DDRace Beta) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
   <tr><td>sv_slash_me</td><td>Whether /me is active on the server or not</td><td>0</td></tr>
-  <tr><td>conn_timeout</td><td>Network timeout</td><td>15</td></tr>
+  <tr><td>sv_rejoin_team_0</td><td>Make a team automatically rejoin team 0 after finish (only if not locked)</td><td>1</td></tr>
+  <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
+  <tr><td>conn_timeout_protection</td><td>Network timeout protection</td><td>1000</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
   <tr><td>sv_show_others</td><td>Whether players can user the command showothers or not</td><td>1</td></tr>
   <tr><td>sv_show_others_default</td><td>Whether players see others by default</td><td>0</td></tr>
@@ -120,6 +124,8 @@ menu: |
   <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>50</td></tr>
   <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>0</td></tr>
   <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>0</td></tr>
+  <tr><td>sv_rank_cheats</td><td>Enable ranks after cheats have been used (file based server only)</td><td>0</td></tr>
+  <tr><td>sv_spoof_protection</td><td>Enable spoof protection</td><td>0</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
   <tr><td>sv_warmup</td><td>Number of seconds to do warmup before round starts</td><td>0</td></tr>
@@ -150,6 +156,7 @@ menu: |
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
   <tr><td>sv_mapupdaterate</td><td>(Tw32) real id <-> vanilla id players map update rate</td><td>5</td></tr>
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
+  <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
 </table>
 </div>
@@ -191,6 +198,7 @@ menu: |
   <tr><td>pause_game</td><td>Pause/unpause game</td></tr>
   <tr><td>change_map</td><td>Change map</td></tr>
   <tr><td>random_map</td><td>Random map</td></tr>
+  <tr><td>random_unfinished_map</td><td>Random unfinished map</td></tr>
   <tr><td>restart</td><td>Restart in x seconds (0 = abort)</td></tr>
   <tr><td>broadcast</td><td>Broadcast message</td></tr>
   <tr><td>say</td><td>Say in chat</td></tr>
@@ -209,44 +217,6 @@ menu: |
 <h2 id="chat-commands">Chat Commands</h2>
 <table class="settingscommands">
   <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>credits</td><td>Shows the credits of the DDRace mod</td></tr>
-  <tr><td>emote</td><td>Sets your tee's eye emote</td></tr>
-  <tr><td>eyeemote</td><td>Toggles use of standard eye-emotes on/off, eyeemote s, where s = on for on, off for off, toggle for toggle and nothing to show current status</td></tr>
-  <tr><td>settings</td><td>Shows gameplay information for this server</td></tr>
-  <tr><td>help</td><td>Shows help to command r, general help if left blank</td></tr>
-  <tr><td>info</td><td>Shows info about this server</td></tr>
-  <tr><td>me</td><td>Like the famous irc command '/me says hi' will display '<yourname> says hi'</td></tr>
-  <tr><td>w</td><td>Whisper something to someone (private message)</td></tr>
-  <tr><td>whisper</td><td>Whisper something to someone (private message)</td></tr>
-  <tr><td>c</td><td>Converse with the last person you whispered to (private message)</td></tr>
-  <tr><td>converse</td><td>Converse with the last person you whispered to (private message)</td></tr>
-  <tr><td>pause</td><td>Toggles pause (if not activated on the server, it toggles spec)</td></tr>
-  <tr><td>spec</td><td>Toggles spec</td></tr>
-  <tr><td>dnd</td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
-  <tr><td>mapinfo</td><td>Show info about the map with name r gives (current map by default)</td></tr>
-  <tr><td>map</td><td>Vote a map by name</td></tr>
-  <tr><td>rankteam</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
-  <tr><td>rank</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
-  <tr><td>rules</td><td>Shows the server rules</td></tr>
-  <tr><td>team</td><td>Lets you join team i (shows your team if left blank)</td></tr>
-  <tr><td>lock</td><td>Lock team so noone else can join it</td></tr>
-  <tr><td>top5team</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>top5</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>showothers</td><td>Whether to showplayers from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
-  <tr><td>ninjajetpack</td><td>Whether to showplayers from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
-  <tr><td>saytime</td><td>Privately messages someone's current time in this current running race (your time by default)</td></tr>
-  <tr><td>saytimeall</td><td>Publicly messages everyone your current time in this current running race</td></tr>
-  <tr><td>time</td><td>Privately shows you your current time in this current running race in the broadcast message</td></tr>
-  <tr><td>timer</td><td>Personal Setting of showing time in either broadcast or game/round timer, timer s, where s = broadcast for broadcast, gametimer for game/round timer, cycle for cycle, both for both, none for no timer and nothing to show current status</td></tr>
-  <tr><td>times</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
-  <tr><td>points</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
-  <tr><td>top5points</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
-</table>
-</div>
-<div class="block">
-<h2 id="client-settings">Client Settings</h2>
-<table class="settingscommands">
-  <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td></tr>
   <tr><td>cl_antiping</td><td>Antiping (predict other players' movements)</td><td>0</td></tr>
   <tr><td>cl_antiping_grenade</td><td>Antiping (predict grenades)</td><td>0</td></tr>
@@ -254,7 +224,10 @@ menu: |
   <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td></tr>
   <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td></tr>
   <tr><td>cl_nameplates_size</td><td>Size of the name plates from 0 to 100%</td><td>50</td></tr>
+  <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>1</td></tr>
+  <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>0</td></tr>
+  <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>0</td></tr>
   <tr><td>cl_showhud</td><td>Show ingame HUD</td><td>1</td></tr>
   <tr><td>cl_showhud_healthammo</td><td>Show ingame HUD (Health + Ammo)</td><td>1</td></tr>
   <tr><td>cl_showhud_score</td><td>Show ingame HUD (Score)</td><td>1</td></tr>
@@ -267,8 +240,10 @@ menu: |
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td></tr>
+  <tr><td>cl_mouse_deadzone</td><td></td><td>0</td></tr>
   <tr><td>cl_mouse_deadzone</td><td></td><td>300</td></tr>
   <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
+  <tr><td>cl_mouse_max_distance</td><td></td><td>400</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
   <tr><td>ed_showkeys</td><td></td><td>0</td></tr>
   <tr><td>cl_flow</td><td></td><td>0</td></tr>
@@ -304,6 +279,7 @@ menu: |
   <tr><td>dummy_skin</td><td>Dummy skin</td><td>"default"</td></tr>
   <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
+  <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy should stop pressing keys when you switch</td><td>0</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td></tr>
   <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>"nameless tee"</td></tr>
@@ -322,6 +298,7 @@ menu: |
   <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
   <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>0</td></tr>
+  <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>1</td></tr>
   <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>""</td></tr>
   <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
   <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>1</td></tr>
@@ -341,6 +318,7 @@ menu: |
   <tr><td>br_sort_order</td><td></td><td>0</td></tr>
   <tr><td>br_max_requests</td><td>Number of requests to use when refreshing server browser</td><td>25</td></tr>
   <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td></tr>
+  <tr><td>snd_rate</td><td>Sound mixing rate</td><td>44100</td></tr>
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td></tr>
   <tr><td>snd_enable</td><td>Sound enable</td><td>1</td></tr>
   <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td></tr>
@@ -354,6 +332,9 @@ menu: |
   <tr><td>snd_highlight</td><td>Enable highlighted chat sound</td><td>1</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
+  <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>0</td></tr>
+  <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>1</td></tr>
+  <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>1</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td></tr>
   <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>0</td></tr>
   <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>0</td></tr>
@@ -362,12 +343,18 @@ menu: |
   <tr><td>gfx_vsync</td><td>Vertical sync</td><td>1</td></tr>
   <tr><td>gfx_display_all_modes</td><td></td><td>0</td></tr>
   <tr><td>gfx_texture_compression</td><td>Use texture compression</td><td>0</td></tr>
+  <tr><td>gfx_high_detail</td><td>High detail</td><td>0</td></tr>
+  <tr><td>gfx_texture_quality</td><td></td><td>0</td></tr>
   <tr><td>gfx_high_detail</td><td>High detail</td><td>1</td></tr>
   <tr><td>gfx_texture_quality</td><td></td><td>1</td></tr>
   <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>0</td></tr>
   <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td></tr>
-  <tr><td>gfx_finish</td><td></td><td>1</td></tr>
+  <tr><td>gfx_finish</td><td></td><td>0</td></tr>
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
+  <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>0</td></tr>
+  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>0</td></tr>
+  <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
+  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
@@ -379,7 +366,29 @@ menu: |
   <tr><td>dbg_resizable</td><td>Enables window resizing</td><td>0</td></tr>
   <tr><td>cl_race_binds</td><td>Enable Default DDRace builds when pressing the reset binds button</td><td>1</td></tr>
   <tr><td>cl_race_binds_set</td><td>Whether the DDRace binds set or not (this is automated you don't need to use this)</td><td>0</td></tr>
-  <tr><td>conn_timeout</td><td>Network timeout</td><td>15</td></tr>
+  <tr><td>cl_reconnect_ban</td><td>Auto reconnect when banned</td><td>1</td></tr>
+  <tr><td>cl_reconnect_full</td><td>Auto reconnect when server is full</td><td>1</td></tr>
+  <tr><td>cl_reconnect_ban_timeout</td><td>How many seconds to wait before reconnecting (when banned)</td><td>30</td></tr>
+  <tr><td>cl_reconnect_full_timeout</td><td>How many seconds to wait before reconnecting (when server is full)</td><td>5</td></tr>
+  <tr><td>cl_message_system_hue</td><td>System message color hue</td><td>42</td></tr>
+  <tr><td>cl_message_system_sat</td><td>System message color saturation</td><td>255</td></tr>
+  <tr><td>cl_message_system_lht</td><td>System message color lightness</td><td>192</td></tr>
+  <tr><td>cl_message_highlight_hue</td><td>Highlighted message color hue</td><td>0</td></tr>
+  <tr><td>cl_message_highlight_sat</td><td>Highlighted message color saturation</td><td>255</td></tr>
+  <tr><td>cl_message_highlight_lht</td><td>Highlighted message color lightness</td><td>192</td></tr>
+  <tr><td>cl_message_team_hue</td><td>Team message color hue</td><td>85</td></tr>
+  <tr><td>cl_message_team_sat</td><td>Team message color saturation</td><td>255</td></tr>
+  <tr><td>cl_message_team_lht</td><td>Team message color lightness</td><td>212</td></tr>
+  <tr><td>cl_message_hue</td><td>Message color hue</td><td>0</td></tr>
+  <tr><td>cl_message_sat</td><td>Message color saturation</td><td>0</td></tr>
+  <tr><td>cl_message_lht</td><td>Message color lightness</td><td>255</td></tr>
+  <tr><td>cl_laser_inner_hue</td><td>Laser inner color hue</td><td>170</td></tr>
+  <tr><td>cl_laser_inner_sat</td><td>Laser inner color saturation</td><td>255</td></tr>
+  <tr><td>cl_laser_inner_lht</td><td>Laser inner color lightness</td><td>191</td></tr>
+  <tr><td>cl_laser_outline_hue</td><td>Laser outline color hue</td><td>170</td></tr>
+  <tr><td>cl_laser_outline_sat</td><td>Laser outline color saturation</td><td>137</td></tr>
+  <tr><td>cl_laser_outline_lht</td><td>Laser outline color lightness</td><td>41</td></tr>
+  <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
   <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
   <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td></tr>
@@ -387,7 +396,8 @@ menu: |
   <tr><td>cl_race_show_ghost</td><td>Show ghost</td><td>1</td></tr>
   <tr><td>cl_race_save_ghost</td><td>Save ghost</td><td>1</td></tr>
   <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard </td><td>1</td></tr>
-  <tr><td>cl_show_others</td><td>Show players in other teams</td><td>1</td></tr>
+  <tr><td>cl_show_others</td><td>Show players in other teams</td><td>0</td></tr>
+  <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>100</td></tr>
   <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td></tr>
   <tr><td>cl_show_quads</td><td>Show quads</td><td>1</td></tr>
   <tr><td>cl_background_hue</td><td>Background color hue</td><td>0</td></tr>
@@ -401,8 +411,11 @@ menu: |
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_other_hook_coll</td><td>Show other players' hook collision line</td><td>1</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
-  <tr><td>cl_show_direction</td><td>Show tee direction</td><td>1</td></tr>
+  <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
   <tr><td>cl_auto_update</td><td>Auto-Update</td><td>1</td></tr>
+  <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
+  <tr><td>cl_confirm_disconnect</td><td>Confirmation popup before disconnecting</td><td>0</td></tr>
+  <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>""</td></tr>
 </table>
 </div>
 <div class="block">
