@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.7.4';
+$version = '4.7.5';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,9 +69,9 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li>New security feature in DDNet Client 4.7.4 opens a new network connection, some Firewalls may ask if you want to do so</li>
+  <li>New security feature in DDNet Client 4.7.4 opens a new network connection, some Firewalls may ask if you want to do so. For the reason for this see these two Forum threads: <a href="http://forum.ddnet.tw/viewtopic.php?f=4&t=234">Ip spoofing and teeworlds</a> and <a href="http://forum.ddnet.tw/viewtopic.php?f=4&t=308">Kicking any player and executing rcon commands</a>.</li>
   <li>Hitomi server was removed. All maps were moved to Moderate and Brutal servers.</li>
-  <li>IP Spoofing protection for servers using <pre>sv_spoof_protection 1</pre></li>
+  <li>IP Spoofing protection for servers using sv_spoof_protection 1. More details about the attack on <a href="http://forum.ddnet.tw/viewtopic.php?f=4&t=306">the forum</a>.</li>
   <li>DDNet Teamspeak server by laxa: <a href="ts3server://ts.ddnet.tw">ts.ddnet.tw</a></li>
   <li>How to use the new timeout protection:<br/>
     If you have DDNet client, after a timeout, you will automatically be reconnected to your tee when you rejoin. If it doesn't work, wait a bit more (100 seconds) and rejoin server.<br/>
