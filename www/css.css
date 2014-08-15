@@ -221,6 +221,11 @@ td {
   text-align: center;
 }
 
+.release {
+  text-align: center;
+  margin: auto;
+}
+
 .ip {
   position: absolute;
   font-size: 75%;
@@ -245,6 +250,22 @@ br {
 .screenshot {
   max-width: 100%;
   height: auto;
+}
+
+.blockreleases {
+  display: inline-block;
+  min-width: 20em;
+  font-size: 88%;
+  text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.stretch {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0
 }
 
 .block4 {
@@ -290,11 +311,20 @@ br {
   text-align: center;
 }
 
+.release {
+  text-align: center;
+  margin: auto;
+}
+
 .div-ranks .block2 p {
   text-align: justify;
 }
 
 .div-ranks .info p {
+  text-align: center;
+}
+
+.div-ranks .release p {
   text-align: center;
 }
 
