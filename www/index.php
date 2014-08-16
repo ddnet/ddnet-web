@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.7.5';
+$version = '4.7.6';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,6 +69,15 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 4.7.6</strong>:<br/>
+  <ul>
+    <li>[Client] Fix: Dummy really disconnects on map change</li>
+    <li>[Client] Display map name while downloading</li>
+    <li>[Client] Make emoticon selector reset when you point it in the middle</li>
+    <li>[Server] Add sv_shutdown_when_empty</li>
+    <li>[Server] Fix: Exclude dummies from spoof protection</li>
+    <li>[Server] Fix: Reset timeout protection when it's over</li>
+  </ul>
   <li>New map releases on <a href="/releases/">ddnet.tw/releases</a></li>
   <li>New security feature in DDNet Client 4.7.4 opens a new network connection, some Firewalls may ask if you want to do so. For the reason for this see these two Forum threads: <a href="http://forum.ddnet.tw/viewtopic.php?f=4&t=234">Ip spoofing and teeworlds</a> and <a href="http://forum.ddnet.tw/viewtopic.php?f=4&t=308">Kicking any player and executing rcon commands</a>.</li>
   <li>Hitomi server was removed. All maps were moved to Moderate and Brutal servers.</li>
