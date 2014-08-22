@@ -20,7 +20,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournament/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/GRV5yWCyYIg?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/4Y4YW9JzsT4?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers.png"/></div>
 -<div class="startimages"><img class="demo" alt="Demo" src="full.png"/></div>
 <!--<object id="live_embed_player_flash" width="800" height="450" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="flashvars" value="hostname=de.twitch.tv&amp;channel=Hallowed1986&amp;auto_play=true&amp;start_volume=25" /><param name="src" value="http://de.twitch.tv/widgets/live_embed_player.swf?channel=Hallowed1986" /><embed id="live_embed_player_flash" width="800" height="450" type="application/x-shockwave-flash" src="http://de.twitch.tv/widgets/live_embed_player.swf?channel=Hallowed1986" allowFullScreen="true" allowScriptAccess="always" allowNetworking="all" flashvars="hostname=de.twitch.tv&amp;channel=Hallowed1986&amp;auto_play=true&amp;start_volume=25" bgcolor="#000000" /></object><iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=Hallowed1986&#038;popout_chat=true" height="450" width="300"></iframe>-->
@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.7.6';
+$version = '4.8';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,6 +69,25 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 4.8</strong>:<br/>
+  <ul>
+    <li>[Client] Also show all players for 32 player servers in serverbrowser</li>
+    <li>[Client] Half transparent chat and emoticons with /showothers</li>
+    <li>[Client] Recording with multiple clients at the same time working</li>
+    <li>[Editor] Show current quad when pressing space</li>
+    <li>[Editor] Keys still work with TAB pressed</li>
+    <li>[Editor] Don't show proof lines in editor when space is pressed</li>
+    <li>[Server] Show time of players you're spectating</li>
+    <li>[Server] Timeout protection and crash fixes</li>
+    <li>[Server+Client] Protect from IP spoofing of rcon commands</li>
+  </ul>
+  <li><strong>DDNet 4.7.7</strong>:<br/>
+  <ul>
+    <li>[Client] Allow disabling custom and new skins</li>
+    <li>[Client] Disable joystick on non-android devices by default</li>
+    <li>[Server] Add a timeout protection message</li>
+    <li>[Server] Timeout protection fixes</li>
+  </ul>
   <li><strong>DDNet 4.7.6</strong>:<br/>
   <ul>
     <li>[Client] Fix: Dummy really disconnects on map change</li>
