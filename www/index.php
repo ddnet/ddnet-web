@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.8';
+$version = '4.8.4';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,6 +69,15 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 4.8.4</strong>:<br/>
+    <li>[Client] Cut demos into parts and save them (by east)</li>
+    <li>[Client] Fix: Don't render hooks to non-active character cores (by east)</li>
+    <li>[Client] Fix: 64 player server info in LAN tab (by Savander)</li>
+    <li>[Server] Kill protection (by Savander)</li>
+    <li>[Server] Faster /points and /top5points</li>
+    <li>[Server] Switch /pause and /spec with sv_pauseable 1</li>
+    <li>[Server] Fix: Bullets don't explode when a player stands in their way (by Tobii)</li>
+  </ul>
   <li><strong>DDNet 4.8</strong>:<br/>
   <ul>
     <li>[Client] Also show all players for 32 player servers in serverbrowser</li>
