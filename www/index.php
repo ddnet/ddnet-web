@@ -69,7 +69,11 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://ddnet.tw/status/">Teamspeak status</a></li>
+  <li>DDNet Persian servers are back! (thanks to bor, King and Parham) All DDNet locations now:<br/>
+    <img class="demo" src="/locations.png" /></li>
   <li><strong>DDNet 4.8.4</strong>:<br/>
+  <ul>
     <li>[Client] Cut demos into parts and save them (by east)</li>
     <li>[Client] Fix: Don't render hooks to non-active character cores (by east)</li>
     <li>[Client] Fix: 64 player server info in LAN tab (by Savander)</li>
@@ -191,8 +195,7 @@ if ($user_os == 'win') {
     <li>Feature: Set how far to shift a layer in editor</lI>
     <li>Feature: Server works on older Linux systems</li>
   </ul>
-  <li>New servers in South Africa thanks to <a href="/players/goo/">goo</a>, <a href="/players/lordtheuns/">lordtheuns</a>, <a href="/players/Lexy/">Lexy</a>! All DDNet locations now:<br/>
-    <img class="demo" src="/locations.png" /></li>
+  <li>New servers in South Africa thanks to <a href="/players/goo/">goo</a>, <a href="/players/lordtheuns/">lordtheuns</a>, <a href="/players/Lexy/">Lexy</a>!</li>
   <li>How to hookfly with dummy: Hold the keys for hook and run and switch. Use hammerfly toggle key to make your dummy hook and stop hooking:<br/>
     <video class="fullvideo" controls>
       <source src="/client/dummyhookfly.mp4" type="video/mp4">

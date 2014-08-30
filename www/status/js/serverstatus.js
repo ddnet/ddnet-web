@@ -46,10 +46,7 @@ function bytesToSize(bytes, precision, si)
 		var terabyte = gigabyte * 1024;
 	}
 
-	if ((bytes >= 0) && (bytes < kilobyte)) {
-		return bytes + ' B';
-
-	} else if ((bytes >= kilobyte) && (bytes < megabyte)) {
+	if ((bytes >= 0) && (bytes < megabyte)) {
 		ret = (bytes / kilobyte).toFixed(precision) + ' K';
 
 	} else if ((bytes >= megabyte) && (bytes < gigabyte)) {
@@ -181,9 +178,7 @@ function uptime() {
 
 				// Network
 				var netstr = "";
-				if(result.servers[i].network_rx < 1000)
-					netstr += result.servers[i].network_rx.toFixed(0) + "B";
-				else if(result.servers[i].network_rx < 1000*1000)
+				if(result.servers[i].network_rx < 1000*1000)
 					netstr += (result.servers[i].network_rx/1000).toFixed(0) + "K";
 				else
 					netstr += (result.servers[i].network_rx/1000/1000).toFixed(1) + "M";
