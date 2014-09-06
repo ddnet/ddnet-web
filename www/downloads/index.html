@@ -18,6 +18,7 @@ menu: |
 <div class="block">
 <h2 id="downloads">Downloads</h2>
 <ul>
+  <li>2014-09-06: DDraceNetwork Client and Server 4.9: <a href="DDNet-4.9-win32.zip">Windows</a>, <a href="DDNet-4.9-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-4.9-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-4.9-osx.dmg">Mac OS X</a>, <a href="DDNet-4.9.apk">Android</a>
   <li>2014-08-26: DDraceNetwork Client and Server 4.8.4: <a href="DDNet-4.8.4-win32.zip">Windows</a>, <a href="DDNet-4.8.4-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-4.8.4-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-4.8.4-osx.dmg">Mac OS X</a>, <a href="DDNet-4.8.4.apk">Android</a>
   <li>2014-08-17: DDraceNetwork Client and Server 4.7.7: <a href="DDNet-4.7.7-win32.zip">Windows</a>, <a href="DDNet-4.7.7-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-4.7.7-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-4.7.7-osx.dmg">Mac OS X</a>, <a href="DDNet-4.7.7.apk">Android</a>
   <li>2014-08-01: DDraceNetwork Client and Server 4.6.3: <a href="DDNet-4.6.3-win32.zip">Windows</a>, <a href="DDNet-4.6.3-linux_x86.tar.gz">Linux x86</a>, <a href="DDNet-4.6.3-linux_x86_64.tar.gz">Linux x86_64</a>, <a href="DDNet-4.6.3-osx.dmg">Mac OS X</a>, <a href="DDNet-4.6.3.apk">Android</a>
@@ -36,6 +37,23 @@ menu: |
 </ul>
 <h3>Changelogs</h3>
 <ul>
+  <li><strong>DDNet 4.9</strong>:<br/>
+  <ul>
+    <li>[Client] Use settings_ddnet.cfg instead of settings.cfg</li>
+    <li>[Client] Add switch to disable CPU throttle when window is inactive</li>
+    <li>[Client] Unix only: FIFO console (as in server)</li>
+    <li>[Client] Add demo speed setting in menu</li>
+    <li>[Client] Don't show quit popup on update</li>
+    <li>[Client] Fix: Android controls working again</li>
+    <li>[Client] Fix: Only use rcon spoofing protection on ddnet servers as it's buggy on others</li>
+    <li>[Client] Fix: Case insensitive map filenames on Windows</li>
+    <li>[Client] Fix: Repopulate demo list after closing demo player because a new demo could have been created</li>
+    <li>[Client] Fix: Remove damage indications when entering game</li>
+    <li>[Client] Fix: Don't crash on broken demo files</li>
+    <li>[Editor] Fix: Negative clipping width and height make no sense</li>
+    <li>[Server] Fix: Only set active weapon when it actually has ammo</li>
+    <li>[Server] Fix: Make /save reset switches</li>
+  </ul>
   <li><strong>DDNet 4.8.4</strong>:<br/>
   <ul>
     <li>[Client] Cut demos into parts and save them (by east)</li>

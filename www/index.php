@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.8.4';
+$version = '4.9';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -69,6 +69,23 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 4.9</strong>:<br/>
+  <ul>
+    <li>[Client] Use settings_ddnet.cfg instead of settings.cfg</li>
+    <li>[Client] Add switch to disable CPU throttle when window is inactive</li>
+    <li>[Client] Unix only: FIFO console (as in server)</li>
+    <li>[Client] Add demo speed setting in menu</li>
+    <li>[Client] Don't show quit popup on update</li>
+    <li>[Client] Fix: Android controls working again</li>
+    <li>[Client] Fix: Only use rcon spoofing protection on ddnet servers as it's buggy on others</li>
+    <li>[Client] Fix: Case insensitive map filenames on Windows</li>
+    <li>[Client] Fix: Repopulate demo list after closing demo player because a new demo could have been created</li>
+    <li>[Client] Fix: Remove damage indications when entering game</li>
+    <li>[Client] Fix: Don't crash on broken demo files</li>
+    <li>[Editor] Fix: Negative clipping width and height make no sense</li>
+    <li>[Server] Fix: Only set active weapon when it actually has ammo</li>
+    <li>[Server] Fix: Make /save reset switches</li>
+  </ul>
   <li><a href="http://ddnet.tw/status/">Teamspeak status</a></li>
   <li>DDNet Persian servers are back! (thanks to bor, King and Parham) All DDNet locations now:<br/>
     <img class="demo" src="/locations.png" /></li>
