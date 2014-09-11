@@ -268,6 +268,29 @@ br {
   line-height: 0
 }
 
+.block7 {
+  float: left;
+  display: inline-block;
+  width: auto;
+  text-align: left;
+}
+
+.block6 {
+  float: left;
+  display: inline-block;
+  width: auto;
+  font-size: 88%;
+  text-align: left;
+}
+
+.block5 {
+  float: left;
+  display: inline-block;
+  width: auto;
+  font-size: 88%;
+  text-align: left;
+}
+
 .block4 {
   float: left;
   display: inline-block;
@@ -289,6 +312,16 @@ br {
   margin: 0;
   margin-left: -1em;
   width: 100%;
+}
+
+.block6 table {
+  margin: 0;
+  margin-left: -1em;
+}
+
+.block5 table {
+  margin: 0;
+  margin-left: -1em;
 }
 
 .block2 {
