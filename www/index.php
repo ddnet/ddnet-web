@@ -78,6 +78,7 @@ if ($user_os == 'win') {
 <h2 id="news">News</h2>
 <ul>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=407">New Moderate Tournament this Sunday at 20:00 CEST!</a></li>
+  <li>DDNet GER will stay down for a few weeks until we get DDoS protection for it. Meanwhile have fun on the protected DDNet FRA servers</li>
   <li><a href="/halloffame/">Hall of Fame</a></li>
   <li><strong>DDNet 4.9.2</strong>:<br/>
   <ul>
