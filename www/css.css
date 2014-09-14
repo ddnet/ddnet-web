@@ -427,7 +427,7 @@ br {
   max-width: 100%;
 }
 
-@media (min-width: 1100px) and (min-height: 730px) {
+@media (min-width: 1100px) and (min-height: 760px) {
 article {
   margin: 0 auto;
   max-width: 99em;
@@ -513,7 +513,7 @@ menu {
 }
 }
 
-@media (max-width: 1099px), (max-height: 729px) {
+@media (max-width: 1099px), (max-height: 759px) {
 .logobig {
   display: none;
 }
