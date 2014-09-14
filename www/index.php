@@ -77,7 +77,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=407">New Moderate Tournament this Sunday at 20:00 CEST!</a></li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=407">New Moderate Tournament this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.twitch.tv/hallowed1986">Hallowed1986's Twitch channel</a>)</li>
   <li><a href="/halloffame/">Hall of Fame</a></li>
   <li><strong>DDNet 4.9.2</strong>:<br/>
   <ul>
