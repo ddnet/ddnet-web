@@ -233,6 +233,10 @@ td {
   bottom: -0.5em;
 }
 
+.right {
+  float: right;
+}
+
 .back-up {
   position: absolute;
   right: 1em;
@@ -373,6 +377,10 @@ br {
   text-align: center;
 }
 
+.verticalLine {
+  border-left: thin solid #cccccc;
+}
+
 .spacey {
   margin: 0;
   font-size: 88%;
@@ -478,9 +486,9 @@ menu {
   padding: 2px 10px;
   text-align: right;
   position: fixed;
-  width: 20em;
+  width: 18.6em;
   top: 18em;
-  margin-left: -1.4em;
+  margin-left: 0em;
   border-right: 3px solid #FFD246;
   transition-property: border-right-color;
 }
