@@ -369,6 +369,10 @@ br {
   text-align: center;
 }
 
+.spacey th h2 {
+  text-align: center;
+}
+
 .spacey {
   margin: 0;
   font-size: 88%;
