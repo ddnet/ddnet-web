@@ -79,6 +79,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="/mappers/">List of all mappers</a></li>
   <li>Link to <a href="/mappers/Aoe/">mapper profiles</a> for each mapper on <a href="/releases/">releases</a> and <a href="/ranks/novice/">ranks pages</a>: Every map listed by mapper</li>
   <li>Player search function on each <a href="/ranks/">ranks page</a>: Find every player that ever finished a map on DDNet</li>
   <li>Comparison button for each <a href="/players/milk/">player profile</a>: Compare times and ranks on all finished maps</li>
