@@ -58,7 +58,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '4.9.3';
+$version = '5.0';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -79,11 +79,23 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=426">Quick Tournament #19 with a Moderate (4 stars) map by Welf, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
+  <li><strong>DDNet 5.0</strong>:<br/>
+  <ul>
+    <li>[Client] DDNet page with all DDNet servers, filterable by country (by east)</li>
+    <li>[Client] Fix: Make the initial ping in serverbrowser less wrong (still not perfect)</li>
+    <li>[Client] Fix: Prevent animated server names and fake 0 pings in serverbrowser</li>
+    <li>[Client] Fix: also record a demo when the start line is on the front layer (by Tobii)</li>
+    <li>[Client] Fix: Show tune layer when cl_overlay_entities is less than 100</li>
+    <li>[Client] Fix: Separate timed-switch-activation and unsolo tiles in ingame-entities</li>
+    <li>[Client] Fix: Rcon spoofing protection bans clients after password change (by Tobii)</li>
+    <li>[Editor] automapper works without basetile (by DoNe)</li>
+    <li>[Server] Add number of finishes to /mapinfo</li>
+  </ul></li>
   <li><a href="/mappers/">List of all mappers</a></li>
   <li>Link to <a href="/mappers/Aoe/">mapper profiles</a> for each mapper on <a href="/releases/">releases</a> and <a href="/ranks/novice/">ranks pages</a>: Every map listed by mapper</li>
   <li>Player search function on each <a href="/ranks/">ranks page</a>: Find every player that ever finished a map on DDNet</li>
   <li>Comparison button for each <a href="/players/milk/">player profile</a>: Compare times and ranks on all finished maps</li>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=426">Quick Tournament #19 with a Moderate (4 stars) map by Welf, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li><a href="http://ddnet.spreadshirt.de/">DDNet T-Shirt shop reopened</a></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=407">New Moderate Tournament this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li><a href="/halloffame/">Hall of Fame</a></li>
