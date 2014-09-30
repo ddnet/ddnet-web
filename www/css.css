@@ -502,7 +502,7 @@ br {
     text-align: right;
 }
 
-@media (min-width: 1100px) and (min-height: 760px) {
+@media (min-width: 1100px) and (min-height: 840px) {
 article {
   margin: 0 auto;
   max-width: 99em;
@@ -588,7 +588,7 @@ menu {
 }
 }
 
-@media (max-width: 1099px), (max-height: 759px) {
+@media (max-width: 1099px), (max-height: 839px) {
 .logobig {
   display: none;
 }
