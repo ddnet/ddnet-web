@@ -36,6 +36,19 @@ menu: |
   <li>Your map's design should have some contrast so it's playable without perfect light conditions. On the other hand the contrast shouldn't be too high or it will be painful to look at.</li>
   <li>The finish line should be reachable from the winner room so a team can finish if the last one dies</li>
 </ol>
-<p>Make sure your map works, design is done, and when you feel like it's ready for release, <a href="http://forum.ddnet.tw/">send us your map</a>.
+<h3>Common problems</h3>
+<p>These problems are in many maps, make sure to check for them before you submit your map:</p>
+<ol>
+  <li>Every image you included in your map is actually used. (used images are green)</li>
+  <li>Correct images are embedded into your map. These images are included with every Teeworlds client and therefore do not need to be embedded:<br/>
+    <tt>bg_cloud1, bg_cloud2, bg_cloud3, desert_doodads, desert_main, desert_mountains, desert_mountains2, desert_sun, generic_deathtiles, generic_unhookable, grass_doodads, grass_main, jungle_background, jungle_deathtiles, jungle_doodads, jungle_main, jungle_midground, jungle_unhookables, moon, mountains, snow, stars, sun, winter_doodads, winter_main, winter_mountains, winter_mountains2, winter_mountains3</tt><br/>
+    All other images must be embedded.</li>
+  <li>Layers should not be too big. Big game layers (game, front, tele, speedup, switch, tune) use up resources on servers. All big layers use up resources on clients. When your map is finished make the layers as small as possible. (but don't cut off any part)</li>
+  <li>You may want to mark some layers as detail-layers, so that players who prefer to play minimalistically have the choice to do so (HD off). Some graphics cards are too weak for HD on some maps.</li>
+  <li>Make sure there are no empty layers and groups.</li>
+  <li>The background needs to be big enough for all screen sizes. Use the "Proof" button in the editor to check what players will see.</li>
+  <li>Don't place teleporter destination tiles directly on the ground. When two players are teleported, the second one is violently thrown away.</li>
+</ol>
+<p>Make sure your map works, design is done, common problems are solved, and when you feel like it's ready for release, <a href="http://forum.ddnet.tw/">send us your map</a>.
 </p>
 </div>
