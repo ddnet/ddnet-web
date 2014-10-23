@@ -70,6 +70,11 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=545">Quick Tournament #23</a> with two maps: <br/>
+    <ul>
+      <li>Novice Solo-map "Rollercoaster" by DoNe on Saturday 20:00 CEST: Best time after 60 minutes wins</li>
+      <li>Brutal Dummy-map "Skychase" by SickCunt on Sunday 20:00 CET: First finish wins</li>
+    </ul></li>
   <li>On November 1 our hoster is cancelling the DDNet GER server because of the continuing DDoS attacks.</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=530">Quick Tournament #22 with the new Moderate map "SunDay 2" by Gridwyn, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=518">Quick Tournament #21 with a new Moderate map (★★★★✰) by Tuna & Hake, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
