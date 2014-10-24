@@ -49,7 +49,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '5.3';
+$version = '6.0';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -75,6 +75,21 @@ if ($user_os == 'win') {
       <li>Novice Solo-map "Rollercoaster" by DoNe on Saturday 20:00 CEST: Best time after 60 minutes wins</li>
       <li>Brutal Dummy-map "Skychase" by SickCunt on Sunday 20:00 CET: First finish wins</li>
     </ul></li>
+  <li><strong>DDNet 6.0</strong>:<br/>
+  <ul>
+    <li>[Mapping] <strong>Map Sounds</strong> (by BeaR)</li>
+    <li>[Mapping] Fixed jungle_background (by 645654)</li>
+    <li>[Client] AntiPing for weapons (by nuborn)</li>
+    <li>[Client] Demo recording fixed</li>
+    <li>[Client] Quads look the same on every GPU (by BeaR)</li>
+    <li>[Client] Flash window on chat highlight (Windows only, by BeaR)</li>
+    <li>[Client] Right click to decrease FSAA samples in menu (by Wohoo)</li>
+    <li>[Client] Don't clear rcon history when connecting to new server</li>
+    <li>[Editor] Shift + right click to delete a quad</li>
+    <li>[Editor] More and better automapper rules (by DoNe)</li>
+    <li>[Server] Show sleepy eyes when a player is paused</li>
+    <li>[Server] /mapinfo shows more information</li>
+  </ul>
   <li>On November 1 our hoster is cancelling the DDNet GER server because of the continuing DDoS attacks.</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=530">Quick Tournament #22 with the new Moderate map "SunDay 2" by Gridwyn, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=518">Quick Tournament #21 with a new Moderate map (★★★★✰) by Tuna & Hake, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
