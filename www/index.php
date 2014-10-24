@@ -49,7 +49,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.0';
+$version = '6.0.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -79,6 +79,7 @@ if ($user_os == 'win') {
   <ul>
     <li>[Mapping] <strong>Map Sounds</strong> (by BeaR)</li>
     <li>[Mapping] Fixed jungle_background (by 645654)</li>
+    <li>[Mapping] Fixed grass_main_0.7 (by Saavik) and automapper rules (by hi_leute_gll)</li>
     <li>[Client] AntiPing for weapons (by nuborn)</li>
     <li>[Client] Demo recording fixed</li>
     <li>[Client] Quads look the same on every GPU (by BeaR)</li>
@@ -86,7 +87,7 @@ if ($user_os == 'win') {
     <li>[Client] Right click to decrease FSAA samples in menu (by Wohoo)</li>
     <li>[Client] Don't clear rcon history when connecting to new server</li>
     <li>[Editor] Shift + right click to delete a quad</li>
-    <li>[Editor] More and better automapper rules (by DoNe)</li>
+    <li>[Editor] Fixed automapper rules (grass_main_0.7, ddnet-tiles, ddnet-walls, desert_main, fadeout, grass_main, jungle_main, round-tiles, winter_main, by DoNe)</li>
     <li>[Server] Show sleepy eyes when a player is paused</li>
     <li>[Server] /mapinfo shows more information</li>
   </ul>
