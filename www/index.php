@@ -20,7 +20,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/jzjSFVD3a8Q?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/NuQwNjn32Qo?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers.png"/></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -49,7 +49,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.0.1';
+$version = '6.0.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -70,11 +70,18 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://ddnet.tw/612.png">612 players (including dummies) during the last Tournament</a></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=545">Quick Tournament #23</a> with two maps: <br/>
     <ul>
       <li>Novice Solo-map "Rollercoaster" by DoNe on Saturday 20:00 CEST: Best time after 60 minutes wins</li>
       <li>Brutal Dummy-map "Skychase" by SickCunt on Sunday 20:00 CET: First finish wins</li>
     </ul></li>
+  <li><strong>DDNet 6.0.3</strong>:<br/>
+    <li>[Client] Flash window on chat highlight (Windows by BeaR &amp; Linux)</li>
+    <li>[Client] Option for disabling gunfire</li>
+    <li>[Server] Delay of 1 minute for loading savegames</li>
+    <li>[Server] Fix solo zone + laser drag in spec</li>
+  </li>
   <li><strong>DDNet 6.0</strong>:<br/>
   <ul>
     <li>[Mapping] <strong>Map Sounds</strong> (by BeaR)</li>
@@ -83,7 +90,6 @@ if ($user_os == 'win') {
     <li>[Client] AntiPing for weapons (by nuborn)</li>
     <li>[Client] Demo recording fixed</li>
     <li>[Client] Quads look the same on every GPU (by BeaR)</li>
-    <li>[Client] Flash window on chat highlight (Windows only, by BeaR)</li>
     <li>[Client] Right click to decrease FSAA samples in menu (by Wohoo)</li>
     <li>[Client] Don't clear rcon history when connecting to new server</li>
     <li>[Editor] Shift + right click to delete a quad</li>
