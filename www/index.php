@@ -70,6 +70,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>DDNet CAN now running in Canada thanks to o_be_one from r0x.fr!</li>
   <li>zCatch Servers are now run by Savander with his mod including /rank and /top5!</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=604">Halloween Tournament with the new Moderate map "Spooky" by Ama, this Sunday at 20:00 CET!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li>New GER servers sponsored by xRoThx</li>
