@@ -71,6 +71,7 @@ if ($user_os == 'win') {
 <h2 id="news">News</h2>
 <ul>
   <li><strong>DDNet 6.2</strong>:<br/>
+  <ul>
     <li>[Mapping] Fix editor sound replacing (by BeaR)</li>
     <li>[Client] Remove Bandana Brothers skins (use skinpacks instead)</li>
     <li>[Client] Make sound more accurate</li>
@@ -79,18 +80,19 @@ if ($user_os == 'win') {
     <li>[Server] Improve performance and ping</li>
     <li>[Server] Improve /rank performance</li>
     <li>[Server] Fix possible server crash</li>
-  </li>
+  </ul></li>
   <li>DDNet CAN now running in Canada thanks to o_be_one from r0x.fr! All locations now:<br/>
     <img class="demo" src="/locations.png" /></li>
   <li>zCatch Servers are now run by Savander with his mod including /rank and /top5!</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=604">Halloween Tournament with the new Moderate map "Spooky" by Ama, this Sunday at 20:00 CET!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li>New GER servers sponsored by xRoThx</li>
   <li><strong>DDNet 6.1</strong>:<br/>
+  <ul>
     <li>[Mapping] Use opus codec for map sounds instead of wavpack (with help by BeaR)</li>
     <li>[Client] Antiping for Weapons improved, might also work for Vanilla (by nuborn)</li>
     <li>[Client] Add bind for dyncam to settings</li>
     <li>[Server] Balance sending of vote options (by east)</li>
-  </li>
+  </ul></li>
   <li><a href="http://ddnet.tw/612.png">612 players (including dummies) during the last Tournament</a></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=545">Quick Tournament #23</a> with two maps: <br/>
     <ul>
@@ -98,11 +100,12 @@ if ($user_os == 'win') {
       <li>Brutal Dummy-map "Skychase" by SickCunt on Sunday 20:00 CET: First finish wins</li>
     </ul></li>
   <li><strong>DDNet 6.0.3</strong>:<br/>
+  <ul>
     <li>[Client] Flash window on chat highlight (Windows by BeaR &amp; Linux)</li>
     <li>[Client] Option for disabling gunfire</li>
     <li>[Server] Delay of 1 minute for loading savegames</li>
     <li>[Server] Fix solo zone + laser drag in spec</li>
-  </li>
+  </ul></li>
   <li><strong>DDNet 6.0</strong>:<br/>
   <ul>
     <li>[Mapping] <strong>Map Sounds</strong> (by BeaR)</li>
@@ -117,7 +120,7 @@ if ($user_os == 'win') {
     <li>[Editor] Fixed automapper rules (grass_main_0.7, ddnet-tiles, ddnet-walls, desert_main, fadeout, grass_main, jungle_main, round-tiles, winter_main, by DoNe)</li>
     <li>[Server] Show sleepy eyes when a player is paused</li>
     <li>[Server] /mapinfo shows more information</li>
-  </ul>
+  </ul></li>
   <li>On November 1 our hoster is cancelling the DDNet GER server because of the continuing DDoS attacks.</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=530">Quick Tournament #22 with the new Moderate map "SunDay 2" by Gridwyn, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=518">Quick Tournament #21 with a new Moderate map (★★★★✰) by Tuna & Hake, this Sunday at 20:00 CEST!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
