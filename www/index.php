@@ -49,7 +49,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.1.3';
+$version = '6.2';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -70,7 +70,18 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li>DDNet CAN now running in Canada thanks to o_be_one from r0x.fr!</li>
+  <li><strong>DDNet 6.2</strong>:<br/>
+    <li>[Mapping] Fix editor sound replacing (by BeaR)</li>
+    <li>[Client] Remove Bandana Brothers skins (use skinpacks instead)</li>
+    <li>[Client] Make sound more accurate</li>
+    <li>[Client] Don't render useless CTele-in number</li>
+    <li>[Client] gfx_text_overlay to stop rendering text at far distances</li>
+    <li>[Server] Improve performance and ping</li>
+    <li>[Server] Improve /rank performance</li>
+    <li>[Server] Fix possible server crash</li>
+  </li>
+  <li>DDNet CAN now running in Canada thanks to o_be_one from r0x.fr! All locations now:<br/>
+    <img class="demo" src="/locations.png" /></li>
   <li>zCatch Servers are now run by Savander with his mod including /rank and /top5!</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=604">Halloween Tournament with the new Moderate map "Spooky" by Ama, this Sunday at 20:00 CET!</a> (German livestream will be on <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986's Hitbox channel</a>)</li>
   <li>New GER servers sponsored by xRoThx</li>
@@ -192,7 +203,5 @@ if ($user_os == 'win') {
     <li>[Server] Fix: Make /save reset switches</li>
   </ul></li>
   <li><a href="http://ddnet.tw/status/">Teamspeak status</a></li>
-  <li>DDNet Persian servers are back! (thanks to bor, King and Parham) All DDNet locations now:<br/>
-    <img class="demo" src="/locations.png" /></li>
 </ul>
 </div>
