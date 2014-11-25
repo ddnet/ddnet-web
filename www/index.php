@@ -50,7 +50,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.2.1';
+$version = '6.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -71,6 +71,22 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 6.3</strong>:<br/>
+  <ul>
+    <li>[Client] New entities for better visibility of hookables (by Tee 3D)</li>
+    <li>[Client] Allow for more than 9 DDNet locations</li>
+    <li>[Client] Add unicode support for console output on Windows (by heinrich5991)</li>
+    <li>[Client] Fix duplicate skin handling</li>
+    <li>[Client] Demos show race time in scoreboard</li>
+    <li>[Client] HD flag works for sounds</li>
+    <li>[Client] Fix double click recognition in menu</li>
+    <li>[Client] Fix demo saving</li>
+    <li>[Editor] Fix editor in Images &amp; Sounds views when GUI is deactivated</li>
+    <li>[Server] ASCII confusable detection to prevent name faking</li>
+    <li>[Server] sv_solo_server for easier solo servers (also working for tunezones finally)</li>
+    <li>[Server] Fix infrequent segfault when server shuts down immediately</li>
+    <li>[Server] Minor ping improvement on empty server (serverbrowser)</li>
+  </ul></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=688">Quick Tournament #25</a> with the new Solo map "Fallen Angel" by Tee 3D:<br/>
     <img class="demo" src="Fallen_Angel.png" /></li>
   <li>DDNet Brazil now running thanks to RafaelFF &amp; Soyer! All locations now:<br/>
