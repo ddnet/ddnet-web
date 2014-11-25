@@ -208,6 +208,12 @@ table {
   border-spacing: 0;
 }
 
+.downloadtable td {
+  text-align: left;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
 td {
   padding-left: 1em;
 }
