@@ -508,7 +508,7 @@ br {
     text-align: right;
 }
 
-@media (min-width: 1100px) and (min-height: 730px) {
+@media (min-width: 1100px) {
 article {
   margin: 0 auto;
   max-width: 99em;
@@ -521,7 +521,6 @@ section {
 }
 
 .title {
-  position: fixed;
   width: 21em;
   top: 0;
 }
@@ -554,7 +553,6 @@ menu {
   font-style: italic;
   padding: 2px 10px;
   text-align: right;
-  position: fixed;
   width: 18.6em;
   top: 18em;
   margin-left: 0em;
@@ -576,6 +574,25 @@ menu {
   display: none;
 }
 
+@media (min-height: 750px) {
+  .title {
+    position: fixed;
+  }
+
+  .contentleft {
+    position: fixed;
+  }
+}
+@media (max-height: 749px) {
+  .title {
+    position: absolute;
+  }
+
+  .contentleft {
+    position: absolute;
+  }
+}
+
 .contentright {
   position: absolute;
   left: 39em;
@@ -594,7 +611,7 @@ menu {
 }
 }
 
-@media (max-width: 1099px), (max-height: 729px) {
+@media (max-width: 1099px) {
 .logobig {
   display: none;
 }
