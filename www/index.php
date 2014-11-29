@@ -7,7 +7,6 @@ menu: |
     <li><a href="/server/">Server&nbsp;Features</a></li>
     <li><a href="/client/">Client&nbsp;Features</a></li>
     <li><a href="/map/">Map&nbsp;Features</a></li>
-    <li><a href="/rules/">Mapper&nbsp;Rules</a></li>
     <li><a href="/howto/">How&nbsp;to&nbsp;Map</a></li>
     <li><a href="/binds/">Useful&nbsp;Binds</a></li>
     <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
@@ -71,6 +70,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=711">Quick Tournament #26</a> with the new Brutal map (★✰✰✰✰) "Nirvana" by Hindu &amp; Kayumi:<br/><img class="demo" src="Nirvana.png" /></li>
   <li><strong>DDNet 6.3</strong>:<br/>
   <ul>
     <li>[Client] New entities for better visibility of hookables (by Tee 3D)</li>
