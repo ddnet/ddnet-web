@@ -19,7 +19,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/sWn90CiWHSE?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/wKdqaQqk9sQ?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <!--<div class="startimages"><img class="demo" alt="Demo" src="lasers.png"/></div>-->
 <div class="startimages"><img class="demo" alt="Demo" src="lasers2.png"/></div>
 <div class="startimages">
@@ -58,7 +58,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.3';
+$version = '6.4';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -79,10 +79,20 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 6.4</strong>:<br/>
+  <ul>
+    <li>[Mapping] Rectangular sounds and variable falloff distance (by BeaR)</li>
+    <li>[Mapping] Old sound maps can be converted to new format by loading and saving in editor (by BeaR)</li>
+    <li>[Mapping] round-tiles fixed (by Soreu)</li>
+    <li>[Client] Antiping for weapons added again (by nuborn)</li>
+    <li>[Client] cl_show_decisecs 0 to get back timer from Vanilla at top of screen</li>
+    <li>[Client] Fix sound cutoff for looped sounds and make sound offset threshold dependent on the size of the audio buffer</li>
+    <li>[Client] Send timeout code later (fixes timeout code entering issues, fixes timeout protection not working realiably with dummy)</li>
+    <li>[Server+Client] Minor optimizations and fixes</li>
+  </ul></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=711">Quick Tournament #26</a> with the new Brutal map (★✰✰✰✰) "Nirvana" by Hindu &amp; Kayumi:<br/><img class="demo" src="Nirvana.png" /></li>
   <li><strong>DDNet 6.3</strong>:<br/>
   <ul>
-    <li>[Client] New entities for better visibility of hookables (by Tee 3D)</li>
     <li>[Client] Allow for more than 9 DDNet locations</li>
     <li>[Client] Add unicode support for console output on Windows (by heinrich5991)</li>
     <li>[Client] Fix duplicate skin handling</li>
@@ -91,6 +101,7 @@ if ($user_os == 'win') {
     <li>[Client] Fix double click recognition in menu</li>
     <li>[Client] Fix demo saving</li>
     <li>[Editor] Fix editor in Images &amp; Sounds views when GUI is deactivated</li>
+    <li>[Mapping] New entities for better visibility of hookables (by Tee 3D)</li>
     <li>[Server] ASCII confusable detection to prevent name faking</li>
     <li>[Server] sv_solo_server for easier solo servers (also working for tunezones finally)</li>
     <li>[Server] Fix infrequent segfault when server shuts down immediately</li>
