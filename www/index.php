@@ -19,7 +19,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, Iran, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/RMcA0iqakhs?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/vzghqtCFSTw?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <!--<div class="startimages"><img class="demo" alt="Demo" src="lasers.png"/></div>-->
 <div class="startimages"><img class="demo" alt="Demo" src="lasers2.png"/></div>
 <div class="startimages">
@@ -58,7 +58,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.4';
+$version = '6.5';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -79,6 +79,17 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 6.5</strong>:<br/>
+  <ul>
+    <li>[Client] Filter DDNet servers by type</li>
+    <li>[Client] Exclusion in quick search</li>
+    <li>[Client] Clean up menus</li>
+    <li>[Client] Ignore clan when searching for friends</li>
+    <li>[Client] One AntiPing setting for everything</li>
+    <li>[Client] AntiPing: Smoke trails of grenades (by BeaR)</li>
+    <li>[Client+Server] Set IP TOS value to low delay (might improve ping stability)</li>
+    <li>[Server] Fix possible crash</li>
+  </ul>
   <li><strong>DDNet 6.4</strong>:<br/>
   <ul>
     <li>[Mapping] Rectangular sounds and variable falloff distance (by BeaR)</li>
