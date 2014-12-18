@@ -79,6 +79,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=790">Quick Tournament #27</a> with the new Brutal Dummy map "TomorrowLand" by Skeptar &amp; tobu.:<br/><img class="demo" src="TomorrowLand.png" /></li>
   <li><strong>DDNet 6.5</strong>:<br/>
   <ul>
     <li>[Client] Filter DDNet servers by type</li>
