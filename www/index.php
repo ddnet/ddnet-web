@@ -58,7 +58,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.5';
+$version = '6.6';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -79,6 +79,19 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 6.6</strong>:<br/>
+  <ul>
+    <li>[Client] Browser: Remove "pure" exclamation mark</li>
+    <li>[Client] Browser: Flexible map column size</li>
+    <li>[Client] Browser: "Reset filter" also resets DDNet Country and Type exclusion lists</li>
+    <li>[Client] Browser: Fix: Clan is ignored when searching for friends</li>
+    <li>[Client] Browser: Fix: Save that you were on settings tab</li>
+    <li>[Client] Highlight in console</li>
+    <li>[Editor] Add detection whether an image and sound has to be embedded and redesign colors</li>
+    <li>[Server] Only allow savegames in one country to prevent cheats
+    <li>[Server] Allow to set country where you can load savegame (e.g. /save ZAF CODE for South Africa)</li>
+    <li>[Server] Disable hook when /spec is used</li>
+  </ul></li>
   <li><a href="stats/">DDNet Statistics &amp; Charts</a></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=790">Quick Tournament #27</a> with the new Brutal Dummy map "TomorrowLand" by Skeptar &amp; tobu. this Sunday at 20:00 CET:<br/><img class="demo" src="TomorrowLand.png" /></li>
   <li>There was an exploit using savegames. The solution is that you can only load on the server where you saved (same country). Unfortunately I didn't record this information before, so I had to set GER as the default server. To restore your savegame on USA:</li>
