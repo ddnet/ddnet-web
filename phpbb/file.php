@@ -1,15 +1,15 @@
 <?php
 /**
 *
-* @package phpBB3
-* @copyright (c) 2005 phpBB Group
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* This file is part of the phpBB Forum Software package.
+*
+* @copyright (c) phpBB Limited <https://www.phpbb.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+* For full copyright and license information, please see
+* the docs/CREDITS.txt file.
 *
 */
-
-use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
 * @ignore
@@ -34,29 +34,33 @@ else if (isset($_SERVER['HTTP_USER_AGENT']) && strpos($_SERVER['HTTP_USER_AGENT'
 if (isset($_GET['avatar']))
 {
 	require($phpbb_root_path . 'includes/startup.' . $phpEx);
-	require($phpbb_root_path . 'config.' . $phpEx);
+
+	require($phpbb_root_path . 'phpbb/class_loader.' . $phpEx);
+	$phpbb_class_loader = new \phpbb\class_loader('phpbb\\', "{$phpbb_root_path}phpbb/", $phpEx);
+	$phpbb_class_loader->register();
+
+	$phpbb_config_php_file = new \phpbb\config_php_file($phpbb_root_path, $phpEx);
+	extract($phpbb_config_php_file->get_all());
 
 	if (!defined('PHPBB_INSTALLED') || empty($dbms) || empty($acm_type))
 	{
 		exit;
 	}
 
-	require($phpbb_root_path . 'phpbb/class_loader.' . $phpEx);
-
 	require($phpbb_root_path . 'includes/constants.' . $phpEx);
 	require($phpbb_root_path . 'includes/functions.' . $phpEx);
-	require($phpbb_root_path . 'includes/functions_container.' . $phpEx);
 	require($phpbb_root_path . 'includes/functions_download' . '.' . $phpEx);
 	require($phpbb_root_path . 'includes/utf/utf_tools.' . $phpEx);
 
 	// Setup class loader first
-	$phpbb_class_loader = new \phpbb\class_loader('phpbb\\', "{$phpbb_root_path}phpbb/", $phpEx);
-	$phpbb_class_loader->register();
 	$phpbb_class_loader_ext = new \phpbb\class_loader('\\', "{$phpbb_root_path}ext/", $phpEx);
 	$phpbb_class_loader_ext->register();
 
+	phpbb_load_extensions_autoloaders($phpbb_root_path);
+
 	// Set up container
-	$phpbb_container = phpbb_create_default_container($phpbb_root_path, $phpEx);
+	$phpbb_container_builder = new \phpbb\di\container_builder($phpbb_config_php_file, $phpbb_root_path, $phpEx);
+	$phpbb_container = $phpbb_container_builder->get_container();
 
 	$phpbb_class_loader->set_cache($phpbb_container->get('cache.driver'));
 	$phpbb_class_loader_ext->set_cache($phpbb_container->get('cache.driver'));
@@ -69,11 +73,6 @@ if (isset($_GET['avatar']))
 	$db			= $phpbb_container->get('dbal.conn');
 	$phpbb_log	= $phpbb_container->get('log');
 
-	// Connect to DB
-	if (!@$db->sql_connect($dbhost, $dbuser, $dbpasswd, $dbname, $dbport, false, false))
-	{
-		exit;
-	}
 	unset($dbpasswd);
 
 	request_var('', 0, false, false, $request);
@@ -84,7 +83,6 @@ if (isset($_GET['avatar']))
 
 	// load extensions
 	$phpbb_extension_manager = $phpbb_container->get('ext.manager');
-	$phpbb_subscriber_loader = $phpbb_container->get('event.subscriber_loader');
 
 	// worst-case default
 	$browser = strtolower($request->header('User-Agent', 'msie 6.0'));
@@ -142,11 +140,7 @@ if (isset($_GET['avatar']))
 include($phpbb_root_path . 'common.' . $phpEx);
 require($phpbb_root_path . 'includes/functions_download' . '.' . $phpEx);
 
-$download_id = request_var('id', 0);
-$topic_id = $request->variable('topic_id', 0);
-$post_id = $request->variable('post_id', 0);
-$msg_id = $request->variable('msg_id', 0);
-$archive = $request->variable('archive', '.tar');
+$attach_id = request_var('id', 0);
 $mode = request_var('mode', '');
 $thumbnail = request_var('t', false);
 
@@ -161,27 +155,7 @@ if (!$config['allow_attachments'] && !$config['allow_pm_attach'])
 	trigger_error('ATTACHMENT_FUNCTIONALITY_DISABLED');
 }
 
-if ($download_id)
-{
-	// Attachment id (only 1 attachment)
-	$sql_where = 'attach_id = ' . $download_id;
-}
-else if ($msg_id)
-{
-	// Private message id (multiple attachments)
-	$sql_where = 'is_orphan = 0 AND in_message = 1 AND post_msg_id = ' . $msg_id;
-}
-else if ($post_id)
-{
-	// Post id (multiple attachments)
-	$sql_where = 'is_orphan = 0 AND in_message = 0 AND post_msg_id = ' . $post_id;
-}
-else if ($topic_id)
-{
-	// Topic id (multiple attachments)
-	$sql_where = 'is_orphan = 0 AND topic_id = ' . $topic_id;
-}
-else
+if (!$attach_id)
 {
 	send_status_line(404, 'Not Found');
 	trigger_error('NO_ATTACHMENT_SELECTED');
@@ -189,25 +163,12 @@ else
 
 $sql = 'SELECT attach_id, post_msg_id, topic_id, in_message, poster_id, is_orphan, physical_filename, real_filename, extension, mimetype, filesize, filetime
 	FROM ' . ATTACHMENTS_TABLE . "
-	WHERE $sql_where";
+	WHERE attach_id = $attach_id";
 $result = $db->sql_query($sql);
-
-$attachments = $attachment_ids = array();
-while ($row = $db->sql_fetchrow($result))
-{
-	$attachment_id = (int) $row['attach_id'];
-
-	$row['physical_filename'] = utf8_basename($row['physical_filename']);
-
-	$attachment_ids[$attachment_id] = $attachment_id;
-	$attachments[$attachment_id] = $row;
-}
+$attachment = $db->sql_fetchrow($result);
 $db->sql_freeresult($result);
 
-// Make $attachment the first of the attachments we fetched.
-$attachment = current($attachments);
-
-if (empty($attachments))
+if (!$attachment)
 {
 	send_status_line(404, 'Not Found');
 	trigger_error('ERROR_NO_ATTACHMENT');
@@ -217,9 +178,9 @@ else if (!download_allowed())
 	send_status_line(403, 'Forbidden');
 	trigger_error($user->lang['LINKAGE_FORBIDDEN']);
 }
-else if ($download_id)
+else
 {
-	// sizeof($attachments) == 1
+	$attachment['physical_filename'] = utf8_basename($attachment['physical_filename']);
 
 	if (!$attachment['in_message'] && !$config['allow_attachments'] || $attachment['in_message'] && !$config['allow_pm_attach'])
 	{
@@ -264,12 +225,12 @@ else if ($download_id)
 		else
 		{
 			// Attachment is in a private message.
-			$row['forum_id'] = false;
+			$post_row = array('forum_id' => false);
 			phpbb_download_handle_pm_auth($db, $auth, $user->data['user_id'], $attachment['post_msg_id']);
 		}
 
 		$extensions = array();
-		if (!extension_allowed($row['forum_id'], $attachment['extension'], $extensions))
+		if (!extension_allowed($post_row['forum_id'], $attachment['extension'], $extensions))
 		{
 			send_status_line(403, 'Forbidden');
 			trigger_error(sprintf($user->lang['EXTENSION_DISABLED_AFTER_POSTING'], $attachment['extension']));
@@ -277,7 +238,7 @@ else if ($download_id)
 	}
 
 	if ($post_row['forum_id'] == 9 && ($attachment['extension'] == 'map' || $attachment['extension'] == 'cfg') &&
-		($user->data['group_id'] != 5 && $user->data['group_id'] != 4 && $user->data['group_id'] != 8))
+		($user->data['group_id'] != 5 && $user->data['group_id'] != 4 && $user->data['group_id'] != 8 && $user->data['group_id'] != 9))
 	{
 		send_status_line(403, 'Forbidden');
 		trigger_error(sprintf('Only Testers can download maps to be tested', $attachment['extension']));
@@ -332,143 +293,4 @@ else if ($download_id)
 			file_gc();
 		}
 	}
-}
-else
-{
-	// sizeof($attachments) >= 1
-	if ($attachment['in_message'])
-	{
-		phpbb_download_handle_pm_auth($db, $auth, $user->data['user_id'], $attachment['post_msg_id']);
-	}
-	else
-	{
-		phpbb_download_handle_forum_auth($db, $auth, $attachment['topic_id']);
-	}
-
-	if (!class_exists('compress'))
-	{
-		require $phpbb_root_path . 'includes/functions_compress.' . $phpEx;
-	}
-
-	if (!in_array($archive, compress::methods()))
-	{
-		$archive = '.tar';
-	}
-
-	$post_visibility = array();
-	if ($msg_id)
-	{
-		$sql = 'SELECT message_subject AS attach_subject
-			FROM ' . PRIVMSGS_TABLE . "
-			WHERE msg_id = $msg_id";
-	}
-	else if ($post_id)
-	{
-		$sql = 'SELECT post_subject AS attach_subject, forum_id, post_visibility
-			FROM ' . POSTS_TABLE . "
-			WHERE post_id = $post_id";
-	}
-	else
-	{
-		$sql = 'SELECT post_id, post_visibility
-			FROM ' . POSTS_TABLE . "
-			WHERE topic_id = $topic_id
-				AND post_attachment = 1";
-		$result = $db->sql_query($sql);
-		while ($row = $db->sql_fetchrow($result))
-		{
-			$post_visibility[(int) $row['post_id']] = (int) $row['post_visibility'];
-		}
-		$db->sql_freeresult($result);
-
-		$sql = 'SELECT topic_title AS attach_subject, forum_id
-			FROM ' . TOPICS_TABLE . "
-			WHERE topic_id = $topic_id";
-	}
-
-	$result = $db->sql_query($sql);
-	$row = $db->sql_fetchrow($result);
-	$db->sql_freeresult($result);
-
-	if (empty($row))
-	{
-		send_status_line(404, 'Not Found');
-		trigger_error('ERROR_NO_ATTACHMENT');
-	}
-
-	$clean_name = phpbb_download_clean_filename($row['attach_subject']);
-	$suffix = '_' . (($msg_id) ? 'm' . $msg_id : (($post_id) ? 'p' . $post_id : 't' . $topic_id)) . '_' . $clean_name;
-	$archive_name = 'attachments' . $suffix;
-
-	$store_name = 'att_' . time() . '_' . unique_id();
-	$archive_path = "{$phpbb_root_path}store/{$store_name}{$archive}";
-
-	if ($archive === '.zip')
-	{
-		$compress = new compress_zip('w', $archive_path);
-	}
-	else
-	{
-		$compress = new compress_tar('w', $archive_path, $archive);
-	}
-
-	$extensions = array();
-	$files_added = 0;
-	$forum_id = ($attachment['in_message']) ? false : (int) $row['forum_id'];
-	$disallowed_extension = array();
-
-	foreach ($attachments as $attach)
-	{
-		if (!extension_allowed($forum_id, $attach['extension'], $extensions))
-		{
-			$disallowed_extension[$attach['extension']] = $attach['extension'];
-			continue;
-		}
-
-		if ($post_id && $row['post_visibility'] != ITEM_APPROVED && !$auth->acl_get('m_approve', $forum_id))
-		{
-			// Attachment of a soft deleted post and the user is not allowed to see the post
-			continue;
-		}
-
-		if ($topic_id && (!isset($post_visibility[$attach['post_msg_id']]) || $post_visibility[$attach['post_msg_id']] != ITEM_APPROVED) && !$auth->acl_get('m_approve', $forum_id))
-		{
-			// Attachment of a soft deleted post and the user is not allowed to see the post
-			continue;
-		}
-
-		$prefix = '';
-		if ($topic_id)
-		{
-			$prefix = $attach['post_msg_id'] . '_';
-		}
-
-		$compress->add_custom_file("{$phpbb_root_path}files/{$attach['physical_filename']}", "{$prefix}{$attach['real_filename']}");
-		$files_added++;
-	}
-
-	$compress->close();
-
-	if ($files_added)
-	{
-		phpbb_increment_downloads($db, $attachment_ids);
-		$compress->download($store_name, $archive_name);
-	}
-
-	unlink($archive_path);
-
-	if (!$files_added && !empty($disallowed_extension))
-	{
-		// None of the attachments had a valid extension
-		$disallowed_extension = implode($user->lang['COMMA_SEPARATOR'], $disallowed_extension);
-		send_status_line(403, 'Forbidden');
-		trigger_error($user->lang('EXTENSION_DISABLED_AFTER_POSTING', $disallowed_extension));
-	}
-	else if (!$files_added)
-	{
-		send_status_line(404, 'Not Found');
-		trigger_error('ERROR_NO_ATTACHMENT');
-	}
-
-	file_gc();
 }

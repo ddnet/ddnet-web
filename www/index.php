@@ -19,7 +19,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/KEeBpp9-dLg?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe class="ytplayer" src="http://www.youtube.com/embed/nKFMF6BeR4U?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <!--<div class="startimages"><img class="demo" alt="Demo" src="lasers.png"/></div>-->
 <div class="startimages"><img class="demo" alt="Demo" src="lasers2.png"/></div>
 <div class="startimages">
@@ -58,7 +58,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.6';
+$version = '6.6.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -79,6 +79,12 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 6.6.1</strong>:<br/>
+  <ul>
+    <li>[Client] Fix: Still allow to find clan mates when clan is ignored in friends</li>
+    <li>[Client] Highlight broadcasts in console as well</li>
+    <li>[Editor] Change colors again</li>
+  </ul></li>
   <li><strong>DDNet 6.6</strong>:<br/>
   <ul>
     <li>[Client] Browser: Remove "pure" exclamation mark</li>
