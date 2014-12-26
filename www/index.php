@@ -29,7 +29,7 @@ DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.c
   <input type="hidden" name="hosted_button_id" value="5NQ459VBKP4ZN">
   <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
   </form>
-  <p>If you want the money to be used for a specific server, add a message. In some countries you can <a href="https://www.paypal.com/myaccount/transfer/send">send money to friends for free using PayPal</a>. To help with paying the servers you can send money to deen@ddnet.tw.</p>
+  <p>If you want the money to be used for a specific server, add a message. In some countries you can <a href="https://www.paypal.com/myaccount/transfer/send">send money to friends for free using PayPal</a>. To help with paying the servers you can send money to deen@ddnet.tw. For other donation methods, just ask me.</p>
 </div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
