@@ -58,7 +58,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '6.6.3';
+$version = '6.6.4';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -79,11 +79,19 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong>DDNet 6.6.1</strong>:<br/>
+  <li><strong>DDNet 6.6.4</strong>:<br/>
   <ul>
     <li>[Client] Fix: Still allow to find clan mates when clan is ignored in friends</li>
     <li>[Client] Highlight broadcasts in console as well</li>
+    <li>[Client] Show the function of search and exclusion edit boxes when empty (Suggestion by Saavik)</li>
+    <li>[Client] Fix friend display when clan doesn't match</li>
     <li>[Editor] Change colors again</li>
+    <li>[Editor] Fix: Correct images are reported for embedding</li>
+    <li>[Mapping] Add better hookable entity (by Soreu)</li>
+    <li>[Mapping] Add water tileset (by Soreu)</li>
+    <li>[Server] Fix master server registration on Windows</li>
+    <li>[Server] Make prediction work with unsolo command</li>
+    <li>[Server] Prevent spam with SQL messages</li>
   </ul></li>
   <li><strong>DDNet 6.6</strong>:<br/>
   <ul>

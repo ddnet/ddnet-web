@@ -14,6 +14,7 @@ menu: |
 <div class="block">
 <h2 id="server-settings">Server Settings</h2>
 <table class="settingscommands">
+</table>
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>password</td><td>Password to the server</td><td>""</td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
@@ -84,6 +85,7 @@ menu: |
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>"UNK"</td></tr>
   <tr><td>sv_sql_prefix</td><td>SQL Database table prefix</td><td>"record"</td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td></tr>
+  <tr><td>sv_savegames_delay</td><td>Delay in seconds for loading a savegame</td><td>60</td></tr>
   <tr><td>sv_ddrace_rules</td><td>Whether the default mod rules are displayed or not</td><td>1</td></tr>
   <tr><td>sv_rules_line1</td><td>Rules line 1</td><td>""</td></tr>
   <tr><td>sv_rules_line2</td><td>Rules line 2</td><td>""</td></tr>
@@ -131,6 +133,9 @@ menu: |
   <tr><td>sv_spoof_protection</td><td>Enable spoof protection</td><td>0</td></tr>
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as noone is on it anymore</td><td>0</td></tr>
   <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>0</td></tr>
+  <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
+  <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>"Get the client from ddnet.tw to use all features on DDNet"</td></tr>
+  <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>"Your client version is old. Update it on ddnet.tw for new features!"</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
   <tr><td>sv_warmup</td><td>Number of seconds to do warmup before round starts</td><td>0</td></tr>
@@ -162,8 +167,8 @@ menu: |
   <tr><td>sv_mapupdaterate</td><td>(Tw32) real id <-> vanilla id players map update rate</td><td>5</td></tr>
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
+  <tr><td>sv_send_votes_per_tick</td><td>Number of vote options being send per tick</td><td>5</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
-</table>
 </div>
 <div class="block">
 <h2 id="server-commands">Server Commands</h2>
@@ -238,8 +243,8 @@ menu: |
   <tr><td>dnd</td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
   <tr><td>mapinfo</td><td>Show info about the map with name r gives (current map by default)</td></tr>
   <tr><td>timeout</td><td>Set timeout protection code s</td></tr>
-  <tr><td>save</td><td>Save team with code s</td></tr>
-  <tr><td>load</td><td>Load with code s</td></tr>
+  <tr><td>save</td><td>Save team with code r</td></tr>
+  <tr><td>load</td><td>Load with code r</td></tr>
   <tr><td>map</td><td>Vote a map by name</td></tr>
   <tr><td>rankteam</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>rank</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
@@ -250,7 +255,7 @@ menu: |
   <tr><td>top5</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>showothers</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
   <tr><td>specteam</td><td>Whether to show players from other teams when spectating (on by default), optional i = 0 for off else for on</td></tr>
-  <tr><td>ninjajetpack</td><td>Whether to showplayers from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
+  <tr><td>ninjajetpack</td><td>Whether to use ninja jetpack or not. Makes jetpack look more awesome</td></tr>
   <tr><td>saytime</td><td>Privately messages someone's current time in this current running race (your time by default)</td></tr>
   <tr><td>saytimeall</td><td>Publicly messages everyone your current time in this current running race</td></tr>
   <tr><td>time</td><td>Privately shows you your current time in this current running race in the broadcast message</td></tr>
@@ -266,8 +271,10 @@ menu: |
 <table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td></tr>
-  <tr><td>cl_antiping</td><td>Antiping (predict other players' movements)</td><td>0</td></tr>
+  <tr><td>cl_antiping</td><td>Antiping (sets all Antiping settings)</td><td>0</td></tr>
+  <tr><td>cl_antiping_players</td><td>Antiping (predict other players' movements)</td><td>0</td></tr>
   <tr><td>cl_antiping_grenade</td><td>Antiping (predict grenades)</td><td>0</td></tr>
+  <tr><td>cl_antiping_weapons</td><td>Antiping (predict weapons)</td><td>0</td></tr>
   <tr><td>cl_nameplates</td><td>Show name plates</td><td>1</td></tr>
   <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td></tr>
   <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td></tr>
@@ -293,7 +300,7 @@ menu: |
   <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>400</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
-  <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>1</td></tr>
+  <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td></tr>
   <tr><td>ed_showkeys</td><td></td><td>0</td></tr>
   <tr><td>cl_flow</td><td></td><td>0</td></tr>
   <tr><td>cl_show_welcome</td><td></td><td>1</td></tr>
@@ -302,9 +309,9 @@ menu: |
   <tr><td>cl_ddnet_version_server</td><td>Server to use to check for new ddnet versions</td><td>"version.ddnet.tw"</td></tr>
   <tr><td>cl_ddnet_update_server</td><td>Server to use to update new ddnet versions</td><td>"update.ddnet.tw"</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>""</td></tr>
-  <tr><td>cl_show_special_skins</td><td>Show special skins in UI</td><td>0</td></tr>
   <tr><td>cl_show_new_skins</td><td>Show new skins ingame</td><td>1</td></tr>
   <tr><td>cl_show_custom_skins</td><td>Show custom skins ingame</td><td>1</td></tr>
+  <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>20</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
   <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
@@ -349,11 +356,13 @@ menu: |
   <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>0</td></tr>
   <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_reset_wanted_weapon_on_death</td><td>Reset wanted weapon on death</td><td>1</td></tr>
-  <tr><td>cl_print_broadcasts</td><td>Print broadcasts into console</td><td>1</td></tr>
+  <tr><td>cl_print_broadcasts</td><td>Print broadcasts to console</td><td>1</td></tr>
+  <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>1</td></tr>
   <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
   <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>0</td></tr>
   <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>1</td></tr>
   <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>""</td></tr>
+  <tr><td>br_exclude_string</td><td>Server browser exclusion string</td><td>""</td></tr>
   <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
   <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>1</td></tr>
   <tr><td>br_filter_spectators</td><td>Filter out spectators from player numbers</td><td>0</td></tr>
@@ -369,6 +378,7 @@ menu: |
   <tr><td>br_filter_pure_map</td><td>Filter out non-standard maps in browser</td><td>0</td></tr>
   <tr><td>br_filter_compatversion</td><td>Filter out non-compatible servers in browser</td><td>0</td></tr>
   <tr><td>br_filter_exclude_countries</td><td>Filter out ddnet servers by country</td><td>""</td></tr>
+  <tr><td>br_filter_exclude_types</td><td>Filter out ddnet servers by type (mod)</td><td>""</td></tr>
   <tr><td>br_sort</td><td></td><td>1</td></tr>
   <tr><td>br_sort_order</td><td></td><td>0</td></tr>
   <tr><td>br_max_requests</td><td>Number of requests to use when refreshing server browser</td><td>25</td></tr>
@@ -379,8 +389,10 @@ menu: |
   <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td></tr>
   <tr><td>snd_volume</td><td>Sound volume</td><td>100</td></tr>
   <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>-1</td></tr>
+  <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>70</td></tr>
   <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
   <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td></tr>
+  <tr><td>snd_gun</td><td>Enable gun sound</td><td>1</td></tr>
   <tr><td>snd_chat</td><td>Enable regular chat sound</td><td>1</td></tr>
   <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
   <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
@@ -406,11 +418,14 @@ menu: |
   <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td></tr>
   <tr><td>gfx_finish</td><td></td><td>0</td></tr>
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
+  <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>0</td></tr>
   <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>0</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
   <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
+  <tr><td>gfx_quads_as_triangles</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
+  <tr><td>gfx_quads_as_triangles</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
@@ -447,10 +462,12 @@ menu: |
   <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
   <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td></tr>
+  <tr><td>cl_demo_assume_race</td><td>Assume that demos are race demos</td><td>1</td></tr>
   <tr><td>cl_race_ghost</td><td>Enable ghost</td><td>1</td></tr>
   <tr><td>cl_race_show_ghost</td><td>Show ghost</td><td>1</td></tr>
   <tr><td>cl_race_save_ghost</td><td>Save ghost</td><td>1</td></tr>
   <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard </td><td>1</td></tr>
+  <tr><td>cl_show_decisecs</td><td>Show deciseconds in game time</td><td>1</td></tr>
   <tr><td>cl_show_others</td><td>Show players in other teams</td><td>0</td></tr>
   <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>100</td></tr>
   <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td></tr>
@@ -589,5 +606,6 @@ menu: |
   <tr><td>shotgun_strength</td><td>10.0</td></tr>
   <tr><td>explosion_strength</td><td>6.0</td></tr>
   <tr><td>hammer_strength</td><td>1.0</td></tr>
+  <tr><td>hook_duration</td><td>1.25</td></tr>
 </table>
 </div>
