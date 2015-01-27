@@ -214,6 +214,10 @@ table {
   padding-bottom: 0.3em;
 }
 
+.nowraptable td {
+  white-space: nowrap;
+}
+
 td {
   padding-left: 1em;
 }
@@ -574,23 +578,12 @@ menu {
   display: none;
 }
 
-@media (min-height: 750px) {
-  .title {
-    position: fixed;
-  }
-
-  .contentleft {
-    position: fixed;
-  }
+.title {
+  position: absolute;
 }
-@media (max-height: 749px) {
-  .title {
-    position: absolute;
-  }
 
-  .contentleft {
-    position: absolute;
-  }
+.contentleft {
+  position: absolute;
 }
 
 .contentright {
