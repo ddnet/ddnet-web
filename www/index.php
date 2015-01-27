@@ -78,6 +78,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="/skins/">Skin Database</a> by DoNe</li>
   <li><a href="http://ddnet.tw/maps/?map=GlassBox+2">Map previews</a> work with touch screens and zooming out is nicer (thanks to CookieMichal &amp; eeeee)</li>
   <li><strong>DDNet 6.6.8</strong>:<br/>
   <ul>

@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Skin Database - DDraceNetwork
+head: <base href="..">
 ---
-<div class="block">
+      <div class="block">
+
 <?php
 chdir("..");
 
@@ -137,6 +139,77 @@ echo("<a href=\"index.php".$args."\">normal mode</a>\n");
 ?>
 </span>
 
+<?php
+
+$data = file("edit/data.txt", FILE_IGNORE_NEW_LINES);
+
+$count_database = count($data);
+
+if ($action) {
+  if ($action == "search")
+    $re = "/^.*".preg_quote($filter).".*$/";
+  if ($action == "filter_creator")
+    $re = "/^.*\/".preg_quote($filter)."\/.*\/.*$/";
+  if ($action == "filter_skin_pack")
+    $re = "/^.*\/.*\/".preg_quote($filter)."\/.*$/";
+
+  $data = filter($data, $re);
+}
+
+$data = array_slice($data, 0);
+
+$count_filtered = count($data);
+
+if ($sort == "creator")
+  $data = change($data, 1, 0, 2, 3);
+if ($sort == "skin_pack")
+  $data = change($data, 2, 0, 1, 3);
+if ($sort == "release_date")
+  $data = change($data, 3, 0, 1, 2);
+
+if ($dir == "down")
+  usort($data, "cmp");
+if ($dir == "up")
+  usort($data, "rcmp");
+
+if ($sort == "creator")
+  $data = change($data, 1, 0, 2, 3);
+if ($sort == "skin_pack")
+  $data = change($data, 1, 2, 0, 3);
+if ($sort == "release_date")
+  $data = change($data, 1, 2, 3, 0);
+
+
+
+if ($count_filtered) {
+  if ($action == "filter_creator") {
+    $creator = explode("/", $data[0])[1];
+    $line = "<h3>All skins by creator '".$creator."' ";
+    $line .= "<span style=\"font-size:10px\"><a href=\"edit/rename_creator.php".$args."&creator=".urlencode($creator)."\">rename</a></span> ";
+    $line .= "<span style=\"font-size:10px\"><a href=\"edit/remove_creator.php".$args."&creator=".urlencode($creator)."\">remove</a></span> ";
+    $line .= ": <a href=\"zip/creator/".$creator.".zip\" download=\"".$creator.".zip\">";
+    $line .= "Download [".$count_filtered."]</a></h3>\n";
+  }
+
+  if ($action == "filter_skin_pack") {
+    $skin_pack = explode("/", $data[0])[2];
+    $line = "<h3>All skins from skin pack '".$skin_pack."' ";
+    $line .= "<span style=\"font-size:10px\"><a href=\"edit/rename_skin_pack.php".$args."&skin_pack=".urlencode($skin_pack)."\">rename</a></span> ";
+    $line .= "<span style=\"font-size:10px\"><a href=\"edit/remove_skin_pack.php".$args."&skin_pack=".urlencode($skin_pack)."\">remove</a></span> ";
+    $line .= ": <a href=\"zip/skin_pack/".$skin_pack.".zip\" download=\"".$skin_pack.".zip\">";
+    $line .= "Download [".$count_filtered."]</a></h3>\n";
+  }
+
+  if ($action == "search" or $action == "") {
+    $line = "<h3>All skins from the database : <a href=\"zip/database.zip\" download=\"database.zip\">";
+    $line .= "Download [".$count_database."]</a></h3>\n";
+  }
+
+  echo($line);
+}
+
+?>
+
 <div style="padding-right:30px">
 <table class="nowraptable" cellpadding="5" style="width:100%">
 <?php
@@ -149,8 +222,6 @@ if ($action == "filter_skin_pack")
   $settings = "filter=p".urlencode($filter)."&";
 if ($action == "")
   $settings = "";
-
-
 
 $line = "  <tr><td></td><td><a href=\"edit/index.php?".$settings;
 
@@ -202,44 +273,6 @@ echo($line);
 
 
 
-$data = file("edit/data.txt", FILE_IGNORE_NEW_LINES);
-
-$count_database = count($data);
-
-if ($action) {
-  if ($action == "search")
-    $re = "/^.*".preg_quote($filter).".*$/";
-  if ($action == "filter_creator")
-    $re = "/^.*\/".preg_quote($filter)."\/.*\/.*$/";
-  if ($action == "filter_skin_pack")
-    $re = "/^.*\/.*\/".preg_quote($filter)."\/.*$/";
-
-  $data = filter($data, $re);
-}
-
-$data = array_slice($data, 0);
-
-$count_filtered = count($data);
-
-if ($sort == "creator")
-  $data = change($data, 1, 0, 2, 3);
-if ($sort == "skin_pack")
-  $data = change($data, 2, 0, 1, 3);
-if ($sort == "release_date")
-  $data = change($data, 3, 0, 1, 2);
-
-if ($dir == "down")
-  usort($data, "cmp");
-if ($dir == "up")
-  usort($data, "rcmp");
-
-if ($sort == "creator")
-  $data = change($data, 1, 0, 2, 3);
-if ($sort == "skin_pack")
-  $data = change($data, 1, 2, 0, 3);
-if ($sort == "release_date")
-  $data = change($data, 1, 2, 3, 0);
-
 for ($i = 0; $i < count($data); $i++) {
   $parts = explode("/", $data[$i]);
 
@@ -265,36 +298,4 @@ for ($i = 0; $i < count($data); $i++) {
 
 ?>
 </table>
-</div>
-
-<?php
-
-if ($count_filtered) {
-  if ($action == "filter_creator") {
-    $creator = explode("/", $data[0])[1];
-    $line = "<h3>All skins by creator '".$creator."' ";
-    $line .= "<span style=\"font-size:10px\"><a href=\"edit/rename_creator.php".$args."&creator=".urlencode($creator)."\">rename</a></span> ";
-    $line .= "<span style=\"font-size:10px\"><a href=\"edit/remove_creator.php".$args."&creator=".urlencode($creator)."\">remove</a></span> ";
-    $line .= ": <a href=\"zip/creator/".$creator.".zip\" download=\"".$creator.".zip\">";
-    $line .= "Download [".$count_filtered."]</a></h3>\n";
-  }
-
-  if ($action == "filter_skin_pack") {
-    $skin_pack = explode("/", $data[0])[2];
-    $line = "<h3>All skins from skin pack '".$skin_pack."' ";
-    $line .= "<span style=\"font-size:10px\"><a href=\"edit/rename_skin_pack.php".$args."&skin_pack=".urlencode($skin_pack)."\">rename</a></span> ";
-    $line .= "<span style=\"font-size:10px\"><a href=\"edit/remove_skin_pack.php".$args."&skin_pack=".urlencode($skin_pack)."\">remove</a></span> ";
-    $line .= ": <a href=\"zip/skin_pack/".$skin_pack.".zip\" download=\"".$skin_pack.".zip\">";
-    $line .= "Download [".$count_filtered."]</a></h3>\n";
-  }
-
-  if ($action == "search" or $action == "") {
-    $line = "<h3>All skins from the database : <a href=\"zip/database.zip\" download=\"database.zip\">";
-    $line .= "Download [".$count_database."]</a></h3>\n";
-  }
-
-  echo($line);
-}
-
-?>
 </div>
