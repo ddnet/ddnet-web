@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "You have to authenticate to edit the skin database."
-AuthUserFile /var/www/www.timgame/test/ddnet/skins/edit/.htpasswd
-Require valid-user
