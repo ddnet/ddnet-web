@@ -129,7 +129,6 @@ menu: |
   <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>0</td></tr>
   <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>0</td></tr>
   <tr><td>sv_rank_cheats</td><td>Enable ranks after cheats have been used (file based server only)</td><td>0</td></tr>
-  <tr><td>sv_spoof_protection</td><td>Enable spoof protection</td><td>0</td></tr>
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as noone is on it anymore</td><td>0</td></tr>
   <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>0</td></tr>
   <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
@@ -269,6 +268,73 @@ menu: |
 <div class="block">
 <h2 id="client-settings">Client Settings</h2>
 <table class="settingscommands">
+  <tr><th>Command</th><th>Description</th></tr>
+  <tr><td>echo</td><td>Echo the text</td></tr>
+  <tr><td>exec</td><td>Execute the specified file</td></tr>
+  <tr><td>toggle</td><td>Toggle config value</td></tr>
+  <tr><td>+toggle</td><td>Toggle config value via keypress</td></tr>
+  <tr><td>toggle_local_console</td><td>Toggle local console</td></tr>
+  <tr><td>toggle_remote_console</td><td>Toggle remote console</td></tr>
+  <tr><td>clear_local_console</td><td>Clear local console</td></tr>
+  <tr><td>clear_remote_console</td><td>Clear remote console</td></tr>
+  <tr><td>dump_local_console</td><td>Dump local console</td></tr>
+  <tr><td>dump_remote_console</td><td>Dump remote console</td></tr>
+  <tr><td>callvote</td><td>Call vote</td></tr>
+  <tr><td>vote</td><td>Vote yes/no</td></tr>
+  <tr><td>+emote</td><td>Open emote selector</td></tr>
+  <tr><td>emote</td><td>Use emote</td></tr>
+  <tr><td>+spectate</td><td>Open spectator mode selector</td></tr>
+  <tr><td>spectate</td><td>Switch spectator mode</td></tr>
+  <tr><td>spectate_next</td><td>Spectate the next player</td></tr>
+  <tr><td>spectate_previous</td><td>Spectate the previous player</td></tr>
+  <tr><td>zoom+</td><td>Zoom increase</td></tr>
+  <tr><td>zoom-</td><td>Zoom decrease</td></tr>
+  <tr><td>zoom</td><td>Zoom reset</td></tr>
+  <tr><td>say</td><td>Say in chat</td></tr>
+  <tr><td>say_team</td><td>Say in team chat</td></tr>
+  <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
+  <tr><td>+show_chat</td><td>Show chat</td></tr>
+  <tr><td>+left</td><td>Move left</td></tr>
+  <tr><td>+right</td><td>Move right</td></tr>
+  <tr><td>+jump</td><td>Jump</td></tr>
+  <tr><td>+hook</td><td>Hook</td></tr>
+  <tr><td>+fire</td><td>Fire</td></tr>
+  <tr><td>+showhookcoll</td><td>Show Hook Collision</td></tr>
+  <tr><td>+weapon1</td><td>Switch to hammer</td></tr>
+  <tr><td>+weapon2</td><td>Switch to gun</td></tr>
+  <tr><td>+weapon3</td><td>Switch to shotgun</td></tr>
+  <tr><td>+weapon4</td><td>Switch to grenade</td></tr>
+  <tr><td>+weapon5</td><td>Switch to rifle</td></tr>
+  <tr><td>+nextweapon</td><td>Switch to next weapon</td></tr>
+  <tr><td>+prevweapon</td><td>Switch to previous weapon</td></tr>
+  <tr><td>add_friend</td><td>Add a friend</td></tr>
+  <tr><td>remove_friend</td><td>Remove a friend</td></tr>
+  <tr><td>team</td><td>Switch team</td></tr>
+  <tr><td>kill</td><td>Kill yourself</td></tr>
+  <tr><td>dummy_connect</td><td>connect dummy</td></tr>
+  <tr><td>dummy_disconnect</td><td>disconnect dummy</td></tr>
+  <tr><td>quit</td><td>Quit Teeworlds</td></tr>
+  <tr><td>exit</td><td>Quit Teeworlds</td></tr>
+  <tr><td>minimize</td><td>Minimize Teeworlds</td></tr>
+  <tr><td>connect</td><td>Connect to the specified host/ip</td></tr>
+  <tr><td>disconnect</td><td>Disconnect from the server</td></tr>
+  <tr><td>ping</td><td>Ping the current server</td></tr>
+  <tr><td>screenshot</td><td>Take a screenshot</td></tr>
+  <tr><td>rcon</td><td>Send specified command to rcon</td></tr>
+  <tr><td>rcon_auth</td><td>Authenticate to rcon</td></tr>
+  <tr><td>play</td><td>Play the file specified</td></tr>
+  <tr><td>record</td><td>Record to the file</td></tr>
+  <tr><td>stoprecord</td><td>Stop recording</td></tr>
+  <tr><td>add_demomarker</td><td>Add demo timeline marker</td></tr>
+  <tr><td>add_favorite</td><td>Add a server as a favorite</td></tr>
+  <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
+  <tr><td>demo_slice_start</td><td></td></tr>
+  <tr><td>demo_slice_end</td><td></td></tr>
+</table>
+</div>
+<div class="block">
+<h2 id="client-commands">Client Commands</h2>
+<table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td></tr>
   <tr><td>cl_antiping</td><td>Antiping (sets all Antiping settings)</td><td>0</td></tr>
@@ -308,6 +374,7 @@ menu: |
   <tr><td>cl_version_server</td><td>Server to use to check for new versions</td><td>"version.teeworlds.com"</td></tr>
   <tr><td>cl_ddnet_version_server</td><td>Server to use to check for new ddnet versions</td><td>"version.ddnet.tw"</td></tr>
   <tr><td>cl_ddnet_update_server</td><td>Server to use to update new ddnet versions</td><td>"update.ddnet.tw"</td></tr>
+  <tr><td>cl_ddnet_maps_server</td><td>Server to use to download maps</td><td>"maps.ddnet.tw"</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>""</td></tr>
   <tr><td>cl_show_new_skins</td><td>Show new skins ingame</td><td>1</td></tr>
   <tr><td>cl_show_custom_skins</td><td>Show custom skins ingame</td><td>1</td></tr>
@@ -338,6 +405,7 @@ menu: |
   <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
   <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy should stop pressing keys when you switch</td><td>0</td></tr>
+  <tr><td>cl_dummy_copy_moves</td><td>Wether dummy should copy your moves</td><td>0</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td></tr>
   <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>"nameless tee"</td></tr>
@@ -356,6 +424,7 @@ menu: |
   <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>0</td></tr>
   <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_reset_wanted_weapon_on_death</td><td>Reset wanted weapon on death</td><td>1</td></tr>
+  <tr><td>cl_show_broadcasts</td><td>Show broadcasts ingame</td><td>1</td></tr>
   <tr><td>cl_print_broadcasts</td><td>Print broadcasts to console</td><td>1</td></tr>
   <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>1</td></tr>
   <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
@@ -486,6 +555,7 @@ menu: |
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
   <tr><td>cl_auto_update</td><td>Auto-Update</td><td>1</td></tr>
+  <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
   <tr><td>cl_confirm_disconnect</td><td>Confirmation popup before disconnecting</td><td>0</td></tr>
   <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>""</td></tr>
@@ -496,73 +566,6 @@ menu: |
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_slice_end</td><td>End marer for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td></tr>
-</table>
-</div>
-<div class="block">
-<h2 id="client-commands">Client Commands</h2>
-<table class="settingscommands">
-  <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>echo</td><td>Echo the text</td></tr>
-  <tr><td>exec</td><td>Execute the specified file</td></tr>
-  <tr><td>toggle</td><td>Toggle config value</td></tr>
-  <tr><td>+toggle</td><td>Toggle config value via keypress</td></tr>
-  <tr><td>toggle_local_console</td><td>Toggle local console</td></tr>
-  <tr><td>toggle_remote_console</td><td>Toggle remote console</td></tr>
-  <tr><td>clear_local_console</td><td>Clear local console</td></tr>
-  <tr><td>clear_remote_console</td><td>Clear remote console</td></tr>
-  <tr><td>dump_local_console</td><td>Dump local console</td></tr>
-  <tr><td>dump_remote_console</td><td>Dump remote console</td></tr>
-  <tr><td>callvote</td><td>Call vote</td></tr>
-  <tr><td>vote</td><td>Vote yes/no</td></tr>
-  <tr><td>+emote</td><td>Open emote selector</td></tr>
-  <tr><td>emote</td><td>Use emote</td></tr>
-  <tr><td>+spectate</td><td>Open spectator mode selector</td></tr>
-  <tr><td>spectate</td><td>Switch spectator mode</td></tr>
-  <tr><td>spectate_next</td><td>Spectate the next player</td></tr>
-  <tr><td>spectate_previous</td><td>Spectate the previous player</td></tr>
-  <tr><td>zoom+</td><td>Zoom increase</td></tr>
-  <tr><td>zoom-</td><td>Zoom decrease</td></tr>
-  <tr><td>zoom</td><td>Zoom reset</td></tr>
-  <tr><td>say</td><td>Say in chat</td></tr>
-  <tr><td>say_team</td><td>Say in team chat</td></tr>
-  <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
-  <tr><td>+show_chat</td><td>Show chat</td></tr>
-  <tr><td>+left</td><td>Move left</td></tr>
-  <tr><td>+right</td><td>Move right</td></tr>
-  <tr><td>+jump</td><td>Jump</td></tr>
-  <tr><td>+hook</td><td>Hook</td></tr>
-  <tr><td>+fire</td><td>Fire</td></tr>
-  <tr><td>+showhookcoll</td><td>Show Hook Collision</td></tr>
-  <tr><td>+weapon1</td><td>Switch to hammer</td></tr>
-  <tr><td>+weapon2</td><td>Switch to gun</td></tr>
-  <tr><td>+weapon3</td><td>Switch to shotgun</td></tr>
-  <tr><td>+weapon4</td><td>Switch to grenade</td></tr>
-  <tr><td>+weapon5</td><td>Switch to rifle</td></tr>
-  <tr><td>+nextweapon</td><td>Switch to next weapon</td></tr>
-  <tr><td>+prevweapon</td><td>Switch to previous weapon</td></tr>
-  <tr><td>add_friend</td><td>Add a friend</td></tr>
-  <tr><td>remove_friend</td><td>Remove a friend</td></tr>
-  <tr><td>team</td><td>Switch team</td></tr>
-  <tr><td>kill</td><td>Kill yourself</td></tr>
-  <tr><td>dummy_connect</td><td>connect dummy</td></tr>
-  <tr><td>dummy_disconnect</td><td>disconnect dummy</td></tr>
-  <tr><td>quit</td><td>Quit Teeworlds</td></tr>
-  <tr><td>exit</td><td>Quit Teeworlds</td></tr>
-  <tr><td>minimize</td><td>Minimize Teeworlds</td></tr>
-  <tr><td>connect</td><td>Connect to the specified host/ip</td></tr>
-  <tr><td>disconnect</td><td>Disconnect from the server</td></tr>
-  <tr><td>ping</td><td>Ping the current server</td></tr>
-  <tr><td>screenshot</td><td>Take a screenshot</td></tr>
-  <tr><td>rcon</td><td>Send specified command to rcon</td></tr>
-  <tr><td>rcon_auth</td><td>Authenticate to rcon</td></tr>
-  <tr><td>play</td><td>Play the file specified</td></tr>
-  <tr><td>record</td><td>Record to the file</td></tr>
-  <tr><td>stoprecord</td><td>Stop recording</td></tr>
-  <tr><td>add_demomarker</td><td>Add demo timeline marker</td></tr>
-  <tr><td>add_favorite</td><td>Add a server as a favorite</td></tr>
-  <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
-  <tr><td>demo_slice_start</td><td></td></tr>
-  <tr><td>demo_slice_end</td><td></td></tr>
 </table>
 </div>
 <div class="block">
@@ -607,5 +610,11 @@ menu: |
   <tr><td>explosion_strength</td><td>6.0</td></tr>
   <tr><td>hammer_strength</td><td>1.0</td></tr>
   <tr><td>hook_duration</td><td>1.25</td></tr>
+  <tr><td>hammer_fire_delay</td><td>125</td></tr>
+  <tr><td>gun_fire_delay</td><td>125</td></tr>
+  <tr><td>shotgun_fire_delay</td><td>500</td></tr>
+  <tr><td>grenade_fire_delay</td><td>500</td></tr>
+  <tr><td>rifle_fire_delay</td><td>800</td></tr>
+  <tr><td>ninja_fire_delay</td><td>800</td></tr>
 </table>
 </div>

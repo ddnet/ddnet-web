@@ -73,6 +73,7 @@ if ($user_os == 'win') {
 <ul>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1084">Quick Tournament #28</a> with the new Moderate map (★✰✰✰✰) "Jvice" by Vasten100:<br/><img class="demo" src="Jvice.png" /></li>
   <li><strong>DDNet 7.1</strong>:<br/>
+  <ul>
     <li>[Client] Dummy copies moves (by Tobii)</li>
     <li>[Client] Fix fast file download for some filenames (by Learath2)</li>
     <li>[Mapping] Fire delay tunings</li>
