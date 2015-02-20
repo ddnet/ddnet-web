@@ -3,7 +3,8 @@ layout: default
 title: Skin Database - DDraceNetwork
 head: <base href="..">
 ---
-      <div class="block">
+<script src="tee.js"></script>
+<div class="block">
 
 <?php
 chdir("..");
