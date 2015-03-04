@@ -3,7 +3,6 @@ layout: default
 title: Skin Database - DDraceNetwork
 head: <base href="..">
 ---
-<script src="tee.js"></script>
 <div class="block">
 
 <?php

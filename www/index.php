@@ -18,7 +18,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Canada, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/7RZmsHzKrDs?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/zjRR2eCN2e4?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers2.png"/></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.1';
+$version = '7.2.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -71,6 +71,13 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 7.2</strong>:<br/>
+  <ul>
+    <li>[Client] Kill &amp; emoticons are cloned with cl_dummy_copy_moves</li>
+    <li>[Mapping] Tons of automapper features (by DoNe)</li>
+    <li>[Server] Fix: Release hook when player changes team</li>
+  </ul></li>
+  <li><a href="/skins/">Skin Database</a> shows actual skins as preview (by Prime)</a></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1084">Quick Tournament #28</a> with the new Moderate map (★✰✰✰✰) "Jvice" by Vasten100:<br/><img class="demo" src="Jvice.png" /></li>
   <li><strong>DDNet 7.1</strong>:<br/>
   <ul>
