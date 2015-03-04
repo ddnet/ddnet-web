@@ -71,6 +71,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1153">Quick Tournament #29</a> with the new Brutal map "Aim 8.0" by Aoe:<br/><img class="demo" src="Aim_8.0.png" /></li>
   <li><strong>DDNet 7.2</strong>:<br/>
   <ul>
     <li>[Client] Kill &amp; emoticons are cloned with cl_dummy_copy_moves</li>
