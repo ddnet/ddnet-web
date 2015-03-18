@@ -18,7 +18,7 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Canada, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/zjRR2eCN2e4?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/9lqCjZ9oaBk?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers.png"/></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers2.png"/></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
@@ -48,7 +48,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.2.1';
+$version = '7.3.5';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -71,6 +71,23 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>If you're on Windows XP you need to manually update to DDNet 7.3.4</strong></li>
+  <li><strong>DDNet 7.3</strong>:<br/>
+  <ul>
+    <li>[Client] New autoupdater (by Learath2)</li>
+    <li>[Client] Search in the vote calling menu</li>
+    <li>[Client] TAB key in server browser switches between Filter, Info, Friends</li>
+    <li>[Client] New demo format to fix crashes (by BeaR)</li>
+    <li>[Client] Fix crash with demo viewing (by BeaR)</li>
+    <li>[Client] Fix crash with demo cutting</li>
+    <li>[Client] Changed unfreeze tile ingame (by Saavik)</li>
+    <li>[Mapping] Automapper improvements (by DoNe and hi_leute_gll)</li>
+    <li>[Mapping] Add ddmax-freeze tileset with automapper (by DoNe)</li>
+    <li>[Mapping] Fix entities a bit (by DoNe)</li>
+    <li>[Mapping] BONUS tile that reduces your time (only for special maps)</li>
+    <li>[Server] Add security tokens to protocol (by eeeee)</li>
+    <li>[Client+Server] Ninja Jetpack prediction (by DoNe)</li>
+  </ul></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1153">Quick Tournament #29</a> with the new Brutal map "Aim 8.0" by Aoe:<br/><img class="demo" src="Aim_8.0.png" /></li>
   <li><strong>DDNet 7.2</strong>:<br/>
   <ul>
