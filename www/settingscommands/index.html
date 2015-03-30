@@ -268,73 +268,6 @@ menu: |
 <div class="block">
 <h2 id="client-settings">Client Settings</h2>
 <table class="settingscommands">
-  <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>echo</td><td>Echo the text</td></tr>
-  <tr><td>exec</td><td>Execute the specified file</td></tr>
-  <tr><td>toggle</td><td>Toggle config value</td></tr>
-  <tr><td>+toggle</td><td>Toggle config value via keypress</td></tr>
-  <tr><td>toggle_local_console</td><td>Toggle local console</td></tr>
-  <tr><td>toggle_remote_console</td><td>Toggle remote console</td></tr>
-  <tr><td>clear_local_console</td><td>Clear local console</td></tr>
-  <tr><td>clear_remote_console</td><td>Clear remote console</td></tr>
-  <tr><td>dump_local_console</td><td>Dump local console</td></tr>
-  <tr><td>dump_remote_console</td><td>Dump remote console</td></tr>
-  <tr><td>callvote</td><td>Call vote</td></tr>
-  <tr><td>vote</td><td>Vote yes/no</td></tr>
-  <tr><td>+emote</td><td>Open emote selector</td></tr>
-  <tr><td>emote</td><td>Use emote</td></tr>
-  <tr><td>+spectate</td><td>Open spectator mode selector</td></tr>
-  <tr><td>spectate</td><td>Switch spectator mode</td></tr>
-  <tr><td>spectate_next</td><td>Spectate the next player</td></tr>
-  <tr><td>spectate_previous</td><td>Spectate the previous player</td></tr>
-  <tr><td>zoom+</td><td>Zoom increase</td></tr>
-  <tr><td>zoom-</td><td>Zoom decrease</td></tr>
-  <tr><td>zoom</td><td>Zoom reset</td></tr>
-  <tr><td>say</td><td>Say in chat</td></tr>
-  <tr><td>say_team</td><td>Say in team chat</td></tr>
-  <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
-  <tr><td>+show_chat</td><td>Show chat</td></tr>
-  <tr><td>+left</td><td>Move left</td></tr>
-  <tr><td>+right</td><td>Move right</td></tr>
-  <tr><td>+jump</td><td>Jump</td></tr>
-  <tr><td>+hook</td><td>Hook</td></tr>
-  <tr><td>+fire</td><td>Fire</td></tr>
-  <tr><td>+showhookcoll</td><td>Show Hook Collision</td></tr>
-  <tr><td>+weapon1</td><td>Switch to hammer</td></tr>
-  <tr><td>+weapon2</td><td>Switch to gun</td></tr>
-  <tr><td>+weapon3</td><td>Switch to shotgun</td></tr>
-  <tr><td>+weapon4</td><td>Switch to grenade</td></tr>
-  <tr><td>+weapon5</td><td>Switch to rifle</td></tr>
-  <tr><td>+nextweapon</td><td>Switch to next weapon</td></tr>
-  <tr><td>+prevweapon</td><td>Switch to previous weapon</td></tr>
-  <tr><td>add_friend</td><td>Add a friend</td></tr>
-  <tr><td>remove_friend</td><td>Remove a friend</td></tr>
-  <tr><td>team</td><td>Switch team</td></tr>
-  <tr><td>kill</td><td>Kill yourself</td></tr>
-  <tr><td>dummy_connect</td><td>connect dummy</td></tr>
-  <tr><td>dummy_disconnect</td><td>disconnect dummy</td></tr>
-  <tr><td>quit</td><td>Quit Teeworlds</td></tr>
-  <tr><td>exit</td><td>Quit Teeworlds</td></tr>
-  <tr><td>minimize</td><td>Minimize Teeworlds</td></tr>
-  <tr><td>connect</td><td>Connect to the specified host/ip</td></tr>
-  <tr><td>disconnect</td><td>Disconnect from the server</td></tr>
-  <tr><td>ping</td><td>Ping the current server</td></tr>
-  <tr><td>screenshot</td><td>Take a screenshot</td></tr>
-  <tr><td>rcon</td><td>Send specified command to rcon</td></tr>
-  <tr><td>rcon_auth</td><td>Authenticate to rcon</td></tr>
-  <tr><td>play</td><td>Play the file specified</td></tr>
-  <tr><td>record</td><td>Record to the file</td></tr>
-  <tr><td>stoprecord</td><td>Stop recording</td></tr>
-  <tr><td>add_demomarker</td><td>Add demo timeline marker</td></tr>
-  <tr><td>add_favorite</td><td>Add a server as a favorite</td></tr>
-  <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
-  <tr><td>demo_slice_start</td><td></td></tr>
-  <tr><td>demo_slice_end</td><td></td></tr>
-</table>
-</div>
-<div class="block">
-<h2 id="client-commands">Client Commands</h2>
-<table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td></tr>
   <tr><td>cl_antiping</td><td>Antiping (sets all Antiping settings)</td><td>0</td></tr>
@@ -554,7 +487,6 @@ menu: |
   <tr><td>cl_show_other_hook_coll</td><td>Show other players' hook collision line</td><td>1</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
-  <tr><td>cl_auto_update</td><td>Auto-Update</td><td>1</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
   <tr><td>cl_confirm_disconnect</td><td>Confirmation popup before disconnecting</td><td>0</td></tr>
@@ -569,52 +501,119 @@ menu: |
 </table>
 </div>
 <div class="block">
+<h2 id="client-commands">Client Commands</h2>
+<table class="settingscommands">
+  <tr><th>Command</th><th>Description</th></tr>
+  <tr><td>echo</td><td>Echo the text</td></tr>
+  <tr><td>exec</td><td>Execute the specified file</td></tr>
+  <tr><td>toggle</td><td>Toggle config value</td></tr>
+  <tr><td>+toggle</td><td>Toggle config value via keypress</td></tr>
+  <tr><td>toggle_local_console</td><td>Toggle local console</td></tr>
+  <tr><td>toggle_remote_console</td><td>Toggle remote console</td></tr>
+  <tr><td>clear_local_console</td><td>Clear local console</td></tr>
+  <tr><td>clear_remote_console</td><td>Clear remote console</td></tr>
+  <tr><td>dump_local_console</td><td>Dump local console</td></tr>
+  <tr><td>dump_remote_console</td><td>Dump remote console</td></tr>
+  <tr><td>callvote</td><td>Call vote</td></tr>
+  <tr><td>vote</td><td>Vote yes/no</td></tr>
+  <tr><td>+emote</td><td>Open emote selector</td></tr>
+  <tr><td>emote</td><td>Use emote</td></tr>
+  <tr><td>+spectate</td><td>Open spectator mode selector</td></tr>
+  <tr><td>spectate</td><td>Switch spectator mode</td></tr>
+  <tr><td>spectate_next</td><td>Spectate the next player</td></tr>
+  <tr><td>spectate_previous</td><td>Spectate the previous player</td></tr>
+  <tr><td>zoom+</td><td>Zoom increase</td></tr>
+  <tr><td>zoom-</td><td>Zoom decrease</td></tr>
+  <tr><td>zoom</td><td>Zoom reset</td></tr>
+  <tr><td>say</td><td>Say in chat</td></tr>
+  <tr><td>say_team</td><td>Say in team chat</td></tr>
+  <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
+  <tr><td>+show_chat</td><td>Show chat</td></tr>
+  <tr><td>+left</td><td>Move left</td></tr>
+  <tr><td>+right</td><td>Move right</td></tr>
+  <tr><td>+jump</td><td>Jump</td></tr>
+  <tr><td>+hook</td><td>Hook</td></tr>
+  <tr><td>+fire</td><td>Fire</td></tr>
+  <tr><td>+showhookcoll</td><td>Show Hook Collision</td></tr>
+  <tr><td>+weapon1</td><td>Switch to hammer</td></tr>
+  <tr><td>+weapon2</td><td>Switch to gun</td></tr>
+  <tr><td>+weapon3</td><td>Switch to shotgun</td></tr>
+  <tr><td>+weapon4</td><td>Switch to grenade</td></tr>
+  <tr><td>+weapon5</td><td>Switch to rifle</td></tr>
+  <tr><td>+nextweapon</td><td>Switch to next weapon</td></tr>
+  <tr><td>+prevweapon</td><td>Switch to previous weapon</td></tr>
+  <tr><td>add_friend</td><td>Add a friend</td></tr>
+  <tr><td>remove_friend</td><td>Remove a friend</td></tr>
+  <tr><td>team</td><td>Switch team</td></tr>
+  <tr><td>kill</td><td>Kill yourself</td></tr>
+  <tr><td>dummy_connect</td><td>connect dummy</td></tr>
+  <tr><td>dummy_disconnect</td><td>disconnect dummy</td></tr>
+  <tr><td>quit</td><td>Quit Teeworlds</td></tr>
+  <tr><td>exit</td><td>Quit Teeworlds</td></tr>
+  <tr><td>minimize</td><td>Minimize Teeworlds</td></tr>
+  <tr><td>connect</td><td>Connect to the specified host/ip</td></tr>
+  <tr><td>disconnect</td><td>Disconnect from the server</td></tr>
+  <tr><td>ping</td><td>Ping the current server</td></tr>
+  <tr><td>screenshot</td><td>Take a screenshot</td></tr>
+  <tr><td>rcon</td><td>Send specified command to rcon</td></tr>
+  <tr><td>rcon_auth</td><td>Authenticate to rcon</td></tr>
+  <tr><td>play</td><td>Play the file specified</td></tr>
+  <tr><td>record</td><td>Record to the file</td></tr>
+  <tr><td>stoprecord</td><td>Stop recording</td></tr>
+  <tr><td>add_demomarker</td><td>Add demo timeline marker</td></tr>
+  <tr><td>add_favorite</td><td>Add a server as a favorite</td></tr>
+  <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
+  <tr><td>demo_slice_start</td><td></td></tr>
+  <tr><td>demo_slice_end</td><td></td></tr>
+</table>
+</div>
+<div class="block">
 <h2 id="tunings">Tunings</h2>
 <table class="settingscommands">
-  <tr><th>Tuning</th><th>Default</th></tr>
-  <tr><td>ground_control_speed</td><td>10.0</td></tr>
-  <tr><td>ground_control_accel</td><td>100.0f / TicksPerSecond</td></tr>
-  <tr><td>ground_friction</td><td>0.5</td></tr>
-  <tr><td>ground_jump_impulse</td><td>13.2</td></tr>
-  <tr><td>air_jump_impulse</td><td>12.0</td></tr>
-  <tr><td>air_control_speed</td><td>250.0f / TicksPerSecond</td></tr>
-  <tr><td>air_control_accel</td><td>1.5</td></tr>
-  <tr><td>air_friction</td><td>0.95</td></tr>
-  <tr><td>hook_length</td><td>380.0</td></tr>
-  <tr><td>hook_fire_speed</td><td>80.0</td></tr>
-  <tr><td>hook_drag_accel</td><td>3.0</td></tr>
-  <tr><td>hook_drag_speed</td><td>15.0</td></tr>
-  <tr><td>gravity</td><td>0.5</td></tr>
-  <tr><td>velramp_start</td><td>550</td></tr>
-  <tr><td>velramp_range</td><td>2000</td></tr>
-  <tr><td>velramp_curvature</td><td>1.4</td></tr>
-  <tr><td>gun_curvature</td><td>1.25</td></tr>
-  <tr><td>gun_speed</td><td>2200.0</td></tr>
-  <tr><td>gun_lifetime</td><td>2.0</td></tr>
-  <tr><td>shotgun_curvature</td><td>1.25</td></tr>
-  <tr><td>shotgun_speed</td><td>2750.0</td></tr>
-  <tr><td>shotgun_speeddiff</td><td>0.8</td></tr>
-  <tr><td>shotgun_lifetime</td><td>0.20</td></tr>
-  <tr><td>grenade_curvature</td><td>7.0</td></tr>
-  <tr><td>grenade_speed</td><td>1000.0</td></tr>
-  <tr><td>grenade_lifetime</td><td>2.0</td></tr>
-  <tr><td>laser_reach</td><td>800.0</td></tr>
-  <tr><td>laser_bounce_delay</td><td>150</td></tr>
-  <tr><td>laser_bounce_num</td><td>1000</td></tr>
-  <tr><td>laser_bounce_cost</td><td>0</td></tr>
-  <tr><td>laser_damage</td><td>5</td></tr>
-  <tr><td>player_collision</td><td>1</td></tr>
-  <tr><td>player_hooking</td><td>1</td></tr>
-  <tr><td>jetpack_strength</td><td>400.0</td></tr>
-  <tr><td>shotgun_strength</td><td>10.0</td></tr>
-  <tr><td>explosion_strength</td><td>6.0</td></tr>
-  <tr><td>hammer_strength</td><td>1.0</td></tr>
-  <tr><td>hook_duration</td><td>1.25</td></tr>
-  <tr><td>hammer_fire_delay</td><td>125</td></tr>
-  <tr><td>gun_fire_delay</td><td>125</td></tr>
-  <tr><td>shotgun_fire_delay</td><td>500</td></tr>
-  <tr><td>grenade_fire_delay</td><td>500</td></tr>
-  <tr><td>rifle_fire_delay</td><td>800</td></tr>
-  <tr><td>ninja_fire_delay</td><td>800</td></tr>
+  <tr><th>Tuning</th><th>Description</th><th>Default</th></tr>
+  <tr><td>ground_control_speed</td><td>Max speed the tee can get on ground</td><td> 10.0</td></tr>
+  <tr><td>ground_control_accel</td><td>Acceleration speed on the ground</td><td> 100.0f / TicksPerSecond</td></tr>
+  <tr><td>ground_friction</td><td>Friction on the ground</td><td> 0.5</td></tr>
+  <tr><td>ground_jump_impulse</td><td>Impulse when jumping on ground</td><td> 13.2</td></tr>
+  <tr><td>air_jump_impulse</td><td>Impulse when jumping in air</td><td> 12.0</td></tr>
+  <tr><td>air_control_speed</td><td>Max speed the tee can get in the air</td><td> 250.0f / TicksPerSecond</td></tr>
+  <tr><td>air_control_accel</td><td>Acceleration speed in air</td><td> 1.5</td></tr>
+  <tr><td>air_friction</td><td>Friction in the air</td><td> 0.95</td></tr>
+  <tr><td>hook_length</td><td>Length of the hook</td><td> 380.0</td></tr>
+  <tr><td>hook_fire_speed</td><td>How fast the hook is fired</td><td> 80.0</td></tr>
+  <tr><td>hook_drag_accel</td><td>Acceleration when hook is stuck</td><td> 3.0</td></tr>
+  <tr><td>hook_drag_speed</td><td>Drag speed of the hook</td><td> 15.0</td></tr>
+  <tr><td>gravity</td><td>Gravity of the teeworld</td><td> 0.5</td></tr>
+  <tr><td>velramp_start</td><td>Velocity ramp start</td><td> 550</td></tr>
+  <tr><td>velramp_range</td><td>Velocity ramp range</td><td> 2000</td></tr>
+  <tr><td>velramp_curvature</td><td>Velocity ramp curvature</td><td> 1.4</td></tr>
+  <tr><td>gun_curvature</td><td>Gun curvature</td><td> 1.25</td></tr>
+  <tr><td>gun_speed</td><td>Gun speed</td><td> 2200.0</td></tr>
+  <tr><td>gun_lifetime</td><td>Gun lifetime</td><td> 2.0</td></tr>
+  <tr><td>shotgun_curvature</td><td>Shotgun curvature</td><td> 1.25</td></tr>
+  <tr><td>shotgun_speed</td><td>Shotgun speed</td><td> 2750.0</td></tr>
+  <tr><td>shotgun_speeddiff</td><td>(UNUSED) Speed difference between shotgun bullets</td><td> 0.8</td></tr>
+  <tr><td>shotgun_lifetime</td><td>Shotgun lifetime</td><td> 0.20</td></tr>
+  <tr><td>grenade_curvature</td><td>Grenade curvature</td><td> 7.0</td></tr>
+  <tr><td>grenade_speed</td><td>Grenade speed</td><td> 1000.0</td></tr>
+  <tr><td>grenade_lifetime</td><td>Grenade lifetime</td><td> 2.0</td></tr>
+  <tr><td>laser_reach</td><td>How long the laser can reach</td><td> 800.0</td></tr>
+  <tr><td>laser_bounce_delay</td><td></td><td> 150</td></tr>
+  <tr><td>laser_bounce_num</td><td>How many times the laser can bounce</td><td> 1000</td></tr>
+  <tr><td>laser_bounce_cost</td><td>Remove this much from reach when laser is bouncing</td><td> 0</td></tr>
+  <tr><td>laser_damage</td><td>Laser damage</td><td> 5</td></tr>
+  <tr><td>player_collision</td><td>Enable player collisions</td><td> 1</td></tr>
+  <tr><td>player_hooking</td><td>Enable player vs player hooking</td><td> 1</td></tr>
+  <tr><td>jetpack_strength</td><td>Jetpack pistol strength</td><td> 400.0</td></tr>
+  <tr><td>shotgun_strength</td><td>Shotgun pull strength</td><td> 10.0</td></tr>
+  <tr><td>explosion_strength</td><td>Explosion strength (grenade for example)</td><td> 6.0</td></tr>
+  <tr><td>hammer_strength</td><td>Hammer strength</td><td> 1.0</td></tr>
+  <tr><td>hook_duration</td><td>Hook duration</td><td> 1.25</td></tr>
+  <tr><td>hammer_fire_delay</td><td>Delay of hammering</td><td> 125</td></tr>
+  <tr><td>gun_fire_delay</td><td>Delay of firing gun</td><td> 125</td></tr>
+  <tr><td>shotgun_fire_delay</td><td>Delay of firing shotgun</td><td> 500</td></tr>
+  <tr><td>grenade_fire_delay</td><td>Delay of firing grenade</td><td> 500</td></tr>
+  <tr><td>rifle_fire_delay</td><td>Delay of firing rifle</td><td> 800</td></tr>
+  <tr><td>ninja_fire_delay</td><td>Delay of firing ninja</td><td> 800</td></tr>
 </table>
 </div>
