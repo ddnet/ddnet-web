@@ -18,7 +18,7 @@
  */
 
 $results      = array('Error! <meta http-equiv="refresh"
-content="5; URL=http://ddnet.tw/upload">', 'Successfully uploaded. <meta http-equiv="refresh"
+content="5; URL=http://ddnet.tw/nimrocks">', 'Successfully uploaded. <meta http-equiv="refresh"
 content="5; URL=http://ddnet.tw/">');
 $accessDenied = "Invalid!";
 

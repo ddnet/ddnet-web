@@ -1,0 +1,121 @@
+table.spacey  {
+	border-collapse: separate;
+    border-spacing: 4px 0px;
+}
+.spacey .tablesorter-header {
+	background-color: #F9E2E2;
+	background-image: url(black-unsorted.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	padding: 3px;
+	cursor: pointer;
+}
+.spacey .tablesorter-headerAsc {
+	background-image: url(black-asc.gif);
+	background-color: #F0B2B2;
+}
+.spacey .tablesorter-headerDesc {
+	background-image: url(black-desc.gif);
+	background-color: #F0B2B2;
+}
+
+
+
+
+
+.unfinTable1 {
+  border-collapse: separate;
+  border-spacing: 4px 0px;
+  display: inline-table;
+  margin: 0;
+  font-size: 88%;
+  width: 33%;
+  min-width: 20em;
+  table-layout: fixed;
+}
+.unfinTable1 .tablesorter-header {
+	background-color: #F3C2C2;
+	background-image: url(black-unsorted.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	padding: 3px;
+	cursor: pointer;
+}
+.unfinTable1 .tablesorter-headerAsc {
+	background-image: url(black-asc.gif);
+	background-color: #EB9999;
+}
+.unfinTable1 .tablesorter-headerDesc {
+	background-image: url(black-desc.gif);
+	background-color: #EB9999;
+}
+.unfinTable1 td {
+  padding: 0 1em;
+}
+.unfinTable1 th {
+  text-align: center;
+}
+.unfinTable1 tr .unMapTr{width:60%;}
+.unfinTable1 tr .unPtsTr{width:15%;}
+.unfinTable1 tr .unFinTr{width:25%;}
+
+.unfinTable1 th h2 {
+  text-align: center;
+}
+
+
+
+.unfinTable2 {
+  border-collapse: separate;
+  border-spacing: 4px 0px;
+  display: inline-table;
+  margin: 0;
+  font-size: 88%;
+  width: 33%;
+  min-width: 20em;
+  table-layout: fixed;
+}
+.unfinTable2 td {
+  padding: 0 1em;
+}
+.unfinTable2 th {
+  text-align: center;
+}
+.unfinTable2 thead {
+  display: none;
+}
+.unfinTable2 tr .unMapTr{width:60%;}
+.unfinTable2 tr .unPtsTr{width:15%;}
+.unfinTable2 tr .unFinTr{width:25%;}
+
+.unfinTable2 th h2 {
+  text-align: center;
+}
+
+
+.unfinTable3 {
+  border-collapse: separate;
+  border-spacing: 4px 0px;
+  display: inline-table;
+  margin: 0;
+  font-size: 88%;
+  width: 33%;
+  min-width: 20em;
+  table-layout: fixed;
+}
+.unfinTable3 td {
+  padding: 0 1em;
+}
+.unfinTable3 th {
+  text-align: center;
+}
+.unfinTable3 thead {
+  display: none;
+}
+.unfinTable3 tr .unMapTr{width:60%;}
+.unfinTable3 tr .unPtsTr{width:15%;}
+.unfinTable3 tr .unFinTr{width:25%;}
+
+.unfinTable3 th h2 {
+  text-align: center;
+}
