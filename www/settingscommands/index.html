@@ -166,6 +166,7 @@ menu: |
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
   <tr><td>sv_send_votes_per_tick</td><td>Number of vote options being send per tick</td><td>5</td></tr>
+  <tr><td>sv_allow_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td><td>0</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
 </table>
 </div>
@@ -196,6 +197,7 @@ menu: |
   <tr><td>stoprecord</td><td>Stop recording</td></tr>
   <tr><td>reload</td><td>Reload the map</td></tr>
   <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td></tr>
+  <tr><td>sv_allow_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
   <tr><td>tune</td><td>Tune variable to value</td></tr>
   <tr><td>tune_reset</td><td>Reset tuning</td></tr>
   <tr><td>tune_dump</td><td>Dump tuning</td></tr>
@@ -246,11 +248,13 @@ menu: |
   <tr><td>load</td><td>Load with code r</td></tr>
   <tr><td>map</td><td>Vote a map by name</td></tr>
   <tr><td>rankteam</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
+  <tr><td>teamrank</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>rank</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
   <tr><td>rules</td><td>Shows the server rules</td></tr>
   <tr><td>team</td><td>Lets you join team i (shows your team if left blank)</td></tr>
   <tr><td>lock</td><td>Lock team so noone else can join it</td></tr>
   <tr><td>top5team</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>teamtop5</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>top5</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>showothers</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
   <tr><td>specteam</td><td>Whether to show players from other teams when spectating (on by default), optional i = 0 for off else for on</td></tr>
@@ -259,6 +263,8 @@ menu: |
   <tr><td>saytimeall</td><td>Publicly messages everyone your current time in this current running race</td></tr>
   <tr><td>time</td><td>Privately shows you your current time in this current running race in the broadcast message</td></tr>
   <tr><td>timer</td><td>Personal Setting of showing time in either broadcast or game/round timer, timer s, where s = broadcast for broadcast, gametimer for game/round timer, cycle for cycle, both for both, none for no timer and nothing to show current status</td></tr>
+  <tr><td>r</td><td>Teleport yourself out of freeze (use sv_allow_rescue 1 to enable this feature)</td></tr>
+  <tr><td>rescue</td><td>Teleport yourself out of freeze (use sv_allow_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td>Kill yourself</td></tr>
   <tr><td>times</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
   <tr><td>points</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
@@ -426,8 +432,8 @@ menu: |
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
   <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
-  <tr><td>gfx_quads_as_triangles</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
-  <tr><td>gfx_quads_as_triangles</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
+  <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
+  <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
