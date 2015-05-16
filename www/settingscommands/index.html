@@ -305,6 +305,9 @@ menu: |
   <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>400</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
+  <tr><td>cl_dyn_cam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
+  <tr><td>cl_dyn_cam_dead_zone</td><td>Dynamic camera dead zone</td><td>300</td></tr>
+  <tr><td>cl_dyn_cam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td></tr>
   <tr><td>ed_showkeys</td><td></td><td>0</td></tr>
   <tr><td>cl_flow</td><td></td><td>0</td></tr>
@@ -345,6 +348,9 @@ menu: |
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
   <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy should stop pressing keys when you switch</td><td>0</td></tr>
   <tr><td>cl_dummy_copy_moves</td><td>Wether dummy should copy your moves</td><td>0</td></tr>
+  <tr><td>cl_http_connect_timeout_ms</td><td>HTTP downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td></tr>
+  <tr><td>cl_http_low_speed_limit</td><td>HTTP downloads: Set low speed limit in bytes per second (0 to disable)</td><td>500</td></tr>
+  <tr><td>cl_http_low_speed_time</td><td>HTTP downloads: Set low speed limit time period (0 to disable)</td><td>5</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td></tr>
   <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>"nameless tee"</td></tr>
@@ -531,6 +537,7 @@ menu: |
   <tr><td>zoom+</td><td>Zoom increase</td></tr>
   <tr><td>zoom-</td><td>Zoom decrease</td></tr>
   <tr><td>zoom</td><td>Zoom reset</td></tr>
+  <tr><td>toggle_dynamic_camera</td><td>Turn dynamic camera on/off</td></tr>
   <tr><td>say</td><td>Say in chat</td></tr>
   <tr><td>say_team</td><td>Say in team chat</td></tr>
   <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
@@ -578,11 +585,11 @@ menu: |
 <table class="settingscommands">
   <tr><th>Tuning</th><th>Description</th><th>Default</th></tr>
   <tr><td>ground_control_speed</td><td>Max speed the tee can get on ground</td><td> 10.0</td></tr>
-  <tr><td>ground_control_accel</td><td>Acceleration speed on the ground</td><td> 100.0f / TicksPerSecond</td></tr>
+  <tr><td>ground_control_accel</td><td>Acceleration speed on the ground</td><td>2.0</td></tr>
   <tr><td>ground_friction</td><td>Friction on the ground</td><td> 0.5</td></tr>
   <tr><td>ground_jump_impulse</td><td>Impulse when jumping on ground</td><td> 13.2</td></tr>
   <tr><td>air_jump_impulse</td><td>Impulse when jumping in air</td><td> 12.0</td></tr>
-  <tr><td>air_control_speed</td><td>Max speed the tee can get in the air</td><td> 250.0f / TicksPerSecond</td></tr>
+  <tr><td>air_control_speed</td><td>Max speed the tee can get in the air</td><td>5.0</td></tr>
   <tr><td>air_control_accel</td><td>Acceleration speed in air</td><td> 1.5</td></tr>
   <tr><td>air_friction</td><td>Friction in the air</td><td> 0.95</td></tr>
   <tr><td>hook_length</td><td>Length of the hook</td><td> 380.0</td></tr>
