@@ -18,7 +18,13 @@ menu: |
 <p>
 DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Canada, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/0XKmAx1rT-c?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<!--<div class="video-container"><iframe id="jsclient" class="ytplayer" src="http://teewebs.net/"></iframe></div><div align="right"><a href="http://teewebs.net/">DDnet JS client by eeeee</a></div>
+<script src="/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).click(function() { $("#jsclient").focus() });
+$(document).ready(function() { $("#jsclient").focus() });
+</script>-->
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/_UQ0cMEHG44?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers3.png"/></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -47,7 +53,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.5';
+$version = '7.6.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -70,6 +76,30 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1443">Moderate (★★★★✰) Tournament on Sunday at 20:00 CEST</a></strong> on Bixes' new map Red Avenue:<br/>
+    <img class="demo" src="Red_Avenue.png" /></li>
+  <li><strong>DDNet Client 7.6.1 needs manual update</strong>:
+    <p>As many of you have noticed the autoupdater didn't work in 7.5 and 7.6. You need to manually download 7.6.1 from DDNet.tw. Sorry for the trouble!</p>
+  <li><strong>DDNet 7.6</strong>:<br/>
+  <ul>
+    <li>[Client] <strong>New game tiles</strong> (by Soreu)</li>
+    <li>[Client] Improve antiping prediction of collision between players (by nuborn)</li>
+    <li>[Client] Fix dummy connect delay (by east)</li>
+    <li>[Client] Disable buttons while dummy is connecting</li>
+    <li>[Client] Fix: Resend player and dummy info if it was filtered by server (by DoNe)</li>
+    <li>[Client] Hopefully fix player move on dummy connect</li>
+    <li>[Client] Fix popup title overflow on disconnect</li>
+    <li>[Client] Fix client crash</li>
+    <li>[Editor] Go back in envelopes with right mouse click</li>
+    <li>[Editor] Move "Add Sound" button down for 5:4 resolutions</li>
+    <li>[Editor] Fix: On switch layer correct delay number when filling</li>
+    <li>[Server] Disallow spectators to participate in kick votes</li>
+    <li>[Server] Rename rifle_fire_delay tuning to laser_fire_delay</li>
+  </ul></li>
+  <li>New DDNet GER Football server running</li>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1352">Brutal (★★★★✰) Dummy Tournament on Sunday at 20:00 CEST</a></strong> on Spyker's new map DarkSpy (<a href="https://www.youtube.com/watch?v=0XKmAx1rT-c">Trailer</a>):<br/>
+    <img class="demo" src="DarkSpy.png" /></li>
+  <li><strong><a href="http://teewebs.net/">DDNet web client by eeeee</a></strong></li>
   <li><strong>DDNet 7.5</strong>:<br/>
   <ul>
     <li>[Client] Render kill messages with DDRace team color (with cl_chat_teamcolors 1)</li>
