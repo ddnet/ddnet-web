@@ -76,6 +76,7 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>A bit nicer <a href="http://ddnet.tw/players/Xurike/">player tables by Xurike</a></li>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1443">Moderate (★★★★✰) Tournament on Sunday at 20:00 CEST</a></strong> on Bixes' new map Red Avenue:<br/>
     <img class="demo" src="Red_Avenue.png" /></li>
   <li><strong>DDNet Client 7.6.1 needs manual update</strong>:

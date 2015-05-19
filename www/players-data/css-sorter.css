@@ -66,6 +66,7 @@ table.spacey  {
 
 
 .unfinTable2 {
+  border-left: thin solid #CCC;
   border-collapse: separate;
   border-spacing: 4px 0px;
   display: inline-table;
@@ -94,6 +95,7 @@ table.spacey  {
 
 
 .unfinTable3 {
+  border-left: thin solid #CCC;
   border-collapse: separate;
   border-spacing: 4px 0px;
   display: inline-table;
@@ -118,4 +120,11 @@ table.spacey  {
 
 .unfinTable3 th h2 {
   text-align: center;
+}
+
+.tablesorter tr:nth-child(even),
+.unfinTable1 tr:nth-child(even),
+.unfinTable2 tr:nth-child(even),
+.unfinTable3 tr:nth-child(even) {
+  background-color:rgba(136, 34, 34, 0.06);
 }
