@@ -24,7 +24,7 @@ DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.c
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/_UQ0cMEHG44?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/idHnfGVsup0?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers3.png"/></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -76,9 +76,9 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1522">Moderate (★★★★★) Tournament on Sunday at 20:00 CEST</a></strong> on Spyker's new map Desert Wolf:<br/>
+    <img class="demo" src="Desert_Wolf.png" /></li>
   <li>A bit nicer <a href="http://ddnet.tw/players/Xurike/">player tables by Xurike</a></li>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1443">Moderate (★★★★✰) Tournament on Sunday at 20:00 CEST</a></strong> on Bixes' new map Red Avenue:<br/>
-    <img class="demo" src="Red_Avenue.png" /></li>
   <li><strong>DDNet Client 7.6.1 needs manual update</strong>:
     <p>As many of you have noticed the autoupdater didn't work in 7.5 and 7.6. You need to manually download 7.6.1 from DDNet.tw. Sorry for the trouble!</p>
   <li><strong>DDNet 7.6</strong>:<br/>
@@ -98,8 +98,6 @@ if ($user_os == 'win') {
     <li>[Server] Rename rifle_fire_delay tuning to laser_fire_delay</li>
   </ul></li>
   <li>New DDNet GER Football server running</li>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1352">Brutal (★★★★✰) Dummy Tournament on Sunday at 20:00 CEST</a></strong> on Spyker's new map DarkSpy (<a href="https://www.youtube.com/watch?v=0XKmAx1rT-c">Trailer</a>):<br/>
-    <img class="demo" src="DarkSpy.png" /></li>
   <li><strong><a href="http://teewebs.net/">DDNet web client by eeeee</a></strong></li>
   <li><strong>DDNet 7.5</strong>:<br/>
   <ul>
