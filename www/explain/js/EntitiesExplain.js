@@ -237,8 +237,8 @@
 			"shape":"rect", "coords":"256, 64, 320, 128"
 			},
 		{
-		 "title":"SOLO", "ID":" (21)", "subtitle":"Solo",
-		 "group":"",
+		 "title":"SOLO", "ID":" (21)", "subtitle":"on",
+		 "group":"Solo",
 		 "alt1":"You are now <u>in</u> a solo part.",
 		 "alt2":"",
 		 "type":["Game", "Front", "Overlay"],
@@ -611,7 +611,7 @@
 		{
 		 "title":"SPEEDER", "ID":" (64)", "subtitle":"slow",
 		 "group":"Speeder",
-		 "alt1":"Causes weapons, SHIELD, HEART and (NON-)SPINNING LASER to move.<br /><img src='img/Rotate.png' /><img src='img/Flip.png' />",
+		 "alt1":"Causes weapons, SHIELD, HEART and SPINNING LASER to move.<br /><img src='img/Rotate.png' /><img src='img/Flip.png' />",
 		 "alt2":"",
 		 "type":["Game", "Front"],
 		 "shape":"rect", "coords":"0, 256, 64, 320"
@@ -619,7 +619,7 @@
 			{
 			"title":"SPEEDER", "ID":" (64)", "subtitle":"slow",
 			"group":"Speeder",
-			"alt1":"Causes weapons, SHIELD, HEART and (NON-)SPINNING LASER to move.",
+			"alt1":"Causes weapons, SHIELD, HEART and SPINNING LASER to move.",
 			"alt2":"",
 			"type":["Overlay"],
 			"shape":"rect", "coords":"0, 256, 64, 320"
@@ -627,7 +627,7 @@
 		{
 		 "title":"SPEEDER", "ID":" (65)", "subtitle":"fast",
 		 "group":"Speeder",
-		 "alt1":"Causes weapons, SHIELD, HEART and (NON-)SPINNING LASER to move.<br /><img src='img/Rotate.png' /><img src='img/Flip.png' />",
+		 "alt1":"Causes weapons, SHIELD, HEART and SPINNING LASER to move.<br /><img src='img/Rotate.png' /><img src='img/Flip.png' />",
 		 "alt2":"",
 		 "type":["Game", "Front"],
 		 "shape":"rect", "coords":"64, 256, 128, 320"
@@ -635,7 +635,7 @@
 			{
 			"title":"SPEEDER", "ID":" (65)", "subtitle":"fast",
 			"group":"Speeder",
-			"alt1":"Causes weapons, SHIELD, HEART and (NON-)SPINNING LASER to move.",
+			"alt1":"Causes weapons, SHIELD, HEART and SPINNING LASER to move.",
 			"alt2":"",
 			"type":["Overlay"],
 			"shape":"rect", "coords":"64, 256, 128, 320"
@@ -723,7 +723,7 @@
 			{
 			"title":"HOOK OTHERS OFF", "ID":" (75)", "subtitle":"whole map",
 			"group":"Pink Tile",
-			"alt1":"Nobody can hook others.<br />Shooter can't hit himself.",
+			"alt1":"Nobody can hook others.",
 			"alt2":"",
 			"type":["Overlay"],
 			"shape":"rect", "coords":"704, 256, 768, 320"

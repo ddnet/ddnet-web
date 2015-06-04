@@ -24,11 +24,11 @@ DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.c
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/idHnfGVsup0?autoplay=0&hd=1"></iframe></div><div align="right">More videos in the <a href="/halloffame/">Hall of Fame</a></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/pxy5-rELdsU?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="lasers3.png"/></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
-<!--<object id="live_embed_player_flash" width="800" height="450" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="flashvars" value="hostname=de.twitch.tv&amp;channel=maggi323&amp;auto_play=true&amp;start_volume=25" /><param name="src" value="http://de.twitch.tv/widgets/live_embed_player.swf?channel=maggi323" /><embed id="live_embed_player_flash" width="800" height="450" type="application/x-shockwave-flash" src="http://de.twitch.tv/widgets/live_embed_player.swf?channel=maggi323" allowFullScreen="true" allowScriptAccess="always" allowNetworking="all" flashvars="hostname=de.twitch.tv&amp;channel=maggi323&amp;auto_play=true&amp;start_volume=25" bgcolor="#000000" /></object><iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=maggi323&#038;popout_chat=true" height="450" width="300"></iframe>-->
+<!--<object id="live_embed_player_flash" width="800" height="450" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="flashvars" value="hostname=de.twitch.tv&amp;channel=weeelf&amp;auto_play=true&amp;start_volume=25" /><param name="src" value="http://de.twitch.tv/widgets/live_embed_player.swf?channel=weeelf" /><embed id="live_embed_player_flash" width="800" height="450" type="application/x-shockwave-flash" src="http://de.twitch.tv/widgets/live_embed_player.swf?channel=weeelf" allowFullScreen="true" allowScriptAccess="always" allowNetworking="all" flashvars="hostname=de.twitch.tv&amp;channel=weeelf&amp;auto_play=true&amp;start_volume=25" bgcolor="#000000" /></object><iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=weeelf&#038;popout_chat=true" height="450" width="300"></iframe>-->
 <br/>
 <div class="download"><img class="download-button" src="download.svg"/>
 <?php
@@ -53,7 +53,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.6.1';
+$version = '7.7.1';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -76,6 +76,20 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 7.7</strong>:<br/>
+  <ul>
+    <li>[Client] Detailed statboard for vanilla gaming (by Shiki)</li>
+    <li>[Client] Dyncam remembers settings (by Shiki)</li>
+    <li>[Client] Enable timeouts and low speed limits for HTTP downloads</li>
+    <li>[Client] Only refresh serverbrowser when necessary</li>
+    <li>[Client] Fix bug with 'Join Red' and 'Spectate' buttons sharing same state variable (by Shiki)</li>
+    <li>[Client] Fix console page color</li>
+    <li>[Editor] Fix a few freezes and crashes and make them recoverable</li>
+    <li>[Mapping] Freeze tiles on switch layer can be switched off</li>
+    <li>[Server] Fix start info spam protection</li>
+    <li>[Server] Fix crash with doors</li>
+    <li>[Server] Fix banning of websocket clients (by eeeee)</li>
+  </ul></li>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1522">Moderate (★★★★★) Tournament on Sunday at 20:00 CEST</a></strong> on Spyker's new map Desert Wolf:<br/>
     <img class="demo" src="Desert_Wolf.png" /></li>
   <li>A bit nicer <a href="http://ddnet.tw/players/Xurike/">player tables by Xurike</a></li>
