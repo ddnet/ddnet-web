@@ -661,8 +661,12 @@ section {
 .startimages {
   float: left;
   margin: 0.5em;
-  width: 48%;
+  width: 100%;
   min-width: 20em;
+}
+
+.startimages .demo {
+  width: 49%;
 }
 
 #mainnav {
