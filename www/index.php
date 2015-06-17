@@ -76,6 +76,9 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1633">Novice Tournament on Sunday at 20:00 CEST</a></strong> on Aoe's new map Planet Venus:<br/>
+    <img class="demo" src="Planet_Venus.png" /></li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1621"><img src="http://www11.pic-upload.de/15.06.15/u8qah8blrdup.png" /></a></li>
   <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1613">SURPRISE Moderate (★★★★★) Tournament TODAY on Sunday at 20:00 CEST</a></strong> on Welf's new map Eternal 2:<br/>
     <img class="demo" src="Eternal_2.png" /></li>
   <li><strong>DDNet 7.7</strong>:<br/>
