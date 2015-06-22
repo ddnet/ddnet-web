@@ -24,7 +24,7 @@ DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.c
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/DGxDwr4nG3c?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/JObJvGL_2IA?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="8.png"/><img class="demo" alt="Demo" src="up.png"/></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -53,7 +53,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.7.2';
+$version = '7.7.3';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -76,11 +76,11 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1633">Novice Tournament on Sunday at 20:00 CEST</a></strong> on Aoe's new map Planet Venus:<br/>
-    <img class="demo" src="Planet_Venus.png" /></li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1637">DDNet Code of Conduct</a></li>
+  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1633">Novice Tournament on Sunday at 20:00 CEST</a></strong> on Aoe's new map Planet Jupiter. There will be an English livestream by <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986</a> &amp; Aoe:<br/>
+    <img class="demo" src="Planet_Jupiter.png" /></li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1626">KoG Gores Tournament on Friday</a></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1621"><img src="http://www11.pic-upload.de/15.06.15/u8qah8blrdup.png" /></a></li>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1613">SURPRISE Moderate (★★★★★) Tournament TODAY on Sunday at 20:00 CEST</a></strong> on Welf's new map Eternal 2:<br/>
-    <img class="demo" src="Eternal_2.png" /></li>
   <li><strong>DDNet 7.7</strong>:<br/>
   <ul>
     <li>[Client] Detailed statboard for vanilla gaming (by Shiki)</li>
@@ -95,8 +95,6 @@ if ($user_os == 'win') {
     <li>[Server] Fix crash with doors</li>
     <li>[Server] Fix banning of websocket clients (by eeeee)</li>
   </ul></li>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1522">Moderate (★★★★★) Tournament on Sunday at 20:00 CEST</a></strong> on Spyker's new map Desert Wolf:<br/>
-    <img class="demo" src="Desert_Wolf.png" /></li>
   <li>A bit nicer <a href="http://ddnet.tw/players/Xurike/">player tables by Xurike</a></li>
   <li><strong>DDNet Client 7.6.1 needs manual update</strong>:
     <p>As many of you have noticed the autoupdater didn't work in 7.5 and 7.6. You need to manually download 7.6.1 from DDNet.tw. Sorry for the trouble!</p>
