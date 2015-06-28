@@ -53,7 +53,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.7.3';
+$version = '7.8';
 
 if ($user_os == 'win') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
@@ -76,6 +76,22 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 7.8</strong>:<br/>
+  <ul>
+    <li>[Client] Add automatic antiping based on ping</li>
+    <li>[Client] Add support to show clan above name plates</li>
+    <li>[Client] Improve Android client</li>
+    <li>[Client] Show full time in scoreboard even when minutes are over 100</li>
+    <li>[Client] Fix autorecorder again (by east)</li>
+    <li>[Client] Better Polish translations (by Savander and Lady Saavik)</li>
+    <li>[Client] Add Catalan translations (by Ryozuki)</li>
+    <li>[Editor] Ctrl-s doesn't ask about overwriting anymore</li>
+    <li>[Mapping] Improved grass_main and round-tiles automapper rules (by hi_leute_gll)</li>
+    <li>[Server] If no rcon password is set, generate one (by heinrich5991)</li>
+    <li>[Server] /mapinfo shows release dates now</li>
+    <li>[Server] Fix excessive name/skin changing</li>
+    <li>[Server] Hopefully fix problem where timeout code sometimes doesn't work</li>
+  </ul></li>
   <li>Useful binds to show more of chat when you start chatting:<br/>
     <pre>bind t "+show_chat; chat all"
 bind y "+show_chat; chat team"
