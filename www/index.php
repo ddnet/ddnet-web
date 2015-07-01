@@ -83,6 +83,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="/funding/">DDNet Funding</a></li>
   <li><strong>DDNet 7.8.1</strong>:<br/>
   <ul>
     <li>[Client] 64bit Windows version available</li>
