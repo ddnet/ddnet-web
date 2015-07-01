@@ -76,8 +76,6 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><strong><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1671">Brutal Tournament on Sunday at 20:00 CEST</a></strong> on Themix's new map Everdeen. There will be a German livestream by <a href="http://www.hitbox.tv/Hallowed1986">Hallowed1986</a>:<br/>
-    <img class="demo" src="Everdeen.png" /></li>
   <li><strong>DDNet 7.8</strong>:<br/>
   <ul>
     <li>[Client] Add automatic antiping based on ping</li>
@@ -99,7 +97,7 @@ if ($user_os == 'win') {
 bind y "+show_chat; chat team"
 bind i "+show_chat; chat all /c "</pre></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1637">DDNet Code of Conduct</a></li>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1621"><img src="http://www11.pic-upload.de/15.06.15/u8qah8blrdup.png" /></a></li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1621"><img class="demo" src="http://www11.pic-upload.de/15.06.15/u8qah8blrdup.png" /></a></li>
   <li><strong>DDNet 7.7</strong>:<br/>
   <ul>
     <li>[Client] Detailed statboard for vanilla gaming (by Shiki)</li>
