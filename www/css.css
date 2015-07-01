@@ -511,6 +511,20 @@ br {
     text-align: right;
 }
 
+.dlfiles {
+  padding-top: 0;
+}
+
+.dlfiles ul {
+  margin: 0;
+  padding: 0.5em 0;
+  list-style-type: none;
+}
+
+.dlinfo {
+  padding-top: 0;
+}
+
 @media (min-width: 1100px) {
 article {
   margin: 0 auto;
@@ -601,6 +615,15 @@ menu {
   width: 28%;
   margin-top: 0.8em;
 }
+
+.dlfiles {
+  float: left;
+  width: 10em;
+}
+
+.dlinfo {
+  margin-left: 10em;
+}
 }
 
 @media (max-width: 1099px) {
@@ -639,6 +662,28 @@ menu li:before {
 }
 
 menu ul {
+  margin: 0;
+  margin-bottom: 1em;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+}
+
+.dlfiles {
+  padding: 0;
+}
+
+.dlfiles li {
+  display: inline;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.dlfiles li:before {
+  content: "";
+}
+
+.dlfiles ul {
   margin: 0;
   margin-bottom: 1em;
   list-style-type: none;
@@ -688,4 +733,5 @@ section {
   text-decoration: none;
   background-color: transparent;
   color: #882222;
+}
 }
