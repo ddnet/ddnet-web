@@ -40,8 +40,12 @@ function getOS() {
 
   if (preg_match('/android/i', $user_agent))
     $os_platform = 'and';
+  elseif (preg_match('/wow64/i', $user_agent))
+    $os_platform = 'win64';
+  elseif (preg_match('/win64/i', $user_agent))
+    $os_platform = 'win64';
   elseif (preg_match('/windows/i', $user_agent))
-    $os_platform = 'win';
+    $os_platform = 'win32';
   elseif (preg_match('/linux.*x86_64/i', $user_agent))
     $os_platform = 'lin64';
   elseif (preg_match('/linux.*i686/i', $user_agent))
@@ -53,10 +57,12 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.8';
+$version = '7.8.1';
 
-if ($user_os == 'win') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+if ($user_os == 'win32') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
+} elseif ($user_os == 'win64') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'mac') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-osx.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for Mac OS X</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
 } elseif ($user_os == 'lin32') {
@@ -76,6 +82,16 @@ if ($user_os == 'win') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 7.8.1</strong>:<br/>
+  <ul>
+    <li>[Client] 64bit Windows version available</li>
+    <li>[Client] Fix: Error out on invalid UTF-8 strings (by heinrich5991)</li>
+    <li>[Client] Add size variable for clan plates</li>
+    <li>[Client] Fix: Make TAB always work in serverbrowser</li>
+    <li>[Editor] Highlight game layers</li>
+    <li>[Editor] Make a few value selectors wrap around</li>
+    <li>[Server] Add sv_rescue_delay and rename sv_allow_rescue to sv_rescue</li>
+  </ul></li>
   <li><strong>DDNet 7.8</strong>:<br/>
   <ul>
     <li>[Client] Add automatic antiping based on ping</li>
