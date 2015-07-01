@@ -11,6 +11,7 @@ menu: |
     <li><a href="/binds/">Useful&nbsp;Binds</a></li>
     <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
     <li><a href="/staff/">Staff&nbsp;&amp;&nbsp;Contact</a></li>
+    <li><a href="/funding/">Funding</a></li>
   </ul>
 ---
 <div class="block">
@@ -75,7 +76,7 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span></p>';
 }
 ?>
-<div class="right"><a href="/staff/#donations">Donate</a></div>
+<div class="right"><a href="/funding/">Donate</a></div>
 </div>
 <br/>
 </div>
