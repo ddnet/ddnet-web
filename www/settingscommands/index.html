@@ -20,7 +20,7 @@ menu: |
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
   <tr><td>sv_name</td><td>Server name</td><td>"unnamed server"</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
-  <tr><td>sv_port</td><td>Port to use for the server</td><td>8303</td></tr>
+  <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser)</td><td>8303</td></tr>
   <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
   <tr><td>sv_map</td><td>Map to use on the server</td><td>"dm1"</td></tr>
   <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>MAX_CLIENTS</td></tr>
@@ -166,7 +166,8 @@ menu: |
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
   <tr><td>sv_send_votes_per_tick</td><td>Number of vote options being send per tick</td><td>5</td></tr>
-  <tr><td>sv_allow_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td><td>0</td></tr>
+  <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td><td>0</td></tr>
+  <tr><td>sv_rescue_delay</td><td>Number of seconds inbetween two rescues</td><td>5</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
 </table>
 </div>
@@ -276,6 +277,7 @@ menu: |
 <table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td></tr>
+  <tr><td>cl_antiping_limit</td><td>Antiping limit (0 to disable)</td><td>0</td></tr>
   <tr><td>cl_antiping</td><td>Antiping (sets all Antiping settings)</td><td>0</td></tr>
   <tr><td>cl_antiping_players</td><td>Antiping (predict other players' movements)</td><td>0</td></tr>
   <tr><td>cl_antiping_grenade</td><td>Antiping (predict grenades)</td><td>0</td></tr>
@@ -284,6 +286,8 @@ menu: |
   <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td></tr>
   <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td></tr>
   <tr><td>cl_nameplates_size</td><td>Size of the name plates from 0 to 100%</td><td>50</td></tr>
+  <tr><td>cl_nameplates_clan</td><td>Show clan in name plates</td><td>0</td></tr>
+  <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>0</td></tr>
@@ -306,6 +310,7 @@ menu: |
   <tr><td>cl_mouse_max_distance</td><td></td><td>400</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
   <tr><td>cl_dyn_cam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
+  <tr><td>cl_default_mouse_max_distance</td><td>Default mouse max distance. Dyncam switches back to it</td><td>400</td></tr>
   <tr><td>cl_dyn_cam_dead_zone</td><td>Dynamic camera dead zone</td><td>300</td></tr>
   <tr><td>cl_dyn_cam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td></tr>
@@ -320,6 +325,8 @@ menu: |
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>""</td></tr>
   <tr><td>cl_show_new_skins</td><td>Show new skins ingame</td><td>1</td></tr>
   <tr><td>cl_show_custom_skins</td><td>Show custom skins ingame</td><td>1</td></tr>
+  <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td></tr>
+  <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>20</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
