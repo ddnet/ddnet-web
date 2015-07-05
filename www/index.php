@@ -83,6 +83,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1621"><img class="demo" src="http://www11.pic-upload.de/15.06.15/u8qah8blrdup.png" /></a></li>
   <li><a href="/funding/">DDNet Funding</a></li>
   <li><strong>DDNet 7.8.1</strong>:<br/>
   <ul>
@@ -115,7 +116,6 @@ if ($user_os == 'win32') {
 bind y "+show_chat; chat team"
 bind i "+show_chat; chat all /c "</pre></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1637">DDNet Code of Conduct</a></li>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1621"><img class="demo" src="http://www11.pic-upload.de/15.06.15/u8qah8blrdup.png" /></a></li>
   <li><strong>DDNet 7.7</strong>:<br/>
   <ul>
     <li>[Client] Detailed statboard for vanilla gaming (by Shiki)</li>
