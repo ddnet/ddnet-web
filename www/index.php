@@ -1,6 +1,7 @@
 ---
 layout: default
 title: DDraceNetwork
+head: <link rel="stylesheet" href="funding/jquery-ui-1.8.22.custom.css" />
 menu: |
   <ul>
     <li><a href="/#news">News</a></li>
@@ -76,7 +77,64 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span></p>';
 }
 ?>
-<div class="right"><a href="/funding/">Donate</a></div>
+<div class="right">
+  <a href="/funding/"><div class="progressbar" id="funding-total" style="width: 20em;"><div class="progress-label"></div></div></a>
+  <script src="/jquery.js" type="text/javascript"></script>
+  <script src="funding/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(function() {
+  var costs = {
+    "ddnet": 72,
+    "ger":  [180, 360],
+    "ger2": "eeeee",
+    "usa":  [56, 96],
+    "can":  "o_be_one",
+    "rus":   72,
+    "chn":  "TsFreddie",
+    "chl":  324,
+    "bra":  "RafaelFF & Soyer",
+    "zaf":  "Web Africa",
+  };
+  var donated = 119;
+  var sum = 0;
+  var sumPartSponsored = 0;
+  var num = 0
+  for (var server in costs) {
+    if (costs.hasOwnProperty(server)) {
+      var val = costs[server];
+      if (val.toFixed) {
+        sum += val;
+        num += 1;
+      } else if ($.isArray(val)) {
+        sum += val[1];
+        sumPartSponsored += val[0];
+        num += 1;
+      }
+    }
+  }
+
+  $("#funding-total").progressbar({value: 100 * (donated + sumPartSponsored) / sum});
+  $("#funding-total .progress-label").text((donated + sumPartSponsored).toFixed() + " € donated / " + sum + " € cost");
+
+  for (var server in costs) {
+    if (costs.hasOwnProperty(server)) {
+      var val = costs[server];
+      if (val.toFixed) {
+        $("#funding-" + server).progressbar({value: 100 * donated / sum});
+        $("#funding-" + server + " .progress-label").text((val * donated / sum).toFixed() + " / " + val + " €");
+      } else if ($.isArray(val)) {
+        $("#funding-" + server).progressbar({value: 100 * ((val[1] * donated / sum + val[0]) / val[1])});
+        $("#funding-" + server + " .progress-label").text((val[1] * donated / sum + val[0]).toFixed() + " / " + val[1] + " €");
+      } else {
+        $("#funding-" + server).progressbar({value: 100});
+        $("#funding-" + server + " .progress-label").text("sponsored by " + val);
+        $("#funding-" + server + " .ui-widget-header").css('background-color', '#37d628');
+      }
+    }
+  }
+});
+</script>
+</div>
 </div>
 <br/>
 </div>
