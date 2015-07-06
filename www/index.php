@@ -141,7 +141,6 @@ $(function() {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=6&t=1621"><img class="demo" src="http://www11.pic-upload.de/15.06.15/u8qah8blrdup.png" /></a></li>
   <li><a href="/funding/">DDNet Funding</a></li>
   <li><strong>DDNet 7.8.1</strong>:<br/>
   <ul>
