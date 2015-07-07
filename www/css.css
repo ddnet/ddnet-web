@@ -646,6 +646,10 @@ menu {
   margin-top: 0.8em;
 }
 
+.startimages img {
+  padding-bottom: 2em;
+}
+
 .dlfiles {
   float: left;
   width: 10em;

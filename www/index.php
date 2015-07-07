@@ -18,7 +18,7 @@ menu: |
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
 <p>
-DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Canada, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
+DDraceNetwork is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other finish races with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Canada, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available everywhere and you can collect points!
 </p>
 <!--<div class="video-container"><iframe id="jsclient" class="ytplayer" src="http://teewebs.net/"></iframe></div><div align="right"><a href="http://teewebs.net/">DDnet JS client by eeeee</a></div>
 <script src="/jquery.js" type="text/javascript"></script>
@@ -26,8 +26,8 @@ DDraceNetwork is a special version of DDRace, a <a href="https://www.teeworlds.c
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/GzQYIBZQJFM?autoplay=0&hd=1"></iframe></div></div>
-<div class="startimages"><img class="demo" alt="Demo" src="8.png"/><img class="demo" alt="Demo" src="up.png"/></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/qCP_Wj-ILtY?autoplay=0&hd=1"></iframe></div></div>
+<div class="startimages"><a href="https://www.youtube.com/watch?v=JObJvGL_2IA"><img class="demo" alt="Demo" src="8.png"/></a><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
 <!--<object id="live_embed_player_flash" width="800" height="450" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="flashvars" value="hostname=de.twitch.tv&amp;channel=weeelf&amp;auto_play=true&amp;start_volume=25" /><param name="src" value="http://de.twitch.tv/widgets/live_embed_player.swf?channel=weeelf" /><embed id="live_embed_player_flash" width="800" height="450" type="application/x-shockwave-flash" src="http://de.twitch.tv/widgets/live_embed_player.swf?channel=weeelf" allowFullScreen="true" allowScriptAccess="always" allowNetworking="all" flashvars="hostname=de.twitch.tv&amp;channel=weeelf&amp;auto_play=true&amp;start_volume=25" bgcolor="#000000" /></object><iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=weeelf&#038;popout_chat=true" height="450" width="300"></iframe>-->
