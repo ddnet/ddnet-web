@@ -18,7 +18,7 @@ menu: |
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
 <p>
-DDraceNetwork is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Canada, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
+DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, USA, Canada, Russia, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
 <!--<div class="video-container"><iframe id="jsclient" class="ytplayer" src="http://teewebs.net/"></iframe></div><div align="right"><a href="http://teewebs.net/">DDnet JS client by eeeee</a></div>
 <script src="/jquery.js" type="text/javascript"></script>
@@ -59,7 +59,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.8.1';
+$version = '7.8.2';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a><br/><a href="http://teewebs.net/">Try it out in your browser</a></p>';
@@ -91,15 +91,18 @@ if ($user_os == 'win32') {
 <h2 id="news">News</h2>
 <ul>
   <li><a href="/funding/">DDNet Funding</a></li>
-  <li><strong>DDNet 7.8.1</strong>:<br/>
+  <li><strong>DDNet 7.8.2</strong>:<br/>
   <ul>
     <li>[Client] 64bit Windows version available</li>
     <li>[Client] Fix: Error out on invalid UTF-8 strings (by heinrich5991)</li>
     <li>[Client] Add size variable for clan plates</li>
     <li>[Client] Fix: Make TAB always work in serverbrowser</li>
+    <li>[Client] More reasonable default key bindings</li>
     <li>[Editor] Highlight game layers</li>
     <li>[Editor] Make a few value selectors wrap around</li>
+    <li>[Editor] Display local time in editor so mappers don't lose track of it</li>
     <li>[Server] Add sv_rescue_delay and rename sv_allow_rescue to sv_rescue</li>
+    <li>[Server] Update unicode confusable detection</li>
   </ul></li>
   <li><strong>DDNet 7.8</strong>:<br/>
   <ul>
