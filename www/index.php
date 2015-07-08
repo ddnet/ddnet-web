@@ -90,6 +90,8 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>DDNet South Africa on new host!</br>
+After we had lots of connection problems on our last host, we now have a new server in South Africa, thanks to lordtheuns!</li>
   <li>Veto right for players with high time (20 minutes) to stop map change votes</li>
   <li><a href="/funding/">DDNet Funding</a></li>
   <li><strong>DDNet 7.8.2</strong>:<br/>
