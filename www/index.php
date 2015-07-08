@@ -90,6 +90,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>Veto right for players with high time (20 minutes) to stop map change votes</li>
   <li><a href="/funding/">DDNet Funding</a></li>
   <li><strong>DDNet 7.8.2</strong>:<br/>
   <ul>
