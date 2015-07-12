@@ -26,7 +26,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/qCP_Wj-ILtY?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/LVO06dWiXOc?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><a href="https://www.youtube.com/watch?v=JObJvGL_2IA"><img class="demo" alt="Demo" src="8.png"/></a><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -90,6 +90,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>DDNet Persian is returning thanks to <a href="/players/KinG/">KinG</a> and <a href="http://www.teecity.ir/">Persian Tee City Staff</a>!</li>
   <li>DDNet South Africa on new host!</br>
 After we had lots of connection problems on our last host, we now have a new server in South Africa, thanks to lordtheuns!</li>
   <li>Veto right for players with high time (20 minutes) to stop map change votes</li>
