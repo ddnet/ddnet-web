@@ -605,7 +605,6 @@ dl.file dd {
 }
 
 dl.thumbnail img {
-	padding: 3px;
 	border: 1px solid transparent;
 }
 
@@ -615,7 +614,7 @@ dl.thumbnail dd {
 }
 
 .attachbox dl.thumbnail dd {
-	font-size: 100%;
+	font-size: 1.3em;
 }
 
 dl.thumbnail dt a:hover img {
