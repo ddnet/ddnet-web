@@ -26,7 +26,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/LVO06dWiXOc?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/UqJHBZsdv1U?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><a href="https://www.youtube.com/watch?v=JObJvGL_2IA"><img class="demo" alt="Demo" src="8.png"/></a><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
