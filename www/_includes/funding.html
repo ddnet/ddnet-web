@@ -33,6 +33,7 @@ $(function() {
 
   $("#funding-total").progressbar({value: 100 * (donated + sumPartSponsored) / sum});
   $("#funding-total .progress-label").text((donated + sumPartSponsored).toFixed() + " € donated / " + sum + " € cost");
+  $("#funding-total .ui-widget-header").css('background', '#F6A828');
 
   for (var server in costs) {
     if (costs.hasOwnProperty(server)) {
