@@ -59,7 +59,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.8.2';
+$version = '7.9';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
@@ -90,14 +90,35 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1805">DDraceNetwork 2nd Birthday Tournament</a> on Saturday and Sunday at 20:00 CEST:<br/>
-    <img class="demo" src="KeepOut.png"><img class="demo" src="Optimum.png"></li>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1626">KoG Gores Tournament</a> on Friday at 20:00 CEST</li>
   <li>DDNet Race server going online on Thursday!</li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1626">KoG Gores Tournament</a> on Friday at 20:00 CEST</li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1805">DDraceNetwork 2nd Birthday Tournament</a> on Saturday and Sunday at 20:00 CEST:<br/>
+    <img class="halfvideo" src="KeepOut.png"><img class="halfvideo" src="Optimum.png"></li>
+  <li><strong>DDNet 7.9</strong>:<br/>
+  <ul>
+    <li>[Client] Show all recorders at top of scoreboard</li>
+    <li>[Client] Sort players in server browser by name too</li>
+    <li>[Client] Fix statboard for some resolutions</li>
+    <li>[Client] Fix saving of favorite IPv6 servers (by east)</li>
+    <li>[Client] Fix demo cutter to add .demo file ending</li>
+    <li>[Client] Improved German translations (by DoNe)</li>
+    <li>[Mapping] Add many nice mapres to the client (thanks to Soreu)</li>
+    <li>[Mapping] Improved grass_main/0.7 automappers (by hi_leute_gll)</li>
+    <li>[Mapping] Rename mapres to have consistent names</li>
+    <li>[Editor] Scroll speedup angles by 45° (finer with shift)</li>
+    <li>[Editor] Fix: Show degrees sign in values selector</li>
+    <li>[Server] Veto right for players with high time (20 minutes) to stop map change votes</li>
+    <li>[Server] Only allow /save when team is started already to prevent saving after noobfilter</li>
+    <li>[Server] Make /map and /mapinfo work for maps with really similar names</li>
+    <li>[Server] Show nice messages to known bot clients</li>
+    <li>[Server] Fix /map and /mapinfo with special unicode characters</li>
+    <li>[Server] Fix: Only disallow team changing/killing when calling kick/spec votes</li>
+    <li>[Server] Fix: Vote callers never count as afk</li>
+    <li>[Compilation] Use system libraries by default when available (should enable building DDNet on any platform and OS)</li>
+  </ul></li>
   <li>DDNet Persian is returning thanks to <a href="/players/KinG/">KinG</a> and <a href="http://www.teecity.ir/">Persian Tee City Staff</a>!</li>
   <li>DDNet South Africa on new host!</br>
 After we had lots of connection problems on our last host, we now have a new server in South Africa, thanks to lordtheuns!</li>
-  <li>Veto right for players with high time (20 minutes) to stop map change votes</li>
   <li><a href="/funding/">DDNet Funding</a></li>
   <li><strong>DDNet 7.8.2</strong>:<br/>
   <ul>
