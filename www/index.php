@@ -90,6 +90,10 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1805">DDraceNetwork 2nd Birthday Tournament</a> on Saturday and Sunday at 20:00 CEST:<br/>
+    <img class="demo" src="KeepOut.png"><img class="demo" src="Optimum.png"></li>
+  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1626">KoG Gores Tournament</a> on Friday at 20:00 CEST</li>
+  <li>DDNet Race server going online on Thursday!</li>
   <li>DDNet Persian is returning thanks to <a href="/players/KinG/">KinG</a> and <a href="http://www.teecity.ir/">Persian Tee City Staff</a>!</li>
   <li>DDNet South Africa on new host!</br>
 After we had lots of connection problems on our last host, we now have a new server in South Africa, thanks to lordtheuns!</li>
