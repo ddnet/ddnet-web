@@ -67,6 +67,7 @@ menu: |
   <tr><td>sv_vote_yes_percentage</td><td>The percent of people that need to agree or deny for the vote to succeed/fail</td><td>50</td></tr>
   <tr><td>sv_vote_majority</td><td>Whether No. of Yes is compared to No. of No votes or to number of total Players ( Default is 0 Y compare N)</td><td>0</td></tr>
   <tr><td>sv_vote_max_total</td><td>How many people can participate in a vote at max (0 = no limit by default)</td><td>0</td></tr>
+  <tr><td>sv_vote_veto_time</td><td>Minutes of game time until a player can veto map change votes (0 = disabled)</td><td>20</td></tr>
   <tr><td>sv_spectator_votes</td><td>Choose if spectators are allowed to start votes</td><td>1</td></tr>
   <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>3</td></tr>
   <tr><td>sv_suicide_penalty</td><td>The minimum time in seconds between kill or /kills and respawn</td><td>0</td></tr>
@@ -132,8 +133,9 @@ menu: |
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as noone is on it anymore</td><td>0</td></tr>
   <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>0</td></tr>
   <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
-  <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>"Get the client from ddnet.tw to use all features on DDNet"</td></tr>
-  <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>"Your client version is old. Update it on ddnet.tw for new features!"</td></tr>
+  <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>"Get DDNet client from DDNet.tw to use all features on DDNet!"</td></tr>
+  <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>"Your DDNet client is old</td></tr>
+  <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>"Your client has bots and can be remote controlled!\nPlease use another client like DDNet client from DDNet.tw"</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
   <tr><td>sv_warmup</td><td>Number of seconds to do warmup before round starts</td><td>0</td></tr>

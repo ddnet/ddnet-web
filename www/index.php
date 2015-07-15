@@ -59,7 +59,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '7.9';
+$version = '7.9.1';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
@@ -94,7 +94,7 @@ if ($user_os == 'win32') {
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1626">KoG Gores Tournament</a> on Friday at 20:00 CEST</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1805">DDraceNetwork 2nd Birthday Tournament</a> on Saturday and Sunday at 20:00 CEST:<br/>
     <img class="halfvideo" src="KeepOut.png"><img class="halfvideo" src="Optimum.png"></li>
-  <li><strong>DDNet 7.9</strong>:<br/>
+  <li><strong>DDNet 7.9.1</strong>:<br/>
   <ul>
     <li>[Client] Show all recorders at top of scoreboard</li>
     <li>[Client] Sort players in server browser by name too</li>
