@@ -90,10 +90,10 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li>DDNet Race server going online on Thursday!</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1626">KoG Gores Tournament</a> on Friday at 20:00 CEST</li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1805">DDraceNetwork 2nd Birthday Tournament</a> on Saturday and Sunday at 20:00 CEST:<br/>
-    <img class="halfvideo" src="KeepOut.png"><img class="halfvideo" src="Optimum.png"></li>
+    <img class="halfvideo" src="KeepOut.png"><img class="halfvideo" src="Optimum.png"><br/>
+    On Saturday there will be a German livestream by the great Hallowed1986, which starts at 19:00 CEST with an interview of deen about DDNet.</li>
   <li><strong>DDNet 7.9.1</strong>:<br/>
   <ul>
     <li>[Client] Show all recorders at top of scoreboard</li>
