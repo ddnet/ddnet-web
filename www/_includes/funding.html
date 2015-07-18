@@ -15,6 +15,7 @@ $(function() {
   };
   var donated = 311;
   var sum = 0;
+  var sumToPay = 0;
   var sumPartSponsored = 0;
   var num = 0
   for (var server in costs) {
@@ -22,9 +23,11 @@ $(function() {
       var val = costs[server];
       if (val.toFixed) {
         sum += val;
+        sumToPay += val;
         num += 1;
       } else if ($.isArray(val)) {
         sum += val[1];
+        sumToPay += val[1] - val[0];
         sumPartSponsored += val[0];
         num += 1;
       }
@@ -41,13 +44,13 @@ $(function() {
         paid[server] += donatedRest;
       }
       if (val.toFixed) {
-        paid[server] += val * donated / sum;
+        paid[server] += val * donated / sumToPay;
         if (paid[server] > val) {
-          donatedRest += paid[server] - costs[server];
-          paid[server] = costs[server];
+          donatedRest += paid[server] - val;
+          paid[server] = val;
         }
       } else if ($.isArray(val)) {
-        paid[server] += val[1] * donated / sum + val[0];
+        paid[server] += (val[1] - val[0]) * donated / sumToPay + val[0];
         if (paid[server] > val[1]) {
           donatedRest += paid[server] - val[1];
           paid[server] = val[1];
