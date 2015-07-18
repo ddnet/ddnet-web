@@ -31,6 +31,32 @@ $(function() {
     }
   }
 
+  var donatedRest = 0;
+  var paid = {};
+  for (var server in costs) {
+    if (costs.hasOwnProperty(server)) {
+      var val = costs[server];
+      paid[server] = 0;
+      if (donatedRest > 0) {
+        paid[server] += donatedRest;
+      }
+      if (val.toFixed) {
+        paid[server] += val * donated / sum;
+        if (paid[server] > val) {
+          donatedRest += paid[server] - costs[server];
+          paid[server] = costs[server];
+        }
+      } else if ($.isArray(val)) {
+        paid[server] += val[1] * donated / sum + val[0];
+        if (paid[server] > val[1]) {
+          donatedRest += paid[server] - val[1];
+          paid[server] = val[1];
+        }
+      } else {
+      }
+    }
+  }
+
   $("#funding-total").progressbar({value: 100 * (donated + sumPartSponsored) / sum});
   $("#funding-total .progress-label").text((donated + sumPartSponsored).toFixed() + " € donated / " + sum + " € cost");
   $("#funding-total .ui-widget-header").css('background', '#F6A828');
@@ -38,19 +64,25 @@ $(function() {
   for (var server in costs) {
     if (costs.hasOwnProperty(server)) {
       var val = costs[server];
+      var color = '#F6A828';
       if (val.toFixed) {
-        $("#funding-" + server).progressbar({value: 100 * donated / sum});
-        $("#funding-" + server + " .progress-label").text((val * donated / sum).toFixed() + " / " + val + " €");
-        $("#funding-" + server + " .ui-widget-header").css('background', '#F6A828');
+        $("#funding-" + server).progressbar({value: 100 * paid[server] / val});
+        $("#funding-" + server + " .progress-label").text((paid[server]).toFixed() + " / " + val + " €");
+        if (paid[server] >= val) {
+          color = '#37d628';
+        }
       } else if ($.isArray(val)) {
-        $("#funding-" + server).progressbar({value: 100 * ((val[1] * donated / sum + val[0]) / val[1])});
-        $("#funding-" + server + " .progress-label").text((val[1] * donated / sum + val[0]).toFixed() + " / " + val[1] + " €");
-        $("#funding-" + server + " .ui-widget-header").css('background', '#F6A828');
+        $("#funding-" + server).progressbar({value: 100 * paid[server] / val[1]});
+        $("#funding-" + server + " .progress-label").text((paid[server]).toFixed() + " / " + val[1] + " €");
+        if (paid[server] >= val[1]) {
+          color = '#37d628';
+        }
       } else {
         $("#funding-" + server).progressbar({value: 100});
         $("#funding-" + server + " .progress-label").text("sponsored by " + val);
-        $("#funding-" + server + " .ui-widget-header").css('background', '#37d628');
+        color = '#37d628';
       }
+      $("#funding-" + server + " .ui-widget-header").css('background', color);
     }
   }
 });
