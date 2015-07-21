@@ -26,7 +26,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/eW9-1UKCLa4?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/M5hsBsN6HKM?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><a href="https://www.youtube.com/watch?v=JObJvGL_2IA"><img class="demo" alt="Demo" src="8.png"/></a><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -91,8 +91,6 @@ if ($user_os == 'win32') {
 <h2 id="news">News</h2>
 <ul>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&p=19036">The History of DDNet</a></li>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1805">DDraceNetwork 2nd Birthday Tournament</a> on Saturday and Sunday at 20:00 CEST:<br/>
-    <img class="halfvideo" src="KeepOut.png"><img class="halfvideo" src="Optimum.png"></li>
   <li><strong>DDNet 7.9.1</strong>:<br/>
   <ul>
     <li>[Client] Show all recorders at top of scoreboard</li>
