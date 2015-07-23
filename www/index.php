@@ -80,6 +80,7 @@ if ($user_os == 'win32') {
 
 <div class="right">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width: 20em;"><div class="progress-label"></div></div></a>
+  <a href="/funding/"><div class="progressbar" id="funding-old" style="width: 20em;"><div class="progress-label"></div></div></a>
   <script src="/jquery.js" type="text/javascript"></script>
   <script src="funding/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
   {% include funding.html %}

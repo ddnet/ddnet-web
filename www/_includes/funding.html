@@ -13,7 +13,8 @@ $(function() {
     "zaf":  "lordtheuns",
     "irn":  "KinG & Persian Tee City Staff",
   };
-  var donated = 564;
+  var donated = 667;
+  var old = 658;
   var sum = 0;
   var sumToPay = 0;
   var sumPartSponsored = 0;
@@ -60,10 +61,17 @@ $(function() {
     }
   }
 
-  $("#funding-total").progressbar({value: 100 * (donated + sumPartSponsored) / sum});
-  $("#funding-total .progress-label").text((donated + sumPartSponsored).toFixed() + " € donated / " + sum + " € cost");
+  var total = donated + sumPartSponsored;
+  var rest = 0;
+  if (total > sum) {
+    rest = total - sum;
+    total = sum;
+  }
+
+  $("#funding-total").progressbar({value: 100 * total / sum});
+  $("#funding-total .progress-label").text(total.toFixed() + " € donated / " + sum + " € cost 2015");
   var color = '#F6A828';
-  if (donated + sumPartSponsored >= sum) {
+  if (total >= sum) {
     color = '#37d628';
   }
   $("#funding-total .ui-widget-header").css('background', color);
@@ -92,5 +100,14 @@ $(function() {
       $("#funding-" + server + " .ui-widget-header").css('background', color);
     }
   }
+
+  $("#funding-old").progressbar({value: 100 * rest / old});
+  $("#funding-old .progress-label").text(rest.toFixed() + " € / " + old + " € cost 2014 & 2013");
+  color = '#F6A828';
+  if (rest >= old) {
+    color = '#37d628';
+  }
+  $("#funding-old .ui-widget-header").css('background', color);
+
 });
 </script>
