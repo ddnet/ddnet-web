@@ -108,7 +108,7 @@ if ($user_os == 'win32') {
     <li>[Editor] Add "Save copy" button so that filename is not changed</li>
     <li>[Editor] Add ctrl+shift+s for "save as" and ctrl+shift+alt+s for "save copy"</li>
     <li>[Editor] Zoom faster by holding down numpad +/- (by Chairn)</li>
-  </ul</li>
+  </ul></li>
   <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&p=19036">The History of DDNet</a></li>
   <li><strong>DDNet 7.9.1</strong>:<br/>
   <ul>
