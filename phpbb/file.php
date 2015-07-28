@@ -240,8 +240,17 @@ else
 	if ($post_row['forum_id'] == 9 && ($attachment['extension'] == 'map' || $attachment['extension'] == 'cfg') &&
 		($user->data['group_id'] != 5 && $user->data['group_id'] != 4 && $user->data['group_id'] != 8 && $user->data['group_id'] != 10 && $user->data['group_id'] != 13))
 	{
-		send_status_line(403, 'Forbidden');
-		trigger_error(sprintf('Only testers and moderators can download maps to be tested', $attachment['extension']));
+		$sql = 'SELECT topic_poster
+			FROM ' . TOPICS_TABLE . "
+			WHERE topic_id = " . $attachment['topic_id'];
+		$result = $db->sql_query($sql);
+		$topic = $db->sql_fetchrow($result);
+		$db->sql_freeresult($result);
+		if ($user->data['user_id'] != $topic['topic_poster'])
+		{
+			send_status_line(403, 'Forbidden');
+			trigger_error(sprintf('Only testers and moderators can download maps to be tested', $attachment['extension']));
+		}
 	}
 
 	$download_mode = (int) $extensions[$attachment['extension']]['download_mode'];

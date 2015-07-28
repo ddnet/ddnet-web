@@ -26,7 +26,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/N1OnOxBIdy4?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/qguh6r6B5Zs?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><a href="https://www.youtube.com/watch?v=JObJvGL_2IA"><img class="demo" alt="Demo" src="8.png"/></a><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -59,7 +59,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '8.0.1';
+$version = '8.0.2';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
@@ -91,6 +91,13 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><strong>DDNet 8.0.2</strong>:<br/>
+  <ul>
+    <li>[Client] Fix saving of config file on Windows</li>
+    <li>[Client] Fix and improve spectator mode in demo viewer</li>
+    <li>[Client] Print MOTD to the console</li>
+    <li>[Mapping] Add basic_freeze automapper rules (by DoNe)</li>
+  </ul></li>
   <li><strong>DDNet 8.0</strong>:<br/>
   <ul>
     <li>[Client] Allow spectating other players and freeview in demo player (especially fun with /showall and /showothers on)</li>
