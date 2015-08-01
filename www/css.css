@@ -80,6 +80,10 @@ a:link, a:visited {
   text-decoration: none;
 }
 
+.flag {
+  text-align: center;
+}
+
 .big {
   font-size: 1.2em;
 }
@@ -218,7 +222,7 @@ table {
 }
 
 td {
-  padding-left: 1em;
+  padding-left: 0.5em;
 }
 
 .toggle {

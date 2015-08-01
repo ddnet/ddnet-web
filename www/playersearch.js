@@ -13,7 +13,7 @@ $('#remote .typeahead').typeahead(null, {
   source: players.ttAdapter(),
   templates: {
     suggestion: function(o) {
-      return '<p><strong>' + o.name + '</strong><span class="right">' + o.points + '&nbsp;points</span></p>'
+      return '<p><strong>' + o.name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + '</strong><span class="right">' + o.points + '&nbsp;points</span></p>'
     }
   }
 }).on('typeahead:selected', function(e, data) {
