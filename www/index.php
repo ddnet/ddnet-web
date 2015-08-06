@@ -26,7 +26,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/o2zgV1t-Jww?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/NPorNO-FdBA?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><a href="https://www.youtube.com/watch?v=JObJvGL_2IA"><img class="demo" alt="Demo" src="8.png"/></a><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -62,7 +62,7 @@ $user_os = getOS();
 $version = '8.0.2';
 
 if ($user_os == 'win32') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win33.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
 } elseif ($user_os == 'win64') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
 } elseif ($user_os == 'mac') {
@@ -91,8 +91,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><a href="http://forum.ddnet.tw/viewtopic.php?f=3&t=1911">Novice Tournament</a> on Kobra 4 by Zerodin this Sunday at 20:00 CEST!<br/>
-    <img class="demo" src="Kobra_4.png"></li>
+  <li>If you're running Windows 10 and are experiencing lags in DDNet, you should disable <a href="http://www.alexandreviot.net/2015/07/29/windows-10-disable-windows-update-p2p/">Windows Update P2P</a></li>
   <li><strong>DDNet 8.0.2</strong>:<br/>
   <ul>
     <li>[Client] Fix saving of config file on Windows</li>
