@@ -91,6 +91,8 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>DDNet Chile2 running to test new host, will decide in a week whether to keep old server</li>
+  <li>DDNet RUS running on a new server with new IP now</li>
   <li>If you're running Windows 10 and are experiencing lags in DDNet, you should disable <a href="http://www.alexandreviot.net/2015/07/29/windows-10-disable-windows-update-p2p/">Windows Update P2P</a></li>
   <li><strong>DDNet 8.0.2</strong>:<br/>
   <ul>
