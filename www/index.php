@@ -91,6 +91,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li>DDNet Chile running on a new server with new IP now</li>
   <li><strong>DDNet 8.1.1</strong>:<br/>
   <ul>
     <li>[Client] Add country flags for Europe and Catalonia</li>
