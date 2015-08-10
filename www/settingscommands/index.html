@@ -200,7 +200,7 @@ menu: |
   <tr><td>stoprecord</td><td>Stop recording</td></tr>
   <tr><td>reload</td><td>Reload the map</td></tr>
   <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td></tr>
-  <tr><td>sv_allow_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
+  <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
   <tr><td>tune</td><td>Tune variable to value</td></tr>
   <tr><td>tune_reset</td><td>Reset tuning</td></tr>
   <tr><td>tune_dump</td><td>Dump tuning</td></tr>
@@ -267,8 +267,8 @@ menu: |
   <tr><td>saytimeall</td><td>Publicly messages everyone your current time in this current running race</td></tr>
   <tr><td>time</td><td>Privately shows you your current time in this current running race in the broadcast message</td></tr>
   <tr><td>timer</td><td>Personal Setting of showing time in either broadcast or game/round timer, timer s, where s = broadcast for broadcast, gametimer for game/round timer, cycle for cycle, both for both, none for no timer and nothing to show current status</td></tr>
-  <tr><td>r</td><td>Teleport yourself out of freeze (use sv_allow_rescue 1 to enable this feature)</td></tr>
-  <tr><td>rescue</td><td>Teleport yourself out of freeze (use sv_allow_rescue 1 to enable this feature)</td></tr>
+  <tr><td>r</td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
+  <tr><td>rescue</td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td>Kill yourself</td></tr>
   <tr><td>times</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
   <tr><td>points</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
@@ -314,6 +314,7 @@ menu: |
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
   <tr><td>cl_dyn_cam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
   <tr><td>cl_default_mouse_max_distance</td><td>Default mouse max distance. Dyncam switches back to it</td><td>400</td></tr>
+  <tr><td>cl_dyn_cam_mouse_sens</td><td>Mouse sens used when dyncam is toggled on</td><td>0</td></tr>
   <tr><td>cl_dyn_cam_dead_zone</td><td>Dynamic camera dead zone</td><td>300</td></tr>
   <tr><td>cl_dyn_cam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td></tr>
@@ -381,7 +382,7 @@ menu: |
   <tr><td>cl_reset_wanted_weapon_on_death</td><td>Reset wanted weapon on death</td><td>1</td></tr>
   <tr><td>cl_show_broadcasts</td><td>Show broadcasts ingame</td><td>1</td></tr>
   <tr><td>cl_print_broadcasts</td><td>Print broadcasts to console</td><td>1</td></tr>
-  <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>1</td></tr>
+  <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>0</td></tr>
   <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
   <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>0</td></tr>
   <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>1</td></tr>
@@ -567,8 +568,10 @@ menu: |
   <tr><td>+prevweapon</td><td>Switch to previous weapon</td></tr>
   <tr><td>add_foe</td><td>Add a foe</td></tr>
   <tr><td>remove_foe</td><td>Remove a foe</td></tr>
+  <tr><td>foes</td><td>List foes</td></tr>
   <tr><td>add_friend</td><td>Add a friend</td></tr>
   <tr><td>remove_friend</td><td>Remove a friend</td></tr>
+  <tr><td>friends</td><td>List friends</td></tr>
   <tr><td>team</td><td>Switch team</td></tr>
   <tr><td>kill</td><td>Kill yourself</td></tr>
   <tr><td>dummy_connect</td><td>connect dummy</td></tr>

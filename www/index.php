@@ -26,8 +26,8 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/NPorNO-FdBA?autoplay=0&hd=1"></iframe></div></div>
-<div class="startimages"><a href="https://www.youtube.com/watch?v=JObJvGL_2IA"><img class="demo" alt="Demo" src="www.ddnet.tw.png"/></a><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/Th2WErYeho0?autoplay=0&hd=1"></iframe></div></div>
+<div class="startimages"><img class="demo" alt="Demo" src="www.ddnet.tw.png"/><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
 <!--<object id="live_embed_player_flash" width="800" height="450" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" bgcolor="#000000"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="allowNetworking" value="all" /><param name="flashvars" value="hostname=de.twitch.tv&amp;channel=weeelf&amp;auto_play=true&amp;start_volume=25" /><param name="src" value="http://de.twitch.tv/widgets/live_embed_player.swf?channel=weeelf" /><embed id="live_embed_player_flash" width="800" height="450" type="application/x-shockwave-flash" src="http://de.twitch.tv/widgets/live_embed_player.swf?channel=weeelf" allowFullScreen="true" allowScriptAccess="always" allowNetworking="all" flashvars="hostname=de.twitch.tv&amp;channel=weeelf&amp;auto_play=true&amp;start_volume=25" bgcolor="#000000" /></object><iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=weeelf&#038;popout_chat=true" height="450" width="300"></iframe>-->
@@ -59,7 +59,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '8.0.2';
+$version = '8.1.1';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win33.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
@@ -91,7 +91,20 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li>DDNet Chile2 running to test new host, will decide in a week whether to keep old server</li>
+  <li><strong>DDNet 8.1.1</strong>:<br/>
+  <ul>
+    <li>[Client] Add country flags for Europe and Catalonia</li>
+    <li>[Client] Bind chat on enter/return by default as well</li>
+    <li>[Client] Dyncam bind saves special mousesens (by Shiki)</li>
+    <li>[Client] Sort spectators by name in scoreboard</li>
+    <li>[Client] Add friends and foes commands to list them in console</li>
+    <li>[Client] Make clan optional when adding and removing friends and foes</li>
+    <li>[Client] Fix: Only print MOTD to console when it's not empty</li>
+    <li>[Server] Show average time in /mapinfo</li>
+    <li>[Mapping] Add basic_freeze automappers (by hi_leute_gll and DoNe)</li>
+    <li>[Mapping] Add generic_clear automappers (by hi_leute_gll)</li>
+    <li>[Mapping] Fix desert_mountains_new_foreground (by hi_leute_gll)</li>
+  </ul></li>
   <li>DDNet RUS running on a new server with new IP now</li>
   <li>If you're running Windows 10 and are experiencing lags in DDNet, you should disable <a href="http://www.alexandreviot.net/2015/07/29/windows-10-disable-windows-update-p2p/">Windows Update P2P</a></li>
   <li><strong>DDNet 8.0.2</strong>:<br/>
