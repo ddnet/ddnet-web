@@ -59,7 +59,7 @@ menu: |
   <tr><td>sv_eye_emote_change_delay</td><td>The time in seconds between eye emoticons change</td><td>1</td></tr>
   <tr><td>sv_chat_delay</td><td>The time in seconds between chat messages</td><td>1</td></tr>
   <tr><td>sv_team_change_delay</td><td>The time in seconds between team changes (spectator/in game)</td><td>3</td></tr>
-  <tr><td>sv_info_change_delay</td><td>The time in seconds between info changes (name/skin/color), to avoid ranbow mod set this to a very high time</td><td>0</td></tr>
+  <tr><td>sv_info_change_delay</td><td>The time in seconds between info changes (name/skin/color), to avoid ranbow mod set this to a very high time</td><td>5</td></tr>
   <tr><td>sv_vote_time</td><td>The time in seconds a vote lasts</td><td>25</td></tr>
   <tr><td>sv_vote_map_delay</td><td>The minimum time in seconds between map votes</td><td>0</td></tr>
   <tr><td>sv_vote_delay</td><td>The time in seconds between any vote</td><td>3</td></tr>
@@ -97,7 +97,7 @@ menu: |
   <tr><td>sv_rules_line8</td><td>Rules line 8</td><td>""</td></tr>
   <tr><td>sv_rules_line9</td><td>Rules line 9</td><td>""</td></tr>
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>""</td></tr>
-  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>CFGFLAG_SERVER</td></tr>
+  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
   <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>"announcement.txt"</td></tr>
@@ -118,23 +118,23 @@ menu: |
   <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td></tr>
   <tr><td>sv_vote_pause</td><td>Allow voting to pause players (instead of moving to spectators)</td><td>1</td></tr>
   <tr><td>sv_vote_pause_time</td><td>The time (in seconds) players have to wait in pause when paused by vote</td><td>10</td></tr>
-  <tr><td>sv_tune_reset</td><td>Whether tuning is reset after each map change or not</td><td>0</td></tr>
+  <tr><td>sv_tune_reset</td><td>Whether tuning is reset after each map change or not</td><td>1</td></tr>
   <tr><td>sv_reset_file</td><td>File to execute on map change or reload to set the default server settings</td><td>"reset.cfg"</td></tr>
   <tr><td>sv_input_fifo</td><td>Fifo file to use as input for server console</td><td>""</td></tr>
-  <tr><td>sv_ddrace_tune_reset</td><td>Whether DDRace tuning(sv_hit, Sv_Endless_Drag & Sv_Old_Laser) is reset after each map change or not</td><td>0</td></tr>
+  <tr><td>sv_ddrace_tune_reset</td><td>Whether DDRace tuning(sv_hit, Sv_Endless_Drag & Sv_Old_Laser) is reset after each map change or not</td><td>1</td></tr>
   <tr><td>sv_nameless_score</td><td>Whether nameless tee has a score or not</td><td>0</td></tr>
   <tr><td>sv_time_in_broadcast_interval</td><td>How often to update the broadcast time</td><td>1</td></tr>
   <tr><td>sv_default_timer_type</td><td>Default way of displaying time either game/round timer or broadcast. 0 = game/round timer, 1 = broadcast</td><td>0</td></tr>
-  <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>50</td></tr>
-  <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>50</td></tr>
-  <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>0</td></tr>
-  <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>0</td></tr>
+  <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>250</td></tr>
+  <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>1000</td></tr>
+  <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>60</td></tr>
+  <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>1</td></tr>
   <tr><td>sv_rank_cheats</td><td>Enable ranks after cheats have been used (file based server only)</td><td>0</td></tr>
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as noone is on it anymore</td><td>0</td></tr>
-  <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>0</td></tr>
+  <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>20</td></tr>
   <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
   <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>"Get DDNet client from DDNet.tw to use all features on DDNet!"</td></tr>
-  <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>"Your DDNet client is old</td></tr>
+  <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>"Your DDNet client is old, update it on DDNet.tw!"</td></tr>
   <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>"Your client has bots and can be remote controlled!\nPlease use another client like DDNet client from DDNet.tw"</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
@@ -154,7 +154,7 @@ menu: |
   <tr><td>sv_spectator_slots</td><td>Number of slots to reserve for spectators</td><td>0</td></tr>
   <tr><td>sv_teambalance_time</td><td>How many minutes to wait before autobalancing teams</td><td>1</td></tr>
   <tr><td>sv_inactivekick_time</td><td>How many minutes to wait before taking care of inactive players</td><td>0</td></tr>
-  <tr><td>sv_inactivekick</td><td>How to deal with inactive players (0=move to spectator, 1=move to free spectator slot/kick, 2=kick)</td><td>2</td></tr>
+  <tr><td>sv_inactivekick</td><td>How to deal with inactive players (0=move to spectator, 1=move to free spectator slot/kick, 2=kick)</td><td>0</td></tr>
   <tr><td>sv_strict_spectate_mode</td><td>Restricts information in spectator mode</td><td>0</td></tr>
   <tr><td>sv_vote_spectate</td><td>Allow voting to move players to spectators</td><td>1</td></tr>
   <tr><td>sv_vote_spectate_rejoindelay</td><td>How many minutes to wait before a player can rejoin after being moved to spectators by vote</td><td>3</td></tr>
@@ -307,10 +307,10 @@ menu: |
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td></tr>
-  <tr><td>cl_mouse_deadzone</td><td></td><td>0</td></tr>
+  <tr><td>cl_mouse_deadzone</td><td></td><td>jerky</td></tr>
   <tr><td>cl_mouse_deadzone</td><td></td><td>300</td></tr>
   <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
-  <tr><td>cl_mouse_max_distance</td><td></td><td>400</td></tr>
+  <tr><td>cl_mouse_max_distance</td><td></td><td>out</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
   <tr><td>cl_dyn_cam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
   <tr><td>cl_default_mouse_max_distance</td><td>Default mouse max distance. Dyncam switches back to it</td><td>400</td></tr>
@@ -331,7 +331,7 @@ menu: |
   <tr><td>cl_show_custom_skins</td><td>Show custom skins ingame</td><td>1</td></tr>
   <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td></tr>
   <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td></tr>
-  <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>20</td></tr>
+  <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
   <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
@@ -463,26 +463,26 @@ menu: |
   <tr><td>cl_race_binds_set</td><td>Whether the DDRace binds set or not (this is automated you don't need to use this)</td><td>0</td></tr>
   <tr><td>cl_reconnect_ban</td><td>Auto reconnect when banned</td><td>1</td></tr>
   <tr><td>cl_reconnect_full</td><td>Auto reconnect when server is full</td><td>1</td></tr>
-  <tr><td>cl_reconnect_ban_timeout</td><td>How many seconds to wait before reconnecting (when banned)</td><td>30</td></tr>
-  <tr><td>cl_reconnect_full_timeout</td><td>How many seconds to wait before reconnecting (when server is full)</td><td>5</td></tr>
-  <tr><td>cl_message_system_hue</td><td>System message color hue</td><td>42</td></tr>
+  <tr><td>cl_reconnect_ban_timeout</td><td>How many seconds to wait before reconnecting (when banned)</td><td>120</td></tr>
+  <tr><td>cl_reconnect_full_timeout</td><td>How many seconds to wait before reconnecting (when server is full)</td><td>120</td></tr>
+  <tr><td>cl_message_system_hue</td><td>System message color hue</td><td>255</td></tr>
   <tr><td>cl_message_system_sat</td><td>System message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_system_lht</td><td>System message color lightness</td><td>192</td></tr>
-  <tr><td>cl_message_highlight_hue</td><td>Highlighted message color hue</td><td>0</td></tr>
+  <tr><td>cl_message_system_lht</td><td>System message color lightness</td><td>255</td></tr>
+  <tr><td>cl_message_highlight_hue</td><td>Highlighted message color hue</td><td>255</td></tr>
   <tr><td>cl_message_highlight_sat</td><td>Highlighted message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_highlight_lht</td><td>Highlighted message color lightness</td><td>192</td></tr>
-  <tr><td>cl_message_team_hue</td><td>Team message color hue</td><td>85</td></tr>
+  <tr><td>cl_message_highlight_lht</td><td>Highlighted message color lightness</td><td>255</td></tr>
+  <tr><td>cl_message_team_hue</td><td>Team message color hue</td><td>255</td></tr>
   <tr><td>cl_message_team_sat</td><td>Team message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_team_lht</td><td>Team message color lightness</td><td>212</td></tr>
-  <tr><td>cl_message_hue</td><td>Message color hue</td><td>0</td></tr>
-  <tr><td>cl_message_sat</td><td>Message color saturation</td><td>0</td></tr>
+  <tr><td>cl_message_team_lht</td><td>Team message color lightness</td><td>255</td></tr>
+  <tr><td>cl_message_hue</td><td>Message color hue</td><td>255</td></tr>
+  <tr><td>cl_message_sat</td><td>Message color saturation</td><td>255</td></tr>
   <tr><td>cl_message_lht</td><td>Message color lightness</td><td>255</td></tr>
-  <tr><td>cl_laser_inner_hue</td><td>Laser inner color hue</td><td>170</td></tr>
+  <tr><td>cl_laser_inner_hue</td><td>Laser inner color hue</td><td>255</td></tr>
   <tr><td>cl_laser_inner_sat</td><td>Laser inner color saturation</td><td>255</td></tr>
-  <tr><td>cl_laser_inner_lht</td><td>Laser inner color lightness</td><td>191</td></tr>
-  <tr><td>cl_laser_outline_hue</td><td>Laser outline color hue</td><td>170</td></tr>
-  <tr><td>cl_laser_outline_sat</td><td>Laser outline color saturation</td><td>137</td></tr>
-  <tr><td>cl_laser_outline_lht</td><td>Laser outline color lightness</td><td>41</td></tr>
+  <tr><td>cl_laser_inner_lht</td><td>Laser inner color lightness</td><td>255</td></tr>
+  <tr><td>cl_laser_outline_hue</td><td>Laser outline color hue</td><td>255</td></tr>
+  <tr><td>cl_laser_outline_sat</td><td>Laser outline color saturation</td><td>255</td></tr>
+  <tr><td>cl_laser_outline_lht</td><td>Laser outline color lightness</td><td>255</td></tr>
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
   <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
@@ -494,7 +494,7 @@ menu: |
   <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard </td><td>1</td></tr>
   <tr><td>cl_show_decisecs</td><td>Show deciseconds in game time</td><td>1</td></tr>
   <tr><td>cl_show_others</td><td>Show players in other teams</td><td>0</td></tr>
-  <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>100</td></tr>
+  <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>40</td></tr>
   <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td></tr>
   <tr><td>cl_show_quads</td><td>Show quads</td><td>1</td></tr>
   <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>0</td></tr>

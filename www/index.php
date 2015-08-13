@@ -26,7 +26,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/Th2WErYeho0?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/nD6gJOZ6WjY?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="www.ddnet.tw.png"/><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -92,6 +92,7 @@ if ($user_os == 'win32') {
 <h2 id="news">News</h2>
 <ul>
   <li>DDNet Chile running on a new server with new IP now</li>
+  <li>DDNet RUS running on a new server with new IP now</li>
   <li><strong>DDNet 8.1.1</strong>:<br/>
   <ul>
     <li>[Client] Add country flags for Europe and Catalonia</li>
@@ -106,7 +107,6 @@ if ($user_os == 'win32') {
     <li>[Mapping] Add generic_clear automappers (by hi_leute_gll)</li>
     <li>[Mapping] Fix desert_mountains_new_foreground (by hi_leute_gll)</li>
   </ul></li>
-  <li>DDNet RUS running on a new server with new IP now</li>
   <li>If you're running Windows 10 and are experiencing lags in DDNet, you should disable <a href="http://www.alexandreviot.net/2015/07/29/windows-10-disable-windows-update-p2p/">Windows Update P2P</a></li>
   <li><strong>DDNet 8.0.2</strong>:<br/>
   <ul>
