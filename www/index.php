@@ -77,6 +77,8 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
 }
 ?>
+<a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg"/></a>
+<a href="https://github.com/def-/ddnet/"><img src="github.svg"/></a>
 
 <div class="right">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width: 20em;"><div class="progress-label"></div></div></a>
@@ -91,6 +93,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
+  <li><a href="https://facebook.com/DDraceNetwork">Facebook page for DDraceNetwork</a></li>
   <li>DDNet Chile running on a new server with new IP now</li>
   <li>DDNet RUS running on a new server with new IP now</li>
   <li><strong>DDNet 8.1.1</strong>:<br/>
