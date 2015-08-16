@@ -26,7 +26,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>-->
-<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/QT830Pp4or0?autoplay=0&hd=1"></iframe></div></div>
+<div class="startvideo"><div class="video-container"><iframe allowfullscreen class="ytplayer" src="http://www.youtube.com/embed/m9VxLj9AGCo?autoplay=0&hd=1"></iframe></div></div>
 <div class="startimages"><img class="demo" alt="Demo" src="www.ddnet.tw.png"/><a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a></div>
 <!--<div class="startvideo"><div class="video-container"><iframe src="http://hitbox.tv/#!/embed/Hallowed1986" frameborder="0" allowfullscreen></iframe></div></div>
 <div class="startimages"><iframe height="400" src="http://www.hitbox.tv/embedchat/Hallowed1986" frameborder="0" allowfullscreen></iframe></div>-->
@@ -78,7 +78,7 @@ if ($user_os == 'win32') {
 }
 ?>
 <a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg"/></a>
-<a href="https://github.com/def-/ddnet/"><img src="github.svg"/></a>
+<a href="https://github.com/ddnet/"><img src="github.svg"/></a>
 
 <div class="right">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width: 20em;"><div class="progress-label"></div></div></a>
@@ -93,7 +93,7 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 <ul>
-  <li><a href="https://facebook.com/DDraceNetwork">Facebook page for DDraceNetwork</a></li>
+  <li><a href="https://facebook.com/DDraceNetwork">Facebook page for DDraceNetwork</a>, maintained by onionly .me'</li>
   <li>DDNet Chile running on a new server with new IP now</li>
   <li>DDNet RUS running on a new server with new IP now</li>
   <li><strong>DDNet 8.1.1</strong>:<br/>
