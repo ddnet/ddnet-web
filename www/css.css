@@ -18,8 +18,7 @@ html {
 
 .block {
   background-color: #ffffff;
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33f0f2f4', endColorstr='#33121416',GradientType=0 ); /* IE6-9 */
-  box-shadow: 0 0 8px rgba(38, 40, 42, 0.45), 0 0 4px #303234 inset;
+  border: 1px solid #aaaaaa;
   padding: 0.5em 1.5em 1em 1.5em;
   position: relative;
   text-align: justify;
@@ -32,7 +31,7 @@ html {
 
 .longblock {
   background-color: #ffffff;
-  box-shadow: 0 0 8px rgba(38, 40, 42, 0.45), 0 0 4px #303234 inset;
+  border: 1px solid #aaaaaa;
   padding: 0.5em 1.5em 1em 1.5em;
   position: relative;
   text-align: justify;
