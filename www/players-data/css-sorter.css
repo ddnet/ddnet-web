@@ -1,9 +1,8 @@
 table.spacey  {
-	border-collapse: separate;
-    border-spacing: 4px 0px;
+	border-collapse: collapse;
 }
 .spacey .tablesorter-header {
-	background-color: #F9E2E2;
+	background-color: #F3C2C2;
 	background-image: url(black-unsorted.gif);
 	background-repeat: no-repeat;
 	background-position: center right;
@@ -12,11 +11,11 @@ table.spacey  {
 }
 .spacey .tablesorter-headerAsc {
 	background-image: url(black-asc.gif);
-	background-color: #F0B2B2;
+	background-color: #EB9999;
 }
 .spacey .tablesorter-headerDesc {
 	background-image: url(black-desc.gif);
-	background-color: #F0B2B2;
+	background-color: #EB9999;
 }
 
 
@@ -24,12 +23,12 @@ table.spacey  {
 
 
 .unfinTable1 {
-  border-collapse: separate;
-  border-spacing: 4px 0px;
+  border-collapse: collapse;
   display: inline-table;
   margin: 0;
   font-size: 88%;
-  width: 33%;
+  box-sizing: border-box;
+  width: 33.3333%;
   min-width: 20em;
   table-layout: fixed;
 }
@@ -66,13 +65,13 @@ table.spacey  {
 
 
 .unfinTable2 {
-  border-left: thin solid #CCC;
-  border-collapse: separate;
-  border-spacing: 4px 0px;
+  border-left: 1px solid rgba(0, 0, 0, 0.75);
+  border-collapse: collapse;
   display: inline-table;
   margin: 0;
   font-size: 88%;
-  width: 33%;
+  box-sizing: border-box;
+  width: 33.3333%;
   min-width: 20em;
   table-layout: fixed;
 }
@@ -84,6 +83,10 @@ table.spacey  {
 }
 .unfinTable2 thead {
   display: none;
+  background-color: #F9E2E2;
+}
+.unfinTable2 thead th {
+  padding: 3px;
 }
 .unfinTable2 tr .unMapTr{width:60%;}
 .unfinTable2 tr .unPtsTr{width:15%;}
@@ -95,15 +98,15 @@ table.spacey  {
 
 
 .unfinTable3 {
-  border-left: thin solid #CCC;
-  border-collapse: separate;
-  border-spacing: 4px 0px;
+  border-collapse: collapse;
   display: inline-table;
   margin: 0;
   font-size: 88%;
-  width: 33%;
+  box-sizing: border-box;
+  width: 33.3333%;
   min-width: 20em;
   table-layout: fixed;
+  border-left: 1px solid rgba(0, 0, 0, 0.75);
 }
 .unfinTable3 td {
   padding: 0 1em;
@@ -113,6 +116,10 @@ table.spacey  {
 }
 .unfinTable3 thead {
   display: none;
+  background-color: #F9E2E2;
+}
+.unfinTable3 thead th {
+  padding: 3px;
 }
 .unfinTable3 tr .unMapTr{width:60%;}
 .unfinTable3 tr .unPtsTr{width:15%;}
@@ -126,5 +133,17 @@ table.spacey  {
 .unfinTable1 tr:nth-child(even),
 .unfinTable2 tr:nth-child(even),
 .unfinTable3 tr:nth-child(even) {
-  background-color:rgba(136, 34, 34, 0.06);
+  background-color: rgba(136, 34, 34, 0.1);
+}
+
+.spacey th:not(:last-child),
+.tablesorter-default th:not(:last-child),
+.unfinTable1 th:not(:last-child),
+.unfinTable2 th:not(:last-child),
+.unfinTable3 th:not(:last-child),
+.tablesorter-default td:not(:last-child),
+.unfinTable1 td:not(:last-child),
+.unfinTable2 td:not(:last-child),
+.unfinTable3 td:not(:last-child) {
+  border-right: 1px solid rgba(136, 34, 34, 0.3);
 }
