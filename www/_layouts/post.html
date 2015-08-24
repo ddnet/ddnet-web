@@ -45,12 +45,14 @@
       <li><a href="/stats/">Statistics</a></li>
       <li><a href="//forum.ddnet.tw/">Forum</a></li>
     </ul>
-    {{ page.menu }}
+    <ul>
+      <li><a href="/news/">All News</a></li>
+    </ul>
     </menu>
     <section>
       <div class="block">
         <h2>{{ page.title }}</h2>
-        News from {{ page.date | date: "%Y-%m-%d" }}
+        <div style="font-size: 75%;">{{ page.date | date: "%Y-%m-%d" }}</div>
         {{ content }}
       </div>
     </section>

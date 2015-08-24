@@ -4,7 +4,7 @@ title: DDraceNetwork
 head: <link rel="stylesheet" href="funding/jquery-ui-1.8.22.custom.css" />
 menu: |
   <ul>
-    <li><a href="/#news">News</a></li>
+    <li><a href="/#news">News</a> (<a href="/news/">all</a>)</li>
     <li><a href="/server/">Server&nbsp;Features</a></li>
     <li><a href="/client/">Client&nbsp;Features</a></li>
     <li><a href="/map/">Map&nbsp;Features</a></li>
@@ -95,10 +95,12 @@ if ($user_os == 'win32') {
 <div class="block">
 <h2 id="news">News</h2>
 {% for post in site.posts limit:10 %}
-  <div>
+  <div class="news">
     <h3>{{ post.title }}</h3>
-    {{ post.date | date: "%Y-%m-%d" }}, <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">permalink</a>
-    {{ post.content }}
+    <div style="font-size: 75%;">{{ post.date | date: "%Y-%m-%d" }}, <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">permalink</a></div>
+    <div class="news-content">
+      {{ post.content }}
+    </div>
   </div>
 {% endfor %}
 </div>

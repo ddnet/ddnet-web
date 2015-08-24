@@ -1,0 +1,16 @@
+---
+layout: default
+title: Posts
+menu: |
+  <ul>
+    <li><a href="/news/">All News</a></li>
+  </ul>
+---
+<div class="block">
+<h2>News</h2>
+<ul>
+{% for post in site.posts %}
+  <li>{{ post.date | date: "%Y-%m-%d" }} &raquo; <a href="{{post.url}}">{{post.title}}</a></li>
+{% endfor %}
+</ul>
+</div>

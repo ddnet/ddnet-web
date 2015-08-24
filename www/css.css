@@ -53,6 +53,14 @@ html {
   display:block;
 }
 
+.news h3 {
+  margin-bottom: 0;
+}
+
+.news-content {
+  margin-left: 1.5em;
+}
+
 .download-button {
   float: left;
   height: 2.5em;
