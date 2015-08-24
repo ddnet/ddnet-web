@@ -96,8 +96,8 @@ if ($user_os == 'win32') {
 <h2 id="news">News</h2>
 {% for post in site.posts limit:10 %}
   <div class="news">
-    <h3>{{ post.title }}</h3>
-    <div style="font-size: 75%;">{{ post.date | date: "%Y-%m-%d" }}, <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">permalink</a></div>
+    <h3><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+    <div style="font-size: 75%;">{{ post.date | date: "%Y-%m-%d" }}</div>
     <div class="news-content">
       {{ post.content }}
     </div>

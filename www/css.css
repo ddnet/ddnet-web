@@ -57,6 +57,10 @@ html {
   margin-bottom: 0;
 }
 
+.news h3 a {
+  color: #000000;
+}
+
 .news-content {
   margin-left: 1.5em;
 }
