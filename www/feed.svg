@@ -5,11 +5,39 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   viewBox="0 0 88 88"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 84 84"
    id="RSSicon"
-   height="44"
-   width="44"
-   version="1.1">
+   height="42"
+   width="42"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="feed.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="958"
+     inkscape:window-height="1060"
+     id="namedview18"
+     showgrid="false"
+     fit-margin-top="1"
+     fit-margin-left="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     inkscape:zoom="3.7926636"
+     inkscape:cx="-16.44392"
+     inkscape:cy="20.459416"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="RSSicon" />
   <metadata
      id="metadata34">
     <rdf:RDF>
@@ -23,45 +51,9 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs3">
-    <linearGradient
-       id="RSSg"
-       y2="0.91500002"
-       x2="0.91500002"
-       y1="0.085000001"
-       x1="0.085000001">
-      <stop
-         id="stop6"
-         stop-color="#E3702D"
-         offset="0.0" />
-      <stop
-         id="stop8"
-         stop-color="#EA7D31"
-         offset="0.1071" />
-      <stop
-         id="stop10"
-         stop-color="#F69537"
-         offset="0.3503" />
-      <stop
-         id="stop12"
-         stop-color="#FB9E3A"
-         offset="0.5" />
-      <stop
-         id="stop14"
-         stop-color="#EA7C31"
-         offset="0.7016" />
-      <stop
-         id="stop16"
-         stop-color="#DE642B"
-         offset="0.8866" />
-      <stop
-         id="stop18"
-         stop-color="#D95B29"
-         offset="1.0" />
-    </linearGradient>
-  </defs>
+     id="defs3" />
   <g
-     transform="matrix(0.3125,0,0,0.3125,4,4)"
+     transform="matrix(0.3125,0,0,0.3125,2,2)"
      id="g4162">
     <rect
        width="256"
@@ -81,10 +73,12 @@
     <path
        style="fill:#ffffff"
        d="m 160,213 -34,0 A 82,82 0 0 0 44,131 l 0,-34 a 116,116 0 0 1 116,116 z"
-       id="path28" />
+       id="path28"
+       inkscape:connector-curvature="0" />
     <path
        style="fill:#ffffff"
        d="M 184,213 A 140,140 0 0 0 44,73 l 0,-35 a 175,175 0 0 1 175,175 z"
-       id="path30" />
+       id="path30"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

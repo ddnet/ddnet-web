@@ -1,3 +1,7 @@
 name: DDraceNetwork
+title: DDraceNetwork
 markdown: redcarpet
 pygments: true
+author:
+  name: deen
+  email: deen@ddnet.tw

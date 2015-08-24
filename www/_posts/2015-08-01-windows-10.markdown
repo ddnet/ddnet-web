@@ -1,0 +1,6 @@
+---
+layout: post
+title: "Windows 10 lags"
+permalink: /news/windows-10-lags/
+---
+If you're running Windows 10 and are experiencing lags in DDNet, you should disable [Windows Update P2P](http://www.alexandreviot.net/2015/07/29/windows-10-disable-windows-update-p2p/)

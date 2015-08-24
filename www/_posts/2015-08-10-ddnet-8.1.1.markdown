@@ -1,0 +1,18 @@
+---
+layout: post
+title: "DDNet 8.1.1 has been released"
+permalink: /news/ddnet-8.1.1/
+---
+DDNet 8.1.1 has been released with the following changes:
+
+- [Client] Add country flags for Europe and Catalonia
+- [Client] Bind chat on enter/return by default as well
+- [Client] Dyncam bind saves special mousesens (by Shiki)
+- [Client] Sort spectators by name in scoreboard
+- [Client] Add friends and foes commands to list them in console
+- [Client] Make clan optional when adding and removing friends and foes
+- [Client] Fix: Only print MOTD to console when it's not empty
+- [Server] Show average time in /mapinfo
+- [Mapping] Add basic\_freeze automappers (by hi\_leute\_gll and DoNe)
+- [Mapping] Add generic\_clear automappers (by hi\_leute\_gll)
+- [Mapping] Fix desert\_mountains\_new\_foreground (by hi\_leute\_gll)

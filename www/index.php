@@ -77,6 +77,7 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
 }
 ?>
+<a href="feed/"><img src="feed.svg"/></a>
 <a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg"/></a>
 <a href="https://github.com/ddnet/"><img src="github.svg"/></a>
 
@@ -85,6 +86,7 @@ if ($user_os == 'win32') {
   <a href="/funding/"><div class="progressbar" id="funding-old" style="width: 20em;"><div class="progress-label"></div></div></a>
   <script src="/jquery.js" type="text/javascript"></script>
   <script src="funding/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
+  <link rel="alternate" type="application/atom+xml" title="DDNet News" href="feed/">
   {% include funding.html %}
 </div>
 </div>
@@ -92,5 +94,11 @@ if ($user_os == 'win32') {
 </div>
 <div class="block">
 <h2 id="news">News</h2>
-{% include news.html %}
+{% for post in site.posts limit:10 %}
+  <div>
+    <h3>{{ post.title }}</h3>
+    {{ post.date | date: "%Y-%m-%d" }}, <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">permalink</a>
+    {{ post.content }}
+  </div>
+{% endfor %}
 </div>
