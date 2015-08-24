@@ -859,7 +859,7 @@
 		"shape":"rect", "coords":"128, 768, 192, 832"
 		},
 		{
-		"title":"SPAWN", "ID":" (195)", "subtitle":"read team",
+		"title":"FLAG", "ID":" (195)", "subtitle":"read team",
 		"group":"Flag",
 		"alt1":"<b>Not used in DDRace</b><br />Place where <u>red</u> team flag is.",
 		"alt2":"",
@@ -867,7 +867,7 @@
 		"shape":"rect", "coords":"192, 768, 256, 832"
 		},
 		{
-		"title":"SPAWN", "ID":" (196)", "subtitle":"blue team",
+		"title":"FLAG", "ID":" (196)", "subtitle":"blue team",
 		"group":"Flag",
 		"alt1":"<b>Not used in DDRace</b><br />Place where <u>blue</u> team flag is.",
 		"alt2":"",
