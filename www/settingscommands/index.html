@@ -12,6 +12,15 @@ menu: |
   </ul>
 ---
 <div class="block">
+<h2 id="map-settings">Map Settings</h2>
+<table class="settingscommands">
+  <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+</table>
+<table class="settingscommands">
+  <tr><th>Command</th><th>Description</th></tr>
+</table>
+</div>
+<div class="block">
 <h2 id="server-settings">Server Settings</h2>
 <table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
@@ -22,7 +31,7 @@ menu: |
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
   <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser)</td><td>8303</td></tr>
   <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
-  <tr><td>sv_map</td><td>Map to use on the server</td><td>"dm1"</td></tr>
+  <tr><td>sv_map</td><td>Map to use on the server</td><td>"Kobra 4"</td></tr>
   <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>4</td></tr>
   <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td></tr>
@@ -33,6 +42,7 @@ menu: |
   <tr><td>sv_rcon_bantime</td><td>The time a client gets banned if remote console authentication fails. 0 makes it just use kick</td><td>5</td></tr>
   <tr><td>sv_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
   <tr><td>sv_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
+  <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>1</td></tr>
   <tr><td>sv_player_demo_record</td><td>Automatically record demos for each player</td><td>0</td></tr>
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
@@ -99,6 +109,7 @@ menu: |
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>""</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>MAX_CLIENTS</td></tr>
+  <tr><td>sv_team_lock</td><td>Enable team lock</td><td>1</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
   <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>"announcement.txt"</td></tr>
   <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td></tr>
@@ -164,7 +175,8 @@ menu: |
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
-  <tr><td>sv_mapupdaterate</td><td>(Tw32) real id <-> vanilla id players map update rate</td><td>5</td></tr>
+  <tr><td>sv_teleport_lose_weapons</td><td>Lose weapons when teleported (useful for some race maps)</td><td>0</td></tr>
+  <tr><td>sv_mapupdaterate</td><td>64 player id <-> vanilla id players map update rate</td><td>5</td></tr>
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
   <tr><td>sv_send_votes_per_tick</td><td>Number of vote options being send per tick</td><td>5</td></tr>
@@ -389,7 +401,7 @@ menu: |
   <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>""</td></tr>
   <tr><td>br_exclude_string</td><td>Server browser exclusion string</td><td>""</td></tr>
   <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
-  <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>1</td></tr>
+  <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>0</td></tr>
   <tr><td>br_filter_spectators</td><td>Filter out spectators from player numbers</td><td>0</td></tr>
   <tr><td>br_filter_friends</td><td>Filter out servers with no friends</td><td>0</td></tr>
   <tr><td>br_filter_country</td><td>Filter out servers with non-matching player country</td><td>0</td></tr>
@@ -404,8 +416,8 @@ menu: |
   <tr><td>br_filter_compatversion</td><td>Filter out non-compatible servers in browser</td><td>0</td></tr>
   <tr><td>br_filter_exclude_countries</td><td>Filter out ddnet servers by country</td><td>""</td></tr>
   <tr><td>br_filter_exclude_types</td><td>Filter out ddnet servers by type (mod)</td><td>""</td></tr>
-  <tr><td>br_sort</td><td></td><td>1</td></tr>
-  <tr><td>br_sort_order</td><td></td><td>0</td></tr>
+  <tr><td>br_sort</td><td></td><td>4</td></tr>
+  <tr><td>br_sort_order</td><td></td><td>1</td></tr>
   <tr><td>br_max_requests</td><td>Number of requests to use when refreshing server browser</td><td>25</td></tr>
   <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td></tr>
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>44100</td></tr>
@@ -422,6 +434,7 @@ menu: |
   <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
   <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
   <tr><td>snd_highlight</td><td>Enable highlighted chat sound</td><td>1</td></tr>
+  <tr><td>gfx_screen</td><td>Screen index</td><td>0</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>0</td></tr>
@@ -445,9 +458,7 @@ menu: |
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
   <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>0</td></tr>
-  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>0</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
-  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
@@ -485,6 +496,7 @@ menu: |
   <tr><td>cl_laser_outline_lht</td><td>Laser outline color lightness</td><td>255</td></tr>
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
   <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
+  <tr><td>cl_scoreboard_on_death</td><td>Whether to show scoreboard after death or not</td><td>1</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
   <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td></tr>
   <tr><td>cl_demo_assume_race</td><td>Assume that demos are race demos</td><td>1</td></tr>
@@ -509,6 +521,7 @@ menu: |
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_other_hook_coll</td><td>Show other players' hook collision line</td><td>1</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
+  <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td></tr>
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
@@ -593,6 +606,7 @@ menu: |
   <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
   <tr><td>demo_slice_start</td><td></td></tr>
   <tr><td>demo_slice_end</td><td></td></tr>
+  <tr><td>demo_play</td><td>Play demo</td></tr>
 </table>
 </div>
 <div class="block">
@@ -626,7 +640,7 @@ menu: |
   <tr><td>grenade_speed</td><td>Grenade speed</td><td> 1000.0</td></tr>
   <tr><td>grenade_lifetime</td><td>Grenade lifetime</td><td> 2.0</td></tr>
   <tr><td>laser_reach</td><td>How long the laser can reach</td><td> 800.0</td></tr>
-  <tr><td>laser_bounce_delay</td><td></td><td> 150</td></tr>
+  <tr><td>laser_bounce_delay</td><td>When bouncing, stop the laser this long</td><td> 150</td></tr>
   <tr><td>laser_bounce_num</td><td>How many times the laser can bounce</td><td> 1000</td></tr>
   <tr><td>laser_bounce_cost</td><td>Remove this much from reach when laser is bouncing</td><td> 0</td></tr>
   <tr><td>laser_damage</td><td>Laser damage</td><td> 5</td></tr>
