@@ -238,7 +238,7 @@ else
 	}
 
 	if ($post_row['forum_id'] == 9 && ($attachment['extension'] == 'map' || $attachment['extension'] == 'cfg') &&
-		($user->data['group_id'] != 5 && $user->data['group_id'] != 4 && $user->data['group_id'] != 8 && $user->data['group_id'] != 10 && $user->data['group_id'] != 13))
+		($user->data['group_id'] != 5 && $user->data['group_id'] != 4 && $user->data['group_id'] != 8 && $user->data['group_id'] != 10 && $user->data['group_id'] != 13 && $user->data['group_id'] != 17))
 	{
 		$sql = 'SELECT topic_poster
 			FROM ' . TOPICS_TABLE . "

@@ -7,12 +7,12 @@ DDNet 9.0 has been released with the following changes:
 
   <ul>
     <li><strong>Save server settings inside the map file, can be edited in editor, server sends map version with configs in the map, config\_store and config\_retrieve tools (by heinrich5991)</strong></li>
-    <li>[Client] <strong>Use a map as custom entities background (by Chairn)</strong></li>
+    <li>[Client] <strong>Use a map as custom entities background, %current% for the current map (by Chairn)</strong></li>
     <li>[Client] <strong>Sort demos in demo browser by name or date (by east)</strong></li>
+    <li>[Client] New file names for manual and auto demo recorder including map name</li>
     <li>[Client] Highlight notifications work on Mac OS X (by HMH)</li>
     <li>[Client] Add cl\_chat\_reset to disable the chat from being reset by pressing ESC</li>
     <li>[Client] Demo player pause/unpause can be bound to a key and scoreboard hidden (by Savander)</li>
-    <li>[Client] New file names for manual and auto demo recorder including map name</li>
     <li>[Client] Hide console window on Windows by default (cl\_show\_console)</li>
     <li>[Client] Fix double clicking on friend who's in first server (by Chairn)</li>
     <li>[Client] Fix chat highlighting (by east &amp; Learath2)</li>
@@ -23,9 +23,9 @@ DDNet 9.0 has been released with the following changes:
     <li>[Client] Fix server browser to always load servers when first starting</li>
     <li>[Client] Fix country flags for Catalan and Europe (by Soreu)</li>
     <li>[Server] <strong>Improved security against spoofing attacks</strong> (by east)
-    <li>[Server] New autoexec\_server.cfg instead of autoexec.cfg (with Soreu)</li>
+    <li>[Server] <strong>New autoexec\_server.cfg instead of autoexec.cfg (with Soreu)</strong></li>
+    <li>[Server] <strong>Make rejoining session possible before timeout protection triggers (by east)</strong></li>
     <li>[Server] Make team locking an option</li>
-    <li>[Server] Make rejoining session possible before timeout protection triggers (by east)</li>
     <li>[Server] Fix timeout protection problems (by east)</li>
     <li>[Server] Fix: No two players with same name</li>
     <li>[Server] Fix: /map and /mapinfo work better</li>
