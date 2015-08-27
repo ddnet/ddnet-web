@@ -12,6 +12,38 @@ menu: |
   </ul>
 ---
 <div class="block">
+<h2 id="map-settings">Map Settings</h2>
+<table class="settingscommands">
+  <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+  <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser eachother or not</td><td>1</td></tr>
+  <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td></tr>
+  <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer & deepfreeze)</td><td>3</td></tr>
+  <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
+  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
+  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>MAX_CLIENTS</td></tr>
+  <tr><td>sv_team_lock</td><td>Enable team lock</td><td>1</td></tr>
+  <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
+  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for DDRace Beta) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
+  <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
+  <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td></tr>
+  <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td></tr>
+  <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
+  <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
+  <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
+  <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
+  <tr><td>sv_teleport_lose_weapons</td><td>Lose weapons when teleported (useful for some race maps)</td><td>0</td></tr>
+</table>
+<table class="settingscommands">
+  <tr><th>Command</th><th>Description</th></tr>
+  <tr><td>tune</td><td>Tune variable to value</td></tr>
+  <tr><td>tune_zone</td><td>Tune in zone a variable to value</td></tr>
+  <tr><td>tune_zone_enter</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_leave</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
+  <tr><td>switch_open</td><td>Whether a switch is open by default (otherwise closed)</td></tr>
+</table>
+</div>
+<div class="block">
 <h2 id="server-settings">Server Settings</h2>
 <table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
@@ -315,11 +347,11 @@ menu: |
   <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>out</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
-  <tr><td>cl_dyn_cam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
-  <tr><td>cl_default_mouse_max_distance</td><td>Default mouse max distance. Dyncam switches back to it</td><td>400</td></tr>
-  <tr><td>cl_dyn_cam_mouse_sens</td><td>Mouse sens used when dyncam is toggled on</td><td>0</td></tr>
-  <tr><td>cl_dyn_cam_dead_zone</td><td>Dynamic camera dead zone</td><td>300</td></tr>
-  <tr><td>cl_dyn_cam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td></tr>
+  <tr><td>cl_dyncam</td><td>Enable dyncam</td><td>0</td></tr>
+  <tr><td>cl_dyncam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
+  <tr><td>cl_dyncam_mousesens</td><td>Mouse sens used when dyncam is toggled on</td><td>0</td></tr>
+  <tr><td>cl_dyncam_deadzone</td><td>Dynamic camera dead zone</td><td>300</td></tr>
+  <tr><td>cl_dyncam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td></tr>
   <tr><td>ed_showkeys</td><td></td><td>0</td></tr>
   <tr><td>cl_flow</td><td></td><td>0</td></tr>
@@ -350,6 +382,7 @@ menu: |
   <tr><td>ui_color_alpha</td><td>Interface alpha</td><td>228</td></tr>
   <tr><td>ui_colorize_ping</td><td>Highlight ping</td><td>1</td></tr>
   <tr><td>ui_colorize_gametype</td><td>Highlight gametype</td><td>1</td></tr>
+  <tr><td>ui_demo_selected</td><td>Selected demo file</td><td>""</td></tr>
   <tr><td>gfx_noclip</td><td>Disable clipping</td><td>0</td></tr>
   <tr><td>dummy_name</td><td>Name of the Dummy</td><td>"brainless tee"</td></tr>
   <tr><td>dummy_clan</td><td>Clan of the Dummy</td><td>""</td></tr>
@@ -410,6 +443,8 @@ menu: |
   <tr><td>br_sort</td><td></td><td>4</td></tr>
   <tr><td>br_sort_order</td><td></td><td>1</td></tr>
   <tr><td>br_max_requests</td><td>Number of requests to use when refreshing server browser</td><td>25</td></tr>
+  <tr><td>br_demo_sort</td><td></td><td>0</td></tr>
+  <tr><td>br_demo_sort_order</td><td></td><td>0</td></tr>
   <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td></tr>
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>44100</td></tr>
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td></tr>
@@ -425,7 +460,6 @@ menu: |
   <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
   <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
   <tr><td>snd_highlight</td><td>Enable highlighted chat sound</td><td>1</td></tr>
-  <tr><td>gfx_screen</td><td>Screen index</td><td>0</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>0</td></tr>
@@ -449,7 +483,9 @@ menu: |
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
   <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>0</td></tr>
+  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>0</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
+  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
@@ -507,6 +543,8 @@ menu: |
   <tr><td>cl_background_entities_hue</td><td>Background (entities) color hue</td><td>0</td></tr>
   <tr><td>cl_background_entities_sat</td><td>Background (entities) color saturation</td><td>0</td></tr>
   <tr><td>cl_background_entities_lht</td><td>Background (entities) color lightness</td><td>128</td></tr>
+  <tr><td>cl_background_entities</td><td>Background (entities)</td><td>""</td></tr>
+  <tr><td>cl_background_show_tiles_layers</td><td>Whether draw tiles layers when using custom background (entities)</td><td>0</td></tr>
   <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee to estimate your delay</td><td>0</td></tr>
   <tr><td>cl_predict_ddrace</td><td>Predict some DDRace tiles</td><td>1</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
@@ -520,6 +558,7 @@ menu: |
   <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>""</td></tr>
   <tr><td>cl_dummy_timeout_code</td><td>Dummy Timeout code to use</td><td>""</td></tr>
   <tr><td>cl_input_fifo</td><td>Fifo file to use as input for client console</td><td>""</td></tr>
+  <tr><td>cl_show_console</td><td>Show console window (Windows only)</td><td>0</td></tr>
   <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>1</td></tr>
   <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>0</td></tr>
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
@@ -552,7 +591,6 @@ menu: |
   <tr><td>zoom+</td><td>Zoom increase</td></tr>
   <tr><td>zoom-</td><td>Zoom decrease</td></tr>
   <tr><td>zoom</td><td>Zoom reset</td></tr>
-  <tr><td>toggle_dynamic_camera</td><td>Turn dynamic camera on/off</td></tr>
   <tr><td>say</td><td>Say in chat</td></tr>
   <tr><td>say_team</td><td>Say in team chat</td></tr>
   <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
