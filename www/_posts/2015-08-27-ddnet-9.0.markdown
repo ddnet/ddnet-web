@@ -22,7 +22,7 @@ DDNet 9.0 has been released with the following changes:
     <li>[Client] Fix and improve dyncam bind and settings</li>
     <li>[Client] Fix server browser to always load servers when first starting</li>
     <li>[Client] Fix country flags for Catalan and Europe (by Soreu)</li>
-    <li>[Server] <strong>Improved security against spoofing attacks</strong> (by east)
+    <li>[Server] <strong>Improved security against spoofing attacks (by east)</strong>
     <li>[Server] <strong>New autoexec\_server.cfg instead of autoexec.cfg (with Soreu)</strong></li>
     <li>[Server] <strong>Make rejoining session possible before timeout protection triggers (by east)</strong></li>
     <li>[Server] Make team locking an option</li>
@@ -30,7 +30,7 @@ DDNet 9.0 has been released with the following changes:
     <li>[Server] Fix: No two players with same name</li>
     <li>[Server] Fix: /map and /mapinfo work better</li>
     <li>[Server] Fix: Prevent solo finish when saving</li>
-    <li>[Editor] HSV Color picker (by BeaR)</li>
+    <li>[Editor] <strong>HSV Color picker (by BeaR)</strong></li>
     <li>[Editor] Switches can be set with number 0</li>
     <li>[Editor] Fix mouse hang with editor popup</li>
     <li>[Mapping] Add sv\_teleport\_lose\_weapons for some race maps</li>
