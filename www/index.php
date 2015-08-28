@@ -1,7 +1,9 @@
 ---
 layout: default
 title: DDraceNetwork
-head: <link rel="stylesheet" href="funding/jquery-ui-1.8.22.custom.css" />
+head: |
+  <link rel="stylesheet" href="funding/jquery-ui-1.8.22.custom.css" />
+  <link rel="alternate" type="application/atom+xml" title="DDNet News" href="/feed/">
 menu: |
   <ul>
     <li><a href="/#news">News</a> (<a href="/news/">all</a>)</li>
@@ -87,7 +89,6 @@ if ($user_os == 'win32') {
   <a href="/funding/"><div class="progressbar" id="funding-old" style="width: 20em;"><div class="progress-label"></div></div></a>
   <script src="/jquery.js" type="text/javascript"></script>
   <script src="funding/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
-  <link rel="alternate" type="application/atom+xml" title="DDNet News" href="feed/">
   {% include funding.html %}
 </div>
 </div>
