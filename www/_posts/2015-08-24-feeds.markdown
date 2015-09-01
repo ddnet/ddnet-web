@@ -2,6 +2,7 @@
 layout: post
 title: "News Feeds for News and Map Releases"
 permalink: /news/news-feeds/
+tag: current
 ---
 There is now a news feed for [general news](/feed/) as well as for [new map releases](/releases/feed/). These should help you keep up to date with what's happening at DDraceNetwork.
 

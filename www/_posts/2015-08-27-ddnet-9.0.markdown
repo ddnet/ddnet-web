@@ -2,6 +2,7 @@
 layout: post
 title: "DDNet 9.0 has been released"
 permalink: /news/ddnet-9.0/
+tag: current
 ---
 DDNet 9.0 has been released with the following changes:
 

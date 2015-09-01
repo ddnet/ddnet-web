@@ -2,5 +2,6 @@
 layout: post
 title: "Facebook page for DDraceNetwork"
 permalink: /news/facebook-page/
+tag: current
 ---
 New [Facebook page for DDraceNetwork](https://facebook.com/DDraceNetwork), maintained by onionly .me'

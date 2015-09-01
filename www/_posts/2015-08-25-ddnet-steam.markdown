@@ -2,6 +2,7 @@
 layout: post
 title: "Getting DDNet released on Steam"
 permalink: /news/ddnet-steam/
+tag: current
 ---
 We have just suggested [DDraceNetwork to Steam Greenlight](http://steamcommunity.com/sharedfiles/filedetails/?id=506147661).
 

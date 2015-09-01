@@ -2,6 +2,7 @@
 layout: post
 title: "DDNet 8.1.1 has been released"
 permalink: /news/ddnet-8.1.1/
+tag: current
 ---
 DDNet 8.1.1 has been released with the following changes:
 

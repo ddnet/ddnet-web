@@ -96,7 +96,7 @@ if ($user_os == 'win32') {
 </div>
 <div class="block">
 <h2 id="news">News</h2>
-{% for post in site.posts limit:10 %}
+{% for post in site.tags.current limit:10 %}
   <div class="news">
     <h3><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
     <div style="font-size: 75%;">{{ post.date | date: "%Y-%m-%d" }}</div>

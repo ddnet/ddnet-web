@@ -2,5 +2,6 @@
 layout: post
 title: "Teeworlds on Steam released"
 permalink: /news/teeworlds-steam/
+tag: current
 ---
 Teeworlds has been [released on Steam](https://steamdb.info/app/380840/) today. You can [use a little trick](http://forum.ddnet.tw/viewtopic.php?f=16&t=2110) to get DDNet client in Steam as well, even though it's not officially released yet.
