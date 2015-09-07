@@ -7,3 +7,5 @@ tag: current
 For those who don't know: Race is an old Teeworlds modification where you play alone and have to finish maps with grenades, without falling into teleporters.
 
 Thanks to great help by Lady Saavik all the race maps for DDNet's Race server are now ready for release. Every day from 2015-09-08 to 2015-10-13 (except Sundays) two race maps will be released at 12:00 CEST.
+
+You can see the current maps in the [list of map releases](/releases/)
