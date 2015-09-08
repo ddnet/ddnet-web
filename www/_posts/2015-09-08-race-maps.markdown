@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Race maps will be released in the next month"
-permalink: /news/nightly-builds/
+permalink: /news/race-maps/
 tag: current
 ---
 For those who don't know: Race is an old Teeworlds modification where you play alone and have to finish maps with grenades, without falling into teleporters.
