@@ -2,6 +2,7 @@
 layout: post
 title: "DDraceNetwork Quick Tournament #39: Brutal"
 permalink: /news/tournament-39/
+tag: current
 ---
 New Brutal Tournament on "JustGeneric" by Skeptar will take place on Sunday, September 13 at 20:00 CEST:
 
