@@ -1,0 +1,8 @@
+---
+layout: post
+title: "New DDNet GER2 server running"
+permalink: /news/new-ger2/
+tag: current
+---
+There's a new DDNet GER2 server running now. It's not actually in Germany,
+but in Luxembourg. Let's see if the server runs fine.
