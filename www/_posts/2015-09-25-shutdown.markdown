@@ -1,0 +1,25 @@
+---
+layout: post
+title: "The End of DDraceNetwork"
+permalink: /news/shutdown/
+tag: current
+---
+DDraceNetwork ends today, all the official servers have been shut down and the development halted. It has been a great 2 years building DDNet as a totally free game with servers all over the world, overcoming technical and personal challenges and watching the international community grow. Huge thanks to [everyone who helped](/staff/), [donated](/funding/) and [spent their time](/ranks/) on DDNet, without you all DDNet would never have been possible! You can read more about [DDNet's history](//forum.ddnet.tw/viewtopic.php?f=3&t=1824) if you're interested.
+
+The main reason for shutting down DDNet is that I'm finishing [my studies](http://felsin9.de/nnis/research/) and want to focus on [other projects](http://felsin9.de/nnis/software/). The time needed and costs for keeping DDNet running are too high for me. I couldn't bear to watch DDNet deteriorate in quality and no fitting maintainer could be found to keep DDNet running.
+
+All the work put into DDNet and the collected data stays available for other server hosters to use as they see fit:
+
+- <https://github.com/ddnet/ddnet>: Source code of the client and server
+- <https://github.com/ddnet/ddnet-scripts>: Scripts and instructions for running an official server
+- <https://github.com/ddnet/ddnet-maps>: All maps ever released
+- <https://github.com/ddnet/ddnet-web>: Website source
+- <http://ddnet.tw/stats/>: Statistics and all [ranks](/ranks/) ever made ([CSV](/stats/ddnet-stats.zip), [SQL](/stats/ddnet-sql.zip))
+
+Interested server hosters can use IRC ([#ddnet](irc://irc.quakenet.org/ddnet) on Quakenet, [Webchat](http://webchat.quakenet.org/?channels=ddnet&uio=d4)) or [the forum](http://forum.ddnet.tw/viewforum.php?f=4) if they need help.
+
+I hope you all had a great time on DDNet and met many nice people from all over the world. Enjoy your life!
+
+You can discuss this [on the forum](//forum.ddnet.tw/viewtopic.php?f=3&t=2344).
+
+deen / [Dennis Felsing](http://felsin9.de/nnis)
