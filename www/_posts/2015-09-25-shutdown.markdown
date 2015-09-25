@@ -4,7 +4,7 @@ title: "The End of DDraceNetwork"
 permalink: /news/shutdown/
 tag: current
 ---
-DDraceNetwork ends today, all the official servers have been shut down and the development halted. It has been a great 2 years building DDNet as a totally free game with servers all over the world, overcoming technical and personal challenges and watching the international community grow. Huge thanks to [everyone who helped](/staff/), [donated](/funding/) and [spent their time](/ranks/) on DDNet, without you all DDNet would never have been possible! You can read more about [DDNet's history](//forum.ddnet.tw/viewtopic.php?f=3&t=1824) if you're interested.
+DDraceNetwork ends on October 1 if we can't find someone to run the servers. It has been a great 2 years building DDNet as a totally free game with servers all over the world, overcoming technical and personal challenges and watching the international community grow. Huge thanks to [everyone who helped](/staff/), [donated](/funding/) and [spent their time](/ranks/) on DDNet, without you all DDNet would never have been possible! You can read more about [DDNet's history](//forum.ddnet.tw/viewtopic.php?f=3&t=1824) if you're interested.
 
 The main reason for shutting down DDNet is that I'm finishing [my studies](http://felsin9.de/nnis/research/) and want to focus on [other projects](http://felsin9.de/nnis/software/). The time needed and costs for keeping DDNet running are too high for me. I couldn't bear to watch DDNet deteriorate in quality and no fitting maintainer could be found to keep DDNet running.
 
