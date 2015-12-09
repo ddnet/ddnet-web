@@ -21,10 +21,17 @@
 	<!-- EVENT posting_editor_subject_before -->
 
 	<!-- IF S_POST_ACTION or S_PRIVMSGS or S_EDIT_DRAFT -->
+	<!-- IF S_NEW_MESSAGE or S_PRIVMSGS -->
 	<dl style="clear: left;">
 		<dt><label for="subject">{L_SUBJECT}{L_COLON}</label></dt>
 		<dd><input type="text" name="subject" id="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->120<!-- ELSE -->124<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="inputbox autowidth" /></dd>
 	</dl>
+	<!-- ELSE -->
+	<dl style="clear: left; display: none">
+		<dt><label for="subject">{L_SUBJECT}{L_COLON}</label></dt>
+		<dd><input type="text" name="subject" id="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->120<!-- ELSE -->124<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="inputbox autowidth" /></dd>
+	</dl>
+	<!-- ENDIF -->
 	<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
 		<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
 		<!-- INCLUDE {CAPTCHA_TEMPLATE} -->

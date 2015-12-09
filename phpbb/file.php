@@ -246,11 +246,11 @@ else
 		$result = $db->sql_query($sql);
 		$topic = $db->sql_fetchrow($result);
 		$db->sql_freeresult($result);
-		if ($user->data['user_id'] != $topic['topic_poster'])
-		{
-			send_status_line(403, 'Forbidden');
-			trigger_error(sprintf('Only testers and moderators can download maps to be tested', $attachment['extension']));
-		}
+		//if ($user->data['user_id'] != $topic['topic_poster'])
+		//{
+		//	send_status_line(403, 'Forbidden');
+		//	trigger_error(sprintf('Only testers and moderators can download maps to be tested', $attachment['extension']));
+		//}
 	}
 
 	$download_mode = (int) $extensions[$attachment['extension']]['download_mode'];

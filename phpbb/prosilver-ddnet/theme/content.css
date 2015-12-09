@@ -198,6 +198,11 @@ dd.lastpost, dd.redirect, dd.moderation, dd.time, dd.info {
 	font-size: 1.1em;
 }
 
+dd.lastpost .username {
+    display: inline-block !important;
+    padding-left: 0px !important;
+}
+
 dd.redirect {
 	line-height: 2.5em;
 }
