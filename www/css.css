@@ -1,8 +1,10 @@
+/*
 *, *:before, *:after {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
+*/
 
 html, body {
   background-color: #d8efff;
@@ -21,8 +23,10 @@ html {
   border: 1px solid #aaaaaa;
   padding: 0.5em 1.5em 1em 1.5em;
   position: relative;
-  text-align: justify;
   margin: 0 0 1em 0;
+}
+body:not(#phpbb) .block {
+  text-align: justify;
 }
 
 .block h2, .block h3 {
@@ -79,7 +83,7 @@ h1 {
   border-bottom: 1px solid #cccccc;
 }
 
-a:link, a:visited {
+a, a:visited {
   font-weight: bold;
   color: #aa4444;
   text-decoration: none;
@@ -97,6 +101,10 @@ a:hover {
   font-weight: bold;
   color: #882222;
   text-decoration: none;
+}
+
+#staff h3 a, #staff h4 a {
+  color: #000000;
 }
 
 .staff li {
@@ -406,7 +414,7 @@ br {
   min-width: 50em;
 }
 
-.time {
+body:not(#phpbb) .time {
   width: 4em;
   text-align: right;
 }
@@ -432,7 +440,7 @@ br {
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+    /*padding-top: 30px;*/ height: 0; overflow: hidden;
 }
 
 .video-container iframe,
@@ -695,7 +703,7 @@ menu {
 }
 
 menu li {
-  display: inline;
+  display: inline-block;
   padding-right: 1em;
   padding-left: 1em;
 }
@@ -768,13 +776,15 @@ section {
   float: right;
 }
 
-:link, *:visited {
+a, *:visited {
   border-bottom: 0;
 }
 
-:link:hover, *:visited:hover {
+/*
+a:hover, *:visited:hover {
   text-decoration: none;
   background-color: transparent;
   color: #882222;
 }
+*/
 }
