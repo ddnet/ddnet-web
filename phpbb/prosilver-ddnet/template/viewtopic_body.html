@@ -128,6 +128,7 @@
 			<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd class="profile-rank"><!-- IF postrow.RANK_IMG -->{postrow.RANK_IMG}<!-- ELSE -->{postrow.RANK_TITLE}<!-- ENDIF --></dd><!-- ENDIF -->
 
 		<!-- IF postrow.POSTER_POSTS != '' --><dd><strong>{L_POSTS}{L_COLON}</strong> <!-- IF postrow.U_SEARCH !== '' --><a href="{postrow.U_SEARCH}"><!-- ENDIF -->{postrow.POSTER_POSTS}<!-- IF postrow.U_SEARCH !== '' --></a><!-- ENDIF --></dd><!-- ENDIF -->
+		<!-- IF postrow.U_WARN --><dd class="profile-warnings"><strong>{L_WARNINGS}{L_COLON}</strong> <a href="{postrow.U_NOTES}">{postrow.POSTER_WARNINGS}</a></dd><!-- ENDIF -->
 		<!-- IF postrow.POSTER_JOINED --><dd><strong>{L_JOINED}{L_COLON}</strong> {postrow.POSTER_JOINED}</dd><!-- ENDIF -->
 
 		<!-- IF postrow.S_PROFILE_FIELD1 -->

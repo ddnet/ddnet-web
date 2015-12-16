@@ -338,6 +338,10 @@ a.topictitle:active {
 	color: #105289;
 }
 
+.postprofile .profile-warnings a {
+	color: #BC2A4D;
+}
+
 /* Profile searchresults */
 .search .postprofile a {
 	color: #105289;
