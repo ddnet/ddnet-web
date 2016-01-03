@@ -4,4 +4,4 @@ title: "DDRace Wiki by Ryozuki"
 permalink: /news/ddrace-wiki/
 tag: current
 ---
-A [DDRace Wiki](http://wiki.ddnet.tw/wiki/DDRace) has been started by Ryozuki. Feel free to help with extending articles, fixing mistakes, writing new articles and translating them to other languages!
+A [DDRace Wiki](http://wiki.ddnet.tw/wiki/DDRace) has been started by Ryozuki. Feel free to help with extending articles, fixing mistakes, writing new articles and translating them to other languages! Feel free to discuss [in the forum](http://forum.ddnet.tw/viewtopic.php?t=2969).
