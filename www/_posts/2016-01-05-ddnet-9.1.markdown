@@ -4,6 +4,9 @@ title: "DDNet 9.1 has been released"
 permalink: /news/ddnet-9.1/
 tag: current
 ---
+
+<b>If you are on Windows you have to download the new version manually otherwise your client will break!</b>
+
 DDNet 9.1 has been released with the following changes:
 
 <ul>
