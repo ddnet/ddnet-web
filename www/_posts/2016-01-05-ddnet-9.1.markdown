@@ -1,0 +1,48 @@
+---
+layout: post
+title: "DDNet 9.1 has been released"
+permalink: /news/ddnet-9.1/
+tag: current
+---
+
+<b>If you are on Windows you have to download the new version manually otherwise your client will break!</b>
+
+DDNet 9.1 has been released with the following changes:
+
+<ul>
+<li>[Client] <b>Add selection of eye emotes to the emote selector (<a href="https://github.com/ddnet/ddnet/pull/317">#317</a>, <a href="https://github.com/ddnet/ddnet/pull/373">#373</a>)</b></li>
+<li>[Server] <b>Add a new rcon access level "helper" (<a href="https://github.com/ddnet/ddnet/pull/356">#356</a>)</b></li>
+<li>[Client] Add config option `cl_save_settings` that can disable saving the config on closing (<a href="https://github.com/ddnet/ddnet/pull/352">#352</a>)</li>
+<li>[Client] Add config option `cl_text_entities` to disable slow rendering of entities with text (<a href="https://github.com/ddnet/ddnet/pull/340">#340</a>)</li>
+<li>[Client] Fix a constant in the UTF-8 decoder (<a href="https://github.com/ddnet/ddnet/pull/332">#332</a>)</li>
+<li>[Client] Fix an envelopes bug (<a href="https://github.com/ddnet/ddnet/pull/339">#339</a>)</li>
+<li>[Client] Fix antiping config handling, stop subconfigs from resetting on restart (<a href="https://github.com/ddnet/ddnet/pull/333">#333</a>)</li>
+<li>[Client] Fix background map setting in 5:4 resolution (<a href="https://github.com/ddnet/ddnet/commit/201782dbfccb608e861420b1025b79554cee70c2">ecc9cbfe</a>)</li>
+<li>[Client] Fix dummy input behaving weirdly sometimes (<a href="https://github.com/ddnet/ddnet/pull/364">#364</a>)</li>
+<li>[Client] Fix game layer rendering depending on the order they appear in the map (<a href="https://github.com/ddnet/ddnet/pull/343">#343</a>)</li>
+<li>[Client] Fix the UI of the "Vanilla Skins only" setting (<a href="https://github.com/ddnet/ddnet/commit/24f973613a138895e3bc68207abb63a6ff679d49">24f97361</a>)</li>
+<li>[Client] Fix the menu music playing ingame (<a href="https://github.com/ddnet/ddnet/pull/350">#350</a>)</li>
+<li>[Client] Fix weapon rotation around the top (<a href="https://github.com/ddnet/ddnet/pull/369">#369</a>)</li>
+<li>[Client] Increase width of the date column in the demo browser (<a href="https://github.com/ddnet/ddnet/commit/865d50950d62294f6e8b1e5b45be503ef16168fe">865d5095</a>)</li>
+<li>[Client] Replace `cl_show_new_skins` and `cl_show_custom_skins` with `cl_vanilla_skins_only` (<a href="https://github.com/ddnet/ddnet/commit/ed49e3214a6bad55c9a3c2289f43c37985352f76">ed49e321</a>)</li>
+<li>[Client] Reset stat scoreboard when the game restarts (<a href="https://github.com/ddnet/ddnet/pull/366">#366</a>)</li>
+<li>[Client] Securely generate the random client port (<a href="https://github.com/ddnet/ddnet/pull/396">#396</a>)</li>
+<li>[Client] Stop the ingame server browser from reloading when clicking a tab again (<a href="https://github.com/ddnet/ddnet/pull/342">#342</a>)</li>
+<li>[Development] Add NetBSD support (<a href="https://github.com/ddnet/ddnet/commit/522c41330d1c931cc089312c331854c37fa26a86">522c4133</a>, from vanilla <a href="https://github.com/teeworlds/teeworlds/pull/1165">#1165</a>)</li>
+<li>[Development] Cross-compile improvements (<a href="https://github.com/ddnet/ddnet/commit/fca4c112d49138a56a8146da9512655b9cf9cf25">fca4c112</a>, <a href="https://github.com/ddnet/ddnet/commit/d4fe267c5842f567d8cd721df22c427b6dae9106">d4fe267c</a>)</li>
+<li>[Development] Fix MySQL building on OS X (<a href="https://github.com/ddnet/ddnet/pull/317">#317</a>)</li>
+<li>[Development] Fix linking of libdl on some systems (<a href="https://github.com/ddnet/ddnet/compare/b3f094bf4097cc1c0ddade616a4352d9760cbf23%5E...b596ee34173fa14d0874216691c92e8192fbdf7d7">3f094bf..596ee341</a>)</li>
+<li>[Development] Make OS X build forward compatible (<a href="https://github.com/ddnet/ddnet/pull/361">#361</a>)</li>
+<li>[Editor] Fix crash when opening files without transparency information, i.e. RGB instead of RGBA (<a href="https://github.com/ddnet/ddnet/commit/aa4bbed178258e9157ecd6b2c82ca3292b70efdf">aa4bbed1</a>)</li>
+<li>[Server/Client] Add description to console command arguments (<a href="https://github.com/ddnet/ddnet/pull/389">#389</a>)</li>
+<li>[Server/Client] Allow setting config variables to the empty string (<a href="https://github.com/ddnet/ddnet/2874e18ce0218280cb73cfd68b54ecafbf731adf">2874e18c</a>)</li>
+<li>[Server] Add a config option `sv_dragger_range` to adjust the range of draggers (<a href="https://github.com/ddnet/ddnet/pull/323">#323</a>)</li>
+<li>[Server] Add a config option `sv_sql_create_tables` to not try to create the record tables if they don't exist (<a href="https://github.com/ddnet/ddnet/commit/336e916548af31d0a6c817e1faa8e639fdc2e027">336e9165</a>)</li>
+<li>[Server] Add a message that specifies who killed a race team (<a href="https://github.com/ddnet/ddnet/pull/367">#367</a>)</li>
+<li>[Server] Add an option to reload the map once the server becomes empty (<a href="https://github.com/ddnet/ddnet/pull/355">#355</a>)</li>
+<li>[Server] Don't reset timeout protection status on rejoin (<a href="https://github.com/ddnet/ddnet/commit/d1c0551546417df011cc1f2522aa52017b584c7c">d1c05515</a>)</li>
+<li>[Server] Fix a thread handle leak on Windows (<a href="https://github.com/ddnet/ddnet/commit/7487923774df3a372bb3618087a0753b435acf8d">74879237</a>)</li>
+<li>[Server] Fix name equality checking a few times (<a href="https://github.com/ddnet/ddnet/pull/385">#385</a>, <a href="https://github.com/ddnet/ddnet/pull/386">#386</a>)</li>
+<li>[Server] Only log name changes when the name actually changes (<a href="https://github.com/ddnet/ddnet/commit/f20a6a49343d3fa3f2b2d58bc11dfae13d646a4f">f20a6a49</a>)</li>
+<li>[Server] Security: Fix registering vulnerability (<a href="https://github.com/ddnet/ddnet/pull/359">#359</a>)</li>
+</ul>
