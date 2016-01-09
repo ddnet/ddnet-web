@@ -57,7 +57,7 @@ $(document).ready(function() { $("#jsclient").focus() });
 <iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=weeelf&#038;popout_chat=true" height="450" width="300"></iframe>
 -->
 <br/>
-<div class="download"><img class="download-button" src="download.svg"/>
+<div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
@@ -84,7 +84,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '9.0.2';
+$version = '9.1';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
@@ -102,9 +102,9 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
 }
 ?>
-<a href="feed/"><img src="feed.svg"/></a>
-<a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg"/></a>
-<a href="https://github.com/ddnet/"><img src="github.svg"/></a>
+<a href="feed/"><img src="feed.svg" alt="Feed"/></a>
+<a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg" alt="Facebook"/></a>
+<a href="https://github.com/ddnet/"><img src="github.svg" alt="GitHub"/></a>
 
 <div class="right">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width: 20em;"><div class="progress-label"></div></div></a>
