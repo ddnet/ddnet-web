@@ -31,7 +31,6 @@ $(document).click(function() { $("#jsclient").focus() });
 $(document).ready(function() { $("#jsclient").focus() });
 </script>
 -->
-<!--
 <div class="startvideo"><div class="video-container">
 	<iframe allowfullscreen class="ytplayer" src="https://www.youtube.com/embed/oSrCjtI535Y?autoplay=0&hd=1&iv_load_policy=3"></iframe>
 </div></div>
@@ -39,7 +38,6 @@ $(document).ready(function() { $("#jsclient").focus() });
 	<a href="www.ddnet.tw.png"><img class="demo" alt="Demo" src="www.ddnet.tw.png"/></a>
 	<a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a>
 </div>
--->
 <!--
 <div class="startvideo">
 	<div class="video-container"><iframe src="http://hitbox.tv/#!/embed/vasten100" frameborder="0" allowfullscreen></iframe></div>
@@ -48,7 +46,7 @@ $(document).ready(function() { $("#jsclient").focus() });
 	<iframe height="400" src="http://www.hitbox.tv/embedchat/vasten100" frameborder="0" allowfullscreen></iframe>
 </div>
 -->
-
+<!--
 <object id="live_embed_player_flash" width="800" height="450" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" bgcolor="#000000">
 	<param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" />
 	<param name="allowNetworking" value="all" />
@@ -57,7 +55,7 @@ $(document).ready(function() { $("#jsclient").focus() });
 	<embed id="live_embed_player_flash" width="800" height="450" type="application/x-shockwave-flash" src="http://de.twitch.tv/widgets/live_embed_player.swf?channel=ddnetlive" allowFullScreen="true" allowScriptAccess="always" allowNetworking="all" flashvars="hostname=de.twitch.tv&amp;channel=ddnetlive&amp;auto_play=true&amp;start_volume=25" bgcolor="#000000" />
 </object>
 <iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=ddnetlive&#038;popout_chat=true" height="450" width="300"></iframe>
-
+-->
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
