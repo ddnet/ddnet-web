@@ -2,7 +2,6 @@
 layout: post
 title: "DDraceNetwork Quick Tournament #40: Special Moderate"
 permalink: /news/tournament-40/
-tag: current
 ---
 This is very spontaneous, but we will have a Tournament TODAY!
 
