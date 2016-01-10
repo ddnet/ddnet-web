@@ -14,6 +14,7 @@ menu: |
     <li><a href="/binds/">Useful&nbsp;Binds</a></li>
     <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
     <li><a href="/staff/">Staff&nbsp;&amp;&nbsp;Contact</a></li>
+    <li><a href="http://webchat.quakenet.org/?channels=ddnet">IRC&nbsp;WebChat</a></li>
     <li><a href="/funding/">Funding</a></li>
   </ul>
 ---
@@ -54,8 +55,8 @@ $(document).ready(function() { $("#jsclient").focus() });
 	<param name="src" value="http://de.twitch.tv/widgets/live_embed_player.swf?channel=ddnetlive" />
 	<embed id="live_embed_player_flash" width="800" height="450" type="application/x-shockwave-flash" src="http://de.twitch.tv/widgets/live_embed_player.swf?channel=ddnetlive" allowFullScreen="true" allowScriptAccess="always" allowNetworking="all" flashvars="hostname=de.twitch.tv&amp;channel=ddnetlive&amp;auto_play=true&amp;start_volume=25" bgcolor="#000000" />
 </object>
--->
 <iframe frameborder="0" scrolling="no" id="chat_embed" src="http://twitch.tv/chat/embed?channel=ddnetlive&#038;popout_chat=true" height="450" width="300"></iframe>
+-->
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
