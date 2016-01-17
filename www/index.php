@@ -103,9 +103,9 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span> | <a href="http://teewebs.net/">Try it out in your browser</a></p>';
 }
 ?>
-<a href="feed/"><img src="feed.svg" alt="Feed"/></a>
-<a href="https://www.youtube.com/user/DDraceNetwork"><img src="youtube.svg" alt="YouTube"/></a>
 <a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg" alt="Facebook"/></a>
+<a href="https://www.youtube.com/user/DDraceNetwork"><img src="youtube.svg" alt="YouTube"/></a>
+<a href="feed/"><img src="feed.svg" alt="Feed"/></a>
 <a href="https://github.com/ddnet/"><img src="github.svg" alt="GitHub"/></a>
 
 <div class="right">
