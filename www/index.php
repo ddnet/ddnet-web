@@ -104,8 +104,8 @@ if ($user_os == 'win32') {
 }
 ?>
 <a href="feed/"><img src="feed.svg" alt="Feed"/></a>
-<a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg" alt="Facebook"/></a>
 <a href="https://www.youtube.com/user/DDraceNetwork"><img src="youtube.svg" alt="YouTube"/></a>
+<a href="https://facebook.com/DDraceNetwork"><img src="facebook.svg" alt="Facebook"/></a>
 <a href="https://github.com/ddnet/"><img src="github.svg" alt="GitHub"/></a>
 
 <div class="right">
