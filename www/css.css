@@ -83,7 +83,7 @@ h1 {
   border-bottom: 1px solid #cccccc;
 }
 
-a, a:visited {
+a, a:link, a:visited {
   font-weight: bold;
   color: #aa4444;
   text-decoration: none;
@@ -100,6 +100,10 @@ a, a:visited {
 a:hover {
   font-weight: bold;
   color: #882222;
+  text-decoration: none;
+}
+
+.contentleft a:hover {
   text-decoration: none;
 }
 
