@@ -103,6 +103,10 @@ a:hover {
   text-decoration: none;
 }
 
+.contentleft a:hover {
+  text-decoration: none;
+}
+
 #staff h3 a, #staff h4 a {
   color: #000000;
 }
