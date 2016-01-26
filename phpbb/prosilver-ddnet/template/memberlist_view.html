@@ -38,7 +38,7 @@
 		<!-- ENDIF -->
 		<!-- IF S_USER_INACTIVE --><dt>{L_USER_IS_INACTIVE}{L_COLON}</dt> <dd>{USER_INACTIVE_REASON}</dd><!-- ENDIF -->
 		<!-- IF AGE !== '' --><dt>{L_AGE}{L_COLON}</dt> <dd>{AGE}</dd><!-- ENDIF -->
-		<!-- IF S_GROUP_OPTIONS --><dt>{L_USERGROUPS}{L_COLON}</dt> <dd><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="button2" /></dd><!-- ENDIF -->
+		<!-- IF S_GROUP_OPTIONS --><!-- IF U_GROUP_LEADER or U_ACP --><dt>{L_USERGROUPS}{L_COLON}</dt> <dd><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="button2" /></dd><!-- ENDIF --><!-- ENDIF -->
 		<!-- BEGIN custom_fields -->
 			<!-- IF not custom_fields.S_PROFILE_CONTACT -->
 				<dt>{custom_fields.PROFILE_FIELD_NAME}{L_COLON}</dt> <dd>{custom_fields.PROFILE_FIELD_VALUE}</dd>
@@ -69,26 +69,28 @@
 	<div class="column1">
 
 		<h3>{L_CONTACT_USER}</h3>
-
-		<dl class="details">
-		<!-- IF U_EMAIL --><dt>{L_EMAIL_ADDRESS}{L_COLON}</dt> <dd><a href="{U_EMAIL}">{L_SEND_EMAIL_USER}</a></dd><!-- ENDIF -->
-		<!-- IF U_PM --><dt>{L_PM}{L_COLON}</dt> <dd><a href="{U_PM}">{L_SEND_PRIVATE_MESSAGE}</a></dd><!-- ENDIF -->
-		<!-- IF U_JABBER and S_JABBER_ENABLED --><dt>{L_JABBER}{L_COLON}</dt> <dd><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_JABBER_MESSAGE}</a></dd><!-- ELSEIF USER_JABBER --><dt>{L_JABBER}{L_COLON}</dt> <dd>{USER_JABBER}</dd><!-- ENDIF -->
-		<!-- BEGIN custom_fields -->
-			<!-- IF custom_fields.S_PROFILE_CONTACT -->
-				<dt>{custom_fields.PROFILE_FIELD_NAME}{L_COLON}</dt>
-				<!-- IF custom_fields.PROFILE_FIELD_CONTACT -->
-					<dd><a href="{custom_fields.PROFILE_FIELD_CONTACT}">{custom_fields.PROFILE_FIELD_DESC}</a></dd>
-				<!-- ELSE -->
-					<dd>{custom_fields.PROFILE_FIELD_VALUE}</dd>
+		
+		<!-- IF S_USER_LOGGED_IN -->
+			<dl class="details">
+			<!-- IF U_EMAIL --><dt>{L_EMAIL_ADDRESS}{L_COLON}</dt> <dd><a href="{U_EMAIL}">{L_SEND_EMAIL_USER}</a></dd><!-- ENDIF -->
+			<!-- IF U_PM --><dt>{L_PM}{L_COLON}</dt> <dd><a href="{U_PM}">{L_SEND_PRIVATE_MESSAGE}</a></dd><!-- ENDIF -->
+			<!-- IF U_JABBER and S_JABBER_ENABLED --><dt>{L_JABBER}{L_COLON}</dt> <dd><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_JABBER_MESSAGE}</a></dd><!-- ELSEIF USER_JABBER --><dt>{L_JABBER}{L_COLON}</dt> <dd>{USER_JABBER}</dd><!-- ENDIF -->
+			<!-- BEGIN custom_fields -->
+				<!-- IF custom_fields.S_PROFILE_CONTACT -->
+					<dt>{custom_fields.PROFILE_FIELD_NAME}{L_COLON}</dt>
+					<!-- IF custom_fields.PROFILE_FIELD_CONTACT -->
+						<dd><a href="{custom_fields.PROFILE_FIELD_CONTACT}">{custom_fields.PROFILE_FIELD_DESC}</a></dd>
+					<!-- ELSE -->
+						<dd>{custom_fields.PROFILE_FIELD_VALUE}</dd>
+					<!-- ENDIF -->
 				<!-- ENDIF -->
+			<!-- END custom_fields -->
+			<!-- IF S_PROFILE_FIELD1 -->
+				<!-- NOTE: Use a construct like this to include admin defined profile fields. Replace FIELD1 with the name of your field. -->
+				<dt>{PROFILE_FIELD1_NAME}{L_COLON}</dt> <dd>{PROFILE_FIELD1_VALUE}</dd>
 			<!-- ENDIF -->
-		<!-- END custom_fields -->
-		<!-- IF S_PROFILE_FIELD1 -->
-			<!-- NOTE: Use a construct like this to include admin defined profile fields. Replace FIELD1 with the name of your field. -->
-			<dt>{PROFILE_FIELD1_NAME}{L_COLON}</dt> <dd>{PROFILE_FIELD1_VALUE}</dd>
+			</dl>
 		<!-- ENDIF -->
-		</dl>
 	</div>
 
 	<div class="column2">
