@@ -2,7 +2,6 @@
 layout: post
 title: "DDraceNetwork Quick Tournament #41: Solo"
 permalink: /news/tournament-41/
-tag: current
 ---
 Solo Tournament on "Gedan" (★★✰✰✰) by Vasten100 will take place on Sunday, January 31 at 20:00 CET:
 
