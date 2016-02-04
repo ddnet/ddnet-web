@@ -2,7 +2,6 @@
 layout: post
 title: "The End of DDraceNetwork"
 permalink: /news/shutdown/
-tag: current
 ---
 DDraceNetwork ends on October 1 if we can't find someone to run the servers. It has been a great 2 years building DDNet as a totally free game with servers all over the world, overcoming technical and personal challenges and watching the international community grow. Huge thanks to [everyone who helped](/staff/), [donated](/funding/) and [spent their time](/ranks/) on DDNet, without you all DDNet would never have been possible! You can read more about [DDNet's history](//forum.ddnet.tw/viewtopic.php?f=3&t=1824) if you're interested.
 
