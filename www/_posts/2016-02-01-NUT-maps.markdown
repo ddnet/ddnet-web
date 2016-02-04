@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Nut Maps will be released"
+permalink: /news/nut_maps/
+tag: current
+---
+
+Do you remember clan NUT? They presented maps with an unique design, often for bigger groups (up to 10(!) tees required).
+<p>
+We will release their normal, hardcore and short maps every Monday, Wednesday and Friday from 2016-02-01 to 2016-03-25.
+<p>
+They are made mostly by Zeta-Hoernchen. Look for them on <a href="http://ddnet.tw/ranks/ddmax/">DDmaX Server</a>.
