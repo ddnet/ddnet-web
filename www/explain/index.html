@@ -1,35 +1,34 @@
+<!doctype html>
+
 <head>
+	<meta charset="utf-8">
 	<meta http-equiv="imagetoolbar" content="no" /> 
 	
 	<title>Game tiles explanations</title>
 
-	<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="lib/jquery.qtip.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.maphilight.min.js"></script>
-	<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
-	<script type="text/javascript" src="js/imageMapResizer.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.url.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.maphilight.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="render.js"></script>
 </head>
 
 <body>
-	<div class="menu">
-		<button href="entities.html" OnClick="$('iframe').attr('src', 'entities.html');">Game Layer</button>
-		<button href="front.html" OnClick="$('iframe').attr('src', 'front.html');">Front Layer</button>
-		<button href="tele.html" OnClick="$('iframe').attr('src', 'tele.html');">Tele Layer</button>
-		<button href="speedup.html" OnClick="$('iframe').attr('src', 'speedup.html');">Speedup Layer</button>
-		<button href="switch.html" OnClick="$('iframe').attr('src', 'switch.html');">Switch Layer</button>
-		<button href="tune.html" OnClick="$('iframe').attr('src', 'tune.html');">Tune Layer</button>
-		<button href="entities_clear.html" OnClick="$('iframe').attr('src', 'entities_clear.html');">Entities overlay</button>
-	</div>
 	<center>
-		<iframe src="entities.html" scrolling="no">
-			<p>Your browser does not support iframes.</p>
-		</iframe>
+		<div id="menu"></div>
+		<h1 id="title"></h1>
+		<div id="permalink_container">
+			Permalink <input id="permalink" type="text" readonly="1" />
+		</div>
+		<div id="entities_container">
+			<img id="entities_image" usemap="#entities_map" />
+			<map id="entities_map" name="entities_map"></map>
+		</div>
+		<div id="copyright">
+			&copy; Lady Saavik (explanations) and Soreu, timakro (code)
+		</div>
 	</center>
-	<div class="Copyright">
-		&copy; Lady Saavik (explanations) and Soreu (code)
-	</div>
-	<script src="js/EntitiesExplain.js"></script>
 </body>
