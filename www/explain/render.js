@@ -26,6 +26,10 @@ $(document).ready(function() {
 	entities_map = $('#entities_map');
 	permalink = $('#permalink');
 
+	permalink.bind("click", function() {
+				permalink.select();
+	});
+
 	$.getJSON('explanations.json', function(json) {
 		explanations = [];
 		$.each(json, function(i, obj) {
@@ -53,27 +57,17 @@ $(document).ready(function() {
 		menu.append(button);
 	});
 
+	show_permalink();
 	show_title();
 	show_entities_image();
 });
 
 
-function show_permalink(layer, index) {
-	if(layer) {
-		url = 'https://ddnet.tw/explain/?layer=' + layer + '&index=' + index;
-		input = permalink.children()[0];
-		if(!input) {
-			input = $('<input type="text" readonly="1" />');
-			input.bind("click", function() {
-				input.select();
-			});
-			permalink.html('Permalink ');
-			permalink.append(input);
-		}
-		$(input).val(url);
-	} else {
-		permalink.empty();
-	}
+function show_permalink(index) {
+	url = 'https://ddnet.tw/explain/?layer=' + layer_name;
+	if(typeof index != 'undefined')
+		url += '&index=' + index;
+	permalink.val(url);
 }
 
 function show_title() {
@@ -94,7 +88,6 @@ function parse_entity(entity) {
 	var y = Math.floor(entity['index'] / 16) * 64;
 	var x2 = x + ('width' in entity ? entity['width'] : 1) * 64;
 	var y2 = y + ('height' in entity ? entity['height'] : 1) * 64;
-	area['top'] = y;
 	area.attr('coords', x + ', ' + y + ', ' + x2 + ', ' + y2);
 
 	if('group' in entity)
@@ -140,11 +133,14 @@ function parse_entity(entity) {
 	});
 
 	area.bind("click", function() {
-		show_permalink(layer_name, entity['index']);
+		show_permalink(entity['index']);
 	});
 
-	if(entity['index'] == highlight)
+	if(entity['index'] == highlight) {
+		show_permalink(entity['index']);
+		$(document).scrollTop(y);
 		highlight = area;
+	}
 
 	return area
 }
@@ -165,7 +161,6 @@ function show_explanations() {
 	entities_image.maphilight();
 
 	if($(highlight).is('area')) {
-		$(document).scrollTop(highlight['top']);
 		highlight.trigger("mouseover");
 	}
 	highlight = null;

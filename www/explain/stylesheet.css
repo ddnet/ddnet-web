@@ -64,6 +64,6 @@ area {
 	padding: 2px;
 }
 
-#permalink {
-	height: 50px;
+#permalink_container {
+	margin-bottom: 24px;
 }
