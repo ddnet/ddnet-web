@@ -6,7 +6,7 @@ tag: current
 head: <link rel="stylesheet" href="/css-halloween.css" />
 ---
 As you can see, DDNet also celebrates Halloween. That's why we have prepared several attractions to provide you with a creepy atmosphere.
-It's a good time to have fun with your friends on our servers, so <a href="http://ddnet.tw/skins/index.php?filter=phalloween">get dressed up</a> and join one of these Halloween servers:
+It's a good time to have fun with your friends on our servers, so <a href="/skins/index.php?filter=phalloween">get dressed up</a> and join one of these Halloween servers:
 <ul>
   <li><b>GER:</b> ger.ddnet.tw:8344</li>
   <li><b>GER2:</b> ger2.ddnet.tw:8344</li>

@@ -13,9 +13,9 @@ All the work put into DDNet and the collected data stays available for other ser
 - <https://github.com/ddnet/ddnet-scripts>: Scripts and instructions for running an official server
 - <https://github.com/ddnet/ddnet-maps>: All maps ever released
 - <https://github.com/ddnet/ddnet-web>: Website source
-- <http://ddnet.tw/stats/>: Statistics and all [ranks](/ranks/) ever made ([CSV](/stats/ddnet-stats.zip), [SQL](/stats/ddnet-sql.zip))
+- </stats/>: Statistics and all [ranks](/ranks/) ever made ([CSV](/stats/ddnet-stats.zip), [SQL](/stats/ddnet-sql.zip))
 
-Interested server hosters can use IRC ([#ddnet](irc://irc.quakenet.org/ddnet) on Quakenet, [Webchat](http://webchat.quakenet.org/?channels=ddnet&uio=d4)) or [the forum](http://forum.ddnet.tw/viewforum.php?f=4) if they need help.
+Interested server hosters can use IRC ([#ddnet](irc://irc.quakenet.org/ddnet) on Quakenet, [Webchat](http://webchat.quakenet.org/?channels=ddnet&uio=d4)) or [the forum](//forum.ddnet.tw/viewforum.php?f=4) if they need help.
 
 I hope you all had a great time on DDNet and met many nice people from all over the world. Enjoy your life!
 
