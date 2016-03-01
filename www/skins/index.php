@@ -15,29 +15,22 @@ function change ($array, $a, $b, $c, $d) {
   return $array;
 }
 
+function sanitize ($a) {
+  return preg_replace("/[^A-Za-z]/", "", $a) . "~" . preg_replace("/[A-Za-z]/", "", $a);
+}
+
 function cmp ($a, $b) {
   if ($a == $b)
     return 0;
 
-  $a = strtolower($a);
-  $b = strtolower($b);
-
-  if ($a[0] == "/")
-    $a = "~".$a;
-  if ($b[0] == "/")
-    $b = "~".$b;
+  $a = strtolower(sanitize($a));
+  $b = strtolower(sanitize($b));
 
   return ($a < $b) ? -1 : 1;
 }
 
 function rcmp ($a, $b) {
-  if ($a == $b)
-    return 0;
-
-  $a = strtolower($a);
-  $b = strtolower($b);
-
-  return ($a > $b) ? -1 : 1;
+  return cmp($b, $a);
 }
 
 function filter ($array, $re) {
