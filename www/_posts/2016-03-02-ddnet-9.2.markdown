@@ -10,9 +10,9 @@ DDNet 9.2 has been released with the following changes:
 <ul>
   <li>[Client] <strong>Add quick search for skin selection (by timakro)</strong></li>
   <li>[Server] <strong>No respawn delay on suicide else possiblity to respawn instantly by firing (by HMH)</strong></li>
-  <li>[Client] Fix memory leak that occured when playing with dummy (by deen)</li>
+  <li>[Client] Fix memory leak that occured when playing with dummy</li>
   <li>[Client] Fix: Move kill messages down in case fps is shown (by timakro)</li>
-  <li>[Server] Veto right applies to people who are on a server instead of in a race for a long time (by deen)</li>
+  <li>[Server] Veto right applies to people who are on a server instead of in a race for a long time</li>
   <li>[Server] New config option <i>sv_join_vote_delay=1</i> if true you have to wait 60 seconds after joining until you can vote, doesn't apply when joining empty servers (by heinrich5991)</li>
   <li>[Server] New config option <i>sv_server_info_per_second=50</i> to control how many complete server info responses are maximal sent per second, fixes DoS vulnerability (by heinrich5991)</li>
   <li>[Translation] Tons of additions to the chinese language (by awaysoft)</li>
