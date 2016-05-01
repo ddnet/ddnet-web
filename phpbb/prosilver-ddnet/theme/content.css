@@ -571,7 +571,7 @@ blockquote .codebox {
 .attach-image {
 	margin: 3px 0;
 	max-width: 100%;
-	max-height: 350px;
+	max-height: 700px;
 	overflow: auto;
 }
 
