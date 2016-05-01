@@ -20,6 +20,30 @@ title: Downloads - DDraceNetwork
 <div class="dlinfo">
   <strong>Changelog</strong>
   <ul>
+    <li>[Client] <strong>Switched to SDL2, allows pasting from clipboard and a better compatibility with new environments</strong></li>
+    <li>[Server/Client] <strong>Add a faster and easier to use hookthrough tile, read the <a href="https://forum.ddnet.tw/viewtopic.php?f=16&t=3552&p=37323#p37323">tutorial</a> (by timakro)</strong></li>
+    <li>[Client] <strong>Added overlay entities support for other gametypes including OpenFNG and Race (by Soreu & timakro)</strong></li>
+    <li>[Client] Update mapping and overlay entities (by Soreu)</li>
+    <li>[Client] Add client setting <i>cl_show_local_time_always=0</i> if true show the current time ingame at the top of the screen</li>
+    <li>[Client] Rename <i>cl_reconnect_ban</i> to <i>cl_reconnect_timeout</i></li>
+    <li>[Client] Remove <i>cl_reconnect_full</i> and <i>cl_reconnect_full_timeout</i>, set <i>cl_reconnect_timeout</i> or <i>cl_reconnect_full</i> to 0 to deactivate reconnecting now</li>
+    <li>[Client] Add function to remove messages from demo when slicing it</li>
+    <li>[Client] Add client command <i>demo_speed i[speed]</i> to set the demo playing speed</li>
+    <li>[Client] Remove ingame network tab to show browser and ghost tab directly</li>
+    <li>[Client] Show ingame ghost tab only on race servers (by Henningstone)</li>
+    <li>[Client] Alert if layer size is bigger than 1000 to prevent unnecessary huge layers</li>
+    <li>[Client] Add shorcut key F5 or CTRL+R to reload server and demo browser</li>
+    <li>[Client] Make double click work on votes</li>
+    <li>[Client] Key up/down in serverbrowser doesn't change friend list</li>
+    <li>[Client] Make fading border in menu more customizeable (by Soreu & timakro)</li>
+    <li>[Client] Fix: No tab selected when joining server from news page</li>
+    <li>[Client] Fix: <i>gfx_resizable</i> on by default with X11</li>
+    <li>[Server] Add server settings <i>sv_connlimit=4</i> and <i>sv_connlimit_time=20</i> to control the number of connections an IP is allowed to do in a timespan</li>
+    <li>[Development] Allow autoupdater to update DLL files (by Learath2)</li>
+    <li>[Editor] Prevent placing unused tiles, <strong>mapping for other gametypes requires activating the 'Unused' button now!</strong></li>
+    <li>[Editor] Rearrange editor buttons to fit for 5:4 resolutions and a cleaner look (by timakro)</li>
+    <li>[Mapping] Add map setting <i>sv_deepfly=1</i> if false deepfly doesn't work anymore, useful for dummy maps (by timakro)</li>
+    <li>[Mapping] Improve automapper for <i>ddnet_tiles.png</i> (by hi_leute_gll)</li>
   </ul>
   <a href="https://github.com/ddnet/ddnet/compare/9.3.1...10.0">Full list of git changes</a>
 </div>
