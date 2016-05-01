@@ -1,0 +1,10 @@
+---
+layout: post
+title: "DDNet 10.0 has been released"
+permalink: /news/ddnet-10.0/
+tag: current
+---
+
+DDNet 10.0 has been released with the following changes:
+
+<a href="https://github.com/ddnet/ddnet/compare/9.3.1...10.0">Full list of git changes</a>
