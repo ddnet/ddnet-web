@@ -22,18 +22,20 @@ menu: |
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
   <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
-  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>MAX_CLIENTS</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_team_lock</td><td>Enable team lock</td><td>1</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
-  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for DDRace Beta) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
+  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td></tr>
   <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td></tr>
+  <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>700</td></tr>
   <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
   <tr><td>sv_teleport_lose_weapons</td><td>Lose weapons when teleported (useful for some race maps)</td><td>0</td></tr>
+  <tr><td>sv_deepfly</td><td>Allow fire non auto weapons when deep</td><td>1</td></tr>
 </table>
 <table class="settingscommands">
   <tr><th>Command</th><th>Description</th></tr>
@@ -62,6 +64,7 @@ menu: |
   <tr><td>sv_register</td><td>Register server with master server for public listing</td><td>1</td></tr>
   <tr><td>sv_rcon_password</td><td>Remote console password (full access)</td><td>""</td></tr>
   <tr><td>sv_rcon_mod_password</td><td>Remote console password for moderators (limited access)</td><td>""</td></tr>
+  <tr><td>sv_rcon_helper_password</td><td>Remote console password for helpers (limited access)</td><td>""</td></tr>
   <tr><td>sv_rcon_max_tries</td><td>Maximum number of tries for remote console authentication</td><td>30</td></tr>
   <tr><td>sv_rcon_bantime</td><td>The time a client gets banned if remote console authentication fails. 0 makes it just use kick</td><td>5</td></tr>
   <tr><td>sv_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
@@ -69,6 +72,8 @@ menu: |
   <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>1</td></tr>
   <tr><td>sv_player_demo_record</td><td>Automatically record demos for each player</td><td>0</td></tr>
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
+  <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second</td><td>50</td></tr>
+  <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit</td><td>10</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
   <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
@@ -101,7 +106,7 @@ menu: |
   <tr><td>sv_vote_yes_percentage</td><td>The percent of people that need to agree or deny for the vote to succeed/fail</td><td>50</td></tr>
   <tr><td>sv_vote_majority</td><td>Whether No. of Yes is compared to No. of No votes or to number of total Players ( Default is 0 Y compare N)</td><td>0</td></tr>
   <tr><td>sv_vote_max_total</td><td>How many people can participate in a vote at max (0 = no limit by default)</td><td>0</td></tr>
-  <tr><td>sv_vote_veto_time</td><td>Minutes of game time until a player can veto map change votes (0 = disabled)</td><td>20</td></tr>
+  <tr><td>sv_vote_veto_time</td><td>Minutes of time on a server until a player can veto map change votes (0 = disabled)</td><td>20</td></tr>
   <tr><td>sv_spectator_votes</td><td>Choose if spectators are allowed to start votes</td><td>1</td></tr>
   <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>3</td></tr>
   <tr><td>sv_suicide_penalty</td><td>The minimum time in seconds between kill or /kills and respawn</td><td>0</td></tr>
@@ -115,6 +120,7 @@ menu: |
   <tr><td>sv_sql_pw</td><td>SQL Password</td><td>"tee"</td></tr>
   <tr><td>sv_sql_ip</td><td>SQL Database IP</td><td>"127.0.0.1"</td></tr>
   <tr><td>sv_sql_port</td><td>SQL Database port</td><td>3306</td></tr>
+  <tr><td>sv_sql_create_tables</td><td>Try to create the SQL tables when starting</td><td>1</td></tr>
   <tr><td>sv_sql_database</td><td>SQL Database name</td><td>"teeworlds"</td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>"UNK"</td></tr>
   <tr><td>sv_sql_prefix</td><td>SQL Database table prefix</td><td>"record"</td></tr>
@@ -132,13 +138,13 @@ menu: |
   <tr><td>sv_rules_line9</td><td>Rules line 9</td><td>""</td></tr>
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>""</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
-  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 16)</td><td>MAX_CLIENTS</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_team_lock</td><td>Enable team lock</td><td>1</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
   <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>"announcement.txt"</td></tr>
   <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td></tr>
   <tr><td>sv_announcement_random</td><td>Whether announcements are sequential or random</td><td>1</td></tr>
-  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for DDRace Beta) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
+  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
   <tr><td>sv_slash_me</td><td>Whether /me is active on the server or not</td><td>0</td></tr>
   <tr><td>sv_rejoin_team_0</td><td>Make a team automatically rejoin team 0 after finish (only if not locked)</td><td>1</td></tr>
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
@@ -151,6 +157,7 @@ menu: |
   <tr><td>sv_max_afk_vote_time</td><td>The time in seconds a player can be afk and his votes still count (0 = disabled)</td><td>300</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td></tr>
   <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td></tr>
+  <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>700</td></tr>
   <tr><td>sv_vote_pause</td><td>Allow voting to pause players (instead of moving to spectators)</td><td>1</td></tr>
   <tr><td>sv_vote_pause_time</td><td>The time (in seconds) players have to wait in pause when paused by vote</td><td>10</td></tr>
   <tr><td>sv_tune_reset</td><td>Whether tuning is reset after each map change or not</td><td>1</td></tr>
@@ -166,6 +173,7 @@ menu: |
   <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>1</td></tr>
   <tr><td>sv_rank_cheats</td><td>Enable ranks after cheats have been used (file based server only)</td><td>0</td></tr>
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as noone is on it anymore</td><td>0</td></tr>
+  <tr><td>sv_reload_when_empty</td><td>Reload map when server is empty (1 = reload once, 2 = reload everytime server gets empty)</td><td>0</td></tr>
   <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>20</td></tr>
   <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
   <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>"Get DDNet client from DDNet.tw to use all features on DDNet!"</td></tr>
@@ -173,6 +181,8 @@ menu: |
   <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>"Your client has bots and can be remote controlled!\nPlease use another client like DDNet client from DDNet.tw"</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
+  <tr><td>sv_connlimit</td><td>Connlimit: Number of connections an IP is allowed to do in a timespan</td><td>4</td></tr>
+  <tr><td>sv_connlimit_time</td><td>Connlimit: Time in which IP's connections are counted</td><td>20</td></tr>
   <tr><td>sv_warmup</td><td>Number of seconds to do warmup before round starts</td><td>0</td></tr>
   <tr><td>sv_motd</td><td>Message of the day to display for the clients</td><td>""</td></tr>
   <tr><td>sv_teamdamage</td><td>Team damage</td><td>0</td></tr>
@@ -182,7 +192,6 @@ menu: |
   <tr><td>sv_powerups</td><td>Allow powerups like ninja</td><td>1</td></tr>
   <tr><td>sv_scorelimit</td><td>Score limit (0 disables)</td><td>20</td></tr>
   <tr><td>sv_timelimit</td><td>Time limit in minutes (0 disables)</td><td>0</td></tr>
-  <tr><td>sv_gametype</td><td>Game type (dm, tdm, ctf)</td><td>"dm"</td></tr>
   <tr><td>sv_tournament_mode</td><td>Tournament mode. When enabled, players joins the server as spectator</td><td>0</td></tr>
   <tr><td>sv_spamprotection</td><td>Spam protection</td><td>1</td></tr>
   <tr><td>sv_respawn_delay_tdm</td><td>Time needed to respawn after death in tdm gametype</td><td>3</td></tr>
@@ -195,11 +204,13 @@ menu: |
   <tr><td>sv_vote_spectate_rejoindelay</td><td>How many minutes to wait before a player can rejoin after being moved to spectators by vote</td><td>3</td></tr>
   <tr><td>sv_vote_kick</td><td>Allow voting to kick players</td><td>1</td></tr>
   <tr><td>sv_vote_kick_min</td><td>Minimum number of players required to start a kick vote</td><td>0</td></tr>
-  <tr><td>sv_vote_kick_bantime</td><td>The time to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td></tr>
+  <tr><td>sv_vote_kick_bantime</td><td>The time in seconds to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td></tr>
+  <tr><td>sv_join_vote_delay</td><td>Add a delay before recently joined players can vote</td><td>1</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
   <tr><td>sv_teleport_lose_weapons</td><td>Lose weapons when teleported (useful for some race maps)</td><td>0</td></tr>
+  <tr><td>sv_deepfly</td><td>Allow fire non auto weapons when deep</td><td>1</td></tr>
   <tr><td>sv_mapupdaterate</td><td>64 player id <-> vanilla id players map update rate</td><td>5</td></tr>
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
@@ -216,9 +227,8 @@ menu: |
   <tr><td>echo</td><td>Echo the text</td></tr>
   <tr><td>exec</td><td>Execute the specified file</td></tr>
   <tr><td>toggle</td><td>Toggle config value</td></tr>
-  <tr><td>mod_command</td><td>Specify command accessibility for moderators</td></tr>
-  <tr><td>mod_status</td><td>List all commands which are accessible for moderators</td></tr>
-  <tr><td>user_status</td><td>List all commands which are accessible for users</td></tr>
+  <tr><td>access_level</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
+  <tr><td>access_status</td><td>List all commands which are accessible for admin = 0, moderator = 1, helper = 2, all = 3</td></tr>
   <tr><td>cmdlist</td><td>List all commands which are accessible for users</td></tr>
   <tr><td>ban</td><td>Ban ip for x minutes for any reason</td></tr>
   <tr><td>ban_range</td><td>Ban ip range for x minutes for any reason</td></tr>
@@ -292,7 +302,7 @@ menu: |
   <tr><td>rank</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
   <tr><td>rules</td><td>Shows the server rules</td></tr>
   <tr><td>team</td><td>Lets you join team i (shows your team if left blank)</td></tr>
-  <tr><td>lock</td><td>Lock team so noone else can join it</td></tr>
+  <tr><td>lock</td><td>Lock team so no-one else can join it</td></tr>
   <tr><td>top5team</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>teamtop5</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>top5</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
@@ -317,16 +327,17 @@ menu: |
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td></tr>
   <tr><td>cl_antiping_limit</td><td>Antiping limit (0 to disable)</td><td>0</td></tr>
-  <tr><td>cl_antiping</td><td>Antiping (sets all Antiping settings)</td><td>0</td></tr>
-  <tr><td>cl_antiping_players</td><td>Antiping (predict other players' movements)</td><td>0</td></tr>
-  <tr><td>cl_antiping_grenade</td><td>Antiping (predict grenades)</td><td>0</td></tr>
-  <tr><td>cl_antiping_weapons</td><td>Antiping (predict weapons)</td><td>0</td></tr>
+  <tr><td>cl_antiping</td><td>Enable antiping, i. e. more aggressive prediction.</td><td>0</td></tr>
+  <tr><td>cl_antiping_players</td><td>Predict other player's movement more aggressively (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
+  <tr><td>cl_antiping_grenade</td><td>Predict grenades (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
+  <tr><td>cl_antiping_weapons</td><td>Predict weapon projectiles (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
   <tr><td>cl_nameplates</td><td>Show name plates</td><td>1</td></tr>
   <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td></tr>
   <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td></tr>
   <tr><td>cl_nameplates_size</td><td>Size of the name plates from 0 to 100%</td><td>50</td></tr>
   <tr><td>cl_nameplates_clan</td><td>Show clan in name plates</td><td>0</td></tr>
   <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td></tr>
+  <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>0</td></tr>
@@ -339,7 +350,10 @@ menu: |
   <tr><td>cl_show_chat_friends</td><td>Show only chat messages from friends</td><td>0</td></tr>
   <tr><td>cl_showkillmessages</td><td>Show kill messages</td><td>1</td></tr>
   <tr><td>cl_show_votes_after_voting</td><td>Show votes window after voting</td><td>0</td></tr>
+  <tr><td>cl_show_local_time_always</td><td>Always show local time</td><td>0</td></tr>
   <tr><td>cl_showfps</td><td>Show ingame FPS counter</td><td>0</td></tr>
+  <tr><td>cl_eye_wheel</td><td>Show eye wheel along together with emotes</td><td>1</td></tr>
+  <tr><td>cl_eye_duration</td><td>How long the eyes emotes last</td><td>999999</td></tr>
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td></tr>
@@ -360,11 +374,10 @@ menu: |
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
   <tr><td>cl_version_server</td><td>Server to use to check for new versions</td><td>"version.teeworlds.com"</td></tr>
   <tr><td>cl_ddnet_version_server</td><td>Server to use to check for new ddnet versions</td><td>"version.ddnet.tw"</td></tr>
-  <tr><td>cl_ddnet_update_server</td><td>Server to use to update new ddnet versions</td><td>"update.ddnet.tw"</td></tr>
+  <tr><td>cl_ddnet_update2_server</td><td>Server to use to update new ddnet versions</td><td>"update2.ddnet.tw"</td></tr>
   <tr><td>cl_ddnet_maps_server</td><td>Server to use to download maps</td><td>"maps.ddnet.tw"</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>""</td></tr>
-  <tr><td>cl_show_new_skins</td><td>Show new skins ingame</td><td>1</td></tr>
-  <tr><td>cl_show_custom_skins</td><td>Show custom skins ingame</td><td>1</td></tr>
+  <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td></tr>
   <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td></tr>
   <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td></tr>
@@ -407,11 +420,13 @@ menu: |
   <tr><td>password</td><td>Password to the server</td><td>""</td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
+  <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td></tr>
   <tr><td>cl_cpu_throttle</td><td></td><td>0</td></tr>
   <tr><td>cl_cpu_throttle_inactive</td><td></td><td>1</td></tr>
   <tr><td>cl_editor</td><td></td><td>0</td></tr>
   <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td></tr>
   <tr><td>cl_load_country_flags</td><td>Load and show country flags</td><td>1</td></tr>
+  <tr><td>cl_skin_filter_string</td><td>Skin filtering string</td><td>""</td></tr>
   <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
   <tr><td>cl_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>0</td></tr>
@@ -461,6 +476,7 @@ menu: |
   <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
   <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
   <tr><td>snd_highlight</td><td>Enable highlighted chat sound</td><td>1</td></tr>
+  <tr><td>gfx_screen</td><td>Screen index</td><td>0</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>0</td></tr>
@@ -472,6 +488,7 @@ menu: |
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td></tr>
   <tr><td>gfx_clear</td><td>Clear screen before rendering</td><td>1</td></tr>
   <tr><td>gfx_vsync</td><td>Vertical sync</td><td>1</td></tr>
+  <tr><td>gfx_resizable</td><td>Enables window resizing</td><td>1</td></tr>
   <tr><td>gfx_display_all_modes</td><td></td><td>0</td></tr>
   <tr><td>gfx_texture_compression</td><td>Use texture compression</td><td>0</td></tr>
   <tr><td>gfx_high_detail</td><td>High detail</td><td>0</td></tr>
@@ -484,9 +501,7 @@ menu: |
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
   <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>0</td></tr>
-  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>0</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
-  <tr><td>gfx_threaded_old</td><td>Use the threaded graphics backend</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
@@ -497,13 +512,10 @@ menu: |
   <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
   <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td></tr>
   <tr><td>dbg_stress_server</td><td>Server to stress</td><td>"localhost"</td></tr>
-  <tr><td>dbg_resizable</td><td>Enables window resizing</td><td>0</td></tr>
   <tr><td>cl_race_binds</td><td>Enable Default DDRace builds when pressing the reset binds button</td><td>1</td></tr>
   <tr><td>cl_race_binds_set</td><td>Whether the DDRace binds set or not (this is automated you don't need to use this)</td><td>0</td></tr>
-  <tr><td>cl_reconnect_ban</td><td>Auto reconnect when banned</td><td>1</td></tr>
-  <tr><td>cl_reconnect_full</td><td>Auto reconnect when server is full</td><td>1</td></tr>
-  <tr><td>cl_reconnect_ban_timeout</td><td>How many seconds to wait before reconnecting (when banned)</td><td>120</td></tr>
-  <tr><td>cl_reconnect_full_timeout</td><td>How many seconds to wait before reconnecting (when server is full)</td><td>120</td></tr>
+  <tr><td>cl_reconnect_timeout</td><td>How many seconds to wait before reconnecting (after timeout, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
   <tr><td>cl_message_system_hue</td><td>System message color hue</td><td>255</td></tr>
   <tr><td>cl_message_system_sat</td><td>System message color saturation</td><td>255</td></tr>
   <tr><td>cl_message_system_lht</td><td>System message color lightness</td><td>255</td></tr>
@@ -562,6 +574,7 @@ menu: |
   <tr><td>cl_show_console</td><td>Show console window (Windows only)</td><td>0</td></tr>
   <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>1</td></tr>
   <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>0</td></tr>
+  <tr><td>cl_config_version</td><td>The config version. Helps newer clients fix bugs with older configs.</td><td>0</td></tr>
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_slice_end</td><td>End marer for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td></tr>
@@ -637,6 +650,7 @@ menu: |
   <tr><td>demo_slice_start</td><td></td></tr>
   <tr><td>demo_slice_end</td><td></td></tr>
   <tr><td>demo_play</td><td>Play demo</td></tr>
+  <tr><td>demo_speed</td><td>Set demo speed</td></tr>
 </table>
 </div>
 <div class="block">
