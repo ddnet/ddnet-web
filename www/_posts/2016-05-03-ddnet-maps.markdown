@@ -13,3 +13,5 @@ To download this repository you have two choices:
 
 1. [Download the ZIP](https://github.com/ddnet/ddnet-maps/archive/master.zip) and you get a current snapshot of all maps, but can't easily update it.
 2. `git clone https://github.com/ddnet/ddnet-maps` and you have the full history of this git repository. To update your copy of maps simply execute `git pull`.
+
+To follow our map releases you can also check out [Recent Map Releases](https://ddnet.tw/releases/) or subscribe to [the feed](https://ddnet.tw/releases/feed/).
