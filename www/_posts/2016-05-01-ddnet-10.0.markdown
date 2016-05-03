@@ -35,3 +35,5 @@ DDNet 10.0 has been released with the following changes:
 </ul>
 
 <a href="https://github.com/ddnet/ddnet/compare/9.3.1...10.0">Full list of git changes</a>
+
+Since DDNet 10.0, if you're on Linux you need to install SDL2 using your package manager. On Debian and Ubuntu this can be done using `sudo apt-get install libsdl2-2.0`
