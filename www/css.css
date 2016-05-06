@@ -217,6 +217,13 @@ a:hover {
   min-width: 2em;
 }
 
+body:not(#phpbb) code {
+  background-color: rgba(0, 0, 0, 0.075);
+  border-radius: 2px;
+  font-family: "Courier New", "Courier", monospace;
+  padding: 0px 3px 1px 3px;
+}
+
 img {
   border: 0 none;
   vertical-align: middle;
