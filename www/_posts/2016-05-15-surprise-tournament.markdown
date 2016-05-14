@@ -4,7 +4,7 @@ title: "Surprise Tournament!"
 permalink: /news/surprise-tournament/
 tag: current
 ---
-Moderate Tournament on brand-new map by TyxpekCZ will take place on Sunday, May 15 at 20:00 CEST:
+Moderate (★✰✰✰✰) Tournament on brand-new map by TyxpekCZ will take place on Sunday, May 15 at 20:00 CEST:
 
 [<img class="demo" src="/Noovice!.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=3646)
 
