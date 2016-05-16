@@ -32,7 +32,7 @@ $(document).ready(function() { $("#jsclient").focus() });
 </script>
 -->
 <div class="startvideo"><div class="video-container">
-	<iframe allowfullscreen class="ytplayer" src="https://www.youtube.com/embed/veB2xSMsizw?autoplay=0&hd=1&iv_load_policy=3"></iframe>
+	<iframe allowfullscreen class="ytplayer" src="https://www.youtube.com/embed/wzfSDzgP6mA?autoplay=0&hd=1&iv_load_policy=3"></iframe>
 </div></div>
 <div class="startimages">
 	<a href="www.ddnet.tw.png"><img class="demo" alt="Demo" src="www.ddnet.tw.png"/></a>
