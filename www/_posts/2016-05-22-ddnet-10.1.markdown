@@ -8,13 +8,13 @@ tag: current
 DDNet 10.1 has been released with the following changes:
 
 <ul>
-  <li>[Client] <strong>Add <i>cl_showpred=0</i> to show prediction time (similar to ping) ingame (by Ryozuki)</strong></li>
+  <li>[Client] <strong>Add <i>cl_showpred 1</i> to show prediction time (similar to ping) ingame (by Ryozuki)</strong></li>
   <li>[Editor] <strong>Add auto gametile placer for hookthrough (by timakro)</strong></li>
   <li>[Editor] <strong>Merge buttons for tele, switch, tune and speedup layer into one (by BannZay)</strong></li>
   <li>[Client] Jump to the next word when pressing CTRL+arrowkey in chat (by Henningstone)</li>
   <li>[Client] Make <i>cl_show_ids</i> also show client ids in chat</li>
-  <li>[Client] Add <i>gfx_highdpi=0</i> for experimental High-DPI screen support</li>
-  <li>[Client] Add <i>inp_mouseold=0</i> for old mouse input</li>
+  <li>[Client] Add <i>gfx_highdpi 1</i> for experimental High-DPI screen support</li>
+  <li>[Client] Add <i>inp_mouseold 1</i> for old mouse input</li>
   <li>[Client] Improve fullscreen in Gnome</li>
   <li>[Client] Improve handling of multiple screens</li>
   <li>[Client] Disable input when window focus lost</li>
@@ -28,7 +28,7 @@ DDNet 10.1 has been released with the following changes:
   <li>[Client] Fix "vanilla skins only" setting in menu</li>
   <li>[Client] Fix buffer overflow when pasting text (thanks to Im 'corneum)</li>
   <li>[Client] Add support for old race server racetime messages in HUD, including checkpoint time difference</li>
-  <li>[Client] Add client setting <i>cl_ignored_modifiers=0</i> to ignore a set of keyboard modifiers, 0 ignores nothing, use <a href="https://github.com/ddnet/ddnet/blob/a8ce73dffaca66e732d5626dc733fa1e9b93fb44/src/engine/client/input.cpp#L174-L187">these values</a> to ignore certain modifiers</li>
+  <li>[Client] Add client setting <i>cl_ignored_modifiers</i> to ignore a set of keyboard modifiers, 0 ignores nothing, use <a href="https://github.com/ddnet/ddnet/blob/a8ce73dffaca66e732d5626dc733fa1e9b93fb44/src/engine/client/input.cpp#L174-L187">these values</a> to ignore certain modifiers</li>
   <li>[Client] Immediately accept input while console is still opening</li>
   <li>[Client] Disable antiping on solo servers and in solo parts</li>
   <li>[Server/Client] Fix fifo console bug that caused a crash (by Henningstone)</li>
