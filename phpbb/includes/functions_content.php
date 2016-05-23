@@ -879,14 +879,14 @@ function make_clickable($text, $server_url = false, $class = 'postlink')
 
 		// Player profile
 		$magic_url_match_args[$server_url][] = array(
-			'#(^|[\n\t (>.])(https?://ddnet.tw/players/.*/?)#i',
+			'#(^|[\n\t (>.])(https?://ddnet.tw/players/[^\n\t ]*/?)#i',
 			MAGIC_URL_DDNET,
 			$local_class,
 		);
 
 		// Mapper profile
 		$magic_url_match_args[$server_url][] = array(
-			'#(^|[\n\t (>.])(https?://ddnet.tw/mappers/.*/?)#i',
+			'#(^|[\n\t (>.])(https?://ddnet.tw/mappers/[^\n\t ]*/?)#i',
 			MAGIC_URL_DDNET,
 			$local_class,
 		);
