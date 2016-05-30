@@ -45,8 +45,10 @@ $(function(){
         rowCount = $(table1 + ' >tbody >tr').length;
         if (rowCount < min_table_height * 3 + 1)
             splitBy = min_table_height + 1;
-        else
-            splitBy = (rowCount / 3) + (rowCount % 3) + 1;
+        else {
+            modulo = rowCount % 3 > 0 ? 1 : 0;
+            splitBy = (rowCount / 3) + modulo + 1;
+        }
 
 
         // split table1->table2
