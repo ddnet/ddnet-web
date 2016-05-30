@@ -39,6 +39,11 @@ $(function(){
         table2 = $(table1).next();
         table3 = $(table2).next();
 
+        // return if it's already columnized
+        if ($(table2 + ':has(tr)') &&
+            $(table3 + ':has(tr)'))
+            return;
+
         // set minimum table row height
         min_table_height = 20;
 
