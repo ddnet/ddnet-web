@@ -1,19 +1,19 @@
 <script type="text/javascript">
 $(function() {
   var costs = {
-    "ddnet": 89,
-    "ger":  [269, 360],
-    "rus":  [54, 72],
+    "ddnet": 79,
+    "ger":  198,
+    "rus":  100,
     "irn":  "ChuCky",
-    "chl":  324,
+    "chl":  117,
     "bra":  "RafaelFF",
     "zaf":  "lordtheuns",
-    "usa":  [56, 96],
+    "usa":  72,
     "can":  "o_tee_one",
     "chn":  "Tom",
   };
-  var donated = 948;
-  var old = 658;
+  var donated = 0;
+  var old = 1600;
   var sum = 0;
   var sumToPay = 0;
   var sumPartSponsored = 0;
@@ -61,14 +61,14 @@ $(function() {
   }
 
   var total = donated + sumPartSponsored;
-  var rest = 0;
+  var rest = 948;
   if (total > sum) {
-    rest = total - sum;
+    rest += total - sum;
     total = sum;
   }
 
   $("#funding-total").progressbar({value: 100 * total / sum});
-  $("#funding-total .progress-label").text(total.toFixed() + " € donated / " + sum + " € cost 2015");
+  $("#funding-total .progress-label").text(total.toFixed() + " € donated / " + sum + " € cost 2016");
   var color = '#F6A828';
   if (total >= sum) {
     color = '#37d628';
@@ -101,7 +101,7 @@ $(function() {
   }
 
   $("#funding-old").progressbar({value: 100 * rest / old});
-  $("#funding-old .progress-label").text(rest.toFixed() + " € / " + old + " € cost 2014 & 2013");
+  $("#funding-old .progress-label").text(rest.toFixed() + " € / " + old + " € cost 2013 - 2015");
   color = '#F6A828';
   if (rest >= old) {
     color = '#37d628';
