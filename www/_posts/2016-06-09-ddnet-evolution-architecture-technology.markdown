@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DDNet Evolution, Architecture & Technology"
+title: "Experiences of Running an Online Game for 3 Years"
 permalink: /news/ddnet-evolution-architecture-technology/
 tag: current
 ---
