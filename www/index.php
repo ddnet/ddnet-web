@@ -105,7 +105,7 @@ if ($user_os == 'win32') {
 <a href="feed/"><img src="feed.svg" alt="Feed"/></a>
 <a href="https://github.com/ddnet/"><img src="github.svg" alt="GitHub"/></a>
 
-<div class="right" style="max-width: 20em;">
+<div class="right" style="width: 100%; max-width: 20em;">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width: 100%;"><div class="progress-label"></div></div></a>
   <a href="/funding/"><div class="progressbar" id="funding-old" style="width: 100%;"><div class="progress-label"></div></div></a>
   <script src="/jquery.js" type="text/javascript"></script>
