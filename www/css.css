@@ -67,6 +67,7 @@ body:not(#phpbb) .block {
 
 .news-content ul {
   margin-left: 1.5em;
+  padding-left: 0;
 }
 
 .news-content ol {
