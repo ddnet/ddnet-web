@@ -65,8 +65,13 @@ body:not(#phpbb) .block {
   color: #000000;
 }
 
-.news-content {
+.news-content ul {
   margin-left: 1.5em;
+}
+
+.news-content ol {
+  margin-left: 1.5em;
+  padding-left: 0;
 }
 
 .download-button {
@@ -715,8 +720,8 @@ menu {
 
 menu li {
   display: inline-block;
-  padding-right: 1em;
-  padding-left: 1em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 
 menu li:before {
@@ -727,7 +732,7 @@ menu ul {
   margin: 0;
   margin-bottom: 1em;
   list-style-type: none;
-  text-align: center;
+  text-align: justify;
   padding: 0;
 }
 
@@ -766,7 +771,7 @@ section {
 
 .startimages {
   float: left;
-  margin: 0.5em;
+  margin: 0.5em 0 0.5em 0;
   width: 100%;
   min-width: 20em;
 }
