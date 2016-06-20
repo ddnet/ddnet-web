@@ -117,16 +117,17 @@ a:hover {
   color: #000000;
 }
 
-.staff li {
-  display: inline;
+ul.staff li {
+  display: inline-block;
   padding-right: 1.5em;
+  margin-bottom: 0.5em;
 }
 
-.staff li:before {
+ul.staff li:before {
   content: "";
 }
 
-.staff ul {
+ul.staff ul {
   margin: 0;
   list-style-type: none;
 }
