@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Brutal Birthday Holiday Weekend
+title: "The Brutal Birthday Holiday Weekend"
 permalink: /news/brutal-birthday-holiday-weekend/
 tag: current
 ---
