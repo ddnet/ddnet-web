@@ -2,6 +2,7 @@
 layout: post
 title: "The Brutal Birthday Holiday Weekend"
 permalink: /news/brutal-birthday-holiday-weekend/
+tag: current
 ---
 
 DDNet is now 3 years old and that means it's time for another big tournament this weekend, on August 6 and 7!
