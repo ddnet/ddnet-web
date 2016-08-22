@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DDNet CHN on new server
+title: "DDNet CHN on new server"
 permalink: /news/ddnet-chn-new-server/
 tag: current
 ---
