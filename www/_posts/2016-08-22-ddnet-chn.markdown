@@ -2,6 +2,7 @@
 layout: post
 title: "DDNet CHN on new server
 permalink: /news/ddnet-chn-new-server/
+tag: current
 ---
 
 DDNet CHN has been switched to a new server with a new IP. If you're using favorites, update them!
