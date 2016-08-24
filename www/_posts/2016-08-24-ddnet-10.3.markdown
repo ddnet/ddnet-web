@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet 10.3 has been released"
+permalink: /news/ddnet-10.3/
+tag: current
+---
+
+DDNet 10.3 has been released. You can download it on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/10.2.1...10.3).
