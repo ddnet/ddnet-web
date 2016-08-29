@@ -96,6 +96,7 @@ function uptime() {
 						"<td id=\"hdd\"><div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-warning\"><small>Loading...</small></div></div></td>" +
 					"</tr>" +
 					"<tr class=\"expandRow " + hack + "\"><td colspan=\"12\"><div class=\"accordian-body collapse\" id=\"rt" + i + "\">" +
+						"<div id=\"expand_packets\">Loading...</div>" +
 						"<div id=\"expand_mem\">Loading...</div>" +
 						"<div id=\"expand_swap\">Loading...</div>" +
 						"<div id=\"expand_hdd\">Loading...</div>" +
@@ -187,7 +188,20 @@ function uptime() {
 					netstr += (result.servers[i].network_tx/1000).toFixed(0) + "K";
 				else
 					netstr += (result.servers[i].network_tx/1000/1000).toFixed(1) + "M";
+
+				var packetsstr = "Packets: ";
+				if(result.servers[i].packets_rx < 1000*1000)
+					packetsstr += (result.servers[i].packets_rx/1000).toFixed(0) + "K";
+				else
+					packetsstr += (result.servers[i].packets_rx/1000/1000).toFixed(1) + "M";
+				packetsstr += " / "
+				if(result.servers[i].packets_tx < 1000*1000)
+					packetsstr += (result.servers[i].packets_tx/1000).toFixed(0) + "K";
+				else
+					packetsstr += (result.servers[i].packets_tx/1000/1000).toFixed(1) + "M";
+
 				TableRow.children["network"].innerHTML = netstr;
+				ExpandRow[0].children["expand_packets"].innerHTML = packetsstr;
 
 				// CPU
 				if (result.servers[i].cpu >= 90)
