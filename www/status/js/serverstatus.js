@@ -47,7 +47,7 @@ function bytesToSize(bytes, precision, si)
 	}
 
 	if ((bytes >= 0) && (bytes < megabyte)) {
-		ret = (bytes / kilobyte).toFixed(precision) + ' K';
+		ret = (bytes / kilobyte).toFixed(precision) + ' k';
 
 	} else if ((bytes >= megabyte) && (bytes < gigabyte)) {
 		ret = (bytes / megabyte).toFixed(precision) + ' M';
@@ -180,29 +180,30 @@ function uptime() {
 				// Network
 				var netstr = "";
 				if(result.servers[i].network_rx < 1000*1000)
-					netstr += (result.servers[i].network_rx/1000).toFixed(0) + "K";
+					netstr += (result.servers[i].network_rx/1000).toFixed(0) + "k";
 				else
 					netstr += (result.servers[i].network_rx/1000/1000).toFixed(1) + "M";
 				netstr += "|"
 				if(result.servers[i].network_tx < 1000*1000)
-					netstr += (result.servers[i].network_tx/1000).toFixed(0) + "K";
+					netstr += (result.servers[i].network_tx/1000).toFixed(0) + "k";
 				else
 					netstr += (result.servers[i].network_tx/1000/1000).toFixed(1) + "M";
 
 				var packetsstr = "Packets: ";
 				if(result.servers[i].packets_rx < 1000)
-					packetsstr += result.servers[i].packets_rx;
+					packetsstr += result.servers[i].packets_rx + " ";
 				else if(result.servers[i].packets_rx < 1000*1000)
-					packetsstr += (result.servers[i].packets_rx/1000).toFixed(0) + "K";
+					packetsstr += (result.servers[i].packets_rx/1000).toFixed(0) + " k";
 				else
-					packetsstr += (result.servers[i].packets_rx/1000/1000).toFixed(1) + "M";
-				packetsstr += " / "
+					packetsstr += (result.servers[i].packets_rx/1000/1000).toFixed(1) + " M";
+				packetsstr += "pps / "
 				if(result.servers[i].packets_tx < 1000)
-					packetsstr += result.servers[i].packets_tx;
+					packetsstr += result.servers[i].packets_tx + " ";
 				else if(result.servers[i].packets_tx < 1000*1000)
-					packetsstr += (result.servers[i].packets_tx/1000).toFixed(0) + "K";
+					packetsstr += (result.servers[i].packets_tx/1000).toFixed(0) + " k";
 				else
-					packetsstr += (result.servers[i].packets_tx/1000/1000).toFixed(1) + "M";
+					packetsstr += (result.servers[i].packets_tx/1000/1000).toFixed(1) + " M";
+				packetsstr += "pps"
 
 				TableRow.children["network"].innerHTML = netstr;
 				ExpandRow[0].children["expand_packets"].innerHTML = packetsstr;
