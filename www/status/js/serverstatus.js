@@ -47,7 +47,7 @@ function bytesToSize(bytes, precision, si)
 	}
 
 	if ((bytes >= 0) && (bytes < megabyte)) {
-		ret = (bytes / kilobyte).toFixed(precision) + ' k';
+		ret = (bytes / kilobyte).toFixed(precision) + ' K';
 
 	} else if ((bytes >= megabyte) && (bytes < gigabyte)) {
 		ret = (bytes / megabyte).toFixed(precision) + ' M';
@@ -180,12 +180,12 @@ function uptime() {
 				// Network
 				var netstr = "";
 				if(result.servers[i].network_rx < 1000*1000)
-					netstr += (result.servers[i].network_rx/1000).toFixed(0) + "k";
+					netstr += (result.servers[i].network_rx/1000).toFixed(0) + "K";
 				else
 					netstr += (result.servers[i].network_rx/1000/1000).toFixed(1) + "M";
 				netstr += "|"
 				if(result.servers[i].network_tx < 1000*1000)
-					netstr += (result.servers[i].network_tx/1000).toFixed(0) + "k";
+					netstr += (result.servers[i].network_tx/1000).toFixed(0) + "K";
 				else
 					netstr += (result.servers[i].network_tx/1000/1000).toFixed(1) + "M";
 
