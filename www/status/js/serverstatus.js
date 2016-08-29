@@ -193,16 +193,16 @@ function uptime() {
 				if(result.servers[i].packets_rx < 1000)
 					packetsstr += result.servers[i].packets_rx + " ";
 				else if(result.servers[i].packets_rx < 1000*1000)
-					packetsstr += (result.servers[i].packets_rx/1000).toFixed(0) + " k";
+					packetsstr += (result.servers[i].packets_rx/1000).toFixed(2) + " k";
 				else
-					packetsstr += (result.servers[i].packets_rx/1000/1000).toFixed(1) + " M";
+					packetsstr += (result.servers[i].packets_rx/1000/1000).toFixed(2) + " M";
 				packetsstr += "pps / "
 				if(result.servers[i].packets_tx < 1000)
 					packetsstr += result.servers[i].packets_tx + " ";
 				else if(result.servers[i].packets_tx < 1000*1000)
-					packetsstr += (result.servers[i].packets_tx/1000).toFixed(0) + " k";
+					packetsstr += (result.servers[i].packets_tx/1000).toFixed(2) + " k";
 				else
-					packetsstr += (result.servers[i].packets_tx/1000/1000).toFixed(1) + " M";
+					packetsstr += (result.servers[i].packets_tx/1000/1000).toFixed(2) + " M";
 				packetsstr += "pps"
 
 				TableRow.children["network"].innerHTML = netstr;
