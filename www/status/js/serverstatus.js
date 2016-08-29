@@ -190,12 +190,16 @@ function uptime() {
 					netstr += (result.servers[i].network_tx/1000/1000).toFixed(1) + "M";
 
 				var packetsstr = "Packets: ";
-				if(result.servers[i].packets_rx < 1000*1000)
+				if(result.servers[i].packets_rx < 1000)
+					packetsstr += result.servers[i].packets_rx;
+				else if(result.servers[i].packets_rx < 1000*1000)
 					packetsstr += (result.servers[i].packets_rx/1000).toFixed(0) + "K";
 				else
 					packetsstr += (result.servers[i].packets_rx/1000/1000).toFixed(1) + "M";
 				packetsstr += " / "
-				if(result.servers[i].packets_tx < 1000*1000)
+				if(result.servers[i].packets_tx < 1000)
+					packetsstr += result.servers[i].packets_tx;
+				else if(result.servers[i].packets_tx < 1000*1000)
 					packetsstr += (result.servers[i].packets_tx/1000).toFixed(0) + "K";
 				else
 					packetsstr += (result.servers[i].packets_tx/1000/1000).toFixed(1) + "M";
