@@ -9,4 +9,4 @@ We haven't had a tournament in a while, so let's try something special: In the n
 
 [<img class="demo" src="/Shockwave.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=4954)
 
-The Tournament will happen on Sunday, March 19 at 20:00 CEST on Konsti's Brutal map Shockwave. The first team to finish wins! Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=4954).
+The Tournament will happen on Sunday, March 19 at 20:00 CET on Konsti's Brutal map Shockwave. The first team to finish wins! Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=4954).
