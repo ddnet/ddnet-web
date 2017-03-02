@@ -2,6 +2,7 @@
 layout: post
 title: "The Pros vs Team 0 Tournament"
 permalink: /news/pros-vs-team-0-tournament/
+tag: current
 ---
 
 We haven't had a tournament in a while, so let's try something special: In the next tournament playing in Team 0 will be allowed! So we will have pro teams competing against big groups in Team 0!
