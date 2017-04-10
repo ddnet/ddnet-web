@@ -2,7 +2,6 @@
 layout: post
 title: "Dummy Tournament (Quick Tournament #45)"
 permalink: /news/quick-tournament-45/
-tag: current
 ---
 
 Time for a dummy tournament!
