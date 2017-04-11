@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet Discord Server"
+permalink: /news/ddnet-discord-server/
+tag: current
+---
+
+Welf is running a [DDNet Discord server at ddnet.tw/discord](/discord) where you can chat with the community and get in touch with moderators.
