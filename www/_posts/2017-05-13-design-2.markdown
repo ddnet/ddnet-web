@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet Design Contest #2"
+permalink: /news/ddnet-design-2/
+tag: current
+---
+
+DDNet Design Contest #2 is now open for voting. Check out the video and vote [on forum](//forum.ddnet.tw/viewtopic.php?f=33&t=5205).
