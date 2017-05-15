@@ -70,6 +70,11 @@ menu: |
   <tr><td>sv_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
   <tr><td>sv_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
   <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>1</td></tr>
+  <tr><td>sv_dnsbl</td><td>Enable DNSBL (DNS-based Blackhole List)</td><td>0</td></tr>
+  <tr><td>sv_dnsbl_host</td><td>Hostname of DNSBL provider to use for IP Verification</td><td>""</td></tr>
+  <tr><td>sv_dnsbl_key</td><td>Optional Authentification Key for the specified DNSBL provider</td><td>""</td></tr>
+  <tr><td>sv_dnsbl_vote</td><td>Block votes by blacklisted addresses</td><td>0</td></tr>
+  <tr><td>sv_dnsbl_ban</td><td>Automatically ban blacklisted addresses</td><td>0</td></tr>
   <tr><td>sv_player_demo_record</td><td>Automatically record demos for each player</td><td>0</td></tr>
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
   <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second</td><td>50</td></tr>
@@ -93,12 +98,14 @@ menu: |
   <tr><td>sv_pause_messages</td><td>Whether to show messages when a player pauses and resumes</td><td>0</td></tr>
   <tr><td>sv_pause_time</td><td>Whether '/pause' and 'sv_max_dc_restore' pauses the time of player or not</td><td>0</td></tr>
   <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between pauses</td><td>1</td></tr>
+  <tr><td>sv_invite</td><td>Whether players can invite other players to teams</td><td>1</td></tr>
+  <tr><td>sv_invite_frequency</td><td>The minimum allowed delay between invites</td><td>1</td></tr>
   <tr><td>sv_emotional_tees</td><td>Whether eye change of tees is enabled with emoticons = 1, not = 0, -1 not at all</td><td>1</td></tr>
   <tr><td>sv_emoticon_delay</td><td>The time in seconds between over-head emoticons</td><td>3</td></tr>
   <tr><td>sv_eye_emote_change_delay</td><td>The time in seconds between eye emoticons change</td><td>1</td></tr>
   <tr><td>sv_chat_delay</td><td>The time in seconds between chat messages</td><td>1</td></tr>
   <tr><td>sv_team_change_delay</td><td>The time in seconds between team changes (spectator/in game)</td><td>3</td></tr>
-  <tr><td>sv_info_change_delay</td><td>The time in seconds between info changes (name/skin/color), to avoid ranibow mod set this to a very high time</td><td>5</td></tr>
+  <tr><td>sv_info_change_delay</td><td>The time in seconds between info changes (name/skin/color), to avoid ranbow mod set this to a very high time</td><td>5</td></tr>
   <tr><td>sv_vote_time</td><td>The time in seconds a vote lasts</td><td>25</td></tr>
   <tr><td>sv_vote_map_delay</td><td>The minimum time in seconds between map votes</td><td>0</td></tr>
   <tr><td>sv_vote_delay</td><td>The time in seconds between any vote</td><td>3</td></tr>
@@ -116,16 +123,11 @@ menu: |
   <tr><td>sv_checkpoint_save</td><td>Whether to save checkpoint times to the score file</td><td>1</td></tr>
   <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>"records"</td></tr>
   <tr><td>sv_use_sql</td><td>Enables SQL DB instead of record file</td><td>0</td></tr>
-  <tr><td>sv_sql_user</td><td>SQL User</td><td>"nameless"</td></tr>
-  <tr><td>sv_sql_pw</td><td>SQL Password</td><td>"tee"</td></tr>
-  <tr><td>sv_sql_ip</td><td>SQL Database IP</td><td>"127.0.0.1"</td></tr>
-  <tr><td>sv_sql_port</td><td>SQL Database port</td><td>3306</td></tr>
-  <tr><td>sv_sql_create_tables</td><td>Try to create the SQL tables when starting</td><td>1</td></tr>
-  <tr><td>sv_sql_database</td><td>SQL Database name</td><td>"teeworlds"</td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>"UNK"</td></tr>
-  <tr><td>sv_sql_prefix</td><td>SQL Database table prefix</td><td>"record"</td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td></tr>
   <tr><td>sv_savegames_delay</td><td>Delay in seconds for loading a savegame</td><td>60</td></tr>
+  <tr><td>sv_sql_failure_file</td><td>File to store failed Sql-Inserts (ranks)</td><td>"failed_sql.sql"</td></tr>
+  <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td></tr>
   <tr><td>sv_ddrace_rules</td><td>Whether the default mod rules are displayed or not</td><td>1</td></tr>
   <tr><td>sv_rules_line1</td><td>Rules line 1</td><td>""</td></tr>
   <tr><td>sv_rules_line2</td><td>Rules line 2</td><td>""</td></tr>
@@ -205,7 +207,7 @@ menu: |
   <tr><td>sv_vote_kick</td><td>Allow voting to kick players</td><td>1</td></tr>
   <tr><td>sv_vote_kick_min</td><td>Minimum number of players required to start a kick vote</td><td>0</td></tr>
   <tr><td>sv_vote_kick_bantime</td><td>The time in seconds to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td></tr>
-  <tr><td>sv_join_vote_delay</td><td>Add a delay before recently joined players can vote</td><td>1</td></tr>
+  <tr><td>sv_join_vote_delay</td><td>Add a delay before recently joined players can vote (in seconds)</td><td>60</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
@@ -245,6 +247,15 @@ menu: |
   <tr><td>record</td><td>Record to a file</td></tr>
   <tr><td>stoprecord</td><td>Stop recording</td></tr>
   <tr><td>reload</td><td>Reload the map</td></tr>
+  <tr><td>add_sqlserver</td><td>add a sqlserver</td></tr>
+  <tr><td>dump_sqlservers</td><td>dumps all sqlservers readservers = r, writeservers = w</td></tr>
+  <tr><td>dnsbl_status</td><td>List blacklisted players</td></tr>
+  <tr><td>auth_add</td><td>Add a rcon key</td></tr>
+  <tr><td>auth_add_p</td><td>Add a prehashed rcon key</td></tr>
+  <tr><td>auth_change</td><td>Update a rcon key</td></tr>
+  <tr><td>auth_change_p</td><td>Update a rcon key with prehashed data</td></tr>
+  <tr><td>auth_remove</td><td>Remove a rcon key</td></tr>
+  <tr><td>auth_list</td><td>List all rcon keys</td></tr>
   <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td></tr>
   <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
   <tr><td>tune</td><td>Tune variable to value</td></tr>
@@ -289,8 +300,8 @@ menu: |
   <tr><td>whisper</td><td>Whisper something to someone (private message)</td></tr>
   <tr><td>c</td><td>Converse with the last person you whispered to (private message)</td></tr>
   <tr><td>converse</td><td>Converse with the last person you whispered to (private message)</td></tr>
-  <tr><td>pause</td><td>Toggles pause</td></tr>
-  <tr><td>spec</td><td>Toggles spec (if not activated on the server, it toggles pause)</td></tr>
+  <tr><td>pause</td><td>Toggles spec(if not available behaves as /spec)</td></tr>
+  <tr><td>spec</td><td>Toggles pause</td></tr>
   <tr><td>dnd</td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
   <tr><td>mapinfo</td><td>Show info about the map with name r gives (current map by default)</td></tr>
   <tr><td>timeout</td><td>Set timeout protection code s</td></tr>
@@ -303,6 +314,7 @@ menu: |
   <tr><td>rules</td><td>Shows the server rules</td></tr>
   <tr><td>team</td><td>Lets you join team i (shows your team if left blank)</td></tr>
   <tr><td>lock</td><td>Lock team so no-one else can join it</td></tr>
+  <tr><td>invite</td><td>Invite a person to a locked team</td></tr>
   <tr><td>top5team</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>teamtop5</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>top5</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
@@ -352,6 +364,7 @@ menu: |
   <tr><td>cl_show_votes_after_voting</td><td>Show votes window after voting</td><td>0</td></tr>
   <tr><td>cl_show_local_time_always</td><td>Always show local time</td><td>0</td></tr>
   <tr><td>cl_showfps</td><td>Show ingame FPS counter</td><td>0</td></tr>
+  <tr><td>cl_showpred</td><td>Show ingame prediction time in milliseconds</td><td>0</td></tr>
   <tr><td>cl_eye_wheel</td><td>Show eye wheel along together with emotes</td><td>1</td></tr>
   <tr><td>cl_eye_duration</td><td>How long the eyes emotes last</td><td>999999</td></tr>
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td></tr>
@@ -372,7 +385,6 @@ menu: |
   <tr><td>cl_flow</td><td></td><td>0</td></tr>
   <tr><td>cl_show_welcome</td><td></td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
-  <tr><td>cl_version_server</td><td>Server to use to check for new versions</td><td>"version.teeworlds.com"</td></tr>
   <tr><td>cl_ddnet_version_server</td><td>Server to use to check for new ddnet versions</td><td>"version.ddnet.tw"</td></tr>
   <tr><td>cl_ddnet_update2_server</td><td>Server to use to update new ddnet versions</td><td>"update2.ddnet.tw"</td></tr>
   <tr><td>cl_ddnet_maps_server</td><td>Server to use to download maps</td><td>"maps.ddnet.tw"</td></tr>
@@ -422,7 +434,7 @@ menu: |
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
   <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td></tr>
   <tr><td>cl_cpu_throttle</td><td></td><td>0</td></tr>
-  <tr><td>cl_cpu_throttle_inactive</td><td></td><td>1</td></tr>
+  <tr><td>cl_cpu_throttle_inactive</td><td></td><td>5</td></tr>
   <tr><td>cl_editor</td><td></td><td>0</td></tr>
   <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td></tr>
   <tr><td>cl_load_country_flags</td><td>Load and show country flags</td><td>1</td></tr>
@@ -431,9 +443,12 @@ menu: |
   <tr><td>cl_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>0</td></tr>
   <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td></tr>
+  <tr><td>cl_auto_csv</td><td>Automatically create game over csv</td><td>0</td></tr>
+  <tr><td>cl_auto_csv_max</td><td>Maximum number of automatically created csvs (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_reset_wanted_weapon_on_death</td><td>Reset wanted weapon on death</td><td>1</td></tr>
   <tr><td>cl_show_broadcasts</td><td>Show broadcasts ingame</td><td>1</td></tr>
   <tr><td>cl_print_broadcasts</td><td>Print broadcasts to console</td><td>1</td></tr>
+  <tr><td>cl_print_motd</td><td>Print motd to console</td><td>1</td></tr>
   <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>0</td></tr>
   <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
   <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>0</td></tr>
@@ -505,7 +520,10 @@ menu: |
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
+  <tr><td>gfx_highdpi</td><td>Try to use high-dpi screen features</td><td>0</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
+  <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td></tr>
+  <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
@@ -519,9 +537,16 @@ menu: |
   <tr><td>cl_message_system_hue</td><td>System message color hue</td><td>255</td></tr>
   <tr><td>cl_message_system_sat</td><td>System message color saturation</td><td>255</td></tr>
   <tr><td>cl_message_system_lht</td><td>System message color lightness</td><td>255</td></tr>
+  <tr><td>cl_message_client_hue</td><td>Client message color hue</td><td>255</td></tr>
+  <tr><td>cl_message_client_sat</td><td>Client message color saturation</td><td>255</td></tr>
+  <tr><td>cl_message_client_lht</td><td>Client message color lightness</td><td>255</td></tr>
   <tr><td>cl_message_highlight_hue</td><td>Highlighted message color hue</td><td>255</td></tr>
   <tr><td>cl_message_highlight_sat</td><td>Highlighted message color saturation</td><td>255</td></tr>
   <tr><td>cl_message_highlight_lht</td><td>Highlighted message color lightness</td><td>255</td></tr>
+  <tr><td>cl_message_friend</td><td>Enable coloring and the heart for friends</td><td>1</td></tr>
+  <tr><td>cl_message_friend_hue</td><td>Friend message color hue</td><td>255</td></tr>
+  <tr><td>cl_message_friend_sat</td><td>Friend message color saturation</td><td>255</td></tr>
+  <tr><td>cl_message_friend_lht</td><td>Friend message color lightness</td><td>255</td></tr>
   <tr><td>cl_message_team_hue</td><td>Team message color hue</td><td>255</td></tr>
   <tr><td>cl_message_team_sat</td><td>Team message color saturation</td><td>255</td></tr>
   <tr><td>cl_message_team_lht</td><td>Team message color lightness</td><td>255</td></tr>
@@ -561,7 +586,8 @@ menu: |
   <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee to estimate your delay</td><td>0</td></tr>
   <tr><td>cl_predict_ddrace</td><td>Predict some DDRace tiles</td><td>1</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
-  <tr><td>cl_show_other_hook_coll</td><td>Show other players' hook collision line</td><td>1</td></tr>
+  <tr><td>cl_show_hook_coll_other</td><td>Show other players' hook collision line</td><td>1</td></tr>
+  <tr><td>cl_show_hook_coll_own</td><td>Show own players' hook collision line</td><td>1</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td></tr>
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
@@ -570,13 +596,14 @@ menu: |
   <tr><td>cl_confirm_disconnect</td><td>Confirmation popup before disconnecting</td><td>0</td></tr>
   <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>""</td></tr>
   <tr><td>cl_dummy_timeout_code</td><td>Dummy Timeout code to use</td><td>""</td></tr>
+  <tr><td>cl_timeout_seed</td><td>Timeout seed</td><td>""</td></tr>
   <tr><td>cl_input_fifo</td><td>Fifo file to use as input for client console</td><td>""</td></tr>
   <tr><td>cl_show_console</td><td>Show console window (Windows only)</td><td>0</td></tr>
   <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>1</td></tr>
   <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>0</td></tr>
   <tr><td>cl_config_version</td><td>The config version. Helps newer clients fix bugs with older configs.</td><td>0</td></tr>
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
-  <tr><td>cl_demo_slice_end</td><td>End marer for demo slice</td><td>-1</td></tr>
+  <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td></tr>
 </table>
 </div>
@@ -584,7 +611,6 @@ menu: |
 <h2 id="client-commands">Client Commands</h2>
 <table class="settingscommands">
   <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>echo</td><td>Echo the text</td></tr>
   <tr><td>exec</td><td>Execute the specified file</td></tr>
   <tr><td>toggle</td><td>Toggle config value</td></tr>
   <tr><td>+toggle</td><td>Toggle config value via keypress</td></tr>
@@ -609,6 +635,7 @@ menu: |
   <tr><td>say_team</td><td>Say in team chat</td></tr>
   <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
   <tr><td>+show_chat</td><td>Show chat</td></tr>
+  <tr><td>echo</td><td>Echo the text in chat window</td></tr>
   <tr><td>+left</td><td>Move left</td></tr>
   <tr><td>+right</td><td>Move right</td></tr>
   <tr><td>+jump</td><td>Jump</td></tr>
@@ -641,6 +668,7 @@ menu: |
   <tr><td>screenshot</td><td>Take a screenshot</td></tr>
   <tr><td>rcon</td><td>Send specified command to rcon</td></tr>
   <tr><td>rcon_auth</td><td>Authenticate to rcon</td></tr>
+  <tr><td>rcon_login</td><td>Authenticate to rcon with a username</td></tr>
   <tr><td>play</td><td>Play the file specified</td></tr>
   <tr><td>record</td><td>Record to the file</td></tr>
   <tr><td>stoprecord</td><td>Stop recording</td></tr>
