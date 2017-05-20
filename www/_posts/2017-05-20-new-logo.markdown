@@ -1,0 +1,8 @@
+---
+layout: post
+title: "New logo"
+permalink: /news/new-logo/
+tag: current
+---
+
+We have a new logo thanks to [kettu](https://forum.ddnet.tw/viewtopic.php?t=3995&p=53511#p53511).
