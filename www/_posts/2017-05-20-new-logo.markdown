@@ -1,0 +1,8 @@
+---
+layout: post
+title: "New logo"
+permalink: /news/new-logo/
+tag: current
+---
+
+We have a new logo done by [Ravie](https://forum.ddnet.tw/viewtopic.php?f=29&t=3995&p=53566#p53566).
