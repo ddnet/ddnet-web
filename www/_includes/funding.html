@@ -2,8 +2,8 @@
 $(function() {
   var costs = {
     "ddnet": [7, 86],
-    "ger":  "Shishigami",
-    "rus":  "Frr :3",
+    "ger":  [200, 200, "Shishigami"],
+    "rus":  [50, 50, "Frr :3"],
     "chl":  96,
     "bra":  "RafaelFF",
     "zaf":  50,
@@ -78,24 +78,31 @@ $(function() {
   for (var server in costs) {
     if (costs.hasOwnProperty(server)) {
       var val = costs[server];
+      var value = 0;
+      var text = '';
       var color = '#F6A828';
       if (val.toFixed) {
-        $("#funding-" + server).progressbar({value: 100 * paid[server] / val});
-        $("#funding-" + server + " .progress-label").text((paid[server]).toFixed() + " / " + val + " €");
+        value = 100 * paid[server] / val;
+        text = (paid[server]).toFixed() + " / " + val + " €";
         if (paid[server] >= val) {
           color = '#37d628';
         }
       } else if ($.isArray(val)) {
-        $("#funding-" + server).progressbar({value: 100 * paid[server] / val[1]});
-        $("#funding-" + server + " .progress-label").text((paid[server]).toFixed() + " / " + val[1] + " €");
+        value = 100 * paid[server] / val[1];
+        text = (paid[server]).toFixed() + " / " + val[1] + " €";
         if (paid[server] >= val[1]) {
           color = '#37d628';
         }
+        if (val.length > 2) {
+          text += " (sponsored by " + val[2] + ")";
+        }
       } else {
-        $("#funding-" + server).progressbar({value: 100});
-        $("#funding-" + server + " .progress-label").text("sponsored by " + val);
+        value = 100;
+        text = "sponsored by " + val;
         color = '#37d628';
       }
+      $("#funding-" + server).progressbar({value: value});
+      $("#funding-" + server + " .progress-label").text(text);
       $("#funding-" + server + " .ui-widget-header").css('background', color);
     }
   }
