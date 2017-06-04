@@ -33,21 +33,24 @@
   </head>
   <body>
     <article>
-    <div class="title"><h1><a href="/"><img class="logobig" alt="DDraceNetwork" src="/ddnet2.svg"/><img class="logosmall" alt="DDraceNetwork" src="/ddnet.svg"/></a></h1></div>
-    <menu class="contentleft">
-    <ul class="big">
-      <li><a href="/status/">Status</a></li>
-      <li><a href="/ranks/">Ranks</a></li>
-      <li><a href="/releases/">Releases</a></li>
-      <li><a href="/tournaments/">Tournaments</a></li>
-      <li><a href="/skins/">Skin Database</a></li>
-      <li><a href="/downloads/">Downloads</a></li>
-      <li><a href="/stats/">Statistics</a></li>
-      <li><a href="//forum.ddnet.tw/">Forum</a></li>
-      <li><a href="http://wiki.ddnet.tw/">Wiki</a></li>
-    </ul>
-    {{ page.menu }}
-    </menu>
+    <header>
+      <menu class="contentleft">
+      <div class="title"><h1><a href="/"><img class="logobig" alt="DDraceNetwork" src="/ddnet2.svg"/><img class="logosmall" alt="DDraceNetwork" src="/ddnet.svg"/></a></h1></div>
+      <ul class="big">
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/ranks/">Ranks</a></li>
+        <li><a href="/releases/">Releases</a></li>
+        <li><a href="/tournaments/">Tournaments</a></li>
+        <li><a href="/skins/">Skin Database</a></li>
+        <li><a href="/downloads/">Downloads</a></li>
+        <li><a href="/stats/">Statistics</a></li>
+        <li><a href="//forum.ddnet.tw/">Forum</a></li>
+        <li><a href="http://wiki.ddnet.tw/">Wiki</a></li>
+      </ul>
+      {{ page.menu }}
+      <div class="fade"></div>
+      </menu>
+    </header>
     <section>
       {{ content }}
     </section>

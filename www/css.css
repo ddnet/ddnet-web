@@ -46,15 +46,15 @@ body:not(#phpbb) .block {
 }
 
 .logobig {
-  max-width: 30em;
+  max-width: 16.8em;
+  position: absolute;
+  top: -15.2em;
+  left: -0.5em;
 }
 
 .logosmall {
-  width: 100%;
-  max-width: 30em;
-  margin-left: auto;
-  margin-right: auto;
-  display:block;
+  height: 2.5em;
+  float: left;
 }
 
 .news h3 {
@@ -700,6 +700,17 @@ menu {
 }
 
 @media (max-width: 1099px) {
+.fade {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 5em;
+  background: linear-gradient(to right, transparent, #d8efff);
+  pointer-events: none;
+}
+
 .logobig {
   display: none;
 }
@@ -721,13 +732,16 @@ ul {
 }
 
 menu {
+  margin: 0;
   padding: 0;
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 menu li {
   display: inline-block;
-  padding-right: 0.5em;
-  padding-left: 0.5em;
+  padding-right: 0.7em;
+  padding-left: 0.7em;
 }
 
 menu li:before {
@@ -736,7 +750,7 @@ menu li:before {
 
 menu ul {
   margin: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
   list-style-type: none;
   text-align: justify;
   padding: 0;
