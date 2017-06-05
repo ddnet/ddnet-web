@@ -77,7 +77,7 @@ if (total >= sum) {
 }
 elements = document.querySelectorAll("#funding-total");
 elements.forEach(function(element, index, array) {
-  element.className += ' ' + "ui-progressbar ui-widget ui-widget-content ui-corner-all";
+  element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
   element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
 });
 elements = document.querySelectorAll("#funding-total .progress-label");
@@ -120,7 +120,7 @@ for (var server in costs) {
     }
     elements = document.querySelectorAll("#funding-" + server);
     elements.forEach(function(element, index, array) {
-      element.className += ' ' + "ui-progressbar ui-widget ui-widget-content ui-corner-all";
+      element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
       element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
     });
     elements = document.querySelectorAll("#funding-" + server + " .progress-label");
@@ -140,7 +140,7 @@ if (rest >= old) {
 }  
 elements = document.querySelectorAll("#funding-old");
 elements.forEach(function(element, index, array) {
-  element.className += ' ' + "ui-progressbar ui-widget ui-widget-content ui-corner-all";
+  element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
   element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
 });
 elements = document.querySelectorAll("#funding-old .progress-label");
