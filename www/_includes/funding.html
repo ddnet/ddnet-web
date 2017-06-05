@@ -71,7 +71,16 @@ $(function() {
     total = sum;
   }
   var elements = [];
-  $("#funding-total").progressbar({value: 100 * total / sum});
+  var value = 100 * total / sum;
+  var color = '#F6A828';
+  if (total >= sum) {
+    color = '#37d628';
+  }
+  elements = document.querySelectorAll("#funding-total");
+  elements.forEach(function(element, index, array) {
+    element.className += ' ' + "ui-progressbar ui-widget ui-widget-content ui-corner-all";
+    element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+  });
   elements = document.querySelectorAll("#funding-total .progress-label");
   elements.forEach(function(element, index, array) {
     if (element.textContent !== undefined)
@@ -79,10 +88,6 @@ $(function() {
     else
       element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2017";
   });
-  var color = '#F6A828';
-  if (total >= sum) {
-    color = '#37d628';
-  }
   elements = document.querySelectorAll("#funding-total .ui-widget-header");
   elements.forEach(function(element, index, array) {
     element.style.backgroundColor = color;
@@ -114,7 +119,11 @@ $(function() {
         text = "sponsored by " + val;
         color = '#37d628';
       }
-      $("#funding-" + server).progressbar({value: value});
+      elements = document.querySelectorAll("#funding-" + server);
+      elements.forEach(function(element, index, array) {
+        element.className += ' ' + "ui-progressbar ui-widget ui-widget-content ui-corner-all";
+        element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+      });
       elements = document.querySelectorAll("#funding-" + server + " .progress-label");
       elements.forEach(function(element, index, array) {
         if (element.textContent !== undefined)
@@ -122,14 +131,19 @@ $(function() {
         else
           element.innerText = text;
       });
-      elements = document.querySelectorAll("#funding-" + server + " .ui-widget-header");
-      elements.forEach(function(element, index, array) {
-        element.style.backgroundColor = color;
-      });
     }
   }
 
-  $("#funding-old").progressbar({value: 100 * rest / old});
+  var value = 100 * rest / old;
+  color = '#F6A828';
+  if (rest >= old) {
+    color = '#37d628';
+  }  
+  elements = document.querySelectorAll("#funding-old");
+  elements.forEach(function(element, index, array) {
+    element.className += ' ' + "ui-progressbar ui-widget ui-widget-content ui-corner-all";
+    element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+  });
   elements = document.querySelectorAll("#funding-old .progress-label");
   elements.forEach(function(element, index, array) {
     if (element.textContent !== undefined)
@@ -137,14 +151,5 @@ $(function() {
     else
       element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-16";
   });
-  color = '#F6A828';
-  if (rest >= old) {
-    color = '#37d628';
-  }  
-  elements = document.querySelectorAll("#funding-old .ui-widget-header");
-  elements.forEach(function(element, index, array) {
-    element.style.backgroundColor = color;
-  });
-
 });
 </script>
