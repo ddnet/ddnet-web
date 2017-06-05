@@ -1,5 +1,9 @@
 <script type="text/javascript">
 $(function() {
+  //IE8 polyfill
+  var isArray = Array.isArray || function(arr) {
+    return Object.prototype.toString.call(arr) == '[object Array]';
+  };
   var costs = {
     "ddnet": [7, 86],
     "ger":  [200, 200, "Shishigami"],
@@ -25,7 +29,7 @@ $(function() {
         sum += val;
         sumToPay += val;
         num += 1;
-      } else if ($.isArray(val)) {
+      } else if (isArray(val)) {
         sum += val[1];
         sumToPay += val[1] - val[0];
         sumPartSponsored += val[0];
@@ -49,7 +53,7 @@ $(function() {
           donatedRest += paid[server] - val;
           paid[server] = val;
         }
-      } else if ($.isArray(val)) {
+      } else if (isArray(val)) {
         paid[server] += (val[1] - val[0]) * donated / sumToPay + val[0];
         if (paid[server] > val[1]) {
           donatedRest += paid[server] - val[1];
@@ -66,14 +70,23 @@ $(function() {
     rest += total - sum;
     total = sum;
   }
-
+  var elements = [];
   $("#funding-total").progressbar({value: 100 * total / sum});
-  $("#funding-total .progress-label").text(total.toFixed() + " € donated / " + sum + " € cost 2017");
+  elements = document.querySelectorAll("#funding-total .progress-label");
+  elements.forEach(function(element, index, array) {
+    if (element.textContent !== undefined)
+      element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2017";
+    else
+      element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2017";
+  });
   var color = '#F6A828';
   if (total >= sum) {
     color = '#37d628';
   }
-  $("#funding-total .ui-widget-header").css('background', color);
+  elements = document.querySelectorAll("#funding-total .ui-widget-header");
+  elements.forEach(function(element, index, array) {
+    element.style.backgroundColor = color;
+  });
 
   for (var server in costs) {
     if (costs.hasOwnProperty(server)) {
@@ -87,7 +100,7 @@ $(function() {
         if (paid[server] >= val) {
           color = '#37d628';
         }
-      } else if ($.isArray(val)) {
+      } else if (isArray(val)) {
         value = 100 * paid[server] / val[1];
         text = (paid[server]).toFixed() + " / " + val[1] + " €";
         if (paid[server] >= val[1]) {
@@ -102,18 +115,36 @@ $(function() {
         color = '#37d628';
       }
       $("#funding-" + server).progressbar({value: value});
-      $("#funding-" + server + " .progress-label").text(text);
-      $("#funding-" + server + " .ui-widget-header").css('background', color);
+      elements = document.querySelectorAll("#funding-" + server + " .progress-label");
+      elements.forEach(function(element, index, array) {
+        if (element.textContent !== undefined)
+          element.textContent = text;
+        else
+          element.innerText = text;
+      });
+      elements = document.querySelectorAll("#funding-" + server + " .ui-widget-header");
+      elements.forEach(function(element, index, array) {
+        element.style.backgroundColor = color;
+      });
     }
   }
 
   $("#funding-old").progressbar({value: 100 * rest / old});
-  $("#funding-old .progress-label").text(rest.toFixed() + " € / " + old + " € cost 2013-16");
+  elements = document.querySelectorAll("#funding-old .progress-label");
+  elements.forEach(function(element, index, array) {
+    if (element.textContent !== undefined)
+      element.textContent = rest.toFixed() + " € / " + old + " € cost 2013-16";
+    else
+      element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-16";
+  });
   color = '#F6A828';
   if (rest >= old) {
     color = '#37d628';
-  }
-  $("#funding-old .ui-widget-header").css('background', color);
+  }  
+  elements = document.querySelectorAll("#funding-old .ui-widget-header");
+  elements.forEach(function(element, index, array) {
+    element.style.backgroundColor = color;
+  });
 
 });
 </script>
