@@ -25,13 +25,15 @@ nav {
   width: 100%;
   position: absolute;
 }
+
+
 nav .menu {
   border: 1;
   top: -50px;
   left: 0;
   margin: 0;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   background: #d8efff;
   padding: 3em 0 0;
   position: absolute;
@@ -42,9 +44,9 @@ nav .menu {
   transition: transform 0.3s cubic-bezier(1, 0.5, 0, 1);
   transition: transform 0.3s cubic-bezier(1, 0.5, 0, 1), -webkit-transform 0.3s cubic-bezier(1, 0.5, 0, 1);
 
-  -webkit-box-shadow: 0 10px 5px #aabdc9;
-  -moz-box-shadow: 0 10px 5px #aabdc9;
-  box-shadow: 0 10px 5px #aabdc9;
+  -webkit-box-shadow: 10px 10px 5px #aabdc9;
+  -moz-box-shadow: 10px 10px 5px #aabdc9;
+  box-shadow: 10px 10px 5px #aabdc9;
 }
 nav .menu.active {
   -webkit-transform: translateY(0);
@@ -53,37 +55,30 @@ nav .menu.active {
 
 nav .menu img.menu-logo {
   
-  padding: 0.25em;
+  padding: 0;
   display: inline;
-  height: 2.5em;
-  margin: 0 auto;
+  height: 3em;
+  margin: 0 10px;
 
 }
 
 nav .menu li a {
+  margin-left: 50px;
+  margin-right: 50px;
   padding: 0.25em;
   color: #aa4444;
   display: block;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
   background: none;
   line-height: 1em;
   font-size: 1em;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
 }
 
 .gap {
-  height: 27px;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
-}
-
-nav .menu li a span {
-  border-bottom: 1px dotted #aa4444;
-}
-nav .menu li a:hover, nav .menu li a:focus, nav .menu li a:active {
-  background: rgba(106, 193, 255, 0.2);
+  height: 26px;
 }
 
 .menu-toggle {
@@ -855,7 +850,9 @@ ul,li {
 
 .logosmall {
   height: 2.5em;
-  float: right;
+  margin-left: 60px;
+  float: left;
+  
 
 }
 
