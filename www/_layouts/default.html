@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/css.css?version=5" />
+    <link rel="stylesheet" type="text/css" href="/css.css?version=7" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
@@ -34,8 +34,27 @@
   <body>
     <article>
     <header>
+      <div class="hamburger-menu">
+      <nav role="navigation">
+        <div class="menu-toggle">
+          <span>Menu</span>
+        </div>
+        <ul class="menu">
+          <li><a href="/"><img class="menu-logo" alt="DDraceNetwork" src="/ddnet.svg"/></a></li>
+          <li><a href="/status">Status</a></li>
+          <li><a href="/releases">Releases</a></li>
+          <li><a href="//forum.ddnet.tw/">Forum</a></li>
+          <li><a href="/downloads">Downloads</a></li>
+          <li><a href="/skins">Skin Database</a></li>
+          <li><a href="http://wiki.ddnet.tw/">Wiki</a></li>
+          {{ page.menu }}
+        </ul>
+      </nav>
+      </div>
       <menu class="contentleft">
-      <div class="title"><h1><a href="/"><img class="logobig" alt="DDraceNetwork" src="/ddnet2.svg"/><img class="logosmall" alt="DDraceNetwork" src="/ddnet.svg"/></a></h1></div>
+      <div class="title">
+        <h1><a href="/"><img class="logobig" alt="DDraceNetwork" src="/ddnet2.svg"/><img class="logosmall" alt="DDraceNetwork" src="/ddnet.svg"/></a></h1>
+      </div>
       <ul class="big">
         <li><a href="/status/">Status</a></li>
         <li><a href="/ranks/">Ranks</a></li>
@@ -47,10 +66,26 @@
         <li><a href="/stats/">Statistics</a></li>
         <li><a href="http://wiki.ddnet.tw/">Wiki</a></li>
       </ul>
+      <div class="pagemenu">
       {{ page.menu }}
-      <div class="fade"></div>
+      </div>
       </menu>
     </header>
+    <script>
+      var menu = document.querySelector(".menu"),
+      toggle = document.querySelector(".menu-toggle");
+
+      function toggleToggle() {
+        toggle.classList.toggle("menu-open");
+      };
+
+      function toggleMenu() {
+        menu.classList.toggle("active");
+      };
+
+      toggle.addEventListener("click", toggleToggle, false);
+      toggle.addEventListener("click", toggleMenu, false);
+    </script>
     <section>
       {{ content }}
     </section>
