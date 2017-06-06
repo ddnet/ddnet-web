@@ -73,8 +73,14 @@ nav .menu li a {
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
 }
+
+.gap {
+  height: 27px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 nav .menu li a span {
-  border-bottom: 1px dotted #fff;
+  border-bottom: 1px dotted #aa4444;
 }
 nav .menu li a:hover, nav .menu li a:focus, nav .menu li a:active {
   background: rgba(106, 193, 255, 0.2);
@@ -715,6 +721,10 @@ body:not(#phpbb) .time {
 }
 
 @media (min-width: 1100px) {
+
+.gap {
+  display: none;
+}
 
 .hamburger-menu {
   display: none;
