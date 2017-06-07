@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DDNet Saudi Arabia
+title: "DDNet Saudi Arabia"
 permalink: /news/saudi-arabia/
 tag: current
 ---
