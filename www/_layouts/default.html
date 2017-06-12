@@ -76,18 +76,21 @@
     </header>
     <script>
       var menu = document.querySelector(".menu"),
-      toggle = document.querySelector(".menu-toggle");
+      toggleicon = document.querySelector(".menu-toggle");
+      togglelink = document.querySelector(".menu");
 
       function toggleToggle() {
-        toggle.classList.toggle("menu-open");
+        toggleicon.classList.toggle("menu-open");
       };
 
       function toggleMenu() {
         menu.classList.toggle("active");
       };
 
-      toggle.addEventListener("click", toggleToggle, false);
-      toggle.addEventListener("click", toggleMenu, false);
+      toggleicon.addEventListener("click", toggleToggle, false);
+      toggleicon.addEventListener("click", toggleMenu, false);
+      togglelink.addEventListener("click", toggleToggle, false);
+      togglelink.addEventListener("click", toggleMenu, false);
     </script>
     <section>
       {{ content }}

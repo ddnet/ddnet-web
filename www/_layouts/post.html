@@ -37,16 +37,24 @@
     <header>
     <div class="hamburger-menu">
     <nav role="navigation">
-      <div class="menu-toggle"><span>Menu</span></div>
+      <div class="menu-toggle">
+        <span>Menu</span>
+      </div>
       <ul class="menu">
-        <ul><li></li></ul>
-        <li><a href="/status">Status</a></li>
-        <li><a href="/releases">Releases</a></li>
+        <li><a href="/"><img class="menu-logo" alt="DDraceNetwork" src="/ddnet.svg"/></a></li>
+        <li><a href="/status/">Status</a></li>
+        <li><a href="/ranks/">Ranks</a></li>
+        <li><a href="/releases/">Releases</a></li>
         <li><a href="//forum.ddnet.tw/">Forum</a></li>
-        <li><a href="/downloads">Downloads</a></li>
-        <li><a href="/skins">Skin Database</a></li>
+        <li><a href="/downloads/">Downloads</a></li>
+        <li><a href="/tournaments/">Tournaments</a></li>
+        <li><a href="/skins/">Skin Database</a></li>
+        <li><a href="/stats/">Statistics</a></li>
         <li><a href="http://wiki.ddnet.tw/">Wiki</a></li>
-        {{ page.menu }}
+        <ul>
+          <div class="gap"></div>
+          <li><a href="/news/">All News</a></li>
+      </ul>
       </ul>
     </nav>
     </div>
@@ -66,10 +74,32 @@
         <li><a href="http://wiki.ddnet.tw/">Wiki</a></li>
       </ul>
       <ul>
-        <li><a href="/news/">All News</a></li>
+        <div class="pagemenu">
+          <div class="gap"></div>
+          <li><a href="/news/">All News</a></li>
+        </div>
       </ul>
       </menu>
     </header>
+    <script>
+      var menu = document.querySelector(".menu"),
+      toggleicon = document.querySelector(".menu-toggle");
+      togglelink = document.querySelector(".menu");
+
+      function toggleToggle() {
+        toggleicon.classList.toggle("menu-open");
+      };
+
+      function toggleMenu() {
+        menu.classList.toggle("active");
+      };
+
+      toggleicon.addEventListener("click", toggleToggle, false);
+      toggleicon.addEventListener("click", toggleMenu, false);
+      togglelink.addEventListener("click", toggleToggle, false);
+      togglelink.addEventListener("click", toggleMenu, false);
+    </script>
+
     <section>
       <div class="block">
         <h2>{{ page.title }}</h2>

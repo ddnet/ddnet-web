@@ -44,9 +44,9 @@ nav .menu {
   transition: transform 0.3s cubic-bezier(1, 0.5, 0, 1);
   transition: transform 0.3s cubic-bezier(1, 0.5, 0, 1), -webkit-transform 0.3s cubic-bezier(1, 0.5, 0, 1);
 
-  -webkit-box-shadow: 10px 10px 5px #aabdc9;
-  -moz-box-shadow: 10px 10px 5px #aabdc9;
-  box-shadow: 10px 10px 5px #aabdc9;
+  -webkit-box-shadow: 0px 10px 5px #aabdc9;
+  -moz-box-shadow: 0px 10px 5px #aabdc9;
+  box-shadow: 0px 10px 5px #aabdc9;
 }
 nav .menu.active {
   -webkit-transform: translateY(0);
