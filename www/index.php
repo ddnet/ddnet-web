@@ -6,7 +6,8 @@ head: |
   <link rel="stylesheet" href="/funding/jquery-ui-1.8.22.custom.css" />
 menu: |
   <ul>
-    <li><a href="/#news">News</a> (<a href="/news/">all</a>)</li>
+    <li><a href="/#news">Latest News</a></li>
+    <li><a href="/news/">All News</a></li>
     <li><a href="/server/">Server&nbsp;Features</a></li>
     <li><a href="/client/">Client&nbsp;Features</a></li>
     <li><a href="/map/">Map&nbsp;Features</a></li>
