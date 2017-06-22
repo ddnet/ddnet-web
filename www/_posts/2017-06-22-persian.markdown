@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet Persian is back again"
+permalink: /news/persian-again/
+tag: current
+---
+
+Thanks to Sajed we have a DDNet Persian server running again in Iran!
