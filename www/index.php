@@ -26,10 +26,6 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 <div class="startvideo"><div class="video-container">
   <div class="ytplayer" data-id="jTP-Oz05IN4"></div>
 </div></div>
-<div class="startimages">
-	<a href="www.ddnet.tw.png"><img class="demo" alt="Demo" src="www.ddnet.tw.png"/></a>
-	<a href="locations.png"><img class="demo" alt="Demo" src="locations.png"/></a>
-</div>
 {% comment %}
 <div class="startvideo">
 	<div class="video-container"><iframe src="http://hitbox.tv/#!/embed/vasten100" frameborder="0" allowfullscreen></iframe></div>
