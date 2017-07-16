@@ -252,8 +252,8 @@ else
 		($user->data['group_id'] != 5 && $user->data['group_id'] != 4 && $user->data['group_id'] != 8 && $user->data['group_id'] != 10 && $user->data['group_id'] != 13 && $user->data['group_id'] != 17))
 	{
 		$sql = 'SELECT topic_poster
-		»·FROM ' . TOPICS_TABLE . "
-		»·WHERE topic_id = " . $attachment['topic_id'];
+			FROM ' . TOPICS_TABLE . "
+			WHERE topic_id = " . $attachment['topic_id'];
 		$result = $db->sql_query($sql);
 		$topic = $db->sql_fetchrow($result);
 		$db->sql_freeresult($result);

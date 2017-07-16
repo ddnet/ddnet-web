@@ -51,9 +51,9 @@ a {
 	text-decoration: none;
 }
 
-a:hover,
-a:focus,
-a:active {
+.block a:hover,
+.block a:focus,
+.block a:active {
 	color: #2a6496;
 	text-decoration: underline;
 }
