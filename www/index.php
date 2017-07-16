@@ -67,7 +67,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '10.6.5';
+$version = '10.6.6';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions</a></p>';
