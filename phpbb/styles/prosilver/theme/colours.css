@@ -468,6 +468,8 @@ blockquote blockquote blockquote {
 
 .attach-image img {
 	border-color: #999999;
+	background-image: url("./en/checker.png");
+	background-repeat: repeat;
 }
 
 /* Inline image thumbnails */
@@ -479,6 +481,8 @@ dl.file dd {
 dl.thumbnail img {
 	border-color: #666666;
 	background-color: #FFFFFF;
+	background-image: url("./en/checker.png");
+	background-repeat: repeat;
 }
 
 dl.thumbnail dd {
