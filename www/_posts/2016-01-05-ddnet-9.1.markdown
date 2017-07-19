@@ -31,7 +31,7 @@ DDNet 9.1 has been released with the following changes:
 <li>[Development] Add NetBSD support (<a href="https://github.com/ddnet/ddnet/commit/522c41330d1c931cc089312c331854c37fa26a86">522c4133</a>, from vanilla <a href="https://github.com/teeworlds/teeworlds/pull/1165">#1165</a>)</li>
 <li>[Development] Cross-compile improvements (<a href="https://github.com/ddnet/ddnet/commit/fca4c112d49138a56a8146da9512655b9cf9cf25">fca4c112</a>, <a href="https://github.com/ddnet/ddnet/commit/d4fe267c5842f567d8cd721df22c427b6dae9106">d4fe267c</a>)</li>
 <li>[Development] Fix MySQL building on OS X (<a href="https://github.com/ddnet/ddnet/pull/317">#317</a>)</li>
-<li>[Development] Fix linking of libdl on some systems (<a href="https://github.com/ddnet/ddnet/compare/b3f094bf4097cc1c0ddade616a4352d9760cbf23%5E...b596ee34173fa14d0874216691c92e8192fbdf7d7">3f094bf..596ee341</a>)</li>
+<li>[Development] Fix linking of libdl on some systems (<a href="https://github.com/ddnet/ddnet-old/compare/b3f094bf4097cc1c0ddade616a4352d9760cbf23%5E...b596ee34173fa14d0874216691c92e8192fbdf7d7">3f094bf..596ee341</a>)</li>
 <li>[Development] Make OS X build forward compatible (<a href="https://github.com/ddnet/ddnet/pull/361">#361</a>)</li>
 <li>[Editor] Fix crash when opening files without transparency information, i.e. RGB instead of RGBA (<a href="https://github.com/ddnet/ddnet/commit/aa4bbed178258e9157ecd6b2c82ca3292b70efdf">aa4bbed1</a>)</li>
 <li>[Server/Client] Add description to console command arguments (<a href="https://github.com/ddnet/ddnet/pull/389">#389</a>)</li>

@@ -51,4 +51,4 @@ DDNet 10.1 has been released with the following changes:
   <li>[Translation] Fix persian and simplified_chinese language files syntax (by timakro)</li>
 </ul>
 
-<a href="https://github.com/ddnet/ddnet/compare/10.0...10.1.1">Full list of git changes</a>
+<a href="https://github.com/ddnet/ddnet-old/compare/10.0...10.1.1">Full list of git changes</a>
