@@ -18,4 +18,4 @@ DDNet 9.2 has been released with the following changes:
   <li>[Translation] Tons of additions to the chinese language (by awaysoft)</li>
   <li>[Translation] Improve catalan translation (by Ryozuki)</li>
 </ul>
-<a href="https://github.com/ddnet/ddnet-old/compare/9.1...9.2">Full list of git changes</a>
+<a href="https://github.com/ddnet/ddnet/compare/9.1...9.2">Full list of git changes</a>
