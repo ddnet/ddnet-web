@@ -41,21 +41,32 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
     .twitch-wrapper{
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%;
+        padding-bottom: 42.1875%;
     }
     .twitch-wrapper iframe.player{
         position: absolute;
-        width: 70%;
+        width: 75%;
         height: 100%;
         top: 0;
         left: 0;
     }
     .twitch-wrapper iframe.chat{
         position: absolute;
-        width: 30%;
+        width: 25%;
         height: 100%;
         top: 0;
         right: 0;
+    }
+    @media screen and (max-width:768px){
+        .twitch-wrapper{
+            padding-bottom: 56.25%;
+        }
+        .twitch-wrapper iframe.chat{
+            display: none;
+        }
+        .twitch-wrapper iframe.player{
+            width: 100%;
+        }
     }
 </style>
 <div class="twitch-wrapper">
