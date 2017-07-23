@@ -45,16 +45,23 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
     }
     .twitch-wrapper iframe.player{
         position: absolute;
-        width: 100%;
+        width: 70%;
         height: 100%;
         top: 0;
         left: 0;
     }
+    .twitch-wrapper iframe.chat{
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
 </style>
 <div class="twitch-wrapper">
     <iframe class="player"  width="620" height="378" src="https://player.twitch.tv/?channel=ryozukii" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+    <iframe class="chat" src="https://www.twitch.tv/ryozukii/chat?popout=" frameborder="0" scrolling="no" width="350" height="500"></iframe>
 </div>
-<div class="startimages"><iframe src="https://www.twitch.tv/ryozukii/chat?popout=" frameborder="0" scrolling="no" width="350" height="500"></iframe></div>
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
