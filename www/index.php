@@ -37,8 +37,8 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 	<iframe height="400" src="http://www.hitbox.tv/embedchat/vasten100" frameborder="0" allowfullscreen></iframe>
 </div>
 {% endcomment %}
-<iframe id="live_embed_player_flash" src="https://player.twitch.tv/?channel=ryozukii" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/ryozukii?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from Hallowed1986 on www.twitch.tv</a>
-<iframe id="chat_embed" src="https://www.twitch.tv/ryozukii/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
+<iframe src="https://player.twitch.tv/?channel=ryozukii" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/ryozukii?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Watch live video from Ryozukii on www.twitch.tv</a>
+<iframe src="https://www.twitch.tv/ryozukii/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
