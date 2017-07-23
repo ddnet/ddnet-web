@@ -23,22 +23,22 @@ menu: |
 <p>
 DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Russia, USA, Canada, China, Chile, Brazil, South Africa and Iran. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
+{% comment %}
 <div class="startvideo"><div class="video-container">
   <div class="ytplayer" data-id="jTP-Oz05IN4"></div>
 </div></div>
 <div class="startimages">
   <a href="https://forum.ddnet.tw/viewtopic.php?t=5449"><img class="demo" alt="Happy 4th Birthday DDNet!" src="bday4.png" /></a>
 </div>
-{% comment %}
 <div class="startvideo">
 	<div class="video-container"><iframe src="http://hitbox.tv/#!/embed/vasten100" frameborder="0" allowfullscreen></iframe></div>
 </div>
 <div class="startimages">
 	<iframe height="400" src="http://www.hitbox.tv/embedchat/vasten100" frameborder="0" allowfullscreen></iframe>
 </div>
-<iframe id="live_embed_player_flash" src="https://player.twitch.tv/?channel=hallowed1986" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/hallowed1986?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from Hallowed1986 on www.twitch.tv</a>
-<iframe id="chat_embed" src="https://www.twitch.tv/hallowed1986/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
 {% endcomment %}
+<iframe id="live_embed_player_flash" src="https://player.twitch.tv/?channel=ryozukii" frameborder="0" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/ryozukii?tt_medium=live_embed&tt_content=text_link" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline;">Watch live video from Hallowed1986 on www.twitch.tv</a>
+<iframe id="chat_embed" src="https://www.twitch.tv/ryozukii/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
