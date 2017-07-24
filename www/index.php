@@ -4,6 +4,7 @@ title: DDraceNetwork
 head: |
   <link rel="alternate" type="application/atom+xml" title="DDNet News" href="/feed/" />
   <link rel="stylesheet" href="/funding/jquery-ui-1.8.22.custom.css" />
+  <script src="/youtube.js" type="text/javascript"></script>
 menu: |
   <ul>
     <li><a href="/#news">Latest News</a></li>
@@ -143,56 +144,3 @@ if ($user_os == 'win32') {
   </div>
 {% endfor %}
 </div>
-
-<script>
-    var div, n,
-        v = document.getElementsByClassName("ytplayer");
-    for (n = 0; n < v.length; n++) {
-        div = document.createElement("div");
-        div.setAttribute("data-id", v[n].dataset.id);
-        div.innerHTML = '<img src="https://i.ytimg.com/vi/' + v[n].dataset.id + '/hqdefault.jpg"><div class="play"></div>';
-        div.onclick = ytiframe;
-        v[n].appendChild(div);
-    }
-
-    function ytiframe() {
-        var iframe = document.createElement("iframe");
-        iframe.setAttribute("src", 'https://www.youtube.com/embed/' + this.dataset.id + '?autoplay=1');
-        iframe.setAttribute("frameborder", "0");
-        iframe.setAttribute("allowfullscreen", "1");
-        this.parentNode.replaceChild(iframe, this);
-    }
-</script>
-<style>
-    .ytplayer img {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: block;
-        margin: auto;
-        width: 100%;
-        position: absolute;
-        height: auto;
-        cursor: pointer;
-        -webkit-transition: .4s all;
-        -moz-transition: .4s all;
-        transition: .4s all;
-    }
-
-    .ytplayer img:hover {
-        -webkit-filter: brightness(75%);
-    }
-
-    .ytplayer .play {
-        height: 72px;
-        width: 72px;
-        left: 50%;
-        top: 50%;
-        margin-left: -36px;
-        margin-top: -36px;
-        position: absolute;
-        background: url("/youtube-play.png") no-repeat;
-        pointer-events: none;
-    }
-</style>
