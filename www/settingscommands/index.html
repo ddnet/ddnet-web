@@ -80,10 +80,10 @@ menu: |
   <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second</td><td>50</td></tr>
   <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit</td><td>10</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
-  <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
-  <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
   <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td></tr>
   <tr><td>dbg_hitch</td><td>Hitch warnings</td><td>0</td></tr>
+  <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
+  <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
   <tr><td>sv_welcome</td><td>Message that will be displayed to players who join the server</td><td>""</td></tr>
   <tr><td>sv_reserved_slots</td><td>The number of slots that are reserved for special players</td><td>0</td></tr>
   <tr><td>sv_reserved_slots_pass</td><td>The password that is required to use a reserved slot</td><td>""</td></tr>
@@ -97,7 +97,7 @@ menu: |
   <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
   <tr><td>sv_pause_messages</td><td>Whether to show messages when a player pauses and resumes</td><td>0</td></tr>
   <tr><td>sv_pause_time</td><td>Whether '/pause' and 'sv_max_dc_restore' pauses the time of player or not</td><td>0</td></tr>
-  <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between pauses</td><td>1</td></tr>
+  <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between /spec</td><td>1</td></tr>
   <tr><td>sv_invite</td><td>Whether players can invite other players to teams</td><td>1</td></tr>
   <tr><td>sv_invite_frequency</td><td>The minimum allowed delay between invites</td><td>1</td></tr>
   <tr><td>sv_emotional_tees</td><td>Whether eye change of tees is enabled with emoticons = 1, not = 0, -1 not at all</td><td>1</td></tr>
@@ -168,7 +168,7 @@ menu: |
   <tr><td>sv_ddrace_tune_reset</td><td>Whether DDRace tuning(sv_hit, Sv_Endless_Drag & Sv_Old_Laser) is reset after each map change or not</td><td>1</td></tr>
   <tr><td>sv_nameless_score</td><td>Whether nameless tee has a score or not</td><td>0</td></tr>
   <tr><td>sv_time_in_broadcast_interval</td><td>How often to update the broadcast time</td><td>1</td></tr>
-  <tr><td>sv_default_timer_type</td><td>Default way of displaying time either game/round timer or broadcast. 0 = game/round timer, 1 = broadcast</td><td>0</td></tr>
+  <tr><td>sv_default_timer_type</td><td>Default way of displaying time either game/round timer or broadcast. 0 = game/round timer, 1 = broadcast, 2 = 0+1, 3 = none</td><td>0</td></tr>
   <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>250</td></tr>
   <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>1000</td></tr>
   <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>60</td></tr>
@@ -386,8 +386,8 @@ menu: |
   <tr><td>cl_show_welcome</td><td></td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
   <tr><td>cl_ddnet_version_server</td><td>Server to use to check for new ddnet versions</td><td>"version.ddnet.tw"</td></tr>
-  <tr><td>cl_ddnet_update2_server</td><td>Server to use to update new ddnet versions</td><td>"update2.ddnet.tw"</td></tr>
-  <tr><td>cl_ddnet_maps_server</td><td>Server to use to download maps</td><td>"maps.ddnet.tw"</td></tr>
+  <tr><td>cl_ddnet_update4_server</td><td>Server to use to update new ddnet versions</td><td>"update4.ddnet.tw"</td></tr>
+  <tr><td>cl_ddnet_map_download_url</td><td>URL to use to download maps (can start with http:// or https://)</td><td>"https://maps.ddnet.tw"</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>""</td></tr>
   <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td></tr>
   <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td></tr>
@@ -397,6 +397,8 @@ menu: |
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
   <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
   <tr><td>player_skin</td><td>Player skin</td><td>"default"</td></tr>
+  <tr><td>cl_kitty_skins</td><td>Enable kitty skins instead of vanilla skins</td><td>0</td></tr>
+  <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td></tr>
   <tr><td>ui_page</td><td>Interface page</td><td>6</td></tr>
   <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td></tr>
   <tr><td>ui_server_address</td><td>Interface server address</td><td>"localhost:8303"</td></tr>
@@ -409,6 +411,7 @@ menu: |
   <tr><td>ui_colorize_ping</td><td>Highlight ping</td><td>1</td></tr>
   <tr><td>ui_colorize_gametype</td><td>Highlight gametype</td><td>1</td></tr>
   <tr><td>ui_demo_selected</td><td>Selected demo file</td><td>""</td></tr>
+  <tr><td>ui_close_window_after_changing_setting</td><td>Close window after changing setting</td><td>1</td></tr>
   <tr><td>gfx_noclip</td><td>Disable clipping</td><td>0</td></tr>
   <tr><td>dummy_name</td><td>Name of the Dummy</td><td>"brainless tee"</td></tr>
   <tr><td>dummy_clan</td><td>Clan of the Dummy</td><td>""</td></tr>
@@ -433,8 +436,8 @@ menu: |
   <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
   <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td></tr>
-  <tr><td>cl_cpu_throttle</td><td></td><td>0</td></tr>
-  <tr><td>cl_cpu_throttle_inactive</td><td></td><td>5</td></tr>
+  <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>480</td></tr>
+  <tr><td>cl_refresh_rate_inactive</td><td>Refresh rate for updating the game when the window is inactive (in Hz)</td><td>120</td></tr>
   <tr><td>cl_editor</td><td></td><td>0</td></tr>
   <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td></tr>
   <tr><td>cl_load_country_flags</td><td>Load and show country flags</td><td>1</td></tr>
@@ -486,7 +489,8 @@ menu: |
   <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>70</td></tr>
   <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
   <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td></tr>
-  <tr><td>snd_gun</td><td>Enable gun sound</td><td>1</td></tr>
+  <tr><td>snd_gun</td><td>Enable gun sound</td><td>0</td></tr>
+  <tr><td>snd_long_pain</td><td>Enable long pain sound (used when shooting in freeze)</td><td>1</td></tr>
   <tr><td>snd_chat</td><td>Enable regular chat sound</td><td>1</td></tr>
   <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
   <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
@@ -520,15 +524,14 @@ menu: |
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
-  <tr><td>gfx_highdpi</td><td>Try to use high-dpi screen features</td><td>0</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
   <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td></tr>
   <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
+  <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
   <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
-  <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td></tr>
   <tr><td>dbg_stress_server</td><td>Server to stress</td><td>"localhost"</td></tr>
   <tr><td>cl_race_binds</td><td>Enable Default DDRace builds when pressing the reset binds button</td><td>1</td></tr>
   <tr><td>cl_race_binds_set</td><td>Whether the DDRace binds set or not (this is automated you don't need to use this)</td><td>0</td></tr>
