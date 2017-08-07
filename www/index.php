@@ -24,20 +24,19 @@ menu: |
 <p>
 DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Russia, USA, Canada, China, Chile, Brazil, South Africa and Iran. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
-{% comment %}
 <div class="startvideo"><div class="video-container">
   <div class="ytplayer" data-id="lSy9bepW-O4"></div>
 </div></div>
 <div class="startimages">
   <a href="https://forum.ddnet.tw/viewtopic.php?t=5449"><img class="demo" alt="Happy 4th Birthday DDNet!" src="bday4.png" /></a>
 </div>
+{% comment %}
 <div class="startvideo">
 	<div class="video-container"><iframe src="http://hitbox.tv/#!/embed/vasten100" frameborder="0" allowfullscreen></iframe></div>
 </div>
 <div class="startimages">
 	<iframe height="400" src="http://www.hitbox.tv/embedchat/vasten100" frameborder="0" allowfullscreen></iframe>
 </div>
-{% endcomment %}
 <style>
     .twitch-wrapper{
         position: relative;
@@ -74,6 +73,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
     <iframe class="player"  width="620" height="378" src="https://player.twitch.tv/?channel=ryozukii" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
     <iframe class="chat" src="https://www.twitch.tv/ryozukii/chat?popout=" frameborder="0" scrolling="no" width="350" height="500"></iframe>
 </div>
+{% endcomment %}
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
