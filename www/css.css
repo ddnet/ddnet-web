@@ -728,14 +728,15 @@ menu {
 }
 
 @media (max-width: 1099px) {
+header {
+  position: relative;
+  z-index: 0;
+}
+
 .fade {
-  display: block;
-  position: fixed;
-  right: 0;
-  top: 0;
-  height: 2.5em;
-  width: 5em;
-  background: linear-gradient(to right, rgba(255,255,255,0), #d8efff);
+  position: relative;
+  background: linear-gradient(to left, #d8efff, rgba(255,255,255,0) 5em);
+  z-index: initial;
   pointer-events: none;
 }
 
@@ -760,10 +761,13 @@ ul {
 }
 
 menu {
+  position:relative;
   margin: 0;
   padding: 0;
   white-space: nowrap;
   overflow-x: auto;
+  z-index: -1;
+  pointer-events: auto;
 }
 
 menu li {
