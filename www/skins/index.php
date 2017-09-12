@@ -193,7 +193,7 @@ if ($count_filtered) {
 
 ?>
 
-<div style="padding-right:30px">
+<div style="overflow: auto; padding-right:30px">
 <table class="nowraptable" cellpadding="5" style="width:100%">
 <?php
 
