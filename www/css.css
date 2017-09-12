@@ -736,7 +736,7 @@ header {
 
 .fade {
   position: relative;
-  background: linear-gradient(to left, #d8efff, rgba(255,255,255,0) 5em);
+  background: linear-gradient(to left, #d8efff, rgba(216,239,255,0) 5em);
   z-index: initial;
   pointer-events: none;
 }
