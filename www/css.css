@@ -76,6 +76,11 @@ body:not(#phpbb) .block {
   padding-left: 0;
 }
 
+.news figure.highlight {
+    overflow: auto;
+    margin-right: 0px;
+}
+
 .download-button {
   float: left;
   height: 2.5em;
