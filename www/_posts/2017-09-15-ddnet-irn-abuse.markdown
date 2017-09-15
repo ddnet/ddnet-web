@@ -34,3 +34,5 @@ Some affected players like Konsti afterwards tried to hide their suspicious new 
 As a consequence the Persian server has been shut down, the affected ranks have been removed and all passwords were reset.
 
 In hindsight it was a gamble to run the Persian server with a sponsor that we didn't know. Most of DDNet servers are hosted by me directly (DDNet.tw, GER, RUS, Chile, South Africa, USA). The remaining three servers are run by trustworthy people from the community: Brazil by [RafaelFF](https://github.com/rffontenelle), CHN by [ACTom](https://github.com/ACTom)), CAN by o\_be\_one from [r0x.fr](https://r0x.fr/).
+
+In related news: Does anyone know a good VPS hoster in Iran?
