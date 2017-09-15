@@ -5,7 +5,7 @@ permalink: /news/ddnet-irn-abuse/
 tag: current
 ---
 
-On the [DDNet Discord chat](https://ddnet.tw/discord) we run a bot to record new map records. After it posted strange records, people became suspicious. DDNet admin snail was wondering how that had happened.
+On the [DDNet Discord chat](https://ddnet.tw/discord) we run a bot to show new map records. After it posted strange records, people became suspicious.
 
 I tried to figure out why the bot was showing strange records, but could not find out:
 
