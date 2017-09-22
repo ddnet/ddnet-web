@@ -390,6 +390,22 @@ br {
   margin-right: 1em;
 }
 
+.div-ranks input[type=checkbox] {
+  display: none;
+}
+
+.div-ranks input[type=checkbox] ~ .unfinishedmaps {
+  display: inline-block;
+}
+
+.div-ranks input[type=checkbox]:checked ~ .unfinishedmaps {
+  display: none;
+}
+
+.div-ranks label{
+  cursor: pointer;
+}
+
 .info {
   text-align: center;
 }
