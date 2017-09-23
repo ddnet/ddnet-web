@@ -82,7 +82,6 @@ table.spacey  {
   text-align: center;
 }
 .unfinTable2 thead {
-  display: none;
   background-color: #F9E2E2;
 }
 .unfinTable2 thead th {
@@ -115,7 +114,6 @@ table.spacey  {
   text-align: center;
 }
 .unfinTable3 thead {
-  display: none;
   background-color: #F9E2E2;
 }
 .unfinTable3 thead th {
