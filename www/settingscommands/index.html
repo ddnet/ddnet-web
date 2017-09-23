@@ -300,8 +300,8 @@ menu: |
   <tr><td>whisper</td><td>Whisper something to someone (private message)</td></tr>
   <tr><td>c</td><td>Converse with the last person you whispered to (private message)</td></tr>
   <tr><td>converse</td><td>Converse with the last person you whispered to (private message)</td></tr>
-  <tr><td>pause</td><td>Toggles spec(if not available behaves as /spec)</td></tr>
-  <tr><td>spec</td><td>Toggles pause</td></tr>
+  <tr><td>pause</td><td>Toggles pause</td></tr>
+  <tr><td>spec</td><td>Toggles spec (if not available behaves as /pause)</td></tr>
   <tr><td>dnd</td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
   <tr><td>mapinfo</td><td>Show info about the map with name r gives (current map by default)</td></tr>
   <tr><td>timeout</td><td>Set timeout protection code s</td></tr>
@@ -370,10 +370,8 @@ menu: |
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td></tr>
-  <tr><td>cl_mouse_deadzone</td><td></td><td>jerky</td></tr>
   <tr><td>cl_mouse_deadzone</td><td></td><td>300</td></tr>
   <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
-  <tr><td>cl_mouse_max_distance</td><td></td><td>out</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
   <tr><td>cl_dyncam</td><td>Enable dyncam</td><td>0</td></tr>
   <tr><td>cl_dyncam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
@@ -397,11 +395,11 @@ menu: |
   <tr><td>player_skin</td><td>Player skin</td><td>"default"</td></tr>
   <tr><td>cl_kitty_skins</td><td>Enable kitty skins instead of vanilla skins</td><td>0</td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td></tr>
-  <tr><td>ui_page</td><td>Interface page</td><td>6</td></tr>
+  <tr><td>ui_page</td><td>Interface page</td><td>9</td></tr>
   <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td></tr>
   <tr><td>ui_server_address</td><td>Interface server address</td><td>"localhost:8303"</td></tr>
   <tr><td>ui_scale</td><td>Interface scale</td><td>100</td></tr>
-  <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>100</td></tr>
+  <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>200</td></tr>
   <tr><td>ui_color_hue</td><td>Interface color hue</td><td>160</td></tr>
   <tr><td>ui_color_sat</td><td>Interface color saturation</td><td>70</td></tr>
   <tr><td>ui_color_lht</td><td>Interface color lightness</td><td>175</td></tr>
@@ -452,9 +450,8 @@ menu: |
   <tr><td>cl_print_motd</td><td>Print motd to console</td><td>1</td></tr>
   <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>0</td></tr>
   <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
-  <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>0</td></tr>
   <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>1</td></tr>
-  <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>""</td></tr>
+  <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>"Novice"</td></tr>
   <tr><td>br_exclude_string</td><td>Server browser exclusion string</td><td>""</td></tr>
   <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
   <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>0</td></tr>
@@ -473,13 +470,13 @@ menu: |
   <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>0</td></tr>
   <tr><td>br_filter_exclude_countries</td><td>Filter out ddnet servers by country</td><td>""</td></tr>
   <tr><td>br_filter_exclude_types</td><td>Filter out ddnet servers by type (mod)</td><td>""</td></tr>
+  <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info.ddnet.tw)</td><td>1</td></tr>
   <tr><td>br_sort</td><td></td><td>4</td></tr>
   <tr><td>br_sort_order</td><td></td><td>1</td></tr>
   <tr><td>br_max_requests</td><td>Number of requests to use when refreshing server browser</td><td>25</td></tr>
   <tr><td>br_demo_sort</td><td></td><td>0</td></tr>
   <tr><td>br_demo_sort_order</td><td></td><td>0</td></tr>
   <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td></tr>
-  <tr><td>snd_rate</td><td>Sound mixing rate</td><td>44100</td></tr>
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td></tr>
   <tr><td>snd_enable</td><td>Sound enable</td><td>1</td></tr>
   <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td></tr>
@@ -518,12 +515,10 @@ menu: |
   <tr><td>gfx_finish</td><td></td><td>0</td></tr>
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
   <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td></tr>
-  <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>0</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
-  <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
-  <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100</td></tr>
+  <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>200</td></tr>
   <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td></tr>
   <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
@@ -601,7 +596,6 @@ menu: |
   <tr><td>cl_timeout_seed</td><td>Timeout seed</td><td>""</td></tr>
   <tr><td>cl_input_fifo</td><td>Fifo file to use as input for client console</td><td>""</td></tr>
   <tr><td>cl_show_console</td><td>Show console window (Windows only)</td><td>0</td></tr>
-  <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>1</td></tr>
   <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>0</td></tr>
   <tr><td>cl_config_version</td><td>The config version. Helps newer clients fix bugs with older configs.</td><td>0</td></tr>
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
