@@ -790,6 +790,7 @@ menu {
   overflow-x: auto;
   z-index: -1;
   pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 menu li {
