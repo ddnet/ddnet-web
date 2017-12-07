@@ -4,20 +4,19 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet": [7, 86],
-  "ger":  [200, 200, "Shishigami"],
-  "rus":  [50, 50, "Frr :3"],
-  "chl":  96,
+  "ddnet": 80, // nfoservers.com
+  "ger":  170, // nfoservers.com
+  "rus":  33, // ihor.ru
+  "chl":  85, // zglobalhost.com
   "bra":  "RafaelFF",
-  "zaf":  50,
-  "usa":  [78, 78, "MidnightCake"],
+  "zaf":  65, // clickworks.co.za
+  "usa":  72, // nfoservers.com
   "can":  "o_tee_one",
   "chn":  "Tom",
-  "aus":  20,
-  "ksa":  [50, 50, "Mos"],
 };
-var donated = 289;
-var old = 2015;
+var donated = 0;
+var old = 2304;
+
 var sum = 0;
 var sumToPay = 0;
 var sumPartSponsored = 0;
@@ -84,9 +83,9 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-total .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2017";
+    element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2018";
   else
-    element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2017";
+    element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2018";
 });
 elements = document.querySelectorAll("#funding-total .ui-widget-header");
 elements.forEach(function(element, index, array) {
@@ -147,8 +146,8 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-old .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = rest.toFixed() + " € / " + old + " € cost 2013-16";
+    element.textContent = rest.toFixed() + " € / " + old + " € cost 2013-17";
   else
-    element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-16";
+    element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-17";
 });
 </script>
