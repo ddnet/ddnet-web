@@ -1,0 +1,24 @@
+---
+layout: post
+title: "DDNet 11 Release"
+permalink: /news/ddnet-11/
+tag: current
+---
+
+After a long time DDNet 11 has finally been released today with the following highlights:
+
+<ul>
+  <li><a href="https://github.com/ddnet/ddnet/blob/master/data/emojis/index.txt">Emoji</a> support in chat <strong>[CookieMichal]</strong></li>
+  <li>OpenGL 3 graphics support for better zooming out <strong>[Jupeyy]</strong></li>
+  <li>Teehistorian: record player inputs on server <strong>[heinrich5991]</strong></li>
+  <li>Ghost and demo recorder <a href="https://github.com/ddnet/ddnet/pull/869">rework</a> (teerace compatible) <strong>[Redix]</strong></li>
+  <li>/pause [name] and /spec [name] to watch a specific player immediately</li>
+  <li>Improve server browser spoofing protection <strong>[heinrich5991]</strong></li>
+  <li>More customizable HUD options (cl_showemotes, cl_shownotifications, cl_show_chat_system)</li>
+  <li>Rcon moderate mode <strong>[Ryozuki]</strong></li>
+  <li>Reconnecting doesn't unmute you anymore</li>
+  <li>FNG mod entities <strong>[noby]</strong></li>
+  <li>Fix crashes in client and server</li>
+</ul>
+
+You can download DDNet 11 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/10.8.6...11.0).
