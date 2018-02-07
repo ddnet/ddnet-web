@@ -2,6 +2,7 @@
 layout: post
 title: "Solo Tournament (Quick Tournament #46)"
 permalink: /news/quick-tournament-46/
+tag: current
 ---
 
 I'm happy to present you the first DDNet Tournament of 2018, the solo map Fall into the Future by [Silex](/mappers/Silex/):
