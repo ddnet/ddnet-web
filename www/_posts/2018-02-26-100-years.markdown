@@ -1,0 +1,12 @@
+---
+layout: post
+title: "DDNet turns 100 years old (in some way)"
+permalink: /news/100-years/
+tag: current
+---
+
+Yesterday players on DDNet servers made 1997 map finishes with a total length of 1402 hours or 58 days. Note that we are only counting gameplay that leads to finishing a map. So if you have to try a map for hours and keep failing, and only finally finish it in a 10 minutes run, only 10 minutes are added to the total time. For comparison: Yesterday players spent 4064 hours or 169 days on the DDNet servers to make these 1402 hours of finishes. (It's also interesting to consider that DDNet servers are using up half a year of life time every day.)
+
+Since the inception of DDNet in 2013, 1684 days ago, our players made an average sum of 521 hours or 21 days of ranks every day. All ranks made since then are 877274 hours long, which is slightly more than 100 years.
+
+So congratulations to DDNet for turning 100 years old!
