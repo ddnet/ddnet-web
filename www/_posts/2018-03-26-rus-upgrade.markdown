@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DDNet RUS Server Upgrade
+title: "DDNet RUS Server Upgrade"
 permalink: /news/rus-upgrade
 tag: current
 ---
