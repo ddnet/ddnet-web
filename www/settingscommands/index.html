@@ -20,7 +20,7 @@ menu: |
   <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td></tr>
   <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer & deepfreeze)</td><td>3</td></tr>
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
-  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
+  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>0</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_team_lock</td><td>Enable team lock</td><td>1</td></tr>
@@ -69,12 +69,14 @@ menu: |
   <tr><td>sv_rcon_bantime</td><td>The time a client gets banned if remote console authentication fails. 0 makes it just use kick</td><td>5</td></tr>
   <tr><td>sv_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
   <tr><td>sv_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
+  <tr><td>sv_tee_historian</td><td>Activate the tee historian that writes complete gameplay data to disk (WARNING: This will use a lot of disk space)</td><td>0</td></tr>
   <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>1</td></tr>
   <tr><td>sv_dnsbl</td><td>Enable DNSBL (DNS-based Blackhole List)</td><td>0</td></tr>
   <tr><td>sv_dnsbl_host</td><td>Hostname of DNSBL provider to use for IP Verification</td><td>""</td></tr>
   <tr><td>sv_dnsbl_key</td><td>Optional Authentification Key for the specified DNSBL provider</td><td>""</td></tr>
   <tr><td>sv_dnsbl_vote</td><td>Block votes by blacklisted addresses</td><td>0</td></tr>
   <tr><td>sv_dnsbl_ban</td><td>Automatically ban blacklisted addresses</td><td>0</td></tr>
+  <tr><td>sv_rcon_vote</td><td>Only allow authed clients to call votes</td><td>0</td></tr>
   <tr><td>sv_player_demo_record</td><td>Automatically record demos for each player</td><td>0</td></tr>
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
   <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second</td><td>50</td></tr>
@@ -94,7 +96,7 @@ menu: |
   <tr><td>sv_endless_super_hook</td><td>Endless hook for super players on/off</td><td>0</td></tr>
   <tr><td>sv_hide_score</td><td>Whether players scores will be announced or not</td><td>0</td></tr>
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
-  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
+  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>0</td></tr>
   <tr><td>sv_pause_messages</td><td>Whether to show messages when a player pauses and resumes</td><td>0</td></tr>
   <tr><td>sv_pause_time</td><td>Whether '/pause' and 'sv_max_dc_restore' pauses the time of player or not</td><td>0</td></tr>
   <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between /spec</td><td>1</td></tr>
@@ -115,7 +117,7 @@ menu: |
   <tr><td>sv_vote_max_total</td><td>How many people can participate in a vote at max (0 = no limit by default)</td><td>0</td></tr>
   <tr><td>sv_vote_veto_time</td><td>Minutes of time on a server until a player can veto map change votes (0 = disabled)</td><td>20</td></tr>
   <tr><td>sv_spectator_votes</td><td>Choose if spectators are allowed to start votes</td><td>1</td></tr>
-  <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>3</td></tr>
+  <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>1</td></tr>
   <tr><td>sv_suicide_penalty</td><td>The minimum time in seconds between kill or /kills and respawn</td><td>0</td></tr>
   <tr><td>sv_map_window</td><td>Map downloading send-ahead window</td><td>15</td></tr>
   <tr><td>sv_fast_download</td><td>Enables fast download of maps</td><td>1</td></tr>
@@ -165,8 +167,8 @@ menu: |
   <tr><td>sv_tune_reset</td><td>Whether tuning is reset after each map change or not</td><td>1</td></tr>
   <tr><td>sv_reset_file</td><td>File to execute on map change or reload to set the default server settings</td><td>"reset.cfg"</td></tr>
   <tr><td>sv_input_fifo</td><td>Fifo file to use as input for server console</td><td>""</td></tr>
-  <tr><td>sv_ddrace_tune_reset</td><td>Whether DDRace tuning(sv_hit, Sv_Endless_Drag & Sv_Old_Laser) is reset after each map change or not</td><td>1</td></tr>
-  <tr><td>sv_nameless_score</td><td>Whether nameless tee has a score or not</td><td>0</td></tr>
+  <tr><td>sv_ddrace_tune_reset</td><td>Whether DDRace tuning (sv_hit, sv_endless_drag and sv_old_laser) is reset after each map change or not</td><td>1</td></tr>
+  <tr><td>sv_nameless_score</td><td>Whether nameless tee has a score or not</td><td>1</td></tr>
   <tr><td>sv_time_in_broadcast_interval</td><td>How often to update the broadcast time</td><td>1</td></tr>
   <tr><td>sv_default_timer_type</td><td>Default way of displaying time either game/round timer or broadcast. 0 = game/round timer, 1 = broadcast, 2 = 0+1, 3 = none</td><td>0</td></tr>
   <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>250</td></tr>
@@ -174,31 +176,23 @@ menu: |
   <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>60</td></tr>
   <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>1</td></tr>
   <tr><td>sv_rank_cheats</td><td>Enable ranks after cheats have been used (file based server only)</td><td>0</td></tr>
-  <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as noone is on it anymore</td><td>0</td></tr>
-  <tr><td>sv_reload_when_empty</td><td>Reload map when server is empty (1 = reload once, 2 = reload everytime server gets empty)</td><td>0</td></tr>
+  <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as no one is on it anymore</td><td>0</td></tr>
+  <tr><td>sv_reload_when_empty</td><td>Reload map when server is empty (1 = reload once, 2 = reload every time server gets empty)</td><td>0</td></tr>
   <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>20</td></tr>
   <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
   <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>"Get DDNet client from DDNet.tw to use all features on DDNet!"</td></tr>
   <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>"Your DDNet client is old, update it on DDNet.tw!"</td></tr>
-  <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>"Your client has bots and can be remote controlled!\nPlease use another client like DDNet client from DDNet.tw"</td></tr>
+  <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>"Your client has bots and can be remotely controlled!\nPlease use another client like DDNet client from DDNet.tw"</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
   <tr><td>sv_connlimit</td><td>Connlimit: Number of connections an IP is allowed to do in a timespan</td><td>4</td></tr>
   <tr><td>sv_connlimit_time</td><td>Connlimit: Time in which IP's connections are counted</td><td>20</td></tr>
+  <tr><td>sv_conn_logging_server</td><td>Unix socket server for IP address logging</td><td>""</td></tr>
   <tr><td>sv_warmup</td><td>Number of seconds to do warmup before round starts</td><td>0</td></tr>
   <tr><td>sv_motd</td><td>Message of the day to display for the clients</td><td>""</td></tr>
-  <tr><td>sv_teamdamage</td><td>Team damage</td><td>0</td></tr>
-  <tr><td>sv_maprotation</td><td>Maps to rotate between</td><td>""</td></tr>
-  <tr><td>sv_rounds_per_map</td><td>Number of rounds on each map before rotating</td><td>1</td></tr>
-  <tr><td>sv_round_swap</td><td>Swap teams between rounds</td><td>1</td></tr>
-  <tr><td>sv_powerups</td><td>Allow powerups like ninja</td><td>1</td></tr>
-  <tr><td>sv_scorelimit</td><td>Score limit (0 disables)</td><td>20</td></tr>
-  <tr><td>sv_timelimit</td><td>Time limit in minutes (0 disables)</td><td>0</td></tr>
   <tr><td>sv_tournament_mode</td><td>Tournament mode. When enabled, players joins the server as spectator</td><td>0</td></tr>
   <tr><td>sv_spamprotection</td><td>Spam protection</td><td>1</td></tr>
-  <tr><td>sv_respawn_delay_tdm</td><td>Time needed to respawn after death in tdm gametype</td><td>3</td></tr>
   <tr><td>sv_spectator_slots</td><td>Number of slots to reserve for spectators</td><td>0</td></tr>
-  <tr><td>sv_teambalance_time</td><td>How many minutes to wait before autobalancing teams</td><td>1</td></tr>
   <tr><td>sv_inactivekick_time</td><td>How many minutes to wait before taking care of inactive players</td><td>0</td></tr>
   <tr><td>sv_inactivekick</td><td>How to deal with inactive players (0=move to spectator, 1=move to free spectator slot/kick, 2=kick)</td><td>0</td></tr>
   <tr><td>sv_strict_spectate_mode</td><td>Restricts information in spectator mode</td><td>0</td></tr>
@@ -218,7 +212,8 @@ menu: |
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
   <tr><td>sv_send_votes_per_tick</td><td>Number of vote options being send per tick</td><td>5</td></tr>
   <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td><td>0</td></tr>
-  <tr><td>sv_rescue_delay</td><td>Number of seconds inbetween two rescues</td><td>5</td></tr>
+  <tr><td>sv_rescue_delay</td><td>Number of seconds between two rescues</td><td>5</td></tr>
+  <tr><td>sv_modhelp_delay</td><td>Number of seconds to wait before executing /modhelp again</td><td>60</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
 </table></div>
 </div>
@@ -256,6 +251,9 @@ menu: |
   <tr><td>auth_change_p</td><td>Update a rcon key with prehashed data</td></tr>
   <tr><td>auth_remove</td><td>Remove a rcon key</td></tr>
   <tr><td>auth_list</td><td>List all rcon keys</td></tr>
+  <tr><td>name_ban</td><td>Ban a certain nick name</td></tr>
+  <tr><td>name_unban</td><td>Unban a certain nick name</td></tr>
+  <tr><td>name_bans</td><td>List all name bans</td></tr>
   <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td></tr>
   <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
   <tr><td>tune</td><td>Tune variable to value</td></tr>
@@ -302,10 +300,12 @@ menu: |
   <tr><td>converse</td><td>Converse with the last person you whispered to (private message)</td></tr>
   <tr><td>pause</td><td>Toggles pause</td></tr>
   <tr><td>spec</td><td>Toggles spec (if not available behaves as /pause)</td></tr>
+  <tr><td>pausevoted</td><td>Toggles pause on the currently voted player</td></tr>
+  <tr><td>specvoted</td><td>Toggles spec on the currently voted player</td></tr>
   <tr><td>dnd</td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
   <tr><td>mapinfo</td><td>Show info about the map with name r gives (current map by default)</td></tr>
   <tr><td>timeout</td><td>Set timeout protection code s</td></tr>
-  <tr><td>save</td><td>Save team with code r to the current server. To save to another server, use '/save s r' where s = server (case-sensitive: GER, RUS, etc) and r = code</td></tr>
+  <tr><td>save</td><td>Save team with code r to current server. To save to another server, use '/save s r' where s = server (case-sensitive: GER, RUS, etc) and r = code</td></tr>
   <tr><td>load</td><td>Load with code r</td></tr>
   <tr><td>map</td><td>Vote a map by name</td></tr>
   <tr><td>rankteam</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
@@ -328,6 +328,7 @@ menu: |
   <tr><td>r</td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td>Kill yourself</td></tr>
+  <tr><td>modhelp</td><td>Request the help of a moderator with a description of the problem</td></tr>
   <tr><td>times</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
   <tr><td>points</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
   <tr><td>top5points</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
@@ -358,8 +359,11 @@ menu: |
   <tr><td>cl_showhud_healthammo</td><td>Show ingame HUD (Health + Ammo)</td><td>1</td></tr>
   <tr><td>cl_showhud_score</td><td>Show ingame HUD (Score)</td><td>1</td></tr>
   <tr><td>cl_showrecord</td><td>Show old style DDRace client records</td><td>0</td></tr>
+  <tr><td>cl_shownotifications</td><td>Make the client notify when someone highlights you</td><td>1</td></tr>
+  <tr><td>cl_showemotes</td><td>Show tee emotes</td><td>1</td></tr>
   <tr><td>cl_showchat</td><td>Show chat</td><td>1</td></tr>
   <tr><td>cl_show_chat_friends</td><td>Show only chat messages from friends</td><td>0</td></tr>
+  <tr><td>cl_show_chat_system</td><td>Show chat messages from the server</td><td>1</td></tr>
   <tr><td>cl_showkillmessages</td><td>Show kill messages</td><td>1</td></tr>
   <tr><td>cl_show_votes_after_voting</td><td>Show votes window after voting</td><td>0</td></tr>
   <tr><td>cl_show_local_time_always</td><td>Always show local time</td><td>0</td></tr>
@@ -420,6 +424,10 @@ menu: |
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
   <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy should stop pressing keys when you switch</td><td>0</td></tr>
   <tr><td>cl_dummy_copy_moves</td><td>Wether dummy should copy your moves</td><td>0</td></tr>
+  <tr><td>cl_control_dummy</td><td>Whether can you control dummy at the same time</td><td>0</td></tr>
+  <tr><td>cl_dummy_jump</td><td>Whether dummy is jumping</td><td>0</td></tr>
+  <tr><td>cl_dummy_fire</td><td>Whether dummy is fire</td><td>0</td></tr>
+  <tr><td>cl_dummy_hook</td><td>Whether dummy is hook</td><td>0</td></tr>
   <tr><td>cl_http_connect_timeout_ms</td><td>HTTP downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td></tr>
   <tr><td>cl_http_low_speed_limit</td><td>HTTP downloads: Set low speed limit in bytes per second (0 to disable)</td><td>500</td></tr>
   <tr><td>cl_http_low_speed_time</td><td>HTTP downloads: Set low speed limit time period (0 to disable)</td><td>5</td></tr>
@@ -450,7 +458,6 @@ menu: |
   <tr><td>cl_print_motd</td><td>Print motd to console</td><td>1</td></tr>
   <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>0</td></tr>
   <tr><td>cl_eventthread</td><td>Enables the usage of a thread to pump the events</td><td>0</td></tr>
-  <tr><td>inp_grab</td><td>Use forceful input grabbing method</td><td>1</td></tr>
   <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>"Novice"</td></tr>
   <tr><td>br_exclude_string</td><td>Server browser exclusion string</td><td>""</td></tr>
   <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
@@ -560,9 +567,11 @@ menu: |
   <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
   <tr><td>cl_scoreboard_on_death</td><td>Whether to show scoreboard after death or not</td><td>1</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
+  <tr><td>cl_race_record_server_control</td><td>Let the server start the race recorder</td><td>1</td></tr>
   <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td></tr>
   <tr><td>cl_demo_assume_race</td><td>Assume that demos are race demos</td><td>1</td></tr>
   <tr><td>cl_race_ghost</td><td>Enable ghost</td><td>1</td></tr>
+  <tr><td>cl_race_ghost_server_control</td><td>Let the server start the ghost</td><td>1</td></tr>
   <tr><td>cl_race_show_ghost</td><td>Show ghost</td><td>1</td></tr>
   <tr><td>cl_race_save_ghost</td><td>Save ghost</td><td>1</td></tr>
   <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard </td><td>1</td></tr>
@@ -601,6 +610,9 @@ menu: |
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td></tr>
+  <tr><td>gfx_opengl3</td><td>Use new OpenGL3 with shaders</td><td>0</td></tr>
+  <tr><td>gfx_enable_texture_unit_optimization</td><td>Use multiple texture units, instead of only one.</td><td>0</td></tr>
+  <tr><td>gfx_use_preinitialized_buffer</td><td>Use only one buffer for data, that is uploaded to the GPU(might help when using an iGPUs).</td><td>0</td></tr>
 </table></div>
 </div>
 <div class="block">
