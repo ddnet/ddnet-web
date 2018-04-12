@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>sql.js demo: Online SQL interpreter</title>
+  <link rel="stylesheet" href="codemirror.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="codemirror.js"></script>
+</head>
+<body>
+<h1>DDNet Official Database SQL interpreter</h1>
+
+<main>
+<label class="button">1. Load <a href="/stats/ddnet.sqlite.zip">DDNet database file</a> after downloading and unzipping it: <input type='file' id='dbfile' ></label>
+<br><br>
+
+<label for='commands'>2. Enter some SQL</label>
+<br>
+
+<textarea id="commands">
+select Name, sum(Time)/3600 as "Time spent in all ranks (in hours)" from race group by Name order by sum(Time) desc limit 30;
+select Map, Name, Time/60 as "Time (in minutes)" from race order by Time desc limit 30; (buggy names, have to check)
+select sum(Points) from race join maps on race.Map = maps.Map where race.Name = "nameless tee";
+select sum</textarea>
+
+<button id="execute" class="button">Execute</button>
+<button id='savedb'  class="button">Save the db</button>
+
+<div id="error" class="error"></div>
+
+<pre id="output">Results will be displayed here</pre>
+<br>
+
+</main>
+
+<script src="sql.js"></script>
+
+<footer>
+<a href='https://github.com/kripken/sql.js'>sql.js</a>
+</footer>
+
+<script type="text/javascript" src="gui.js"></script>
+</body>
+</html>
