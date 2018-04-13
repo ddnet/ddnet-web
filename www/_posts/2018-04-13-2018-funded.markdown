@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet Funded for 2018"
+permalink: /news/2018-funded/
+tag: current
+---
+
+Thanks to all [donors](/funding/) donating a total of 520 € and sponsoring servers DDNet is now fully funded for 2018!

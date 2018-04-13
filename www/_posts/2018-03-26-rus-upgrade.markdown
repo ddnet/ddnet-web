@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DDNet RUS Server Upgrade"
-permalink: /news/rus-upgrade
+permalink: /news/rus-upgrade/
 tag: current
 ---
 
