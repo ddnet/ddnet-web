@@ -27,7 +27,7 @@ select Name, Map, count(*) from race group by Name, Map order by count(*) desc l
 select sum(Points) from maps join (select distinct Map from race where Name = "nameless tee") as r on maps.Map = r.Map;
 select Name, sum(Time)/3600 as "Time spent in all ranks (in hours)" from race group by Name order by sum(Time) desc limit 30;
 select Map, Name, Time/60 as "Time (in minutes)" from race order by Time desc limit 30;
-delete from race where Name = "deen"</textarea>
+delete from race where Name = "deen";</textarea>
 
 <button id="execute" class="button">4. Execute</button>
 <button id='savedb'  class="button">Save the db</button>
