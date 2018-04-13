@@ -2,28 +2,34 @@
 <html>
 <head>
   <meta charset="utf8">
-  <title>sql.js demo: Online SQL interpreter</title>
+  <title>DDNet Database SQL interpreter</title>
   <link rel="stylesheet" href="codemirror.css">
   <link rel="stylesheet" href="demo.css">
   <script src="codemirror.js"></script>
 </head>
 <body>
-<h1>DDNet Official Database SQL interpreter</h1>
+<h1>DDNet Database SQL interpreter</h1>
 
 <main>
-<label class="button">1. Load <a href="/stats/ddnet.sqlite.zip">DDNet database file</a> after downloading and unzipping it: <input type='file' id='dbfile' ></label>
+<p>1. Download <a href="/stats/ddnet.sqlite.zip">DDNet database file</a> and unzip it</p>
+<label class="button">2. Load sqlite database file: <input type='file' id='dbfile' ></label>
 <br><br>
 
-<label for='commands'>2. Enter some SQL</label>
+<label for='commands'>3. Enter some SQL</label>
 <br>
 
 <textarea id="commands">
+Some sample queries:
+select * from race order by Timestamp asc limit 30;
+select * from race where Timestamp >= "2018-01-01" order by Timestamp asc limit 30;
+select Mapper, count(*) from maps group by Mapper order by count(*) desc limit 30;
+select Name, Map, count(*) from race group by Name, Map order by count(*) desc limit 30;
+select sum(Points) from maps join (select distinct Map from race where Name = "nameless tee") as r on maps.Map = r.Map;
 select Name, sum(Time)/3600 as "Time spent in all ranks (in hours)" from race group by Name order by sum(Time) desc limit 30;
-select Map, Name, Time/60 as "Time (in minutes)" from race order by Time desc limit 30; (buggy names, have to check)
-select sum(Points) from race join maps on race.Map = maps.Map where race.Name = "nameless tee";
-select sum</textarea>
+select Map, Name, Time/60 as "Time (in minutes)" from race order by Time desc limit 30;
+delete from race where Name = "deen"</textarea>
 
-<button id="execute" class="button">Execute</button>
+<button id="execute" class="button">4. Execute</button>
 <button id='savedb'  class="button">Save the db</button>
 
 <div id="error" class="error"></div>
@@ -31,6 +37,7 @@ select sum</textarea>
 <pre id="output">Results will be displayed here</pre>
 <br>
 
+<p>5. Share your queries on the <a href="//forum.ddnet.tw/">DDNet Forum</a></p>
 </main>
 
 <script src="sql.js"></script>

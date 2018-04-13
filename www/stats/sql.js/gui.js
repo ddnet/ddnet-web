@@ -44,6 +44,17 @@ function execute(commands) {
 	outputElm.textContent = "Fetching results...";
 }
 
+function escapeHtml(unsafe) {
+  return unsafe.map(function(val) {
+    return String(val)
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+  });
+}
+
 // Create an HTML table
 var tableCreate = function () {
   function valconcat(vals, tagName) {
@@ -54,7 +65,7 @@ var tableCreate = function () {
   return function (columns, values){
     var tbl  = document.createElement('table');
     var html = '<thead>' + valconcat(columns, 'th') + '</thead>';
-    var rows = values.map(function(v){ return valconcat(v, 'td'); });
+    var rows = values.map(function(v){ return valconcat(escapeHtml(v), 'td'); });
     html += '<tbody>' + valconcat(rows, 'tr') + '</tbody>';
 	  tbl.innerHTML = html;
     return tbl;
