@@ -7,8 +7,7 @@ head: |
   <script src="/youtube.js" type="text/javascript"></script>
 menu: |
   <ul>
-    <li><a href="/#news">Latest News</a></li>
-    <li><a href="/news/">All News</a></li>
+    <li><a href="#news">News</a> (<a href="/news/">all</a>)</li>
     <li><a href="/server/">Server&nbsp;Features</a></li>
     <li><a href="/client/">Client&nbsp;Features</a></li>
     <li><a href="/map/">Map&nbsp;Features</a></li>
