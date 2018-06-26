@@ -5,7 +5,7 @@ permalink: /news/starkiller-finishes-ddnet/
 tag: current
 ---
 
-With a race time of over 16 hours [Starkiller](/players/Starkiller/) finished the [run\_antibuguse](/ranks/race/#map-run_antibuguse) map yesterday. Thus Starkiller is now the first player on DDNet in many years to have finished [all maps](/ranks/) and thus earned 23005 points. Congratulations!
+With a race time of over 16 hours [Starkiller](/players/Starkiller/) finished the [run\_antibuguse](/ranks/race/#map-run_antibuguse) map yesterday. Thus Starkiller is now the first player on DDNet in many years to have finished [all maps](/ranks/) and by doing so earned 23005 points. Congratulations!
 
 The current [scoreboard](/ranks/):
 
