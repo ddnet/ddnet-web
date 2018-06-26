@@ -7,6 +7,8 @@ tag: current
 
 With a race time of over 16 hours [Starkiller](/players/Starkiller/) finished the [run\_antibuguse](/ranks/race/#map-run_antibuguse) map yesterday. Thus Starkiller is now the first player on DDNet in many years to have finished [all maps](/ranks/) and by doing so earned 23005 points. Congratulations!
 
+In total Starkiller finished all maps in a time of 48 days and 10 hours, with the longest time being over 17 hours on [Binary](/ranks/insane/#map-Binary) and the shortest being [NUT\_short\_race6](/ranks/ddmax/#map-NUT_short_race6) with just 2.22 seconds.
+
 The current [scoreboard](/ranks/):
 
 <h3>Points (23005 total)</h3>
