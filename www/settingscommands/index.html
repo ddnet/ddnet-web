@@ -38,12 +38,13 @@ menu: |
   <tr><td>sv_deepfly</td><td>Allow fire non auto weapons when deep</td><td>1</td></tr>
 </table></div>
 <table class="settingscommands">
-  <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>tune</td><td>Tune variable to value</td></tr>
-  <tr><td>tune_zone</td><td>Tune in zone a variable to value</td></tr>
-  <tr><td>tune_zone_enter</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
-  <tr><td>tune_zone_leave</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
-  <tr><td>switch_open</td><td>Whether a switch is open by default (otherwise closed)</td></tr>
+  <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
+  <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
+  <tr><td>tune_zone_enter</td><td>i[zone] s[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
+  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
+  <tr><td>switch_open</td><td>i['0'|'1']</td><td>Whether a switch is open by default (otherwise closed)</td></tr>
 </table>
 </div>
 <div class="block">
@@ -81,6 +82,7 @@ menu: |
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
   <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second</td><td>50</td></tr>
   <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit</td><td>10</td></tr>
+  <tr><td>sv_modhelp_url</td><td>HTTP URL to POST moderator help requests to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
   <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td></tr>
   <tr><td>dbg_hitch</td><td>Hitch warnings</td><td>0</td></tr>
@@ -98,7 +100,6 @@ menu: |
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
   <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>0</td></tr>
   <tr><td>sv_pause_messages</td><td>Whether to show messages when a player pauses and resumes</td><td>0</td></tr>
-  <tr><td>sv_pause_time</td><td>Whether '/pause' and 'sv_max_dc_restore' pauses the time of player or not</td><td>0</td></tr>
   <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between /spec</td><td>1</td></tr>
   <tr><td>sv_invite</td><td>Whether players can invite other players to teams</td><td>1</td></tr>
   <tr><td>sv_invite_frequency</td><td>The minimum allowed delay between invites</td><td>1</td></tr>
@@ -126,6 +127,7 @@ menu: |
   <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>"records"</td></tr>
   <tr><td>sv_use_sql</td><td>Enables SQL DB instead of record file</td><td>0</td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>"UNK"</td></tr>
+  <tr><td>sv_sql_valid_servernames</td><td>Comma seperated list of valid server names for saving a game to ([A-Z][A-Z][A-Z].?</td><td>"UNK"</td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td></tr>
   <tr><td>sv_savegames_delay</td><td>Delay in seconds for loading a savegame</td><td>60</td></tr>
   <tr><td>sv_sql_failure_file</td><td>File to store failed Sql-Inserts (ranks)</td><td>"failed_sql.sql"</td></tr>
@@ -220,118 +222,119 @@ menu: |
 <div class="block">
 <h2 id="server-commands">Server Commands</h2>
 <table class="settingscommands">
-  <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>echo</td><td>Echo the text</td></tr>
-  <tr><td>exec</td><td>Execute the specified file</td></tr>
-  <tr><td>toggle</td><td>Toggle config value</td></tr>
-  <tr><td>access_level</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
-  <tr><td>access_status</td><td>List all commands which are accessible for admin = 0, moderator = 1, helper = 2, all = 3</td></tr>
-  <tr><td>cmdlist</td><td>List all commands which are accessible for users</td></tr>
-  <tr><td>ban</td><td>Ban ip for x minutes for any reason</td></tr>
-  <tr><td>ban_range</td><td>Ban ip range for x minutes for any reason</td></tr>
-  <tr><td>unban</td><td>Unban ip/banlist entry</td></tr>
-  <tr><td>unban_range</td><td>Unban ip range</td></tr>
-  <tr><td>unban_all</td><td>Unban all entries</td></tr>
-  <tr><td>bans</td><td>Show banlist</td></tr>
-  <tr><td>bans_save</td><td>Save banlist in a file</td></tr>
-  <tr><td>ban</td><td>Ban player with ip/client id for x minutes for any reason</td></tr>
-  <tr><td>kick</td><td>Kick player with specified id for any reason</td></tr>
-  <tr><td>status</td><td>List players</td></tr>
-  <tr><td>shutdown</td><td>Shut down</td></tr>
-  <tr><td>logout</td><td>Logout of rcon</td></tr>
-  <tr><td>record</td><td>Record to a file</td></tr>
-  <tr><td>stoprecord</td><td>Stop recording</td></tr>
-  <tr><td>reload</td><td>Reload the map</td></tr>
-  <tr><td>add_sqlserver</td><td>add a sqlserver</td></tr>
-  <tr><td>dump_sqlservers</td><td>dumps all sqlservers readservers = r, writeservers = w</td></tr>
-  <tr><td>dnsbl_status</td><td>List blacklisted players</td></tr>
-  <tr><td>auth_add</td><td>Add a rcon key</td></tr>
-  <tr><td>auth_add_p</td><td>Add a prehashed rcon key</td></tr>
-  <tr><td>auth_change</td><td>Update a rcon key</td></tr>
-  <tr><td>auth_change_p</td><td>Update a rcon key with prehashed data</td></tr>
-  <tr><td>auth_remove</td><td>Remove a rcon key</td></tr>
-  <tr><td>auth_list</td><td>List all rcon keys</td></tr>
-  <tr><td>name_ban</td><td>Ban a certain nick name</td></tr>
-  <tr><td>name_unban</td><td>Unban a certain nick name</td></tr>
-  <tr><td>name_bans</td><td>List all name bans</td></tr>
-  <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td></tr>
-  <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
-  <tr><td>tune</td><td>Tune variable to value</td></tr>
-  <tr><td>tune_reset</td><td>Reset tuning</td></tr>
-  <tr><td>tune_dump</td><td>Dump tuning</td></tr>
-  <tr><td>tune_zone</td><td>Tune in zone a variable to value</td></tr>
-  <tr><td>tune_zone_dump</td><td>Dump zone tuning in zone x</td></tr>
-  <tr><td>tune_zone_reset</td><td>reset zone tuning in zone x or in all zones</td></tr>
-  <tr><td>tune_zone_enter</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
-  <tr><td>tune_zone_leave</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
-  <tr><td>switch_open</td><td>Whether a switch is open by default (otherwise closed)</td></tr>
-  <tr><td>pause_game</td><td>Pause/unpause game</td></tr>
-  <tr><td>change_map</td><td>Change map</td></tr>
-  <tr><td>random_map</td><td>Random map</td></tr>
-  <tr><td>random_unfinished_map</td><td>Random unfinished map</td></tr>
-  <tr><td>restart</td><td>Restart in x seconds (0 = abort)</td></tr>
-  <tr><td>broadcast</td><td>Broadcast message</td></tr>
-  <tr><td>say</td><td>Say in chat</td></tr>
-  <tr><td>set_team</td><td>Set team of player to team</td></tr>
-  <tr><td>set_team_all</td><td>Set team of all players to team</td></tr>
-  <tr><td>add_vote</td><td>Add a voting option</td></tr>
-  <tr><td>remove_vote</td><td>remove a voting option</td></tr>
-  <tr><td>force_vote</td><td>Force a voting option</td></tr>
-  <tr><td>clear_votes</td><td>Clears the voting options</td></tr>
-  <tr><td>vote</td><td>Force a vote to yes/no</td></tr>
-  <tr><td>dbg_dumpmem</td><td>Dump the memory</td></tr>
-  <tr><td>dbg_lognetwork</td><td>Log the network</td></tr>
+  <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>echo</td><td>r[text]</td><td>Echo the text</td></tr>
+  <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
+  <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
+  <tr><td>access_level</td><td>s[command] ?i[accesslevel]</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
+  <tr><td>access_status</td><td>i[accesslevel]</td><td>List all commands which are accessible for admin = 0, moderator = 1, helper = 2, all = 3</td></tr>
+  <tr><td>cmdlist</td><td></td><td>List all commands which are accessible for users</td></tr>
+  <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban ip for x minutes for any reason</td></tr>
+  <tr><td>ban_range</td><td>s[first ip] s[last ip] ?i[minutes] r[reason]</td><td>Ban ip range for x minutes for any reason</td></tr>
+  <tr><td>unban</td><td>s[ip|entry]</td><td>Unban ip/banlist entry</td></tr>
+  <tr><td>unban_range</td><td>s[first ip] s[last ip]</td><td>Unban ip range</td></tr>
+  <tr><td>unban_all</td><td></td><td>Unban all entries</td></tr>
+  <tr><td>bans</td><td></td><td>Show banlist</td></tr>
+  <tr><td>bans_save</td><td>s[file]</td><td>Save banlist in a file</td></tr>
+  <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban player with ip/client id for x minutes for any reason</td></tr>
+  <tr><td>kick</td><td>i[id] ?r[reason]</td><td>Kick player with specified id for any reason</td></tr>
+  <tr><td>status</td><td></td><td>List players</td></tr>
+  <tr><td>shutdown</td><td></td><td>Shut down</td></tr>
+  <tr><td>logout</td><td></td><td>Logout of rcon</td></tr>
+  <tr><td>record</td><td>?s[file]</td><td>Record to a file</td></tr>
+  <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
+  <tr><td>reload</td><td></td><td>Reload the map</td></tr>
+  <tr><td>add_sqlserver</td><td>s['r'|'w'] s[Database] s[Prefix] s[User] s[Password] s[IP] i[Port] ?i[SetUpDatabase ?]</td><td>add a sqlserver</td></tr>
+  <tr><td>dump_sqlservers</td><td>s['r'|'w']</td><td>dumps all sqlservers readservers = r, writeservers = w</td></tr>
+  <tr><td>dnsbl_status</td><td></td><td>List blacklisted players</td></tr>
+  <tr><td>auth_add</td><td>s[ident] s[level] s[pw]</td><td>Add a rcon key</td></tr>
+  <tr><td>auth_add_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Add a prehashed rcon key</td></tr>
+  <tr><td>auth_change</td><td>s[ident] s[level] s[pw]</td><td>Update a rcon key</td></tr>
+  <tr><td>auth_change_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Update a rcon key with prehashed data</td></tr>
+  <tr><td>auth_remove</td><td>s[ident]</td><td>Remove a rcon key</td></tr>
+  <tr><td>auth_list</td><td></td><td>List all rcon keys</td></tr>
+  <tr><td>name_ban</td><td>s[name] ?i[distance] ?r[reason]</td><td>Ban a certain nick name</td></tr>
+  <tr><td>name_unban</td><td>s[name]</td><td>Unban a certain nick name</td></tr>
+  <tr><td>name_bans</td><td></td><td>List all name bans</td></tr>
+  <tr><td>sv_test_cmds</td><td></td><td>Turns testing commands aka cheats on/off</td></tr>
+  <tr><td>sv_rescue</td><td></td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
+  <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
+  <tr><td>tune_reset</td><td></td><td>Reset tuning</td></tr>
+  <tr><td>tune_dump</td><td></td><td>Dump tuning</td></tr>
+  <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
+  <tr><td>tune_zone_dump</td><td>i[zone]</td><td>Dump zone tuning in zone x</td></tr>
+  <tr><td>tune_zone_reset</td><td>?i[zone]</td><td>reset zone tuning in zone x or in all zones</td></tr>
+  <tr><td>tune_zone_enter</td><td>i[zone] s[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
+  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
+  <tr><td>switch_open</td><td>i['0'|'1']</td><td>Whether a switch is open by default (otherwise closed)</td></tr>
+  <tr><td>pause_game</td><td></td><td>Pause/unpause game</td></tr>
+  <tr><td>change_map</td><td>?r[map]</td><td>Change map</td></tr>
+  <tr><td>random_map</td><td>?i[stars]</td><td>Random map</td></tr>
+  <tr><td>random_unfinished_map</td><td>?i[stars]</td><td>Random unfinished map</td></tr>
+  <tr><td>restart</td><td>?i[seconds]</td><td>Restart in x seconds (0 = abort)</td></tr>
+  <tr><td>broadcast</td><td>r[message]</td><td>Broadcast message</td></tr>
+  <tr><td>say</td><td>r[message]</td><td>Say in chat</td></tr>
+  <tr><td>set_team</td><td>i[id] i[team-id] ?i[delay in minutes]</td><td>Set team of player to team</td></tr>
+  <tr><td>set_team_all</td><td>i[team-id]</td><td>Set team of all players to team</td></tr>
+  <tr><td>add_vote</td><td>s[name] r[command]</td><td>Add a voting option</td></tr>
+  <tr><td>remove_vote</td><td>s[name]</td><td>remove a voting option</td></tr>
+  <tr><td>force_vote</td><td>s[name] s[command] ?r[reason]</td><td>Force a voting option</td></tr>
+  <tr><td>clear_votes</td><td></td><td>Clears the voting options</td></tr>
+  <tr><td>vote</td><td>r['yes'|'no']</td><td>Force a vote to yes/no</td></tr>
+  <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
 </table>
 </div>
 <div class="block">
 <h2 id="chat-commands">Chat Commands</h2>
 <table class="settingscommands">
-  <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>credits</td><td>Shows the credits of the DDRace mod</td></tr>
-  <tr><td>emote</td><td>Sets your tee's eye emote</td></tr>
-  <tr><td>eyeemote</td><td>Toggles use of standard eye-emotes on/off, eyeemote s, where s = on for on, off for off, toggle for toggle and nothing to show current status</td></tr>
-  <tr><td>settings</td><td>Shows gameplay information for this server</td></tr>
-  <tr><td>help</td><td>Shows help to command r, general help if left blank</td></tr>
-  <tr><td>info</td><td>Shows info about this server</td></tr>
-  <tr><td>me</td><td>Like the famous irc command '/me says hi' will display '<yourname> says hi'</td></tr>
-  <tr><td>w</td><td>Whisper something to someone (private message)</td></tr>
-  <tr><td>whisper</td><td>Whisper something to someone (private message)</td></tr>
-  <tr><td>c</td><td>Converse with the last person you whispered to (private message)</td></tr>
-  <tr><td>converse</td><td>Converse with the last person you whispered to (private message)</td></tr>
-  <tr><td>pause</td><td>Toggles pause</td></tr>
-  <tr><td>spec</td><td>Toggles spec (if not available behaves as /pause)</td></tr>
-  <tr><td>pausevoted</td><td>Toggles pause on the currently voted player</td></tr>
-  <tr><td>specvoted</td><td>Toggles spec on the currently voted player</td></tr>
-  <tr><td>dnd</td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
-  <tr><td>mapinfo</td><td>Show info about the map with name r gives (current map by default)</td></tr>
-  <tr><td>timeout</td><td>Set timeout protection code s</td></tr>
-  <tr><td>save</td><td>Save team with code r to current server. To save to another server, use '/save s r' where s = server (case-sensitive: GER, RUS, etc) and r = code</td></tr>
-  <tr><td>load</td><td>Load with code r</td></tr>
-  <tr><td>map</td><td>Vote a map by name</td></tr>
-  <tr><td>rankteam</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
-  <tr><td>teamrank</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
-  <tr><td>rank</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
-  <tr><td>rules</td><td>Shows the server rules</td></tr>
-  <tr><td>team</td><td>Lets you join team i (shows your team if left blank)</td></tr>
-  <tr><td>lock</td><td>Lock team so no-one else can join it</td></tr>
-  <tr><td>invite</td><td>Invite a person to a locked team</td></tr>
-  <tr><td>top5team</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>teamtop5</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>top5</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>showothers</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
-  <tr><td>specteam</td><td>Whether to show players from other teams when spectating (on by default), optional i = 0 for off else for on</td></tr>
-  <tr><td>ninjajetpack</td><td>Whether to use ninja jetpack or not. Makes jetpack look more awesome</td></tr>
-  <tr><td>saytime</td><td>Privately messages someone's current time in this current running race (your time by default)</td></tr>
-  <tr><td>saytimeall</td><td>Publicly messages everyone your current time in this current running race</td></tr>
-  <tr><td>time</td><td>Privately shows you your current time in this current running race in the broadcast message</td></tr>
-  <tr><td>timer</td><td>Personal Setting of showing time in either broadcast or game/round timer, timer s, where s = broadcast for broadcast, gametimer for game/round timer, cycle for cycle, both for both, none for no timer and nothing to show current status</td></tr>
-  <tr><td>r</td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
-  <tr><td>rescue</td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
-  <tr><td>kill</td><td>Kill yourself</td></tr>
-  <tr><td>modhelp</td><td>Request the help of a moderator with a description of the problem</td></tr>
-  <tr><td>times</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
-  <tr><td>points</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
-  <tr><td>top5points</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
+  <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>credits</td><td></td><td>Shows the credits of the DDRace mod</td></tr>
+  <tr><td>emote</td><td>?s[emote name] i[duration in seconds]</td><td>Sets your tee's eye emote</td></tr>
+  <tr><td>eyeemote</td><td>?s['on'|'off'|'toggle']</td><td>Toggles use of standard eye-emotes on/off, eyeemote s, where s = on for on, off for off, toggle for toggle and nothing to show current status</td></tr>
+  <tr><td>settings</td><td>?s[configname]</td><td>Shows gameplay information for this server</td></tr>
+  <tr><td>help</td><td>?r[command]</td><td>Shows help to command r, general help if left blank</td></tr>
+  <tr><td>info</td><td></td><td>Shows info about this server</td></tr>
+  <tr><td>me</td><td>r[message]</td><td>Like the famous irc command '/me says hi' will display '<yourname> says hi'</td></tr>
+  <tr><td>w</td><td>s[player name] r[message]</td><td>Whisper something to someone (private message)</td></tr>
+  <tr><td>whisper</td><td>s[player name] r[message]</td><td>Whisper something to someone (private message)</td></tr>
+  <tr><td>c</td><td>r[message]</td><td>Converse with the last person you whispered to (private message)</td></tr>
+  <tr><td>converse</td><td>r[message]</td><td>Converse with the last person you whispered to (private message)</td></tr>
+  <tr><td>pause</td><td>?r[player name]</td><td>Toggles pause</td></tr>
+  <tr><td>spec</td><td>?r[player name]</td><td>Toggles spec (if not available behaves as /pause)</td></tr>
+  <tr><td>pausevoted</td><td></td><td>Toggles pause on the currently voted player</td></tr>
+  <tr><td>specvoted</td><td></td><td>Toggles spec on the currently voted player</td></tr>
+  <tr><td>dnd</td><td></td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
+  <tr><td>mapinfo</td><td>?r[map]</td><td>Show info about the map with name r gives (current map by default)</td></tr>
+  <tr><td>timeout</td><td>?s[code]</td><td>Set timeout protection code s</td></tr>
+  <tr><td>save</td><td>r[code]</td><td>Save team with code r to current server. To save to another server, use '/save s r' where s = server (case-sensitive: GER, RUS, etc) and r = code</td></tr>
+  <tr><td>load</td><td>r[code]</td><td>Load with code r</td></tr>
+  <tr><td>map</td><td>?r[map]</td><td>Vote a map by name</td></tr>
+  <tr><td>rankteam</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
+  <tr><td>teamrank</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
+  <tr><td>rank</td><td>?r[player name]</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
+  <tr><td>rules</td><td></td><td>Shows the server rules</td></tr>
+  <tr><td>team</td><td>?i[id]</td><td>Lets you join team i (shows your team if left blank)</td></tr>
+  <tr><td>lock</td><td>?i['0'|'1']</td><td>Lock team so no-one else can join it</td></tr>
+  <tr><td>invite</td><td>r[player name]</td><td>Invite a person to a locked team</td></tr>
+  <tr><td>top5team</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>teamtop5</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>top5</td><td>?i[rank to start with]</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>showothers</td><td>?i['0'|'1']</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
+  <tr><td>showall</td><td>?i['0'|'1']</td><td>Whether to show players at any distance (off by default), optional i = 0 for off else for on</td></tr>
+  <tr><td>specteam</td><td>?i['0'|'1']</td><td>Whether to show players from other teams when spectating (on by default), optional i = 0 for off else for on</td></tr>
+  <tr><td>ninjajetpack</td><td>?i['0'|'1']</td><td>Whether to use ninja jetpack or not. Makes jetpack look more awesome</td></tr>
+  <tr><td>saytime</td><td>?r[player name]</td><td>Privately messages someone's current time in this current running race (your time by default)</td></tr>
+  <tr><td>saytimeall</td><td></td><td>Publicly messages everyone your current time in this current running race</td></tr>
+  <tr><td>time</td><td></td><td>Privately shows you your current time in this current running race in the broadcast message</td></tr>
+  <tr><td>timer</td><td>?s['gametimer'|'broadcast'|'both'|'none'|'cycle']</td><td>Personal Setting of showing time in either broadcast or game/round timer, timer s, where s = broadcast for broadcast, gametimer for game/round timer, cycle for cycle, both for both, none for no timer and nothing to show current status</td></tr>
+  <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
+  <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
+  <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
+  <tr><td>modhelp</td><td>r[message]</td><td>Request the help of a moderator with a description of the problem</td></tr>
+  <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
+  <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
+  <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
 </table>
 </div>
 <div class="block">
@@ -350,6 +353,7 @@ menu: |
   <tr><td>cl_nameplates_size</td><td>Size of the name plates from 0 to 100%</td><td>50</td></tr>
   <tr><td>cl_nameplates_clan</td><td>Show clan in name plates</td><td>0</td></tr>
   <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td></tr>
+  <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>1</td></tr>
@@ -374,9 +378,9 @@ menu: |
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td></tr>
-  <tr><td>cl_mouse_deadzone</td><td></td><td>300</td></tr>
-  <tr><td>cl_mouse_followfactor</td><td></td><td>60</td></tr>
-  <tr><td>cl_mouse_max_distance</td><td></td><td>800</td></tr>
+  <tr><td>cl_mouse_deadzone</td><td></td><td>0</td></tr>
+  <tr><td>cl_mouse_followfactor</td><td></td><td>0</td></tr>
+  <tr><td>cl_mouse_max_distance</td><td></td><td>400</td></tr>
   <tr><td>cl_dyncam</td><td>Enable dyncam</td><td>0</td></tr>
   <tr><td>cl_dyncam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
   <tr><td>cl_dyncam_mousesens</td><td>Mouse sens used when dyncam is toggled on</td><td>0</td></tr>
@@ -423,8 +427,8 @@ menu: |
   <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
   <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy should stop pressing keys when you switch</td><td>0</td></tr>
-  <tr><td>cl_dummy_copy_moves</td><td>Wether dummy should copy your moves</td><td>0</td></tr>
-  <tr><td>cl_control_dummy</td><td>Whether can you control dummy at the same time</td><td>0</td></tr>
+  <tr><td>cl_dummy_copy_moves</td><td>Whether dummy should copy your moves</td><td>0</td></tr>
+  <tr><td>cl_dummy_control</td><td>Whether can you control dummy at the same time</td><td>0</td></tr>
   <tr><td>cl_dummy_jump</td><td>Whether dummy is jumping</td><td>0</td></tr>
   <tr><td>cl_dummy_fire</td><td>Whether dummy is fire</td><td>0</td></tr>
   <tr><td>cl_dummy_hook</td><td>Whether dummy is hook</td><td>0</td></tr>
@@ -440,7 +444,7 @@ menu: |
   <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
   <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td></tr>
-  <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>480</td></tr>
+  <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>0</td></tr>
   <tr><td>cl_refresh_rate_inactive</td><td>Refresh rate for updating the game when the window is inactive (in Hz)</td><td>120</td></tr>
   <tr><td>cl_editor</td><td></td><td>0</td></tr>
   <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td></tr>
@@ -594,6 +598,7 @@ menu: |
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players' hook collision line</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_own</td><td>Show own players' hook collision line</td><td>1</td></tr>
+  <tr><td>cl_show_hook_coll_always</td><td>Show every players' hook collision line even if they're not using it</td><td>0</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td></tr>
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
@@ -618,75 +623,77 @@ menu: |
 <div class="block">
 <h2 id="client-commands">Client Commands</h2>
 <table class="settingscommands">
-  <tr><th>Command</th><th>Description</th></tr>
-  <tr><td>exec</td><td>Execute the specified file</td></tr>
-  <tr><td>toggle</td><td>Toggle config value</td></tr>
-  <tr><td>+toggle</td><td>Toggle config value via keypress</td></tr>
-  <tr><td>toggle_local_console</td><td>Toggle local console</td></tr>
-  <tr><td>toggle_remote_console</td><td>Toggle remote console</td></tr>
-  <tr><td>clear_local_console</td><td>Clear local console</td></tr>
-  <tr><td>clear_remote_console</td><td>Clear remote console</td></tr>
-  <tr><td>dump_local_console</td><td>Dump local console</td></tr>
-  <tr><td>dump_remote_console</td><td>Dump remote console</td></tr>
-  <tr><td>callvote</td><td>Call vote</td></tr>
-  <tr><td>vote</td><td>Vote yes/no</td></tr>
-  <tr><td>+emote</td><td>Open emote selector</td></tr>
-  <tr><td>emote</td><td>Use emote</td></tr>
-  <tr><td>+spectate</td><td>Open spectator mode selector</td></tr>
-  <tr><td>spectate</td><td>Switch spectator mode</td></tr>
-  <tr><td>spectate_next</td><td>Spectate the next player</td></tr>
-  <tr><td>spectate_previous</td><td>Spectate the previous player</td></tr>
-  <tr><td>zoom+</td><td>Zoom increase</td></tr>
-  <tr><td>zoom-</td><td>Zoom decrease</td></tr>
-  <tr><td>zoom</td><td>Zoom reset</td></tr>
-  <tr><td>say</td><td>Say in chat</td></tr>
-  <tr><td>say_team</td><td>Say in team chat</td></tr>
-  <tr><td>chat</td><td>Enable chat with all/team mode</td></tr>
-  <tr><td>+show_chat</td><td>Show chat</td></tr>
-  <tr><td>echo</td><td>Echo the text in chat window</td></tr>
-  <tr><td>+left</td><td>Move left</td></tr>
-  <tr><td>+right</td><td>Move right</td></tr>
-  <tr><td>+jump</td><td>Jump</td></tr>
-  <tr><td>+hook</td><td>Hook</td></tr>
-  <tr><td>+fire</td><td>Fire</td></tr>
-  <tr><td>+showhookcoll</td><td>Show Hook Collision</td></tr>
-  <tr><td>+weapon1</td><td>Switch to hammer</td></tr>
-  <tr><td>+weapon2</td><td>Switch to gun</td></tr>
-  <tr><td>+weapon3</td><td>Switch to shotgun</td></tr>
-  <tr><td>+weapon4</td><td>Switch to grenade</td></tr>
-  <tr><td>+weapon5</td><td>Switch to rifle</td></tr>
-  <tr><td>+nextweapon</td><td>Switch to next weapon</td></tr>
-  <tr><td>+prevweapon</td><td>Switch to previous weapon</td></tr>
-  <tr><td>add_foe</td><td>Add a foe</td></tr>
-  <tr><td>remove_foe</td><td>Remove a foe</td></tr>
-  <tr><td>foes</td><td>List foes</td></tr>
-  <tr><td>add_friend</td><td>Add a friend</td></tr>
-  <tr><td>remove_friend</td><td>Remove a friend</td></tr>
-  <tr><td>friends</td><td>List friends</td></tr>
-  <tr><td>team</td><td>Switch team</td></tr>
-  <tr><td>kill</td><td>Kill yourself</td></tr>
-  <tr><td>dummy_connect</td><td>connect dummy</td></tr>
-  <tr><td>dummy_disconnect</td><td>disconnect dummy</td></tr>
-  <tr><td>quit</td><td>Quit Teeworlds</td></tr>
-  <tr><td>exit</td><td>Quit Teeworlds</td></tr>
-  <tr><td>minimize</td><td>Minimize Teeworlds</td></tr>
-  <tr><td>connect</td><td>Connect to the specified host/ip</td></tr>
-  <tr><td>disconnect</td><td>Disconnect from the server</td></tr>
-  <tr><td>ping</td><td>Ping the current server</td></tr>
-  <tr><td>screenshot</td><td>Take a screenshot</td></tr>
-  <tr><td>rcon</td><td>Send specified command to rcon</td></tr>
-  <tr><td>rcon_auth</td><td>Authenticate to rcon</td></tr>
-  <tr><td>rcon_login</td><td>Authenticate to rcon with a username</td></tr>
-  <tr><td>play</td><td>Play the file specified</td></tr>
-  <tr><td>record</td><td>Record to the file</td></tr>
-  <tr><td>stoprecord</td><td>Stop recording</td></tr>
-  <tr><td>add_demomarker</td><td>Add demo timeline marker</td></tr>
-  <tr><td>add_favorite</td><td>Add a server as a favorite</td></tr>
-  <tr><td>remove_favorite</td><td>Remove a server from favorites</td></tr>
-  <tr><td>demo_slice_start</td><td></td></tr>
-  <tr><td>demo_slice_end</td><td></td></tr>
-  <tr><td>demo_play</td><td>Play demo</td></tr>
-  <tr><td>demo_speed</td><td>Set demo speed</td></tr>
+  <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
+  <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
+  <tr><td>+toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value via keypress</td></tr>
+  <tr><td>toggle_local_console</td><td></td><td>Toggle local console</td></tr>
+  <tr><td>toggle_remote_console</td><td></td><td>Toggle remote console</td></tr>
+  <tr><td>clear_local_console</td><td></td><td>Clear local console</td></tr>
+  <tr><td>clear_remote_console</td><td></td><td>Clear remote console</td></tr>
+  <tr><td>dump_local_console</td><td></td><td>Dump local console</td></tr>
+  <tr><td>dump_remote_console</td><td></td><td>Dump remote console</td></tr>
+  <tr><td>console_page_up</td><td></td><td>Previous page in console</td></tr>
+  <tr><td>console_page_down</td><td></td><td>Next page in console</td></tr>
+  <tr><td>callvote</td><td>s[name] s[command] ?r[reason]</td><td>Call vote</td></tr>
+  <tr><td>vote</td><td>r['yes'|'no']</td><td>Vote yes/no</td></tr>
+  <tr><td>+emote</td><td></td><td>Open emote selector</td></tr>
+  <tr><td>emote</td><td>i[emote-id]</td><td>Use emote</td></tr>
+  <tr><td>+spectate</td><td></td><td>Open spectator mode selector</td></tr>
+  <tr><td>spectate</td><td>i[spectator-id]</td><td>Switch spectator mode</td></tr>
+  <tr><td>spectate_next</td><td></td><td>Spectate the next player</td></tr>
+  <tr><td>spectate_previous</td><td></td><td>Spectate the previous player</td></tr>
+  <tr><td>zoom+</td><td></td><td>Zoom increase</td></tr>
+  <tr><td>zoom-</td><td></td><td>Zoom decrease</td></tr>
+  <tr><td>zoom</td><td></td><td>Zoom reset</td></tr>
+  <tr><td>say</td><td>r[message]</td><td>Say in chat</td></tr>
+  <tr><td>say_team</td><td>r[message]</td><td>Say in team chat</td></tr>
+  <tr><td>chat</td><td>s['team'|'all'] ?r[message]</td><td>Enable chat with all/team mode</td></tr>
+  <tr><td>+show_chat</td><td></td><td>Show chat</td></tr>
+  <tr><td>echo</td><td>r[message]</td><td>Echo the text in chat window</td></tr>
+  <tr><td>+left</td><td></td><td>Move left</td></tr>
+  <tr><td>+right</td><td></td><td>Move right</td></tr>
+  <tr><td>+jump</td><td></td><td>Jump</td></tr>
+  <tr><td>+hook</td><td></td><td>Hook</td></tr>
+  <tr><td>+fire</td><td></td><td>Fire</td></tr>
+  <tr><td>+showhookcoll</td><td></td><td>Show Hook Collision</td></tr>
+  <tr><td>+weapon1</td><td></td><td>Switch to hammer</td></tr>
+  <tr><td>+weapon2</td><td></td><td>Switch to gun</td></tr>
+  <tr><td>+weapon3</td><td></td><td>Switch to shotgun</td></tr>
+  <tr><td>+weapon4</td><td></td><td>Switch to grenade</td></tr>
+  <tr><td>+weapon5</td><td></td><td>Switch to rifle</td></tr>
+  <tr><td>+nextweapon</td><td></td><td>Switch to next weapon</td></tr>
+  <tr><td>+prevweapon</td><td></td><td>Switch to previous weapon</td></tr>
+  <tr><td>add_foe</td><td>s[name] ?s[clan]</td><td>Add a foe</td></tr>
+  <tr><td>remove_foe</td><td>s[name] ?s[clan]</td><td>Remove a foe</td></tr>
+  <tr><td>foes</td><td></td><td>List foes</td></tr>
+  <tr><td>add_friend</td><td>s[name] ?s[clan]</td><td>Add a friend</td></tr>
+  <tr><td>remove_friend</td><td>s[name] ?s[clan]</td><td>Remove a friend</td></tr>
+  <tr><td>friends</td><td></td><td>List friends</td></tr>
+  <tr><td>team</td><td>i[team-id]</td><td>Switch team</td></tr>
+  <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
+  <tr><td>dummy_connect</td><td></td><td>connect dummy</td></tr>
+  <tr><td>dummy_disconnect</td><td></td><td>disconnect dummy</td></tr>
+  <tr><td>quit</td><td></td><td>Quit Teeworlds</td></tr>
+  <tr><td>exit</td><td></td><td>Quit Teeworlds</td></tr>
+  <tr><td>minimize</td><td></td><td>Minimize Teeworlds</td></tr>
+  <tr><td>connect</td><td>s[host|ip]</td><td>Connect to the specified host/ip</td></tr>
+  <tr><td>disconnect</td><td></td><td>Disconnect from the server</td></tr>
+  <tr><td>ping</td><td></td><td>Ping the current server</td></tr>
+  <tr><td>screenshot</td><td></td><td>Take a screenshot</td></tr>
+  <tr><td>rcon</td><td>r[rcon-command]</td><td>Send specified command to rcon</td></tr>
+  <tr><td>rcon_auth</td><td>s[password]</td><td>Authenticate to rcon</td></tr>
+  <tr><td>rcon_login</td><td>s[username] r[password]</td><td>Authenticate to rcon with a username</td></tr>
+  <tr><td>play</td><td>r[file]</td><td>Play the file specified</td></tr>
+  <tr><td>record</td><td>?s[file]</td><td>Record to the file</td></tr>
+  <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
+  <tr><td>add_demomarker</td><td></td><td>Add demo timeline marker</td></tr>
+  <tr><td>add_favorite</td><td>s[host|ip]</td><td>Add a server as a favorite</td></tr>
+  <tr><td>remove_favorite</td><td>s[host|ip]</td><td>Remove a server from favorites</td></tr>
+  <tr><td>demo_slice_start</td><td></td><td></td></tr>
+  <tr><td>demo_slice_end</td><td></td><td></td></tr>
+  <tr><td>demo_play</td><td></td><td>Play demo</td></tr>
+  <tr><td>demo_speed</td><td>i[speed]</td><td>Set demo speed</td></tr>
 </table>
 </div>
 <div class="block">
