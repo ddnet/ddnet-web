@@ -116,7 +116,6 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span></p>';
 }
 ?>
-<a href="discord"><img width="36" src="discord.svg" alt="Discord"/></a>
 <a href="feed/"><img width="36" src="feed.svg" alt="Feed"/></a>
 <a href="https://github.com/ddnet/"><img width="36" src="github.svg" alt="GitHub"/></a>
 
