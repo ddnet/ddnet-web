@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet FRA to test"
+permalink: /news/ddnet-fra-to-test/
+tag: current
+---
+
+Thanks to heinrich5991 we have another DDNet server in France running. Let's see how it performs.
