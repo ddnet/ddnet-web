@@ -297,11 +297,6 @@ br {
   clear: none;
 }
 
-.screenshot {
-  max-width: 100%;
-  height: auto;
-}
-
 .blockreleases {
   display: inline-block;
   max-width: 100%;
