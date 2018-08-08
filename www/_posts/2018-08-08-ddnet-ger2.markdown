@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet GER2"
+permalink: /news/ddnet-ger2/
+tag: current
+---
+
+Thanks to Learath2 we have another DDNet GER2 server in Nuremberg running. Let's see how it performs...
