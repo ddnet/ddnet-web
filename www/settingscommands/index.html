@@ -16,7 +16,7 @@ menu: |
 <h2 id="map-settings">Map Settings</h2>
 <div style="overflow: auto;"><table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
-  <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser eachother or not</td><td>1</td></tr>
+  <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser each other or not</td><td>1</td></tr>
   <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td></tr>
   <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer & deepfreeze)</td><td>3</td></tr>
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
@@ -74,7 +74,7 @@ menu: |
   <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>1</td></tr>
   <tr><td>sv_dnsbl</td><td>Enable DNSBL (DNS-based Blackhole List)</td><td>0</td></tr>
   <tr><td>sv_dnsbl_host</td><td>Hostname of DNSBL provider to use for IP Verification</td><td>""</td></tr>
-  <tr><td>sv_dnsbl_key</td><td>Optional Authentification Key for the specified DNSBL provider</td><td>""</td></tr>
+  <tr><td>sv_dnsbl_key</td><td>Optional Authentication Key for the specified DNSBL provider</td><td>""</td></tr>
   <tr><td>sv_dnsbl_vote</td><td>Block votes by blacklisted addresses</td><td>0</td></tr>
   <tr><td>sv_dnsbl_ban</td><td>Automatically ban blacklisted addresses</td><td>0</td></tr>
   <tr><td>sv_rcon_vote</td><td>Only allow authed clients to call votes</td><td>0</td></tr>
@@ -84,6 +84,7 @@ menu: |
   <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit</td><td>10</td></tr>
   <tr><td>sv_modhelp_url</td><td>HTTP URL to POST moderator help requests to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
+  <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td></tr>
   <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td></tr>
   <tr><td>dbg_hitch</td><td>Hitch warnings</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
@@ -91,7 +92,7 @@ menu: |
   <tr><td>sv_welcome</td><td>Message that will be displayed to players who join the server</td><td>""</td></tr>
   <tr><td>sv_reserved_slots</td><td>The number of slots that are reserved for special players</td><td>0</td></tr>
   <tr><td>sv_reserved_slots_pass</td><td>The password that is required to use a reserved slot</td><td>""</td></tr>
-  <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser eachother or not</td><td>1</td></tr>
+  <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser each other or not</td><td>1</td></tr>
   <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td></tr>
   <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off</td><td>0</td></tr>
   <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer & deepfreeze)</td><td>3</td></tr>
@@ -127,7 +128,7 @@ menu: |
   <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>"records"</td></tr>
   <tr><td>sv_use_sql</td><td>Enables SQL DB instead of record file</td><td>0</td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>"UNK"</td></tr>
-  <tr><td>sv_sql_valid_servernames</td><td>Comma seperated list of valid server names for saving a game to ([A-Z][A-Z][A-Z].?</td><td>"UNK"</td></tr>
+  <tr><td>sv_sql_valid_servernames</td><td>Comma separated list of valid server names for saving a game to ([A-Z][A-Z][A-Z].?</td><td>"UNK"</td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td></tr>
   <tr><td>sv_savegames_delay</td><td>Delay in seconds for loading a savegame</td><td>60</td></tr>
   <tr><td>sv_sql_failure_file</td><td>File to store failed Sql-Inserts (ranks)</td><td>"failed_sql.sql"</td></tr>
@@ -401,7 +402,7 @@ menu: |
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
   <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
   <tr><td>player_skin</td><td>Player skin</td><td>"default"</td></tr>
-  <tr><td>cl_kitty_skins</td><td>Enable kitty skins instead of vanilla skins</td><td>0</td></tr>
+  <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, coala, santa)</td><td>""</td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td></tr>
   <tr><td>ui_page</td><td>Interface page</td><td>9</td></tr>
   <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td></tr>
@@ -474,6 +475,7 @@ menu: |
   <tr><td>br_filter_ping</td><td>Ping to filter by in the server browser</td><td>999</td></tr>
   <tr><td>br_filter_gametype</td><td>Game types to filter</td><td>""</td></tr>
   <tr><td>br_filter_gametype_strict</td><td>Strict gametype filter</td><td>0</td></tr>
+  <tr><td>br_filter_connecting_players</td><td>Filter connecting players</td><td>1</td></tr>
   <tr><td>br_filter_serveraddress</td><td>Server address to filter</td><td>""</td></tr>
   <tr><td>br_filter_pure</td><td>Filter out non-standard servers in browser</td><td>0</td></tr>
   <tr><td>br_filter_pure_map</td><td>Filter out non-standard maps in browser</td><td>0</td></tr>
@@ -534,6 +536,7 @@ menu: |
   <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
+  <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td></tr>
   <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
   <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
