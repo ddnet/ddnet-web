@@ -1,0 +1,8 @@
+---
+layout: post
+title: "Teeworlds Auto-Font by bit"
+permalink: /news/auto-font/
+tag: current
+---
+
+Today bit [presented](https://forum.ddnet.tw/viewtopic.php?t=6617) a new tool for mappers to easily create font mapres. It is now available on [DDNet.tw/auto-font](https://ddnet.tw/auto-font/).
