@@ -1,0 +1,201 @@
+---
+layout: default
+title: Teeworlds Auto-Font
+head: |
+    <style>
+        .autofont * {
+            color: white;
+            margin-bottom: 5px;
+        }
+        .autofont {
+            background-color: black;
+            min-width: 1024px;
+        }
+        #cv_main {
+            border: 1px grey solid;
+            background: rgba(255, 255, 255, 0);
+            z-index: 1;
+        }
+        .autofont input {
+            background-color: black;
+            border: 1px grey dashed;
+            text-align: center;
+            color:skyblue;
+        }
+        .autofont input[type=number] {
+            width: 4em;
+        }
+        .autofont input[type=range] {
+            vertical-align: bottom;
+            height: 1.2em;
+            width: 300px;
+        }
+        .autofont input[type=button] {
+            background-color: skyblue;
+            color:black;
+            cursor:pointer;
+            padding:0 10px;
+        }
+    </style>
+---
+<div class="block autofont">
+    <h2>Teeworlds Auto-Font</h2>
+    <div>
+        <label>Font: </label> <input type="text" id="inp_font" value="Arial" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Size: </label> <input type="number" id="inp_size" value="50" min="1" max="500" oninput="FontRefresh()" onmouseover="Info(this)">
+        <input id="inp_bold" type="checkbox" oninput="FontRefresh()" onmouseover="Info(this)"><label>Bold</label>
+        <input id="inp_italic" type="checkbox" oninput="FontRefresh()" onmouseover="Info(this)"><label>Italic</label>
+        <input id="inp_grid" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label>Grid</label>
+        <input id="inp_uppercase" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label>Uppercase</label>
+        <input id="inp_lowercase" type="checkbox" oninput="FontRefresh()" onmouseover="Info(this)"><label>Lowercase</label>
+        <input id="inp_ifauthor" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label>Author</label>
+        <input type="text" id="inp_author" value="by bit" oninput="FontRefresh()" onmouseover="Info(this)">
+        <input type="button" value="Refresh" onclick="FontRefresh()">
+        <br>
+        <label>Offset_X: </label> <input type="range" id="inp_ox" value="0.5" min="0" max="1" step="0.01" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Offset_Y: </label> <input type="range" id="inp_oy" value="0.78" min="0" max="1" step="0.01" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Alpha: </label> <input type="range" id="inp_alpha" value="1" min="0" max="1" step="0.01" oninput="FontRefresh()" onmouseover="Info(this)">
+        <input id="default" type="button" value="Default" onclick="Default()" onmouseover="Info(this)">
+        <br>
+        <label>Lines: </label> <input type="number" id="inp_lines" value="13" min="1" max="16" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Uppercase Start X: </label> <input type="number" id="inp_usx" value="1" min="0" max="15" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Uppercase Start Y: </label> <input type="number" id="inp_usy" value="1" min="0" max="15" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Lowercase Start X: </label> <input type="number" id="inp_lsx" value="1" min="0" max="15" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Lowercase Start Y: </label> <input type="number" id="inp_lsy" value="5" min="0" max="15" oninput="FontRefresh()" onmouseover="Info(this)">
+        <br>
+        <input id="inp_ifothers" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label>Others</label>
+        <input type="text" id="inp_others" value="!?>.,:;&">
+        <label>Others Start X: </label> <input type="number" id="inp_osx" value="1" min="0" max="15" oninput="FontRefresh()" onmouseover="Info(this)">
+        <label>Others Start Y: </label> <input type="number" id="inp_osy" value="3" min="0" max="15" oninput="FontRefresh()" onmouseover="Info(this)">
+        <br>
+        <div style="color:skyblue">INFO: <span id="info" style="color:skyblue">Teeworlds Auto-Font Version 1.0 @by bit</span></div>
+    </div>
+    <div>
+        <canvas id="cv_main" width="1024" height="1024" onmouseover="Info(this)">
+        </canvas>
+    </div>
+    <p>Check out the <a href="https://forum.ddnet.tw/viewtopic.php?t=6617">Forum thread</a> for more information and discussion</p>
+</div>
+<script>
+    function Info(e){
+        let info = "Teeworlds Auto-Font Version 1.0 @by bit";
+        let einfo = document.getElementById("info");
+        let infoes = {
+            cv_main:"Right click on this and 'Save as Image'. (Don't forget to uncheck the Grid)",
+            inp_font:"Set the full font name, must be a font already installed on your computer",
+            inp_size:"Set the Font size",
+            inp_italic:"Set to italic",
+            inp_bold:"Set to bold",
+            inp_grid:"Show Grid (Don't forget to uncheck when Save image)",
+            inp_uppercase:"Show Uppercase letters",
+            inp_lowercase:"Show Lowercase letters",
+            inp_ifauthor:"Show Author",
+            inp_author:"Set the Author",
+            inp_ox:"Set the Offset in X-axis of the characters",
+            inp_oy:"Set the Offset in Y-axis of the characters",
+            inp_alpha:"Set the Transparency of the characters",
+            default:"Set the Offset_X, Offset_Y and Alpha to Default value",
+            inp_lines:"Set the amount of the characters in One row",
+            inp_usx:"Set the Uppercase letters start position in X-axis in grid",
+            inp_usy:"Set the Uppercase letters start position in Y-axis in grid",
+            inp_lsx:"Set the Lowercase letters start position in X-axis in grid",
+            inp_lsy:"Set the Lowercase letters start position in Y-axis in grid",
+            inp_osx:"Set the Other characters start position in X-axis in grid",
+            inp_osy:"Set the Other characters start position in Y-axis in grid",
+            inp_ifothers:"Show other characters",
+            inp_others:"Set the other characters"
+        };
+        if(infoes[e.id]) info = infoes[e.id];
+        einfo.innerHTML = info;
+    };
+
+    function Default() {
+        document.getElementById("inp_ox").value = 0.5;
+        document.getElementById("inp_oy").value = 0.78;
+        document.getElementById("inp_alpha").value = 1;
+        FontRefresh();
+    };
+
+    function FontRefresh() {
+        let font = document.getElementById("inp_font").value;
+        let ecv = document.getElementById("cv_main");
+        let ctx = ecv.getContext('2d');
+        let w = 1024;
+        let n = 16;
+        let unit = w / n;
+        let lines = parseInt(document.getElementById("inp_lines").value);
+        let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let others = document.getElementById("inp_others").value;
+        let posoffset = {
+            x: parseFloat(document.getElementById("inp_ox").value),
+            y: parseFloat(document.getElementById("inp_oy").value)
+        };
+        let fontalpha = parseFloat(document.getElementById("inp_alpha").value).toFixed(2);
+        let showgrid = document.getElementById("inp_grid").checked;
+        let UppercaseStartX = parseInt(document.getElementById("inp_usx").value);
+        let UppercaseStartY = parseInt(document.getElementById("inp_usy").value);
+        let LowercaseStartX = parseInt(document.getElementById("inp_lsx").value);
+        let LowercaseStartY = parseInt(document.getElementById("inp_lsy").value);
+        let OthersStartX = parseInt(document.getElementById("inp_osx").value);
+        let OthersStartY = parseInt(document.getElementById("inp_osy").value);
+        let upper = document.getElementById("inp_uppercase").checked;
+        let lower = document.getElementById("inp_lowercase").checked;
+        let ifothers = document.getElementById("inp_ifothers").checked;
+        let ifauthor = document.getElementById("inp_ifauthor").checked;
+        let author = document.getElementById("inp_author").value;
+
+        font = document.getElementById("inp_size").value + "px " + font;
+        if (document.getElementById("inp_bold").checked) font = 'bold ' + font;
+        if (document.getElementById("inp_italic").checked) font = 'italic ' + font;
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+        ctx.clearRect(0, 0, w, w);
+        ctx.font = font;
+        ctx.textAlign = "center";
+        ctx.fillStyle = "rgba(255,255,255," + fontalpha + ")";
+
+        // x: start X    y: start Y
+        function Printer(x, y, s) {
+            for (let k = 0; y < w; y++) {
+                for (let xx = 0; xx < lines; xx++) {
+                    if (k == s.length) return;
+                    ctx.fillText(
+                        s[k],
+                        (x + xx) * unit + unit * posoffset.x,
+                        y * unit + unit * posoffset.y);
+                    k++;
+                }
+            }
+        };
+
+        function DrawGrid() {
+            let m = Math.floor(n / 2);
+            for (let i = 1; i < n; i++) {
+                ctx.strokeStyle = "green";
+                ctx.beginPath();
+                ctx.moveTo(i * unit, 0);
+                ctx.lineTo(i * unit, w);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, i * unit);
+                ctx.lineTo(w, i * unit);
+                ctx.stroke();
+            }
+        };
+
+        function Author() {
+            ctx.textAlign = "right";
+            ctx.fillText(author, w - 20, w - 20);
+        };
+
+        if (upper) Printer(UppercaseStartX, UppercaseStartY, str);
+        if (lower) Printer(LowercaseStartX, LowercaseStartY, str.toLowerCase());
+        if (ifothers) Printer(OthersStartX, OthersStartY, others);
+        if (ifauthor) Author();
+        if (showgrid) DrawGrid();
+    };
+
+    window.onload = function () {
+        FontRefresh();
+    };
+</script>
