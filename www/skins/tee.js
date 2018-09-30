@@ -4,7 +4,7 @@ function render(skin){
 	//create canvas
 	canvas = document.createElement("canvas");
 	canvas.width = "96";
-	canvas.height = "64";
+	canvas.height = "96";
 	ctx = canvas.getContext("2d");
 
 	ctx.drawImage(skin,192,64,64,32,10,33,60,30); //back feet shadow
