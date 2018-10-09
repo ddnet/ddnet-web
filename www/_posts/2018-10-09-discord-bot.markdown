@@ -23,7 +23,7 @@ Recently the @DDNet bot on the official [DDNet Discord server](https://ddnet.tw/
 
   <img class="demo" src="/discord_records.png" />
 
-For the new `$profile` and `$map` feature thanks to Oblikumquat for coding help, Ravie for drawing the game-tiles, Freezestyler for selecting the backgrounds and everyone who tested and suggested ideas.
+For the new `$profile` and `$map` feature thanks to Oblikumquat for coding help, Ravie for drawing the game-tiles, Freezestyler for selecting the backgrounds and everyone who tested and suggested ideas. Thanks to Ryozuki for coding help for the info channel server statistics.
 
 You [can also use it](https://discordapp.com/api/oauth2/authorize?client_id=421296159290687488&permissions=34816&scope=bot) on your own server or in DMs with the bot.
 
