@@ -2,7 +2,7 @@
 layout: default
 title: Teeworlds Auto-Font
 menu: |
-  <ul>
+<ul>
     <li><a href="/#news">News</a> (<a href="/news/">all</a>)</li>
     <li><a href="/server/">Server&nbsp;Features</a></li>
     <li><a href="/client/">Client&nbsp;Features</a></li>
@@ -13,494 +13,482 @@ menu: |
     <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
     <li><a href="/staff/">Staff&nbsp;&amp;&nbsp;Contact</a></li>
     <li><a href="/funding/">Funding</a></li>
-  </ul>
+</ul>
 head: |
-    <style>
-        .autofont * {
+<style>
+    .autofont * {
             margin: 0;
             padding: 0;
-            color: black;
             font-size: 15px;
         }
-
-        .autofont h2 {
-            font-size: 1.5em;
-        }
-
-        .autofont {
-            background-color: white;
-        }
-
+    
         .autofont #cv_main {
-            border: 1px grey solid;
-            background: rgba(255, 255, 255, 0);
-            z-index: 1;
+            background-color: black;
             width: 512px;
             height: 512px;
-            background-color: black;
+            z-index: 1;
         }
-
+    
         .autofont hr {
+            margin: .3em 0;
             border: none;
             border-top: 1px rgba(0, 0, 0, 0.4) dashed;
-            margin: .3em 0;
         }
-
+    
         .autofont input[type=text],
         .autofont input[type=number] {
             padding: .1em .1em;
             vertical-align: top;
             line-height: 1em;
             text-align: center;
-            color: black;
             font-weight: bold;
             font-size: 0.8em;
+            color: inherit;
+            background-color: inherit;
             border: 2px rgb(204, 204, 204) solid;
             outline: none;
         }
-
+    
         .autofont input[type=text]:focus,
         .autofont input[type=number]:focus {
             border-color: #aa4444;
         }
-
+    
         .autofont input[type=number] {
-            width: 3em;
+            width: 3.5em;
         }
-
+    
         .autofont input[type=checkbox] {
             line-height: 1.5em;
         }
-
+    
         .autofont input[type=range] {
             vertical-align: bottom;
             height: 1.2em;
             width: 300px;
         }
-
+    
         .autofont .rbgrange {
             width: 200px !important;
         }
-
+    
         .autofont input[type=button] {
             padding: .1em 2em;
             border: none;
-            background-color: #aa4444;
             color: white;
-            ;
+            background-color: #aa4444;
             cursor: pointer;
         }
-
+    
         .autofont .dsn {
             margin: 0 .5em;
             border: none;
             border-left: 1px rgba(0, 0, 0, 0.4) dashed;
         }
-
-        .autofont .inline {
-            display: inline-block;
-        }
     </style>
 ---
 <div class="block autofont">
-        <div>
-            <h2>Teeworlds Auto-Font Ver 1.3</h2>
-            <hr>
-            <label for="inp_font">Font </label> <input type="text" id="inp_font" value="Arial" oninput="FontRefresh()" onmouseover="Info(this)">            &nbsp;
-            <label for="inp_size">Size </label> <input type="number" id="inp_size" value="50" min="1" max="500" oninput="FontRefresh()"
-                onmouseover="Info(this)"> &nbsp;
-            <label for="inp_lines">Lines </label> <input type="number" id="inp_lines" value="13" min="1" max="16" oninput="FontRefresh()"
-                onmouseover="Info(this)">&nbsp;
-            <input id="inp_ifauthor" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label
-                for="inp_ifauthor">Author</label>
-            <input type="text" id="inp_author" value="by bit" oninput="FontRefresh()" onmouseover="Info(this)"> &nbsp;
-            <input id="inp_ifothers" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label
-                for="inp_ifothers">Others</label>
-            <input type="text" id="inp_others" value="0123456789&!?.,':-" oninput="FontRefresh()" onmouseover="Info(this)">
-            <hr>
-
-
-            <input id="inp_grid" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label
-                for="inp_grid">Grid</label>
-            <input id="inp_ifbg" type="checkbox" oninput="Advanced(this,'options_bg');FontRefresh()" onmouseover="Info(this)"><label
-                for="inp_ifbg">Background</label>
-            <span class="dsn"></span>
-            <input id="inp_bold" type="checkbox" oninput="FontRefresh()" onmouseover="Info(this)"><label for="inp_bold">Bold</label>
-            <input id="inp_italic" type="checkbox" oninput="FontRefresh()" onmouseover="Info(this)"><label for="inp_italic">Italic</label>
-            <span class="dsn"></span>
-            <input id="inp_uppercase" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label
-                for="inp_uppercase">Uppercase</label>
-            <input id="inp_lowercase" type="checkbox" oninput="FontRefresh()" checked="checked" onmouseover="Info(this)"><label
-                for="inp_lowercase">Lowercase</label>
-            <span class="dsn"></span>
-            <label for="inp_fcolor_alpha">Alpha</label> <input type="range" id="inp_fcolor_alpha" value="1" min="0" max="1"
-                step="0.01" oninput="FontRefresh();RTitle(this);" onmouseover="Info(this)">
-            <hr>
-            <div>
-                <div class="inline">
-                    <label for="inp_usx">Uppercase Start X </label> <input type="number" id="inp_usx" value="1" min="0" max="15"
-                        oninput="FontRefresh()" onmouseover="Info(this)">
-                    <br>
-                    <label for="inp_usy">Uppercase Start Y </label> <input type="number" id="inp_usy" value="1" min="0" max="15"
-                        oninput="FontRefresh()" onmouseover="Info(this)">
-                </div>
-                <div class="inline">
-                    <label for="inp_lsx">Lowercase Start X </label> <input type="number" id="inp_lsx" value="1" min="0" max="15"
-                        oninput="FontRefresh()" onmouseover="Info(this)">
-                    <br>
-                    <label for="inp_lsy">Lowercase Start Y </label> <input type="number" id="inp_lsy" value="6" min="0" max="15"
-                        oninput="FontRefresh()" onmouseover="Info(this)">
-                </div>
-
-                <div class="inline">
-                    <label for="inp_osx">Others Start X: </label> <input type="number" id="inp_osx" value="1" min="0" max="15"
-                        oninput="FontRefresh()" onmouseover="Info(this)">
-                    <br>
-                    <label for="inp_osy">Others Start Y: </label> <input type="number" id="inp_osy" value="3" min="0" max="15"
-                        oninput="FontRefresh()" onmouseover="Info(this)">
-                </div>
-                <div class="inline">
-                    <label for="inp_ox">Offset X </label> <input type="range" id="inp_ox" value="0.5" min="0" max="1" step="0.01"
-                        oninput="FontRefresh();RTitle(this);" onmouseover="Info(this)">
-                    <br>
-                    <label for="inp_oy">Offset Y </label> <input type="range" id="inp_oy" value="0.78" min="0" max="1" step="0.01"
-                        oninput="FontRefresh();RTitle(this);" onmouseover="Info(this)">
-                </div>
-            </div>
-            <hr> <span>Advanced</span> <span class="dsn"></span>
-            &nbsp;<input id="inp_ifcolor" type="checkbox" oninput="Advanced(this,'options_color');FontRefresh()" onmouseover="Info(this)" onmouseover="Info(this)"><label
-                for="inp_ifcolor" onmouseover="Info(this)">Font Color</label>
-            &nbsp;<input id="inp_ifstroke" type="checkbox" oninput="Advanced(this,'options_stroke');FontRefresh()" onmouseover="Info(this)" onmouseover="Info(this)"><label
-                for="inp_ifstroke" onmouseover="Info(this)">Contour</label>
-            &nbsp;<input id="inp_ifshadow" type="checkbox" oninput="Advanced(this,'options_shadow');FontRefresh()" onmouseover="Info(this)" onmouseover="Info(this)"><label
-                for="inp_ifshadow" onmouseover="Info(this)">Shadow</label>
-            &nbsp;<input id="inp_iffulldisplay" type="checkbox" oninput="FullDisplay()" onmouseover="Info(this)"><label for="inp_iffulldisplay"  onmouseover="Info(this)">Full
-                Display
-            </label>
-            &nbsp;<input id="inp_ifautohide" type="checkbox" checked="checked" oninput="FontRefresh()" onmouseover="Info(this)" onmouseover="Info(this)"><label
-                for="inp_ifautohide" onmouseover="Info(this)">Automatically hide grids and backgrounds</label>
-            <hr>
-            <div id="options_bg" hidden="hidden">
-                <span>Background</span><span class="dsn"></span>
-                &nbsp;<label>R</label> <input id="inp_bgcolor_r" class="rbgrange" type="range" min="0" max="255" step="1"
-                    value="0" oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)"> &nbsp;
-                <label>G</label> <input id="inp_bgcolor_g" class="rbgrange" type="range" min="0" max="255" step="1" value="0"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)"> &nbsp;
-                <label>B</label> <input id="inp_bgcolor_b" class="rbgrange" type="range" min="0" max="255" step="1" value="0"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <hr>
-            </div>
-            <div id="options_color" hidden="hidden">
-                <span>Font Color</span><span class="dsn"></span>
-                <label>R</label> <input id="inp_fcolor_r" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label>G</label> <input id="inp_fcolor_g" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label>B</label> <input id="inp_fcolor_b" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <hr>
-            </div>
-            <div id="options_stroke" hidden="hidden">
-                <span>Contour</span> <span class="dsn"></span>
-                <input id="inp_ifstrokeshadow" type="checkbox" oninput="FontRefresh()" onmouseover="Info(this)" onmouseover="Info(this)"><label
-                for="inp_ifstrokeshadow" onmouseover="Info(this)">Contour Shadow</label>
-                <span class="dsn"></span>
-                <label for="inp_stroke_width">Width</label> <input id="inp_stroke_width" class="rbgrange" type="range" min="0.1" max="10" step="0.1"
-                    value="1" oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label for="inp_stroke_alpha">Alpha</label> <input id="inp_stroke_alpha" class="rbgrange" type="range" min="0" max="1" step="0.01"
-                    value="1" oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <hr>
-                <span>Contour Color</span><span class="dsn"></span>
-                <label>R</label> <input id="inp_stroke_r" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label>G</label> <input id="inp_stroke_g" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label>B</label> <input id="inp_stroke_b" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <hr>
-            </div>
-            <div id="options_shadow" hidden="hidden">
-                <span>Shadow Offset</span> <span class="dsn"></span>
-                <label for="inp_sdoffset_x">X</label> <input id="inp_sdoffset_x" class="rbgrange" type="range" min="-16" max="16" step="0.2" value="2"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label for="inp_sdoffset_y">Y</label> <input id="inp_sdoffset_y" class="rbgrange" type="range" min="-16" max="16" step="0.2" value="2"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <hr>
-                <span>Shadow Blur</span><span class="dsn"></span>
-                <label for="inp_sd_blur">Blur</label> <input id="inp_sd_blur" class="rbgrange" type="range" min="0" max="32" step="0.5" value="2"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label for="inp_sd_alpha">Alpha</label> <input id="inp_sd_alpha" class="rbgrange" type="range" min="0" max="1" step="0.01" value="1"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <hr>
-                <span>Shadow Color</span><span class="dsn"></span>
-                <label>R</label> <input id="inp_sd_r" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label>G</label> <input id="inp_sd_g" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <label>B</label> <input id="inp_sd_b" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
-                    oninput="RTitle(this);FontRefresh()" onmouseover="Info(this)">
-                <hr>
-            </div>
-
-            <input id="btn_reset" type="button" value="Offset Reset" onclick="Reset()" onmouseover="Info(this)">
-            <input id="btn_refresh" type="button" value="Refresh" onclick="FontRefresh()" onmouseover="Info(this)">
-            <span class="dsn"></span>
-            <div class="inline" onmouseover="Info(this)"><label>INFO: </label><b><span id="info">Teeworlds Auto-Font Version
-                        1.2 @by bit</span></b></div>
+    <div>
+        <h2>Teeworlds Auto-Font Ver 1.4</h2>
+        <hr>
+        <!-- font, size, lines, author, others -->
+        <label for="inp_font">Font </label> <input type="text" id="inp_font" value="Arial" oninput="af.Refresh()"
+            onmouseover="af.Info(this)"> &nbsp;
+        <label for="inp_size">Size </label> <input type="number" id="inp_size" value="50" min="1" max="500" oninput="af.Refresh()"
+            onmouseover="af.Info(this)"> &nbsp;
+        <label for="inp_lines">Lines </label> <input type="number" id="inp_lines" value="13" min="1" max="16" oninput="af.Refresh()"
+            onmouseover="af.Info(this)">&nbsp;
+        <input id="inp_ifauthor" type="checkbox" oninput="af.Refresh()" checked="checked" onmouseover="af.Info(this)"><label
+            for="inp_ifauthor">Author</label>
+        <input type="text" id="inp_author" value="by bit" oninput="af.Refresh()" onmouseover="af.Info(this)">
+        &nbsp;
+        <input id="inp_ifothers" type="checkbox" oninput="af.Refresh()" checked="checked" onmouseover="af.Info(this)"><label
+            for="inp_ifothers">Others</label>
+        <input type="text" id="inp_others" value="0123456789&!?.,':-" oninput="af.Refresh()" onmouseover="af.Info(this)">
+        <hr>
+        <!-- grid, background, bold, italic, uppercase, lowercase, alpha -->
+        <input id="inp_grid" type="checkbox" oninput="af.Refresh()" checked="checked" onmouseover="af.Info(this)"><label
+            for="inp_grid">Grid</label>
+        <input id="inp_ifbg" type="checkbox" oninput="af.Advanced(this,'options_bg');af.Refresh()" onmouseover="af.Info(this)"><label
+            for="inp_ifbg">Background</label>
+        <span class="dsn"></span>
+        <input id="inp_bold" type="checkbox" oninput="af.Refresh()" onmouseover="af.Info(this)"><label for="inp_bold">Bold</label>
+        <input id="inp_italic" type="checkbox" oninput="af.Refresh()" onmouseover="af.Info(this)"><label for="inp_italic">Italic</label>
+        <span class="dsn"></span>
+        <input id="inp_uppercase" type="checkbox" oninput="af.Refresh()" checked="checked" onmouseover="af.Info(this)"><label
+            for="inp_uppercase">Uppercase</label>
+        <input id="inp_lowercase" type="checkbox" oninput="af.Refresh()" checked="checked" onmouseover="af.Info(this)"><label
+            for="inp_lowercase">Lowercase</label>
+        <span class="dsn"></span>
+        <label for="inp_fcolor_alpha">Alpha</label> <input type="range" id="inp_fcolor_alpha" value="1" min="0" max="1"
+            step="0.01" oninput="af.Refresh();af.RTitle(this);" onmouseover="af.Info(this)">
+        <hr>
+        <!-- star, offset -->
+        <label for="inp_usx">Uppercase Start X </label> <input type="number" id="inp_usx" value="1" min="0" max="15"
+            oninput="af.Refresh()" onmouseover="af.Info(this)">
+        &nbsp;
+        <label for="inp_lsx">Lowercase Start X </label> <input type="number" id="inp_lsx" value="1" min="0" max="15"
+            oninput="af.Refresh()" onmouseover="af.Info(this)">
+        &nbsp;
+        <label for="inp_osx">Others Start X: </label> <input type="number" id="inp_osx" value="1" min="0" max="15"
+            oninput="af.Refresh()" onmouseover="af.Info(this)">
+        &nbsp;
+        <label for="inp_ox">Offset X </label> <input type="range" id="inp_ox" value="0.5" min="0" max="1" step="0.01"
+            oninput="af.Refresh();af.RTitle(this);" onmouseover="af.Info(this)">
+        <hr>
+        <label for="inp_usy">Uppercase Start Y </label> <input type="number" id="inp_usy" value="1" min="0" max="15"
+            oninput="af.Refresh()" onmouseover="af.Info(this)">
+        &nbsp;
+        <label for="inp_lsy">Lowercase Start Y </label> <input type="number" id="inp_lsy" value="6" min="0" max="15"
+            oninput="af.Refresh()" onmouseover="af.Info(this)">
+        &nbsp;
+        <label for="inp_osy">Others Start Y: </label> <input type="number" id="inp_osy" value="3" min="0" max="15"
+            oninput="af.Refresh()" onmouseover="af.Info(this)">
+        &nbsp;
+        <label for="inp_oy">Offset Y </label> <input type="range" id="inp_oy" value="0.78" min="0" max="1" step="0.01"
+            oninput="af.Refresh();af.RTitle(this);" onmouseover="af.Info(this)">
+        <hr>
+        <!-- Advanced options -->
+        <span>Advanced</span> <span class="dsn"></span>
+        &nbsp;<input id="inp_ifautohide" type="checkbox" checked="checked" oninput="af.Refresh()" onmouseover="af.Info(this)">
+        <label for="inp_ifautohide" onmouseover="af.Info(this)">Auto-Hide</label>
+        &nbsp;<input id="inp_ifdoublespacing" type="checkbox" oninput="af.Refresh()" onmouseover="af.Info(this)">
+        <label for="inp_ifdoublespacing" onmouseover="af.Info(this)">Double Spacing</label>
+        <span class="dsn"></span>
+        &nbsp;<input id="inp_ifcolor" type="checkbox" oninput="af.Advanced(this,'options_color');af.Refresh()"
+            onmouseover="af.Info(this)" onmouseover="af.Info(this)"><label for="inp_ifcolor" onmouseover="af.Info(this)">Font
+            Color</label>
+        &nbsp;<input id="inp_ifstroke" type="checkbox" oninput="af.Advanced(this,'options_stroke');af.Refresh()"
+            onmouseover="af.Info(this)" onmouseover="af.Info(this)"><label for="inp_ifstroke" onmouseover="af.Info(this)">Contour</label>
+        &nbsp;<input id="inp_ifshadow" type="checkbox" oninput="af.Advanced(this,'options_shadow');af.Refresh()"
+            onmouseover="af.Info(this)" onmouseover="af.Info(this)"><label for="inp_ifshadow" onmouseover="af.Info(this)">Shadow</label>
+        &nbsp;<input id="inp_iffulldisplay" type="checkbox" oninput="af.FullDisplay()" onmouseover="af.Info(this)"><label
+            for="inp_iffulldisplay" onmouseover="af.Info(this)">Full
+            Display
+        </label>
+        <hr>
+        <!-- advanced-background -->
+        <div id="options_bg" hidden="hidden">
+            <span>Background</span><span class="dsn"></span>
+            &nbsp;<label>R</label> <input id="inp_bgcolor_r" class="rbgrange" type="range" min="0" max="255" step="1"
+                value="0" oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)"> &nbsp;
+            <label>G</label> <input id="inp_bgcolor_g" class="rbgrange" type="range" min="0" max="255" step="1" value="0"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)"> &nbsp;
+            <label>B</label> <input id="inp_bgcolor_b" class="rbgrange" type="range" min="0" max="255" step="1" value="0"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
             <hr>
         </div>
-        <canvas id="cv_main" width="1024" height="1024" onmouseover="Info(this);AutoHide('in');" onmouseout="AutoHide('out')"></canvas>
-        <p>Check out the <a href="https://forum.ddnet.tw/viewtopic.php?t=6617">Forum thread</a> for more information and
-            discussion
-        </p>
+        <!-- advanced-font color -->
+        <div id="options_color" hidden="hidden">
+            <span>Font Color</span><span class="dsn"></span>
+            <label>R</label> <input id="inp_fcolor_r" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label>G</label> <input id="inp_fcolor_g" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label>B</label> <input id="inp_fcolor_b" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <hr>
+        </div>
+        <!-- advanced-contour -->
+        <div id="options_stroke" hidden="hidden">
+            <span>Contour</span> <span class="dsn"></span>
+            <input id="inp_ifstrokeshadow" type="checkbox" oninput="af.Refresh()" onmouseover="af.Info(this)"
+                onmouseover="af.Info(this)"><label for="inp_ifstrokeshadow" onmouseover="af.Info(this)">Contour
+                Shadow</label>
+            <span class="dsn"></span>
+            <label for="inp_stroke_width">Width</label> <input id="inp_stroke_width" class="rbgrange" type="range" min="0.1"
+                max="10" step="0.1" value="1" oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label for="inp_stroke_alpha">Alpha</label> <input id="inp_stroke_alpha" class="rbgrange" type="range" min="0"
+                max="1" step="0.01" value="1" oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <hr>
+            <span>Contour Color</span><span class="dsn"></span>
+            <label>R</label> <input id="inp_stroke_r" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label>G</label> <input id="inp_stroke_g" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label>B</label> <input id="inp_stroke_b" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <hr>
+        </div>
+        <!-- advanced-shadow -->
+        <div id="options_shadow" hidden="hidden">
+            <span>Shadow Offset</span> <span class="dsn"></span>
+            <label for="inp_sdoffset_x">X</label> <input id="inp_sdoffset_x" class="rbgrange" type="range" min="-16"
+                max="16" step="0.2" value="2" oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label for="inp_sdoffset_y">Y</label> <input id="inp_sdoffset_y" class="rbgrange" type="range" min="-16"
+                max="16" step="0.2" value="2" oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <hr>
+            <span>Shadow Blur</span><span class="dsn"></span>
+            <label for="inp_sd_blur">Blur</label> <input id="inp_sd_blur" class="rbgrange" type="range" min="0" max="32"
+                step="0.5" value="2" oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label for="inp_sd_alpha">Alpha</label> <input id="inp_sd_alpha" class="rbgrange" type="range" min="0" max="1"
+                step="0.01" value="1" oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <hr>
+            <span>Shadow Color</span><span class="dsn"></span>
+            <label>R</label> <input id="inp_sd_r" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label>G</label> <input id="inp_sd_g" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <label>B</label> <input id="inp_sd_b" class="rbgrange" type="range" min="0" max="255" step="1" value="255"
+                oninput="af.RTitle(this);af.Refresh()" onmouseover="af.Info(this)">
+            <hr>
+        </div>
+        <!-- buttons -->
+        <input id="btn_reset" type="button" value="Offset Reset" onclick="af.Reset()" onmouseover="af.Info(this)">
+        <input id="btn_refresh" type="button" value="Refresh" onclick="af.Refresh()" onmouseover="af.Info(this)">
+        <span class="dsn"></span>
+        <!-- info -->
+        <span onmouseover="af.Info(this)"><label>INFO: </label><b><span id="info">Teeworlds Auto-Font
+                    Version 1.4 @by bit</span></b></span>
+        <hr>
     </div>
-</body>
+    <!-- main canvas -->
+    <canvas id="cv_main" width="1024" height="1024" onmouseover="af.Info(this);af.AutoHide('in');" onmouseout="af.AutoHide('out')"></canvas>
+    <p>Check out the <a href="https://forum.ddnet.tw/viewtopic.php?t=6617">Forum thread</a> for more information
+        and discussion</p>
+</div>
 <script>
+    function AutoFont() {
+        var $ = (id) => { return document.getElementById(id); };
 
-    function Advanced(e, id) {
-        let div = document.getElementById(id);
-        div.hidden = !e.checked;
-    };
+        var Advanced = (e, id) => { $(id).hidden = !e.checked; };
 
-    function RTitle(e) {
-        e.title = e.value;
-    };
+        var RTitle = (e) => { e.title = e.value; };
 
-    function AutoHide(state) {
-        if (state == 'in') {
-            let hide = document.getElementById("inp_ifautohide").checked;
-            if (hide) {
-                FontRefresh(true);
+        var AutoHide = function (state) {
+            if (state == 'in' && $("inp_ifautohide").checked) af.Refresh(true);
+            else Refresh();
+        };
+
+        var Info = function (e) {
+            let info = 'Teeworlds Auto-Font Version 1.4 @by bit';
+            let einfo = $("info");
+            let infoes = {
+                cv_main: "Right click on this and 'Save as Image'.",
+                inp_font: "Set the full font name, must be a font already installed on your computer",
+                inp_size: "Set the Font size",
+                inp_italic: "Set to italic",
+                inp_bold: "Set to bold",
+                inp_grid: "Show Grid",
+                inp_uppercase: "Show Uppercase letters",
+                inp_lowercase: "Show Lowercase letters",
+                inp_ifauthor: "Show Author",
+                inp_author: "Set the Author",
+                inp_ox: "Set the Offset in X-axis of the characters",
+                inp_oy: "Set the Offset in Y-axis of the characters",
+                inp_fcolor_alpha: "Set the Transparency of the characters",
+                btn_reset: "Set the Offset_X & Offset_Y to Default value",
+                btn_refresh: "Refresh the generated image",
+                inp_lines: "Set the amount of the characters in One row",
+                inp_usx: "Set the Uppercase letters start position in X-axis in grid",
+                inp_usy: "Set the Uppercase letters start position in Y-axis in grid",
+                inp_lsx: "Set the Lowercase letters start position in X-axis in grid",
+                inp_lsy: "Set the Lowercase letters start position in Y-axis in grid",
+                inp_osx: "Set the Other characters start position in X-axis in grid",
+                inp_osy: "Set the Other characters start position in Y-axis in grid",
+                inp_ifothers: "Show other characters",
+                inp_others: "Set the other characters",
+                inp_iffulldisplay: "100% display of generated image",
+                inp_ifcolor: "Set the font color.",
+                inp_ifstroke: "Turn ON/OFF the contour of font",
+                inp_ifshadow: "Turn ON/OFF the shadow of font",
+                inp_ifbg: "Show the background (in order to see the font clearly)",
+                inp_stroke_width: "Set the Width of font contour",
+                inp_stroke_alpha: "Set the Transparency of font contour",
+                inp_sdoffset_x: "Set the Offset X of shadow",
+                inp_sdoffset_y: "Set the Offset Y of shadow",
+                inp_sd_blur: "Set the Degree of shadow blur",
+                inp_sd_alpha: "Set the Transparency of shadow",
+                inp_ifautohide: "Automatically hide grids and backgrounds",
+                inp_ifdoublespacing: "Use double spacing for characters",
+                inp_ifstrokeshadow: "Turn ON/OFF the shadow of font contour"
+            };
+            if (infoes[e.id]) info = infoes[e.id];
+            if (infoes[e.htmlFor]) info = infoes[e.htmlFor];
+            einfo.innerHTML = info;
+        };
+
+        var FullDisplay = function () {
+            let ecv = $("cv_main");
+            if ($("inp_iffulldisplay").checked)
+                ecv.style.height = ecv.style.width = "1024px";
+            else
+                ecv.style.height = ecv.style.width = "512px";
+        };
+
+        var Reset = function () {
+            $("inp_ox").value = 0.5;
+            $("inp_oy").value = 0.78;
+            Refresh();
+        };
+
+        var Refresh = function (autohide) {
+            let ecv = $("cv_main");
+            let ctx = ecv.getContext('2d');
+            let w = 1024, n = 16;
+            let unit = w / n;
+            let _unit = unit;
+            let font = $("inp_font").value;
+            let fontsize = $("inp_size").value;
+            let lines = parseInt($("inp_lines").value);
+            let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let others = $("inp_others").value;
+            let author = $("inp_author").value;
+            let bgcolor = getColor("inp_bgcolor_", "rgb");
+            let fontcolor = getColor("inp_fcolor_", "rgba");
+            let posoffset = {
+                x: parseFloat($("inp_ox").value),
+                y: parseFloat($("inp_oy").value)
+            };
+            let upperstart = {
+                x: parseInt($("inp_usx").value),
+                y: parseInt($("inp_usy").value)
+            };
+            let lowerstart = {
+                x: parseInt($("inp_lsx").value),
+                y: parseInt($("inp_lsy").value)
+            };
+            let otherstart = {
+                x: parseInt($("inp_osx").value),
+                y: parseInt($("inp_osy").value)
             }
-        }
-        else
-            FontRefresh();
-    };
+            let stroke = {
+                width: $("inp_stroke_width").value,
+                color: getColor("inp_stroke_", "rgba")
+            };
+            let shadow = {
+                offset: {
+                    x: $("inp_sdoffset_x").value,
+                    y: $("inp_sdoffset_y").value
+                },
+                blur: $("inp_sd_blur").value,
+                color: getColor("inp_sd_", "rgba")
+            };
+            let chk = {
+                grid: $("inp_grid").checked,
+                bg: $("inp_ifbg").checked,
+                upper: $("inp_uppercase").checked,
+                lower: $("inp_lowercase").checked,
+                others: $("inp_ifothers").checked,
+                author: $("inp_ifauthor").checked,
+                fontcolor: $("inp_ifcolor").checked,
+                shadow: $("inp_ifshadow").checked,
+                stroke: $("inp_ifstroke").checked,
+                strokeshadow: $("inp_ifstrokeshadow").checked,
+                doublespacing: $("inp_ifdoublespacing").checked
+            };
+            if (chk.doublespacing) _unit *= 2;
+            font = fontsize + "px " + font;
+            if ($("inp_bold").checked) font = 'bold ' + font;
+            if ($("inp_italic").checked) font = 'italic ' + font;
+            ctx.lineJoin = "round";
+            ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+            ctx.clearRect(0, 0, w, w);
+            ctx.font = font;
+            ctx.textAlign = "center";
 
-    function Info(e) {
-        let info = 'Teeworlds Auto-Font Version 1.3 @by bit';
-        let einfo = document.getElementById("info");
-        let infoes = {
-            cv_main: "Right click on this and 'Save as Image'.",
-            inp_font: "Set the full font name, must be a font already installed on your computer",
-            inp_size: "Set the Font size",
-            inp_italic: "Set to italic",
-            inp_bold: "Set to bold",
-            inp_grid: "Show Grid",
-            inp_uppercase: "Show Uppercase letters",
-            inp_lowercase: "Show Lowercase letters",
-            inp_ifauthor: "Show Author",
-            inp_author: "Set the Author",
-            inp_ox: "Set the Offset in X-axis of the characters",
-            inp_oy: "Set the Offset in Y-axis of the characters",
-            inp_fcolor_alpha: "Set the Transparency of the characters",
-            btn_reset: "Set the Offset_X & Offset_Y to Default value",
-            btn_refresh: "Refresh the generated image",
-            inp_lines: "Set the amount of the characters in One row",
-            inp_usx: "Set the Uppercase letters start position in X-axis in grid",
-            inp_usy: "Set the Uppercase letters start position in Y-axis in grid",
-            inp_lsx: "Set the Lowercase letters start position in X-axis in grid",
-            inp_lsy: "Set the Lowercase letters start position in Y-axis in grid",
-            inp_osx: "Set the Other characters start position in X-axis in grid",
-            inp_osy: "Set the Other characters start position in Y-axis in grid",
-            inp_ifothers: "Show other characters",
-            inp_others: "Set the other characters",
-            inp_iffulldisplay: "100% display of generated image",
-            inp_ifcolor: "Set the font color.",
-            inp_ifstroke: "Turn ON/OFF the contour of font",
-            inp_ifshadow: "Turn ON/OFF the shadow of font",
-            inp_ifbg:"Show the background (in order to see the font clearly)",
-            inp_stroke_width:"Set the Width of font contour",
-            inp_stroke_alpha:"Set the Transparency of font contour",
-            inp_sdoffset_x:"Set the Offset X of shadow",
-            inp_sdoffset_y:"Set the Offset Y of shadow",
-            inp_sd_blur:"Set the Degree of shadow blur",
-            inp_sd_alpha:"Set the Transparency of shadow",
-            inp_ifautohide:"Automatically hide grids and backgrounds",
-            inp_ifstrokeshadow:"Turn ON/OFF the shadow of font contour"
-        };
-        if (infoes[e.id]) info = infoes[e.id];
-        if (infoes[e.htmlFor]) info = infoes[e.htmlFor];
-        einfo.innerHTML = info;
-    };
+            if (autohide) chk.bg = chk.grid = false;
+            if (chk.bg) {
+                ctx.fillStyle = bgcolor;
+                ctx.fillRect(0, 0, w, w);
+            }
+            if (chk.fontcolor) ctx.fillStyle = fontcolor;
+            else ctx.fillStyle = "rgba(255,255,255," + parseFloat($("inp_fcolor_alpha").value).toFixed(2) + ")";
+            if (chk.grid) DrawGrid();
+            if (chk.upper) Printer(upperstart.x, upperstart.y, str);
+            if (chk.lower) Printer(lowerstart.x, lowerstart.y, str.toLowerCase());
+            if (chk.others) Printer(otherstart.x, otherstart.y, others);
+            if (chk.author) PrintAuthor();
 
-    function FullDisplay() {
-        let iffull = document.getElementById("inp_iffulldisplay").checked;
-        let ecv = document.getElementById("cv_main");
-        if (iffull) {
-            ecv.style.width = "1024px";
-            ecv.style.height = "1024px";
-        } else {
-            ecv.style.width = "512px";
-            ecv.style.height = "512px";
-        }
-    };
+            function getColor(id, type) {
+                type = type.toLowerCase();
+                rgb = $(id + "r").value + "," + $(id + "g").value + "," + $(id + "b").value;
+                if (type === "rgba") return "rgba(" + rgb + "," + parseFloat($(id + "alpha").value).toFixed(2) + ")";
+                else if (type === "rgb") return "rgb(" + rgb + ")";
+                return null;
+            };
 
-    function Reset() {
-        document.getElementById("inp_ox").value = 0.5;
-        document.getElementById("inp_oy").value = 0.78;
-        FontRefresh();
-    };
-
-    function FontRefresh(autohide) {
-        let font = document.getElementById("inp_font").value;
-        let ecv = document.getElementById("cv_main");
-        let ctx = ecv.getContext('2d');
-        let w = 1024;
-        let n = 16;
-        let unit = w / n;
-        let lines = parseInt(document.getElementById("inp_lines").value);
-        let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let others = document.getElementById("inp_others").value;
-        let posoffset = {
-            x: parseFloat(document.getElementById("inp_ox").value),
-            y: parseFloat(document.getElementById("inp_oy").value)
-        };
-        let showgrid = document.getElementById("inp_grid").checked;
-        let showbg = document.getElementById("inp_ifbg").checked;
-
-        let UppercaseStartX = parseInt(document.getElementById("inp_usx").value);
-        let UppercaseStartY = parseInt(document.getElementById("inp_usy").value);
-        let LowercaseStartX = parseInt(document.getElementById("inp_lsx").value);
-        let LowercaseStartY = parseInt(document.getElementById("inp_lsy").value);
-        let OthersStartX = parseInt(document.getElementById("inp_osx").value);
-        let OthersStartY = parseInt(document.getElementById("inp_osy").value);
-        let upper = document.getElementById("inp_uppercase").checked;
-        let lower = document.getElementById("inp_lowercase").checked;
-        let ifothers = document.getElementById("inp_ifothers").checked;
-        let ifauthor = document.getElementById("inp_ifauthor").checked;
-        let author = document.getElementById("inp_author").value;
-
-        function rg(id) {
-            return document.getElementById(id).value;
-        };
-
-        function getRgb(id) {
-            return "rgb(" + rg(id + "r") + "," + rg(id + "g") + "," + rg(id + "b") + ")";
-        };
-
-        function getRgba(id) {
-            return "rgba(" + rg(id + "r") + "," + rg(id + "g") + "," + rg(id + "b") + "," + parseFloat(rg(id + "alpha")).toFixed(2) + ")";
-        };
-
-        function shadowOff() {
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 0;
-            ctx.shadowBlur = 0;
-            ctx.shadowColor = "rgba(0, 0, 0, 0)";
-        };
-
-        /* advanced */
-        let bgcolor = getRgb("inp_bgcolor_");
-        let fontcolor = getRgba("inp_fcolor_");
-        let iffontcolor = document.getElementById("inp_ifcolor").checked;
-        let ifstroke = document.getElementById("inp_ifstroke").checked;
-        let ifshadow = document.getElementById("inp_ifshadow").checked;
-        let ifstrokeshadow = document.getElementById("inp_ifstrokeshadow").checked;
-
-        let stroke_width = rg("inp_stroke_width");
-        let stroke_color = getRgba("inp_stroke_");
-
-        let shadow_offset_x = rg("inp_sdoffset_x");
-        let shadow_offset_y = rg("inp_sdoffset_y");
-        let shadow_blur = rg("inp_sd_blur");
-        let shadow_color = getRgba("inp_sd_");
-
-        font = document.getElementById("inp_size").value + "px " + font;
-        if (document.getElementById("inp_bold").checked) font = 'bold ' + font;
-        if (document.getElementById("inp_italic").checked) font = 'italic ' + font;
-
-        if (autohide) {
-            showgrid = false;
-            showbg = false;
-        }
-
-        ctx.lineJoin = "round";
-        ctx.fillStyle = 'rgba(255, 255, 255, 0)';
-        ctx.clearRect(0, 0, w, w);
-        ctx.font = font;
-        ctx.textAlign = "center";
-
-        if (showbg) {
-            ctx.fillStyle = bgcolor;
-            ctx.fillRect(0, 0, w, w);
-        }
-
-        if (iffontcolor) {
-            ctx.fillStyle = fontcolor;
-        } else {
-            ctx.fillStyle = "rgba(255,255,255," + parseFloat(document.getElementById("inp_fcolor_alpha").value).toFixed(2) + ")";
-        }
-
-        // x: start X    y: start Y
-        function Printer(x, y, s) {
-            for (let k = 0; y < w; y++) {
-                for (let xx = 0; xx < lines; xx++) {
-                    if (k == s.length) return;
-
-                    if (ifshadow) {
-                        ctx.shadowOffsetX = shadow_offset_x;
-                        ctx.shadowOffsetY = shadow_offset_y;
-                        ctx.shadowBlur = shadow_blur;
-                        ctx.shadowColor = shadow_color;
-                    } else {
-                        shadowOff();
-                    }
-
-                    ctx.fillText(
-                        s[k],
-                        (x + xx) * unit + unit * posoffset.x,
-                        y * unit + unit * posoffset.y);
-
-                    if (ifstroke) {
-                        if(!ifstrokeshadow) {
-                            shadowOff();
-                        }
-                        ctx.strokeStyle = stroke_color;
-                        ctx.lineWidth = stroke_width;
-                        ctx.strokeText(
-                            s[k],
-                            (x + xx) * unit + unit * posoffset.x,
-                            y * unit + unit * posoffset.y);
-
-                    }
-                    k++;
+            function setShadow(op) {
+                if (op === "off") {
+                    ctx.shadowOffsetX = 0;
+                    ctx.shadowOffsetY = 0;
+                    ctx.shadowBlur = 0;
+                    ctx.shadowColor = "rgba(0, 0, 0, 0)";
+                } else {
+                    ctx.shadowOffsetX = shadow.offset.x;
+                    ctx.shadowOffsetY = shadow.offset.y;
+                    ctx.shadowBlur = shadow.blur;
+                    ctx.shadowColor = shadow.color;
                 }
-            }
+            };
+
+            function Printer(x, y, s) {
+                for (let k = 0; y < w; y++) {
+                    for (let xx = 0; xx < lines; xx++ , k++) {
+                        let px = (x + xx) * _unit + _unit * posoffset.x;
+                        let py = y * _unit + _unit * posoffset.y
+                        if (k == s.length) return;
+                        setShadow(chk.shadow ? "on" : "off");
+                        ctx.fillText(s[k], px, py);
+                        if (chk.stroke) {
+                            if (!chk.strokeshadow) setShadow("off");
+                            ctx.strokeStyle = stroke.color;
+                            ctx.lineWidth = stroke.width;
+                            ctx.strokeText(s[k], px, py);
+                        }
+                    }
+                }
+            };
+
+            function DrawGrid() {
+                ctx.lineWidth = 1;
+                setShadow("off");
+                let m = Math.floor(n / 2);
+                for (let i = 1; i < n; i++) {
+                    ctx.strokeStyle = "white";
+                    ctx.beginPath();
+                    ctx.moveTo(i * unit, 0);
+                    ctx.lineTo(i * unit, w);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(0, i * unit);
+                    ctx.lineTo(w, i * unit);
+                    ctx.stroke();
+                }
+            };
+
+            function PrintAuthor() {
+                ctx.textAlign = "right";
+                setShadow("off");
+                ctx.fillText(author, w - 20, w - 2 / 5 * fontsize);
+            };
         };
 
-        function DrawGrid() {
-            ctx.lineWidth = 1;
-            shadowOff();
-            let m = Math.floor(n / 2);
-            for (let i = 1; i < n; i++) {
-                ctx.strokeStyle = "white";
-                ctx.beginPath();
-                ctx.moveTo(i * unit, 0);
-                ctx.lineTo(i * unit, w);
-                ctx.stroke();
-                ctx.beginPath();
-                ctx.moveTo(0, i * unit);
-                ctx.lineTo(w, i * unit);
-                ctx.stroke();
-            }
+        var RefreshStyle = function () {
+            let a, style;
+            // set button background color
+            a = document.getElementsByTagName("a")[0];
+            a = window.getComputedStyle(a, null).getPropertyValue("color");
+            $("btn_reset").style.backgroundColor = a;
+            $("btn_refresh").style.backgroundColor = a;
+            // set input focus border color
+            style = document.getElementsByTagName("style")[0];
+            style.innerHTML = style.innerHTML +
+                ".autofont input[type=text]:focus,.autofont input[type=number]:focus{border-color: " + a + " !important;}";
         };
 
-        function Author() {
-            ctx.textAlign = "right";
-            shadowOff();
-            ctx.fillText(author, w - 20, w - 20);
-        };
-
-        if (showgrid) DrawGrid();
-        if (upper) Printer(UppercaseStartX, UppercaseStartY, str);
-        if (lower) Printer(LowercaseStartX, LowercaseStartY, str.toLowerCase());
-        if (ifothers) Printer(OthersStartX, OthersStartY, others);
-        if (ifauthor) Author();
-
-    };
-
+        this.RefreshStyle = RefreshStyle;
+        this.Advanced = Advanced;
+        this.RTitle = RTitle;
+        this.AutoHide = AutoHide;
+        this.Info = Info;
+        this.FullDisplay = FullDisplay;
+        this.Reset = Reset;
+        this.Refresh = Refresh;
+    }
+    var af = new AutoFont();
     window.onload = function () {
-        FontRefresh();
+        af.Refresh();
+        af.RefreshStyle();
     };
 </script>
