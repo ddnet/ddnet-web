@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "N9mk0ik botting"
+title: "N9mkOik botting"
 permalink: /news/n9mkoik-botting/
 tag: current
 ---
