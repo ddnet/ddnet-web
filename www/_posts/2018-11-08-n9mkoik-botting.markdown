@@ -5,7 +5,7 @@ permalink: /news/n9mkoik-botting/
 tag: current
 ---
 
-Yet again, we have exposed another botter among us: [N9mk0ik](https://ddnet.tw/players/N9mkOik/)
+Yet again, we have exposed another botter among us: [N9mkOik](https://ddnet.tw/players/N9mkOik/)
 
 It will come as no surprise to many. A lot players had a watch on him early on, since he quickly started doing top ranks while his name was still unknown. We already obeserved him when replay-bots started to become popular, but there never was definitive proof - until now.
 Ironically it was N9mkOik himself, who brought him to our attention again when we moved a presumed legit rank from a fakename to his name. In his mind he was innocent as it wasn't actually him who passed the finish line. He "only" created a botted save-game and then gave it away.. However, after further digging we found more cheated ranks.
