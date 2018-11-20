@@ -20,6 +20,10 @@ menu: |
   </ul>
 ---
 <div class="block">
+  <select id="themeselect">
+    <option value="0">default</option>
+    <option value="1">halloween</option>
+  </select>
 <h2>DDRace Servers and much more!</h2>
 <p>
 DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Russia, USA, Canada, China, Chile, Brazil and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
