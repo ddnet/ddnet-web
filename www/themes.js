@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(document.getElementById('theme_checkbox')) {
       document.getElementById("theme_checkbox").checked = true;
     }
+  } else if(user_theme == "" && document.getElementById('theme_checkbox')) {
+    document.getElementById("theme_checkbox").checked = false;
   } else if((user_theme != "" && user_theme != available_theme) || user_theme == "nocookie") {
     user_theme = default_theme;
     setCookie("user_theme", user_theme);
