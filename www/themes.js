@@ -15,13 +15,13 @@ function onthemeselect() {
 }
 
 function settheme() {
-    var styles = available_theme;
-    var newSS=document.createElement('link');
-    newSS.rel='stylesheet';
-    newSS.id='user_theme';
-    newSS.href=styles;
-    document.getElementsByTagName("head")[0].appendChild(newSS);
-    localStorage.setItem("user_theme", available_theme);
+  var styles = available_theme;
+  var newSS=document.createElement('link');
+  newSS.rel='stylesheet';
+  newSS.id='user_theme';
+  newSS.href=styles;
+  document.getElementsByTagName("head")[0].appendChild(newSS);
+  localStorage.setItem("user_theme", available_theme);
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
       user_theme = default_theme;
       localStorage.setItem('user_theme',user_theme);
     }
-    } else {
-      if(default_theme != "") {
-        document.getElementById("theme_checkbox").checked = true;
-      }
-      localStorage.setItem("user_theme", default_theme);
-      onthemeselect();
+  } else {
+    if(default_theme != "") {
+      document.getElementById("theme_checkbox").checked = true;
     }
-    document.getElementById("theme_checkbox").addEventListener("change", onthemeselect);
+    localStorage.setItem("user_theme", default_theme);
+    onthemeselect();
+  }
+  document.getElementById("theme_checkbox").addEventListener("change", onthemeselect);
 });
