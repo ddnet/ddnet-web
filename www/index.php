@@ -22,7 +22,7 @@ menu: |
 <div class="block">
 
 <div class="theme_selector">
-  <label for="theme_checkbox">meow</label>
+  <label for="theme_checkbox" class="theme_selector_label">Theme switch :</label>
   <label class="switch" for="theme_checkbox">
     <input type="checkbox" id="theme_checkbox" />
     <div class="slider round"></div>

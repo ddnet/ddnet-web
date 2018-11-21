@@ -10,11 +10,11 @@
         newSS.id='user_theme';
         newSS.href=styles;
         document.getElementsByTagName("head")[0].appendChild(newSS);
-        localStorage.setItem('user_theme',available_theme);
+        localStorage.setItem("user_theme", available_theme);
       } else {
         var element = document.getElementById('user_theme');
         element.parentNode.removeChild(element);
-        localStorage.setItem('user_theme',default_theme);
+        localStorage.setItem("user_theme", default_theme);
       }
       
     }
@@ -34,8 +34,10 @@
         }
       } else {
         console.log("Storing default theme");
-        user_theme = default_theme;
-        localStorage.setItem('user_theme',user_theme);
+        //user_theme = default_theme;
+        localStorage.setItem("user_theme", user_theme);
+        document.getElementById("theme_checkbox").checked = false;
+        //onthemeselect();
       }
       document.getElementById("theme_checkbox").addEventListener("change", onthemeselect);
     });
