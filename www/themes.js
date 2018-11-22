@@ -47,7 +47,20 @@ function enable_available_css() {
 }
 document.addEventListener("DOMContentLoaded", function(event) {
   var user_theme=getCookie("user_theme");
-  if(user_theme != "") {
+  if(user_theme == "nocookie") {
+    user_theme = default_theme;
+    if(user_theme != "") {
+      enable_available_css();
+      if(document.getElementById('theme_checkbox')) {
+        document.getElementById("theme_checkbox").checked = true;
+      }
+    } else {
+      disable_available_css();
+      if(document.getElementById('theme_checkbox')) {
+        document.getElementById("theme_checkbox").checked = false;
+      }
+    }
+  } else if(user_theme != "") {
     enable_available_css();
     if(document.getElementById('theme_checkbox')) {
       document.getElementById("theme_checkbox").checked = true;
@@ -55,15 +68,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   } else if(user_theme == "") {
       disable_available_css();
       if(document.getElementById('theme_checkbox')) {document.getElementById("theme_checkbox").checked = false;}
-  } else if((user_theme != "" && user_theme != available_theme) || user_theme == "nocookie") {
-    user_theme = default_theme;
-    setCookie("user_theme", user_theme);
-    if(user_theme != "") {
-      enable_available_css();
-      if(document.getElementById('theme_checkbox')) {
-        document.getElementById("theme_checkbox").checked = true;
-      }
-    }
   }
   if(document.getElementById('theme_checkbox')) {
     document.getElementById("theme_checkbox").addEventListener("change", onthemeselect);
