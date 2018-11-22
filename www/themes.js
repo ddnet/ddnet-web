@@ -1,35 +1,19 @@
 var available_theme = "/css-halloween.css";
 const default_theme = "";
-var user_theme = "";
-
+var user_theme = ""; 
 function onthemeselect() {
   if(document.getElementById("theme_checkbox").checked) {
-    settheme();
+    enable_available_css();
   } else {
-    if(document.getElementById('user_theme')) {
-      document.getElementById('user_theme').parentNode.removeChild(document.getElementById('user_theme'));
-    }
-    setCookie("user_theme", "");
+    disable_available_css()
   }
 }
-
-function settheme() {
-  var styles = available_theme;
-  var newSS=document.createElement('link');
-  newSS.rel='stylesheet';
-  newSS.id='user_theme';
-  newSS.href=styles;
-  document.getElementsByTagName("head")[0].appendChild(newSS);
-  setCookie("user_theme", available_theme);
-}
-
 function setCookie(key,value) {
   var d = new Date();
   d.setFullYear(2345);
   var expires = "expires=" + d.toGMTString();
   document.cookie = key + "=" + value + ";" + expires + ";path=/"+";domain=ddnet.tw";
 }
-
 function getCookie(key) {
   var name = key + "="; // key += "=";
   var decodedCookie = decodeURIComponent(document.cookie);
@@ -45,25 +29,45 @@ function getCookie(key) {
   }
   return "nocookie";
 }
-
+function disable_available_css() {
+  for( var i in document.styleSheets ) {
+    if( document.styleSheets[i].href && (document.styleSheets[i].href.indexOf(available_theme) != -1)) {
+      document.styleSheets[i].disabled = true;
+      setCookie("user_theme", "");
+    }
+  }
+}
+function enable_available_css() {
+  for( var i in document.styleSheets ) {
+    if( document.styleSheets[i].href && (document.styleSheets[i].href.indexOf(available_theme) != -1)) {
+      document.styleSheets[i].disabled = false;
+      setCookie("user_theme", available_theme);
+    }
+  }
+}
 document.addEventListener("DOMContentLoaded", function(event) {
   var user_theme=getCookie("user_theme");
-  if(user_theme != "") {
-    settheme();
-    if(document.getElementById('theme_checkbox')) {
-      document.getElementById("theme_checkbox").checked = true;
-    }
-  } else if(user_theme == "" && document.getElementById('theme_checkbox')) {
-    document.getElementById("theme_checkbox").checked = false;
-  } else if((user_theme != "" && user_theme != available_theme) || user_theme == "nocookie") {
+  if(user_theme == "nocookie") {
     user_theme = default_theme;
-    setCookie("user_theme", user_theme);
     if(user_theme != "") {
-      settheme();
+      enable_available_css();
       if(document.getElementById('theme_checkbox')) {
         document.getElementById("theme_checkbox").checked = true;
       }
+    } else {
+      disable_available_css();
+      if(document.getElementById('theme_checkbox')) {
+        document.getElementById("theme_checkbox").checked = false;
+      }
     }
+  } else if(user_theme != "") {
+    enable_available_css();
+    if(document.getElementById('theme_checkbox')) {
+      document.getElementById("theme_checkbox").checked = true;
+    }
+  } else if(user_theme == "") {
+      disable_available_css();
+      if(document.getElementById('theme_checkbox')) {document.getElementById("theme_checkbox").checked = false;}
   }
   if(document.getElementById('theme_checkbox')) {
     document.getElementById("theme_checkbox").addEventListener("change", onthemeselect);
