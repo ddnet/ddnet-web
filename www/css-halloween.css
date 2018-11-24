@@ -21,7 +21,7 @@ a:hover {
 }
 @media (max-width: 1099px) {
   .fade {
-    background: linear-gradient(to left, #2D2D2D, rgba(216,239,255,0) 5em);
+    background: linear-gradient(to left, #2D2D2D, rgba(45,45,45,0) 5em);
   }
   .contentleft {
     background: transparent;
