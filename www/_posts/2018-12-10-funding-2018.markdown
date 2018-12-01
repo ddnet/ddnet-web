@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Funding for 2018"
+permalink: /news/funding-2018/
+tag: current
+---
+
+As the year is coming to an end, it's time to thank everyone who donated money or time to DDNet this year, allowing us to keep the servers running and interesting. Special thanks to
+
+- [Silex](/players/Silex/) for sponsoring the DDNet.tw main server (and his [awesome maps](/mappers/Silex/)),
+- [Shishigami](/players/Shishigami/) for sponsoring DDNet GER (how come [mappers](/mappers/Shishigami/) like sponsoring servers?),
+- The admins [Learath2](/players/Learath2/) for sponsoring DDNet GER2 and [heinrich5991](/players/heinrich5991/) for sponsoring DDNet FRA and USA,
+- [KOMПOT](/players/KOM-1055-OT/) for sponsoring DDNet RUS,
+- [RafaelFF](/players/RafaelFF/) for sponsoring DDNet Brazil and keeping up the work on the [ArchLinux AUR package for DDNet](https://aur.archlinux.org/packages/ddnet/) even though he hasn't finished a map since February of 2017
+- [o\_tee\_one](/players/o-95-tee-95-one/) for sponsoring DDNet CAN,
+- [Tom](/players/Tom/) for sponsoring DDNet CHN,
+- [jao](/players/jao/) for stepping up as a new DDNet admin,
+
+and of course thank you to all the great [mappers](/mappers/), [testers](/testlogs/), [developers](https://github.com/ddnet/ddnet/graphs/contributors?from=2018-01-01&to=2018-12-10&type=c), [moderators](/staff/) and [players](/ranks/)!

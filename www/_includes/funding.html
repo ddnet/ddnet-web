@@ -4,20 +4,18 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet": [145, 145, "Silex"], // nfoservers.com
-  "ger":  [170, 170, "Shishigami"], // nfoservers.com
-  "ger2":  [20, 20, "Learath2"], // hetzner.de
-  "fra":  [66, 66, "heinrich5991"], // soyoustart.com
-  "rus":  [33, 48, "KOMПOT"], // ihor.ru
+  "ddnet": 130, // nfoservers.com
+  "ger":  155, // nfoservers.com
+  "rus":  45, // ihor.ru
   "chl":  85, // zglobalhost.com
   "bra":  "RafaelFF",
   "zaf":  65, // clickworks.co.za
-  "usa":  [72, 72, "heinrich5991"], // nfoservers.com
+  "usa":  72, // nfoservers.com
   "can":  "o_tee_one",
   "chn":  "Tom",
 };
-var donated = 411;
-var old = 2304;
+var donated = 0;
+var old = 2975;
 
 var sum = 0;
 var sumToPay = 0;
@@ -66,7 +64,7 @@ for (var server in costs) {
 }
 
 var total = donated + sumPartSponsored;
-var rest = 1540;
+var rest = 2457;
 if (total > sum) {
   rest += total - sum;
   total = sum;
@@ -85,9 +83,9 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-total .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2018";
+    element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2019";
   else
-    element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2018";
+    element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2019";
 });
 elements = document.querySelectorAll("#funding-total .ui-widget-header");
 elements.forEach(function(element, index, array) {
@@ -148,8 +146,8 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-old .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = rest.toFixed() + " € / " + old + " € cost 2013-17";
+    element.textContent = rest.toFixed() + " € / " + old + " € cost 2013-18";
   else
-    element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-17";
+    element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-18";
 });
 </script>
