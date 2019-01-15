@@ -24,7 +24,6 @@ menu: |
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_team_lock</td><td>Enable team lock</td><td>1</td></tr>
-  <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can't hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td></tr>
@@ -40,6 +39,7 @@ menu: |
 <table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
+  <tr><td>toggle_tune</td><td>s[tuning] i[value 1] i[value 2]</td><td>Toggle tune variable</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] s[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
   <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
@@ -54,8 +54,10 @@ menu: |
   <tr><td>password</td><td>Password to the server</td><td>""</td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
+  <tr><td>events</td><td>Enable triggering of events, like the happy eye emotes on some holidays.</td><td>1</td></tr>
   <tr><td>sv_name</td><td>Server name</td><td>"unnamed server"</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>""</td></tr>
+  <tr><td>sv_ipv4only</td><td>Whether to bind only to ipv4, otherwise bind to all available interfaces</td><td>0</td></tr>
   <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser)</td><td>8303</td></tr>
   <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
   <tr><td>sv_map</td><td>Map to use on the server</td><td>"Kobra 4"</td></tr>
@@ -82,7 +84,6 @@ menu: |
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
   <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second</td><td>50</td></tr>
   <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit</td><td>10</td></tr>
-  <tr><td>sv_modhelp_url</td><td>HTTP URL to POST moderator help requests to</td><td>""</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td></tr>
   <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td></tr>
@@ -177,7 +178,6 @@ menu: |
   <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>250</td></tr>
   <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>1000</td></tr>
   <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>60</td></tr>
-  <tr><td>sv_events</td><td>Enable triggering of server events, like the happy eyeemotes on some holidays.</td><td>1</td></tr>
   <tr><td>sv_rank_cheats</td><td>Enable ranks after cheats have been used (file based server only)</td><td>0</td></tr>
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as no one is on it anymore</td><td>0</td></tr>
   <tr><td>sv_reload_when_empty</td><td>Reload map when server is empty (1 = reload once, 2 = reload every time server gets empty)</td><td>0</td></tr>
@@ -204,7 +204,7 @@ menu: |
   <tr><td>sv_vote_kick</td><td>Allow voting to kick players</td><td>1</td></tr>
   <tr><td>sv_vote_kick_min</td><td>Minimum number of players required to start a kick vote</td><td>0</td></tr>
   <tr><td>sv_vote_kick_bantime</td><td>The time in seconds to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td></tr>
-  <tr><td>sv_join_vote_delay</td><td>Add a delay before recently joined players can vote (in seconds)</td><td>60</td></tr>
+  <tr><td>sv_join_vote_delay</td><td>Add a delay before recently joined players can call any vote or participate in a kick/spec vote (in seconds)</td><td>300</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
@@ -216,7 +216,6 @@ menu: |
   <tr><td>sv_send_votes_per_tick</td><td>Number of vote options being send per tick</td><td>5</td></tr>
   <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td><td>0</td></tr>
   <tr><td>sv_rescue_delay</td><td>Number of seconds between two rescues</td><td>5</td></tr>
-  <tr><td>sv_modhelp_delay</td><td>Number of seconds to wait before executing /modhelp again</td><td>60</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
 </table></div>
 </div>
@@ -260,6 +259,7 @@ menu: |
   <tr><td>sv_test_cmds</td><td></td><td>Turns testing commands aka cheats on/off</td></tr>
   <tr><td>sv_rescue</td><td></td><td>Allow /rescue command so players can teleport themselves out of freeze</td></tr>
   <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
+  <tr><td>toggle_tune</td><td>s[tuning] i[value 1] i[value 2]</td><td>Toggle tune variable</td></tr>
   <tr><td>tune_reset</td><td></td><td>Reset tuning</td></tr>
   <tr><td>tune_dump</td><td></td><td>Dump tuning</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
@@ -332,7 +332,6 @@ menu: |
   <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
-  <tr><td>modhelp</td><td>r[message]</td><td>Request the help of a moderator with a description of the problem</td></tr>
   <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
   <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
   <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
@@ -441,6 +440,7 @@ menu: |
   <tr><td>password</td><td>Password to the server</td><td>""</td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>""</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
+  <tr><td>events</td><td>Enable triggering of events, like the happy eye emotes on some holidays.</td><td>1</td></tr>
   <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td></tr>
   <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>0</td></tr>
   <tr><td>cl_refresh_rate_inactive</td><td>Refresh rate for updating the game when the window is inactive (in Hz)</td><td>120</td></tr>
