@@ -24,11 +24,6 @@ $(document).ready(function() {
 	menu = $('#menu');
 	entities_image = $('#entities_image');
 	entities_map = $('#entities_map');
-	permalink = $('#permalink');
-
-	permalink.bind("click", function() {
-				permalink.select();
-	});
 
 	$.getJSON('explanations.json', function(json) {
 		explanations = [];
@@ -49,7 +44,7 @@ $(document).ready(function() {
 		var button = $('<button>' + data[1] + '</button>');
 		button.click(function() {
 			layer_name = layer;
-			show_permalink();
+			update_url();
 			show_title();
 			show_entities_image();
 			show_explanations();
@@ -57,17 +52,17 @@ $(document).ready(function() {
 		menu.append(button);
 	});
 
-	show_permalink();
+	update_url();
 	show_title();
 	show_entities_image();
 });
 
 
-function show_permalink(index) {
-	url = 'https://ddnet.tw/explain/?layer=' + layer_name;
+function update_url(index) {
+	url = '?layer=' + layer_name;
 	if(typeof index != 'undefined')
 		url += '&index=' + index;
-	permalink.val(url);
+	history.pushState(null, '', url);
 }
 
 function show_title() {
@@ -110,7 +105,7 @@ function parse_entity(entity) {
 				}
 				text += '<img class="property" src="property/' + properties[property][0] + '" />';
 			}
-		});			
+		});
 	}
 
 	area.qtip({
@@ -133,11 +128,11 @@ function parse_entity(entity) {
 	});
 
 	area.bind("click", function() {
-		show_permalink(entity['index']);
+		update_url(entity['index']);
 	});
 
 	if(entity['index'] == highlight) {
-		show_permalink(entity['index']);
+		update_url(entity['index']);
 		$(document).scrollTop(y);
 		highlight = area;
 	}
