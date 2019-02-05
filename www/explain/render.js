@@ -94,7 +94,22 @@ function parse_entity(entity) {
 		title += entity['type'];
 	}
 
-	var text = entity['explanation'];
+	function process_markdown(text) {
+		// New line
+		text = text.replace(/\n/g, '<br />');
+		// Bold (**text**)
+		text = text.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+		// Underline (__text__)
+		text = text.replace(/__(.+?)__/g, '<u>$1</u>');
+		// Italic (*text* or _text_)
+		text = text.replace(/(\*|_)(.+?)\1/g, '<i>$2</i>');
+		// Strikethrough (~~text~~)
+		text = text.replace(/~~(.+?)~~/g, '<s>$1</s>');
+		return text
+	}
+
+	var text = process_markdown(entity['explanation']);
+
 	if('properties' in entity) {
 		var linebreak = false;
 		$.each(entity['properties'], function(i, property) {
