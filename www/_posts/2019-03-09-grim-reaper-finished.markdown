@@ -6,7 +6,7 @@ tag: current
 head: <script src="/youtube.js" type="text/javascript"></script>
 ---
 
-Grip Reaper by Pulsar has finally been finished 4 months after its release:
+Grim Reaper by Pulsar has finally been finished 4 months after its release:
 <br/>
 
 <div class="block2 info" id="map-Grim_Reaper"><h3 class="inline"><span title="650x750">Grim Reaper</span></h3><p class="inline"><strong>by <a href="/mappers/Pulsar/">Pulsar</a></strong><br/></p><p>Difficulty: ★★★★★, Points: 50<br/><a href="/maps/?map=Grim+Reaper"><img class="screenshot" alt="Screenshot" src="/ranks/maps/Grim_Reaper.png" width="360" height="225" /></a><br/><span title="Grenade"><img alt="Grenade" src="/tiles/WEAPON_GRENADE.png" width="32" height="32"/></span> <span title="Rifle"><img alt="Rifle" src="/tiles/WEAPON_RIFLE.png" width="32" height="32"/></span> <span title="Deep Freeze"><img alt="Deep Freeze" src="/tiles/DFREEZE.png" width="32" height="32"/></span> <span title="No Hit"><img alt="No Hit" src="/tiles/HIT_START.png" width="32" height="32"/></span> <span title="Super Jumps"><img alt="Super Jumps" src="/tiles/SUPER_START.png" width="32" height="32"/></span> <br/><span title="">2 tees finished</span><br/>1 team finished (biggest team: 2)</p></div>
