@@ -37,7 +37,6 @@ finished by one team on GER and one on Chile, each with times of over 5 hours:
   <tr title="414:12.50, 2018-02-11 18:49"><td class="rank">2.</td><td class="time">414:12</td><td><a href="/players/Grk0ne/">Grk0ne</a> &amp; <a href="/players/gL-46--32--124--32-Kenzo/">gL. | Kenzo</a></td></tr>
 </table>
 </div>
-</div>
 <br/>
 
 On Solo server the recently released Memento mori by Starkiller is still unfinished:
