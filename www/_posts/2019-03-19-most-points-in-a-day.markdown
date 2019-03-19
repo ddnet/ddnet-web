@@ -33,4 +33,4 @@ For comparison, the previous record of 21531 points in a day was also on a Sunda
 
 I guess this either means that Dummy maps are really popular or they give too many points considering their difficulty.
 
-In unrelated news, there has been a lot of work going on in [DDNet development](https://github.com/ddnet/ddnet/pulls?utf8=%E2%9C%93&q=is%3Apr) today, so look forward to the next release.
+In unrelated news, there has been a lot of work going on in [DDNet development](https://github.com/ddnet/ddnet/pulse) today, so look forward to the next release.
