@@ -7,7 +7,7 @@ tag: current
 
 [<img class="demo" src="/points-earned.png" />](https://ddnet.tw/stats/)
 
-On Sunday, March 17 DDNet broke its old records of the most points earned in a day! The points were made on the following server types:
+On Sunday, March 17 DDNet broke its old record of the most points earned in a day! The points were made on the following server types:
 
 <table>
 <tr><th>Type</th><th style="text-align: right">Points</th></tr>
