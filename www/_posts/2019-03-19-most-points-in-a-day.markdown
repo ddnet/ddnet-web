@@ -17,7 +17,8 @@ On Sunday, March 17 DDNet broke its old record of the most points earned in a da
 <tr><td>DDmaX</td><td style="text-align: right">1728</td></tr>
 <tr><td>Dummy</td><td style="text-align: right">10670</td></tr>
 <tr><td>Brutal</td><td style="text-align: right">2940</td></tr>
-<tr><td>Moderate</td><td style="text-align: right">3134</td></tr>
+<tr><td>Moderate</td><td style="text-align: right">2004</td></tr>
+<tr><td>Novice</td><td style="text-align: right">3134</td></tr>
 <tr><th>Total</th><th style="text-align: right">22736</th></tr>
 </table>
 
