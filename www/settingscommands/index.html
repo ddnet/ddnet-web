@@ -44,7 +44,7 @@ menu: |
   <tr><td>tune_zone_enter</td><td>i[zone] s[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
   <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
   <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
-  <tr><td>switch_open</td><td>i['0'|'1']</td><td>Whether a switch is open by default (otherwise closed)</td></tr>
+  <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
 </table>
 </div>
 <div class="block">
@@ -186,6 +186,7 @@ menu: |
   <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>"Get DDNet client from DDNet.tw to use all features on DDNet!"</td></tr>
   <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>"Your DDNet client is old, update it on DDNet.tw!"</td></tr>
   <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>"Your client has bots and can be remotely controlled!\nPlease use another client like DDNet client from DDNet.tw"</td></tr>
+  <tr><td>sv_banned_versions</td><td>Comma separated list of banned clients to be kicked on join</td><td>""</td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td></tr>
   <tr><td>sv_connlimit</td><td>Connlimit: Number of connections an IP is allowed to do in a timespan</td><td>4</td></tr>
@@ -253,7 +254,7 @@ menu: |
   <tr><td>auth_change_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Update a rcon key with prehashed data</td></tr>
   <tr><td>auth_remove</td><td>s[ident]</td><td>Remove a rcon key</td></tr>
   <tr><td>auth_list</td><td></td><td>List all rcon keys</td></tr>
-  <tr><td>name_ban</td><td>s[name] ?i[distance] ?r[reason]</td><td>Ban a certain nick name</td></tr>
+  <tr><td>name_ban</td><td>s[name] ?i[distance] ?i[is_substring] ?r[reason]</td><td>Ban a certain nick name</td></tr>
   <tr><td>name_unban</td><td>s[name]</td><td>Unban a certain nick name</td></tr>
   <tr><td>name_bans</td><td></td><td>List all name bans</td></tr>
   <tr><td>sv_test_cmds</td><td></td><td>Turns testing commands aka cheats on/off</td></tr>
@@ -268,7 +269,7 @@ menu: |
   <tr><td>tune_zone_enter</td><td>i[zone] s[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
   <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
   <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
-  <tr><td>switch_open</td><td>i['0'|'1']</td><td>Whether a switch is open by default (otherwise closed)</td></tr>
+  <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
   <tr><td>pause_game</td><td></td><td>Pause/unpause game</td></tr>
   <tr><td>change_map</td><td>?r[map]</td><td>Change map</td></tr>
   <tr><td>random_map</td><td>?i[stars]</td><td>Random map</td></tr>
@@ -355,6 +356,7 @@ menu: |
   <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td></tr>
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
+  <tr><td>cl_authed_player_color</td><td>Color of name of authenticated player in scoreboard</td><td>5898183</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>0</td></tr>
   <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>0</td></tr>
   <tr><td>cl_showhud</td><td>Show ingame HUD</td><td>1</td></tr>
@@ -427,8 +429,8 @@ menu: |
   <tr><td>cl_dummy_copy_moves</td><td>Whether dummy should copy your moves</td><td>0</td></tr>
   <tr><td>cl_dummy_control</td><td>Whether can you control dummy at the same time</td><td>0</td></tr>
   <tr><td>cl_dummy_jump</td><td>Whether dummy is jumping</td><td>0</td></tr>
-  <tr><td>cl_dummy_fire</td><td>Whether dummy is fire</td><td>0</td></tr>
-  <tr><td>cl_dummy_hook</td><td>Whether dummy is hook</td><td>0</td></tr>
+  <tr><td>cl_dummy_fire</td><td>Whether dummy is firing</td><td>0</td></tr>
+  <tr><td>cl_dummy_hook</td><td>Whether dummy is hooking</td><td>0</td></tr>
   <tr><td>cl_http_connect_timeout_ms</td><td>HTTP downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td></tr>
   <tr><td>cl_http_low_speed_limit</td><td>HTTP downloads: Set low speed limit in bytes per second (0 to disable)</td><td>500</td></tr>
   <tr><td>cl_http_low_speed_time</td><td>HTTP downloads: Set low speed limit time period (0 to disable)</td><td>5</td></tr>
@@ -477,14 +479,17 @@ menu: |
   <tr><td>br_filter_pure_map</td><td>Filter out non-standard maps in browser</td><td>0</td></tr>
   <tr><td>br_filter_compatversion</td><td>Filter out non-compatible servers in browser</td><td>0</td></tr>
   <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>0</td></tr>
-  <tr><td>br_filter_exclude_countries</td><td>Filter out ddnet servers by country</td><td>""</td></tr>
-  <tr><td>br_filter_exclude_types</td><td>Filter out ddnet servers by type (mod)</td><td>""</td></tr>
-  <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info.ddnet.tw)</td><td>1</td></tr>
-  <tr><td>br_sort</td><td></td><td>4</td></tr>
-  <tr><td>br_sort_order</td><td></td><td>1</td></tr>
+  <tr><td>br_filter_exclude_countries</td><td>Filter out DDNet servers by country</td><td>""</td></tr>
+  <tr><td>br_filter_exclude_types</td><td>Filter out DDNet servers by type (mod)</td><td>""</td></tr>
+  <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info.ddnet.tw/info)</td><td>1</td></tr>
+  <tr><td>br_filter_exclude_countries_kog</td><td>Filter out kog servers by country</td><td>""</td></tr>
+  <tr><td>br_filter_exclude_types_kog</td><td>Filter out kog servers by type (mod)</td><td>""</td></tr>
+  <tr><td>br_sort</td><td>Sorting column in server browser</td><td>4</td></tr>
+  <tr><td>br_sort_order</td><td>Sorting order in server browser</td><td>1</td></tr>
   <tr><td>br_max_requests</td><td>Number of requests to use when refreshing server browser</td><td>25</td></tr>
-  <tr><td>br_demo_sort</td><td></td><td>0</td></tr>
-  <tr><td>br_demo_sort_order</td><td></td><td>0</td></tr>
+  <tr><td>br_demo_sort</td><td>Sorting column in demo browser</td><td>0</td></tr>
+  <tr><td>br_demo_sort_order</td><td>Sorting order in demo browser</td><td>0</td></tr>
+  <tr><td>br_demo_fetch_info</td><td>Whether to auto fetch demo infos on refresh</td><td>0</td></tr>
   <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td></tr>
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td></tr>
   <tr><td>snd_enable</td><td>Sound enable</td><td>1</td></tr>
@@ -598,7 +603,7 @@ menu: |
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
-  <tr><td>cl_confirm_disconnect</td><td>Confirmation popup before disconnecting</td><td>0</td></tr>
+  <tr><td>cl_confirm_disconnect_quit_time</td><td>Confirmation popup before disconnecting/quitting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td></tr>
   <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>""</td></tr>
   <tr><td>cl_dummy_timeout_code</td><td>Dummy Timeout code to use</td><td>""</td></tr>
   <tr><td>cl_timeout_seed</td><td>Timeout seed</td><td>""</td></tr>
