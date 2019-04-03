@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Posts
+title: All News
 head: |
   <link rel="alternate" type="application/atom+xml" title="DDNet News" href="/feed/">
 ---
 <div class="block">
-<h2>News</h2>
+<h2>All News</h2>
 <ul>
 {% for post in site.posts %}
   <li>{{ post.date | date: "%Y-%m-%d" }} &raquo; <a href="{{post.url}}">{{post.title}}</a></li>
