@@ -1,0 +1,30 @@
+---
+layout: post
+title: "DDNet 12.0 Release"
+permalink: /news/ddnet-12.0/
+tag: current
+---
+
+DDNet 12.0 has been released with the following highlights:
+
+<ul>
+  <li>[Client] Server browser tab for <a href="https://qshar.com/">KoG servers</a></li>
+  <li>[Client] Mark official DDNet &amp; KoG servers with a ✓ (graphic by <a href="https://ddnet.tw/players/-9479--187-M-237-M-171--9479-/">┇»MíM«┇</a>)</li>
+  <li>[Client] Autocomplete chat commands starting with /</li>
+  <li>[Client] Fix rendering glyphs not in font</li>
+  <li>[Client] Color authed players in spec</li>
+  <li>[Client] Don't ask to quit without good reason (cl_confirm_quit_time)</li>
+  <li>[Client] Ask to disconnect (dummy) when race time is high (cl_confirm_disconnect_time)</li>
+  <li>[Server] Exclude current map on random map votes <strong>[jao]</strong></li>
+  <li>[Server] Add vote_unmute and vote_mutes <strong>[Ryozuki]</strong></li>
+  <li>[Server] Fix updating nameban reason <strong>[jao]</strong></li>
+  <li>[Server] Don't enforce own votes when moderating <strong>[jao]</strong></li>
+  <li>[Server] Only print team join message when not in team already</li>
+  <li>[Editor] Add non-destructive brush drawing mode <strong>[jao]</strong></li>
+  <li>[Editor] Add shortcut to add quad/sound at mouse position <strong>[jao]</strong></li>
+  <li>[Editor] Don't rotate static game tiles and fix switch rotation <strong>[jao]</strong></li>
+  <li>[Editor] Allow editing texture UV offsets in quad properties <strong>[Bojidar]</strong></li>
+  <li>As usual, lots of minor fixes</li>
+</ul>
+
+You can download DDNet 12.0 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/11.9...12.0.1).

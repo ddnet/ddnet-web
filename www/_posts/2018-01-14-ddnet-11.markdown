@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "DDNet 11 Release"
+title: "DDNet 11.0 Release"
 permalink: /news/ddnet-11/
 tag: current
 ---
 
-After a long time DDNet 11 has finally been released today with the following highlights:
+After a long time DDNet 11.0 has finally been released today with the following highlights:
 
 <ul>
   <li><a href="https://github.com/ddnet/ddnet/tree/214a8ba10a8931f644692e237a1e0d87dbbb2528/data/emojis">Emoji</a> support in chat <strong>[CookieMichal]</strong></li>
@@ -21,4 +21,4 @@ After a long time DDNet 11 has finally been released today with the following hi
   <li>Fix crashes in client and server</li>
 </ul>
 
-You can download DDNet 11 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/10.8.6...11.0).
+You can download DDNet 11.0 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/10.8.6...11.0).
