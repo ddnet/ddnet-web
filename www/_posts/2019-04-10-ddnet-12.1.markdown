@@ -1,0 +1,32 @@
+---
+layout: post
+title: "DDNet 12.1 Release"
+permalink: /news/ddnet-12.1/
+tag: current
+---
+
+DDNet 12.1 has been released with the following highlights:
+
+<ul>
+  <li>[Client] Colored ping in scoreboard <strong>[Ryozuki]</strong></li>
+  <li>[Client] Color for your clan in scoreboard <strong>[Ryozuki]</strong></li>
+  <li>[Client] Console command color\_from\_rgb to convert colors into TW formats</li>
+  <li>[Client] Handle failures while updating</li>
+  <li>[Client] Add ctrl-a/ctrl-e navigation in console <strong>[ChillerDragon]</strong></li>
+  <li>[Client] Fix Home/End keys in console</li>
+  <li>[Client] cl\_mouse\_min\_distance to keep mouse at a minimum distance from center of screen</li>
+  <li>[Client] Enable gun sound by default again</li>
+  <li>[Client] Allow faster demo playback</li>
+  <li>[Editor] Notify about chat mentions <strong>[jao]</strong></li>
+  <li>[Editor] Fix nondestructive mapping mode with hookthroughs <strong>[jao]</strong></li>
+  <li>[Editor] More accurate world offset calculation <strong>[jao]</strong></li>
+  <li>[Server] Display playerflags and DNSBL in rcon status command</li>
+  <li>[Server] Don't show IPs in rcon console by default, enable with show\_ips 1</li>
+  <li>[Server] Save telegun on /save <strong>[Ryozuki]</strong></li>
+  <li>[Server] Make timestamp consistent for every member of team in final ranks</li>
+  <li>[Server] Display unicode names like 😶 correctly when returned from database</li>
+  <li>[Server] Fix crash when draggers don't have a number <strong>[jao]</strong></li>
+  <li>Many minor fixes and improvements</li>
+</ul>
+
+You can download DDNet 12.1 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/12.0.1...12.1).
