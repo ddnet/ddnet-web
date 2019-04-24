@@ -18,6 +18,23 @@ title: Downloads - DDraceNetwork
 </div>
 <div class="dlinfo">
   <strong>Changelog</strong>
+  <ul>
+    <li>[Client] Revamped prediction, with additional prediction: [<strong>trml</strong>]
+     <ul style="padding-top:5px;>
+        <li>Prediction for laser, shotgun, ninja, fng hammer, pickups and ddrace tiles (freeze/unfreeze tiles with cl_predict_freeze)</li>
+         <li>laser and bullets are rendered when you fire them and they don't go through walls (when both cl_antiping_grenade and cl_antiping_weapons are enabled)</li>
+        <li>Antiping for flags</li>
+        <li>Prediction of dummy input</li>
+        <li>An additional smoothing option that attempts to make antiping less jumpy (cl_antiping_smooth)</li>
+      </ul>
+    </li>
+    <li>[Client] Fixed a bug where tees were rendered with transparency when spectating [<strong>Ryozuki</strong>]</li>
+    <li>[Client] Disabled demo shortcuts in console [<strong>jao</strong>]</li>
+    <li>[Client] Improved prediction for solo and super [<strong>Ryozuki</strong>]</li>
+    <li>[Server] Fixed a bug where you or a partner would be in solo after a /load when they shouldn't [<strong>Learath2</strong>]</li>
+    <li>[Server] Fill the DDNet Network Character packet with data [<strong>Ryozuki</strong>]</li>
+    <li>[Server] Added the option to delete specific projectiles on death [<strong>jao</strong>]</li>
+  </ul>
   <a href="https://github.com/ddnet/ddnet/compare/12.2...12.3">Full list of git changes</a>
 </div>
 <br/>
