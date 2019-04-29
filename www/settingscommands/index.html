@@ -35,6 +35,8 @@ menu: |
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
   <tr><td>sv_teleport_lose_weapons</td><td>Lose weapons when teleported (useful for some race maps)</td><td>0</td></tr>
   <tr><td>sv_deepfly</td><td>Allow fire non auto weapons when deep</td><td>1</td></tr>
+  <tr><td>sv_destroy_bullets_on_death</td><td>Destroy bullets when their owner dies</td><td>1</td></tr>
+  <tr><td>sv_destroy_lasers_on_death</td><td>Destroy lasers when their owner dies</td><td>0</td></tr>
 </table></div>
 <table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
@@ -211,6 +213,8 @@ menu: |
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
   <tr><td>sv_teleport_lose_weapons</td><td>Lose weapons when teleported (useful for some race maps)</td><td>0</td></tr>
   <tr><td>sv_deepfly</td><td>Allow fire non auto weapons when deep</td><td>1</td></tr>
+  <tr><td>sv_destroy_bullets_on_death</td><td>Destroy bullets when their owner dies</td><td>1</td></tr>
+  <tr><td>sv_destroy_lasers_on_death</td><td>Destroy lasers when their owner dies</td><td>0</td></tr>
   <tr><td>sv_mapupdaterate</td><td>64 player id <-> vanilla id players map update rate</td><td>5</td></tr>
   <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
@@ -242,12 +246,12 @@ menu: |
   <tr><td>status</td><td></td><td>List players</td></tr>
   <tr><td>shutdown</td><td></td><td>Shut down</td></tr>
   <tr><td>logout</td><td></td><td>Logout of rcon</td></tr>
+  <tr><td>show_ips</td><td>?i[show]</td><td>Show IP addresses in rcon commands (1 = on, 0 = off)</td></tr>
   <tr><td>record</td><td>?s[file]</td><td>Record to a file</td></tr>
   <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
   <tr><td>reload</td><td></td><td>Reload the map</td></tr>
   <tr><td>add_sqlserver</td><td>s['r'|'w'] s[Database] s[Prefix] s[User] s[Password] s[IP] i[Port] ?i[SetUpDatabase ?]</td><td>add a sqlserver</td></tr>
   <tr><td>dump_sqlservers</td><td>s['r'|'w']</td><td>dumps all sqlservers readservers = r, writeservers = w</td></tr>
-  <tr><td>dnsbl_status</td><td></td><td>List blacklisted players</td></tr>
   <tr><td>auth_add</td><td>s[ident] s[level] s[pw]</td><td>Add a rcon key</td></tr>
   <tr><td>auth_add_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Add a prehashed rcon key</td></tr>
   <tr><td>auth_change</td><td>s[ident] s[level] s[pw]</td><td>Update a rcon key</td></tr>
@@ -291,7 +295,8 @@ menu: |
 <h2 id="chat-commands">Chat Commands</h2>
 <table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
-  <tr><td>credits</td><td></td><td>Shows the credits of the DDRace mod</td></tr>
+  <tr><td>credits</td><td></td><td>Shows the credits of the DDNet mod</td></tr>
+  <tr><td>rules</td><td></td><td>Shows the server rules</td></tr>
   <tr><td>emote</td><td>?s[emote name] i[duration in seconds]</td><td>Sets your tee's eye emote</td></tr>
   <tr><td>eyeemote</td><td>?s['on'|'off'|'toggle']</td><td>Toggles use of standard eye-emotes on/off, eyeemote s, where s = on for on, off for off, toggle for toggle and nothing to show current status</td></tr>
   <tr><td>settings</td><td>?s[configname]</td><td>Shows gameplay information for this server</td></tr>
@@ -315,13 +320,15 @@ menu: |
   <tr><td>rankteam</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>teamrank</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>rank</td><td>?r[player name]</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
-  <tr><td>rules</td><td></td><td>Shows the server rules</td></tr>
-  <tr><td>team</td><td>?i[id]</td><td>Lets you join team i (shows your team if left blank)</td></tr>
-  <tr><td>lock</td><td>?i['0'|'1']</td><td>Lock team so no-one else can join it</td></tr>
-  <tr><td>invite</td><td>r[player name]</td><td>Invite a person to a locked team</td></tr>
   <tr><td>top5team</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>teamtop5</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>top5</td><td>?i[rank to start with]</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
+  <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
+  <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>team</td><td>?i[id]</td><td>Lets you join team i (shows your team if left blank)</td></tr>
+  <tr><td>lock</td><td>?i['0'|'1']</td><td>Lock team so no-one else can join it</td></tr>
+  <tr><td>invite</td><td>r[player name]</td><td>Invite a person to a locked team</td></tr>
   <tr><td>showothers</td><td>?i['0'|'1']</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
   <tr><td>showall</td><td>?i['0'|'1']</td><td>Whether to show players at any distance (off by default), optional i = 0 for off else for on</td></tr>
   <tr><td>specteam</td><td>?i['0'|'1']</td><td>Whether to show players from other teams when spectating (on by default), optional i = 0 for off else for on</td></tr>
@@ -333,9 +340,6 @@ menu: |
   <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
-  <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
-  <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
-  <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
 </table>
 </div>
 <div class="block">
@@ -348,6 +352,7 @@ menu: |
   <tr><td>cl_antiping_players</td><td>Predict other player's movement more aggressively (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
   <tr><td>cl_antiping_grenade</td><td>Predict grenades (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
   <tr><td>cl_antiping_weapons</td><td>Predict weapon projectiles (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
+  <tr><td>cl_antiping_smooth</td><td>Make the prediction of other player's movement smoother</td><td>0</td></tr>
   <tr><td>cl_nameplates</td><td>Show name plates</td><td>1</td></tr>
   <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td></tr>
   <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td></tr>
@@ -357,6 +362,8 @@ menu: |
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
   <tr><td>cl_authed_player_color</td><td>Color of name of authenticated player in scoreboard</td><td>5898183</td></tr>
+  <tr><td>cl_same_clan_color</td><td>Clan color of players with the same clan as you in scoreboard.</td><td>5898183</td></tr>
+  <tr><td>cl_enable_ping_color</td><td>Whether ping is colored in scoreboard.</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>0</td></tr>
   <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>0</td></tr>
   <tr><td>cl_showhud</td><td>Show ingame HUD</td><td>1</td></tr>
@@ -381,8 +388,10 @@ menu: |
   <tr><td>cl_mouse_deadzone</td><td></td><td>0</td></tr>
   <tr><td>cl_mouse_followfactor</td><td></td><td>0</td></tr>
   <tr><td>cl_mouse_max_distance</td><td></td><td>400</td></tr>
+  <tr><td>cl_mouse_min_distance</td><td></td><td>0</td></tr>
   <tr><td>cl_dyncam</td><td>Enable dyncam</td><td>0</td></tr>
-  <tr><td>cl_dyncam_max_distance</td><td>Maximal dynamic camera distance</td><td>1000</td></tr>
+  <tr><td>cl_dyncam_max_distance</td><td>Maximum dynamic camera distance</td><td>1000</td></tr>
+  <tr><td>cl_dyncam_min_distance</td><td>Minimum dynamic camera distance</td><td>0</td></tr>
   <tr><td>cl_dyncam_mousesens</td><td>Mouse sens used when dyncam is toggled on</td><td>0</td></tr>
   <tr><td>cl_dyncam_deadzone</td><td>Dynamic camera dead zone</td><td>300</td></tr>
   <tr><td>cl_dyncam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td></tr>
@@ -499,7 +508,7 @@ menu: |
   <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>70</td></tr>
   <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
   <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td></tr>
-  <tr><td>snd_gun</td><td>Enable gun sound</td><td>0</td></tr>
+  <tr><td>snd_gun</td><td>Enable gun sound</td><td>1</td></tr>
   <tr><td>snd_long_pain</td><td>Enable long pain sound (used when shooting in freeze)</td><td>1</td></tr>
   <tr><td>snd_chat</td><td>Enable regular chat sound</td><td>1</td></tr>
   <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
@@ -594,6 +603,7 @@ menu: |
   <tr><td>cl_background_show_tiles_layers</td><td>Whether draw tiles layers when using custom background (entities)</td><td>0</td></tr>
   <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee to estimate your delay</td><td>0</td></tr>
   <tr><td>cl_predict_ddrace</td><td>Predict some DDRace tiles</td><td>1</td></tr>
+  <tr><td>cl_predict_freeze</td><td>Predict freeze tiles</td><td>1</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players' hook collision line</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_own</td><td>Show own players' hook collision line</td><td>1</td></tr>
@@ -603,7 +613,8 @@ menu: |
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
-  <tr><td>cl_confirm_disconnect_quit_time</td><td>Confirmation popup before disconnecting/quitting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td></tr>
+  <tr><td>cl_confirm_disconnect_time</td><td>Confirmation popup before disconnecting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td></tr>
+  <tr><td>cl_confirm_quit_time</td><td>Confirmation popup before quitting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td></tr>
   <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>""</td></tr>
   <tr><td>cl_dummy_timeout_code</td><td>Dummy Timeout code to use</td><td>""</td></tr>
   <tr><td>cl_timeout_seed</td><td>Timeout seed</td><td>""</td></tr>
@@ -671,6 +682,8 @@ menu: |
   <tr><td>friends</td><td></td><td>List friends</td></tr>
   <tr><td>team</td><td>i[team-id]</td><td>Switch team</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
+  <tr><td>color_from_rgb</td><td>s[color]</td><td>Convert HEX RGB color (3 or 6 digits) to TW formats</td></tr>
+  <tr><td>color_to_rgb</td><td>i[color] ?i[color] ?i[color]</td><td>Convert TW colors to HEX RGB color format</td></tr>
   <tr><td>dummy_connect</td><td></td><td>connect dummy</td></tr>
   <tr><td>dummy_disconnect</td><td></td><td>disconnect dummy</td></tr>
   <tr><td>quit</td><td></td><td>Quit Teeworlds</td></tr>
