@@ -7,7 +7,7 @@ tag: current
 
 With recent versions of DDNet client you can play demo files directly by pulling them into the client instead of having to put the demo file into the demo directory and navigating to it in the client.
 
-A less known feature that has existed for a few months is opening links to DDNet server withe client directly. The links can look like this:
+A less known feature that has existed for a few months is opening links to DDNet server with the client directly. The links can look like this:
 
 - [ddnet:92.172.92.151:8303](ddnet:95.172.92.151:8303)
 - Domains are supported as well: [ddnet:ger.ddnet.tw:8303](ddnet:ger.ddnet.tw:8303)
