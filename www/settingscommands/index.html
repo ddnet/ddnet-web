@@ -289,6 +289,49 @@ menu: |
   <tr><td>clear_votes</td><td></td><td>Clears the voting options</td></tr>
   <tr><td>vote</td><td>r['yes'|'no']</td><td>Force a vote to yes/no</td></tr>
   <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
+  <tr><td>kill_pl</td><td>v[id]</td><td>Kills player v and announces the kill</td></tr>
+  <tr><td>totele</td><td>i[number]</td><td>Teleports you to teleporter v</td></tr>
+  <tr><td>totelecp</td><td>i[number]</td><td>Teleports you to checkpoint teleporter v</td></tr>
+  <tr><td>tele</td><td>?i[id] ?i[id]</td><td>Teleports player i (or you) to player i (or you to where you look at)</td></tr>
+  <tr><td>addweapon</td><td>i[weapon-id]</td><td>Gives weapon with id i to you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, rifle = 4, ninja = 5)</td></tr>
+  <tr><td>removeweapon</td><td>i[weapon-id]</td><td>removes weapon with id i from you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, rifle = 4, ninja = 5)</td></tr>
+  <tr><td>shotgun</td><td></td><td>Gives a shotgun to you</td></tr>
+  <tr><td>grenade</td><td></td><td>Gives a grenade launcher to you</td></tr>
+  <tr><td>rifle</td><td></td><td>Gives a rifle to you</td></tr>
+  <tr><td>jetpack</td><td></td><td>Gives jetpack to you</td></tr>
+  <tr><td>weapons</td><td></td><td>Gives all weapons to you</td></tr>
+  <tr><td>unshotgun</td><td></td><td>Takes the shotgun from you</td></tr>
+  <tr><td>ungrenade</td><td></td><td>Takes the grenade launcher you</td></tr>
+  <tr><td>unrifle</td><td></td><td>Takes the rifle from you</td></tr>
+  <tr><td>unjetpack</td><td></td><td>Takes the jetpack from you</td></tr>
+  <tr><td>unweapons</td><td></td><td>Takes all weapons from you</td></tr>
+  <tr><td>ninja</td><td></td><td>Makes you a ninja</td></tr>
+  <tr><td>super</td><td></td><td>Makes you super</td></tr>
+  <tr><td>unsuper</td><td></td><td>Removes super from you</td></tr>
+  <tr><td>unsolo</td><td></td><td>Puts you out of solo part</td></tr>
+  <tr><td>undeep</td><td></td><td>Puts you out of deep freeze</td></tr>
+  <tr><td>left</td><td></td><td>Makes you move 1 tile left</td></tr>
+  <tr><td>right</td><td></td><td>Makes you move 1 tile right</td></tr>
+  <tr><td>up</td><td></td><td>Makes you move 1 tile up</td></tr>
+  <tr><td>down</td><td></td><td>Makes you move 1 tile down</td></tr>
+  <tr><td>move</td><td>i[x] i[y]</td><td>Moves to the tile with x/y-number ii</td></tr>
+  <tr><td>move_raw</td><td>i[x] i[y]</td><td>Moves to the point with x/y-coordinates ii</td></tr>
+  <tr><td>force_pause</td><td>v[id] i[seconds]</td><td>Force i to pause for i seconds</td></tr>
+  <tr><td>force_unpause</td><td>v[id]</td><td>Set force-pause timer of i to 0.</td></tr>
+  <tr><td>set_team_ddr</td><td>v[id] ?i[team]</td><td>Set ddrace team of a player</td></tr>
+  <tr><td>uninvite</td><td>v[id] ?i[team]</td><td>Uninvite player from team</td></tr>
+  <tr><td>vote_mute</td><td>v[id] i[seconds]</td><td>Remove v's right to vote for i seconds</td></tr>
+  <tr><td>vote_unmute</td><td>v[id]</td><td>Give back v's right to vote.</td></tr>
+  <tr><td>vote_mutes</td><td></td><td>List the current active vote mutes.</td></tr>
+  <tr><td>mute</td><td></td><td></td></tr>
+  <tr><td>muteid</td><td>v[id] i[seconds]</td><td></td></tr>
+  <tr><td>muteip</td><td>s[ip] i[seconds]</td><td></td></tr>
+  <tr><td>unmute</td><td>v[id]</td><td></td></tr>
+  <tr><td>mutes</td><td></td><td></td></tr>
+  <tr><td>moderate</td><td></td><td>Enables/disables active moderator mode for the player</td></tr>
+  <tr><td>vote_no</td><td></td><td></td></tr>
+  <tr><td>freezehammer</td><td>v[id]</td><td>Gives a player Freeze Hammer</td></tr>
+  <tr><td>unfreezehammer</td><td>v[id]</td><td>Removes Freeze Hammer from a player</td></tr>
 </table>
 </div>
 <div class="block">
@@ -340,6 +383,7 @@ menu: |
   <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
+  <tr><td>list</td><td>?s[filter]</td><td>List connected players with optional case-insensitive substring matching filter</td></tr>
 </table>
 </div>
 <div class="block">
@@ -361,8 +405,9 @@ menu: |
   <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td></tr>
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
-  <tr><td>cl_authed_player_color</td><td>Color of name of authenticated player in scoreboard</td><td>5898183</td></tr>
-  <tr><td>cl_same_clan_color</td><td>Clan color of players with the same clan as you in scoreboard.</td><td>5898183</td></tr>
+  <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
+  <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
+  <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
   <tr><td>cl_enable_ping_color</td><td>Whether ping is colored in scoreboard.</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>0</td></tr>
   <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>0</td></tr>
@@ -406,8 +451,8 @@ menu: |
   <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
-  <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
-  <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
+  <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
+  <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_skin</td><td>Player skin</td><td>"default"</td></tr>
   <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, coala, santa)</td><td>""</td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td></tr>
@@ -416,10 +461,7 @@ menu: |
   <tr><td>ui_server_address</td><td>Interface server address</td><td>"localhost:8303"</td></tr>
   <tr><td>ui_scale</td><td>Interface scale</td><td>100</td></tr>
   <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>200</td></tr>
-  <tr><td>ui_color_hue</td><td>Interface color hue</td><td>160</td></tr>
-  <tr><td>ui_color_sat</td><td>Interface color saturation</td><td>70</td></tr>
-  <tr><td>ui_color_lht</td><td>Interface color lightness</td><td>175</td></tr>
-  <tr><td>ui_color_alpha</td><td>Interface alpha</td><td>228</td></tr>
+  <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>200</td></tr>
   <tr><td>ui_colorize_ping</td><td>Highlight ping</td><td>1</td></tr>
   <tr><td>ui_colorize_gametype</td><td>Highlight gametype</td><td>1</td></tr>
   <tr><td>ui_demo_selected</td><td>Selected demo file</td><td>""</td></tr>
@@ -429,8 +471,8 @@ menu: |
   <tr><td>dummy_clan</td><td>Clan of the Dummy</td><td>""</td></tr>
   <tr><td>dummy_country</td><td>Country of the Dummy</td><td>-1</td></tr>
   <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
-  <tr><td>dummy_color_body</td><td>Dummy body color</td><td>65408</td></tr>
-  <tr><td>dummy_color_feet</td><td>Dummy feet color</td><td>65408</td></tr>
+  <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
+  <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>dummy_skin</td><td>Dummy skin</td><td>"default"</td></tr>
   <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
@@ -550,31 +592,15 @@ menu: |
   <tr><td>cl_race_binds_set</td><td>Whether the DDRace binds set or not (this is automated you don't need to use this)</td><td>0</td></tr>
   <tr><td>cl_reconnect_timeout</td><td>How many seconds to wait before reconnecting (after timeout, 0 for off)</td><td>600</td></tr>
   <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_message_system_hue</td><td>System message color hue</td><td>255</td></tr>
-  <tr><td>cl_message_system_sat</td><td>System message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_system_lht</td><td>System message color lightness</td><td>255</td></tr>
-  <tr><td>cl_message_client_hue</td><td>Client message color hue</td><td>255</td></tr>
-  <tr><td>cl_message_client_sat</td><td>Client message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_client_lht</td><td>Client message color lightness</td><td>255</td></tr>
-  <tr><td>cl_message_highlight_hue</td><td>Highlighted message color hue</td><td>255</td></tr>
-  <tr><td>cl_message_highlight_sat</td><td>Highlighted message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_highlight_lht</td><td>Highlighted message color lightness</td><td>255</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
   <tr><td>cl_message_friend</td><td>Enable coloring and the heart for friends</td><td>1</td></tr>
-  <tr><td>cl_message_friend_hue</td><td>Friend message color hue</td><td>255</td></tr>
-  <tr><td>cl_message_friend_sat</td><td>Friend message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_friend_lht</td><td>Friend message color lightness</td><td>255</td></tr>
-  <tr><td>cl_message_team_hue</td><td>Team message color hue</td><td>255</td></tr>
-  <tr><td>cl_message_team_sat</td><td>Team message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_team_lht</td><td>Team message color lightness</td><td>255</td></tr>
-  <tr><td>cl_message_hue</td><td>Message color hue</td><td>255</td></tr>
-  <tr><td>cl_message_sat</td><td>Message color saturation</td><td>255</td></tr>
-  <tr><td>cl_message_lht</td><td>Message color lightness</td><td>255</td></tr>
-  <tr><td>cl_laser_inner_hue</td><td>Laser inner color hue</td><td>255</td></tr>
-  <tr><td>cl_laser_inner_sat</td><td>Laser inner color saturation</td><td>255</td></tr>
-  <tr><td>cl_laser_inner_lht</td><td>Laser inner color lightness</td><td>255</td></tr>
-  <tr><td>cl_laser_outline_hue</td><td>Laser outline color hue</td><td>255</td></tr>
-  <tr><td>cl_laser_outline_sat</td><td>Laser outline color saturation</td><td>255</td></tr>
-  <tr><td>cl_laser_outline_lht</td><td>Laser outline color lightness</td><td>255</td></tr>
+  <tr><td>cl_message_friend</td><td>Enable coloring and the heart for friends</td><td>1</td></tr>
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
   <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
   <tr><td>cl_scoreboard_on_death</td><td>Whether to show scoreboard after death or not</td><td>1</td></tr>
@@ -593,17 +619,13 @@ menu: |
   <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td></tr>
   <tr><td>cl_show_quads</td><td>Show quads</td><td>1</td></tr>
   <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>0</td></tr>
-  <tr><td>cl_background_hue</td><td>Background color hue</td><td>0</td></tr>
-  <tr><td>cl_background_sat</td><td>Background color saturation</td><td>0</td></tr>
-  <tr><td>cl_background_lht</td><td>Background color lightness</td><td>128</td></tr>
-  <tr><td>cl_background_entities_hue</td><td>Background (entities) color hue</td><td>0</td></tr>
-  <tr><td>cl_background_entities_sat</td><td>Background (entities) color saturation</td><td>0</td></tr>
-  <tr><td>cl_background_entities_lht</td><td>Background (entities) color lightness</td><td>128</td></tr>
+  <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>0</td></tr>
+  <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>0</td></tr>
   <tr><td>cl_background_entities</td><td>Background (entities)</td><td>""</td></tr>
   <tr><td>cl_background_show_tiles_layers</td><td>Whether draw tiles layers when using custom background (entities)</td><td>0</td></tr>
   <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee to estimate your delay</td><td>0</td></tr>
   <tr><td>cl_predict_ddrace</td><td>Predict some DDRace tiles</td><td>1</td></tr>
-  <tr><td>cl_predict_freeze</td><td>Predict freeze tiles</td><td>1</td></tr>
+  <tr><td>cl_predict_freeze</td><td>Predict freeze tiles (0 = off, 1 = on, 2 = partial (allow a small amount of movement in freeze)</td><td>1</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players' hook collision line</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_own</td><td>Show own players' hook collision line</td><td>1</td></tr>
@@ -682,8 +704,6 @@ menu: |
   <tr><td>friends</td><td></td><td>List friends</td></tr>
   <tr><td>team</td><td>i[team-id]</td><td>Switch team</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
-  <tr><td>color_from_rgb</td><td>s[color]</td><td>Convert HEX RGB color (3 or 6 digits) to TW formats</td></tr>
-  <tr><td>color_to_rgb</td><td>i[color] ?i[color] ?i[color]</td><td>Convert TW colors to HEX RGB color format</td></tr>
   <tr><td>dummy_connect</td><td></td><td>connect dummy</td></tr>
   <tr><td>dummy_disconnect</td><td></td><td>disconnect dummy</td></tr>
   <tr><td>quit</td><td></td><td>Quit Teeworlds</td></tr>
