@@ -2,7 +2,6 @@
 layout: post
 title: "Solo Tournament (Quick Tournament #47)"
 permalink: /news/quick-tournament-47/
-tag: current
 ---
 
 I'm happy to present you the first DDNet Tournament of 2019, the solo map Chill Let's Climb 3 by [Chill [TD]](/mappers/Chill-32--91-TD-93-/):
