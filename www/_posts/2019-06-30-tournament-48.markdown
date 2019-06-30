@@ -2,6 +2,7 @@
 layout: post
 title: "Quick Tournament #48 on Stronghold 3 by Pipou"
 permalink: /news/quick-tournament-48/
+tag: current
 ---
 
 I'm happy to present you the second DDNet Tournament of 2019, the Brutal map Stronghold 3 by [Pipou](/mappers/Pipou/):
