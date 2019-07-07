@@ -34,6 +34,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 <div class="startimages">
 	<iframe height="400" src="http://www.hitbox.tv/embedchat/vasten100" frameborder="0" allowfullscreen></iframe>
 </div>
+{% endcomment %}
 <style>
     .twitch-wrapper{
         position: relative;
@@ -70,7 +71,6 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
     <iframe class="player"  width="620" height="378" src="https://player.twitch.tv/?channel=ryozukii" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
     <iframe class="chat" src="https://www.twitch.tv/ryozukii/chat?popout=" frameborder="0" scrolling="no" width="350" height="500"></iframe>
 </div>
-{% endcomment %}
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
