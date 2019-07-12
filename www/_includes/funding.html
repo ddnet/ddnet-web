@@ -5,7 +5,7 @@ var isArray = Array.isArray || function(arr) {
 };
 var costs = {
   "ddnet": [130, 130, "Shishigami"], // nfoservers.com
-  "ger":  [181, 210, "Gorden (155 €), letins (26 €)"], // nfoservers.com
+  "ger":  [210, 210, "Gorden (155 €), letins (26 €), Konsti (29 €)"], // nfoservers.com
   "ger2": "Learath2",
   "rus":  [23, 45, "Shishigami (23 €)"], // ihor.ru
   "irn":  12, // berbidserver.net
@@ -19,6 +19,7 @@ var costs = {
 };
 var donated = 196;
 var old = 3085;
+var ger2020 = 471;
 
 var sum = 0;
 var sumToPay = 0;
@@ -149,8 +150,23 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-old .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = rest.toFixed() + " € / " + old + " € cost 2013-18";
+    element.textContent = rest.toFixed() + " / " + old + " €";
   else
-    element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-18";
+    element.innerText = rest.toFixed() + " / " + old + " €";
+});
+
+value = 100;
+color = '#37d628';
+elements = document.querySelectorAll("#funding-ger2020");
+elements.forEach(function(element, index, array) {
+  element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
+  element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+});
+elements = document.querySelectorAll("#funding-ger2020 .progress-label");
+elements.forEach(function(element, index, array) {
+  if (element.textContent !== undefined)
+    element.textContent = ger2020 + " / " + ger2020 + " € (sponsored by Konsti)";
+  else
+    element.innerText = ger2020 + " / " + ger2020 + " € (sponsored by Konsti)";
 });
 </script>
