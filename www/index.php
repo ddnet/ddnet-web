@@ -121,7 +121,6 @@ if ($user_os == 'win32') {
 
 <div class="right" style="width: 100%; max-width: 20em;">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width:100%; margin-top:0.25em"><div class="progress-label"></div></div></a>
-  <a href="/funding/"><div class="progressbar" id="funding-old" style="width:100%; margin-top:0.25em"><div class="progress-label"></div></div></a>
   {% include funding.html %}
 </div>
 </div>
