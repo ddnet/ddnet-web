@@ -5,7 +5,6 @@ permalink: /news/6th-birthday/
 tag: current
 ---
 
-The Tournament will be played on Sunday, July 7 at 20:00 CEST. The first group to finish wins, team 0 allowed. Everyone is welcome to join or watch!
 DDNet is six years old and that means ... it's time for DDNet to go to school. Also, we'll have a tournament ready that will get your brain ducked!
 
 [<img class="demo" src="/brainduck2.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=6841)
