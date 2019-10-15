@@ -20,7 +20,7 @@ DDNet 11.7 has been released today with the following highlights:
   <li>[Server] Handle 0 star random map votes [<strong>jao</strong>]</li>
   <li>[Server] Fix filescore path [<strong>ChillerDragon</strong>]</li>
   <li>[Server] Mark players as afk initially [<strong>Learath2</strong>]</li>
-  <li>[Server] Fix show\_ips to show regular formatting</li>
+  <li>[Server] Fix show_ips to show regular formatting</li>
 </ul>
 
 You can download DDNet 11.7 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/11.6.1...11.7).
