@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "DDNet 11.7 with easier Hammer on Unfreeze"
+title: "DDNet 12.7 with easier Hammer on Unfreeze"
 permalink: /news/hammer-unfreeze/
 tag: current
 ---
 
-DDNet 11.7 has been released today with the following highlights:
+DDNet 12.7 has been released today with the following highlights:
 
 <ul>
   <li><strong>[Client] Allow to hammer directly on unfreeze. Previously, this was only doable with frame-perfect input if you were going to get frozen again the next tick. Now, you only have to hold your hammer to immediately hammer once you get unfrozen.</strong></li>
@@ -23,4 +23,4 @@ DDNet 11.7 has been released today with the following highlights:
   <li>[Server] Fix show_ips to show regular formatting</li>
 </ul>
 
-You can download DDNet 11.7 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/11.6.1...11.7).
+You can download DDNet 12.7 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/12.6.1...12.7).
