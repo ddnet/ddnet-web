@@ -1,0 +1,26 @@
+---
+layout: post
+title: "DDNet 11.7 with easier Hammer on Unfreeze"
+permalink: /news/hammer-unfreeze/
+tag: current
+---
+
+DDNet 11.7 has been released today with the following highlights:
+
+<ul>
+  <li><strong>[Client] Allow to hammer directly on unfreeze. Previously, this was only doable with frame-perfect input if you were going to get frozen again the next tick. Now, you only have to hold your hammer to immediately hammer once you get unfrozen.</strong></li>
+  <li>[Client] Numbers centered for OpenGL 3.3 [<strong>Andrii</strong>]</li>
+  <li>[Client] Add tunezone prediction [<strong>trml</strong>]</li>
+  <li>[Client] Add toggle keyboard shortcuts button to demo player [<strong>jao</strong>]</li>
+  <li>[Client] Don't highlight window when playing demo</li>
+  <li>[Client] Fix keeping tmp replay demo file on map change [<strong>archimede67</strong>]</li>
+  <li>[Client] Fix skin reset [<strong>jao</strong>]</li>
+  <li>[Editor] Add a saner way to select angles [<strong>Learath2</strong>]</li>
+  <li>[Server] Fix telegun save [<strong>Ryozuki</strong>]</li>
+  <li>[Server] Handle 0 star random map votes [<strong>jao</strong>]</li>
+  <li>[Server] Fix filescore path [<strong>ChillerDragon</strong>]</li>
+  <li>[Server] Mark players as afk initially [<strong>Learath2</strong>]</li>
+  <li>[Server] Fix show\_ips to show regular formatting</li>
+</ul>
+
+You can download DDNet 11.7 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/11.6.1...11.7).
