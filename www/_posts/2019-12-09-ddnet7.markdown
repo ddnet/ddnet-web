@@ -1,0 +1,18 @@
+---
+layout: post
+title: "DDNet7 Beta"
+permalink: /news/ddnet7/
+tag: current
+---
+
+As you might have noticed there was a split in the Teeworlds world with the release of Teeworlds 0.7 last year.
+
+With huge thanks to [fokkonaut](/players/fokkonaut) and [ChillerDragon](/players/ChillerDragon/) we present the first official DDNet servers ported to Teeworlds 0.7. You can find them with the regular [TW 0.7 client](https://teeworlds.com/?page=downloads), no DDNet client available yet.
+
+Servers are running in all our usual locations: Germany, Russia, Chile, USA, South Africa and China. The ranks database is shared with our current DDNet servers. For now we will run the old (0.6 based) DDNet servers and new DDNet7 servers in parallel.
+
+Note that this is a beta, we are not sure yet if there will be bugs and whether ranks might have to be deleted because of physics changes or other bugs.
+
+You can find the source code for the DDNet7 project on [GitHub](https://github.com/ddnet/ddnet7).
+
+A [plan for the future](https://github.com/ddnet/ddnet/issues/1906) is to port the current DDNet client to the netcode of 0.7 so that it works with the new DDNet7 servers, but will still keep its old look. This would allow us to get all the DDNet client goodies into the 0.7 world.
