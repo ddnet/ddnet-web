@@ -7,12 +7,12 @@ tag: current
 
 DDNet7 Server by fokkonaut and ChillerDragon has been released in its initial version 0.9. DDNet7 is DDNet ported to Teeworlds 0.7. Get it here:
 
-- [Windows 32bit](DDNet7-Server-0.9-win32.zip)
-- [Windows 64bit](DDNet7-Server-0.9-win64.zip)
-- [Linux x86](DDNet7-Server-0.9-linux_x86.tar.xz)
-- [Linux x86\_64](DDNet7-Server-0.9-linux_x86_64.tar.xz)
-- [Mac OS X](DDNet7-Server-0.9-osx.zip)
-- [Source](DDNet7-Server-0.9.tar.xz)
+- [Windows 32bit](/downloads/DDNet7-Server-0.9-win32.zip)
+- [Windows 64bit](/downloads/DDNet7-Server-0.9-win64.zip)
+- [Linux x86](/downloads/DDNet7-Server-0.9-linux_x86.tar.xz)
+- [Linux x86\_64](/downloads/DDNet7-Server-0.9-linux_x86_64.tar.xz)
+- [Mac OS X](/downloads/DDNet7-Server-0.9-osx.zip)
+- [Source](/downloads/DDNet7-Server-0.9.tar.xz)
 
 Development happens on [GitHub](https://github.com/ddnet/ddnet7). If you require MySQL/MariaDB support compile the server yourself as instructed in the [DDNet README](https://github.com/ddnet/ddnet/#building-on-linux-and-macos).
 
