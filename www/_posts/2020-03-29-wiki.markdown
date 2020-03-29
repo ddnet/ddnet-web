@@ -1,0 +1,8 @@
+---
+layout: post
+title: "DDNet Wiki by Patiga & Zwelf"
+permalink: /news/wiki/
+tag: current
+---
+
+Patiga & Zwelf have created a new [DDNet Wiki](//wiki.ddnet.tw/). You can contribute in the corresponding [Git repository](https://gitlab.com/ddnet-wiki/ddnet-wiki.gitlab.io) or by just clicking on the "Edit this page" button at the top of each page.
