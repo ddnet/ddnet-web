@@ -75,7 +75,7 @@ menu: |
   <tr><td>sv_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
   <tr><td>sv_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
   <tr><td>sv_tee_historian</td><td>Activate the tee historian that writes complete gameplay data to disk (WARNING: This will use a lot of disk space)</td><td>0</td></tr>
-  <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>1</td></tr>
+  <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>0</td></tr>
   <tr><td>sv_dnsbl</td><td>Enable DNSBL (DNS-based Blackhole List)</td><td>0</td></tr>
   <tr><td>sv_dnsbl_host</td><td>Hostname of DNSBL provider to use for IP Verification</td><td>""</td></tr>
   <tr><td>sv_dnsbl_key</td><td>Optional Authentication Key for the specified DNSBL provider</td><td>""</td></tr>
@@ -84,8 +84,8 @@ menu: |
   <tr><td>sv_rcon_vote</td><td>Only allow authed clients to call votes</td><td>0</td></tr>
   <tr><td>sv_player_demo_record</td><td>Automatically record demos for each player</td><td>0</td></tr>
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
-  <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second</td><td>50</td></tr>
-  <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit</td><td>10</td></tr>
+  <tr><td>sv_server_info_per_second</td><td>Maximum number of complete server info responses that are sent out per second (0 for no limit)</td><td>50</td></tr>
+  <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit (0 for no limit)</td><td>10</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td></tr>
   <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td></tr>
@@ -160,7 +160,7 @@ menu: |
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
   <tr><td>conn_timeout_protection</td><td>Network timeout protection</td><td>1000</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
-  <tr><td>sv_show_others</td><td>Whether players can user the command showothers or not</td><td>1</td></tr>
+  <tr><td>sv_show_others</td><td>Whether players can use the command showothers or not</td><td>1</td></tr>
   <tr><td>sv_show_others_default</td><td>Whether players see others by default</td><td>0</td></tr>
   <tr><td>sv_show_all_default</td><td>Whether players see all tees by default</td><td>0</td></tr>
   <tr><td>sv_max_afk_time</td><td>The time in seconds a player is allowed to be afk (0 = disabled)</td><td>0</td></tr>
@@ -216,7 +216,6 @@ menu: |
   <tr><td>sv_destroy_bullets_on_death</td><td>Destroy bullets when their owner dies</td><td>1</td></tr>
   <tr><td>sv_destroy_lasers_on_death</td><td>Destroy lasers when their owner dies</td><td>0</td></tr>
   <tr><td>sv_mapupdaterate</td><td>64 player id <-> vanilla id players map update rate</td><td>5</td></tr>
-  <tr><td>sv_skinstealaction</td><td>How to punish skin stealing (currently only 1 = force pinky)</td><td>0</td></tr>
   <tr><td>sv_server_type</td><td>Type of the server (novice, moderate, ...)</td><td>"none"</td></tr>
   <tr><td>sv_send_votes_per_tick</td><td>Number of vote options being send per tick</td><td>5</td></tr>
   <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze</td><td>0</td></tr>
@@ -243,7 +242,7 @@ menu: |
   <tr><td>bans_save</td><td>s[file]</td><td>Save banlist in a file</td></tr>
   <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban player with ip/client id for x minutes for any reason</td></tr>
   <tr><td>kick</td><td>i[id] ?r[reason]</td><td>Kick player with specified id for any reason</td></tr>
-  <tr><td>status</td><td></td><td>List players</td></tr>
+  <tr><td>status</td><td>?r[name]</td><td>List players containing name or all players</td></tr>
   <tr><td>shutdown</td><td></td><td>Shut down</td></tr>
   <tr><td>logout</td><td></td><td>Logout of rcon</td></tr>
   <tr><td>show_ips</td><td>?i[show]</td><td>Show IP addresses in rcon commands (1 = on, 0 = off)</td></tr>
@@ -288,21 +287,24 @@ menu: |
   <tr><td>force_vote</td><td>s[name] s[command] ?r[reason]</td><td>Force a voting option</td></tr>
   <tr><td>clear_votes</td><td></td><td>Clears the voting options</td></tr>
   <tr><td>vote</td><td>r['yes'|'no']</td><td>Force a vote to yes/no</td></tr>
+  <tr><td>dump_antibot</td><td></td><td>Dumps the antibot status</td></tr>
   <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
   <tr><td>kill_pl</td><td>v[id]</td><td>Kills player v and announces the kill</td></tr>
   <tr><td>totele</td><td>i[number]</td><td>Teleports you to teleporter v</td></tr>
   <tr><td>totelecp</td><td>i[number]</td><td>Teleports you to checkpoint teleporter v</td></tr>
   <tr><td>tele</td><td>?i[id] ?i[id]</td><td>Teleports player i (or you) to player i (or you to where you look at)</td></tr>
-  <tr><td>addweapon</td><td>i[weapon-id]</td><td>Gives weapon with id i to you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, rifle = 4, ninja = 5)</td></tr>
-  <tr><td>removeweapon</td><td>i[weapon-id]</td><td>removes weapon with id i from you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, rifle = 4, ninja = 5)</td></tr>
+  <tr><td>addweapon</td><td>i[weapon-id]</td><td>Gives weapon with id i to you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, laser = 4, ninja = 5)</td></tr>
+  <tr><td>removeweapon</td><td>i[weapon-id]</td><td>removes weapon with id i from you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, laser = 4, ninja = 5)</td></tr>
   <tr><td>shotgun</td><td></td><td>Gives a shotgun to you</td></tr>
   <tr><td>grenade</td><td></td><td>Gives a grenade launcher to you</td></tr>
-  <tr><td>rifle</td><td></td><td>Gives a rifle to you</td></tr>
+  <tr><td>laser</td><td></td><td>Gives a laser to you</td></tr>
+  <tr><td>rifle</td><td></td><td>Gives a laser to you</td></tr>
   <tr><td>jetpack</td><td></td><td>Gives jetpack to you</td></tr>
   <tr><td>weapons</td><td></td><td>Gives all weapons to you</td></tr>
   <tr><td>unshotgun</td><td></td><td>Takes the shotgun from you</td></tr>
   <tr><td>ungrenade</td><td></td><td>Takes the grenade launcher you</td></tr>
-  <tr><td>unrifle</td><td></td><td>Takes the rifle from you</td></tr>
+  <tr><td>unlaser</td><td></td><td>Takes the laser from you</td></tr>
+  <tr><td>unrifle</td><td></td><td>Takes the laser from you</td></tr>
   <tr><td>unjetpack</td><td></td><td>Takes the jetpack from you</td></tr>
   <tr><td>unweapons</td><td></td><td>Takes all weapons from you</td></tr>
   <tr><td>ninja</td><td></td><td>Makes you a ninja</td></tr>
@@ -324,12 +326,13 @@ menu: |
   <tr><td>vote_unmute</td><td>v[id]</td><td>Give back v's right to vote.</td></tr>
   <tr><td>vote_mutes</td><td></td><td>List the current active vote mutes.</td></tr>
   <tr><td>mute</td><td></td><td></td></tr>
-  <tr><td>muteid</td><td>v[id] i[seconds]</td><td></td></tr>
-  <tr><td>muteip</td><td>s[ip] i[seconds]</td><td></td></tr>
+  <tr><td>muteid</td><td>v[id] i[seconds] ?r[reason]</td><td></td></tr>
+  <tr><td>muteip</td><td>s[ip] i[seconds] ?r[reason]</td><td></td></tr>
   <tr><td>unmute</td><td>v[id]</td><td></td></tr>
   <tr><td>mutes</td><td></td><td></td></tr>
   <tr><td>moderate</td><td></td><td>Enables/disables active moderator mode for the player</td></tr>
   <tr><td>vote_no</td><td></td><td></td></tr>
+  <tr><td>save_dry</td><td></td><td>Dump the current savestring</td></tr>
   <tr><td>freezehammer</td><td>v[id]</td><td>Gives a player Freeze Hammer</td></tr>
   <tr><td>unfreezehammer</td><td>v[id]</td><td>Removes Freeze Hammer from a player</td></tr>
 </table>
@@ -345,6 +348,7 @@ menu: |
   <tr><td>settings</td><td>?s[configname]</td><td>Shows gameplay information for this server</td></tr>
   <tr><td>help</td><td>?r[command]</td><td>Shows help to command r, general help if left blank</td></tr>
   <tr><td>info</td><td></td><td>Shows info about this server</td></tr>
+  <tr><td>list</td><td>?s[filter]</td><td>List connected players with optional case-insensitive substring matching filter</td></tr>
   <tr><td>me</td><td>r[message]</td><td>Like the famous irc command '/me says hi' will display '<yourname> says hi'</td></tr>
   <tr><td>w</td><td>s[player name] r[message]</td><td>Whisper something to someone (private message)</td></tr>
   <tr><td>whisper</td><td>s[player name] r[message]</td><td>Whisper something to someone (private message)</td></tr>
@@ -363,12 +367,12 @@ menu: |
   <tr><td>rankteam</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>teamrank</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>rank</td><td>?r[player name]</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
-  <tr><td>top5team</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>teamtop5</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>top5</td><td>?i[rank to start with]</td><td>Shows five ranks of the ladder beginning with rank i (1 by default)</td></tr>
-  <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default)</td></tr>
+  <tr><td>top5team</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>teamtop5</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>top5</td><td>?i[rank to start with]</td><td>Shows five ranks of the ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default, -1 for first)</td></tr>
   <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
-  <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
   <tr><td>team</td><td>?i[id]</td><td>Lets you join team i (shows your team if left blank)</td></tr>
   <tr><td>lock</td><td>?i['0'|'1']</td><td>Lock team so no-one else can join it</td></tr>
   <tr><td>invite</td><td>r[player name]</td><td>Invite a person to a locked team</td></tr>
@@ -383,7 +387,6 @@ menu: |
   <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
-  <tr><td>list</td><td>?s[filter]</td><td>List connected players with optional case-insensitive substring matching filter</td></tr>
 </table>
 </div>
 <div class="block">
@@ -397,7 +400,9 @@ menu: |
   <tr><td>cl_antiping_grenade</td><td>Predict grenades (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
   <tr><td>cl_antiping_weapons</td><td>Predict weapon projectiles (only enabled if cl_antiping is set to 1)</td><td>1</td></tr>
   <tr><td>cl_antiping_smooth</td><td>Make the prediction of other player's movement smoother</td><td>0</td></tr>
+  <tr><td>cl_antiping_gunfire</td><td>Predict gunfire and show predicted weapon physics (with cl_antiping_grenade 1 and cl_antiping_weapons 1)</td><td>1</td></tr>
   <tr><td>cl_nameplates</td><td>Show name plates</td><td>1</td></tr>
+  <tr><td>cl_afk_emote</td><td>Show zzz emote next to afk players</td><td>1</td></tr>
   <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td></tr>
   <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td></tr>
   <tr><td>cl_nameplates_size</td><td>Size of the name plates from 0 to 100%</td><td>50</td></tr>
@@ -457,6 +462,7 @@ menu: |
   <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, coala, santa)</td><td>""</td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td></tr>
   <tr><td>ui_page</td><td>Interface page</td><td>9</td></tr>
+  <tr><td>ui_settings_page</td><td>Interface settings page</td><td>0</td></tr>
   <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td></tr>
   <tr><td>ui_server_address</td><td>Interface server address</td><td>"localhost:8303"</td></tr>
   <tr><td>ui_scale</td><td>Interface scale</td><td>100</td></tr>
@@ -476,7 +482,8 @@ menu: |
   <tr><td>dummy_skin</td><td>Dummy skin</td><td>"default"</td></tr>
   <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
-  <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy should stop pressing keys when you switch</td><td>0</td></tr>
+  <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy or player should stop pressing keys when you switch. 0 = off, 1 = dummy, 2 = player</td><td>0</td></tr>
+  <tr><td>cl_dummy_restore_weapon</td><td>Whether dummy should switch to last weapon after hammerfly</td><td>1</td></tr>
   <tr><td>cl_dummy_copy_moves</td><td>Whether dummy should copy your moves</td><td>0</td></tr>
   <tr><td>cl_dummy_control</td><td>Whether can you control dummy at the same time</td><td>0</td></tr>
   <tr><td>cl_dummy_jump</td><td>Whether dummy is jumping</td><td>0</td></tr>
@@ -485,6 +492,14 @@ menu: |
   <tr><td>cl_http_connect_timeout_ms</td><td>HTTP downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td></tr>
   <tr><td>cl_http_low_speed_limit</td><td>HTTP downloads: Set low speed limit in bytes per second (0 to disable)</td><td>500</td></tr>
   <tr><td>cl_http_low_speed_time</td><td>HTTP downloads: Set low speed limit time period (0 to disable)</td><td>5</td></tr>
+  <tr><td>cl_video_pausewithdemo</td><td>Pause video rendering when demo playing pause</td><td>1</td></tr>
+  <tr><td>cl_video_showhud</td><td>Show ingame HUD when rendering video</td><td>0</td></tr>
+  <tr><td>cl_video_showchat</td><td>Show chat when rendering video</td><td>1</td></tr>
+  <tr><td>cl_video_sound_enable</td><td>Use sound when rendering video</td><td>1</td></tr>
+  <tr><td>cl_video_showhookcollother</td><td>Show other players' hook collision lines when rendering video</td><td>0</td></tr>
+  <tr><td>cl_video_showdirection</td><td>Show other players' key presses when rendering video</td><td>0</td></tr>
+  <tr><td>cl_video_crf</td><td>Set crf when encode video with libx264</td><td>22</td></tr>
+  <tr><td>cl_video_preset</td><td>Set preset when encode video with libx264, default is 6(slow), 0 is ultrafast, 9 is placebo(the slowest, not recommend)</td><td>6</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td></tr>
   <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>"nameless tee"</td></tr>
@@ -502,6 +517,7 @@ menu: |
   <tr><td>cl_load_country_flags</td><td>Load and show country flags</td><td>1</td></tr>
   <tr><td>cl_skin_filter_string</td><td>Skin filtering string</td><td>""</td></tr>
   <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
+  <tr><td>cl_auto_demo_on_connect</td><td>Only start a new demo when connect while automatically record demos</td><td>0</td></tr>
   <tr><td>cl_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>0</td></tr>
   <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td></tr>
@@ -561,11 +577,12 @@ menu: |
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td></tr>
   <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>0</td></tr>
+  <tr><td>gfx_highdpi</td><td>Enable high-dpi</td><td>1</td></tr>
   <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>0</td></tr>
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td></tr>
   <tr><td>gfx_clear</td><td>Clear screen before rendering</td><td>1</td></tr>
   <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>0</td></tr>
-  <tr><td>gfx_resizable</td><td>Enables window resizing</td><td>1</td></tr>
+  <tr><td>gfx_resizable</td><td>Enables window resizing</td><td>0</td></tr>
   <tr><td>gfx_display_all_modes</td><td></td><td>0</td></tr>
   <tr><td>gfx_texture_compression</td><td>Use texture compression</td><td>0</td></tr>
   <tr><td>gfx_high_detail</td><td>High detail</td><td>1</td></tr>
@@ -605,6 +622,8 @@ menu: |
   <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
   <tr><td>cl_scoreboard_on_death</td><td>Whether to show scoreboard after death or not</td><td>1</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
+  <tr><td>cl_replays</td><td>Enable/disable replays</td><td>1</td></tr>
+  <tr><td>cl_replay_length</td><td>Set the default length of the replays</td><td>0</td></tr>
   <tr><td>cl_race_record_server_control</td><td>Let the server start the race recorder</td><td>1</td></tr>
   <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td></tr>
   <tr><td>cl_demo_assume_race</td><td>Assume that demos are race demos</td><td>1</td></tr>
@@ -612,7 +631,7 @@ menu: |
   <tr><td>cl_race_ghost_server_control</td><td>Let the server start the ghost</td><td>1</td></tr>
   <tr><td>cl_race_show_ghost</td><td>Show ghost</td><td>1</td></tr>
   <tr><td>cl_race_save_ghost</td><td>Save ghost</td><td>1</td></tr>
-  <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard </td><td>1</td></tr>
+  <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard</td><td>1</td></tr>
   <tr><td>cl_show_decisecs</td><td>Show deciseconds in game time</td><td>1</td></tr>
   <tr><td>cl_show_others</td><td>Show players in other teams</td><td>0</td></tr>
   <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>40</td></tr>
@@ -623,8 +642,8 @@ menu: |
   <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>0</td></tr>
   <tr><td>cl_background_entities</td><td>Background (entities)</td><td>""</td></tr>
   <tr><td>cl_background_show_tiles_layers</td><td>Whether draw tiles layers when using custom background (entities)</td><td>0</td></tr>
-  <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee to estimate your delay</td><td>0</td></tr>
-  <tr><td>cl_predict_ddrace</td><td>Predict some DDRace tiles</td><td>1</td></tr>
+  <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee (0 = off, 1 = on, -1 = don't even show in debug mode)</td><td>0</td></tr>
+  <tr><td>cl_predict_ddrace</td><td>Predict DDRace tiles and tunezones</td><td>1</td></tr>
   <tr><td>cl_predict_freeze</td><td>Predict freeze tiles (0 = off, 1 = on, 2 = partial (allow a small amount of movement in freeze)</td><td>1</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players' hook collision line</td><td>1</td></tr>
@@ -647,9 +666,11 @@ menu: |
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td></tr>
+  <tr><td>cl_demo_keyboard_shortcuts</td><td>Enable keyboard shortcuts in demo player</td><td>1</td></tr>
   <tr><td>gfx_opengl3</td><td>Use new OpenGL3 with shaders</td><td>0</td></tr>
   <tr><td>gfx_enable_texture_unit_optimization</td><td>Use multiple texture units, instead of only one.</td><td>0</td></tr>
   <tr><td>gfx_use_preinitialized_buffer</td><td>Use only one buffer for data, that is uploaded to the GPU(might help when using an iGPUs).</td><td>0</td></tr>
+  <tr><td>cl_video_recorder_fps</td><td>At which FPS the videorecorder should record demos.</td><td>60</td></tr>
 </table></div>
 </div>
 <div class="block">
@@ -675,6 +696,7 @@ menu: |
   <tr><td>spectate</td><td>i[spectator-id]</td><td>Switch spectator mode</td></tr>
   <tr><td>spectate_next</td><td></td><td>Spectate the next player</td></tr>
   <tr><td>spectate_previous</td><td></td><td>Spectate the previous player</td></tr>
+  <tr><td>spectate_closest</td><td></td><td>Spectate the closest player</td></tr>
   <tr><td>zoom+</td><td></td><td>Zoom increase</td></tr>
   <tr><td>zoom-</td><td></td><td>Zoom decrease</td></tr>
   <tr><td>zoom</td><td></td><td>Zoom reset</td></tr>
@@ -693,7 +715,7 @@ menu: |
   <tr><td>+weapon2</td><td></td><td>Switch to gun</td></tr>
   <tr><td>+weapon3</td><td></td><td>Switch to shotgun</td></tr>
   <tr><td>+weapon4</td><td></td><td>Switch to grenade</td></tr>
-  <tr><td>+weapon5</td><td></td><td>Switch to rifle</td></tr>
+  <tr><td>+weapon5</td><td></td><td>Switch to laser</td></tr>
   <tr><td>+nextweapon</td><td></td><td>Switch to next weapon</td></tr>
   <tr><td>+prevweapon</td><td></td><td>Switch to previous weapon</td></tr>
   <tr><td>add_foe</td><td>s[name] ?s[clan]</td><td>Add a foe</td></tr>
@@ -704,6 +726,7 @@ menu: |
   <tr><td>friends</td><td></td><td>List friends</td></tr>
   <tr><td>team</td><td>i[team-id]</td><td>Switch team</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
+  <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>dummy_connect</td><td></td><td>connect dummy</td></tr>
   <tr><td>dummy_disconnect</td><td></td><td>disconnect dummy</td></tr>
   <tr><td>quit</td><td></td><td>Quit Teeworlds</td></tr>
@@ -713,6 +736,8 @@ menu: |
   <tr><td>disconnect</td><td></td><td>Disconnect from the server</td></tr>
   <tr><td>ping</td><td></td><td>Ping the current server</td></tr>
   <tr><td>screenshot</td><td></td><td>Take a screenshot</td></tr>
+  <tr><td>start_video</td><td></td><td>Start recording a video</td></tr>
+  <tr><td>stop_video</td><td></td><td>Stop recording a video</td></tr>
   <tr><td>rcon</td><td>r[rcon-command]</td><td>Send specified command to rcon</td></tr>
   <tr><td>rcon_auth</td><td>s[password]</td><td>Authenticate to rcon</td></tr>
   <tr><td>rcon_login</td><td>s[username] r[password]</td><td>Authenticate to rcon with a username</td></tr>
@@ -726,6 +751,7 @@ menu: |
   <tr><td>demo_slice_end</td><td></td><td></td></tr>
   <tr><td>demo_play</td><td></td><td>Play demo</td></tr>
   <tr><td>demo_speed</td><td>i[speed]</td><td>Set demo speed</td></tr>
+  <tr><td>save_replay</td><td>?i[length]</td><td>Save a replay of the last defined amount of seconds</td></tr>
 </table>
 </div>
 <div class="block">
@@ -774,7 +800,7 @@ menu: |
   <tr><td>gun_fire_delay</td><td>Delay of firing gun</td><td> 125</td></tr>
   <tr><td>shotgun_fire_delay</td><td>Delay of firing shotgun</td><td> 500</td></tr>
   <tr><td>grenade_fire_delay</td><td>Delay of firing grenade</td><td> 500</td></tr>
-  <tr><td>laser_fire_delay</td><td>Delay of firing laser rifle</td><td> 800</td></tr>
+  <tr><td>laser_fire_delay</td><td>Delay of firing laser laser</td><td> 800</td></tr>
   <tr><td>ninja_fire_delay</td><td>Delay of firing ninja</td><td> 800</td></tr>
 </table>
 </div>
