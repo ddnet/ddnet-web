@@ -1,6 +1,6 @@
 name: DDraceNetwork
 title: DDraceNetwork
-markdown: redcarpet
+markdown: kramdown
 highlighter: true
 author:
   name: deen
