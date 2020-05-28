@@ -1,3 +1,4 @@
 _site
 *.swp
 tags
+.jekyll-cache/
