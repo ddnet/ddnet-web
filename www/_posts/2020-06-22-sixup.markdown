@@ -1,0 +1,10 @@
+---
+layout: post
+title: "Sixup servers running!"
+permalink: /news/sixup/
+tag: current
+---
+
+With a huge thanks to Learath2 we now have a Teeworlds 0.7 compatibility layer in the official DDNet servers. This means you can play together on the same servers, whether you're using DDNet client, Teeworlds 0.6, [ZillyWoods Client](https://zillywoods.github.io/ZillyWoods-web/) or Teeworlds 0.7. Please test the feature and report bugs on [Discord](https://ddnet.tw/discord) or [GitHub](https://github.com/ddnet/ddnet/issues/).
+
+The feature will also soon be released in the next DDNet version. Stay tuned!
