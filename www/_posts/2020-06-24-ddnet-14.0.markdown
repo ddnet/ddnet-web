@@ -5,7 +5,7 @@ permalink: /news/ddnet-14.0
 tag: current
 ---
 
-I am happy to present to you what is probably the largest DDNet release ever with a total of 236 changes! Usually we have 40-100 code changes in a release. Some of the highlights are:
+We are happy to present to you what is probably the largest DDNet release ever with a total of 236 changes! Usually we have 40-100 code changes in a release. Some of the highlights are:
 
 <ul>
   <li>[Server] <b>Support Teeworlds 0.7 clients on DDNet servers</b> [<strong>Learath2</strong>]</li>
