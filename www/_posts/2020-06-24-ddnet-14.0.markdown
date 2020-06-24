@@ -1,0 +1,18 @@
+---
+layout: post
+title: "DDNet 14.0"
+permalink: /news/ddnet-14.0
+tag: current
+---
+
+I am happy to present to you what is probably the largest DDNet release ever with a total of 236 changes! Usually we have 40-100 code changes in a release. Some of the highlights are:
+
+<ul>
+  <li>[Server] <b>Support Teeworlds 0.7 clients on DDNet servers</b> [<strong>Learath2</strong>]</li>
+  <li>[Server] <b>Thread safe SQL interaction</b> [<strong>Zwelf</strong>]</li>
+  <li>[Client] <b>Show outline of tees in spec</b> [<strong>Ryozuki</strong>]</li>
+  <li>[Client] <b>Add Learn button which opens the DDNet wiki in browser</b> [<strong>Ryozuki</strong>]</li>
+  <li>[Client] <b>New introduction text when starting client</b> (please <a href="https://github.com/ddnet/ddnet/tree/master/data/languages">translate</a> if you can)</li>
+</ul>
+
+As always, read more of the changelog and download DDNet on the [Downloads page](/downloads/).
