@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "DDNet 14.0"
-permalink: /news/ddnet-14.0
+permalink: /news/ddnet-14.0/
 tag: current
 ---
 
