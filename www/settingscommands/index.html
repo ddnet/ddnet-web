@@ -38,7 +38,7 @@ menu: |
   <tr><td>sv_destroy_bullets_on_death</td><td>Destroy bullets when their owner dies</td><td>1</td></tr>
   <tr><td>sv_destroy_lasers_on_death</td><td>Destroy lasers when their owner dies</td><td>0</td></tr>
 </table></div>
-<table class="settingscommands">
+<div style="overflow: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
   <tr><td>toggle_tune</td><td>s[tuning] i[value 1] i[value 2]</td><td>Toggle tune variable</td></tr>
@@ -47,7 +47,7 @@ menu: |
   <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
   <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
-</table>
+</table></div>
 </div>
 <div class="block">
 <h2 id="server-settings">Server Settings</h2>
@@ -132,11 +132,11 @@ menu: |
   <tr><td>sv_shotgun_bullet_sound</td><td>Crazy shotgun bullet sound on/off</td><td>0</td></tr>
   <tr><td>sv_checkpoint_save</td><td>Whether to save checkpoint times to the score file</td><td>1</td></tr>
   <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>&quot;records&quot;</td></tr>
-  <tr><td>sv_use_sql</td><td>Enables SQL DB instead of record file</td><td>0</td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>&quot;UNK&quot;</td></tr>
   <tr><td>sv_sql_valid_servernames</td><td>Comma separated list of valid server names for saving a game to ([A-Z][A-Z][A-Z].?</td><td>&quot;UNK&quot;</td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td></tr>
   <tr><td>sv_savegames_delay</td><td>Delay in seconds for loading a savegame</td><td>60</td></tr>
+  <tr><td>sv_use_sql</td><td>Enables SQL DB instead of record file</td><td>0</td></tr>
   <tr><td>sv_sql_failure_file</td><td>File to store failed Sql-Inserts (ranks)</td><td>&quot;failed_sql.sql&quot;</td></tr>
   <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td></tr>
   <tr><td>sv_use_upnp</td><td>Enables UPnP support.</td><td>0</td></tr>
@@ -230,7 +230,7 @@ menu: |
 </div>
 <div class="block">
 <h2 id="server-commands">Server Commands</h2>
-<table class="settingscommands">
+<div style="overflow: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>echo</td><td>r[text]</td><td>Echo the text</td></tr>
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
@@ -340,11 +340,11 @@ menu: |
   <tr><td>save_dry</td><td></td><td>Dump the current savestring</td></tr>
   <tr><td>freezehammer</td><td>v[id]</td><td>Gives a player Freeze Hammer</td></tr>
   <tr><td>unfreezehammer</td><td>v[id]</td><td>Removes Freeze Hammer from a player</td></tr>
-</table>
+</table></div>
 </div>
 <div class="block">
 <h2 id="chat-commands">Chat Commands</h2>
-<table class="settingscommands">
+<div style="overflow: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>credits</td><td></td><td>Shows the credits of the DDNet mod</td></tr>
   <tr><td>rules</td><td></td><td>Shows the server rules</td></tr>
@@ -394,7 +394,7 @@ menu: |
   <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself</td></tr>
-</table>
+</table></div>
 </div>
 <div class="block">
 <h2 id="client-settings">Client Settings</h2>
@@ -685,7 +685,7 @@ menu: |
 </div>
 <div class="block">
 <h2 id="client-commands">Client Commands</h2>
-<table class="settingscommands">
+<div style="overflow: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
   <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
@@ -762,11 +762,11 @@ menu: |
   <tr><td>demo_play</td><td></td><td>Play demo</td></tr>
   <tr><td>demo_speed</td><td>i[speed]</td><td>Set demo speed</td></tr>
   <tr><td>save_replay</td><td>?i[length]</td><td>Save a replay of the last defined amount of seconds</td></tr>
-</table>
+</table></div>
 </div>
 <div class="block">
 <h2 id="tunings">Tunings</h2>
-<table class="settingscommands">
+<div style="overflow: auto;"><table class="settingscommands">
   <tr><th>Tuning</th><th>Description</th><th>Default</th></tr>
   <tr><td>ground_control_speed</td><td>Max speed the tee can get on ground</td><td> 10.0</td></tr>
   <tr><td>ground_control_accel</td><td>Acceleration speed on the ground</td><td>2.0</td></tr>
@@ -812,5 +812,5 @@ menu: |
   <tr><td>grenade_fire_delay</td><td>Delay of firing grenade</td><td> 500</td></tr>
   <tr><td>laser_fire_delay</td><td>Delay of firing laser laser</td><td> 800</td></tr>
   <tr><td>ninja_fire_delay</td><td>Delay of firing ninja</td><td> 800</td></tr>
-</table>
+</table></div>
 </div>
