@@ -11,6 +11,7 @@ We are happy to present to you what is probably the largest DDNet release ever w
   <li>[Server] <b>Support Teeworlds 0.7 clients on DDNet servers</b> [<strong>Learath2</strong>]</li>
   <li>[Server] <b>Thread safe SQL interaction</b> [<strong>Zwelf</strong>]</li>
   <li>[Client] <b>Show outline of tees in spec</b> [<strong>Ryozuki</strong>]</li>
+  <li>[Client] <b>Remember savecodes in ddnet-saves.txt</b> (in config dir)</li>
   <li>[Client] <b>Add Learn button which opens the DDNet wiki in browser</b> [<strong>Ryozuki</strong>]</li>
   <li>[Client] <b>New introduction text when starting client</b> (please <a href="https://github.com/ddnet/ddnet/tree/master/data/languages">translate</a> if you can)</li>
 </ul>
