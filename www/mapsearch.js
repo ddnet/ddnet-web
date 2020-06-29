@@ -17,7 +17,7 @@ $('#remote .typeahead').typeahead(null, {
       if (o.mapper) {
         result += " by " + o.mapper.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       }
-      result += '<span class="right">' + o.type + '&nbsp;Server</span></p>'
+      result += ' (' + o.type + ')</p>'
       return result;
     }
   }
