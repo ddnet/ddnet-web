@@ -7,7 +7,7 @@ var maps = new Bloodhound({
 
 maps.initialize();
 
-$('#remotemaps .typeahead').typeahead(null, {
+$('#mapform .typeahead').typeahead(null, {
   name: 'maps',
   displayKey: 'name',
   source: maps.ttAdapter(),

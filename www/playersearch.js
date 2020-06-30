@@ -7,7 +7,7 @@ var players = new Bloodhound({
 
 players.initialize();
 
-$('#remote .typeahead').typeahead(null, {
+$('#playerform .typeahead').typeahead(null, {
   name: 'players',
   displayKey: 'name',
   source: players.ttAdapter(),
