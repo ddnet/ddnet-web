@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Live Maps Pages & Paginated Ranks Pages"
-permalink: /news/maps-paginated-ranks
+permalink: /news/maps-paginated-ranks/
 tag: current
 ---
 
