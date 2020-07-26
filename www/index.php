@@ -16,6 +16,7 @@ menu: |
     <li><a href="/auto-font/">Auto-Font</a></li>
     <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
     <li><a href="/staff/">Staff&nbsp;&amp;&nbsp;Contact</a></li>
+    <li><a href="/renames/">Renames</a></li>
     <li><a href="/funding/">Funding</a></li>
   </ul>
 ---
