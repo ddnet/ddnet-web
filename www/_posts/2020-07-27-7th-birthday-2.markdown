@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "7th Birthday Tournament #2"
+title: "7th Birthday Summer Event"
 permalink: /news/7th-birthday-2/
 tag: current
 ---
 
-7th Birthday Summer Event
 DDNet is turning 7 years old and I am glad to present you with 2 weeks fully packed with 10 maps from Pulsar and Ravie, consisting of 6 regular releases and 4 unique tournaments!
 
 [<img class="demo" src="/7thbirthday2.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=6953)
