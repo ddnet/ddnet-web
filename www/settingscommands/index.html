@@ -60,7 +60,7 @@ menu: |
   <tr><td>sv_name</td><td>Server name</td><td>&quot;unnamed server&quot;</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td></tr>
   <tr><td>sv_ipv4only</td><td>Whether to bind only to ipv4, otherwise bind to all available interfaces</td><td>0</td></tr>
-  <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser)</td><td>8303</td></tr>
+  <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser, 0 to automatically find a free port in 8303-8310)</td><td>0</td></tr>
   <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
   <tr><td>sv_hostname</td><td>Server hostname (0.7 only)</td><td>&quot;&quot;</td></tr>
   <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Kobra 4&quot;</td></tr>
@@ -417,6 +417,8 @@ menu: |
   <tr><td>cl_nameplates_clan</td><td>Show clan in name plates</td><td>0</td></tr>
   <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td></tr>
   <tr><td>cl_nameplates_ids</td><td>Show IDs in name plates</td><td>0</td></tr>
+  <tr><td>cl_nameplates_ha</td><td>Show Health and Armor in name plates</td><td>0</td></tr>
+  <tr><td>cl_nameplates_ha_size</td><td>Size of the health and armor nameplates from 0 to 100%</td><td>50</td></tr>
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
   <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
@@ -464,6 +466,7 @@ menu: |
   <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td></tr>
   <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td></tr>
+  <tr><td>cl_smooth_zoom_time</td><td>Time of smooth zoom animation in ms (0 for off)</td><td>250</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
