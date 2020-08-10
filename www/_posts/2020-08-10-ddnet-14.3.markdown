@@ -1,0 +1,10 @@
+---
+layout: post
+title: "DDNet 14.3"
+permalink: /news/ddnet-14.3/
+tag: current
+---
+
+DDNet 14.3 has just been released with a new server-side feature, making it much easier to run your own server with a SQLite-based ranks database. This removes support for the old file-based ranks. This feature and lots of surrounding cleanups has been implemented by [Zwelf](/players/Zwelf/)!
+
+As always, read more of the changelog and download DDNet on the [Downloads page](/downloads/).
