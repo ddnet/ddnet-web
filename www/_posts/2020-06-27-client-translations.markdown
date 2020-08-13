@@ -15,13 +15,13 @@ Current DDNet client translation status showing how many of the messages are tra
 100% german
 100% catalan
 99% simplified_chinese
+99% persian
 99% hungarian
 99% french
 99% dutch
 95% brazilian_portuguese
 85% traditional_chinese
 75% portuguese
-55% persian
 54% romanian
 54% kyrgyz
 54% greek
