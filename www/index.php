@@ -37,48 +37,21 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 </div>
 {% endcomment %}
 <style>
-    .twitch-wrapper{
+    .twitch-embed{
         position: relative;
         width: 100%;
         padding-bottom: 42.1875%;
     }
-    .twitch-wrapper iframe.player{
-        position: absolute;
-        width: 75%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
-    .twitch-wrapper iframe.chat{
-        position: absolute;
-        width: 25%;
-        height: 100%;
-        top: 0;
-        right: 0;
-    }
-    @media screen and (max-width:768px){
-        .twitch-wrapper{
-            padding-bottom: 56.25%;
-        }
-        .twitch-wrapper iframe.chat{
-            display: none;
-        }
-        .twitch-wrapper iframe.player{
-            width: 100%;
-        }
-    }
 </style>
-<div class="twitch-wrapper">
-    <div id="twitch-embed"></div>
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
-    <script type="text/javascript">
-      new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
-        channel: "ryozukii",
-      });
-    </script>
-</div>
+<div id="twitch-embed"></div>
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+<script type="text/javascript">
+  new Twitch.Embed("twitch-embed", {
+    width: 1000,
+    height: 480,
+    channel: "ryozukii",
+  });
+</script>
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
