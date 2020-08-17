@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DDNet released on Steam
+title: "DDNet released on Steam"
 permalink: /news/steam-released/
 tag: current
 ---
