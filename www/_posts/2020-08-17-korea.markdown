@@ -1,0 +1,8 @@
+---
+layout: post
+title: "New servers running: DDNet Korea"
+permalink: /news/korea/
+tag: current
+---
+
+DDNet is now running new servers in Korea, enjoy!
