@@ -26,7 +26,7 @@ menu: |
 DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Russia, USA, China, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
 <div class="startvideo"><div class="video-container">
-  <div class="ytplayer" data-id="c8QGu6J8Imw"></div>
+  <div class="ytplayer" data-id="xwyk4hPZM1g"></div>
 </div></div>
 {% comment %}
 <div class="startvideo">
@@ -96,6 +96,7 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span></p>';
 }
 ?>
+<a href="https://store.steampowered.com/app/412220/DDraceNetwork/"><img width="36" src="steam.svg" alt="Steam"/></a>
 <a href="discord"><img width="36" src="discord.svg" alt="Discord"/></a>
 <a href="feed/"><img width="36" src="feed.svg" alt="Feed"/></a>
 <a href="https://github.com/ddnet/"><img width="36" src="github.svg" alt="GitHub"/></a>
