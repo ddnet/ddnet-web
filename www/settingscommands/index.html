@@ -63,7 +63,7 @@ menu: |
   <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser, 0 to automatically find a free port in 8303-8310)</td><td>0</td></tr>
   <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
   <tr><td>sv_hostname</td><td>Server hostname (0.7 only)</td><td>&quot;&quot;</td></tr>
-  <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Kobra 4&quot;</td></tr>
+  <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Gold Mine&quot;</td></tr>
   <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>4</td></tr>
   <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td></tr>
@@ -132,13 +132,14 @@ menu: |
   <tr><td>sv_shotgun_bullet_sound</td><td>Crazy shotgun bullet sound on/off</td><td>0</td></tr>
   <tr><td>sv_checkpoint_save</td><td>Whether to save checkpoint times to the score file</td><td>1</td></tr>
   <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>&quot;records&quot;</td></tr>
+  <tr><td>sv_region_name</td><td>Server region. Used for regional bans</td><td>&quot;UNK&quot;</td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>&quot;UNK&quot;</td></tr>
   <tr><td>sv_sql_valid_servernames</td><td>Comma separated list of valid server names for saving a game to ([A-Z][A-Z][A-Z].?</td><td>&quot;UNK&quot;</td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td></tr>
   <tr><td>sv_savegames_delay</td><td>Delay in seconds for loading a savegame</td><td>60</td></tr>
-  <tr><td>sv_use_sql</td><td>Enables SQL DB instead of record file</td><td>0</td></tr>
-  <tr><td>sv_sql_failure_file</td><td>File to store failed Sql-Inserts (ranks)</td><td>&quot;failed_sql.sql&quot;</td></tr>
+  <tr><td>sv_use_sql</td><td>Enables MySQL backend instead of SQLite backend (sv_sqlite_file is still used as fallback write server when no MySQL server is reachable)</td><td>0</td></tr>
   <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td></tr>
+  <tr><td>sv_sqlite_file</td><td>File to store ranks in case sv_use_sql is turned off or used as backup sql server</td><td>&quot;ddnet-server.sqlite&quot;</td></tr>
   <tr><td>sv_use_upnp</td><td>Enables UPnP support.</td><td>0</td></tr>
   <tr><td>sv_ddrace_rules</td><td>Whether the default mod rules are displayed or not</td><td>1</td></tr>
   <tr><td>sv_rules_line1</td><td>Rules line 1</td><td>&quot;&quot;</td></tr>
@@ -246,6 +247,8 @@ menu: |
   <tr><td>bans</td><td></td><td>Show banlist</td></tr>
   <tr><td>bans_save</td><td>s[file]</td><td>Save banlist in a file</td></tr>
   <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban player with ip/client id for x minutes for any reason</td></tr>
+  <tr><td>ban_region</td><td>s[region] s[ip|id] ?i[minutes] r[reason]</td><td>Ban player in a region</td></tr>
+  <tr><td>ban_region_range</td><td>s[region] s[first ip] s[last ip] ?i[minutes] r[reason]</td><td>Ban range in a region</td></tr>
   <tr><td>kick</td><td>i[id] ?r[reason]</td><td>Kick player with specified id for any reason</td></tr>
   <tr><td>status</td><td>?r[name]</td><td>List players containing name or all players</td></tr>
   <tr><td>shutdown</td><td></td><td>Shut down</td></tr>
@@ -460,7 +463,7 @@ menu: |
   <tr><td>ed_showkeys</td><td></td><td>0</td></tr>
   <tr><td>cl_show_welcome</td><td></td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
-  <tr><td>cl_ddnet_map_download_url</td><td>URL to use to download maps (can start with http:// or https://)</td><td>&quot;https://maps.ddnet.tw&quot;</td></tr>
+  <tr><td>cl_ddnet_map_download_url</td><td>URL to use to download maps (can start with http:// or https://)</td><td>&quot;https://maps2.ddnet.tw&quot;</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td></tr>
   <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td></tr>
@@ -471,7 +474,7 @@ menu: |
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_skin</td><td>Player skin</td><td>&quot;default&quot;</td></tr>
-  <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, coala, santa)</td><td>&quot;&quot;</td></tr>
+  <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, santa)</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td></tr>
   <tr><td>ui_page</td><td>Interface page</td><td>9</td></tr>
   <tr><td>ui_settings_page</td><td>Interface settings page</td><td>0</td></tr>
@@ -539,7 +542,7 @@ menu: |
   <tr><td>cl_show_broadcasts</td><td>Show broadcasts ingame</td><td>1</td></tr>
   <tr><td>cl_print_broadcasts</td><td>Print broadcasts to console</td><td>1</td></tr>
   <tr><td>cl_print_motd</td><td>Print motd to console</td><td>1</td></tr>
-  <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>0</td></tr>
+  <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>1</td></tr>
   <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>&quot;Novice&quot;</td></tr>
   <tr><td>br_exclude_string</td><td>Server browser exclusion string</td><td>&quot;&quot;</td></tr>
   <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
@@ -560,7 +563,7 @@ menu: |
   <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>0</td></tr>
   <tr><td>br_filter_exclude_countries</td><td>Filter out DDNet servers by country</td><td>&quot;&quot;</td></tr>
   <tr><td>br_filter_exclude_types</td><td>Filter out DDNet servers by type (mod)</td><td>&quot;&quot;</td></tr>
-  <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info.ddnet.tw/info)</td><td>1</td></tr>
+  <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info2.ddnet.tw/info)</td><td>1</td></tr>
   <tr><td>br_filter_exclude_countries_kog</td><td>Filter out kog servers by country</td><td>&quot;&quot;</td></tr>
   <tr><td>br_filter_exclude_types_kog</td><td>Filter out kog servers by type (mod)</td><td>&quot;&quot;</td></tr>
   <tr><td>br_sort</td><td>Sorting column in server browser</td><td>4</td></tr>
@@ -587,8 +590,8 @@ menu: |
   <tr><td>gfx_screen</td><td>Screen index</td><td>0</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
-  <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td></tr>
-  <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>0</td></tr>
+  <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>0</td></tr>
+  <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>1</td></tr>
   <tr><td>gfx_highdpi</td><td>Enable high-dpi</td><td>1</td></tr>
   <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>0</td></tr>
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td></tr>
@@ -662,7 +665,7 @@ menu: |
   <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>1</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td></tr>
-  <tr><td>cl_show_direction</td><td>Show tee direction</td><td>0</td></tr>
+  <tr><td>cl_show_direction</td><td>Show tee direction</td><td>1</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
   <tr><td>cl_confirm_disconnect_time</td><td>Confirmation popup before disconnecting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td></tr>
@@ -722,6 +725,7 @@ menu: |
   <tr><td>+hook</td><td></td><td>Hook</td></tr>
   <tr><td>+fire</td><td></td><td>Fire</td></tr>
   <tr><td>+showhookcoll</td><td></td><td>Show Hook Collision</td></tr>
+  <tr><td>+resetdummy</td><td></td><td>Reset Dummy</td></tr>
   <tr><td>+weapon1</td><td></td><td>Switch to hammer</td></tr>
   <tr><td>+weapon2</td><td></td><td>Switch to gun</td></tr>
   <tr><td>+weapon3</td><td></td><td>Switch to shotgun</td></tr>
