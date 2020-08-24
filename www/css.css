@@ -258,6 +258,10 @@ td {
   padding-left: 0.5em;
 }
 
+.tight td {
+  line-height: 1.2;
+}
+
 .toggle {
   text-align: right;
   padding-right: 1em;
