@@ -37,7 +37,7 @@ body:not(#phpbb) .block {
 .longblock {
   background-color: #ffffff;
   border: 1px solid #aaaaaa;
-  padding: 0.5em 1.5em 1em 1.5em;
+  padding: 0.5em 1.5em 0.5em 1.5em;
   position: relative;
   text-align: justify;
   margin: 0 0 1em 0;
