@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Website Improvements
+title: "Website Improvements"
 permalink: /news/website-improvements/
 tag: current
 ---
