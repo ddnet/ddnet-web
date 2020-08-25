@@ -9,4 +9,4 @@ I have recently improved some parts of to the DDNet website:
 
 - The [Ranks pages](/ranks/) now show server country and server type where it makes sense
 - The Maps page loads faster now, especially on maps with many finishes, for example [Kobra 2](/maps/Kobra-32-2)
-- The [statistics page](/stats/) looks nicer and loads more historical data now
+- The [Statistics page](/stats/) looks nicer and loads more historical data now
