@@ -74,9 +74,6 @@ $(function () {
                     animation: false
                 }
             },
-            tooltip: {
-                shared: true
-            },
             series: data
         });
     });
@@ -156,9 +153,6 @@ $(function () {
                     animation: false
                 }
             },
-            tooltip: {
-                shared: true
-            },
             series: data
         });
     });
@@ -206,9 +200,6 @@ $(function () {
                 column: {
                     animation: false
                 }
-            },
-            tooltip: {
-                shared: true
             },
             series: data
         });
@@ -258,9 +249,6 @@ $(function () {
                     animation: false
                 }
             },
-            tooltip: {
-                shared: true
-            },
             series: data
         });
     });
@@ -288,9 +276,6 @@ $(function () {
             },
             rangeSelector: {
                 selected: 0
-            },
-            tooltip: {
-                shared: true
             },
             plotOptions: {
                 line: {
@@ -362,9 +347,6 @@ $(function () {
                     animation: false
                 }
             },
-            tooltip: {
-                shared: true
-            },
             series: data
         });
     });
@@ -412,9 +394,6 @@ $(function () {
                 column: {
                     animation: false
                 }
-            },
-            tooltip: {
-                shared: true
             },
             series: data
         });
@@ -475,9 +454,6 @@ $(function () {
                 column: {
                     animation: false
                 }
-            },
-            tooltip: {
-                shared: true
             },
             series: data
         });
