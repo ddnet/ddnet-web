@@ -74,6 +74,9 @@ $(function () {
                     animation: false
                 }
             },
+            credits: {
+                enabled: false
+            },
             series: data
         });
     });
@@ -153,6 +156,9 @@ $(function () {
                     animation: false
                 }
             },
+            credits: {
+                enabled: false
+            },
             series: data
         });
     });
@@ -200,6 +206,9 @@ $(function () {
                 column: {
                     animation: false
                 }
+            },
+            credits: {
+                enabled: false
             },
             series: data
         });
@@ -249,6 +258,9 @@ $(function () {
                     animation: false
                 }
             },
+            credits: {
+                enabled: false
+            },
             series: data
         });
     });
@@ -293,6 +305,9 @@ $(function () {
                 column: {
                     animation: false
                 }
+            },
+            credits: {
+                enabled: false
             },
             series: [{
               name: 'Map finishes',
@@ -347,6 +362,9 @@ $(function () {
                     animation: false
                 }
             },
+            credits: {
+                enabled: false
+            },
             series: data
         });
     });
@@ -394,6 +412,9 @@ $(function () {
                 column: {
                     animation: false
                 }
+            },
+            credits: {
+                enabled: false
             },
             series: data
         });
@@ -454,6 +475,9 @@ $(function () {
                 column: {
                     animation: false
                 }
+            },
+            credits: {
+                enabled: false
             },
             series: data
         });
