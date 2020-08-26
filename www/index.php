@@ -48,7 +48,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
   new Twitch.Embed("twitch-embed", {
     width: 1000,
     height: 480,
-    channel: "LCSG47",
+    channel: "zikkiee",
   });
 </script>
 {% endcomment %}
