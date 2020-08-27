@@ -20,6 +20,9 @@ $(function () {
                 },
                 min: 0
             },
+            legend: {
+                enabled: true
+            },
             rangeSelector: {
                 buttons: [{
                     type: 'day',
@@ -101,6 +104,9 @@ $(function () {
                     text: 'Players'
                 },
                 min: 0
+            },
+            legend: {
+                enabled: true
             },
             rangeSelector: {
                 buttons: [{
@@ -184,6 +190,9 @@ $(function () {
                 },
                 min: 0
             },
+            legend: {
+                enabled: true
+            },
             rangeSelector: {
                 selected: 0
             },
@@ -235,6 +244,9 @@ $(function () {
                 },
                 min: 0
             },
+            legend: {
+                enabled: true
+            },
             rangeSelector: {
                 selected: 0
             },
@@ -285,6 +297,9 @@ $(function () {
                     text: 'Finishes'
                 },
                 min: 0
+            },
+            legend: {
+                enabled: true
             },
             rangeSelector: {
                 selected: 0
@@ -339,6 +354,9 @@ $(function () {
                 },
                 min: 0
             },
+            legend: {
+                enabled: true
+            },
             rangeSelector: {
                 selected: 0
             },
@@ -390,6 +408,9 @@ $(function () {
                 },
                 min: 0
             },
+            legend: {
+                enabled: true
+            },
             rangeSelector: {
                 selected: 0
             },
@@ -440,6 +461,9 @@ $(function () {
                     text: 'Maps'
                 },
                 min: 0
+            },
+            legend: {
+                enabled: true
             },
             rangeSelector: {
                 buttons: [{
