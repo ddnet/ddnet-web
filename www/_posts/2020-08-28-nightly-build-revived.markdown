@@ -8,7 +8,7 @@ The nightly build of DDNet from its [source code](https://github.com/ddnet/ddnet
 
 <a href="/downloads/DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="/downloads/DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="/downloads/DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="/downloads/DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a>, <a href="/downloads/DDNet-nightly-osx.dmg">Mac&nbsp;OS&nbsp;X</a>
 
-You can use these nightly builds to try out new DDNet features before they're released and report problems and suggestions. The nightly client does not auto-update each night, instead you will get a notification when a new regular DDNet version has been released.
+You can use these nightly builds to try out new DDNet features before they're released and report problems and suggestions. The nightly client does not auto-update each night, instead you will get a notification when a new regular DDNet version has been released. Note that the auto-updater for the nightly build will not work properly.
 
 You can also opt into the beta release of DDraceNetwork on Steam to automatically get a new test version every day.
 
