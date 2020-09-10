@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "New location running: DDNet Poland"
+title: "New location running: DDNet POL"
 permalink: /news/poland/
 tag: current
 ---
