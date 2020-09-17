@@ -4,14 +4,17 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet": 122,
+  "ddnet": 129,
   "master": 30, // hetzner.de
-  "ger1":  [47, 181], // nfoservers.com
-  "ger2": "heinrich5991", // hetzner.de
-  "rus1":  49, // ihor.ru
-  "rus2":  84, // jino.ru
-  "chl":  [90, 90, "Konsti"], // zglobalhost.com
-  "bra":  60, // locaweb.com
+  "db": 16,
+  "ger1": [47, 191], // myloc.de
+  "ger2":"heinrich5991", // hetzner.de
+  "pol":  14, // ovh.com
+  "rus1": 49, // ihor.ru
+  "rus2": 66, // vscale.io
+  "chl":  [90, 90, "Konsti"], // zgh.cl
+  "bra1": 95, // heficed.com
+  "bra2": 45, // fcati.com.br
   "usa":  99, // nfoservers.com
   "can":  18, // ovh.com
   "chn1":  "Tom",
@@ -20,7 +23,9 @@ var costs = {
   "chn4":  "Texas.C",
   "chn5":  "Tom",
   "chn6":  "950",
-  "kor":  100,
+  "kor":  58, // gcorelabs.com
+  "jap":  20, // linode.com
+  "sgp":  20, // linode.com
   "zaf":  67, // clickworks.co.za
   "aus":  14, // ovh.com
 };
