@@ -4,6 +4,64 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3>DDNet 15.0</h3>
+<div class="dlfiles">
+  2020-09-17<br/><br/>
+  <ul>
+    <li><a href="DDNet-15.0-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-15.0-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-15.0-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-15.0-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a></li>
+    <li><a href="DDNet-15.0-osx.dmg">Mac&nbsp;OS&nbsp;X</a></li>
+    <li><a href="DDNet-15.0.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>On-demand skin downloader to see all skins from <a href="/skins/">Skin Database</a></strong></li>
+    <li>[Client] <strong>New start menu adapted from Teeworlds 0.7</strong></li>
+    <li>[Client] <strong>Optimize loading glyphs from font file</strong></li>
+    <li>[Client] Scale graphics textures more nicely [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Support hovering in many menus [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Refresh server browser immediately when updated info arrives</li>
+    <li>[Client] Refresh server browser faster (br_max_requests 100)</li>
+    <li>[Client] Sort spectator view by team, then name (not score)</li>
+    <li>[Client] Show entities on all server types [<strong>BannZay &amp; Jupeyy</strong>]</li>
+    <li>[Client] Fix mapres for new graphics renderer [<strong>mind</strong>]</li>
+    <li>[Client] Fix some 5:4/4:3 rendering in demo &amp; recorder menus</li>
+    <li>[Client] Fix entity text [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Don't close the client on error in video recorder</li>
+    <li>[Client] Add some more space for Countries &amp; Types in DDNet/KoG tabs</li>
+    <li>[Client] Remove borderfix/add/rem tools we don't need anymore</li>
+    <li>[Server &amp; Client] <strong>Update libwebsockets and make client able to use websockets</strong> [<strong>QingGo</strong>]</li>
+    <li>[Server] Don't use server name when storing saves in database [<strong>heinrich5991</strong>]</li>
+    <li>[Server] Print SQlite statements [<strong>Zwelf</strong>]</li>
+    <li>[Server] Allow to use config_retrieve on whole directory [<strong>BannZay</strong>]</li>
+    <li>[Server] map_convert_07: Check for width/height 0</li>
+    <li>[Server] Optimization: Only receive new packets when we know they are waiting</li>
+    <li>[Server] Remove sv_team_lock command [<strong>BannZay</strong>]</li>
+  </ul>
+  <a href="https://github.com/ddnet/ddnet/compare/14.7.1...15.0">Full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a>, <a href="DDNet-nightly-osx.dmg">Mac&nbsp;OS&nbsp;X</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Mapping Graphics Tools: <a href="GraphicsTools-win32.zip">Windows&nbsp;32bit</a>, <a href="GraphicsTools-win64.zip">Windows&nbsp;64bit</a>, <a href="GraphicsTools-linux_x86.tar.gz">Linux&nbsp;x86</a>, <a href="GraphicsTools-linux_x86_64.tar.gz">Linux&nbsp;x86_64</a>, <a href="GraphicsTools-osx.zip">Mac&nbsp;OS&nbsp;X</a></li>
+  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 14.7.1</h3>
 <div class="dlfiles">
   2020-09-08<br/><br/>
@@ -33,23 +91,6 @@ title: Downloads - DDraceNetwork
   <a href="https://github.com/ddnet/ddnet/compare/14.6.2...14.7.1">Full list of git changes</a>
 </div>
 <br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a>, <a href="DDNet-nightly-osx.dmg">Mac&nbsp;OS&nbsp;X</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Mapping Graphics Tools: <a href="GraphicsTools-win32.zip">Windows&nbsp;32bit</a>, <a href="GraphicsTools-win64.zip">Windows&nbsp;64bit</a>, <a href="GraphicsTools-linux_x86.tar.gz">Linux&nbsp;x86</a>, <a href="GraphicsTools-linux_x86_64.tar.gz">Linux&nbsp;x86_64</a>, <a href="GraphicsTools-osx.zip">Mac&nbsp;OS&nbsp;X</a></li>
-  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 14.6.2</h3>
 <div class="dlfiles">
   2020-09-05<br/><br/>
