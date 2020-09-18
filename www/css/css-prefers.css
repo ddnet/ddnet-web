@@ -1,0 +1,9 @@
+---
+---
+@media (prefers-color-scheme: dark) {
+{% include_relative css-halloween.css  %}
+}
+
+@media (prefers-color-scheme: light) {
+{% include_relative css-empty.css  %}
+}

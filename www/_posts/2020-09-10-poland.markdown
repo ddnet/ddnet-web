@@ -1,0 +1,8 @@
+---
+layout: post
+title: "New location running: DDNet POL"
+permalink: /news/poland/
+tag: current
+---
+
+DDNet is now running new servers in Poland, enjoy!

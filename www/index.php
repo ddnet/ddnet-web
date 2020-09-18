@@ -23,10 +23,10 @@ menu: |
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
 <p>
-DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Russia, USA, Canada, China, Korea, Chile and South Africa. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
+DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Poland, Russia, Iran, USA, Canada, China, Korea, Japan, Singapore, Chile, Brazil, South Africa and Australia. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
 <div class="startvideo"><div class="video-container">
-  <div class="ytplayer" data-id="Vu-nvldx8Sk"></div>
+  <div class="ytplayer" data-id="xtB7LmNl7BI"></div>
 </div></div>
 {% comment %}
 <div class="startvideo">
@@ -48,7 +48,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
   new Twitch.Embed("twitch-embed", {
     width: 1000,
     height: 480,
-    channel: "LCSG47",
+    channel: "zikkiee",
   });
 </script>
 {% endcomment %}
@@ -80,7 +80,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '14.3.3';
+$version = '15.0.3';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
