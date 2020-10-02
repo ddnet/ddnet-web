@@ -10,6 +10,12 @@ The nightly build of DDNet from its [source code](https://github.com/ddnet/ddnet
 
 You can use these nightly builds to try out new DDNet features before they're released and report problems and suggestions. The nightly client does not auto-update, instead you will get a notification when a new regular DDNet version has been released.
 
-You can also opt into the beta release of DDraceNetwork on Steam to automatically get a new test version every day.
+You can also opt into the beta release of DDraceNetwork on Steam to automatically get a new test version every day by clicking on Settings and then Properties...:
+
+<img class="demo" src="/steambeta1.png">
+
+In the new window select the BETAS tab and opt into "beta - Nightly Builds":
+
+<img class="demo" src="/steambeta2.png">
 
 Please report any problems you have with the nightly build on our [Discord](https://ddnet.tw/discord) or directly on [GitHub](https://github.com/ddnet/ddnet/issues/).

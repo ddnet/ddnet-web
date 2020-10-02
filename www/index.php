@@ -23,7 +23,7 @@ menu: |
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
 <p>
-DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Poland, Russia, Iran, USA, Canada, China, Korea, Japan, Singapore, Chile, Brazil, South Africa and Australia. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
+DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are located in Germany, Poland, Russia, Turkey, Iran, USA, Canada, China, Korea, Japan, Singapore, Chile, Brazil, Argentina, South Africa and Australia. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
 <div class="startvideo"><div class="video-container">
   <div class="ytplayer" data-id="xtB7LmNl7BI"></div>
@@ -80,7 +80,7 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '15.0.3';
+$version = '15.0.5';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
@@ -101,7 +101,7 @@ if ($user_os == 'win32') {
 <a href="feed/"><img width="36" src="feed.svg" alt="Feed"/></a>
 <a href="https://github.com/ddnet/"><img width="36" src="github.svg" alt="GitHub"/></a>
 
-<div class="right" style="width: 100%; max-width: 20em;">
+<div class="right" style="width: 100%; max-width: 25em;">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width:100%; margin-top:0.25em"><div class="progress-label"></div></div></a>
   {% include funding.html %}
 </div>
