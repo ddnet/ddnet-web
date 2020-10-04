@@ -17,18 +17,18 @@ menu: |
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser each other or not</td><td>1</td></tr>
-  <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>1</td></tr>
-  <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer &amp; deepfreeze)</td><td>30</td></tr>
+  <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td></tr>
+  <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer &amp; deepfreeze)</td><td>3</td></tr>
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
-  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
-  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>3</td></tr>
+  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>0</td></tr>
+  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>MAX_CLIENTS</td></tr>
-  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>1</td></tr>
-  <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>1</td></tr>
-  <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>99999</td></tr>
-  <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>50</td></tr>
-  <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>99999</td></tr>
-  <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>1</td></tr>
+  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
+  <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
+  <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td></tr>
+  <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td></tr>
+  <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>700</td></tr>
+  <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td></tr>
   <tr><td>sv_teleport_hold_hook</td><td>Hold hook when teleported</td><td>0</td></tr>
@@ -54,8 +54,8 @@ menu: |
   <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td></tr>
-  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>2</td></tr>
-  <tr><td>events</td><td>Enable triggering of events, like the happy eye emotes on some holidays.</td><td>|</td></tr>
+  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
+  <tr><td>events</td><td>Enable triggering of events, like the happy eye emotes on some holidays.</td><td>1</td></tr>
   <tr><td>sv_name</td><td>Server name</td><td>&quot;unnamed server&quot;</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td></tr>
   <tr><td>sv_ipv4only</td><td>Whether to bind only to ipv4, otherwise bind to all available interfaces</td><td>0</td></tr>
@@ -88,8 +88,8 @@ menu: |
   <tr><td>sv_van_conn_per_second</td><td>Antispoof specific ratelimit (0 for no limit)</td><td>10</td></tr>
   <tr><td>sv_sixup</td><td>Enable sixup connections</td><td>1</td></tr>
   <tr><td>sv_skill_level</td><td>Difficulty level for Teeworlds 0.7 (0: Casual, 1: Normal, 2: Competitive)</td><td>1</td></tr>
-  <tr><td>debug</td><td>Debug mode</td><td>1</td></tr>
-  <tr><td>dbg_curl</td><td>Debug curl</td><td>1</td></tr>
+  <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
+  <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td></tr>
   <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td></tr>
   <tr><td>dbg_hitch</td><td>Hitch warnings</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
@@ -98,13 +98,13 @@ menu: |
   <tr><td>sv_reserved_slots</td><td>The number of slots that are reserved for special players</td><td>0</td></tr>
   <tr><td>sv_reserved_slots_pass</td><td>The password that is required to use a reserved slot</td><td>&quot;&quot;</td></tr>
   <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser each other or not</td><td>1</td></tr>
-  <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>1</td></tr>
+  <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td></tr>
   <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off (setting only works in initial config)</td><td>0</td></tr>
-  <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer &amp; deepfreeze)</td><td>30</td></tr>
+  <tr><td>sv_freeze_delay</td><td>How many seconds the players will remain frozen (applies to all except delayed freeze in switch layer &amp; deepfreeze)</td><td>3</td></tr>
   <tr><td>sv_endless_super_hook</td><td>Endless hook for super players on/off</td><td>0</td></tr>
   <tr><td>sv_hide_score</td><td>Whether players scores will be announced or not</td><td>0</td></tr>
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td></tr>
-  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>1</td></tr>
+  <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>0</td></tr>
   <tr><td>sv_pause_messages</td><td>Whether to show messages when a player pauses and resumes</td><td>0</td></tr>
   <tr><td>sv_pause_frequency</td><td>The minimum allowed delay between /spec</td><td>1</td></tr>
   <tr><td>sv_invite</td><td>Whether players can invite other players to teams</td><td>1</td></tr>
@@ -150,26 +150,26 @@ menu: |
   <tr><td>sv_rules_line8</td><td>Rules line 8</td><td>&quot;&quot;</td></tr>
   <tr><td>sv_rules_line9</td><td>Rules line 9</td><td>&quot;&quot;</td></tr>
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>&quot;&quot;</td></tr>
-  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>3</td></tr>
+  <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td></tr>
   <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>&quot;announcement.txt&quot;</td></tr>
   <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td></tr>
   <tr><td>sv_announcement_random</td><td>Whether announcements are sequential or random</td><td>1</td></tr>
-  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>1</td></tr>
+  <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td></tr>
   <tr><td>sv_slash_me</td><td>Whether /me is active on the server or not</td><td>0</td></tr>
   <tr><td>sv_rejoin_team_0</td><td>Make a team automatically rejoin team 0 after finish (only if not locked)</td><td>1</td></tr>
-  <tr><td>conn_timeout</td><td>Network timeout</td><td>|</td></tr>
+  <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
   <tr><td>conn_timeout_protection</td><td>Network timeout protection</td><td>1000</td></tr>
-  <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>1</td></tr>
+  <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td></tr>
   <tr><td>sv_show_others</td><td>Whether players can use the command showothers or not</td><td>1</td></tr>
-  <tr><td>sv_show_others_default</td><td>Whether players see others by default</td><td>0</td></tr>
+  <tr><td>sv_show_others_default</td><td>Whether players see others by default (2 for own team)</td><td>0</td></tr>
   <tr><td>sv_show_all_default</td><td>Whether players see all tees by default</td><td>0</td></tr>
   <tr><td>sv_max_afk_time</td><td>The time in seconds a player is allowed to be afk (0 = disabled)</td><td>0</td></tr>
   <tr><td>sv_max_afk_vote_time</td><td>The time in seconds a player can be afk and his votes still count (0 = disabled)</td><td>300</td></tr>
-  <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>99999</td></tr>
-  <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>50</td></tr>
-  <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>99999</td></tr>
+  <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td></tr>
+  <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td></tr>
+  <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>700</td></tr>
   <tr><td>sv_vote_pause</td><td>Allow voting to pause players (instead of moving to spectators)</td><td>1</td></tr>
   <tr><td>sv_vote_pause_time</td><td>The time (in seconds) players have to wait in pause when paused by vote</td><td>10</td></tr>
   <tr><td>sv_tune_reset</td><td>Whether tuning is reset after each map change or not</td><td>1</td></tr>
@@ -186,7 +186,7 @@ menu: |
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as no one is on it anymore</td><td>0</td></tr>
   <tr><td>sv_reload_when_empty</td><td>Reload map when server is empty (1 = reload once, 2 = reload every time server gets empty)</td><td>0</td></tr>
   <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>20</td></tr>
-  <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>1</td></tr>
+  <tr><td>sv_solo_server</td><td>Set server to solo mode (no player interactions, has to be set before loading the map)</td><td>0</td></tr>
   <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>&quot;Get DDNet client from DDNet.tw to use all features on DDNet!&quot;</td></tr>
   <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>&quot;Your DDNet client is old, update it on DDNet.tw!&quot;</td></tr>
   <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>&quot;Your client has bots and can be remotely controlled!\nPlease use another client like DDNet client from DDNet.tw&quot;</td></tr>
@@ -383,7 +383,7 @@ menu: |
   <tr><td>lock</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Toggle team lock so no one else can join and so the team restarts when a player dies. /lock 0 to unlock, /lock 1 to lock.</td></tr>
   <tr><td>unlock</td><td></td><td>Unlock a team</td></tr>
   <tr><td>invite</td><td>r[player name]</td><td>Invite a person to a locked team</td></tr>
-  <tr><td>showothers</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off else for on</td></tr>
+  <tr><td>showothers</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;|&#x27;2&#x27;]</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off, i = 1 for on, i = 2 for own team only</td></tr>
   <tr><td>showall</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Whether to show players at any distance (off by default), optional i = 0 for off else for on</td></tr>
   <tr><td>specteam</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Whether to show players from other teams when spectating (on by default), optional i = 0 for off else for on</td></tr>
   <tr><td>ninjajetpack</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Whether to use ninja jetpack or not. Makes jetpack look more awesome</td></tr>
@@ -423,8 +423,8 @@ menu: |
   <tr><td>cl_nameplates_friendmark</td><td>Show friend mark (♥) in name plates</td><td>0</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
   <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
-  <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
-  <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
+  <tr><td>cl_authed_player_color</td><td>Color of name of authenticated player in scoreboard</td><td>5898211</td></tr>
+  <tr><td>cl_same_clan_color</td><td>Clan color of players with the same clan as you in scoreboard.</td><td>5898211</td></tr>
   <tr><td>cl_enable_ping_color</td><td>Whether ping is colored in scoreboard.</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons</td><td>Auto switch weapon on pickup</td><td>1</td></tr>
   <tr><td>cl_autoswitch_weapons_out_of_ammo</td><td>Auto switch weapon when out of ammo</td><td>0</td></tr>
@@ -462,20 +462,20 @@ menu: |
   <tr><td>cl_show_welcome</td><td></td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
   <tr><td>cl_map_download_url</td><td>URL used to download maps (can start with http:// or https://)</td><td>&quot;https://maps2.ddnet.tw&quot;</td></tr>
-  <tr><td>cl_map_download_connect_timeout_ms</td><td>HTTP map downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>100000</td></tr>
-  <tr><td>cl_map_download_low_speed_limit</td><td>HTTP map downloads: Set low speed limit in bytes per second (0 to disable)</td><td>100000</td></tr>
-  <tr><td>cl_map_download_low_speed_time</td><td>HTTP map downloads: Set low speed limit time period (0 to disable)</td><td>100000</td></tr>
+  <tr><td>cl_map_download_connect_timeout_ms</td><td>HTTP map downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td></tr>
+  <tr><td>cl_map_download_low_speed_limit</td><td>HTTP map downloads: Set low speed limit in bytes per second (0 to disable)</td><td>500</td></tr>
+  <tr><td>cl_map_download_low_speed_time</td><td>HTTP map downloads: Set low speed limit time period (0 to disable)</td><td>5</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_skin_download_url</td><td>URL used to download skins</td><td>&quot;https://skins.ddnet.tw/skin/&quot;</td></tr>
-  <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>1</td></tr>
+  <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td></tr>
   <tr><td>cl_download_skins</td><td>Download skins from cl_skin_download_url on-the-fly</td><td>1</td></tr>
-  <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>1</td></tr>
-  <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>1000</td></tr>
+  <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td></tr>
+  <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td></tr>
   <tr><td>cl_smooth_zoom_time</td><td>Time of smooth zoom animation in ms (0 for off)</td><td>250</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
-  <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
-  <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
+  <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
+  <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
   <tr><td>player_skin</td><td>Player skin</td><td>&quot;default&quot;</td></tr>
   <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, santa)</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td></tr>
@@ -485,19 +485,19 @@ menu: |
   <tr><td>ui_server_address</td><td>Interface server address</td><td>&quot;localhost:8303&quot;</td></tr>
   <tr><td>ui_scale</td><td>Interface scale</td><td>100</td></tr>
   <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>200</td></tr>
-  <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>200</td></tr>
+  <tr><td>ui_color</td><td>Interface color</td><td>0xE4A046AF</td></tr>
   <tr><td>ui_colorize_ping</td><td>Highlight ping</td><td>1</td></tr>
   <tr><td>ui_colorize_gametype</td><td>Highlight gametype</td><td>1</td></tr>
   <tr><td>ui_demo_selected</td><td>Selected demo file</td><td>&quot;&quot;</td></tr>
   <tr><td>ui_close_window_after_changing_setting</td><td>Close window after changing setting</td><td>1</td></tr>
-  <tr><td>ui_unread_news</td><td>Whether there is unread news</td><td>1</td></tr>
+  <tr><td>ui_unread_news</td><td>Whether there is unread news</td><td>0</td></tr>
   <tr><td>gfx_noclip</td><td>Disable clipping</td><td>0</td></tr>
   <tr><td>dummy_name</td><td>Name of the dummy</td><td>&quot;&quot;</td></tr>
   <tr><td>dummy_clan</td><td>Clan of the dummy</td><td>&quot;&quot;</td></tr>
   <tr><td>dummy_country</td><td>Country of the Dummy</td><td>-1</td></tr>
   <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
-  <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
-  <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
+  <tr><td>dummy_color_body</td><td>Dummy body color</td><td>65408</td></tr>
+  <tr><td>dummy_color_feet</td><td>Dummy feet color</td><td>65408</td></tr>
   <tr><td>dummy_skin</td><td>Dummy skin</td><td>&quot;default&quot;</td></tr>
   <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td></tr>
@@ -509,7 +509,7 @@ menu: |
   <tr><td>cl_dummy_fire</td><td>Whether dummy is firing</td><td>0</td></tr>
   <tr><td>cl_dummy_hook</td><td>Whether dummy is hooking</td><td>0</td></tr>
   <tr><td>cl_show_start_menu_images</td><td>Show start menu images</td><td>1</td></tr>
-  <tr><td>cl_skip_start_menu</td><td>Skip the start menu</td><td>1</td></tr>
+  <tr><td>cl_skip_start_menu</td><td>Skip the start menu</td><td>0</td></tr>
   <tr><td>cl_video_pausewithdemo</td><td>Pause video rendering when demo playing pause</td><td>1</td></tr>
   <tr><td>cl_video_showhud</td><td>Show ingame HUD when rendering video</td><td>0</td></tr>
   <tr><td>cl_video_showchat</td><td>Show chat when rendering video</td><td>1</td></tr>
@@ -522,68 +522,72 @@ menu: |
   <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>&quot;&quot;</td></tr>
   <tr><td>player_clan</td><td>Clan of the player</td><td>&quot;&quot;</td></tr>
-  <tr><td>player_country</td><td>Country of the player</td><td>1000</td></tr>
+  <tr><td>player_country</td><td>Country of the player</td><td>-1</td></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td></tr>
-  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>2</td></tr>
-  <tr><td>events</td><td>Enable triggering of events, like the happy eye emotes on some holidays.</td><td>|</td></tr>
+  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td></tr>
+  <tr><td>events</td><td>Enable triggering of events, like the happy eye emotes on some holidays.</td><td>1</td></tr>
   <tr><td>steam_name</td><td>Last seen name of the Steam profile</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td></tr>
-  <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>10000</td></tr>
-  <tr><td>cl_refresh_rate_inactive</td><td>Refresh rate for updating the game when the window is inactive (in Hz)</td><td>10000</td></tr>
+  <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>0</td></tr>
+  <tr><td>cl_refresh_rate_inactive</td><td>Refresh rate for updating the game when the window is inactive (in Hz)</td><td>120</td></tr>
   <tr><td>cl_editor</td><td></td><td>0</td></tr>
-  <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>1</td></tr>
+  <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td></tr>
+  <tr><td>cl_editor_dilate</td><td>Automatically dilates embedded images</td><td>1</td></tr>
   <tr><td>cl_load_country_flags</td><td>Load and show country flags</td><td>1</td></tr>
   <tr><td>cl_skin_filter_string</td><td>Skin filtering string</td><td>&quot;&quot;</td></tr>
-  <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>1</td></tr>
-  <tr><td>cl_auto_demo_on_connect</td><td>Only start a new demo when connect while automatically record demos</td><td>1</td></tr>
-  <tr><td>cl_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>1000</td></tr>
-  <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>1</td></tr>
-  <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>1000</td></tr>
-  <tr><td>cl_auto_csv</td><td>Automatically create game over csv</td><td>1</td></tr>
-  <tr><td>cl_auto_csv_max</td><td>Maximum number of automatically created csvs (0 = no limit)</td><td>1000</td></tr>
+  <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>0</td></tr>
+  <tr><td>cl_auto_demo_on_connect</td><td>Only start a new demo when connect while automatically record demos</td><td>0</td></tr>
+  <tr><td>cl_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td></tr>
+  <tr><td>cl_auto_screenshot</td><td>Automatically take game over screenshot</td><td>0</td></tr>
+  <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td></tr>
+  <tr><td>cl_auto_csv</td><td>Automatically create game over csv</td><td>0</td></tr>
+  <tr><td>cl_auto_csv_max</td><td>Maximum number of automatically created csvs (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_reset_wanted_weapon_on_death</td><td>Reset wanted weapon on death</td><td>1</td></tr>
   <tr><td>cl_show_broadcasts</td><td>Show broadcasts ingame</td><td>1</td></tr>
   <tr><td>cl_print_broadcasts</td><td>Print broadcasts to console</td><td>1</td></tr>
   <tr><td>cl_print_motd</td><td>Print motd to console</td><td>1</td></tr>
   <tr><td>cl_friends_ignore_clan</td><td>Ignore clan tag when searching for friends</td><td>1</td></tr>
+  <tr><td>cl_assets_entities</td><td>The asset/assets for entities</td><td>&quot;default&quot;</td></tr>
+  <tr><td>cl_asset_game</td><td>The asset for game</td><td>&quot;default&quot;</td></tr>
+  <tr><td>cl_asset_emoticons</td><td>The asset for emoticons</td><td>&quot;default&quot;</td></tr>
+  <tr><td>cl_asset_particles</td><td>The asset for particles</td><td>&quot;default&quot;</td></tr>
   <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>&quot;Novice&quot;</td></tr>
   <tr><td>br_exclude_string</td><td>Server browser exclusion string</td><td>&quot;&quot;</td></tr>
-  <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>1</td></tr>
-  <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>1</td></tr>
-  <tr><td>br_filter_spectators</td><td>Filter out spectators from player numbers</td><td>1</td></tr>
-  <tr><td>br_filter_friends</td><td>Filter out servers with no friends</td><td>1</td></tr>
-  <tr><td>br_filter_country</td><td>Filter out servers with non-matching player country</td><td>1</td></tr>
-  <tr><td>br_filter_country_index</td><td>Player country to filter by in the server browser</td><td>999</td></tr>
-  <tr><td>br_filter_pw</td><td>Filter out password protected servers in browser</td><td>1</td></tr>
+  <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td></tr>
+  <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>0</td></tr>
+  <tr><td>br_filter_spectators</td><td>Filter out spectators from player numbers</td><td>0</td></tr>
+  <tr><td>br_filter_friends</td><td>Filter out servers with no friends</td><td>0</td></tr>
+  <tr><td>br_filter_country</td><td>Filter out servers with non-matching player country</td><td>0</td></tr>
+  <tr><td>br_filter_country_index</td><td>Player country to filter by in the server browser</td><td>-1</td></tr>
+  <tr><td>br_filter_pw</td><td>Filter out password protected servers in browser</td><td>0</td></tr>
   <tr><td>br_filter_ping</td><td>Ping to filter by in the server browser</td><td>999</td></tr>
   <tr><td>br_filter_gametype</td><td>Game types to filter</td><td>&quot;&quot;</td></tr>
-  <tr><td>br_filter_gametype_strict</td><td>Strict gametype filter</td><td>1</td></tr>
+  <tr><td>br_filter_gametype_strict</td><td>Strict gametype filter</td><td>0</td></tr>
   <tr><td>br_filter_connecting_players</td><td>Filter connecting players</td><td>1</td></tr>
   <tr><td>br_filter_serveraddress</td><td>Server address to filter</td><td>&quot;&quot;</td></tr>
-  <tr><td>br_filter_pure</td><td>Filter out non-standard servers in browser</td><td>1</td></tr>
-  <tr><td>br_filter_pure_map</td><td>Filter out non-standard maps in browser</td><td>1</td></tr>
-  <tr><td>br_filter_compatversion</td><td>Filter out non-compatible servers in browser</td><td>1</td></tr>
-  <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>1</td></tr>
+  <tr><td>br_filter_compatversion</td><td>Filter out non-compatible servers in browser</td><td>0</td></tr>
+  <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>0</td></tr>
   <tr><td>br_filter_exclude_countries</td><td>Filter out DDNet servers by country</td><td>&quot;&quot;</td></tr>
   <tr><td>br_filter_exclude_types</td><td>Filter out DDNet servers by type (mod)</td><td>&quot;&quot;</td></tr>
   <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info2.ddnet.tw/info)</td><td>1</td></tr>
   <tr><td>br_filter_exclude_countries_kog</td><td>Filter out kog servers by country</td><td>&quot;&quot;</td></tr>
   <tr><td>br_filter_exclude_types_kog</td><td>Filter out kog servers by type (mod)</td><td>&quot;&quot;</td></tr>
-  <tr><td>br_sort</td><td>Sorting column in server browser</td><td>256</td></tr>
+  <tr><td>br_sort</td><td>Sorting column in server browser</td><td>4</td></tr>
   <tr><td>br_sort_order</td><td>Sorting order in server browser</td><td>2</td></tr>
-  <tr><td>br_max_requests</td><td>Number of concurrent requests to use when refreshing server browser</td><td>1000</td></tr>
-  <tr><td>br_demo_sort</td><td>Sorting column in demo browser</td><td>3</td></tr>
-  <tr><td>br_demo_sort_order</td><td>Sorting order in demo browser</td><td>1</td></tr>
-  <tr><td>br_demo_fetch_info</td><td>Whether to auto fetch demo infos on refresh</td><td>1</td></tr>
-  <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>32768</td></tr>
-  <tr><td>snd_rate</td><td>Sound mixing rate</td><td>0</td></tr>
+  <tr><td>br_max_requests</td><td>Number of concurrent requests to use when refreshing server browser</td><td>100</td></tr>
+  <tr><td>br_demo_sort</td><td>Sorting column in demo browser</td><td>0</td></tr>
+  <tr><td>br_demo_sort_order</td><td>Sorting order in demo browser</td><td>0</td></tr>
+  <tr><td>br_demo_fetch_info</td><td>Whether to auto fetch demo infos on refresh</td><td>0</td></tr>
+  <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td></tr>
+  <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td></tr>
   <tr><td>snd_enable</td><td>Sound enable</td><td>1</td></tr>
-  <tr><td>snd_enable_music</td><td>Play background music</td><td>1</td></tr>
+  <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td></tr>
   <tr><td>snd_volume</td><td>Sound volume</td><td>100</td></tr>
-  <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>0</td></tr>
-  <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>100</td></tr>
-  <tr><td>snd_nonactive_mute</td><td></td><td>1</td></tr>
+  <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>-1</td></tr>
+  <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>70</td></tr>
+  <tr><td>snd_background_music_volume</td><td>Background music sound volume</td><td>50</td></tr>
+  <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
   <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td></tr>
   <tr><td>snd_gun</td><td>Enable gun sound</td><td>1</td></tr>
   <tr><td>snd_long_pain</td><td>Enable long pain sound (used when shooting in freeze)</td><td>1</td></tr>
@@ -591,58 +595,58 @@ menu: |
   <tr><td>snd_team_chat</td><td>Enable team chat sound</td><td>1</td></tr>
   <tr><td>snd_servermessage</td><td>Enable server message sound</td><td>1</td></tr>
   <tr><td>snd_highlight</td><td>Enable highlighted chat sound</td><td>1</td></tr>
-  <tr><td>gfx_screen</td><td>Screen index</td><td>15</td></tr>
+  <tr><td>gfx_screen</td><td>Screen index</td><td>0</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td></tr>
-  <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>1</td></tr>
+  <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>0</td></tr>
   <tr><td>gfx_highdpi</td><td>Enable high-dpi</td><td>1</td></tr>
   <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>0</td></tr>
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td></tr>
   <tr><td>gfx_clear</td><td>Clear screen before rendering</td><td>1</td></tr>
-  <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>1</td></tr>
-  <tr><td>gfx_resizable</td><td>Enables window resizing</td><td>1</td></tr>
-  <tr><td>gfx_display_all_modes</td><td></td><td>1</td></tr>
-  <tr><td>gfx_texture_compression_old</td><td>Use texture compression</td><td>1</td></tr>
+  <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>0</td></tr>
+  <tr><td>gfx_resizable</td><td>Enables window resizing</td><td>0</td></tr>
+  <tr><td>gfx_display_all_modes</td><td></td><td>0</td></tr>
+  <tr><td>gfx_texture_compression_old</td><td>Use texture compression</td><td>0</td></tr>
   <tr><td>gfx_texture_quality_old</td><td></td><td>1</td></tr>
   <tr><td>gfx_high_detail</td><td>High detail</td><td>1</td></tr>
-  <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>16</td></tr>
-  <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>10000</td></tr>
-  <tr><td>gfx_finish</td><td></td><td>1</td></tr>
+  <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>0</td></tr>
+  <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td></tr>
+  <tr><td>gfx_finish</td><td></td><td>0</td></tr>
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td></tr>
-  <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>100</td></tr>
+  <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
-  <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>100</td></tr>
+  <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
   <tr><td>gfx_show_warnings</td><td>Render gfx warnings to screen</td><td>1</td></tr>
-  <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>100000</td></tr>
-  <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>1</td></tr>
-  <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>65536</td></tr>
+  <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>200</td></tr>
+  <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td></tr>
+  <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td></tr>
-  <tr><td>debug</td><td>Debug mode</td><td>1</td></tr>
-  <tr><td>dbg_curl</td><td>Debug curl</td><td>1</td></tr>
+  <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
+  <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td></tr>
   <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
   <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
   <tr><td>dbg_stress_server</td><td>Server to stress</td><td>&quot;localhost&quot;</td></tr>
-  <tr><td>cl_race_binds_set</td><td>What level the DDRace binds are set to (this is automated, you don&#x27;t need to use this)</td><td>1</td></tr>
-  <tr><td>cl_reconnect_timeout</td><td>How many seconds to wait before reconnecting (after timeout, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
-  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>600</td></tr>
+  <tr><td>cl_race_binds_set</td><td>What level the DDRace binds are set to (this is automated, you don&#x27;t need to use this)</td><td>0</td></tr>
+  <tr><td>cl_reconnect_timeout</td><td>How many seconds to wait before reconnecting (after timeout, 0 for off)</td><td>120</td></tr>
+  <tr><td>cl_reconnect_full</td><td>How many seconds to wait before reconnecting (when server is full, 0 for off)</td><td>5</td></tr>
+  <tr><td>cl_message_system_color</td><td>System message color</td><td>2817983</td></tr>
+  <tr><td>cl_message_client_color</td><td>Client message color</td><td>9633471</td></tr>
+  <tr><td>cl_message_highlight_color</td><td>Highlighted message color</td><td>65471</td></tr>
+  <tr><td>cl_message_team_color</td><td>Team message color</td><td>5636050</td></tr>
+  <tr><td>cl_message_color</td><td>Message color</td><td>255</td></tr>
+  <tr><td>cl_laser_inner_color</td><td>Laser inner color</td><td>11206591</td></tr>
+  <tr><td>cl_laser_outline_color</td><td>Laser outline color</td><td>11176233</td></tr>
   <tr><td>cl_message_friend</td><td>Enable coloring and the heart for friends</td><td>1</td></tr>
-  <tr><td>cl_message_friend</td><td>Enable coloring and the heart for friends</td><td>1</td></tr>
-  <tr><td>conn_timeout</td><td>Network timeout</td><td>|</td></tr>
-  <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>1</td></tr>
+  <tr><td>cl_message_friend_color</td><td>Friend message color</td><td>65425</td></tr>
+  <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td></tr>
+  <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td></tr>
   <tr><td>cl_scoreboard_on_death</td><td>Whether to show scoreboard after death or not</td><td>1</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td></tr>
-  <tr><td>cl_replays</td><td>Enable/disable replays</td><td>1</td></tr>
-  <tr><td>cl_replay_length</td><td>Set the default length of the replays</td><td>0</td></tr>
+  <tr><td>cl_replays</td><td>Enable/disable replays</td><td>0</td></tr>
+  <tr><td>cl_replay_length</td><td>Set the default length of the replays</td><td>30</td></tr>
   <tr><td>cl_race_record_server_control</td><td>Let the server start the race recorder</td><td>1</td></tr>
   <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td></tr>
   <tr><td>cl_demo_assume_race</td><td>Assume that demos are race demos</td><td>1</td></tr>
@@ -651,47 +655,51 @@ menu: |
   <tr><td>cl_race_show_ghost</td><td>Show ghost</td><td>1</td></tr>
   <tr><td>cl_race_save_ghost</td><td>Save ghost</td><td>1</td></tr>
   <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard</td><td>1</td></tr>
-  <tr><td>cl_show_decisecs</td><td>Show deciseconds in game time</td><td>1</td></tr>
-  <tr><td>cl_show_others</td><td>Show players in other teams</td><td>1</td></tr>
-  <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>100</td></tr>
-  <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>100</td></tr>
+  <tr><td>cl_show_others</td><td>Show players in other teams (2 to show own team only)</td><td>0</td></tr>
+  <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>40</td></tr>
+  <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td></tr>
   <tr><td>cl_show_quads</td><td>Show quads</td><td>1</td></tr>
-  <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>1</td></tr>
-  <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>1</td></tr>
-  <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>1</td></tr>
+  <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>0</td></tr>
+  <tr><td>cl_background_color</td><td>Background color</td><td>128</td></tr>
+  <tr><td>cl_background_entities_color</td><td>Background (entities) color</td><td>128</td></tr>
   <tr><td>cl_background_entities</td><td>Background (entities)</td><td>&quot;&quot;</td></tr>
-  <tr><td>cl_background_show_tiles_layers</td><td>Whether draw tiles layers when using custom background (entities)</td><td>1</td></tr>
-  <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee (0 = off, 1 = on, -1 = don&#x27;t even show in debug mode)</td><td>1</td></tr>
+  <tr><td>cl_menu_map</td><td>Background map in the menu</td><td>&quot;auto&quot;</td></tr>
+  <tr><td>cl_rotation_radius</td><td>Menu camera rotation radius</td><td>30</td></tr>
+  <tr><td>cl_rotation_speed</td><td>Menu camera rotations in seconds</td><td>40</td></tr>
+  <tr><td>cl_camera_speed</td><td>Menu camera speed</td><td>5</td></tr>
+  <tr><td>cl_background_show_tiles_layers</td><td>Whether draw tiles layers when using custom background (entities)</td><td>0</td></tr>
+  <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee (0 = off, 1 = on, -1 = don&#x27;t even show in debug mode)</td><td>0</td></tr>
   <tr><td>cl_predict_ddrace</td><td>Predict DDRace tiles and tunezones</td><td>1</td></tr>
-  <tr><td>cl_predict_freeze</td><td>Predict freeze tiles (0 = off, 1 = on, 2 = partial (allow a small amount of movement in freeze)</td><td>2</td></tr>
+  <tr><td>cl_predict_freeze</td><td>Predict freeze tiles (0 = off, 1 = on, 2 = partial (allow a small amount of movement in freeze)</td><td>1</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
-  <tr><td>cl_show_hook_coll_other</td><td>Show other players&#x27; hook collision line (2 to always show)</td><td>2</td></tr>
-  <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>2</td></tr>
-  <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>1</td></tr>
+  <tr><td>cl_show_hook_coll_other</td><td>Show other players&#x27; hook collision line (2 to always show)</td><td>1</td></tr>
+  <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>1</td></tr>
+  <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td></tr>
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>1</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
-  <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>1</td></tr>
-  <tr><td>cl_confirm_disconnect_time</td><td>Confirmation popup before disconnecting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>1440</td></tr>
-  <tr><td>cl_confirm_quit_time</td><td>Confirmation popup before quitting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>1440</td></tr>
+  <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
+  <tr><td>cl_confirm_disconnect_time</td><td>Confirmation popup before disconnecting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td></tr>
+  <tr><td>cl_confirm_quit_time</td><td>Confirmation popup before quitting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td></tr>
   <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_dummy_timeout_code</td><td>Dummy Timeout code to use</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_timeout_seed</td><td>Timeout seed</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_input_fifo</td><td>Fifo file to use as input for client console</td><td>&quot;&quot;</td></tr>
-  <tr><td>cl_show_console</td><td>Show console window (Windows only)</td><td>1</td></tr>
-  <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>1</td></tr>
+  <tr><td>cl_show_console</td><td>Show console window (Windows only)</td><td>0</td></tr>
+  <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>0</td></tr>
   <tr><td>cl_config_version</td><td>The config version. Helps newer clients fix bugs with older configs.</td><td>0</td></tr>
-  <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>0</td></tr>
-  <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>0</td></tr>
-  <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>1</td></tr>
+  <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td></tr>
+  <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td></tr>
+  <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td></tr>
   <tr><td>cl_demo_keyboard_shortcuts</td><td>Enable keyboard shortcuts in demo player</td><td>1</td></tr>
-  <tr><td>gfx_opengl_major</td><td>OpenGL major version</td><td>10</td></tr>
-  <tr><td>gfx_opengl_minor</td><td>OpenGL minor version</td><td>10</td></tr>
-  <tr><td>gfx_opengl_patch</td><td>OpenGL patch version</td><td>10</td></tr>
-  <tr><td>gfx_3d_texture_analysis_done</td><td>Analyzed, if sampling 3D/2D array textures was correct</td><td>1</td></tr>
-  <tr><td>gfx_enable_texture_unit_optimization</td><td>Use multiple texture units, instead of only one.</td><td>1</td></tr>
-  <tr><td>gfx_use_preinitialized_buffer</td><td>Use only one buffer for data, that is uploaded to the GPU(might help when using an iGPUs).</td><td>1</td></tr>
-  <tr><td>cl_video_recorder_fps</td><td>At which FPS the videorecorder should record demos.</td><td>1000</td></tr>
+  <tr><td>gfx_opengl_major</td><td>OpenGL major version</td><td>3</td></tr>
+  <tr><td>gfx_opengl_minor</td><td>OpenGL minor version</td><td>0</td></tr>
+  <tr><td>gfx_opengl_patch</td><td>OpenGL patch version</td><td>0</td></tr>
+  <tr><td>gfx_opengl_texture_lod_bias</td><td>The lod bias for OpenGL texture sampling multiplied by 1000</td><td>-500</td></tr>
+  <tr><td>gfx_3d_texture_analysis_done</td><td>Analyzed, if sampling 3D/2D array textures was correct</td><td>0</td></tr>
+  <tr><td>gfx_enable_texture_unit_optimization</td><td>Use multiple texture units, instead of only one.</td><td>0</td></tr>
+  <tr><td>gfx_use_preinitialized_buffer</td><td>Use only one buffer for data, that is uploaded to the GPU(might help when using an iGPUs).</td><td>0</td></tr>
+  <tr><td>cl_video_recorder_fps</td><td>At which FPS the videorecorder should record demos.</td><td>60</td></tr>
 </table></div>
 </div>
 <div class="block">
