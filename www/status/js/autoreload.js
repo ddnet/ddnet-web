@@ -23,7 +23,7 @@ function getCookie(name) {
   return null;
 }
 
-var timeLeft = 5;
+var timeLeft = 120;
 var reload = getCookie("autoreloadstatus") !== 'false';
 
 setInterval(function() {
