@@ -3,7 +3,7 @@ layout: post
 title: "TMLP Deathmatch Night | Saturday 2019-06-15 20:00 CEST | timakro.de:8500"
 permalink: /news/tmlp-deathmatch-night/
 tag: current
-head: <script src="/youtube.js" type="text/javascript"></script>
+head: <script src="/youtube.js?version=2" type="text/javascript"></script>
 ---
 
 The Teeworlds Machine Learning Project needs you, or more precisely your skill! On the TMLP Vanilla DM server (connect to [timakro.de:8500](ddnet:timakro.de:8500) or search for TMLP) we automatically record your gameplay to train an AI on it.

@@ -3,7 +3,7 @@ layout: post
 title: "Grim Reaper finished"
 permalink: /news/grim-reaper-finished/
 tag: current
-head: <script src="/youtube.js" type="text/javascript"></script>
+head: <script src="/youtube.js?version=2" type="text/javascript"></script>
 ---
 
 Grim Reaper by Pulsar has finally been finished 4 months after its release:

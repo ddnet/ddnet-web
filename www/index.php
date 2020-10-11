@@ -4,7 +4,7 @@ title: DDraceNetwork
 head: |
   <link rel="alternate" type="application/atom+xml" title="DDNet News" href="/feed/" />
   <link rel="stylesheet" href="/funding/jquery-ui-1.8.22.custom.css" />
-  <script src="/youtube.js" type="text/javascript"></script>
+  <script src="/youtube.js?version=2" type="text/javascript"></script>
 menu: |
   <ul>
     <li><a href="#news">News</a> (<a href="/news/">all</a>)</li>

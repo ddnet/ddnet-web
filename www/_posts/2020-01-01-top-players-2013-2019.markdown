@@ -3,7 +3,7 @@ layout: post
 title: "Top 25 Best DDNet Players Ranking (2013-2019)"
 permalink: /news/top-players-2013-2019/
 head: |
-  <script src="/youtube.js" type="text/javascript"></script>
+  <script src="/youtube.js?version=2" type="text/javascript"></script>
 tag: current
 ---
 
