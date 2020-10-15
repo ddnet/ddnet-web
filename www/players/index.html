@@ -3,8 +3,13 @@ layout: default
 title: "Player not found - DDraceNetwork"
 ---
 <div id="global" class="longblock"><h2>Player not found</h2><h3>You can try the search instead:</h3>
-  <div><form id="playerform" action="/players/" method="get"><input name="player" class="typeahead" type="text" placeholder="Player search"><input type="submit" value="Player search" style="position: absolute; left: -9999px"></form></div>
+  <div><form id="playerform" action="/players/" method="get"><input id="playersearch" name="player" class="typeahead" type="text" placeholder="Player search"><input type="submit" value="Player search" style="position: absolute; left: -9999px"></form></div>
   <script src="/jquery.js" type="text/javascript"></script>
   <script src="/typeahead.bundle.js" type="text/javascript"></script>
   <script src="/playersearch.js?version=2" type="text/javascript"></script>
+  <script>
+    var input = document.getElementById('playersearch');
+    input.focus();
+    input.select();
+  </script>
 </div>
