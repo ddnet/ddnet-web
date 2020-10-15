@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Graphics bugs with Intel GPU drivers"
+permalink: /news/intel-gpu/
+tag: current
+---
+
+Recently we received many reports for bugs and crashes with Intel's integrated GPUs on Windows. Our current guess is that this is caused by Windows Update updating the Intel GPU driver.
+
+A driver update to the latest version from Intel seems to help with this situation:
+
+1. Download the latest Intel DCH driver for your system directly from [Intel](https://downloadcenter.intel.com/product/80939)
+2. Right-click on Start and select Device Manager
+3. Click on "Display Adapters" to expand, and then double-click on your Intel HD Graphics adapter
+4. Select the Driver tab -> "Update Driver" -> "Browse my computer for driver software" -> "Let me pick from a list of available drivers on my computer"
+5. Select "Microsoft Basic Display Adapter"
+6. Click "Next" (note that you screen resolution will likely change) when it switches to the basic driver
+7. Close Device Manager
+8. Install the latest DCH driver that you downloaded in step 1
+
+Guide taken from [Lenovo Forum](https://forums.lenovo.com/t5/Lenovo-Yoga-Series-Notebooks/Update-to-Latest-Intel-Graphics-Driver/m-p/4457633?page=1#4457786)
+
+Of course it would be even better if Windows Update delivered a well-working driver and we generally don't recommend manually changing things around on your system like that. But if you're affected by graphics bugs and crashes, this might be a workaround for you meanwhile.
