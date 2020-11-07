@@ -156,7 +156,15 @@ b, strong {
 	font-weight: bold;
 }
 
+.text-strong {
+	font-weight: bold;
+}
+
 i, em {
+	font-style: italic;
+}
+
+.text-italics {
 	font-style: italic;
 }
 
@@ -216,6 +224,7 @@ a:hover	{ text-decoration: underline; }
 }
 
 .site_logo {
+	background-repeat: no-repeat;
 	display: inline-block;
 	width: 149px;
 	height: 52px;
@@ -926,7 +935,8 @@ fieldset.fields1 dl.pmlist dd.recipients {
 /* Pagination in viewforum for multipage topics */
 .row .pagination {
 	display: block;
-	margin-top: 0.3em;
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 .row .pagination > ul {
@@ -937,12 +947,6 @@ fieldset.fields1 dl.pmlist dd.recipients {
 	border-radius: 2px;
 	padding: 1px 3px;
 	font-size: 9px;
-}
-
-.topic-poster {
-	float: left;
-	padding-right: 0.5em;
-	margin-top: 0.3em;
 }
 
 /* jQuery popups
@@ -1026,8 +1030,15 @@ fieldset.fields1 dl.pmlist dd.recipients {
 /* Miscellaneous styles
 ---------------------------------------- */
 .copyright {
-	padding: 5px;
+	font-size: 10px;
 	text-align: center;
+	padding: 10px;
+}
+
+.footer-row {
+	font-size: 10px;
+	line-height: 1.8;
+	margin: 0;
 }
 
 .small {
@@ -1296,7 +1307,7 @@ ul.linklist:after,
 	margin: 0 7px 0 0;
 }
 
-.linklist.compact .rightside > a > span span {
+.linklist.compact .rightside > a > span {
 	display: none;
 }
 
@@ -1310,6 +1321,10 @@ ul.linklist:after,
 
 .dropdown-page-jump input.tiny {
 	width: 50px;
+}
+
+.dropdown .clone.hidden  {
+	display: none;
 }
 
 .dropdown .clone.hidden + li.separator {

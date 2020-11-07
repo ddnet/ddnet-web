@@ -150,7 +150,7 @@
 		margin-right: -5px;
 	}
 
-	.cp-main .forabg, .cp-main .forumdb, .cp-main .post, .cp-main .panel {
+	.cp-main .forabg, .cp-main .forumbg, .cp-main .post, .cp-main .panel {
 		border-radius: 7px;
 	}
 
@@ -280,11 +280,6 @@
 		margin: 5px 0 0;
 	}
 
-	.row .pagination {
-		margin-top: 2px;
-		margin-bottom: 2px;
-	}
-
 	.row .pagination .ellipsis + li {
 		display: none !important;
 	}
@@ -349,7 +344,7 @@
 	}
 
 	fieldset dd, fieldset.fields1 dd, fieldset.fields2 dd {
-		margin-left: 20px;
+		margin-left: 0;
 	}
 
 	textarea, dd textarea, .message-box textarea {
@@ -426,6 +421,7 @@
 	.column1, .column2, .left-box.profile-details {
 		float: none;
 		width: auto;
+		clear: both;
 	}
 
 	/* Polls
@@ -464,8 +460,7 @@
 		width: auto;
 		border-width: 0 0 1px 0;
 		padding-bottom: 5px;
-		margin: 0;
-		margin-bottom: 5px;
+		margin: 0 0 5px 0;
 		min-height: 40px;
 		overflow: hidden;
 	}
@@ -557,24 +552,17 @@
 	}
 }
 
-@media (min-width: 700px) {
-	.postbody { width: 70%; }
-}
+@media (min-width: 701px) {
+	.postbody {
+		width: calc(100% - 200px - 1px - 16px);
+	}
 
-@media (min-width: 850px) {
-	.postbody { width: 76%; }
-}
-
-@media (max-width: 850px) {
-	.postprofile { width: 28%; }
+	.postprofile {
+		width: 200px;
+	}
 }
 
 @media (min-width: 701px) and (max-width: 950px) {
-	.row .pagination {
-		margin-top: 2px;
-		margin-bottom: 2px;
-	}
-
 	ul.topiclist dt {
     	margin-right: -410px;
 	}
@@ -587,4 +575,3 @@
     	width: 80px;
 	}
 }
-
