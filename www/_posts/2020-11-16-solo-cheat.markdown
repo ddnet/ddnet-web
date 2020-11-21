@@ -17,4 +17,4 @@ This bug has existed on DDNet for a long time and enabled one to play without so
 
 It has been quick-fixed now and all official DDNet servers should be safe from this again. The affected ranks from yesterday have been deleted. If you find similar bugs still working please report them to me privately.
 
-heinrich5991 is now using Teehistorian to analyze all runs of the last years to find cases where this bug has been abused before.
+heinrich5991 is now using Teehistorian to analyze all runs of the last years to find cases where this bug has been abused before. Read [part two](/news/solo-cheat-ii).
