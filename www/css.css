@@ -947,3 +947,24 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+body#phpbb .attachbox dl.thumbnail::before {
+  content: "Click on the image for full resolution";
+  display: block;
+  margin: 4px 0 8px 0;
+  font-weight: bold;
+}
+
+body#phpbb .attachbox dl.thumbnail dt {
+  position: relative;
+}
+
+body#phpbb .attachbox dl.thumbnail a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}

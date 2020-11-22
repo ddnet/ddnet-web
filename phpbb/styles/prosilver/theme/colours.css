@@ -111,6 +111,7 @@ Colours and backgrounds for links.css
 	color: #000000;
 }
 
+.post h3 a.first-unread,
 .post:target h3 a {
 	color: #000000;
 }
@@ -144,7 +145,7 @@ table.zebra-list tr:nth-child(even) td, ul.zebra-list li:nth-child(even) {
 }
 
 .site_logo {
-	background-image: url("./images/site_logo.gif");
+	background-image: url("./images/site_logo.svg");
 }
 
 /* Horizontal lists
@@ -404,12 +405,7 @@ dl.faq dt {
 /* Quote block */
 blockquote {
 	background-color: #EBEADD;
-	background-image: url("./images/quote.gif");
 	border-color:#DBDBCE;
-}
-
-.rtl blockquote {
-	background-image: url("./images/quote_rtl.gif");
 }
 
 blockquote blockquote {
@@ -435,13 +431,6 @@ blockquote blockquote blockquote {
 .codebox code {
 	color: #2E8B57;
 }
-
-.syntaxbg		{ color: #FFFFFF; }
-.syntaxcomment	{ color: #FF8000; }
-.syntaxdefault	{ color: #0000BB; }
-.syntaxhtml		{ color: #000000; }
-.syntaxkeyword	{ color: #007700; }
-.syntaxstring	{ color: #DD0000; }
 
 /* Attachments
 ----------------------------------------*/
@@ -683,6 +672,11 @@ Colours and backgrounds for buttons.css
 	box-shadow: 0 0 10px #0075B0;
 }
 
+.search-results li:hover,
+.search-results li.active {
+	background-color: #CFE1F6;
+}
+
 /* Icon images
 ---------------------------------------- */
 
@@ -698,7 +692,6 @@ Colours and backgrounds for buttons.css
 .phpbb_website-icon					{ background-position: -40px 0; }
 .phpbb_youtube-icon					{ background-position: -98px 0; }
 .phpbb_facebook-icon				{ background-position: -119px 0; }
-.phpbb_googleplus-icon				{ background-position: -140px 0; }
 .phpbb_skype-icon					{ background-position: -161px 0; }
 .phpbb_twitter-icon					{ background-position: -203px 0; }
 .phpbb_yahoo-icon					{ background-position: -224px 0; }

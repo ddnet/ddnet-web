@@ -3,7 +3,7 @@ window.onload = function() {
   for (n = 0; n < v.length; n++) {
       div = document.createElement("div");
       div.setAttribute("data-id", v[n].dataset.id);
-      div.innerHTML = '<img src="https://i.ytimg.com/vi/' + v[n].dataset.id + '/hqdefault.jpg"><div class="play"></div>';
+      div.innerHTML = '<img src="https://i.ytimg.com/vi/' + v[n].dataset.id + '/maxresdefault.jpg"><div class="play"></div>';
       div.onclick = ytiframe;
       v[n].appendChild(div);
   }

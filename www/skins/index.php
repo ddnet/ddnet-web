@@ -108,13 +108,18 @@ if ($action == "filter_skin_pack")
   echo("<input type=\"hidden\" name=\"cache\" value=\"p".$filterSanitize."\">\n");
 
 if ($action == "search")
-  echo("<input type=\"text\" name=\"search\" value=\"".$filterSanitize."\">\n");
+  echo("<input type=\"text\" id=\"skinsearch\" name=\"search\" value=\"".$filterSanitize."\">\n");
 else
-  echo("<input type=\"text\" name=\"search\">\n");
+  echo("<input type=\"text\" id=\"skinsearch\" name=\"search\">\n");
 
 ?>
 <input type="submit" value="Search Skin">
 </form>
+<script>
+  var input = document.getElementById("playersearch");
+  input.focus();
+  input.select();
+</script>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <form method="get" action="index.php" style="display:inline">
 <input type="submit" value="Show All Skins">

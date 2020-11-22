@@ -3,7 +3,7 @@ layout: post
 title: "Quick Tournament #48 on Stronghold 3 by Pipou"
 permalink: /news/quick-tournament-48/
 head: |
-  <script src="/youtube.js" type="text/javascript"></script>
+  <script src="/youtube.js?version=2" type="text/javascript"></script>
 tag: current
 ---
 
