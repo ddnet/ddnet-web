@@ -4,39 +4,29 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet": 129,
-  "master": 30, // hetzner.de
-  "db": 16,
-  "ger1": [47, 191], // ovh.com, leaseweb.com
-  "ger2":"heinrich5991", // hetzner.de
-  "pol":  14, // ovh.com
-  "rus1": 49, // ihor.ru
-  "rus2": 66, // vscale.io
-  "tur":  4, // gcorelabs.com
-  "irn":  9,
-  "ksa": 20, // wafaicloud.com
-  "chl":  [90, 90, "Konsti"], // zgh.cl
-  "bra1": 95, // heficed.com
-  "bra2": 45, // fcati.com.br
-  "arg": 40, // donweb.com
-  "col": 14, // conexcol.net.co
-  "cri": 10, // navegalo.com
-  "usa":  99, // nfoservers.com
-  "can":  18, // ovh.com
-  "chn1":  "Tom",
-  "chn2":  "Dan_cao",
+  "ddnet": 139,
+  "master": 36, // hetzner.de
+  "db": 50,
+  "ger1": 278, // ovh.com
+  "ger2": "heinrich5991", // hetzner.de
+  "pol":  43, // ovh.com
+  "rus": 36, // ihor.ru
+  "irn":  108,
+  "chl":  109, // zgh.cl
+  "bra1": 118, // heficed.com
+  "bra2": 207, // fcati.com.br
+  "arg": 109, // baehost.com
+  "usa":  89, // nfoservers.com
+  "can":  43, // ovh.com
   "chn3":  "TsFreddie",
-  "chn4":  "Texas.C",
   "chn5":  "Tom",
   "chn6":  "950",
-  "kor":  58, // gcorelabs.com
-  "jap":  20, // linode.com
-  "sgp":  20, // linode.com
+  "kor":  60, // gcorelabs.com
+  "sgp":  58, // linode.com
   "zaf":  67, // hostafrica.co.za
-  "aus":  14, // ovh.com
 };
-var donated = 959;
-var old = 3784;
+var donated = 0;
+var old = 4902;
 
 var sum = 0;
 var sumToPay = 0;
@@ -85,7 +75,7 @@ for (var server in costs) {
 }
 
 var total = donated + sumPartSponsored;
-var rest = 3784;
+var rest = 4833;
 if (total > sum) {
   rest += total - sum;
   total = sum;
@@ -104,9 +94,9 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-total .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2020";
+    element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2021";
   else
-    element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2020";
+    element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2021";
 });
 elements = document.querySelectorAll("#funding-total .ui-widget-header");
 elements.forEach(function(element, index, array) {
