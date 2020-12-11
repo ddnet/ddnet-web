@@ -19,6 +19,10 @@ html {
   overflow-y: auto;
 }
 
+pre {
+  overflow: auto;
+}
+
 .block {
   background-color: #ffffff;
   border: 1px solid #aaaaaa;
