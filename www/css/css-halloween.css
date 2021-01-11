@@ -171,7 +171,12 @@ section .longblock {
   fill: #CCCCCC !important;
 }
 
-.highcharts-container svg g.highcharts-label text {
+.highcharts-container svg g.highcharts-range-input text {
+  color: #CCCCCC !important;
+  fill: #CCCCCC !important;
+}
+
+.highcharts-container svg g.highcharts-range-label text {
   color: #CCCCCC !important;
   fill: #CCCCCC !important;
 }
