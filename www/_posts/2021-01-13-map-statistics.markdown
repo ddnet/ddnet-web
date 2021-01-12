@@ -1,0 +1,1282 @@
+---
+layout: post
+title: "Map Statistics"
+permalink: /news/map-statistics/
+tag: current
+---
+
+These are the most popular maps (by number of finishes) on DDNet for each month for these server types: Novice, Moderate, Brutal & Solo:
+
+<div style="overflow-x: auto;">
+<table style="border-collapse: separate; border-spacing: 0; margin: 0; padding: 0;">
+<tr style="text-align: center;"><th>Date</th><th>Novice #1</th><th>Novice #2</th><th>Novice #3</th><th>Moderate #1</th><th>Moderate #2</th><th>Moderate #3</th><th>Brutal #1</th><th>Brutal #2</th><th>Brutal #3</th><th>Solo #1</th><th>Solo #2</th><th>Solo #3</th></tr>
+<tr><td>2013-07</td>
+  <td title="GlassBox 2: 87 finishes"><a href="/maps/GlassBox-32-2/"><img src="/ranks/maps/GlassBox_2.png" width="180" height="112" alt="GlassBox 2" /></a></td>
+  <td title="GlassBox: 54 finishes"><a href="/maps/GlassBox/"><img src="/ranks/maps/GlassBox.png" width="180" height="112" alt="GlassBox" /></a></td>
+  <td title="Bootcamp #1: 55 finishes"><a href="/maps/Bootcamp-32--35-1/"><img src="/ranks/maps/Bootcamp__1.png" width="180" height="112" alt="Bootcamp #1" /></a></td>
+  <td title="Galaxy Story: 19 finishes"><a href="/maps/Galaxy-32-Story/"><img src="/ranks/maps/Galaxy_Story.png" width="180" height="112" alt="Galaxy Story" /></a></td>
+  <td title="[SI] SELEN: 15 finishes"><a href="/maps/-91-SI-93--32-SELEN/"><img src="/ranks/maps/_SI__SELEN.png" width="180" height="112" alt="[SI] SELEN" /></a></td>
+  <td title="Ruin: 6 finishes"><a href="/maps/Ruin/"><img src="/ranks/maps/Ruin.png" width="180" height="112" alt="Ruin" /></a></td>
+  <td title="-SKY IVLAND-: 3 finishes"><a href="/maps/-45-SKY-32-IVLAND-45-/"><img src="/ranks/maps/_SKY_IVLAND_.png" width="180" height="112" alt="-SKY IVLAND-" /></a></td>
+  <td title="Out of Castle: 2 finishes"><a href="/maps/Out-32-of-32-Castle/"><img src="/ranks/maps/Out_of_Castle.png" width="180" height="112" alt="Out of Castle" /></a></td>
+  <td title="Aufnahmetest 3: 3 finishes"><a href="/maps/Aufnahmetest-32-3/"><img src="/ranks/maps/Aufnahmetest_3.png" width="180" height="112" alt="Aufnahmetest 3" /></a></td>
+</tr>
+<tr><td>2013-08</td>
+  <td title="For Idiots 1: 373 finishes"><a href="/maps/For-32-Idiots-32-1/"><img src="/ranks/maps/For_Idiots_1.png" width="180" height="112" alt="For Idiots 1" /></a></td>
+  <td title="Lowcore: 297 finishes"><a href="/maps/Lowcore/"><img src="/ranks/maps/Lowcore.png" width="180" height="112" alt="Lowcore" /></a></td>
+  <td title="GlassBox 2: 276 finishes"><a href="/maps/GlassBox-32-2/"><img src="/ranks/maps/GlassBox_2.png" width="180" height="112" alt="GlassBox 2" /></a></td>
+  <td title="Bootcamp #2: 125 finishes"><a href="/maps/Bootcamp-32--35-2/"><img src="/ranks/maps/Bootcamp__2.png" width="180" height="112" alt="Bootcamp #2" /></a></td>
+  <td title="P2Z_Crungle: 65 finishes"><a href="/maps/P2Z-95-Crungle/"><img src="/ranks/maps/P2Z_Crungle.png" width="180" height="112" alt="P2Z_Crungle" /></a></td>
+  <td title="Hollow 2: 62 finishes"><a href="/maps/Hollow-32-2/"><img src="/ranks/maps/Hollow_2.png" width="180" height="112" alt="Hollow 2" /></a></td>
+  <td title="Fonders: 30 finishes"><a href="/maps/Fonders/"><img src="/ranks/maps/Fonders.png" width="180" height="112" alt="Fonders" /></a></td>
+  <td title="Wailand: 26 finishes"><a href="/maps/Wailand/"><img src="/ranks/maps/Wailand.png" width="180" height="112" alt="Wailand" /></a></td>
+  <td title="Ruin: 15 finishes"><a href="/maps/Ruin/"><img src="/ranks/maps/Ruin.png" width="180" height="112" alt="Ruin" /></a></td>
+  <td title="ForeverAlone: 68 finishes"><a href="/maps/ForeverAlone/"><img src="/ranks/maps/ForeverAlone.png" width="180" height="112" alt="ForeverAlone" /></a></td>
+  <td title="Aufnahmetest 3: 1 finishes"><a href="/maps/Aufnahmetest-32-3/"><img src="/ranks/maps/Aufnahmetest_3.png" width="180" height="112" alt="Aufnahmetest 3" /></a></td>
+</tr>
+<tr><td>2013-09</td>
+  <td title="For Idiots 1: 561 finishes"><a href="/maps/For-32-Idiots-32-1/"><img src="/ranks/maps/For_Idiots_1.png" width="180" height="112" alt="For Idiots 1" /></a></td>
+  <td title="For Idiots 2: 437 finishes"><a href="/maps/For-32-Idiots-32-2/"><img src="/ranks/maps/For_Idiots_2.png" width="180" height="112" alt="For Idiots 2" /></a></td>
+  <td title="Batman: 356 finishes"><a href="/maps/Batman/"><img src="/ranks/maps/Batman.png" width="180" height="112" alt="Batman" /></a></td>
+  <td title="Galaxy Story: 76 finishes"><a href="/maps/Galaxy-32-Story/"><img src="/ranks/maps/Galaxy_Story.png" width="180" height="112" alt="Galaxy Story" /></a></td>
+  <td title="Intense 1.0: 73 finishes"><a href="/maps/Intense-32-1-46-0/"><img src="/ranks/maps/Intense_1_0.png" width="180" height="112" alt="Intense 1.0" /></a></td>
+  <td title="Hollow 2: 59 finishes"><a href="/maps/Hollow-32-2/"><img src="/ranks/maps/Hollow_2.png" width="180" height="112" alt="Hollow 2" /></a></td>
+  <td title="Cya Nerd: 38 finishes"><a href="/maps/Cya-32-Nerd/"><img src="/ranks/maps/Cya_Nerd.png" width="180" height="112" alt="Cya Nerd" /></a></td>
+  <td title="Determination: 31 finishes"><a href="/maps/Determination/"><img src="/ranks/maps/Determination.png" width="180" height="112" alt="Determination" /></a></td>
+  <td title="Flying in the Sky: 12 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="ForeverAlone: 13 finishes"><a href="/maps/ForeverAlone/"><img src="/ranks/maps/ForeverAlone.png" width="180" height="112" alt="ForeverAlone" /></a></td>
+</tr>
+<tr><td>2013-10</td>
+  <td title="Sorrow: 326 finishes"><a href="/maps/Sorrow/"><img src="/ranks/maps/Sorrow.png" width="180" height="112" alt="Sorrow" /></a></td>
+  <td title="[School] Hook: 302 finishes"><a href="/maps/-91-School-93--32-Hook/"><img src="/ranks/maps/_School__Hook.png" width="180" height="112" alt="[School] Hook" /></a></td>
+  <td title="For Idiots 2: 294 finishes"><a href="/maps/For-32-Idiots-32-2/"><img src="/ranks/maps/For_Idiots_2.png" width="180" height="112" alt="For Idiots 2" /></a></td>
+  <td title="Intense 1.0: 67 finishes"><a href="/maps/Intense-32-1-46-0/"><img src="/ranks/maps/Intense_1_0.png" width="180" height="112" alt="Intense 1.0" /></a></td>
+  <td title="Easy Hook: 61 finishes"><a href="/maps/Easy-32-Hook/"><img src="/ranks/maps/Easy_Hook.png" width="180" height="112" alt="Easy Hook" /></a></td>
+  <td title="MiddleFinger: 33 finishes"><a href="/maps/MiddleFinger/"><img src="/ranks/maps/MiddleFinger.png" width="180" height="112" alt="MiddleFinger" /></a></td>
+  <td title="Wave: 18 finishes"><a href="/maps/Wave/"><img src="/ranks/maps/Wave.png" width="180" height="112" alt="Wave" /></a></td>
+  <td title="Dawn Of The 7th Day: 17 finishes"><a href="/maps/Dawn-32-Of-32-The-32-7th-32-Day/"><img src="/ranks/maps/Dawn_Of_The_7th_Day.png" width="180" height="112" alt="Dawn Of The 7th Day" /></a></td>
+  <td title="claret-blue: 10 finishes"><a href="/maps/claret-45-blue/"><img src="/ranks/maps/claret_blue.png" width="180" height="112" alt="claret-blue" /></a></td>
+  <td title="Race_Sanktoras: 256 finishes"><a href="/maps/Race-95-Sanktoras/"><img src="/ranks/maps/Race_Sanktoras.png" width="180" height="112" alt="Race_Sanktoras" /></a></td>
+  <td title="OldschoolAdventure: 175 finishes"><a href="/maps/OldschoolAdventure/"><img src="/ranks/maps/OldschoolAdventure.png" width="180" height="112" alt="OldschoolAdventure" /></a></td>
+  <td title="run_guy_25: 136 finishes"><a href="/maps/run-95-guy-95-25/"><img src="/ranks/maps/run_guy_25.png" width="180" height="112" alt="run_guy_25" /></a></td>
+</tr>
+<tr><td>2013-11</td>
+  <td title="Top 1: 366 finishes"><a href="/maps/Top-32-1/"><img src="/ranks/maps/Top_1.png" width="180" height="112" alt="Top 1" /></a></td>
+  <td title="[School] Hammer: 326 finishes"><a href="/maps/-91-School-93--32-Hammer/"><img src="/ranks/maps/_School__Hammer.png" width="180" height="112" alt="[School] Hammer" /></a></td>
+  <td title="[School] Hook: 245 finishes"><a href="/maps/-91-School-93--32-Hook/"><img src="/ranks/maps/_School__Hook.png" width="180" height="112" alt="[School] Hook" /></a></td>
+  <td title="SkiLLz: 130 finishes"><a href="/maps/SkiLLz/"><img src="/ranks/maps/SkiLLz.png" width="180" height="112" alt="SkiLLz" /></a></td>
+  <td title="Hubbel: 49 finishes"><a href="/maps/Hubbel/"><img src="/ranks/maps/Hubbel.png" width="180" height="112" alt="Hubbel" /></a></td>
+  <td title="Lygerastia: 48 finishes"><a href="/maps/Lygerastia/"><img src="/ranks/maps/Lygerastia.png" width="180" height="112" alt="Lygerastia" /></a></td>
+  <td title="Roaming: 61 finishes"><a href="/maps/Roaming/"><img src="/ranks/maps/Roaming.png" width="180" height="112" alt="Roaming" /></a></td>
+  <td title="Dawn Of The 7th Day: 30 finishes"><a href="/maps/Dawn-32-Of-32-The-32-7th-32-Day/"><img src="/ranks/maps/Dawn_Of_The_7th_Day.png" width="180" height="112" alt="Dawn Of The 7th Day" /></a></td>
+  <td title="Goldmoon: 26 finishes"><a href="/maps/Goldmoon/"><img src="/ranks/maps/Goldmoon.png" width="180" height="112" alt="Goldmoon" /></a></td>
+  <td title="Joyride: 1197 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Mini Zero II: 555 finishes"><a href="/maps/Mini-32-Zero-32-II/"><img src="/ranks/maps/Mini_Zero_II.png" width="180" height="112" alt="Mini Zero II" /></a></td>
+  <td title="SpaceIsKey: 274 finishes"><a href="/maps/SpaceIsKey/"><img src="/ranks/maps/SpaceIsKey.png" width="180" height="112" alt="SpaceIsKey" /></a></td>
+</tr>
+<tr><td>2013-12</td>
+  <td title="Top 1: 657 finishes"><a href="/maps/Top-32-1/"><img src="/ranks/maps/Top_1.png" width="180" height="112" alt="Top 1" /></a></td>
+  <td title="[School] Hook: 381 finishes"><a href="/maps/-91-School-93--32-Hook/"><img src="/ranks/maps/_School__Hook.png" width="180" height="112" alt="[School] Hook" /></a></td>
+  <td title="For Idiots 1: 291 finishes"><a href="/maps/For-32-Idiots-32-1/"><img src="/ranks/maps/For_Idiots_1.png" width="180" height="112" alt="For Idiots 1" /></a></td>
+  <td title="Request: 255 finishes"><a href="/maps/Request/"><img src="/ranks/maps/Request.png" width="180" height="112" alt="Request" /></a></td>
+  <td title="Galaxy Turn: 81 finishes"><a href="/maps/Galaxy-32-Turn/"><img src="/ranks/maps/Galaxy_Turn.png" width="180" height="112" alt="Galaxy Turn" /></a></td>
+  <td title="Easy Edge: 52 finishes"><a href="/maps/Easy-32-Edge/"><img src="/ranks/maps/Easy_Edge.png" width="180" height="112" alt="Easy Edge" /></a></td>
+  <td title="Franky's Adventure: 56 finishes"><a href="/maps/Franky-39-s-32-Adventure/"><img src="/ranks/maps/Franky_s_Adventure.png" width="180" height="112" alt="Franky's Adventure" /></a></td>
+  <td title="mmips: 31 finishes"><a href="/maps/mmips/"><img src="/ranks/maps/mmips.png" width="180" height="112" alt="mmips" /></a></td>
+  <td title="Determination: 29 finishes"><a href="/maps/Determination/"><img src="/ranks/maps/Determination.png" width="180" height="112" alt="Determination" /></a></td>
+  <td title="Joyride: 386 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="SpaceIsKey: 210 finishes"><a href="/maps/SpaceIsKey/"><img src="/ranks/maps/SpaceIsKey.png" width="180" height="112" alt="SpaceIsKey" /></a></td>
+  <td title="Race_Sanktoras: 194 finishes"><a href="/maps/Race-95-Sanktoras/"><img src="/ranks/maps/Race_Sanktoras.png" width="180" height="112" alt="Race_Sanktoras" /></a></td>
+</tr>
+<tr><td>2014-01</td>
+  <td title="Kobra: 795 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="For Idiots 2: 384 finishes"><a href="/maps/For-32-Idiots-32-2/"><img src="/ranks/maps/For_Idiots_2.png" width="180" height="112" alt="For Idiots 2" /></a></td>
+  <td title="Tiny Tandem: 372 finishes"><a href="/maps/Tiny-32-Tandem/"><img src="/ranks/maps/Tiny_Tandem.png" width="180" height="112" alt="Tiny Tandem" /></a></td>
+  <td title="Intense 1.0: 142 finishes"><a href="/maps/Intense-32-1-46-0/"><img src="/ranks/maps/Intense_1_0.png" width="180" height="112" alt="Intense 1.0" /></a></td>
+  <td title="P2Z_Crungle: 83 finishes"><a href="/maps/P2Z-95-Crungle/"><img src="/ranks/maps/P2Z_Crungle.png" width="180" height="112" alt="P2Z_Crungle" /></a></td>
+  <td title="Wrong Forest: 73 finishes"><a href="/maps/Wrong-32-Forest/"><img src="/ranks/maps/Wrong_Forest.png" width="180" height="112" alt="Wrong Forest" /></a></td>
+  <td title="DreamWorld: 35 finishes"><a href="/maps/DreamWorld/"><img src="/ranks/maps/DreamWorld.png" width="180" height="112" alt="DreamWorld" /></a></td>
+  <td title="Blue Drag: 32 finishes"><a href="/maps/Blue-32-Drag/"><img src="/ranks/maps/Blue_Drag.png" width="180" height="112" alt="Blue Drag" /></a></td>
+  <td title="Space &amp; Time 2: 30 finishes"><a href="/maps/Space-32--38--32-Time-32-2/"><img src="/ranks/maps/Space___Time_2.png" width="180" height="112" alt="Space &amp; Time 2" /></a></td>
+  <td title="Joyride: 446 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Race_Sanktoras: 209 finishes"><a href="/maps/Race-95-Sanktoras/"><img src="/ranks/maps/Race_Sanktoras.png" width="180" height="112" alt="Race_Sanktoras" /></a></td>
+  <td title="Mini Zero II: 205 finishes"><a href="/maps/Mini-32-Zero-32-II/"><img src="/ranks/maps/Mini_Zero_II.png" width="180" height="112" alt="Mini Zero II" /></a></td>
+</tr>
+<tr><td>2014-02</td>
+  <td title="Kobra: 1240 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Thor: 481 finishes"><a href="/maps/Thor/"><img src="/ranks/maps/Thor.png" width="180" height="112" alt="Thor" /></a></td>
+  <td title="Pados 2: 409 finishes"><a href="/maps/Pados-32-2/"><img src="/ranks/maps/Pados_2.png" width="180" height="112" alt="Pados 2" /></a></td>
+  <td title="Captain America: 85 finishes"><a href="/maps/Captain-32-America/"><img src="/ranks/maps/Captain_America.png" width="180" height="112" alt="Captain America" /></a></td>
+  <td title="Primeval Forest: 72 finishes"><a href="/maps/Primeval-32-Forest/"><img src="/ranks/maps/Primeval_Forest.png" width="180" height="112" alt="Primeval Forest" /></a></td>
+  <td title="Galaxy Turn: 64 finishes"><a href="/maps/Galaxy-32-Turn/"><img src="/ranks/maps/Galaxy_Turn.png" width="180" height="112" alt="Galaxy Turn" /></a></td>
+  <td title="Helena: 21 finishes"><a href="/maps/Helena/"><img src="/ranks/maps/Helena.png" width="180" height="112" alt="Helena" /></a></td>
+  <td title="Green Agony: 18 finishes"><a href="/maps/Green-32-Agony/"><img src="/ranks/maps/Green_Agony.png" width="180" height="112" alt="Green Agony" /></a></td>
+  <td title="Determination: 16 finishes"><a href="/maps/Determination/"><img src="/ranks/maps/Determination.png" width="180" height="112" alt="Determination" /></a></td>
+  <td title="Flappy Bird: 2994 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="No_Stuck: 921 finishes"><a href="/maps/No-95-Stuck/"><img src="/ranks/maps/No_Stuck.png" width="180" height="112" alt="No_Stuck" /></a></td>
+  <td title="Joyride: 238 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2014-03</td>
+  <td title="Kobra: 1766 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Skillz 1: 390 finishes"><a href="/maps/Skillz-32-1/"><img src="/ranks/maps/Skillz_1.png" width="180" height="112" alt="Skillz 1" /></a></td>
+  <td title="Pados 1: 379 finishes"><a href="/maps/Pados-32-1/"><img src="/ranks/maps/Pados_1.png" width="180" height="112" alt="Pados 1" /></a></td>
+  <td title="P2Z_Soar: 196 finishes"><a href="/maps/P2Z-95-Soar/"><img src="/ranks/maps/P2Z_Soar.png" width="180" height="112" alt="P2Z_Soar" /></a></td>
+  <td title="Galaxy Turn: 56 finishes"><a href="/maps/Galaxy-32-Turn/"><img src="/ranks/maps/Galaxy_Turn.png" width="180" height="112" alt="Galaxy Turn" /></a></td>
+  <td title="Easy Hook: 53 finishes"><a href="/maps/Easy-32-Hook/"><img src="/ranks/maps/Easy_Hook.png" width="180" height="112" alt="Easy Hook" /></a></td>
+  <td title="Flying in the Sky: 43 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="Wailand: 33 finishes"><a href="/maps/Wailand/"><img src="/ranks/maps/Wailand.png" width="180" height="112" alt="Wailand" /></a></td>
+  <td title="LuckyStrike: 32 finishes"><a href="/maps/LuckyStrike/"><img src="/ranks/maps/LuckyStrike.png" width="180" height="112" alt="LuckyStrike" /></a></td>
+  <td title="Flappy Bird: 1877 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="No_Stuck: 440 finishes"><a href="/maps/No-95-Stuck/"><img src="/ranks/maps/No_Stuck.png" width="180" height="112" alt="No_Stuck" /></a></td>
+  <td title="Joyride: 210 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2014-04</td>
+  <td title="Kobra 2: 2453 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Kobra: 419 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="[School] Hook: 285 finishes"><a href="/maps/-91-School-93--32-Hook/"><img src="/ranks/maps/_School__Hook.png" width="180" height="112" alt="[School] Hook" /></a></td>
+  <td title="Coffee I: 321 finishes"><a href="/maps/Coffee-32-I/"><img src="/ranks/maps/Coffee_I.png" width="180" height="112" alt="Coffee I" /></a></td>
+  <td title="Coffee II: 305 finishes"><a href="/maps/Coffee-32-II/"><img src="/ranks/maps/Coffee_II.png" width="180" height="112" alt="Coffee II" /></a></td>
+  <td title="Piranha: 233 finishes"><a href="/maps/Piranha/"><img src="/ranks/maps/Piranha.png" width="180" height="112" alt="Piranha" /></a></td>
+  <td title="Space &amp; Time 2: 37 finishes"><a href="/maps/Space-32--38--32-Time-32-2/"><img src="/ranks/maps/Space___Time_2.png" width="180" height="112" alt="Space &amp; Time 2" /></a></td>
+  <td title="Determination: 29 finishes"><a href="/maps/Determination/"><img src="/ranks/maps/Determination.png" width="180" height="112" alt="Determination" /></a></td>
+  <td title="Flying in the Sky: 27 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="Flappy Bird: 1165 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 493 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="DayLight: 264 finishes"><a href="/maps/DayLight/"><img src="/ranks/maps/DayLight.png" width="180" height="112" alt="DayLight" /></a></td>
+</tr>
+<tr><td>2014-05</td>
+  <td title="Kobra 2: 1897 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Sopella: 998 finishes"><a href="/maps/Sopella/"><img src="/ranks/maps/Sopella.png" width="180" height="112" alt="Sopella" /></a></td>
+  <td title="Light Grey: 802 finishes"><a href="/maps/Light-32-Grey/"><img src="/ranks/maps/Light_Grey.png" width="180" height="112" alt="Light Grey" /></a></td>
+  <td title="Kopell: 580 finishes"><a href="/maps/Kopell/"><img src="/ranks/maps/Kopell.png" width="180" height="112" alt="Kopell" /></a></td>
+  <td title="SimplePlay 3: 405 finishes"><a href="/maps/SimplePlay-32-3/"><img src="/ranks/maps/SimplePlay_3.png" width="180" height="112" alt="SimplePlay 3" /></a></td>
+  <td title="SimplePlay 2: 321 finishes"><a href="/maps/SimplePlay-32-2/"><img src="/ranks/maps/SimplePlay_2.png" width="180" height="112" alt="SimplePlay 2" /></a></td>
+  <td title="Naufrage: 69 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="NoMore! 2: 31 finishes"><a href="/maps/NoMore-33--32-2/"><img src="/ranks/maps/NoMore__2.png" width="180" height="112" alt="NoMore! 2" /></a></td>
+  <td title="Wailand: 30 finishes"><a href="/maps/Wailand/"><img src="/ranks/maps/Wailand.png" width="180" height="112" alt="Wailand" /></a></td>
+  <td title="Flappy Bird: 1245 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 1119 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Joyride 2: 425 finishes"><a href="/maps/Joyride-32-2/"><img src="/ranks/maps/Joyride_2.png" width="180" height="112" alt="Joyride 2" /></a></td>
+</tr>
+<tr><td>2014-06</td>
+  <td title="Kobra 2: 1873 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Absurd 2: 1802 finishes"><a href="/maps/Absurd-32-2/"><img src="/ranks/maps/Absurd_2.png" width="180" height="112" alt="Absurd 2" /></a></td>
+  <td title="Fluff: 1371 finishes"><a href="/maps/Fluff/"><img src="/ranks/maps/Fluff.png" width="180" height="112" alt="Fluff" /></a></td>
+  <td title="Coffee II: 217 finishes"><a href="/maps/Coffee-32-II/"><img src="/ranks/maps/Coffee_II.png" width="180" height="112" alt="Coffee II" /></a></td>
+  <td title="Coffee I: 175 finishes"><a href="/maps/Coffee-32-I/"><img src="/ranks/maps/Coffee_I.png" width="180" height="112" alt="Coffee I" /></a></td>
+  <td title="Peaceful Jungle: 166 finishes"><a href="/maps/Peaceful-32-Jungle/"><img src="/ranks/maps/Peaceful_Jungle.png" width="180" height="112" alt="Peaceful Jungle" /></a></td>
+  <td title="Naufrage 2: 54 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Falling Star: 29 finishes"><a href="/maps/Falling-32-Star/"><img src="/ranks/maps/Falling_Star.png" width="180" height="112" alt="Falling Star" /></a></td>
+  <td title="Spacetic: 28 finishes"><a href="/maps/Spacetic/"><img src="/ranks/maps/Spacetic.png" width="180" height="112" alt="Spacetic" /></a></td>
+  <td title="Flappy Bird: 1260 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 739 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="4of4: 702 finishes"><a href="/maps/4of4/"><img src="/ranks/maps/4of4.png" width="180" height="112" alt="4of4" /></a></td>
+</tr>
+<tr><td>2014-07</td>
+  <td title="Kobra 2: 2045 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Absurd 2: 1258 finishes"><a href="/maps/Absurd-32-2/"><img src="/ranks/maps/Absurd_2.png" width="180" height="112" alt="Absurd 2" /></a></td>
+  <td title="Kobra: 1195 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Awayst: 493 finishes"><a href="/maps/Awayst/"><img src="/ranks/maps/Awayst.png" width="180" height="112" alt="Awayst" /></a></td>
+  <td title="Coffee I: 328 finishes"><a href="/maps/Coffee-32-I/"><img src="/ranks/maps/Coffee_I.png" width="180" height="112" alt="Coffee I" /></a></td>
+  <td title="Kopell: 225 finishes"><a href="/maps/Kopell/"><img src="/ranks/maps/Kopell.png" width="180" height="112" alt="Kopell" /></a></td>
+  <td title="Supernova: 180 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Cursed Treasure: 42 finishes"><a href="/maps/Cursed-32-Treasure/"><img src="/ranks/maps/Cursed_Treasure.png" width="180" height="112" alt="Cursed Treasure" /></a></td>
+  <td title="Hardcore 11: 35 finishes"><a href="/maps/Hardcore-32-11/"><img src="/ranks/maps/Hardcore_11.png" width="180" height="112" alt="Hardcore 11" /></a></td>
+  <td title="Flappy Bird: 1198 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 606 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Lonely Swim 4: 554 finishes"><a href="/maps/Lonely-32-Swim-32-4/"><img src="/ranks/maps/Lonely_Swim_4.png" width="180" height="112" alt="Lonely Swim 4" /></a></td>
+</tr>
+<tr><td>2014-08</td>
+  <td title="Kobra 2: 1425 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Kobra: 1370 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Absurd 2: 1249 finishes"><a href="/maps/Absurd-32-2/"><img src="/ranks/maps/Absurd_2.png" width="180" height="112" alt="Absurd 2" /></a></td>
+  <td title="The Shire: 753 finishes"><a href="/maps/The-32-Shire/"><img src="/ranks/maps/The_Shire.png" width="180" height="112" alt="The Shire" /></a></td>
+  <td title="tihid: 339 finishes"><a href="/maps/tihid/"><img src="/ranks/maps/tihid.png" width="180" height="112" alt="tihid" /></a></td>
+  <td title="Coffee I: 244 finishes"><a href="/maps/Coffee-32-I/"><img src="/ranks/maps/Coffee_I.png" width="180" height="112" alt="Coffee I" /></a></td>
+  <td title="Death Valley: 77 finishes"><a href="/maps/Death-32-Valley/"><img src="/ranks/maps/Death_Valley.png" width="180" height="112" alt="Death Valley" /></a></td>
+  <td title="Wasteland: 49 finishes"><a href="/maps/Wasteland/"><img src="/ranks/maps/Wasteland.png" width="180" height="112" alt="Wasteland" /></a></td>
+  <td title="Biome Master: 39 finishes"><a href="/maps/Biome-32-Master/"><img src="/ranks/maps/Biome_Master.png" width="180" height="112" alt="Biome Master" /></a></td>
+  <td title="Flappy Bird: 818 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 503 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="No_Stuck: 453 finishes"><a href="/maps/No-95-Stuck/"><img src="/ranks/maps/No_Stuck.png" width="180" height="112" alt="No_Stuck" /></a></td>
+</tr>
+<tr><td>2014-09</td>
+  <td title="Houll: 2486 finishes"><a href="/maps/Houll/"><img src="/ranks/maps/Houll.png" width="180" height="112" alt="Houll" /></a></td>
+  <td title="Absurd 4: 1606 finishes"><a href="/maps/Absurd-32-4/"><img src="/ranks/maps/Absurd_4.png" width="180" height="112" alt="Absurd 4" /></a></td>
+  <td title="Kaylite: 1112 finishes"><a href="/maps/Kaylite/"><img src="/ranks/maps/Kaylite.png" width="180" height="112" alt="Kaylite" /></a></td>
+  <td title="Try Again: 383 finishes"><a href="/maps/Try-32-Again/"><img src="/ranks/maps/Try_Again.png" width="180" height="112" alt="Try Again" /></a></td>
+  <td title="Rivendell: 286 finishes"><a href="/maps/Rivendell/"><img src="/ranks/maps/Rivendell.png" width="180" height="112" alt="Rivendell" /></a></td>
+  <td title="Kopell: 179 finishes"><a href="/maps/Kopell/"><img src="/ranks/maps/Kopell.png" width="180" height="112" alt="Kopell" /></a></td>
+  <td title="Biome Master: 92 finishes"><a href="/maps/Biome-32-Master/"><img src="/ranks/maps/Biome_Master.png" width="180" height="112" alt="Biome Master" /></a></td>
+  <td title="Don't go: 79 finishes"><a href="/maps/Don-39-t-32-go/"><img src="/ranks/maps/Don_t_go.png" width="180" height="112" alt="Don't go" /></a></td>
+  <td title="Sand Dune: 72 finishes"><a href="/maps/Sand-32-Dune/"><img src="/ranks/maps/Sand_Dune.png" width="180" height="112" alt="Sand Dune" /></a></td>
+  <td title="Flappy Bird: 788 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Spallok: 688 finishes"><a href="/maps/Spallok/"><img src="/ranks/maps/Spallok.png" width="180" height="112" alt="Spallok" /></a></td>
+  <td title="Joyride: 480 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2014-10</td>
+  <td title="Kobra 3: 1415 finishes"><a href="/maps/Kobra-32-3/"><img src="/ranks/maps/Kobra_3.png" width="180" height="112" alt="Kobra 3" /></a></td>
+  <td title="Absurd 4: 1386 finishes"><a href="/maps/Absurd-32-4/"><img src="/ranks/maps/Absurd_4.png" width="180" height="112" alt="Absurd 4" /></a></td>
+  <td title="Kobra 2: 1115 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="SimplePlay 3: 254 finishes"><a href="/maps/SimplePlay-32-3/"><img src="/ranks/maps/SimplePlay_3.png" width="180" height="112" alt="SimplePlay 3" /></a></td>
+  <td title="Short Flight: 254 finishes"><a href="/maps/Short-32-Flight/"><img src="/ranks/maps/Short_Flight.png" width="180" height="112" alt="Short Flight" /></a></td>
+  <td title="The Shire: 229 finishes"><a href="/maps/The-32-Shire/"><img src="/ranks/maps/The_Shire.png" width="180" height="112" alt="The Shire" /></a></td>
+  <td title="Naufrage 2: 65 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Supernova: 51 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Tvyn: 42 finishes"><a href="/maps/Tvyn/"><img src="/ranks/maps/Tvyn.png" width="180" height="112" alt="Tvyn" /></a></td>
+  <td title="Killstreak 1: 1755 finishes"><a href="/maps/Killstreak-32-1/"><img src="/ranks/maps/Killstreak_1.png" width="180" height="112" alt="Killstreak 1" /></a></td>
+  <td title="Rollercoaster: 1583 finishes"><a href="/maps/Rollercoaster/"><img src="/ranks/maps/Rollercoaster.png" width="180" height="112" alt="Rollercoaster" /></a></td>
+  <td title="Flappy Bird: 1162 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2014-11</td>
+  <td title="Easy 1: 2117 finishes"><a href="/maps/Easy-32-1/"><img src="/ranks/maps/Easy_1.png" width="180" height="112" alt="Easy 1" /></a></td>
+  <td title="Absurd 4: 1322 finishes"><a href="/maps/Absurd-32-4/"><img src="/ranks/maps/Absurd_4.png" width="180" height="112" alt="Absurd 4" /></a></td>
+  <td title="Kobra 2: 1168 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Entei: 385 finishes"><a href="/maps/Entei/"><img src="/ranks/maps/Entei.png" width="180" height="112" alt="Entei" /></a></td>
+  <td title="Zoroark: 302 finishes"><a href="/maps/Zoroark/"><img src="/ranks/maps/Zoroark.png" width="180" height="112" alt="Zoroark" /></a></td>
+  <td title="Plue: 214 finishes"><a href="/maps/Plue/"><img src="/ranks/maps/Plue.png" width="180" height="112" alt="Plue" /></a></td>
+  <td title="Naufrage: 71 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Biome Master: 57 finishes"><a href="/maps/Biome-32-Master/"><img src="/ranks/maps/Biome_Master.png" width="180" height="112" alt="Biome Master" /></a></td>
+  <td title="Naufrage 2: 50 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Flappy Bird: 655 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Killstreak 1: 612 finishes"><a href="/maps/Killstreak-32-1/"><img src="/ranks/maps/Killstreak_1.png" width="180" height="112" alt="Killstreak 1" /></a></td>
+  <td title="No_Stuck: 326 finishes"><a href="/maps/No-95-Stuck/"><img src="/ranks/maps/No_Stuck.png" width="180" height="112" alt="No_Stuck" /></a></td>
+</tr>
+<tr><td>2014-12</td>
+  <td title="Teleport: 1420 finishes"><a href="/maps/Teleport/"><img src="/ranks/maps/Teleport.png" width="180" height="112" alt="Teleport" /></a></td>
+  <td title="Absurd 4: 1356 finishes"><a href="/maps/Absurd-32-4/"><img src="/ranks/maps/Absurd_4.png" width="180" height="112" alt="Absurd 4" /></a></td>
+  <td title="Epix: 1294 finishes"><a href="/maps/Epix/"><img src="/ranks/maps/Epix.png" width="180" height="112" alt="Epix" /></a></td>
+  <td title="Hookthrough: 2539 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Next Grey: 757 finishes"><a href="/maps/Next-32-Grey/"><img src="/ranks/maps/Next_Grey.png" width="180" height="112" alt="Next Grey" /></a></td>
+  <td title="Pisull: 711 finishes"><a href="/maps/Pisull/"><img src="/ranks/maps/Pisull.png" width="180" height="112" alt="Pisull" /></a></td>
+  <td title="leopold: 120 finishes"><a href="/maps/leopold/"><img src="/ranks/maps/leopold.png" width="180" height="112" alt="leopold" /></a></td>
+  <td title="Naufrage: 89 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Naufrage 2: 56 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Flappy Bird: 746 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="The Space Station: 688 finishes"><a href="/maps/The-32-Space-32-Station/"><img src="/ranks/maps/The_Space_Station.png" width="180" height="112" alt="The Space Station" /></a></td>
+  <td title="Joyride: 509 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2015-01</td>
+  <td title="Epix: 1467 finishes"><a href="/maps/Epix/"><img src="/ranks/maps/Epix.png" width="180" height="112" alt="Epix" /></a></td>
+  <td title="Kobra 2: 1277 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Absurd 4: 812 finishes"><a href="/maps/Absurd-32-4/"><img src="/ranks/maps/Absurd_4.png" width="180" height="112" alt="Absurd 4" /></a></td>
+  <td title="Clarity: 627 finishes"><a href="/maps/Clarity/"><img src="/ranks/maps/Clarity.png" width="180" height="112" alt="Clarity" /></a></td>
+  <td title="Hookthrough: 581 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Earthborn: 389 finishes"><a href="/maps/Earthborn/"><img src="/ranks/maps/Earthborn.png" width="180" height="112" alt="Earthborn" /></a></td>
+  <td title="Flying in the Sky: 56 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="leopold: 41 finishes"><a href="/maps/leopold/"><img src="/ranks/maps/leopold.png" width="180" height="112" alt="leopold" /></a></td>
+  <td title="Naufrage 2: 36 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Flappy Bird: 952 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 617 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Killstreak 1: 519 finishes"><a href="/maps/Killstreak-32-1/"><img src="/ranks/maps/Killstreak_1.png" width="180" height="112" alt="Killstreak 1" /></a></td>
+</tr>
+<tr><td>2015-02</td>
+  <td title="Just2Easy: 3526 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Introduction: 2639 finishes"><a href="/maps/Introduction/"><img src="/ranks/maps/Introduction.png" width="180" height="112" alt="Introduction" /></a></td>
+  <td title="Kobra 2: 956 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Hookthrough 2: 607 finishes"><a href="/maps/Hookthrough-32-2/"><img src="/ranks/maps/Hookthrough_2.png" width="180" height="112" alt="Hookthrough 2" /></a></td>
+  <td title="Hookthrough: 417 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Jvice: 403 finishes"><a href="/maps/Jvice/"><img src="/ranks/maps/Jvice.png" width="180" height="112" alt="Jvice" /></a></td>
+  <td title="Flying in the Sky: 66 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="In Da House: 66 finishes"><a href="/maps/In-32-Da-32-House/"><img src="/ranks/maps/In_Da_House.png" width="180" height="112" alt="In Da House" /></a></td>
+  <td title="Biome Master: 55 finishes"><a href="/maps/Biome-32-Master/"><img src="/ranks/maps/Biome_Master.png" width="180" height="112" alt="Biome Master" /></a></td>
+  <td title="Flappy Bird: 558 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 418 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Summer Breeze: 403 finishes"><a href="/maps/Summer-32-Breeze/"><img src="/ranks/maps/Summer_Breeze.png" width="180" height="112" alt="Summer Breeze" /></a></td>
+</tr>
+<tr><td>2015-03</td>
+  <td title="Just2Easy: 3630 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Gold Mine: 3372 finishes"><a href="/maps/Gold-32-Mine/"><img src="/ranks/maps/Gold_Mine.png" width="180" height="112" alt="Gold Mine" /></a></td>
+  <td title="ZeroX: 1723 finishes"><a href="/maps/ZeroX/"><img src="/ranks/maps/ZeroX.png" width="180" height="112" alt="ZeroX" /></a></td>
+  <td title="MonkeyDream: 1788 finishes"><a href="/maps/MonkeyDream/"><img src="/ranks/maps/MonkeyDream.png" width="180" height="112" alt="MonkeyDream" /></a></td>
+  <td title="MonkeyDream 2: 658 finishes"><a href="/maps/MonkeyDream-32-2/"><img src="/ranks/maps/MonkeyDream_2.png" width="180" height="112" alt="MonkeyDream 2" /></a></td>
+  <td title="Hookthrough: 560 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="lost_castle: 162 finishes"><a href="/maps/lost-95-castle/"><img src="/ranks/maps/lost_castle.png" width="180" height="112" alt="lost_castle" /></a></td>
+  <td title="Naufrage 2: 144 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Supernova: 54 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="SorGores 1: 3016 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+  <td title="Flappy Bird: 639 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 427 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2015-04</td>
+  <td title="Camouflage: 1817 finishes"><a href="/maps/Camouflage/"><img src="/ranks/maps/Camouflage.png" width="180" height="112" alt="Camouflage" /></a></td>
+  <td title="ZeroX: 1191 finishes"><a href="/maps/ZeroX/"><img src="/ranks/maps/ZeroX.png" width="180" height="112" alt="ZeroX" /></a></td>
+  <td title="Just2Easy: 1103 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="MonkeyDream: 505 finishes"><a href="/maps/MonkeyDream/"><img src="/ranks/maps/MonkeyDream.png" width="180" height="112" alt="MonkeyDream" /></a></td>
+  <td title="Hookthrough: 481 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="DayDrive: 422 finishes"><a href="/maps/DayDrive/"><img src="/ranks/maps/DayDrive.png" width="180" height="112" alt="DayDrive" /></a></td>
+  <td title="ClassicMonkez: 92 finishes"><a href="/maps/ClassicMonkez/"><img src="/ranks/maps/ClassicMonkez.png" width="180" height="112" alt="ClassicMonkez" /></a></td>
+  <td title="Supernova: 65 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="From Death to Destiny: 57 finishes"><a href="/maps/From-32-Death-32-to-32-Destiny/"><img src="/ranks/maps/From_Death_to_Destiny.png" width="180" height="112" alt="From Death to Destiny" /></a></td>
+  <td title="Flappy Bird: 702 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 627 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="UpNDown: 624 finishes"><a href="/maps/UpNDown/"><img src="/ranks/maps/UpNDown.png" width="180" height="112" alt="UpNDown" /></a></td>
+</tr>
+<tr><td>2015-05</td>
+  <td title="Water Lily: 2498 finishes"><a href="/maps/Water-32-Lily/"><img src="/ranks/maps/Water_Lily.png" width="180" height="112" alt="Water Lily" /></a></td>
+  <td title="Just2Easy: 1413 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Ice Water: 1401 finishes"><a href="/maps/Ice-32-Water/"><img src="/ranks/maps/Ice_Water.png" width="180" height="112" alt="Ice Water" /></a></td>
+  <td title="Sunny Land: 748 finishes"><a href="/maps/Sunny-32-Land/"><img src="/ranks/maps/Sunny_Land.png" width="180" height="112" alt="Sunny Land" /></a></td>
+  <td title="Hookthrough: 489 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Etna_1: 352 finishes"><a href="/maps/Etna-95-1/"><img src="/ranks/maps/Etna_1.png" width="180" height="112" alt="Etna_1" /></a></td>
+  <td title="Between the Mountains: 207 finishes"><a href="/maps/Between-32-the-32-Mountains/"><img src="/ranks/maps/Between_the_Mountains.png" width="180" height="112" alt="Between the Mountains" /></a></td>
+  <td title="Stoned.: 87 finishes"><a href="/maps/Stoned-46-/"><img src="/ranks/maps/Stoned_.png" width="180" height="112" alt="Stoned." /></a></td>
+  <td title="Aim 10.0: 48 finishes"><a href="/maps/Aim-32-10-46-0/"><img src="/ranks/maps/Aim_10_0.png" width="180" height="112" alt="Aim 10.0" /></a></td>
+  <td title="SorGores 1: 596 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+  <td title="Flappy Bird: 493 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Killstreak 1: 404 finishes"><a href="/maps/Killstreak-32-1/"><img src="/ranks/maps/Killstreak_1.png" width="180" height="112" alt="Killstreak 1" /></a></td>
+</tr>
+<tr><td>2015-06</td>
+  <td title="Hoo!: 2367 finishes"><a href="/maps/Hoo-33-/"><img src="/ranks/maps/Hoo_.png" width="180" height="112" alt="Hoo!" /></a></td>
+  <td title="4Nubs: 2023 finishes"><a href="/maps/4Nubs/"><img src="/ranks/maps/4Nubs.png" width="180" height="112" alt="4Nubs" /></a></td>
+  <td title="Water Lily: 1242 finishes"><a href="/maps/Water-32-Lily/"><img src="/ranks/maps/Water_Lily.png" width="180" height="112" alt="Water Lily" /></a></td>
+  <td title="Mirage: 973 finishes"><a href="/maps/Mirage/"><img src="/ranks/maps/Mirage.png" width="180" height="112" alt="Mirage" /></a></td>
+  <td title="Hookthrough: 447 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Sunny Land: 338 finishes"><a href="/maps/Sunny-32-Land/"><img src="/ranks/maps/Sunny_Land.png" width="180" height="112" alt="Sunny Land" /></a></td>
+  <td title="A World Beyond: 128 finishes"><a href="/maps/A-32-World-32-Beyond/"><img src="/ranks/maps/A_World_Beyond.png" width="180" height="112" alt="A World Beyond" /></a></td>
+  <td title="Deep Forest: 125 finishes"><a href="/maps/Deep-32-Forest/"><img src="/ranks/maps/Deep_Forest.png" width="180" height="112" alt="Deep Forest" /></a></td>
+  <td title="Naufrage 2: 36 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Flappy Bird: 613 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Heaven-time: 563 finishes"><a href="/maps/Heaven-45-time/"><img src="/ranks/maps/Heaven_time.png" width="180" height="112" alt="Heaven-time" /></a></td>
+  <td title="Joyride: 491 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2015-07</td>
+  <td title="Just2Easy: 2282 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="4Nubs: 1476 finishes"><a href="/maps/4Nubs/"><img src="/ranks/maps/4Nubs.png" width="180" height="112" alt="4Nubs" /></a></td>
+  <td title="Take it noobly: 1396 finishes"><a href="/maps/Take-32-it-32-noobly/"><img src="/ranks/maps/Take_it_noobly.png" width="180" height="112" alt="Take it noobly" /></a></td>
+  <td title="Vizur 2: 671 finishes"><a href="/maps/Vizur-32-2/"><img src="/ranks/maps/Vizur_2.png" width="180" height="112" alt="Vizur 2" /></a></td>
+  <td title="DeathHook: 597 finishes"><a href="/maps/DeathHook/"><img src="/ranks/maps/DeathHook.png" width="180" height="112" alt="DeathHook" /></a></td>
+  <td title="Outbreak: 379 finishes"><a href="/maps/Outbreak/"><img src="/ranks/maps/Outbreak.png" width="180" height="112" alt="Outbreak" /></a></td>
+  <td title="Naufrage 2: 60 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Supernova: 55 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Everdeen: 46 finishes"><a href="/maps/Everdeen/"><img src="/ranks/maps/Everdeen.png" width="180" height="112" alt="Everdeen" /></a></td>
+  <td title="Flappy Bird: 541 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Nytro: 486 finishes"><a href="/maps/Nytro/"><img src="/ranks/maps/Nytro.png" width="180" height="112" alt="Nytro" /></a></td>
+  <td title="Joyride: 359 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2015-08</td>
+  <td title="Kobra 4: 2811 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Just2Easy: 2160 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Goo!: 1411 finishes"><a href="/maps/Goo-33-/"><img src="/ranks/maps/Goo_.png" width="180" height="112" alt="Goo!" /></a></td>
+  <td title="Cup of Tee: 1072 finishes"><a href="/maps/Cup-32-of-32-Tee/"><img src="/ranks/maps/Cup_of_Tee.png" width="180" height="112" alt="Cup of Tee" /></a></td>
+  <td title="CYO: 490 finishes"><a href="/maps/CYO/"><img src="/ranks/maps/CYO.png" width="180" height="112" alt="CYO" /></a></td>
+  <td title="NightSky2: 444 finishes"><a href="/maps/NightSky2/"><img src="/ranks/maps/NightSky2.png" width="180" height="112" alt="NightSky2" /></a></td>
+  <td title="Naufrage 2: 120 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Supernova: 96 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Naufrage: 64 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Care for your Time: 1815 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+  <td title="Raid: 1041 finishes"><a href="/maps/Raid/"><img src="/ranks/maps/Raid.png" width="180" height="112" alt="Raid" /></a></td>
+  <td title="solo_castle: 553 finishes"><a href="/maps/solo-95-castle/"><img src="/ranks/maps/solo_castle.png" width="180" height="112" alt="solo_castle" /></a></td>
+</tr>
+<tr><td>2015-09</td>
+  <td title="It's Easy: 2431 finishes"><a href="/maps/It-39-s-32-Easy/"><img src="/ranks/maps/It_s_Easy.png" width="180" height="112" alt="It's Easy" /></a></td>
+  <td title="Just2Easy: 2352 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="BlueChaos: 1668 finishes"><a href="/maps/BlueChaos/"><img src="/ranks/maps/BlueChaos.png" width="180" height="112" alt="BlueChaos" /></a></td>
+  <td title="Monster: 1134 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Baby Aim 1.0: 677 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Slime: 610 finishes"><a href="/maps/Slime/"><img src="/ranks/maps/Slime.png" width="180" height="112" alt="Slime" /></a></td>
+  <td title="Naufrage 3: 228 finishes"><a href="/maps/Naufrage-32-3/"><img src="/ranks/maps/Naufrage_3.png" width="180" height="112" alt="Naufrage 3" /></a></td>
+  <td title="Flying in the Sky: 56 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="Supernova: 48 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Care for your Time: 994 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+  <td title="Flappy Bird: 581 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Cheepl: 441 finishes"><a href="/maps/Cheepl/"><img src="/ranks/maps/Cheepl.png" width="180" height="112" alt="Cheepl" /></a></td>
+</tr>
+<tr><td>2015-10</td>
+  <td title="Just2Easy: 2434 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="It's Easy: 1639 finishes"><a href="/maps/It-39-s-32-Easy/"><img src="/ranks/maps/It_s_Easy.png" width="180" height="112" alt="It's Easy" /></a></td>
+  <td title="BlueChaos: 1090 finishes"><a href="/maps/BlueChaos/"><img src="/ranks/maps/BlueChaos.png" width="180" height="112" alt="BlueChaos" /></a></td>
+  <td title="HookThrough3: 1830 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Monster: 521 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="MonkeyDream: 375 finishes"><a href="/maps/MonkeyDream/"><img src="/ranks/maps/MonkeyDream.png" width="180" height="112" alt="MonkeyDream" /></a></td>
+  <td title="Naufrage 2: 144 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Biome Master: 59 finishes"><a href="/maps/Biome-32-Master/"><img src="/ranks/maps/Biome_Master.png" width="180" height="112" alt="Biome Master" /></a></td>
+  <td title="Between the Mountains: 55 finishes"><a href="/maps/Between-32-the-32-Mountains/"><img src="/ranks/maps/Between_the_Mountains.png" width="180" height="112" alt="Between the Mountains" /></a></td>
+  <td title="Care for your Time: 505 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+  <td title="spy: 499 finishes"><a href="/maps/spy/"><img src="/ranks/maps/spy.png" width="180" height="112" alt="spy" /></a></td>
+  <td title="SorGores 1: 440 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2015-11</td>
+  <td title="Sunlight: 3258 finishes"><a href="/maps/Sunlight/"><img src="/ranks/maps/Sunlight.png" width="180" height="112" alt="Sunlight" /></a></td>
+  <td title="Just2Easy: 2601 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1161 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="HookThrough3: 1714 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Exit: 479 finishes"><a href="/maps/Exit/"><img src="/ranks/maps/Exit.png" width="180" height="112" alt="Exit" /></a></td>
+  <td title="Cup of Tee: 309 finishes"><a href="/maps/Cup-32-of-32-Tee/"><img src="/ranks/maps/Cup_of_Tee.png" width="180" height="112" alt="Cup of Tee" /></a></td>
+  <td title="Nostalgia: 337 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Between the Mountains: 67 finishes"><a href="/maps/Between-32-the-32-Mountains/"><img src="/ranks/maps/Between_the_Mountains.png" width="180" height="112" alt="Between the Mountains" /></a></td>
+  <td title="Underground: 54 finishes"><a href="/maps/Underground/"><img src="/ranks/maps/Underground.png" width="180" height="112" alt="Underground" /></a></td>
+  <td title="Mud: 2855 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Delension: 809 finishes"><a href="/maps/Delension/"><img src="/ranks/maps/Delension.png" width="180" height="112" alt="Delension" /></a></td>
+  <td title="ctf5_solo: 770 finishes"><a href="/maps/ctf5-95-solo/"><img src="/ranks/maps/ctf5_solo.png" width="180" height="112" alt="ctf5_solo" /></a></td>
+</tr>
+<tr><td>2015-12</td>
+  <td title="StepByStep: 6585 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Just2Easy: 2462 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Sunlight: 1521 finishes"><a href="/maps/Sunlight/"><img src="/ranks/maps/Sunlight.png" width="180" height="112" alt="Sunlight" /></a></td>
+  <td title="HookThrough3: 704 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Monster: 436 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="MonkeyDream: 419 finishes"><a href="/maps/MonkeyDream/"><img src="/ranks/maps/MonkeyDream.png" width="180" height="112" alt="MonkeyDream" /></a></td>
+  <td title="Grandpa: 401 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Memories: 88 finishes"><a href="/maps/Memories/"><img src="/ranks/maps/Memories.png" width="180" height="112" alt="Memories" /></a></td>
+  <td title="Flying in the Sky: 68 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="Mud: 1308 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 668 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 444 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2016-01</td>
+  <td title="StepByStep: 3271 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Just2Easy: 2356 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Epix: 1374 finishes"><a href="/maps/Epix/"><img src="/ranks/maps/Epix.png" width="180" height="112" alt="Epix" /></a></td>
+  <td title="Noo!: 1162 finishes"><a href="/maps/Noo-33-/"><img src="/ranks/maps/Noo_.png" width="180" height="112" alt="Noo!" /></a></td>
+  <td title="HookThrough3: 763 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Hookthrough: 589 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Supernova: 153 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Grandpa: 133 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Naufrage 3: 108 finishes"><a href="/maps/Naufrage-32-3/"><img src="/ranks/maps/Naufrage_3.png" width="180" height="112" alt="Naufrage 3" /></a></td>
+  <td title="Mud: 1159 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 429 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 364 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2016-02</td>
+  <td title="Cool: 2544 finishes"><a href="/maps/Cool/"><img src="/ranks/maps/Cool.png" width="180" height="112" alt="Cool" /></a></td>
+  <td title="Just2Easy: 2374 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 2086 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="HookThrough3: 969 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Noo!: 590 finishes"><a href="/maps/Noo-33-/"><img src="/ranks/maps/Noo_.png" width="180" height="112" alt="Noo!" /></a></td>
+  <td title="Monster: 361 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Good Ol' Days: 166 finishes"><a href="/maps/Good-32-Ol-39--32-Days/"><img src="/ranks/maps/Good_Ol__Days.png" width="180" height="112" alt="Good Ol' Days" /></a></td>
+  <td title="Supernova: 103 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Grandpa: 76 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Mud: 1098 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Gorou: 787 finishes"><a href="/maps/Gorou/"><img src="/ranks/maps/Gorou.png" width="180" height="112" alt="Gorou" /></a></td>
+  <td title="Flappy Bird: 501 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2016-03</td>
+  <td title="Bullets: 3365 finishes"><a href="/maps/Bullets/"><img src="/ranks/maps/Bullets.png" width="180" height="112" alt="Bullets" /></a></td>
+  <td title="StepByStep: 1803 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Just2Easy: 1709 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Wonderland: 808 finishes"><a href="/maps/Wonderland/"><img src="/ranks/maps/Wonderland.png" width="180" height="112" alt="Wonderland" /></a></td>
+  <td title="Pharice: 747 finishes"><a href="/maps/Pharice/"><img src="/ranks/maps/Pharice.png" width="180" height="112" alt="Pharice" /></a></td>
+  <td title="Hookthrough: 497 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="lost_castle: 152 finishes"><a href="/maps/lost-95-castle/"><img src="/ranks/maps/lost_castle.png" width="180" height="112" alt="lost_castle" /></a></td>
+  <td title="Flow: 146 finishes"><a href="/maps/Flow/"><img src="/ranks/maps/Flow.png" width="180" height="112" alt="Flow" /></a></td>
+  <td title="Supernova: 103 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Mud: 821 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 427 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 379 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2016-04</td>
+  <td title="CandyLand: 2945 finishes"><a href="/maps/CandyLand/"><img src="/ranks/maps/CandyLand.png" width="180" height="112" alt="CandyLand" /></a></td>
+  <td title="Just2Easy: 1869 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 1402 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="HookThrough3: 699 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Hookthrough: 584 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Baby Aim 2.0: 454 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Supernova: 161 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Nostalgia: 127 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Grandpa: 118 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Flappy Bird: 653 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Mud: 498 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="SorGores 1: 338 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2016-05</td>
+  <td title="Just2Easy: 1955 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 1435 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Lonely: 1358 finishes"><a href="/maps/Lonely/"><img src="/ranks/maps/Lonely.png" width="180" height="112" alt="Lonely" /></a></td>
+  <td title="Baby Aim 3.0: 859 finishes"><a href="/maps/Baby-32-Aim-32-3-46-0/"><img src="/ranks/maps/Baby_Aim_3_0.png" width="180" height="112" alt="Baby Aim 3.0" /></a></td>
+  <td title="Noovice!: 755 finishes"><a href="/maps/Noovice-33-/"><img src="/ranks/maps/Noovice_.png" width="180" height="112" alt="Noovice!" /></a></td>
+  <td title="Monster: 624 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Stoned. 2: 364 finishes"><a href="/maps/Stoned-46--32-2/"><img src="/ranks/maps/Stoned__2.png" width="180" height="112" alt="Stoned. 2" /></a></td>
+  <td title="Nostalgia: 82 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="leopold: 61 finishes"><a href="/maps/leopold/"><img src="/ranks/maps/leopold.png" width="180" height="112" alt="leopold" /></a></td>
+  <td title="Desert Night: 642 finishes"><a href="/maps/Desert-32-Night/"><img src="/ranks/maps/Desert_Night.png" width="180" height="112" alt="Desert Night" /></a></td>
+  <td title="Flappy Bird: 561 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 350 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2016-06</td>
+  <td title="Just2Easy: 2356 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 2027 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Kobra 4: 1154 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="HookThrough3: 558 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Baby Aim 3.0: 542 finishes"><a href="/maps/Baby-32-Aim-32-3-46-0/"><img src="/ranks/maps/Baby_Aim_3_0.png" width="180" height="112" alt="Baby Aim 3.0" /></a></td>
+  <td title="Monster: 477 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="GenericRush1: 161 finishes"><a href="/maps/GenericRush1/"><img src="/ranks/maps/GenericRush1.png" width="180" height="112" alt="GenericRush1" /></a></td>
+  <td title="Nostalgia: 146 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Supernova: 107 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="SorGores 1: 430 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+  <td title="Flappy Bird: 418 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Desert Night: 378 finishes"><a href="/maps/Desert-32-Night/"><img src="/ranks/maps/Desert_Night.png" width="180" height="112" alt="Desert Night" /></a></td>
+</tr>
+<tr><td>2016-07</td>
+  <td title="Just2Easy: 1823 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 1386 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Jungle Camp: 1305 finishes"><a href="/maps/Jungle-32-Camp/"><img src="/ranks/maps/Jungle_Camp.png" width="180" height="112" alt="Jungle Camp" /></a></td>
+  <td title="HookThrough3: 422 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Monster: 411 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Baby Aim 1.0: 380 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="EscapeTheCave: 199 finishes"><a href="/maps/EscapeTheCave/"><img src="/ranks/maps/EscapeTheCave.png" width="180" height="112" alt="EscapeTheCave" /></a></td>
+  <td title="Naufrage 2: 90 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="DreamWorld: 87 finishes"><a href="/maps/DreamWorld/"><img src="/ranks/maps/DreamWorld.png" width="180" height="112" alt="DreamWorld" /></a></td>
+  <td title="Lucid Dream: 1528 finishes"><a href="/maps/Lucid-32-Dream/"><img src="/ranks/maps/Lucid_Dream.png" width="180" height="112" alt="Lucid Dream" /></a></td>
+  <td title="Flappy Bird: 403 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 361 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2016-08</td>
+  <td title="(wasntme): 2301 finishes"><a href="/maps/-40-wasntme-41-/"><img src="/ranks/maps/_wasntme_.png" width="180" height="112" alt="(wasntme)" /></a></td>
+  <td title="Just2Easy: 1887 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Cartoon: 1699 finishes"><a href="/maps/Cartoon/"><img src="/ranks/maps/Cartoon.png" width="180" height="112" alt="Cartoon" /></a></td>
+  <td title="4 NoooBs: 1022 finishes"><a href="/maps/4-32-NoooBs/"><img src="/ranks/maps/4_NoooBs.png" width="180" height="112" alt="4 NoooBs" /></a></td>
+  <td title="Monster: 756 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="HookThrough3: 475 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Stronghold: 257 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Aviate: 157 finishes"><a href="/maps/Aviate/"><img src="/ranks/maps/Aviate.png" width="180" height="112" alt="Aviate" /></a></td>
+  <td title="Nostalgia: 111 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Lucid Dream: 949 finishes"><a href="/maps/Lucid-32-Dream/"><img src="/ranks/maps/Lucid_Dream.png" width="180" height="112" alt="Lucid Dream" /></a></td>
+  <td title="BlackBear7: 748 finishes"><a href="/maps/BlackBear7/"><img src="/ranks/maps/BlackBear7.png" width="180" height="112" alt="BlackBear7" /></a></td>
+  <td title="Increase Your Speed: 717 finishes"><a href="/maps/Increase-32-Your-32-Speed/"><img src="/ranks/maps/Increase_Your_Speed.png" width="180" height="112" alt="Increase Your Speed" /></a></td>
+</tr>
+<tr><td>2016-09</td>
+  <td title="Just2Easy: 1816 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 1219 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Kobra 4: 741 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="HookThrough3: 565 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Monster: 421 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="4 NoooBs: 325 finishes"><a href="/maps/4-32-NoooBs/"><img src="/ranks/maps/4_NoooBs.png" width="180" height="112" alt="4 NoooBs" /></a></td>
+  <td title="Good Ol' Days 2: 183 finishes"><a href="/maps/Good-32-Ol-39--32-Days-32-2/"><img src="/ranks/maps/Good_Ol__Days_2.png" width="180" height="112" alt="Good Ol' Days 2" /></a></td>
+  <td title="Zoe: 165 finishes"><a href="/maps/Zoe/"><img src="/ranks/maps/Zoe.png" width="180" height="112" alt="Zoe" /></a></td>
+  <td title="Potty: 106 finishes"><a href="/maps/Potty/"><img src="/ranks/maps/Potty.png" width="180" height="112" alt="Potty" /></a></td>
+  <td title="Lucid Dream: 472 finishes"><a href="/maps/Lucid-32-Dream/"><img src="/ranks/maps/Lucid_Dream.png" width="180" height="112" alt="Lucid Dream" /></a></td>
+  <td title="Flappy Bird: 301 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="SorGores 1: 300 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2016-10</td>
+  <td title="Looney: 1706 finishes"><a href="/maps/Looney/"><img src="/ranks/maps/Looney.png" width="180" height="112" alt="Looney" /></a></td>
+  <td title="Just2Easy: 1572 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 1227 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Magnitude: 646 finishes"><a href="/maps/Magnitude/"><img src="/ranks/maps/Magnitude.png" width="180" height="112" alt="Magnitude" /></a></td>
+  <td title="Hookthrough: 360 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Noo!: 258 finishes"><a href="/maps/Noo-33-/"><img src="/ranks/maps/Noo_.png" width="180" height="112" alt="Noo!" /></a></td>
+  <td title="Holy Key: 242 finishes"><a href="/maps/Holy-32-Key/"><img src="/ranks/maps/Holy_Key.png" width="180" height="112" alt="Holy Key" /></a></td>
+  <td title="Nostalgia: 81 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="A World Beyond: 71 finishes"><a href="/maps/A-32-World-32-Beyond/"><img src="/ranks/maps/A_World_Beyond.png" width="180" height="112" alt="A World Beyond" /></a></td>
+  <td title="Anaphore: 1063 finishes"><a href="/maps/Anaphore/"><img src="/ranks/maps/Anaphore.png" width="180" height="112" alt="Anaphore" /></a></td>
+  <td title="Lucid Dream: 236 finishes"><a href="/maps/Lucid-32-Dream/"><img src="/ranks/maps/Lucid_Dream.png" width="180" height="112" alt="Lucid Dream" /></a></td>
+  <td title="Joyride: 235 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2016-11</td>
+  <td title="newbee: 3937 finishes"><a href="/maps/newbee/"><img src="/ranks/maps/newbee.png" width="180" height="112" alt="newbee" /></a></td>
+  <td title="Empire Desp: 1084 finishes"><a href="/maps/Empire-32-Desp/"><img src="/ranks/maps/Empire_Desp.png" width="180" height="112" alt="Empire Desp" /></a></td>
+  <td title="Just2Easy: 1031 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="idk: 576 finishes"><a href="/maps/idk/"><img src="/ranks/maps/idk.png" width="180" height="112" alt="idk" /></a></td>
+  <td title="Hookthrough: 384 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="HookThrough3: 342 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Supernova: 95 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Grandpa: 75 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Naufrage: 65 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Anaphore: 568 finishes"><a href="/maps/Anaphore/"><img src="/ranks/maps/Anaphore.png" width="180" height="112" alt="Anaphore" /></a></td>
+  <td title="Mud: 233 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Lucid Dream: 196 finishes"><a href="/maps/Lucid-32-Dream/"><img src="/ranks/maps/Lucid_Dream.png" width="180" height="112" alt="Lucid Dream" /></a></td>
+</tr>
+<tr><td>2016-12</td>
+  <td title="Cuboid: 1730 finishes"><a href="/maps/Cuboid/"><img src="/ranks/maps/Cuboid.png" width="180" height="112" alt="Cuboid" /></a></td>
+  <td title="Maui Wowie: 1636 finishes"><a href="/maps/Maui-32-Wowie/"><img src="/ranks/maps/Maui_Wowie.png" width="180" height="112" alt="Maui Wowie" /></a></td>
+  <td title="newbee: 1466 finishes"><a href="/maps/newbee/"><img src="/ranks/maps/newbee.png" width="180" height="112" alt="newbee" /></a></td>
+  <td title="Bob: 946 finishes"><a href="/maps/Bob/"><img src="/ranks/maps/Bob.png" width="180" height="112" alt="Bob" /></a></td>
+  <td title="Baby Aim 2.0: 266 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Imposand: 262 finishes"><a href="/maps/Imposand/"><img src="/ranks/maps/Imposand.png" width="180" height="112" alt="Imposand" /></a></td>
+  <td title="Stronghold: 166 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Nostalgia: 130 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Naufrage 3: 80 finishes"><a href="/maps/Naufrage-32-3/"><img src="/ranks/maps/Naufrage_3.png" width="180" height="112" alt="Naufrage 3" /></a></td>
+  <td title="TOPOS: 670 finishes"><a href="/maps/TOPOS/"><img src="/ranks/maps/TOPOS.png" width="180" height="112" alt="TOPOS" /></a></td>
+  <td title="Joyride: 321 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Flappy Bird: 314 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2017-01</td>
+  <td title="Just2Easy: 1754 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1621 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Cuboid: 1048 finishes"><a href="/maps/Cuboid/"><img src="/ranks/maps/Cuboid.png" width="180" height="112" alt="Cuboid" /></a></td>
+  <td title="Green Race: 723 finishes"><a href="/maps/Green-32-Race/"><img src="/ranks/maps/Green_Race.png" width="180" height="112" alt="Green Race" /></a></td>
+  <td title="SimplePlay 4: 518 finishes"><a href="/maps/SimplePlay-32-4/"><img src="/ranks/maps/SimplePlay_4.png" width="180" height="112" alt="SimplePlay 4" /></a></td>
+  <td title="HookThrough3: 381 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Nucl: 230 finishes"><a href="/maps/Nucl/"><img src="/ranks/maps/Nucl.png" width="180" height="112" alt="Nucl" /></a></td>
+  <td title="Indicud: 176 finishes"><a href="/maps/Indicud/"><img src="/ranks/maps/Indicud.png" width="180" height="112" alt="Indicud" /></a></td>
+  <td title="SkyLand: 166 finishes"><a href="/maps/SkyLand/"><img src="/ranks/maps/SkyLand.png" width="180" height="112" alt="SkyLand" /></a></td>
+  <td title="TOPOS: 554 finishes"><a href="/maps/TOPOS/"><img src="/ranks/maps/TOPOS.png" width="180" height="112" alt="TOPOS" /></a></td>
+  <td title="Flappy Bird: 393 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="SorGores 1: 337 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2017-02</td>
+  <td title="Just2Easy: 1338 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1236 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="newbee: 1053 finishes"><a href="/maps/newbee/"><img src="/ranks/maps/newbee.png" width="180" height="112" alt="newbee" /></a></td>
+  <td title="Monster: 450 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="HookThrough3: 445 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Baby Aim 1.0: 336 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Nostalgia: 152 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Supernova: 86 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Grandpa: 73 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="TOPOS: 305 finishes"><a href="/maps/TOPOS/"><img src="/ranks/maps/TOPOS.png" width="180" height="112" alt="TOPOS" /></a></td>
+  <td title="Lucid Dream: 257 finishes"><a href="/maps/Lucid-32-Dream/"><img src="/ranks/maps/Lucid_Dream.png" width="180" height="112" alt="Lucid Dream" /></a></td>
+  <td title="Flappy Bird: 255 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2017-03</td>
+  <td title="Just2Easy: 1241 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 990 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="newbee: 943 finishes"><a href="/maps/newbee/"><img src="/ranks/maps/newbee.png" width="180" height="112" alt="newbee" /></a></td>
+  <td title="The East Desert: 574 finishes"><a href="/maps/The-32-East-32-Desert/"><img src="/ranks/maps/The_East_Desert.png" width="180" height="112" alt="The East Desert" /></a></td>
+  <td title="Baby Aim 1.0: 474 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Monster: 443 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Nostalgia: 161 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Naufrage: 133 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Naufrage 2: 122 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Whitemoon: 479 finishes"><a href="/maps/Whitemoon/"><img src="/ranks/maps/Whitemoon.png" width="180" height="112" alt="Whitemoon" /></a></td>
+  <td title="Care for your Time: 258 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+  <td title="Flappy Bird: 252 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2017-04</td>
+  <td title="Just2Easy: 1714 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1312 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 2: 1146 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Monster: 424 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="HookThrough3: 352 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Tricktee: 328 finishes"><a href="/maps/Tricktee/"><img src="/ranks/maps/Tricktee.png" width="180" height="112" alt="Tricktee" /></a></td>
+  <td title="nullptr: 567 finishes"><a href="/maps/nullptr/"><img src="/ranks/maps/nullptr.png" width="180" height="112" alt="nullptr" /></a></td>
+  <td title="Nostalgia: 145 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Supernova: 117 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Flappy Bird: 394 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 299 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="SorGores 1: 211 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2017-05</td>
+  <td title="Just2Easy: 1810 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1190 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 2: 1028 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Dizzy: 591 finishes"><a href="/maps/Dizzy/"><img src="/ranks/maps/Dizzy.png" width="180" height="112" alt="Dizzy" /></a></td>
+  <td title="HookThrough3: 505 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Monster: 395 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="nullptr: 134 finishes"><a href="/maps/nullptr/"><img src="/ranks/maps/nullptr.png" width="180" height="112" alt="nullptr" /></a></td>
+  <td title="Nostalgia: 117 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Grandpa: 110 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="MorningStar: 786 finishes"><a href="/maps/MorningStar/"><img src="/ranks/maps/MorningStar.png" width="180" height="112" alt="MorningStar" /></a></td>
+  <td title="Flappy Bird: 257 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 210 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2017-06</td>
+  <td title="Just2Easy: 1536 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1038 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 2: 1035 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Dizzy: 684 finishes"><a href="/maps/Dizzy/"><img src="/ranks/maps/Dizzy.png" width="180" height="112" alt="Dizzy" /></a></td>
+  <td title="HookThrough3: 527 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Baby Aim 2.0: 387 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Stronghold: 166 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Naufrage 2: 134 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Flying in the Sky: 99 finishes"><a href="/maps/Flying-32-in-32-the-32-Sky/"><img src="/ranks/maps/Flying_in_the_Sky.png" width="180" height="112" alt="Flying in the Sky" /></a></td>
+  <td title="MorningStar: 258 finishes"><a href="/maps/MorningStar/"><img src="/ranks/maps/MorningStar.png" width="180" height="112" alt="MorningStar" /></a></td>
+  <td title="run_guy_25: 239 finishes"><a href="/maps/run-95-guy-95-25/"><img src="/ranks/maps/run_guy_25.png" width="180" height="112" alt="run_guy_25" /></a></td>
+  <td title="Joyride: 235 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2017-07</td>
+  <td title="Just2Easy: 1914 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1288 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="StepByStep: 1130 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Tropica: 1545 finishes"><a href="/maps/Tropica/"><img src="/ranks/maps/Tropica.png" width="180" height="112" alt="Tropica" /></a></td>
+  <td title="Purple Panic 4: 1288 finishes"><a href="/maps/Purple-32-Panic-32-4/"><img src="/ranks/maps/Purple_Panic_4.png" width="180" height="112" alt="Purple Panic 4" /></a></td>
+  <td title="Desoxyribonukleinsäure: 1038 finishes"><a href="/maps/Desoxyribonukleins-228-ure/"><img src="/ranks/maps/Desoxyribonukleins__ure.png" width="180" height="112" alt="Desoxyribonukleinsäure" /></a></td>
+  <td title="SkyLand2: 174 finishes"><a href="/maps/SkyLand2/"><img src="/ranks/maps/SkyLand2.png" width="180" height="112" alt="SkyLand2" /></a></td>
+  <td title="Rogue World: 124 finishes"><a href="/maps/Rogue-32-World/"><img src="/ranks/maps/Rogue_World.png" width="180" height="112" alt="Rogue World" /></a></td>
+  <td title="Nostalgia: 120 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="SkipIt2: 760 finishes"><a href="/maps/SkipIt2/"><img src="/ranks/maps/SkipIt2.png" width="180" height="112" alt="SkipIt2" /></a></td>
+  <td title="Verification 2.2: 467 finishes"><a href="/maps/Verification-32-2-46-2/"><img src="/ranks/maps/Verification_2_2.png" width="180" height="112" alt="Verification 2.2" /></a></td>
+  <td title="SorGores 1: 336 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2017-08</td>
+  <td title="Maui Wowie 2: 2416 finishes"><a href="/maps/Maui-32-Wowie-32-2/"><img src="/ranks/maps/Maui_Wowie_2.png" width="180" height="112" alt="Maui Wowie 2" /></a></td>
+  <td title="Kobra: 1923 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Just2Easy: 1661 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Monster: 526 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="HookThrough3: 490 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Tropica: 485 finishes"><a href="/maps/Tropica/"><img src="/ranks/maps/Tropica.png" width="180" height="112" alt="Tropica" /></a></td>
+  <td title="Stronghold: 195 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Rogue World: 148 finishes"><a href="/maps/Rogue-32-World/"><img src="/ranks/maps/Rogue_World.png" width="180" height="112" alt="Rogue World" /></a></td>
+  <td title="Nostalgia: 147 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Flappy Bird: 421 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="CrashTV: 335 finishes"><a href="/maps/CrashTV/"><img src="/ranks/maps/CrashTV.png" width="180" height="112" alt="CrashTV" /></a></td>
+  <td title="Joyride: 311 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2017-09</td>
+  <td title="Just2Easy: 1640 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1485 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 2: 986 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="The Bunker: 398 finishes"><a href="/maps/The-32-Bunker/"><img src="/ranks/maps/The_Bunker.png" width="180" height="112" alt="The Bunker" /></a></td>
+  <td title="Tropica: 227 finishes"><a href="/maps/Tropica/"><img src="/ranks/maps/Tropica.png" width="180" height="112" alt="Tropica" /></a></td>
+  <td title="Baby Aim 1.0: 209 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Nostalgia: 105 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Naufrage 3: 86 finishes"><a href="/maps/Naufrage-32-3/"><img src="/ranks/maps/Naufrage_3.png" width="180" height="112" alt="Naufrage 3" /></a></td>
+  <td title="Naufrage: 80 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Flappy Bird: 337 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Mud: 283 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Joyride: 238 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2017-10</td>
+  <td title="Just2Easy: 1558 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1409 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 2: 1166 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="HookThrough3: 379 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Baby Aim 1.0: 336 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Monster: 304 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Offpanic: 348 finishes"><a href="/maps/Offpanic/"><img src="/ranks/maps/Offpanic.png" width="180" height="112" alt="Offpanic" /></a></td>
+  <td title="Stronghold: 132 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Stoned. 2: 89 finishes"><a href="/maps/Stoned-46--32-2/"><img src="/ranks/maps/Stoned__2.png" width="180" height="112" alt="Stoned. 2" /></a></td>
+  <td title="SorGores 1: 269 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+  <td title="Joyride: 197 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="No_Stuck: 158 finishes"><a href="/maps/No-95-Stuck/"><img src="/ranks/maps/No_Stuck.png" width="180" height="112" alt="No_Stuck" /></a></td>
+</tr>
+<tr><td>2017-11</td>
+  <td title="Just2Easy: 1421 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 2: 1246 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Kobra: 988 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Hookthrough: 358 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Baby Aim 1.0: 257 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Monster: 243 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Naufrage: 98 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Stronghold: 84 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Nostalgia: 82 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Mud: 347 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 339 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Rope swing: 233 finishes"><a href="/maps/Rope-32-swing/"><img src="/ranks/maps/Rope_swing.png" width="180" height="112" alt="Rope swing" /></a></td>
+</tr>
+<tr><td>2017-12</td>
+  <td title="Just2Easy: 1240 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 4: 921 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Kobra: 887 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Hookthrough: 386 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="MonkeyDream: 255 finishes"><a href="/maps/MonkeyDream/"><img src="/ranks/maps/MonkeyDream.png" width="180" height="112" alt="MonkeyDream" /></a></td>
+  <td title="Dizzy: 224 finishes"><a href="/maps/Dizzy/"><img src="/ranks/maps/Dizzy.png" width="180" height="112" alt="Dizzy" /></a></td>
+  <td title="Stronghold 2: 363 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="blur: 86 finishes"><a href="/maps/blur/"><img src="/ranks/maps/blur.png" width="180" height="112" alt="blur" /></a></td>
+  <td title="Supernova: 70 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Mud: 507 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="SorGores 1: 258 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+  <td title="Joyride: 212 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2018-01</td>
+  <td title="Kobra 4: 1162 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Just2Easy: 1116 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1067 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="rizek: 1333 finishes"><a href="/maps/rizek/"><img src="/ranks/maps/rizek.png" width="180" height="112" alt="rizek" /></a></td>
+  <td title="Hookthrough: 261 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="HookThrough3: 224 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Skave: 301 finishes"><a href="/maps/Skave/"><img src="/ranks/maps/Skave.png" width="180" height="112" alt="Skave" /></a></td>
+  <td title="Stronghold: 121 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Stronghold 2: 118 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Mud: 882 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Joyride: 223 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Care for your Time: 214 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+</tr>
+<tr><td>2018-02</td>
+  <td title="Just2Easy: 1190 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1044 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 4: 1019 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="rizek: 457 finishes"><a href="/maps/rizek/"><img src="/ranks/maps/rizek.png" width="180" height="112" alt="rizek" /></a></td>
+  <td title="Baby Aim 1.0: 220 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="HookThrough3: 218 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Flux: 417 finishes"><a href="/maps/Flux/"><img src="/ranks/maps/Flux.png" width="180" height="112" alt="Flux" /></a></td>
+  <td title="Stronghold: 156 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Skave: 99 finishes"><a href="/maps/Skave/"><img src="/ranks/maps/Skave.png" width="180" height="112" alt="Skave" /></a></td>
+  <td title="Flappy Bird: 872 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="SorGores 1: 383 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+  <td title="Mud: 378 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+</tr>
+<tr><td>2018-03</td>
+  <td title="Just2Easy: 1442 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 1132 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 4: 888 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="rizek: 269 finishes"><a href="/maps/rizek/"><img src="/ranks/maps/rizek.png" width="180" height="112" alt="rizek" /></a></td>
+  <td title="Cup of Tee: 261 finishes"><a href="/maps/Cup-32-of-32-Tee/"><img src="/ranks/maps/Cup_of_Tee.png" width="180" height="112" alt="Cup of Tee" /></a></td>
+  <td title="Monster: 201 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Flux 2: 418 finishes"><a href="/maps/Flux-32-2/"><img src="/ranks/maps/Flux_2.png" width="180" height="112" alt="Flux 2" /></a></td>
+  <td title="Stronghold: 223 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Stronghold 2: 91 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Impetuous: 649 finishes"><a href="/maps/Impetuous/"><img src="/ranks/maps/Impetuous.png" width="180" height="112" alt="Impetuous" /></a></td>
+  <td title="Mud: 483 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="SorGores 1: 258 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2018-04</td>
+  <td title="Just2Easy: 1641 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 4: 686 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="newbee: 653 finishes"><a href="/maps/newbee/"><img src="/ranks/maps/newbee.png" width="180" height="112" alt="newbee" /></a></td>
+  <td title="Hookthrough: 294 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="HookThrough3: 291 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="rizek: 288 finishes"><a href="/maps/rizek/"><img src="/ranks/maps/rizek.png" width="180" height="112" alt="rizek" /></a></td>
+  <td title="Time to Switch: 178 finishes"><a href="/maps/Time-32-to-32-Switch/"><img src="/ranks/maps/Time_to_Switch.png" width="180" height="112" alt="Time to Switch" /></a></td>
+  <td title="Grandpa: 138 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Stronghold: 115 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Bullet Master: 905 finishes"><a href="/maps/Bullet-32-Master/"><img src="/ranks/maps/Bullet_Master.png" width="180" height="112" alt="Bullet Master" /></a></td>
+  <td title="Mirror: 685 finishes"><a href="/maps/Mirror/"><img src="/ranks/maps/Mirror.png" width="180" height="112" alt="Mirror" /></a></td>
+  <td title="Mud: 396 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+</tr>
+<tr><td>2018-05</td>
+  <td title="Just2Easy: 1187 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 2: 651 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Absurd 4: 577 finishes"><a href="/maps/Absurd-32-4/"><img src="/ranks/maps/Absurd_4.png" width="180" height="112" alt="Absurd 4" /></a></td>
+  <td title="Crimson Woods: 725 finishes"><a href="/maps/Crimson-32-Woods/"><img src="/ranks/maps/Crimson_Woods.png" width="180" height="112" alt="Crimson Woods" /></a></td>
+  <td title="HookThrough3: 346 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="rizek: 294 finishes"><a href="/maps/rizek/"><img src="/ranks/maps/rizek.png" width="180" height="112" alt="rizek" /></a></td>
+  <td title="Naufrage: 156 finishes"><a href="/maps/Naufrage/"><img src="/ranks/maps/Naufrage.png" width="180" height="112" alt="Naufrage" /></a></td>
+  <td title="Naufrage 3: 116 finishes"><a href="/maps/Naufrage-32-3/"><img src="/ranks/maps/Naufrage_3.png" width="180" height="112" alt="Naufrage 3" /></a></td>
+  <td title="Supernova: 104 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Cavity: 689 finishes"><a href="/maps/Cavity/"><img src="/ranks/maps/Cavity.png" width="180" height="112" alt="Cavity" /></a></td>
+  <td title="Timebreaker: 346 finishes"><a href="/maps/Timebreaker/"><img src="/ranks/maps/Timebreaker.png" width="180" height="112" alt="Timebreaker" /></a></td>
+  <td title="Mud: 310 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+</tr>
+<tr><td>2018-06</td>
+  <td title="Kobra 2: 973 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Just2Easy: 945 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 619 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Monster: 362 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Crimson Woods: 242 finishes"><a href="/maps/Crimson-32-Woods/"><img src="/ranks/maps/Crimson_Woods.png" width="180" height="112" alt="Crimson Woods" /></a></td>
+  <td title="Noo!: 217 finishes"><a href="/maps/Noo-33-/"><img src="/ranks/maps/Noo_.png" width="180" height="112" alt="Noo!" /></a></td>
+  <td title="Stronghold: 207 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Stronghold 2: 183 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Naufrage 2: 91 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Cavity: 598 finishes"><a href="/maps/Cavity/"><img src="/ranks/maps/Cavity.png" width="180" height="112" alt="Cavity" /></a></td>
+  <td title="SorGores 1: 294 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+  <td title="Mud: 252 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+</tr>
+<tr><td>2018-07</td>
+  <td title="Just2Easy: 1115 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 597 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Kobra 4: 534 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Pharice 2: 388 finishes"><a href="/maps/Pharice-32-2/"><img src="/ranks/maps/Pharice_2.png" width="180" height="112" alt="Pharice 2" /></a></td>
+  <td title="Hookthrough: 336 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Tropica: 281 finishes"><a href="/maps/Tropica/"><img src="/ranks/maps/Tropica.png" width="180" height="112" alt="Tropica" /></a></td>
+  <td title="Rogue World: 72 finishes"><a href="/maps/Rogue-32-World/"><img src="/ranks/maps/Rogue_World.png" width="180" height="112" alt="Rogue World" /></a></td>
+  <td title="Flux: 67 finishes"><a href="/maps/Flux/"><img src="/ranks/maps/Flux.png" width="180" height="112" alt="Flux" /></a></td>
+  <td title="Back in the days: 67 finishes"><a href="/maps/Back-32-in-32-the-32-days/"><img src="/ranks/maps/Back_in_the_days.png" width="180" height="112" alt="Back in the days" /></a></td>
+  <td title="Wormhole: 1153 finishes"><a href="/maps/Wormhole/"><img src="/ranks/maps/Wormhole.png" width="180" height="112" alt="Wormhole" /></a></td>
+  <td title="Cavity: 248 finishes"><a href="/maps/Cavity/"><img src="/ranks/maps/Cavity.png" width="180" height="112" alt="Cavity" /></a></td>
+  <td title="Mirror: 241 finishes"><a href="/maps/Mirror/"><img src="/ranks/maps/Mirror.png" width="180" height="112" alt="Mirror" /></a></td>
+</tr>
+<tr><td>2018-08</td>
+  <td title="Just2Easy: 1137 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 2: 637 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Kobra: 635 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Pharice 2: 326 finishes"><a href="/maps/Pharice-32-2/"><img src="/ranks/maps/Pharice_2.png" width="180" height="112" alt="Pharice 2" /></a></td>
+  <td title="Monster: 297 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Run Free: 232 finishes"><a href="/maps/Run-32-Free/"><img src="/ranks/maps/Run_Free.png" width="180" height="112" alt="Run Free" /></a></td>
+  <td title="Barren: 631 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Stronghold: 172 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Supernova: 70 finishes"><a href="/maps/Supernova/"><img src="/ranks/maps/Supernova.png" width="180" height="112" alt="Supernova" /></a></td>
+  <td title="Mud: 315 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Wormhole: 308 finishes"><a href="/maps/Wormhole/"><img src="/ranks/maps/Wormhole.png" width="180" height="112" alt="Wormhole" /></a></td>
+  <td title="Cavity: 232 finishes"><a href="/maps/Cavity/"><img src="/ranks/maps/Cavity.png" width="180" height="112" alt="Cavity" /></a></td>
+</tr>
+<tr><td>2018-09</td>
+  <td title="Just2Easy: 1122 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Diamond Mine: 1095 finishes"><a href="/maps/Diamond-32-Mine/"><img src="/ranks/maps/Diamond_Mine.png" width="180" height="112" alt="Diamond Mine" /></a></td>
+  <td title="Kobra 2: 679 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Stargazing: 496 finishes"><a href="/maps/Stargazing/"><img src="/ranks/maps/Stargazing.png" width="180" height="112" alt="Stargazing" /></a></td>
+  <td title="HookThrough3: 254 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Pharice 2: 201 finishes"><a href="/maps/Pharice-32-2/"><img src="/ranks/maps/Pharice_2.png" width="180" height="112" alt="Pharice 2" /></a></td>
+  <td title="Barren: 192 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Stronghold: 132 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="A World Beyond: 118 finishes"><a href="/maps/A-32-World-32-Beyond/"><img src="/ranks/maps/A_World_Beyond.png" width="180" height="112" alt="A World Beyond" /></a></td>
+  <td title="Mud: 328 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 128 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Cavity: 118 finishes"><a href="/maps/Cavity/"><img src="/ranks/maps/Cavity.png" width="180" height="112" alt="Cavity" /></a></td>
+</tr>
+<tr><td>2018-10</td>
+  <td title="Just2Easy: 1122 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Diamond Mine: 592 finishes"><a href="/maps/Diamond-32-Mine/"><img src="/ranks/maps/Diamond_Mine.png" width="180" height="112" alt="Diamond Mine" /></a></td>
+  <td title="Kobra: 555 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="Crystal Maze: 394 finishes"><a href="/maps/Crystal-32-Maze/"><img src="/ranks/maps/Crystal_Maze.png" width="180" height="112" alt="Crystal Maze" /></a></td>
+  <td title="Baby Aim 1.0: 298 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Cup of Tee: 245 finishes"><a href="/maps/Cup-32-of-32-Tee/"><img src="/ranks/maps/Cup_of_Tee.png" width="180" height="112" alt="Cup of Tee" /></a></td>
+  <td title="Stronghold: 140 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Nostalgia: 119 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Barren: 106 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Mud: 386 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 192 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 168 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2018-11</td>
+  <td title="Just2Easy: 948 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 2: 865 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="Kobra 4: 751 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Dubush: 474 finishes"><a href="/maps/Dubush/"><img src="/ranks/maps/Dubush.png" width="180" height="112" alt="Dubush" /></a></td>
+  <td title="Baby Aim 1.0: 354 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Baby Aim 2.0: 280 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="ttgtgttg: 270 finishes"><a href="/maps/ttgtgttg/"><img src="/ranks/maps/ttgtgttg.png" width="180" height="112" alt="ttgtgttg" /></a></td>
+  <td title="Stronghold: 119 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Barren: 92 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Jumper: 658 finishes"><a href="/maps/Jumper/"><img src="/ranks/maps/Jumper.png" width="180" height="112" alt="Jumper" /></a></td>
+  <td title="Mud: 367 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="run_guy_25: 152 finishes"><a href="/maps/run-95-guy-95-25/"><img src="/ranks/maps/run_guy_25.png" width="180" height="112" alt="run_guy_25" /></a></td>
+</tr>
+<tr><td>2018-12</td>
+  <td title="Just2Easy: 1193 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra: 559 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="StepByStep: 514 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Pizza: 715 finishes"><a href="/maps/Pizza/"><img src="/ranks/maps/Pizza.png" width="180" height="112" alt="Pizza" /></a></td>
+  <td title="Tiji: 497 finishes"><a href="/maps/Tiji/"><img src="/ranks/maps/Tiji.png" width="180" height="112" alt="Tiji" /></a></td>
+  <td title="Baby Aim 1.0: 312 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Stronghold: 203 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Grandma: 108 finishes"><a href="/maps/Grandma/"><img src="/ranks/maps/Grandma.png" width="180" height="112" alt="Grandma" /></a></td>
+  <td title="Barren: 94 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Mud: 281 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="run_guy_25: 278 finishes"><a href="/maps/run-95-guy-95-25/"><img src="/ranks/maps/run_guy_25.png" width="180" height="112" alt="run_guy_25" /></a></td>
+  <td title="Jumper: 238 finishes"><a href="/maps/Jumper/"><img src="/ranks/maps/Jumper.png" width="180" height="112" alt="Jumper" /></a></td>
+</tr>
+<tr><td>2019-01</td>
+  <td title="WTF: 2289 finishes"><a href="/maps/WTF/"><img src="/ranks/maps/WTF.png" width="180" height="112" alt="WTF" /></a></td>
+  <td title="Just2Easy: 1013 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 4: 538 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Monster: 267 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Baby Aim 1.0: 215 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="HookThrough3: 204 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Grandma: 305 finishes"><a href="/maps/Grandma/"><img src="/ranks/maps/Grandma.png" width="180" height="112" alt="Grandma" /></a></td>
+  <td title="Stronghold: 155 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Offpanic: 82 finishes"><a href="/maps/Offpanic/"><img src="/ranks/maps/Offpanic.png" width="180" height="112" alt="Offpanic" /></a></td>
+  <td title="Care for your Time: 488 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+  <td title="Desert Duration: 428 finishes"><a href="/maps/Desert-32-Duration/"><img src="/ranks/maps/Desert_Duration.png" width="180" height="112" alt="Desert Duration" /></a></td>
+  <td title="Mud: 268 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+</tr>
+<tr><td>2019-02</td>
+  <td title="WTF: 882 finishes"><a href="/maps/WTF/"><img src="/ranks/maps/WTF.png" width="180" height="112" alt="WTF" /></a></td>
+  <td title="Just2Easy: 830 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 4: 732 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Baby Aim 2.0: 286 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Hookthrough: 252 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Monster: 232 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Stronghold: 167 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Barren: 102 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Grandpa: 99 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Mud: 232 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Joyride: 185 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+  <td title="Flappy Bird: 165 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2019-03</td>
+  <td title="Geneque: 1820 finishes"><a href="/maps/Geneque/"><img src="/ranks/maps/Geneque.png" width="180" height="112" alt="Geneque" /></a></td>
+  <td title="Just2Easy: 1030 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="WTF: 722 finishes"><a href="/maps/WTF/"><img src="/ranks/maps/WTF.png" width="180" height="112" alt="WTF" /></a></td>
+  <td title="Baby Aim 1.0: 305 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Cup of Tee: 265 finishes"><a href="/maps/Cup-32-of-32-Tee/"><img src="/ranks/maps/Cup_of_Tee.png" width="180" height="112" alt="Cup of Tee" /></a></td>
+  <td title="Baby Aim 2.0: 225 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Barren: 502 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Stronghold: 219 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="aled: 155 finishes"><a href="/maps/aled/"><img src="/ranks/maps/aled.png" width="180" height="112" alt="aled" /></a></td>
+  <td title="Mud: 329 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Care for your Time: 238 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+  <td title="Jumper: 172 finishes"><a href="/maps/Jumper/"><img src="/ranks/maps/Jumper.png" width="180" height="112" alt="Jumper" /></a></td>
+</tr>
+<tr><td>2019-04</td>
+  <td title="Just2Easy: 890 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Geneque: 531 finishes"><a href="/maps/Geneque/"><img src="/ranks/maps/Geneque.png" width="180" height="112" alt="Geneque" /></a></td>
+  <td title="Kobra 4: 438 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Baby Aim 1.0: 320 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Baby Aim 2.0: 312 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Hookthrough: 275 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Barren: 247 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Stronghold 2: 152 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Stronghold: 132 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Mud: 382 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Jumper: 294 finishes"><a href="/maps/Jumper/"><img src="/ranks/maps/Jumper.png" width="180" height="112" alt="Jumper" /></a></td>
+  <td title="Rollercoaster: 197 finishes"><a href="/maps/Rollercoaster/"><img src="/ranks/maps/Rollercoaster.png" width="180" height="112" alt="Rollercoaster" /></a></td>
+</tr>
+<tr><td>2019-05</td>
+  <td title="Just2Easy: 936 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Geneque: 460 finishes"><a href="/maps/Geneque/"><img src="/ranks/maps/Geneque.png" width="180" height="112" alt="Geneque" /></a></td>
+  <td title="Absurd 4: 355 finishes"><a href="/maps/Absurd-32-4/"><img src="/ranks/maps/Absurd_4.png" width="180" height="112" alt="Absurd 4" /></a></td>
+  <td title="Baby Aim 2.0: 194 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Monster: 179 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Baby Aim 1.0: 158 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="Stronghold: 189 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Genereatron: 152 finishes"><a href="/maps/Genereatron/"><img src="/ranks/maps/Genereatron.png" width="180" height="112" alt="Genereatron" /></a></td>
+  <td title="Nostalgia: 99 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Mud: 214 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Cavity: 175 finishes"><a href="/maps/Cavity/"><img src="/ranks/maps/Cavity.png" width="180" height="112" alt="Cavity" /></a></td>
+  <td title="Joyride: 149 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2019-06</td>
+  <td title="Just2Easy: 830 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 417 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="WTF: 391 finishes"><a href="/maps/WTF/"><img src="/ranks/maps/WTF.png" width="180" height="112" alt="WTF" /></a></td>
+  <td title="Silk Touch: 830 finishes"><a href="/maps/Silk-32-Touch/"><img src="/ranks/maps/Silk_Touch.png" width="180" height="112" alt="Silk Touch" /></a></td>
+  <td title="Baby Aim 1.0: 232 finishes"><a href="/maps/Baby-32-Aim-32-1-46-0/"><img src="/ranks/maps/Baby_Aim_1_0.png" width="180" height="112" alt="Baby Aim 1.0" /></a></td>
+  <td title="HookThrough3: 206 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Stronghold: 216 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Blue Drag: 86 finishes"><a href="/maps/Blue-32-Drag/"><img src="/ranks/maps/Blue_Drag.png" width="180" height="112" alt="Blue Drag" /></a></td>
+  <td title="Springlobe 2: 73 finishes"><a href="/maps/Springlobe-32-2/"><img src="/ranks/maps/Springlobe_2.png" width="180" height="112" alt="Springlobe 2" /></a></td>
+  <td title="Mud: 320 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 210 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Joyride: 143 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2019-07</td>
+  <td title="Just2Easy: 1081 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 2: 512 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="WTF: 464 finishes"><a href="/maps/WTF/"><img src="/ranks/maps/WTF.png" width="180" height="112" alt="WTF" /></a></td>
+  <td title="lumine: 2536 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="Yun Gu: 1202 finishes"><a href="/maps/Yun-32-Gu/"><img src="/ranks/maps/Yun_Gu.png" width="180" height="112" alt="Yun Gu" /></a></td>
+  <td title="HookThrough3: 214 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="Stronghold 3: 348 finishes"><a href="/maps/Stronghold-32-3/"><img src="/ranks/maps/Stronghold_3.png" width="180" height="112" alt="Stronghold 3" /></a></td>
+  <td title="Stronghold: 201 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Barren: 180 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Care for your Time: 243 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+  <td title="Mud: 219 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 116 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2019-08</td>
+  <td title="Just2Easy: 864 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Geneque: 448 finishes"><a href="/maps/Geneque/"><img src="/ranks/maps/Geneque.png" width="180" height="112" alt="Geneque" /></a></td>
+  <td title="Kobra 2: 420 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="lumine: 1023 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="Mount: 962 finishes"><a href="/maps/Mount/"><img src="/ranks/maps/Mount.png" width="180" height="112" alt="Mount" /></a></td>
+  <td title="Yun Gu: 358 finishes"><a href="/maps/Yun-32-Gu/"><img src="/ranks/maps/Yun_Gu.png" width="180" height="112" alt="Yun Gu" /></a></td>
+  <td title="Barren: 361 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Stronghold: 203 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Grandpa: 102 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Vesper: 532 finishes"><a href="/maps/Vesper/"><img src="/ranks/maps/Vesper.png" width="180" height="112" alt="Vesper" /></a></td>
+  <td title="Mud: 333 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Care for your Time: 298 finishes"><a href="/maps/Care-32-for-32-your-32-Time/"><img src="/ranks/maps/Care_for_your_Time.png" width="180" height="112" alt="Care for your Time" /></a></td>
+</tr>
+<tr><td>2019-09</td>
+  <td title="Just2Easy: 799 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="4Nubs: 437 finishes"><a href="/maps/4Nubs/"><img src="/ranks/maps/4Nubs.png" width="180" height="112" alt="4Nubs" /></a></td>
+  <td title="Epix: 339 finishes"><a href="/maps/Epix/"><img src="/ranks/maps/Epix.png" width="180" height="112" alt="Epix" /></a></td>
+  <td title="garden: 1299 finishes"><a href="/maps/garden/"><img src="/ranks/maps/garden.png" width="180" height="112" alt="garden" /></a></td>
+  <td title="lumine: 412 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="Mount: 301 finishes"><a href="/maps/Mount/"><img src="/ranks/maps/Mount.png" width="180" height="112" alt="Mount" /></a></td>
+  <td title="Stronghold: 175 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Good Ol' Days 2: 77 finishes"><a href="/maps/Good-32-Ol-39--32-Days-32-2/"><img src="/ranks/maps/Good_Ol__Days_2.png" width="180" height="112" alt="Good Ol' Days 2" /></a></td>
+  <td title="Nostalgia: 71 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Vesper: 200 finishes"><a href="/maps/Vesper/"><img src="/ranks/maps/Vesper.png" width="180" height="112" alt="Vesper" /></a></td>
+  <td title="Mud: 139 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 120 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2019-10</td>
+  <td title="Just2Easy: 751 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Kobra 4: 349 finishes"><a href="/maps/Kobra-32-4/"><img src="/ranks/maps/Kobra_4.png" width="180" height="112" alt="Kobra 4" /></a></td>
+  <td title="Kobra: 331 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="lumine: 465 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="garden: 271 finishes"><a href="/maps/garden/"><img src="/ranks/maps/garden.png" width="180" height="112" alt="garden" /></a></td>
+  <td title="Hookthrough: 177 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="milk: 351 finishes"><a href="/maps/milk/"><img src="/ranks/maps/milk.png" width="180" height="112" alt="milk" /></a></td>
+  <td title="Stronghold: 288 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Stronghold 2: 139 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Slide: 719 finishes"><a href="/maps/Slide/"><img src="/ranks/maps/Slide.png" width="180" height="112" alt="Slide" /></a></td>
+  <td title="Mud: 186 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 162 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2019-11</td>
+  <td title="Just2Easy: 799 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="4Nubs: 251 finishes"><a href="/maps/4Nubs/"><img src="/ranks/maps/4Nubs.png" width="180" height="112" alt="4Nubs" /></a></td>
+  <td title="Kobra 2: 208 finishes"><a href="/maps/Kobra-32-2/"><img src="/ranks/maps/Kobra_2.png" width="180" height="112" alt="Kobra 2" /></a></td>
+  <td title="lumine: 509 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="garden: 201 finishes"><a href="/maps/garden/"><img src="/ranks/maps/garden.png" width="180" height="112" alt="garden" /></a></td>
+  <td title="Mount: 190 finishes"><a href="/maps/Mount/"><img src="/ranks/maps/Mount.png" width="180" height="112" alt="Mount" /></a></td>
+  <td title="Yun Gu 2: 384 finishes"><a href="/maps/Yun-32-Gu-32-2/"><img src="/ranks/maps/Yun_Gu_2.png" width="180" height="112" alt="Yun Gu 2" /></a></td>
+  <td title="milk: 129 finishes"><a href="/maps/milk/"><img src="/ranks/maps/milk.png" width="180" height="112" alt="milk" /></a></td>
+  <td title="Stronghold: 108 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Flappy Bird: 134 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Mud: 114 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="SorGores 1: 103 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2019-12</td>
+  <td title="Just2Easy: 1109 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 476 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Geneque: 416 finishes"><a href="/maps/Geneque/"><img src="/ranks/maps/Geneque.png" width="180" height="112" alt="Geneque" /></a></td>
+  <td title="lumine: 352 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="Monster: 242 finishes"><a href="/maps/Monster/"><img src="/ranks/maps/Monster.png" width="180" height="112" alt="Monster" /></a></td>
+  <td title="Mount: 242 finishes"><a href="/maps/Mount/"><img src="/ranks/maps/Mount.png" width="180" height="112" alt="Mount" /></a></td>
+  <td title="Stronghold: 170 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Barren: 119 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Nostalgia: 113 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Mud: 513 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="combo II: 154 finishes"><a href="/maps/combo-32-II/"><img src="/ranks/maps/combo_II.png" width="180" height="112" alt="combo II" /></a></td>
+  <td title="Flappy Bird: 110 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2020-01</td>
+  <td title="LearnToPlay: 2555 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="Just2Easy: 1017 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="Epix: 399 finishes"><a href="/maps/Epix/"><img src="/ranks/maps/Epix.png" width="180" height="112" alt="Epix" /></a></td>
+  <td title="luminati: 3829 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Moon Roar: 409 finishes"><a href="/maps/Moon-32-Roar/"><img src="/ranks/maps/Moon_Roar.png" width="180" height="112" alt="Moon Roar" /></a></td>
+  <td title="lumine: 346 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="Medium: 484 finishes"><a href="/maps/Medium/"><img src="/ranks/maps/Medium.png" width="180" height="112" alt="Medium" /></a></td>
+  <td title="Stronghold 2: 147 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="nullptr: 132 finishes"><a href="/maps/nullptr/"><img src="/ranks/maps/nullptr.png" width="180" height="112" alt="nullptr" /></a></td>
+  <td title="Mud: 276 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Stop Over 4.0: 268 finishes"><a href="/maps/Stop-32-Over-32-4-46-0/"><img src="/ranks/maps/Stop_Over_4_0.png" width="180" height="112" alt="Stop Over 4.0" /></a></td>
+  <td title="Jungler: 152 finishes"><a href="/maps/Jungler/"><img src="/ranks/maps/Jungler.png" width="180" height="112" alt="Jungler" /></a></td>
+</tr>
+<tr><td>2020-02</td>
+  <td title="Just2Easy: 1117 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="LearnToPlay: 1062 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="StepByStep: 320 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="luminati: 1269 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Moon Roar: 578 finishes"><a href="/maps/Moon-32-Roar/"><img src="/ranks/maps/Moon_Roar.png" width="180" height="112" alt="Moon Roar" /></a></td>
+  <td title="Canyang: 479 finishes"><a href="/maps/Canyang/"><img src="/ranks/maps/Canyang.png" width="180" height="112" alt="Canyang" /></a></td>
+  <td title="Gloominescence: 207 finishes"><a href="/maps/Gloominescence/"><img src="/ranks/maps/Gloominescence.png" width="180" height="112" alt="Gloominescence" /></a></td>
+  <td title="Stronghold: 157 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Next LvL: 129 finishes"><a href="/maps/Next-32-LvL/"><img src="/ranks/maps/Next_LvL.png" width="180" height="112" alt="Next LvL" /></a></td>
+  <td title="Shooting Range: 2284 finishes"><a href="/maps/Shooting-32-Range/"><img src="/ranks/maps/Shooting_Range.png" width="180" height="112" alt="Shooting Range" /></a></td>
+  <td title="Flappy Bird: 433 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+  <td title="Mud: 282 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+</tr>
+<tr><td>2020-03</td>
+  <td title="LearnToPlay: 1409 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="Just2Easy: 1313 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="StepByStep: 484 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="luminati: 1106 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Baby Aim 2.0: 344 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="lumine: 334 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="Stronghold 2: 186 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Stronghold: 108 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="ClassicMonkez: 97 finishes"><a href="/maps/ClassicMonkez/"><img src="/ranks/maps/ClassicMonkez.png" width="180" height="112" alt="ClassicMonkez" /></a></td>
+  <td title="Shooting Range: 723 finishes"><a href="/maps/Shooting-32-Range/"><img src="/ranks/maps/Shooting_Range.png" width="180" height="112" alt="Shooting Range" /></a></td>
+  <td title="Mud: 230 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="run_guy_25: 224 finishes"><a href="/maps/run-95-guy-95-25/"><img src="/ranks/maps/run_guy_25.png" width="180" height="112" alt="run_guy_25" /></a></td>
+</tr>
+<tr><td>2020-04</td>
+  <td title="Just2Easy: 1676 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="LearnToPlay: 1631 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="StepByStep: 726 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="luminati: 922 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="lumine: 397 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="HookThrough3: 394 finishes"><a href="/maps/HookThrough3/"><img src="/ranks/maps/HookThrough3.png" width="180" height="112" alt="HookThrough3" /></a></td>
+  <td title="octotorp: 433 finishes"><a href="/maps/octotorp/"><img src="/ranks/maps/octotorp.png" width="180" height="112" alt="octotorp" /></a></td>
+  <td title="Stronghold: 255 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Tenebris: 169 finishes"><a href="/maps/Tenebris/"><img src="/ranks/maps/Tenebris.png" width="180" height="112" alt="Tenebris" /></a></td>
+  <td title="Shooting Range: 1202 finishes"><a href="/maps/Shooting-32-Range/"><img src="/ranks/maps/Shooting_Range.png" width="180" height="112" alt="Shooting Range" /></a></td>
+  <td title="Mud: 354 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Jump Shooter: 347 finishes"><a href="/maps/Jump-32-Shooter/"><img src="/ranks/maps/Jump_Shooter.png" width="180" height="112" alt="Jump Shooter" /></a></td>
+</tr>
+<tr><td>2020-05</td>
+  <td title="Just2Easy: 1933 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="LearnToPlay: 1271 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="Kobra: 605 finishes"><a href="/maps/Kobra/"><img src="/ranks/maps/Kobra.png" width="180" height="112" alt="Kobra" /></a></td>
+  <td title="luminati: 771 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="lumine: 562 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="Baby Aim 2.0: 389 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Stronghold: 360 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Barren: 146 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="2 To Tango: 138 finishes"><a href="/maps/2-32-To-32-Tango/"><img src="/ranks/maps/2_To_Tango.png" width="180" height="112" alt="2 To Tango" /></a></td>
+  <td title="Shooting Range: 503 finishes"><a href="/maps/Shooting-32-Range/"><img src="/ranks/maps/Shooting_Range.png" width="180" height="112" alt="Shooting Range" /></a></td>
+  <td title="Mud: 232 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 212 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2020-06</td>
+  <td title="Just2Easy: 1772 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="LearnToPlay: 1258 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="StepByStep: 1251 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="luminati: 1011 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Casa der Merde: 516 finishes"><a href="/maps/Casa-32-der-32-Merde/"><img src="/ranks/maps/Casa_der_Merde.png" width="180" height="112" alt="Casa der Merde" /></a></td>
+  <td title="Hookthrough: 386 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="cimininxi: 234 finishes"><a href="/maps/cimininxi/"><img src="/ranks/maps/cimininxi.png" width="180" height="112" alt="cimininxi" /></a></td>
+  <td title="Stronghold: 185 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Nostalgia: 113 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Shooting Range: 493 finishes"><a href="/maps/Shooting-32-Range/"><img src="/ranks/maps/Shooting_Range.png" width="180" height="112" alt="Shooting Range" /></a></td>
+  <td title="Mud: 367 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Joyride: 151 finishes"><a href="/maps/Joyride/"><img src="/ranks/maps/Joyride.png" width="180" height="112" alt="Joyride" /></a></td>
+</tr>
+<tr><td>2020-07</td>
+  <td title="StepByStep: 1940 finishes"><a href="/maps/StepByStep/"><img src="/ranks/maps/StepByStep.png" width="180" height="112" alt="StepByStep" /></a></td>
+  <td title="Just2Easy: 1727 finishes"><a href="/maps/Just2Easy/"><img src="/ranks/maps/Just2Easy.png" width="180" height="112" alt="Just2Easy" /></a></td>
+  <td title="LearnToPlay: 1269 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="luminati: 626 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Snow Problem: 621 finishes"><a href="/maps/Snow-32-Problem/"><img src="/ranks/maps/Snow_Problem.png" width="180" height="112" alt="Snow Problem" /></a></td>
+  <td title="Baby Aim 2.0: 432 finishes"><a href="/maps/Baby-32-Aim-32-2-46-0/"><img src="/ranks/maps/Baby_Aim_2_0.png" width="180" height="112" alt="Baby Aim 2.0" /></a></td>
+  <td title="Comeback: 232 finishes"><a href="/maps/Comeback/"><img src="/ranks/maps/Comeback.png" width="180" height="112" alt="Comeback" /></a></td>
+  <td title="Stronghold: 129 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Yun Gu 3: 116 finishes"><a href="/maps/Yun-32-Gu-32-3/"><img src="/ranks/maps/Yun_Gu_3.png" width="180" height="112" alt="Yun Gu 3" /></a></td>
+  <td title="Volt: 2038 finishes"><a href="/maps/Volt/"><img src="/ranks/maps/Volt.png" width="180" height="112" alt="Volt" /></a></td>
+  <td title="Mud: 387 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Flappy Bird: 170 finishes"><a href="/maps/Flappy-32-Bird/"><img src="/ranks/maps/Flappy_Bird.png" width="180" height="112" alt="Flappy Bird" /></a></td>
+</tr>
+<tr><td>2020-08</td>
+  <td title="Sunny Side Up: 29288 finishes"><a href="/maps/Sunny-32-Side-32-Up/"><img src="/ranks/maps/Sunny_Side_Up.png" width="180" height="112" alt="Sunny Side Up" /></a></td>
+  <td title="LearnToPlay: 18443 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="Tsunami: 10392 finishes"><a href="/maps/Tsunami/"><img src="/ranks/maps/Tsunami.png" width="180" height="112" alt="Tsunami" /></a></td>
+  <td title="Hookthrough: 418 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="lumine: 333 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="luminati: 325 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Lotus: 671 finishes"><a href="/maps/Lotus/"><img src="/ranks/maps/Lotus.png" width="180" height="112" alt="Lotus" /></a></td>
+  <td title="Cerulean: 274 finishes"><a href="/maps/Cerulean/"><img src="/ranks/maps/Cerulean.png" width="180" height="112" alt="Cerulean" /></a></td>
+  <td title="Stronghold: 235 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Volt: 1486 finishes"><a href="/maps/Volt/"><img src="/ranks/maps/Volt.png" width="180" height="112" alt="Volt" /></a></td>
+  <td title="Zap: 1042 finishes"><a href="/maps/Zap/"><img src="/ranks/maps/Zap.png" width="180" height="112" alt="Zap" /></a></td>
+  <td title="Mud: 844 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+</tr>
+<tr><td>2020-09</td>
+  <td title="Sunny Side Up: 30821 finishes"><a href="/maps/Sunny-32-Side-32-Up/"><img src="/ranks/maps/Sunny_Side_Up.png" width="180" height="112" alt="Sunny Side Up" /></a></td>
+  <td title="LearnToPlay: 15142 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="4Beginners: 11423 finishes"><a href="/maps/4Beginners/"><img src="/ranks/maps/4Beginners.png" width="180" height="112" alt="4Beginners" /></a></td>
+  <td title="luminati: 692 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Sunny Land: 361 finishes"><a href="/maps/Sunny-32-Land/"><img src="/ranks/maps/Sunny_Land.png" width="180" height="112" alt="Sunny Land" /></a></td>
+  <td title="Hookthrough: 281 finishes"><a href="/maps/Hookthrough/"><img src="/ranks/maps/Hookthrough.png" width="180" height="112" alt="Hookthrough" /></a></td>
+  <td title="Lotus: 136 finishes"><a href="/maps/Lotus/"><img src="/ranks/maps/Lotus.png" width="180" height="112" alt="Lotus" /></a></td>
+  <td title="Nostalgia: 128 finishes"><a href="/maps/Nostalgia/"><img src="/ranks/maps/Nostalgia.png" width="180" height="112" alt="Nostalgia" /></a></td>
+  <td title="Stronghold: 121 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Volt: 1179 finishes"><a href="/maps/Volt/"><img src="/ranks/maps/Volt.png" width="180" height="112" alt="Volt" /></a></td>
+  <td title="Mud: 700 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="SorGores 1: 612 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2020-10</td>
+  <td title="Multeasymap: 27699 finishes"><a href="/maps/Multeasymap/"><img src="/ranks/maps/Multeasymap.png" width="180" height="112" alt="Multeasymap" /></a></td>
+  <td title="Sunny Side Up: 17566 finishes"><a href="/maps/Sunny-32-Side-32-Up/"><img src="/ranks/maps/Sunny_Side_Up.png" width="180" height="112" alt="Sunny Side Up" /></a></td>
+  <td title="Linear: 13672 finishes"><a href="/maps/Linear/"><img src="/ranks/maps/Linear.png" width="180" height="112" alt="Linear" /></a></td>
+  <td title="UpNDown Coop: 808 finishes"><a href="/maps/UpNDown-32-Coop/"><img src="/ranks/maps/UpNDown_Coop.png" width="180" height="112" alt="UpNDown Coop" /></a></td>
+  <td title="luminati: 748 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Cup of Tee: 588 finishes"><a href="/maps/Cup-32-of-32-Tee/"><img src="/ranks/maps/Cup_of_Tee.png" width="180" height="112" alt="Cup of Tee" /></a></td>
+  <td title="Stronghold: 259 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Lotus: 230 finishes"><a href="/maps/Lotus/"><img src="/ranks/maps/Lotus.png" width="180" height="112" alt="Lotus" /></a></td>
+  <td title="Grandpa: 126 finishes"><a href="/maps/Grandpa/"><img src="/ranks/maps/Grandpa.png" width="180" height="112" alt="Grandpa" /></a></td>
+  <td title="Mud: 1536 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Volt: 874 finishes"><a href="/maps/Volt/"><img src="/ranks/maps/Volt.png" width="180" height="112" alt="Volt" /></a></td>
+  <td title="SorGores 1: 508 finishes"><a href="/maps/SorGores-32-1/"><img src="/ranks/maps/SorGores_1.png" width="180" height="112" alt="SorGores 1" /></a></td>
+</tr>
+<tr><td>2020-11</td>
+  <td title="Multeasymap: 23576 finishes"><a href="/maps/Multeasymap/"><img src="/ranks/maps/Multeasymap.png" width="180" height="112" alt="Multeasymap" /></a></td>
+  <td title="LearnToPlay: 10553 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="Sunny Side Up: 8611 finishes"><a href="/maps/Sunny-32-Side-32-Up/"><img src="/ranks/maps/Sunny_Side_Up.png" width="180" height="112" alt="Sunny Side Up" /></a></td>
+  <td title="moyu: 2323 finishes"><a href="/maps/moyu/"><img src="/ranks/maps/moyu.png" width="180" height="112" alt="moyu" /></a></td>
+  <td title="JP: 1824 finishes"><a href="/maps/JP/"><img src="/ranks/maps/JP.png" width="180" height="112" alt="JP" /></a></td>
+  <td title="luminati: 628 finishes"><a href="/maps/luminati/"><img src="/ranks/maps/luminati.png" width="180" height="112" alt="luminati" /></a></td>
+  <td title="Stronghold: 281 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Stronghold 2: 143 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Naufrage 2: 113 finishes"><a href="/maps/Naufrage-32-2/"><img src="/ranks/maps/Naufrage_2.png" width="180" height="112" alt="Naufrage 2" /></a></td>
+  <td title="Mud: 1464 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Putt Putt: 1450 finishes"><a href="/maps/Putt-32-Putt/"><img src="/ranks/maps/Putt_Putt.png" width="180" height="112" alt="Putt Putt" /></a></td>
+  <td title="Volt: 1032 finishes"><a href="/maps/Volt/"><img src="/ranks/maps/Volt.png" width="180" height="112" alt="Volt" /></a></td>
+</tr>
+<tr><td>2020-12</td>
+  <td title="Multeasymap: 25718 finishes"><a href="/maps/Multeasymap/"><img src="/ranks/maps/Multeasymap.png" width="180" height="112" alt="Multeasymap" /></a></td>
+  <td title="LearnToPlay: 9968 finishes"><a href="/maps/LearnToPlay/"><img src="/ranks/maps/LearnToPlay.png" width="180" height="112" alt="LearnToPlay" /></a></td>
+  <td title="Lavender Forest: 9464 finishes"><a href="/maps/Lavender-32-Forest/"><img src="/ranks/maps/Lavender_Forest.png" width="180" height="112" alt="Lavender Forest" /></a></td>
+  <td title="Olymp: 1224 finishes"><a href="/maps/Olymp/"><img src="/ranks/maps/Olymp.png" width="180" height="112" alt="Olymp" /></a></td>
+  <td title="Push Them: 1071 finishes"><a href="/maps/Push-32-Them/"><img src="/ranks/maps/Push_Them.png" width="180" height="112" alt="Push Them" /></a></td>
+  <td title="Pyramids: 833 finishes"><a href="/maps/Pyramids/"><img src="/ranks/maps/Pyramids.png" width="180" height="112" alt="Pyramids" /></a></td>
+  <td title="Stronghold: 272 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Barren: 248 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Stronghold 2: 157 finishes"><a href="/maps/Stronghold-32-2/"><img src="/ranks/maps/Stronghold_2.png" width="180" height="112" alt="Stronghold 2" /></a></td>
+  <td title="Mud: 1576 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Putt Putt: 1410 finishes"><a href="/maps/Putt-32-Putt/"><img src="/ranks/maps/Putt_Putt.png" width="180" height="112" alt="Putt Putt" /></a></td>
+  <td title="Volt: 1050 finishes"><a href="/maps/Volt/"><img src="/ranks/maps/Volt.png" width="180" height="112" alt="Volt" /></a></td>
+</tr>
+<tr><td>2021-01</td>
+  <td title="Multeasymap: 11208 finishes"><a href="/maps/Multeasymap/"><img src="/ranks/maps/Multeasymap.png" width="180" height="112" alt="Multeasymap" /></a></td>
+  <td title="Pounamu 2: 4379 finishes"><a href="/maps/Pounamu-32-2/"><img src="/ranks/maps/Pounamu_2.png" width="180" height="112" alt="Pounamu 2" /></a></td>
+  <td title="Sunny Side Up: 3881 finishes"><a href="/maps/Sunny-32-Side-32-Up/"><img src="/ranks/maps/Sunny_Side_Up.png" width="180" height="112" alt="Sunny Side Up" /></a></td>
+  <td title="Olymp: 452 finishes"><a href="/maps/Olymp/"><img src="/ranks/maps/Olymp.png" width="180" height="112" alt="Olymp" /></a></td>
+  <td title="lumine: 282 finishes"><a href="/maps/lumine/"><img src="/ranks/maps/lumine.png" width="180" height="112" alt="lumine" /></a></td>
+  <td title="moyu: 261 finishes"><a href="/maps/moyu/"><img src="/ranks/maps/moyu.png" width="180" height="112" alt="moyu" /></a></td>
+  <td title="Stronghold: 139 finishes"><a href="/maps/Stronghold/"><img src="/ranks/maps/Stronghold.png" width="180" height="112" alt="Stronghold" /></a></td>
+  <td title="Stoned. 2: 105 finishes"><a href="/maps/Stoned-46--32-2/"><img src="/ranks/maps/Stoned__2.png" width="180" height="112" alt="Stoned. 2" /></a></td>
+  <td title="Barren: 104 finishes"><a href="/maps/Barren/"><img src="/ranks/maps/Barren.png" width="180" height="112" alt="Barren" /></a></td>
+  <td title="Buckle Up: 3098 finishes"><a href="/maps/Buckle-32-Up/"><img src="/ranks/maps/Buckle_Up.png" width="180" height="112" alt="Buckle Up" /></a></td>
+  <td title="Mud: 515 finishes"><a href="/maps/Mud/"><img src="/ranks/maps/Mud.png" width="180" height="112" alt="Mud" /></a></td>
+  <td title="Volt: 483 finishes"><a href="/maps/Volt/"><img src="/ranks/maps/Volt.png" width="180" height="112" alt="Volt" /></a></td>
+</tr>
+</table>
+</div>
