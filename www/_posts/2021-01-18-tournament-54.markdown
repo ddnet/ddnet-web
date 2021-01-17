@@ -5,7 +5,7 @@ permalink: /news/quick-tournament-54/
 tag: current
 ---
 
-I'm happy to present you this year's first Tournament, the Race (★★✰✰✰) map "Knux" by [Knuski](/mappers/Knuski/):
+I'm happy to present you this year's first Tournament, the Race (★★★✰✰) map "Knux" by [Knuski](/mappers/Knuski/):
 
 [<img class="demo" src="/Knux.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=7077)
 
