@@ -1,0 +1,10 @@
+---
+layout: post
+title: "New Wiki Software"
+permalink: /news/wiki2/
+tag: current
+---
+
+The [DDNet Wiki](https://wiki.ddnet.tw/) has been updated to run on Mediawiki. This means it is now easy for everyone to edit. Just register, email address is optional, and edit any page to add more information and fix incorrect information!
+
+Thanks to Ryozuki, Zwelf & Patiga for this Wiki update.
