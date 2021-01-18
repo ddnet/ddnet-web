@@ -1,0 +1,99 @@
+---
+title: "Demo"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/libtw2-doc/connection">Connection</a></li>
+    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
+    <li><a href="/libtw2-doc/demo">Demo</a></li>
+    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
+    <li><a href="/libtw2-doc/int">Int</a></li>
+    <li><a href="/libtw2-doc/map">Map</a></li>
+    <li><a href="/libtw2-doc/packet">Packet</a></li>
+    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
+    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
+    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Demo</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/demo.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<p>Unless specified otherwise, all of the following sizes are measured in bytes.</p>
+<pre><code>demo:
+    [  8] version_header
+    [168] header
+    [260] _timeline_markers
+    [   ] map
+    [   ] data
+</code></pre>
+<p><code>_timeline_markers</code> are only available in version 4 and 5.</p>
+<p>The length of the <code>map</code> field is determined by the <code>map_size</code> field in <code>header</code>. The <code>map</code> field contains a Teeworlds map (datafile).</p>
+<p><code>data</code> consists of many <code>chunk</code>s laid out one after the other.</p>
+<pre><code>version_header:
+    [  7] magic
+    [  1] version
+</code></pre>
+<p><code>magic</code> is &quot;TWDEMO\0&quot;.</p>
+<p><code>version</code> is any number from 3 to 5 for this document.</p>
+<pre><code>header:
+    [ 64] net_version
+    [ 64] map_name
+    [  4] map_size
+    [  4] map_crc
+    [  8] type
+    [  4] length
+    [ 20] timestamp
+</code></pre>
+<p><code>net_version</code>, <code>map_name</code>, <code>type</code> and <code>timestamp</code> are null-terminated strings. <code>map_size</code>, <code>map_crc</code> and <code>length</code> are signed big-endian 32-bit integers.</p>
+<p><code>map_size</code> determines the size of the <code>map</code> field of the demo.</p>
+<p><code>type</code> should be either &quot;client&quot; or &quot;server&quot; for a client or server demo, respectively.</p>
+<pre><code>_timeline_markers:
+    [  4] num_timeline_markers
+    [256] timeline_markers
+</code></pre>
+<p><code>num_timeline_markers</code> is a signed big-endian 32-bit integer. <code>timeline_markers</code> is an array of signed big-endian 32-bit integers of size 64.</p>
+<p><code>num_timeline_markers</code> gives the number of valid <code>timeline_markers</code>. This number should be less or equal to 64.</p>
+<pre><code>chunk:
+    [   ] chunk_header
+    [   ] chunk_data
+</code></pre>
+<p><code>chunk_header</code> is at least a single byte. If the <code>chunk</code> does not indicate a new tick, it looks like follows (sizes specified in bits):</p>
+<pre><code>chunk_header_normal_first:
+    [1] is_tick (set to 0 for normal chunks)
+    [2] type
+    [5] size
+
+0ttS SSSS
+</code></pre>
+<p><code>is_tick</code> is set to <code>0</code> for normal chunks.</p>
+<p><code>type</code> can be one of <code>1</code> (snapshot), <code>2</code> (message) or <code>3</code> (snapshot delta).</p>
+<p><code>size</code> determines the size of the following <code>chunk_data</code> unless one of the special values <code>30</code> or <code>31</code> are used. <code>30</code> indicates that <code>chunk_header</code> contains one additional byte whose numerical value specifies the length of the following <code>chunk_data</code>, <code>31</code> indicates that <code>chunk_header</code> contains one additional little-endian 16-bit integer specifying the length of the following <code>chunk_data</code>.</p>
+<p>If the <code>chunk</code> does indicate a new tick, its first byte looks like follows in version 3 and 4 (sizes specified in bits):</p>
+<pre><code>chunk_header_tick_first_34:
+    [1] is_tick (set to 1 for tick markers)
+    [1] keyframe
+    [6] tick_delta
+
+1kDD DDDD
+</code></pre>
+<p><code>is_tick</code> is set to <code>1</code> for tick markers.</p>
+<p><code>keyframe</code> is a hint to the demo player that the next tick will contain a full snapshot, which allows it to jump to that specific position.</p>
+<p><code>tick_delta</code> either specifies the tick delta (delta = difference) to the previous tick, or it is <code>0</code> to indicate that a big-endian 32-bit integer specifying the absolute tick follows.</p>
+<p>In version 5, the first byte of the <code>chunk_header</code> looks like follows if it does indicate a new tick (sizes specified in bits):</p>
+<pre><code>chunk_header_tick_first_5:
+    [1] is_tick (set to 1 for tick markers)
+    [1] keyframe
+    [1] inline_tick
+    [5] tick_delta
+
+1kiD DDDD
+</code></pre>
+<p><code>is_tick</code> and <code>keyframe</code> have the same meaning as in version 3 and 4. If <code>inline_tick</code> is <code>1</code>, <code>tick_delta</code> specifies the tick delta. If it is <code>0</code>, <code>tick_delta</code> is padding that should be zeroed and a big-endian 32-bit integer specifying the absolute tick follows.</p>
+</div>

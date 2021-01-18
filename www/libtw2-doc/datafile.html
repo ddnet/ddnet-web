@@ -1,0 +1,121 @@
+---
+title: "Datafile"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/libtw2-doc/connection">Connection</a></li>
+    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
+    <li><a href="/libtw2-doc/demo">Demo</a></li>
+    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
+    <li><a href="/libtw2-doc/int">Int</a></li>
+    <li><a href="/libtw2-doc/map">Map</a></li>
+    <li><a href="/libtw2-doc/packet">Packet</a></li>
+    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
+    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
+    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Datafile</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/datafile.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<h3>Introduction</h3>
+<p>The Teeworlds datafile format is the format which Teeworlds uses to save its game maps. Despite having been used for quite some time, it has not yet been formally described. The format enables one to store fixed-size &quot;items&quot; along with variable-sized &quot;data items&quot;.</p>
+<p>The format is designed in a way that makes it easy to directly load most parts into the memory (i. e. in version 4 everything except for the data block, as the data block is stored compressed in the file). In this document the versions 3 and 4 of Teeworlds datafiles will be explained.</p>
+<h3>Terminology</h3>
+<p>The following is an abstract description of the data contained in a Teeworlds datafile. It does not specify how they are laid out in the file.</p>
+<h4>Items</h4>
+<p>An item consists of a 16-bit unsigned integer <code>type_id</code>, a 16-bit unsigned integer <code>id</code> and an array of 32-bit signed integers <code>data</code>. The combination of <code>type_id</code> and <code>id</code> is unique amongst all items. The length of <code>data</code> is usually the same for all items of a given <code>type_id</code>.</p>
+<p>Examples of types in actual Teeworlds maps include metadata for layers, layer groups, images (external or not), etc. Since only the metadata and not the actual contents are stored, the items can remain fixed-size.</p>
+<h4>Data items</h4>
+<p>A data item is an array of bytes (8-bit unsigned integers) <code>data</code>. <code>id</code> is unique amongst all data items, the only possible IDs are from 0 (incl.) to the number of data items (excl.). These data items are indexed via unsigned integers, counting sequentially in the order they are laid out in the file.</p>
+<p>In actual Teeworlds maps, data items are used e.g. for the tiles of a tile layer or the image data of an embedded image. They are referred to in the metadata items by their index.</p>
+<h3>Format</h3>
+<h4>Datafile</h4>
+<p>The format of datafiles looks like follows, all parts are explained later:</p>
+<pre><code>datafile:
+    [  8] version_header
+    [ 28] header
+    [*12] item_types
+    [* 4] item_offsets
+    [* 4] data_offsets
+    [* 4] _data_sizes
+    [   ] items
+    [   ] data
+</code></pre>
+<p>The <code>_data_sizes</code> part is only present in version 4 of Teeworlds datafiles.</p>
+<p>The <code>header</code> contains size information for the rest of the file:</p>
+<ul>
+<li><code>item_types</code> has the length of <code>header.num_item_types</code> item types.</li>
+<li><code>item_offsets</code> has the length of <code>header.num_items</code> 32-bit integers.</li>
+<li><code>data_offsets</code> has the length of <code>header.num_data</code> 32-bit integers.</li>
+<li><code>_data_sizes</code> is only present in version 4 of Teeworlds datafiles, it has the length of <code>header.num_data</code> 32-bit integers.</li>
+<li><code>items</code> has the length of <code>header.item_size</code> bytes which must be divisible by four.</li>
+<li><code>data</code> has the length of <code>header.data_size</code> bytes.</li>
+</ul>
+<h4>Version header</h4>
+<p>The version header consists of a magic byte sequence, identifying the file as a Teeworlds datafile and a version number.</p>
+<pre><code>version_header:
+    [4] magic
+    [4] version
+</code></pre>
+<p>The <code>magic</code> must exactly be the ASCII representations of the four characters, 'D', 'A', 'T', 'A'.</p>
+<p>NOTE: Readers of Teeworlds datafiles should be able to read datafiles which start with a reversed <code>magic</code> too, that is 'A', 'T', 'A', 'D'. A bug in the reference implementation caused big-endian machines to save the reversed <code>magic</code> bytes.</p>
+<p>The <code>version</code> is a little-endian signed 32-bit integer, for version 3 or 4 of Teeworlds datafiles, it must be 3 or 4, respectively.</p>
+<h4>Header</h4>
+<p>The header specific to version 3 and 4 consists of seven 32-bit signed integers.</p>
+<pre><code>header:
+    [4] size
+    [4] swaplen
+    [4] num_item_types
+    [4] num_items
+    [4] num_data
+    [4] item_size
+    [4] data_size
+</code></pre>
+<p>The <code>size</code> is a little-endian integer and must be the size of the complete datafile without the <code>version_header</code> and both <code>size</code> and <code>swaplen</code>.</p>
+<p>NOTE: The reference implementation does not read this value.</p>
+<p>The <code>swaplen</code> is a little-endian integer and must specify the number of bytes containing integers following the <code>size</code> and <code>swaplen</code> fields, up until the data of the data items. It can therefore be used to reverse the endian on big-endian machines.</p>
+<p>NOTE: The reference implementation does not read datafiles correctly on little-endian machines, because it interprets <code>swaplen</code> as starting after the header.</p>
+<p>NOTE: All further integers can be assumed to be already converted to machine-native endian, if an endian swap was performed using the <code>swaplen</code> field.</p>
+<p>The <code>num_item_types</code> integer specifies the number of item types in the <code>datafile.item_types</code> field.</p>
+<p>The <code>num_items</code> integer specifies the number of items in the <code>datafile.items</code> field.</p>
+<p>The <code>num_data</code> integer specifies the number of raw data blocks in the <code>datafile.data</code> field.</p>
+<p>The <code>item_size</code> integer specifies the total size in bytes of the <code>datafile.items</code> field.</p>
+<p>The <code>data_size</code> integer specifies the total size in bytes of the <code>datafile.data</code> field.</p>
+<h4>Item types</h4>
+<p>The item types are an array of item types. The number of item types in that array is <code>num_item_types</code>, each item type is identified by its unique <code>type_id</code> (explained below). Each item type is of the following form:</p>
+<pre><code>item_type:
+    [4] type_id
+    [4] start
+    [4] num
+</code></pre>
+<p>The <code>type_id</code> 32-bit signed integer must be unique amongst all other <code>item_type.type_id</code>s. Its value must fit into an unsigned 16-bit integer.</p>
+<p>The <code>start</code> signed integer is the index of the first item in the <code>items</code> with the type <code>type_id</code>.</p>
+<p>The <code>num</code> signed integer must be the number of items with the the type <code>type_id</code>.</p>
+<p>NOTE: Since all items of the same type must be sequential in the <code>items</code> array, exactly the items with the index <code>start</code> (incl.) to <code>start + num</code> (excl.) are of the type <code>type_id</code>.</p>
+<h4>Item offsets, data offsets and data sizes</h4>
+<p>The item offsets, the data offsets and the data sizes are 32-bit signed integers.</p>
+<p>Each item offset is the offset of the item with the corresponding index, relative to the first item's position in the file.</p>
+<p>Each data offset is an offset of the data with the corresponding index, relative to the position of the first data item in the file. The data item's size can then be calculated from the next data item's offset or the size of the data section.</p>
+<p>Each data size is the size of the uncompressed data of the data with the corresponding index. Note that this field is only present in datafile version 4.</p>
+<h4>Items</h4>
+<p>This is an array of items. Each is of the following form:</p>
+<pre><code>item:
+    [4] type_id__id
+    [4] size
+    [ ] item_data
+</code></pre>
+<p>The <code>type_id__id</code> integer consists of 16 bit <code>type_id</code> of the type the item belongs to and 16 bit <code>id</code> that uniquely identifies the item among all others of the same type, in that order, i.e. the upper 16 bit of <code>type_id__id</code> specify the <code>type_id</code> and the lower 16 bit specify <code>id</code>.</p>
+<p>The <code>size</code> signed 32-bit integer is the size of the <code>item_data</code> field, in bytes, which must be divisible by four.</p>
+<p>NOTE: Neither the <code>type_id</code> nor the <code>size</code> are interpreted by the reference implementation.</p>
+<h4>Data</h4>
+<p>This section contains the data items. The order of the data items implicitly defines their ID.</p>
+<p>In version 3, this section solely consists of the concatenated data. In version 4, however, it stores the data compressed by zlib's <code>compress</code> function.</p>
+</div>

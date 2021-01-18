@@ -1,0 +1,74 @@
+---
+title: "Snapshot"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/libtw2-doc/connection">Connection</a></li>
+    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
+    <li><a href="/libtw2-doc/demo">Demo</a></li>
+    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
+    <li><a href="/libtw2-doc/int">Int</a></li>
+    <li><a href="/libtw2-doc/map">Map</a></li>
+    <li><a href="/libtw2-doc/packet">Packet</a></li>
+    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
+    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
+    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Snapshot</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/snapshot.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<h3>Introduction</h3>
+<p>Teeworlds uses this format of so called &quot;snapshots&quot; to transmit the current state of the world over the network. The format allows one to transmit fixed-size &quot;items&quot;.</p>
+<h3>Terminology</h3>
+<p>All integers in this document are little-endian integers.</p>
+<h4>Item key</h4>
+<p>An item key is a 32-bit unsigned integer that contains the 16-bit unsigned integer <code>type_id</code> as the upper bits and <code>id</code> as the lower bits.</p>
+<h4>Items</h4>
+<p>An item consists of an item key <code>key</code> and an array of 32-bit signed integers <code>data</code>.</p>
+<h4>Snapshot</h4>
+<p>A snapshot is a collection of items identified by their key.</p>
+<h3>Format</h3>
+<h4>Checksum calculation</h4>
+<p>The checksum of a snapshot is calculated by summing all the <code>data</code> array elements of all items, using wrapping overflow behavior.</p>
+<h4>Snapshot deltas</h4>
+<pre><code>snapshot_delta:
+    [ 4] num_removed_items
+    [ 4] num_item_deltas
+    [ 4] _zero
+    [*4] removed_item_keys
+    [  ] item_deltas
+</code></pre>
+<p>Snapshot deltas are used to describe the differences between two snapshots, the &quot;old&quot; and the &quot;new&quot; one. You can use the delta together with the old snapshot to construct the new one. Note that the reverse does not work, because the values of snapshot items present in the old but not the new snapshot are not recorded in the delta.</p>
+<ul>
+<li><code>num_removed_items</code> is a positive signed 32-bit integer describing the length of the <code>removed_item_keys</code> array.</li>
+<li><code>num_item_deltas</code> is a positive signed 32-bit integer describing the number of item deltas in the <code>item_deltas</code> field.</li>
+<li><code>_zero</code> is a padding field which must be zeroed by any snapshot delta writer and ignored by any snapshot delta reader.</li>
+<li><code>removed_item_keys</code> is an array of <code>num_removed_items</code> item keys that are present in old snapshot, but not in the new one.</li>
+<li><code>item_deltas</code> is a concatenation of <code>num_item_deltas</code> item deltas.</li>
+</ul>
+<h4>Item deltas</h4>
+<pre><code>item_delta:
+    [ 4] type_id
+    [ 4] id
+    [ 4] _size
+    [*4] data_delta
+</code></pre>
+<ul>
+<li><code>type_id</code> is a 32-bit unsigned integer containing the 16-bit type id of the item.</li>
+<li><code>id</code> is 32-bit unsigned integer containing the 16-bit id of the item.</li>
+<li><code>_size</code> is a field that is only present if the size of items of type <code>type_id</code> is not pre-agreed for the protocol. A list of pre-agreed item sizes can be found in the appendix of this document.</li>
+<li><code>data_delta</code> is the data delta (an array of <code>_size</code> 32-bit signed integers). If the item was not present in the old snapshot (determined by the item key), then <code>data_delta</code> just contains the new item data. Otherwise, the <code>data_delta</code> needs to be added onto the current item's data (elementwise) using 32-bit integer addition that wraps around on overflow. Note that in the case of item update, the new size must be the same as the old size of the item data.</li>
+</ul>
+<h3>Appendix</h3>
+<h4>Pre-agreed item sizes</h4>
+<p>This describes the 0.6 protocol of Teeworlds.</p>
+<p><code>type_id</code> | <code>size</code> | name ----------+--------+-------------- 1 | 10 | obj_player_input 2 | 6 | obj_projectile 3 | 5 | obj_laser 4 | 4 | obj_pickup 5 | 3 | obj_flag 6 | 8 | obj_game_info 7 | 4 | obj_game_data 8 | 15 | obj_character_core 9 | 22 | obj_character 10 | 5 | obj_player_info 11 | 17 | obj_client_info 12 | 3 | obj_spectator_info 13 | 2 | event_common 14 | 2 | event_explosion 15 | 2 | event_spawn 16 | 2 | event_hammerhit 17 | 3 | event_death 18 | 3 | event_sound_global 19 | 3 | event_sound_world 20 | 3 | event_damage_indicator</p>
+</div>
