@@ -1,0 +1,600 @@
+---
+title: "Map"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/libtw2-doc/connection">Connection</a></li>
+    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
+    <li><a href="/libtw2-doc/demo">Demo</a></li>
+    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
+    <li><a href="/libtw2-doc/int">Int</a></li>
+    <li><a href="/libtw2-doc/map">Map</a></li>
+    <li><a href="/libtw2-doc/packet">Packet</a></li>
+    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
+    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
+    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Map</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/map.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<h3>Introduction</h3>
+<p>Teeworlds and DDNet maps get saved as datafiles. If you are not yet familiar with parsing datafiles, please go through the <a href="datafile">datafile documentation</a> first.</p>
+<h3>Terminology</h3>
+<ul>
+<li><p>integer types are usually declared in the same notation as in rust. Examples:</p>
+<ul>
+<li><code>i32</code> is a signed 32 bit integer</li>
+<li><code>u8</code> is a unsigned 8 bit integer, <code>byte</code> is used synonymously</li>
+</ul></li>
+<li><p><code>&amp;</code> is the prefix for data item indices. Those point to a data item in the <code>datafile.data</code> section of the datafile.</p></li>
+<li><p><code>opt</code> is the prefix for optional indices. They are either a normal index or <code>-1</code>, marking it as unused.</p></li>
+<li><p><code>*</code> is the prefix for indices that point to another item in the datafile.</p>
+<ul>
+<li>For example <code>*image</code> means that the field points to an image item. <code>*color_envelope</code> would mean that the field points to the envelope item with that index, which should be a color envelope.</li>
+</ul></li>
+<li><p><strong>CString</strong> is a null terminated UTF-8 string.</p></li>
+<li><p><strong>I32String</strong> is a CString stored in consecutive i32 values. To extract the string:</p>
+<ol>
+<li>convert the i32s to their be (big endian) byte representation, join the bytes so that we have a single array of bytes</li>
+<li>the last byte is a null byte, ignore that one for now</li>
+<li>wrapping-subtract 128 from the remaining bytes</li>
+<li>now you got a CString padded with zeroes</li>
+</ol></li>
+<li><p><strong>Point</strong> is a struct with two i32s, one for x, one for y. It is usually used to describe a position in the map. 0, 0 is the top-left corner.</p></li>
+<li><p><strong>Color</strong> is a struct with the 4 u8 values (in order): r, g, b, a. Its still usually parsed from 4 i32s, meaning each one should hold a value that fits into an u8.</p></li>
+<li><p>the <code>item_data</code> of an item is an array of i32s. We will split the <code>item_data</code> up into its different elements, which differ for each item type. Examples for the <code>item_data</code> syntax:</p>
+<ol>
+<li><code>[2] point: Point</code> =&gt; The next two i32 values represent the variable <code>point</code> (which will be explained afterwards) which is of the type <code>Point</code>.</li>
+<li><code>[1] opt &amp;name: CString</code> =&gt; The next i32 represents <code>name</code> and is an optional data item index to a CString.</li>
+</ol></li>
+</ul>
+<h3>Item Type Overview</h3>
+<pre><code>General map structure:
+    &gt; Info
+    &gt; Images
+    &gt; Envelopes
+        &gt; Envelope Points
+    &gt; Groups
+        &gt; Layers
+            &gt; Auto Mappers (DDNet only)
+    &gt; Sounds (DDNet only)
+</code></pre>
+<p>Maps consist of various elements that each have a <code>type_id</code> that identifies them.</p>
+<pre><code>type_id mappings:
+    0 -&gt; Version
+    1 -&gt; Info
+    2 -&gt; Images
+    3 -&gt; Envelopes
+    4 -&gt; Groups
+    5 -&gt; Layers
+    6 -&gt; Envelope Points
+    7 -&gt; Sounds (DDNet only)
+    0xffff -&gt; UUID Index (see below, DDNet only)
+</code></pre>
+<p>Use them to figure out which purpose each of the item types in the <code>datafile.item_types</code> section of the datafile has.</p>
+<p>Things to keep in mind:</p>
+<ol>
+<li>When an item type appears in <code>datafile.item_types</code>, it means that there must be at least one item of that type</li>
+<li>With the exception fo the UUID Index, the first item of an item type will have <code>id</code> = 0 and from there it will count up</li>
+</ol>
+<h4>UUID item types</h4>
+<p>In DDNet, some item types won't be assigned a type_id, but instead an uuid.</p>
+<p>To find the correct item type (in <code>datafile.item_types</code> for uuid item types, you will need their <code>type_id</code>. You will need to figure out the <code>type_id</code> manually by looking into the <strong>UUID Index items</strong>.</p>
+<pre><code>UUID Index Item structure:
+    type_id: 0xffff
+    id: type_id of the uuid item type that this item represents
+    item_data:
+        [3] UUID of the uuid item type that this item represents
+</code></pre>
+<ul>
+<li>the twelve bytes of the uuid are laid out in order in the <code>item_data</code> when viewing the integers as big endian</li>
+<li>steps to find an uuid item type:
+<ol>
+<li>get the UUID item type</li>
+<li>scan through its items</li>
+<li>when an item has the correct uuid in its <code>item_data</code>, copy the <code>type_id</code> from the <code>id</code> field</li>
+<li>find the item type with the <code>type_id</code> that we just found out</li>
+</ol></li>
+</ul>
+<h3>Map Item Types</h3>
+<h4>Version</h4>
+<ul>
+<li><code>type_id</code> = 0</li>
+<li>exactly one item</li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data of the only version item:
+    [1] version
+</code></pre>
+<ul>
+<li><code>version</code> = 1</li>
+<li>no actual data is stored using the Version item type</li>
+</ul>
+<h4>Info</h4>
+<ul>
+<li><code>type_id</code> = 1</li>
+<li>exactly one item</li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data of the only version item:
+    [1] (item) version
+    [1] opt &amp;author: CString
+    [1] opt &amp;version: CString
+    [1] opt &amp;credits: CString
+    [1] opt &amp;license: CString
+    [1] opt &amp;settings: [CString] (DDNet only)
+</code></pre>
+<ul>
+<li>both vanilla and DDNet are at <code>version</code> = 1</li>
+<li>like indicated, all the other fields are optional data item indices</li>
+<li>the data item behind <code>settings</code> is an array of CStrings, all consecutive, split by their null bytes (with a null byte at the very end)</li>
+<li>maximum amount of bytes for each CString (including the null byte):
+<ul>
+<li>author: 32</li>
+<li>version: 16</li>
+<li>credits: 128</li>
+<li>license: 32</li>
+</ul></li>
+</ul>
+<h4>Images</h4>
+<ul>
+<li><code>type_id</code> = 2</li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data of image items:
+    [1] version
+    [1] width
+    [1] height
+    [1] external: bool
+    [1] &amp;name: CString
+    [1] opt &amp;data: [Pixel]
+
+    version 2 extension (Vanilla only):
+    [1] variant
+</code></pre>
+<ul>
+<li>Vanilla is at <code>version</code> = 2, DDNet is at <code>version</code> = 1</li>
+<li><code>width</code> and <code>height</code> specify the dimensions of the image</li>
+<li>if <code>version</code> = 1, the image is of type RGBA, for <code>version</code> = 2 <code>variant</code> holds the type:
+<ul>
+<li>0 -&gt; RGB</li>
+<li>1 -&gt; RGBA</li>
+</ul></li>
+<li>Images can either be embedded or external.
+<ul>
+<li>Embedded images have <code>external</code> = false and have the image data stored in the data field. The image data is simply a 2d-array of pixels in row-major ordering. RGBA pixels are 4 bytes each, RGB pixels 3 bytes each.</li>
+<li>External images have <code>external</code> = true and the <code>data</code> field on <code>-1</code>. Those images can only be loaded by clients that have those in their <code>mapres</code> directory, meaning only a small set of images should be external. The client looks for those images by using the <code>name</code> field.</li>
+</ul></li>
+<li>the CString behind <code>name</code> must fit into 128 bytes</li>
+<li>External images for both 0.6 and 0.7 (note that they might differ between versions!): <code>bg_cloud1</code>, <code>bg_cloud2</code>, <code>bg_cloud3</code>, <code>desert_doodads</code>, <code>desert_main</code>, <code>desert_mountains2</code>, <code>desert_mountains</code>, <code>desert_sun</code>, <code>generic_deathtiles</code>, <code>generic_unhookable</code>, <code>grass_doodads</code>, <code>grass_main</code>, <code>jungle_background</code>, <code>jungle_deathtiles</code>, <code>jungle_doodads</code>, <code>jungle_main</code>, <code>jungle_midground</code>, <code>jungle_unhookables</code>, <code>moon</code>, <code>mountains</code>, <code>snow</code>, <code>stars</code>, <code>sun</code>, <code>winter_doodads</code>, <code>winter_main</code>, <code>winter_mountains2</code>, <code>winter_mountains3</code>, <code>winter_mountains</code></li>
+<li>Further external images for 0.7 maps: <code>easter</code>, <code>generic_lamps</code>, <code>generic_shadows</code>, <code>light</code></li>
+</ul>
+<h4>Envelopes</h4>
+<ul>
+<li><code>type_id</code> = 3</li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data of envelope items:
+    [1] version
+    [1] channels
+    [1] start_point
+    [1] num_points
+    
+    extension without version change:
+    [8] name: I32String
+    
+    version 2 extension:
+    [1] synchronized: bool
+</code></pre>
+<ul>
+<li>DDNet is at <code>version</code> = 2, Vanilla chooses 3 for all envelopes when one of them uses a bezier curve, but falls back to 2 when there is none.</li>
+<li><code>channel</code> holds the type of the envelope
+<ul>
+<li>1 -&gt; Sound envelope</li>
+<li>3 -&gt; Position envelope</li>
+<li>4 -&gt; Color envelope</li>
+</ul></li>
+<li><code>synchronized</code> has the effect that the envelope syncs to server time, not player join time</li>
+<li><code>start_point</code> is the index of its first envelope point</li>
+<li><code>num_points</code> is the number of envelope points for this envelope</li>
+</ul>
+<p>See Envelope Points to see how the envelope points are stored.</p>
+<h4>Envelope Points</h4>
+<ul>
+<li><code>type_id</code> = 6</li>
+<li>exactly one item</li>
+</ul>
+<p>The <code>item_data</code> of the only item contains all the envelope points used for the envelopes.</p>
+<ul>
+<li>Size of each envelope point:
+<ul>
+<li>22 i32s, if all envelopes have <code>version</code> = 3</li>
+<li>6 i32s, if all envelopes have a <code>version</code> &lt;= 2</li>
+</ul></li>
+<li>Note that all unused fields are zeroed</li>
+</ul>
+<p>The first 6 i32 of each envelope point, depending on the envelope type it belongs to:</p>
+<pre><code>sound envelope point:
+    [1] time
+    [1] curve type
+    [1] volume
+    [3] -
+
+position envelope point:
+    [1] time
+    [1] curve_type
+    [1] x
+    [1] y
+    [1] rotation
+    [1] -
+
+color envelope point:
+    [1] time
+    [1] curve type
+    [4] color: I32Color
+</code></pre>
+<ul>
+<li><p><code>time</code> is the timestamp of the point, it should increase monotonously within each envelope</p></li>
+<li><p><code>curve_type</code> holds how the curve should bend between this point and the next one</p>
+<ul>
+<li>0 -&gt; Step (abrupt drop at second value)</li>
+<li>1 -&gt; Linear (linear value change)</li>
+<li>2 -&gt; Slow (first slow, later much faster value change)</li>
+<li>3 -&gt; Fast (first fast, later much slower value change)</li>
+<li>4 -&gt; Smooth (slow, faster, then once more slow value change)</li>
+<li>5 -&gt; Bezier (Vanilla only, very customizable curve)</li>
+</ul></li>
+<li><p><code>x</code> and <code>y</code> hold the movement</p></li>
+<li><p><strong>I32Color</strong> actually means that the color values for r, g, b, a are i32 values</p></li>
+</ul>
+<p>If bezier curves are used anywhere (envelope version 3), then there are 16 more i32 for each point. These are only non-zero if the <code>curve_type</code> of the point is 5 (Bezier):</p>
+<pre><code>bezier point extension:
+    [4] in_tangent_dx
+    [4] in_tangent_dy
+    [4] out_tangent_dx
+    [4] out_tangent_dy
+</code></pre>
+<h4>Groups</h4>
+<ul>
+<li><code>type_id</code> = 4</li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data of group items
+    [1] version
+    [1] x_offset
+    [1] y_offset
+    [1] x_parallax
+    [1] y_parallax
+    [1] start_layer
+    [1] num_layers
+    
+    version 2 extension:
+    [1] clipping: bool
+    [1] clip_x
+    [1] clip_y
+    [1] clip_width
+    [1] clip_height
+    
+    version 3 extension:
+    [3] name: I32String
+</code></pre>
+<ul>
+<li>both Vanilla and DDNet are at <code>version</code> = 3</li>
+<li><code>start_layer</code> and <code>num_layers</code> tell you which layers belong to this group. Groups are not allowed to overlap, however, the reference implementation has no such checks while loading.</li>
+<li>the 'Game' group, which is the only one that is allowed to hold physics layers, should have every field zeroed, only <code>x_parallax</code> and <code>y_parallax</code> should each be 100 and the <code>name</code> should be &quot;Game&quot;. Note that the reference implementation does not verify this but instead just overwrites those values</li>
+<li>all maps must have a 'Game' group, since every map must have a 'Game' layer which can only be in the 'Game' group</li>
+</ul>
+<h4>Layers</h4>
+<ul>
+<li><code>type_id</code> = 5</li>
+</ul>
+<p>Layer types:</p>
+<ul>
+<li>Tilemap layers:
+<ul>
+<li>Tiles layer</li>
+<li>Physics layers:
+<ul>
+<li>Game layer</li>
+<li>Front layer (DDNet only)</li>
+<li>Tele layer (DDNet only)</li>
+<li>Speedup layer (DDNet only)</li>
+<li>Switch layer (DDNet only)</li>
+<li>Tune layer (DDNet only)</li>
+</ul></li>
+</ul></li>
+<li>Quads layer</li>
+<li>Sounds layer (DDNet only)</li>
+<li>Deprecated Sounds layer (DDNet only, replaced by Sounds layer)</li>
+</ul>
+<p>Note that:</p>
+<ol>
+<li>All physics layers <em>should</em> be unique, but this isn't properly enforced on all DDNet maps. The reference implementation uses the last physics layer of each type.</li>
+<li>All maps must have a Game layer</li>
+</ol>
+<!-- end list -->
+
+<pre><code>item_data base for all layer items (different types have different extensions):
+    [1] _version (not used, was uninitialized)
+    [1] type
+    [1] flags
+</code></pre>
+<ul>
+<li><code>flags</code> currently only has the detail flag (at 2^0), which is used in Quad-, Tile- and Sound layers.</li>
+<li><code>type</code> holds the type of layer:
+<ul>
+<li>2 -&gt; Tilemap layer</li>
+<li>3 -&gt; Quads layer</li>
+<li>9 -&gt; Deprecated Sounds layer</li>
+<li>10 -&gt; Sounds layer</li>
+</ul></li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data extension for tilemap layers:
+    [1] version
+    [1] width
+    [1] height
+    [1] type
+    [4] color: Color
+    [1] opt *color_envelope
+    [1] color_envelope_offset
+    [1] opt *image
+    [1] &amp;data: 2d-array of the the tile type &#39;Tile&#39;
+    
+    version 3 extension:
+    [3] name: I32String
+    
+    DDNet extension (no version change):
+    [1] opt &amp;data_tele
+    [1] opt &amp;data_speedup
+    [1] opt &amp;data_front
+    [1] opt &amp;data_switch
+    [1] opt &amp;data_tune
+</code></pre>
+<ul>
+<li><p>Vanilla is at <code>version</code> = 4, DDNet at <code>version</code> = 3</p></li>
+<li><p><code>width</code> and <code>height</code> specify the dimensions of the layer</p></li>
+<li><p><code>type</code> tells you what kind of tilemap layer this is:</p>
+<ul>
+<li>0 -&gt; Tiles</li>
+<li>1 -&gt; Game</li>
+<li>2 -&gt; Tele</li>
+<li>4 -&gt; Speedup</li>
+<li>8 -&gt; Front</li>
+<li>16 -&gt; Switch</li>
+<li>32 -&gt; Tune</li>
+</ul></li>
+<li><p><code>color</code>, <code>color_envelope</code>, <code>color_envelope_offset</code>, <code>image</code> are only used by the tiles layer</p></li>
+<li><p>all tile types consist of bytes (u8)</p></li>
+<li><p>all 2d-arrays of tiles use row-major ordering</p></li>
+<li><p>all tile types have the <code>id</code> byte, which identifies its use</p>
+<ul>
+<li>for example in the game layer, 0 is air, 1 is hookable, etc.</li>
+</ul></li>
+<li><p>many have a <code>flags</code> byte, which is a bitflag with the following bits:</p>
+<ul>
+<li>2^0 -&gt; vertical flip</li>
+<li>2^1 -&gt; horizontal flip</li>
+<li>2^2 -&gt; opaque</li>
+<li>2^3 -&gt; 90° rotation</li>
+<li>order of flips and rotations: vertical flip -&gt; horizontal flip -&gt; rotation</li>
+</ul></li>
+</ul>
+<!-- end list -->
+
+<pre><code>&#39;Tile&#39; tile type (consiting of bytes, used by all vanilla layers and the front layer):
+    [1] id
+    [1] flags
+    [1] skip
+    [1] - unused
+</code></pre>
+<ul>
+<li>the <code>skip</code> byte is used for the 0.7 compression, which is used if <code>version</code> &gt;= 4:
+<ul>
+<li>the <code>data</code> field no longer points to an 2d-array of tiles, but instead to an array of 'Tile' tiles which must be expanded into the 2d-array</li>
+<li>the <code>skip</code> field of each tile in the array tells you how many times this tile is used in a row. For example:
+<ul>
+<li>0 means that it appears only once there</li>
+<li>3 means that you need to add 3 more copies of that tile after this one</li>
+</ul></li>
+<li>note that the maximum value for <code>skip</code> is 255</li>
+<li>set the <code>skip</code> field to 0 while expanding
+<ul>
+<li>Teeworlds rendering assumes that those values are set to 0</li>
+<li>saving the tiles with 0.7 compression is less tedious, since you can check for equality of the entire tile struct</li>
+<li>saving the tiles again without the compression is less error prone. Since any saved map could be fed back into Teeworlds rendering, you need to set the <code>skip</code> values to 0 in this step</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>DDNet only content:</p>
+<ul>
+<li>each physics layer uses a different data field pointer, keep in mind to use the correct one, when saving maps, set the unused pointers to -1</li>
+<li>the DDNet extension came before the <code>version</code> = 3 extension, meaning you have to subtract 3 (the length of the <code>name</code> field) from the data index</li>
+<li>you might have noticed that the <code>data</code> field is not actually optional like all the other data fields. For vanilla compatibility, the <code>data</code> field always points to a 2d-array of tiles of the type 'Tile', with the same dimensions as the actual layer, but everything zeroed out</li>
+</ul>
+<p>Special tile types:</p>
+<pre><code>&#39;Tele&#39; tile type (consiting of bytes):
+    [1] number
+    [1] id
+</code></pre>
+<ul>
+<li><code>number</code> is the number of the teleporter exit/entry to group them together</li>
+</ul>
+<!-- end list -->
+
+<pre><code>&#39;Speedup&#39; tile type (consiting of bytes):
+    [1] force
+    [1] max_speed
+    [1] id
+    [1] - unused padding byte
+    [2] angle: i16
+</code></pre>
+<ul>
+<li>angle is LE</li>
+</ul>
+<!-- end list -->
+
+<pre><code>&#39;Switch&#39; tile type (consiting of bytes):
+    [1] number
+    [1] id
+    [1] flags
+    [1] delay
+</code></pre>
+<ul>
+<li><code>number</code> once again tells you which tiles interact with each other</li>
+</ul>
+<!-- end list -->
+
+<pre><code>&#39;Tune&#39; tile type (consiting of bytes):
+    [1] number
+    [1] id
+</code></pre>
+<ul>
+<li><code>number</code> stores which zone this is, zones are defined in the map info -&gt; settings</li>
+</ul>
+<p><strong>Quads layer</strong></p>
+<pre><code>item_data extension for quads layers:
+    [1] version
+    [1] num_quads
+    [1] &amp;data: [Quads]
+    [1] opt *image
+    
+    version 2 extension:
+    [3] name: I32String
+</code></pre>
+<ul>
+<li>both Vanilla and DDNet are at <code>version</code> = 2</li>
+<li><code>num_quads</code> is the amount of quads found behind the data item pointer <code>data</code></li>
+<li>the size of a quad in bytes is 152, however we will pretend that the data consists of i32 when looking at the Quad structure:</li>
+</ul>
+<!-- end list -->
+
+<pre><code>Quad:
+    [2] position: Point
+    [8] corner_positions: [Point; 4]
+    [16] corner_colors: [Color; 4]
+    [8] texture_coordinates: [Point; 4]
+    [1] opt *position_envelope
+    [1] position_envelope_offset
+    [1] opt *color_envelope
+    [1] color_envelope_offset
+</code></pre>
+<ul>
+<li>corners are in the order top-left -&gt; top-right -&gt; bottom-left -&gt; bottom-right</li>
+</ul>
+<p><strong>Sounds layer</strong></p>
+<pre><code>item_data extension for sounds layers:
+    [1] version
+    [1] num_sources
+    [1] &amp;data: [SoundSource]
+    [1] opt *sound
+    [3] name: I32String
+</code></pre>
+<ul>
+<li>num_sources is the amount of sources behind the data item pointer <code>data</code></li>
+<li>the size of a sound source in bytes is 52, however we will pretend that the data consists of i32 when looking at the SoundSource structure:</li>
+<li>the CString behind <code>name</code> must fit into 128 bytes</li>
+</ul>
+<!-- end list -->
+
+<pre><code>SoundSource:
+    [2] position: Point
+    [1] looping: bool
+    [1] panning: bool
+    [1] delay (in seconds)
+    [1] falloff: u8
+    [1] *position_envelope
+    [1] position_envelope_offset
+    [1] *sound_envelope
+    [1] sound_envelope_offset
+    [3] shape: SoundShape
+
+SoundShape:
+    [1] kind
+    [1] width  / radius
+    [1] height / - unused
+</code></pre>
+<ul>
+<li><code>kind</code>:
+<ul>
+<li>0 -&gt; rectangle (use <code>width</code> and <code>height</code>)</li>
+<li>1 -&gt; circle (use <code>radius</code>)</li>
+</ul></li>
+</ul>
+<p><strong>Deprecated Sounds layer</strong></p>
+<ul>
+<li>the <code>item_data</code> is the same as in the Sounds layer</li>
+<li>difference is the SoundSource struct, which here only uses 36 bytes:</li>
+</ul>
+<!-- end list -->
+
+<pre><code>deprecated SoundSource:
+    [2] position: Point
+    [1] looping: bool
+    [1] delay
+    [1] radius
+    [1] *position_envelope
+    [1] position_envelope_offset
+    [1] *sound_envelope
+    [1] sound_envelope_offset
+</code></pre>
+<p>Use the following values to convert a deprecated SoundSource:</p>
+<ul>
+<li><code>panning</code> = true</li>
+<li><code>falloff</code> = 0</li>
+<li><code>shape</code>: kind = circle, with shared <code>radius</code></li>
+</ul>
+<h4>Sounds</h4>
+<ul>
+<li><code>type_id</code> = 7</li>
+<li>DDNet only</li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data of sound items:
+    [1] version
+    [1] external: bool
+    [1] &amp;name: CString
+    [1] &amp;data
+    [1] data_size
+</code></pre>
+<ul>
+<li>DDNet is at <code>version</code> = 1</li>
+<li>in theory, sounds can be external like images. However, since there are no sounds that could currently be loaded externally, this feature has been removed. This means that <code>external</code> should always be false and <code>data</code> should not be considered an option index</li>
+<li>the data item index <code>data</code> points to opus sound data</li>
+</ul>
+<h4>Auto Mappers</h4>
+<ul>
+<li><code>uuid</code> = <code>16271b3e-8c17-7839-9bd9-b11ae041d0d8</code></li>
+<li>DDNet only</li>
+</ul>
+<!-- end list -->
+
+<pre><code>item_data of auto mapper items:
+    [1] _version (not used, was uninitialized)
+    [1] *group
+    [1] *layer
+    [1] opt config
+    [1] seed
+    [1] flags
+</code></pre>
+<ul>
+<li><code>group</code> points to a group, <code>layer</code> is the layer index within the group</li>
+<li><code>flags</code> currently only has the <code>automatic</code> flag at 2^0, which tells the client to auto map after any changes</li>
+<li>while only Tiles layer use auto mappers, physics layers may also have one. When saving, only save auto mappers for Tiles layers</li>
+</ul>
+</div>

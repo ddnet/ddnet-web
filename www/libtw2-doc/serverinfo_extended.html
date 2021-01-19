@@ -1,0 +1,109 @@
+---
+title: "Serverinfo extended"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/libtw2-doc/connection">Connection</a></li>
+    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
+    <li><a href="/libtw2-doc/demo">Demo</a></li>
+    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
+    <li><a href="/libtw2-doc/int">Int</a></li>
+    <li><a href="/libtw2-doc/map">Map</a></li>
+    <li><a href="/libtw2-doc/packet">Packet</a></li>
+    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
+    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
+    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Serverinfo extended</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/serverinfo_extended.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<p>In the following document, &quot;vanilla&quot; refers to unmodified Teeworlds.</p>
+<h3>Extended server info request</h3>
+<p>An extended server info can be requested from the Teeworlds server by sending the following UDP packet:</p>
+<pre><code>[2] magic_bytes
+[2] extra_token
+[2] reserved
+[4] padding
+[4] vanilla_request
+[1] token
+</code></pre>
+<p><code>magic_bytes</code> must be the ASCII representation of &quot;xe&quot;.</p>
+<p><code>extra_token</code> contains a 16 bit big-endian integer that should be shifted by 8 to the left and combined with <code>token</code> with a bitwise or, before the extended server info is sent back.</p>
+<p><code>reserved</code> is reserved for future protocol versions and must be zeroed by the sender and ignored by the receiver with this protocol version.</p>
+<p><code>padding</code> must be filled with 0xff bytes.</p>
+<p><code>vanilla_request</code> must be the ASCII representation of &quot;gie3&quot;.</p>
+<p><code>token</code> is an arbitrary byte chosen by the client which will be sent back with the server info. For the extended server info, the <code>extra_token</code> field needs to be included in the server info response.</p>
+<p>If a server receives such a request (detected by the <code>magic_bytes</code> field), it can either respond with the vanilla server info, or by sending the extended server info, described in the following.</p>
+<p>If the server does not recognize the <code>magic_bytes</code>, it should send back the vanilla server info.</p>
+<h3>Extended server info</h3>
+<p>The extended server info can consist of several packets, the &quot;main&quot; packet and the &quot;more&quot; packets, which can contain additional player data in case they don't fit in the first packet.</p>
+<p>The <code>str</code> type is a zero-terminated UTF-8 string. Implementations should be prepared to either replace invalid UTF-8 with the replacement character or to treat these fields as opaque zero-terminated byte sequences.</p>
+<p>The <code>int</code> type is an integer encoded in the decimal system in a zero-terminated ASCII string.</p>
+<p>NOTE: The reference implementation clears control characters (replacing bytes with a value of less than 32 with the ASCII space ' ') and skips leading whitespace in all strings.</p>
+<p>The receiver of such a server info can detect whether it has received the server info completely by comparing the number of players received with the number of players set in the main packet.</p>
+<h4>The main packet</h4>
+<p>The main server info packet looks like follows:</p>
+<pre><code>[ 10] padding
+[  4] type
+[int] token
+[str] version
+[str] name
+[str] map
+[int] map_crc
+[int] map_size
+[str] game_type
+[int] flags
+[int] num_players
+[int] max_players
+[int] num_clients
+[int] max_clients
+[str] reserved
+[  *] players
+</code></pre>
+<p><code>padding</code> must be filled with 0xff bytes.</p>
+<p><code>type</code> must be the ASCII representation of &quot;iext&quot;.</p>
+<p><code>token</code> must be the token from the request. If the server info isn't sent upon a request, it mut be -1.</p>
+<p><code>version</code> contains the server version. The first three bytes must equal the client's version, otherwise it will be filtered out as &quot;incompatible version&quot;.</p>
+<p><code>name</code>, <code>map</code>, <code>game_type</code> are the server's name, its current map and gametype, respectively. <code>map_crc</code> is the current map's CRC (note that Teeworlds uses incorrect starting values to calculate the CRC) and <code>map_size</code> is the map's size in bytes.</p>
+<p>There is currently only one flag for the <code>flags</code> field, namely the password flag, whose value is 1. It must be set if entering the server requires a password, and unset in the other case.</p>
+<p><code>num_players</code>, <code>max_players</code>, <code>num_clients</code>, <code>max_clients</code>: These values describe how many players (people that are not in &quot;spectator mode&quot;) and clients (people that are connected to the server) the server currently has (<code>num_*</code>) and is able to handle (<code>max_*</code>). The following natural inequalities must hold:</p>
+<pre><code>                 &lt;= max_players
+0 &lt;= num_players                &lt;= max_clients
+                 &lt;= num_clients
+</code></pre>
+<p>Note that there is no upper limit for <code>max_clients</code> enforced by the protocol.</p>
+<p>The field <code>reserved</code> is reserved for future protocol versions. Senders of this message must set the field to the empty string, and receivers of this message must ignore its value.</p>
+<p><code>players</code> contains the player info described further below.</p>
+<h4>The &quot;more&quot; packet</h4>
+<p>A &quot;more&quot; packet looks like this:</p>
+<pre><code>[ 10] padding
+[  4] type
+[int] token
+[int] packet_no
+[str] reserved
+[  *] players
+</code></pre>
+<p><code>padding</code>, <code>token</code>, <code>reserved</code>, <code>players</code>: See the explanation on the main packet.</p>
+<p><code>type</code> must contain the ASCII representation of &quot;iex+&quot;.</p>
+<p><code>packet_no</code> must be packet number in the server info response. It must be greater than 0 and less than 64. The main packet has an implicit <code>packet_no</code> of 0. This field can be used to detect duplicated packets.</p>
+<h4>Player info</h4>
+<p>A single player info is defined as:</p>
+<pre><code>[str] name
+[str] clan
+[int] country
+[int] score
+[int] is_player
+[str] reserved
+</code></pre>
+<p>The <code>name</code>, <code>clan</code> and <code>score</code> field contain the player's name, clan and score, respectively.</p>
+<p>The <code>country</code> field contains the ISO 3166-1 numeric code of the player's country, or -1 if unset.</p>
+<p>The <code>is_player</code> field contains a non-zero integer if the player is not a spectator, and 0 otherwise. Producers of this message should always use 1 to indicate a non-spectator client.</p>
+</div>

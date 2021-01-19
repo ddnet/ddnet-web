@@ -1,0 +1,42 @@
+---
+title: "Connection"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/libtw2-doc/connection">Connection</a></li>
+    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
+    <li><a href="/libtw2-doc/demo">Demo</a></li>
+    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
+    <li><a href="/libtw2-doc/int">Int</a></li>
+    <li><a href="/libtw2-doc/map">Map</a></li>
+    <li><a href="/libtw2-doc/packet">Packet</a></li>
+    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
+    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
+    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Connection</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/connection.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<pre><code>  -&gt; s:info
+  &lt;- s:map_change &lt;----------------------+
+[ -&gt; s:request_map_data ]                |
+[ &lt;- s:map_data ]                        |
+  -&gt; s:ready                             |
+[ &lt;- g:sv_motd ]                         |
+  &lt;- s:con_ready                         |
+  -&gt; g:client_start_info                 |
+[ &lt;- g:sv_vote_clear_options ]           |
+[ &lt;- g:sv_tune_params ]                  |
+  &lt;- g:sv_ready_to_enter                 |
+  -&gt; s:enter_game                        |
+  ingame --------------------------------+
+</code></pre>
+</div>

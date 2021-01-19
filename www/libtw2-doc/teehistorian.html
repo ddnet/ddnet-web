@@ -1,0 +1,130 @@
+---
+title: "Teehistorian"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/libtw2-doc/connection">Connection</a></li>
+    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
+    <li><a href="/libtw2-doc/demo">Demo</a></li>
+    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
+    <li><a href="/libtw2-doc/int">Int</a></li>
+    <li><a href="/libtw2-doc/map">Map</a></li>
+    <li><a href="/libtw2-doc/packet">Packet</a></li>
+    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
+    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
+    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Teehistorian</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/teehistorian.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<h3>Introduction</h3>
+<p>The DDNet teehistorian format is the format which DDNet uses to save all input to a server in order to be able to reproduce it faithfully. A teehistorian file is fundamentally a stream of messages that describe input to the server and a little data for sanity checks.</p>
+<p>The format is designed in a way to make it easily compressible using standard compression algorithms in order to make it suitable for long-term storage, which Teeworlds demos are not due to their large size. It is easy to write out in a stream (you just append data at the end) but for reading, one has to read the whole file end-to-end because the format does not support seeking.</p>
+<p>This document describes version 1 and 2 of the teehistorian file format. The only difference between them is the existence of the <code>EX</code> message (see below).</p>
+<h3>Format</h3>
+<p>A teehistorian file is fundamentally a header followed by a stream of messages.</p>
+<h4>Header</h4>
+<p>The header starts with the teehistorian UUID (699db17b-8efb-34ff-b1d8-da6f60c15dd1, version 3 UUID derived from the Teeworlds namespace e05ddaaa-c4e6-4cfb-b642-5d48e80c0029 and the name &quot;<a href="mailto:teehistorian@ddnet.tw">teehistorian@ddnet.tw</a>&quot;), encoded as a <a href="https://en.wikipedia.org/w/index.php?title=Universally_unique_identifier&amp;oldid=844235295#Encoding">big endian binary encoded UUID</a> (16 bytes). It is followed by a null-terminated string that contains a JSON object containing at least the following keys:</p>
+<ul>
+<li><code>version</code>: This is the version number of the teehistorian format. It must be <code>&quot;1&quot;</code> or <code>&quot;2&quot;</code> for this document.</li>
+</ul>
+<h4>Messages</h4>
+<p>Each message starts with a Teeworlds variable-width integer, which is the message ID.</p>
+<ul>
+<li>PLAYER_DIFF(0-63): dx(int) dy(int) records that player with the message ID as cid (client ID) has changed position in a way that adds dx to the x coordinate and y to the y coordinate</li>
+<li>FINISH(-1): records the end of the teehistorian file</li>
+<li>TICK_SKIP(-2): dt(int) records that there were dt ticks in which nothing happened, i.e. the next tick is the last tick + dt + 1</li>
+<li>PLAYER_NEW(-3): cid(int) x(int) y(int) records that a new player character with cid appeared at (x, y)</li>
+<li>PLAYER_OLD(-4): cid(int) records that the player character with cid disappeared</li>
+<li>INPUT_DIFF(-5): cid(int) dinput(int[10]) records that a player with cid sent an input packet but has sent one before, add dinput to the previous input component-wise to obtain the new one</li>
+<li>INPUT_NEW(-6): cid(int) input(int[10]) records that a player with cid sent an input packet for the first time, containing input</li>
+<li>MESSAGE(-7): cid(int) msgsize(int) msg(raw[msgsize]) records that a player with cid sent a game-related packet msg</li>
+<li>JOIN(-8): cid(int) records that a player with cid joined, on the engine level</li>
+<li>DROP(-9): cid(int) reason(str) records that a player with cid left/was kicked/was dropped, on the engine level</li>
+<li>CONSOLE_COMMAND(-10): cid(int) flags(int) cmd(str) num_args(int) args(str[num_args]) records that a console command cmd was executed by client id cid (not necessarily a player, might be a vote as well), with flags (distinguishes chat commands, etc.) with parameters args</li>
+<li>EX(-11): uuid(uuid) size(int) data(raw[size]) records an extension message, identified by uuid and containing data
+<ul>
+<li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/6c378b972b70b0556d3b434b26baa0b9ffe490f1">6c378b972b70b055</a></li>
+</ul></li>
+</ul>
+<p>The following extra messages are known right now:</p>
+<ul>
+<li>TEST(<a href="mailto:teehistorian-test@ddnet.tw">teehistorian-test@ddnet.tw</a>): is just a test message
+<ul>
+<li>uuid: 6bb8ba88-0f0b-382e-8dae-dbf4052b8b7d</li>
+<li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/6c378b972b70b0556d3b434b26baa0b9ffe490f1">6c378b972b70b055</a></li>
+</ul></li>
+<li>DDNETVER_OLD(<a href="mailto:teehistorian-ddnetver-old@ddnet.tw">teehistorian-ddnetver-old@ddnet.tw</a>): cid(int), version(int)
+<ul>
+<li>uuid: 41b49541-f26f-325d-8715-9baf4b544ef9</li>
+<li>introduced in DDNet 13.2, <a href="https://github.com/ddnet/ddnet/commit/0d7872c79eaeb19b3fd08c39c013a1043db1fd9b">0d7872c79eaeb19b</a></li>
+</ul></li>
+<li>DDNETVER(<a href="mailto:teehistorian-ddnetver@ddnet.tw">teehistorian-ddnetver@ddnet.tw</a>): cid(int), connection_id(uuid), version(int), version_str(str)
+<ul>
+<li>uuid: 1397b63e-ee4e-3919-b86a-b058887fcaf5</li>
+<li>introduced in DDNet 13.2, <a href="https://github.com/ddnet/ddnet/commit/0d7872c79eaeb19b3fd08c39c013a1043db1fd9b">0d7872c79eaeb19b</a></li>
+</ul></li>
+<li>AUTH_INIT(<a href="mailto:teehistorian-auth-init@ddnet.tw">teehistorian-auth-init@ddnet.tw</a>): cid(int) level(int) auth_name(str) records that a player with cid got rcon access with level under the account name auth_name since the start of the map (because they had it before the map change as well)
+<ul>
+<li>uuid: 60daba5c-52c4-3aeb-b8ba-b2953fb55a17</li>
+<li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/1c3dc8c316c2bf37b94814d390c1c214422d46a9">1c3dc8c316c2bf37</a></li>
+</ul></li>
+<li>AUTH_LOGIN(<a href="mailto:teehistorian-auth-login@ddnet.tw">teehistorian-auth-login@ddnet.tw</a>): cid(int) level(int) auth_name(str) records that a player with cid just logged into rcon with level under the account name auth_name
+<ul>
+<li>uuid: 37ecd3b8-9218-3bb9-a71b-a935b86f6a81</li>
+<li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/1c3dc8c316c2bf37b94814d390c1c214422d46a9">1c3dc8c316c2bf37</a></li>
+</ul></li>
+<li>AUTH_LOGOUT(<a href="mailto:teehistorian-auth-logout@ddnet.tw">teehistorian-auth-logout@ddnet.tw</a>): cid(int) records that a player with cid just logged out of rcon
+<ul>
+<li>uuid: d4f5abe8-edd2-3fb9-abd8-1c8bb84f4a63</li>
+<li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/1c3dc8c316c2bf37b94814d390c1c214422d46a9">1c3dc8c316c2bf37</a></li>
+</ul></li>
+<li>JOINVER6(<a href="mailto:teehistorian-joinver6@ddnet.tw">teehistorian-joinver6@ddnet.tw</a>): cid(int)
+<ul>
+<li>uuid: 1899a382-71e3-36da-937d-c9de6bb95b1d</li>
+<li>introduced in DDNet 14.0 <a href="https://github.com/ddnet/ddnet/commit/e294da41ba7142cb583a5dd2eab45af2ec9a8447">e294da41ba7142cb</a></li>
+</ul></li>
+<li>JOINVER7(<a href="mailto:teehistorian-joinver7@ddnet.tw">teehistorian-joinver7@ddnet.tw</a>): cid(int)
+<ul>
+<li>uuid: 59239b05-0540-318d-bea4-9aa1e80e7d2b</li>
+<li>introduced in DDNet 14.0 <a href="https://github.com/ddnet/ddnet/commit/e294da41ba7142cb583a5dd2eab45af2ec9a8447">e294da41ba7142cb</a></li>
+</ul></li>
+<li>TEAM_SAVE_SUCCESS(<a href="mailto:teehistorian-save-success@ddnet.tw">teehistorian-save-success@ddnet.tw</a>): team(int), save_id(uuid), save(str)
+<ul>
+<li>uuid: 4560c756-da29-3036-81d4-90a50f0182cd</li>
+<li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
+</ul></li>
+<li>TEAM_SAVE_FAILURE(<a href="mailto:teehistorian-save-failure@ddnet.tw">teehistorian-save-failure@ddnet.tw</a>): team(int)
+<ul>
+<li>uuid: b29901d5-1244-3bd0-bbde-23d04b1f7ba9</li>
+<li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
+</ul></li>
+<li>TEAM_LOAD_SUCCESS(<a href="mailto:teehistorian-load-success@ddnet.tw">teehistorian-load-success@ddnet.tw</a>): team(int), save_id(uuid), save(str)
+<ul>
+<li>uuid: e05408d3-a313-33df-9eb3-ddb990ab954a</li>
+<li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
+</ul></li>
+<li>TEAM_LOAD_FAILURE(<a href="mailto:teehistorian-load-failure@ddnet.tw">teehistorian-load-failure@ddnet.tw</a>): team(int)
+<ul>
+<li>uuid: ef8905a2-c695-3591-a1cd-53d2015992dd</li>
+<li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
+</ul></li>
+</ul>
+<p>The following data types are used:</p>
+<ul>
+<li>int is a <a href="int">teeworlds variable-width integer</a></li>
+<li>str is a null-terminated string</li>
+<li>raw[size] is simply size bytes</li>
+<li>str[num_args] is num_args null-terminated strings</li>
+<li>uuid is 16 bytes of a UUID</li>
+</ul>
+<p>the UUIDs are version 3 UUIDs, with the teeworlds namespace e05ddaaa-c4e6-4cfb-b642-5d48e80c0029 a tick is implicit in these messages when a player with lower cid is recorded using any of PLAYER_DIFF, PLAYER_NEW, PLAYER_OLD e.g. PLAYER_DIFF cid=0 … PLAYER_NEW cid=5 … PLAYER_OLD cid=3 has an implicit tick between the cid=5 and the cid=3 message another correction: the header is the teehistorian uuid followed by a zero-terminated string containing json in a self-explanatory format</p>
+</div>
