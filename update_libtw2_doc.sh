@@ -1,9 +1,9 @@
 #!/bin/bash
 
-URL="/libtw2-doc"
+URL="/docs/libtw2"
 
 if [ -z "$1" ]; then
-	OUT_DIR="www/libtw2-doc"
+	OUT_DIR="www/docs/libtw2"
 else
 	OUT_DIR="$1"
 fi
