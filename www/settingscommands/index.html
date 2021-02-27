@@ -42,8 +42,8 @@ menu: |
   <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
   <tr><td>toggle_tune</td><td>s[tuning] i[value 1] i[value 2]</td><td>Toggle tune variable</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
-  <tr><td>tune_zone_enter</td><td>i[zone] s[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
-  <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_leave</td><td>i[zone] r[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
   <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
 </table></div>
@@ -62,7 +62,7 @@ menu: |
   <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser, 0 to automatically find a free port in 8303-8310)</td><td>0</td></tr>
   <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td></tr>
   <tr><td>sv_hostname</td><td>Server hostname (0.7 only)</td><td>&quot;&quot;</td></tr>
-  <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Gold Mine&quot;</td></tr>
+  <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Sunny Side Up&quot;</td></tr>
   <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>MAX_CLIENTS</td></tr>
   <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>4</td></tr>
   <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td></tr>
@@ -256,14 +256,14 @@ menu: |
   <tr><td>reload</td><td></td><td>Reload the map</td></tr>
   <tr><td>add_sqlserver</td><td>s[&#x27;r&#x27;|&#x27;w&#x27;] s[Database] s[Prefix] s[User] s[Password] s[IP] i[Port] ?i[SetUpDatabase ?]</td><td>add a sqlserver</td></tr>
   <tr><td>dump_sqlservers</td><td>s[&#x27;r&#x27;|&#x27;w&#x27;]</td><td>dumps all sqlservers readservers = r, writeservers = w</td></tr>
-  <tr><td>auth_add</td><td>s[ident] s[level] s[pw]</td><td>Add a rcon key</td></tr>
+  <tr><td>auth_add</td><td>s[ident] s[level] r[pw]</td><td>Add a rcon key</td></tr>
   <tr><td>auth_add_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Add a prehashed rcon key</td></tr>
-  <tr><td>auth_change</td><td>s[ident] s[level] s[pw]</td><td>Update a rcon key</td></tr>
+  <tr><td>auth_change</td><td>s[ident] s[level] r[pw]</td><td>Update a rcon key</td></tr>
   <tr><td>auth_change_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Update a rcon key with prehashed data</td></tr>
   <tr><td>auth_remove</td><td>s[ident]</td><td>Remove a rcon key</td></tr>
   <tr><td>auth_list</td><td></td><td>List all rcon keys</td></tr>
-  <tr><td>name_ban</td><td>s[name] ?i[distance] ?i[is_substring] ?r[reason]</td><td>Ban a certain nick name</td></tr>
-  <tr><td>name_unban</td><td>s[name]</td><td>Unban a certain nick name</td></tr>
+  <tr><td>name_ban</td><td>s[name] ?i[distance] ?i[is_substring] ?r[reason]</td><td>Ban a certain nickname</td></tr>
+  <tr><td>name_unban</td><td>s[name]</td><td>Unban a certain nickname</td></tr>
   <tr><td>name_bans</td><td></td><td>List all name bans</td></tr>
   <tr><td>sv_test_cmds</td><td></td><td>Turns testing commands aka cheats on/off (setting only works in initial config)</td></tr>
   <tr><td>sv_rescue</td><td></td><td>Allow /rescue command so players can teleport themselves out of freeze (setting only works in initial config)</td></tr>
@@ -274,8 +274,8 @@ menu: |
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_dump</td><td>i[zone]</td><td>Dump zone tuning in zone x</td></tr>
   <tr><td>tune_zone_reset</td><td>?i[zone]</td><td>reset zone tuning in zone x or in all zones</td></tr>
-  <tr><td>tune_zone_enter</td><td>i[zone] s[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
-  <tr><td>tune_zone_leave</td><td>i[zone] s[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
+  <tr><td>tune_zone_leave</td><td>i[zone] r[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
   <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
   <tr><td>pause_game</td><td></td><td>Pause/unpause game</td></tr>
@@ -288,9 +288,10 @@ menu: |
   <tr><td>set_team</td><td>i[id] i[team-id] ?i[delay in minutes]</td><td>Set team of player to team</td></tr>
   <tr><td>set_team_all</td><td>i[team-id]</td><td>Set team of all players to team</td></tr>
   <tr><td>add_vote</td><td>s[name] r[command]</td><td>Add a voting option</td></tr>
-  <tr><td>remove_vote</td><td>s[name]</td><td>remove a voting option</td></tr>
+  <tr><td>remove_vote</td><td>r[name]</td><td>remove a voting option</td></tr>
   <tr><td>force_vote</td><td>s[name] s[command] ?r[reason]</td><td>Force a voting option</td></tr>
   <tr><td>clear_votes</td><td></td><td>Clears the voting options</td></tr>
+  <tr><td>add_map_votes</td><td></td><td>Automatically adds voting options for all maps</td></tr>
   <tr><td>vote</td><td>r[&#x27;yes&#x27;|&#x27;no&#x27;]</td><td>Force a vote to yes/no</td></tr>
   <tr><td>dump_antibot</td><td></td><td>Dumps the antibot status</td></tr>
   <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
@@ -315,6 +316,8 @@ menu: |
   <tr><td>ninja</td><td></td><td>Makes you a ninja</td></tr>
   <tr><td>super</td><td></td><td>Makes you super</td></tr>
   <tr><td>unsuper</td><td></td><td>Removes super from you</td></tr>
+  <tr><td>endless_hook</td><td></td><td>Gives you endless hook</td></tr>
+  <tr><td>unendless_hook</td><td></td><td>Removes endless hook from you</td></tr>
   <tr><td>unsolo</td><td></td><td>Puts you out of solo part</td></tr>
   <tr><td>undeep</td><td></td><td>Puts you out of deep freeze</td></tr>
   <tr><td>left</td><td></td><td>Makes you move 1 tile left</td></tr>
@@ -373,12 +376,12 @@ menu: |
   <tr><td>rankteam</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>teamrank</td><td>?r[player name]</td><td>Shows the team rank of player with name r (your team rank by default)</td></tr>
   <tr><td>rank</td><td>?r[player name]</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
-  <tr><td>top5team</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
-  <tr><td>teamtop5</td><td>?i[rank to start with]</td><td>Shows five team ranks of the ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>top5team</td><td>?s[player name] ?i[rank to start with]</td><td>Shows five team ranks of the ladder or of a player beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>teamtop5</td><td>?s[player name] ?i[rank to start with]</td><td>Shows five team ranks of the ladder or of a player beginning with rank i (1 by default, -1 for worst)</td></tr>
   <tr><td>top5</td><td>?i[rank to start with]</td><td>Shows five ranks of the ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
   <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default, -1 for first)</td></tr>
   <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
-  <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
   <tr><td>team</td><td>?i[id]</td><td>Lets you join team i (shows your team if left blank)</td></tr>
   <tr><td>lock</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Toggle team lock so no one else can join and so the team restarts when a player dies. /lock 0 to unlock, /lock 1 to lock.</td></tr>
   <tr><td>unlock</td><td></td><td>Unlock a team</td></tr>
@@ -422,7 +425,7 @@ menu: |
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td></tr>
   <tr><td>cl_nameplates_friendmark</td><td>Show friend mark (♥) in name plates</td><td>0</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td></tr>
-  <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 0 to 100%</td><td>100</td></tr>
+  <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 1 to 100%</td><td>100</td></tr>
   <tr><td>cl_authed_player_color</td><td>Color of name of authenticated player in scoreboard</td><td>5898211</td></tr>
   <tr><td>cl_same_clan_color</td><td>Clan color of players with the same clan as you in scoreboard.</td><td>5898211</td></tr>
   <tr><td>cl_enable_ping_color</td><td>Whether ping is colored in scoreboard.</td><td>1</td></tr>
@@ -431,6 +434,7 @@ menu: |
   <tr><td>cl_showhud</td><td>Show ingame HUD</td><td>1</td></tr>
   <tr><td>cl_showhud_healthammo</td><td>Show ingame HUD (Health + Ammo)</td><td>1</td></tr>
   <tr><td>cl_showhud_score</td><td>Show ingame HUD (Score)</td><td>1</td></tr>
+  <tr><td>cl_showhud_timer</td><td>Show ingame HUD (Timer)</td><td>1</td></tr>
   <tr><td>cl_showrecord</td><td>Show old style DDRace client records</td><td>0</td></tr>
   <tr><td>cl_shownotifications</td><td>Make the client notify when someone highlights you</td><td>1</td></tr>
   <tr><td>cl_showemotes</td><td>Show tee emotes</td><td>1</td></tr>
@@ -457,14 +461,16 @@ menu: |
   <tr><td>cl_dyncam_mousesens</td><td>Mouse sens used when dyncam is toggled on</td><td>0</td></tr>
   <tr><td>cl_dyncam_deadzone</td><td>Dynamic camera dead zone</td><td>300</td></tr>
   <tr><td>cl_dyncam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td></tr>
+  <tr><td>cl_dyncam_smoothness</td><td>Transition amount of the camera movement, 0=instant, 100=slow and smooth</td><td>0</td></tr>
+  <tr><td>cl_dyncam_stabilizing</td><td>Amount of camera slowdown during fast cursor movement. High value can cause delay in camera movement</td><td>0</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td></tr>
   <tr><td>ed_showkeys</td><td></td><td>0</td></tr>
   <tr><td>cl_show_welcome</td><td></td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td></tr>
   <tr><td>cl_map_download_url</td><td>URL used to download maps (can start with http:// or https://)</td><td>&quot;https://maps2.ddnet.tw&quot;</td></tr>
   <tr><td>cl_map_download_connect_timeout_ms</td><td>HTTP map downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td></tr>
-  <tr><td>cl_map_download_low_speed_limit</td><td>HTTP map downloads: Set low speed limit in bytes per second (0 to disable)</td><td>500</td></tr>
-  <tr><td>cl_map_download_low_speed_time</td><td>HTTP map downloads: Set low speed limit time period (0 to disable)</td><td>5</td></tr>
+  <tr><td>cl_map_download_low_speed_limit</td><td>HTTP map downloads: Set low speed limit in bytes per second (0 to disable)</td><td>4000</td></tr>
+  <tr><td>cl_map_download_low_speed_time</td><td>HTTP map downloads: Set low speed limit time period (0 to disable)</td><td>3</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>&quot;&quot;</td></tr>
   <tr><td>cl_skin_download_url</td><td>URL used to download skins</td><td>&quot;https://skins.ddnet.tw/skin/&quot;</td></tr>
   <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td></tr>
@@ -473,6 +479,7 @@ menu: |
   <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td></tr>
   <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td></tr>
   <tr><td>cl_smooth_zoom_time</td><td>Time of smooth zoom animation in ms (0 for off)</td><td>250</td></tr>
+  <tr><td>cl_limit_max_zoom_level</td><td>Specifies, if zooming should be limited or not (0 = no limit)</td><td>1</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td></tr>
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td></tr>
   <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td></tr>
@@ -516,8 +523,8 @@ menu: |
   <tr><td>cl_video_sound_enable</td><td>Use sound when rendering video</td><td>1</td></tr>
   <tr><td>cl_video_show_hook_coll_other</td><td>Show other players&#x27; hook collision lines when rendering video</td><td>0</td></tr>
   <tr><td>cl_video_showdirection</td><td>Show other players&#x27; key presses when rendering video</td><td>0</td></tr>
-  <tr><td>cl_video_crf</td><td>Set crf when encode video with libx264</td><td>18</td></tr>
-  <tr><td>cl_video_preset</td><td>Set preset when encode video with libx264, default is 5 (medium), 0 is ultrafast, 9 is placebo(the slowest, not recommend)</td><td>5</td></tr>
+  <tr><td>cl_video_crf</td><td>Set crf when encode video with libx264 (0 for highest quality, 51 for lowest)</td><td>18</td></tr>
+  <tr><td>cl_video_preset</td><td>Set preset when encode video with libx264, default is 5 (medium), 0 is ultrafast, 9 is placebo (the slowest, not recommend)</td><td>5</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td></tr>
   <tr><td>dbg_tuning</td><td></td><td>0</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>&quot;&quot;</td></tr>
@@ -585,6 +592,8 @@ menu: |
   <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td></tr>
   <tr><td>snd_volume</td><td>Sound volume</td><td>100</td></tr>
   <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>-1</td></tr>
+  <tr><td>snd_chat_volume</td><td>Chat sound volume</td><td>100</td></tr>
+  <tr><td>snd_game_volume</td><td>Game sound volume</td><td>100</td></tr>
   <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>70</td></tr>
   <tr><td>snd_background_music_volume</td><td>Background music sound volume</td><td>50</td></tr>
   <tr><td>snd_nonactive_mute</td><td></td><td>0</td></tr>
@@ -617,8 +626,7 @@ menu: |
   <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td></tr>
   <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td></tr>
-  <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>1</td></tr>
-  <tr><td>gfx_show_warnings</td><td>Render gfx warnings to screen</td><td>1</td></tr>
+  <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>200</td></tr>
   <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td></tr>
   <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td></tr>
@@ -626,6 +634,7 @@ menu: |
   <tr><td>debug</td><td>Debug mode</td><td>0</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td></tr>
   <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td></tr>
+  <tr><td>dbg_gfx</td><td>Show OpenGL warnings and errors, if the GPU supports it</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems</td><td>0</td></tr>
   <tr><td>dbg_stress_network</td><td>Stress network</td><td>0</td></tr>
   <tr><td>dbg_stress_server</td><td>Server to stress</td><td>&quot;localhost&quot;</td></tr>
@@ -676,6 +685,7 @@ menu: |
   <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>1</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td></tr>
+  <tr><td>cl_chat_old</td><td>Old chat style: No tee, no background</td><td>0</td></tr>
   <tr><td>cl_show_direction</td><td>Show tee direction</td><td>1</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td></tr>
@@ -697,6 +707,7 @@ menu: |
   <tr><td>gfx_opengl_patch</td><td>OpenGL patch version</td><td>0</td></tr>
   <tr><td>gfx_opengl_texture_lod_bias</td><td>The lod bias for OpenGL texture sampling multiplied by 1000</td><td>-500</td></tr>
   <tr><td>gfx_3d_texture_analysis_done</td><td>Analyzed, if sampling 3D/2D array textures was correct</td><td>0</td></tr>
+  <tr><td>gfx_driver_is_blocked</td><td>If 1, the current driver is in a blocked error state.</td><td>0</td></tr>
   <tr><td>gfx_enable_texture_unit_optimization</td><td>Use multiple texture units, instead of only one.</td><td>0</td></tr>
   <tr><td>gfx_use_preinitialized_buffer</td><td>Use only one buffer for data, that is uploaded to the GPU(might help when using an iGPUs).</td><td>0</td></tr>
   <tr><td>cl_video_recorder_fps</td><td>At which FPS the videorecorder should record demos.</td><td>60</td></tr>
@@ -729,6 +740,7 @@ menu: |
   <tr><td>zoom+</td><td></td><td>Zoom increase</td></tr>
   <tr><td>zoom-</td><td></td><td>Zoom decrease</td></tr>
   <tr><td>zoom</td><td></td><td>Zoom reset</td></tr>
+  <tr><td>set_view</td><td>i[x]i[y]</td><td>Set camera position to x and y in the map</td></tr>
   <tr><td>say</td><td>r[message]</td><td>Say in chat</td></tr>
   <tr><td>say_team</td><td>r[message]</td><td>Say in team chat</td></tr>
   <tr><td>chat</td><td>s[&#x27;team&#x27;|&#x27;all&#x27;] ?r[message]</td><td>Enable chat with all/team mode</td></tr>
@@ -762,26 +774,27 @@ menu: |
   <tr><td>quit</td><td></td><td>Quit Teeworlds</td></tr>
   <tr><td>exit</td><td></td><td>Quit Teeworlds</td></tr>
   <tr><td>minimize</td><td></td><td>Minimize Teeworlds</td></tr>
-  <tr><td>connect</td><td>s[host|ip]</td><td>Connect to the specified host/ip</td></tr>
+  <tr><td>connect</td><td>r[host|ip]</td><td>Connect to the specified host/ip</td></tr>
   <tr><td>disconnect</td><td></td><td>Disconnect from the server</td></tr>
   <tr><td>ping</td><td></td><td>Ping the current server</td></tr>
   <tr><td>screenshot</td><td></td><td>Take a screenshot</td></tr>
   <tr><td>start_video</td><td></td><td>Start recording a video</td></tr>
   <tr><td>stop_video</td><td></td><td>Stop recording a video</td></tr>
   <tr><td>rcon</td><td>r[rcon-command]</td><td>Send specified command to rcon</td></tr>
-  <tr><td>rcon_auth</td><td>s[password]</td><td>Authenticate to rcon</td></tr>
+  <tr><td>rcon_auth</td><td>r[password]</td><td>Authenticate to rcon</td></tr>
   <tr><td>rcon_login</td><td>s[username] r[password]</td><td>Authenticate to rcon with a username</td></tr>
   <tr><td>play</td><td>r[file]</td><td>Play the file specified</td></tr>
-  <tr><td>record</td><td>?s[file]</td><td>Record to the file</td></tr>
+  <tr><td>record</td><td>?r[file]</td><td>Record to the file</td></tr>
   <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
   <tr><td>add_demomarker</td><td></td><td>Add demo timeline marker</td></tr>
-  <tr><td>add_favorite</td><td>s[host|ip]</td><td>Add a server as a favorite</td></tr>
-  <tr><td>remove_favorite</td><td>s[host|ip]</td><td>Remove a server from favorites</td></tr>
+  <tr><td>add_favorite</td><td>r[host|ip]</td><td>Add a server as a favorite</td></tr>
+  <tr><td>remove_favorite</td><td>r[host|ip]</td><td>Remove a server from favorites</td></tr>
   <tr><td>demo_slice_start</td><td></td><td></td></tr>
   <tr><td>demo_slice_end</td><td></td><td></td></tr>
   <tr><td>demo_play</td><td></td><td>Play demo</td></tr>
   <tr><td>demo_speed</td><td>i[speed]</td><td>Set demo speed</td></tr>
   <tr><td>save_replay</td><td>?i[length]</td><td>Save a replay of the last defined amount of seconds</td></tr>
+  <tr><td>benchmark_quit</td><td>i[seconds] r[file]</td><td>Benchmark frame times for number of seconds to file, then quit</td></tr>
 </table></div>
 </div>
 <div class="block">
