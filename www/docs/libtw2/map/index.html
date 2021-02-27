@@ -3,17 +3,18 @@ title: "Map"
 layout: default
 menu: |
   <ul>
-    <li><a href="/libtw2-doc/connection">Connection</a></li>
-    <li><a href="/libtw2-doc/datafile">Datafile</a></li>
-    <li><a href="/libtw2-doc/demo">Demo</a></li>
-    <li><a href="/libtw2-doc/huffman">Huffman</a></li>
-    <li><a href="/libtw2-doc/int">Int</a></li>
-    <li><a href="/libtw2-doc/map">Map</a></li>
-    <li><a href="/libtw2-doc/packet">Packet</a></li>
-    <li><a href="/libtw2-doc/quirks">Quirks</a></li>
-    <li><a href="/libtw2-doc/serverinfo_extended">Serverinfo extended</a></li>
-    <li><a href="/libtw2-doc/snapshot">Snapshot</a></li>
-    <li><a href="/libtw2-doc/teehistorian">Teehistorian</a></li>
+    <li><a href="/docs/libtw2/connection">Connection</a></li>
+    <li><a href="/docs/libtw2/datafile">Datafile</a></li>
+    <li><a href="/docs/libtw2/demo">Demo</a></li>
+    <li><a href="/docs/libtw2/huffman">Huffman</a></li>
+    <li><a href="/docs/libtw2/int">Int</a></li>
+    <li><a href="/docs/libtw2/map">Map</a></li>
+    <li><a href="/docs/libtw2/packet">Packet</a></li>
+    <li><a href="/docs/libtw2/packet7">Packet7</a></li>
+    <li><a href="/docs/libtw2/quirks">Quirks</a></li>
+    <li><a href="/docs/libtw2/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/docs/libtw2/snapshot">Snapshot</a></li>
+    <li><a href="/docs/libtw2/teehistorian">Teehistorian</a></li>
   </ul>
 ---
 <div id="global" class="block">
@@ -83,7 +84,7 @@ menu: |
 <p>Things to keep in mind:</p>
 <ol>
 <li>When an item type appears in <code>datafile.item_types</code>, it means that there must be at least one item of that type</li>
-<li>With the exception fo the UUID Index, the first item of an item type will have <code>id</code> = 0 and from there it will count up</li>
+<li>With the exception of the UUID Index, the first item of an item type will have <code>id</code> = 0 and from there it will count up</li>
 </ol>
 <h4>UUID item types</h4>
 <p>In DDNet, some item types won't be assigned a type_id, but instead an uuid.</p>
@@ -348,7 +349,7 @@ color envelope point:
     [1] version
     [1] width
     [1] height
-    [1] type
+    [1] flags
     [4] color: Color
     [1] opt *color_envelope
     [1] color_envelope_offset
@@ -368,7 +369,7 @@ color envelope point:
 <ul>
 <li><p>Vanilla is at <code>version</code> = 4, DDNet at <code>version</code> = 3</p></li>
 <li><p><code>width</code> and <code>height</code> specify the dimensions of the layer</p></li>
-<li><p><code>type</code> tells you what kind of tilemap layer this is:</p>
+<li><p><code>flags</code> tells you what kind of tilemap layer this is:</p>
 <ul>
 <li>0 -&gt; Tiles</li>
 <li>1 -&gt; Game</li>
@@ -396,7 +397,7 @@ color envelope point:
 </ul>
 <!-- end list -->
 
-<pre><code>&#39;Tile&#39; tile type (consiting of bytes, used by all vanilla layers and the front layer):
+<pre><code>&#39;Tile&#39; tile type (consisting of bytes, used by all vanilla layers and the front layer):
     [1] id
     [1] flags
     [1] skip
@@ -427,7 +428,7 @@ color envelope point:
 <li>you might have noticed that the <code>data</code> field is not actually optional like all the other data fields. For vanilla compatibility, the <code>data</code> field always points to a 2d-array of tiles of the type 'Tile', with the same dimensions as the actual layer, but everything zeroed out</li>
 </ul>
 <p>Special tile types:</p>
-<pre><code>&#39;Tele&#39; tile type (consiting of bytes):
+<pre><code>&#39;Tele&#39; tile type (consisting of bytes):
     [1] number
     [1] id
 </code></pre>
@@ -436,7 +437,7 @@ color envelope point:
 </ul>
 <!-- end list -->
 
-<pre><code>&#39;Speedup&#39; tile type (consiting of bytes):
+<pre><code>&#39;Speedup&#39; tile type (consisting of bytes):
     [1] force
     [1] max_speed
     [1] id
@@ -448,7 +449,7 @@ color envelope point:
 </ul>
 <!-- end list -->
 
-<pre><code>&#39;Switch&#39; tile type (consiting of bytes):
+<pre><code>&#39;Switch&#39; tile type (consisting of bytes):
     [1] number
     [1] id
     [1] flags
@@ -459,7 +460,7 @@ color envelope point:
 </ul>
 <!-- end list -->
 
-<pre><code>&#39;Tune&#39; tile type (consiting of bytes):
+<pre><code>&#39;Tune&#39; tile type (consisting of bytes):
     [1] number
     [1] id
 </code></pre>
@@ -484,8 +485,7 @@ color envelope point:
 <!-- end list -->
 
 <pre><code>Quad:
-    [2] position: Point
-    [8] corner_positions: [Point; 4]
+    [8] positions: [Point; 5]
     [16] corner_colors: [Color; 4]
     [8] texture_coordinates: [Point; 4]
     [1] opt *position_envelope
@@ -494,7 +494,10 @@ color envelope point:
     [1] color_envelope_offset
 </code></pre>
 <ul>
+<li><code>positions</code> elements 1 - 4 are the corner positions and <code>positions</code> element 5 contains the pivot</li>
+<li>to map the <code>positions</code> to world coordinates divide them by 512</li>
 <li>corners are in the order top-left -&gt; top-right -&gt; bottom-left -&gt; bottom-right</li>
+<li>the <code>texture_coordinates</code> are in range (0, 1024). To get the actual texture coordinates, divide by 1024 to normalize to (0, 1) range and multiply by the dimension of the quad image.</li>
 </ul>
 <p><strong>Sounds layer</strong></p>
 <pre><code>item_data extension for sounds layers:
