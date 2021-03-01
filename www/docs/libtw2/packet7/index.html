@@ -1,0 +1,80 @@
+---
+title: "Packet7"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/docs/libtw2/connection">Connection</a></li>
+    <li><a href="/docs/libtw2/datafile">Datafile</a></li>
+    <li><a href="/docs/libtw2/demo">Demo</a></li>
+    <li><a href="/docs/libtw2/huffman">Huffman</a></li>
+    <li><a href="/docs/libtw2/int">Int</a></li>
+    <li><a href="/docs/libtw2/map">Map</a></li>
+    <li><a href="/docs/libtw2/packet">Packet</a></li>
+    <li><a href="/docs/libtw2/packet7">Packet7</a></li>
+    <li><a href="/docs/libtw2/quirks">Quirks</a></li>
+    <li><a href="/docs/libtw2/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/docs/libtw2/snapshot">Snapshot</a></li>
+    <li><a href="/docs/libtw2/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Packet7</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/packet7.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<p>This document describes packet headers and chunk headers in Teeworlds 0.7.0+.</p>
+<p>All sizes in bits.</p>
+<pre><code>packet7_header:
+    [ 2] reserved
+    [ 1] flag_connless
+    [ 1] flag_compression
+    [ 1] flag_request_resend
+    [ 1] flag_control
+    [10] ack
+    [ 8] num_chunks
+    [32] token
+
+    RRff ffAA  AAAA AAAA  nnnn nnnn
+    TTTT TTTT  TTTT TTTT  TTTT TTTT  TTTT TTTT
+
+packet7_header_connless:
+    [ 2] reserved
+    [ 1] flag_connless
+    [ 1] flag_compression
+    [ 1] flag_request_resend
+    [ 1] flag_control
+    [ 2] version
+    [32] token
+    [32] response_token
+
+    RRff ffVV
+    TTTT TTTT  TTTT TTTT  TTTT TTTT  TTTT TTTT
+    rrrr rrrr  rrrr rrrr  rrrr rrrr  rrrr rrrr
+</code></pre>
+<p>NOTE: <code>padding</code> must be zeroed. If <code>flag_connless</code> is set, the other flags must not be set. <code>flag_control</code> implies <code>!flag_compression</code>.</p>
+<p>NOTE: In <code>packet7_header_connless</code>, <code>version</code> must be set to 1.</p>
+<pre><code>chunk7_header_vital:
+    [ 1] flag_resend
+    [ 1] flag_vital
+    [ 6] &lt;----------
+    [ 4] padding   |-- size
+    [ 4] &lt;----------
+
+    FFss ssss  PPss ssss
+
+
+chunk7_header_nonvital:
+    [ 1] flag_resend
+    [ 1] flag_vital
+    [ 6] &lt;----------
+    [ 4] sequence  |-- size
+    [ 4] &lt;----------
+    [ 8] sequence
+
+    FFss ssss  SSss ssss  SSSS SSSS
+</code></pre>
+</div>

@@ -102,7 +102,7 @@ generate_index_pre > $INDEX
 file_names | while read NAME TITLE
 do
 	FILENAME="${OUT_DIR}/${NAME/.md/}/index.html"
-	mkdir "$(basename "$FILENAME")"
+	mkdir -p "$(dirname "$FILENAME")"
 	echo "importing ${NAME} to ${FILENAME}"
 	import_article $NAME $TITLE > ${FILENAME}
 done
