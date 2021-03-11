@@ -1,0 +1,186 @@
+---
+title: "Snapshot"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/docs/libtw2/connection">Connection</a></li>
+    <li><a href="/docs/libtw2/datafile">Datafile</a></li>
+    <li><a href="/docs/libtw2/demo">Demo</a></li>
+    <li><a href="/docs/libtw2/huffman">Huffman</a></li>
+    <li><a href="/docs/libtw2/int">Int</a></li>
+    <li><a href="/docs/libtw2/map">Map</a></li>
+    <li><a href="/docs/libtw2/packet">Packet</a></li>
+    <li><a href="/docs/libtw2/packet7">Packet7</a></li>
+    <li><a href="/docs/libtw2/quirks">Quirks</a></li>
+    <li><a href="/docs/libtw2/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/docs/libtw2/snapshot">Snapshot</a></li>
+    <li><a href="/docs/libtw2/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Snapshot</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/snapshot.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<h3>Introduction</h3>
+<p>Teeworlds uses this format of so called &quot;snapshots&quot; to transmit the current state of the world over the network. The format allows one to transmit fixed-size &quot;items&quot;.</p>
+<h3>Terminology</h3>
+<p>All integers in this document are little-endian integers.</p>
+<h4>Item key</h4>
+<p>An item key is a 32-bit unsigned integer that contains the 16-bit unsigned integer <code>type_id</code> as the upper bits and <code>id</code> as the lower bits.</p>
+<h4>Items</h4>
+<p>An item consists of an item key <code>key</code> and an array of 32-bit signed integers <code>data</code>.</p>
+<h4>Snapshot</h4>
+<p>A snapshot is a collection of items identified by their key.</p>
+<h3>Format</h3>
+<h4>Checksum calculation</h4>
+<p>The checksum of a snapshot is calculated by summing all the <code>data</code> array elements of all items, using wrapping overflow behavior.</p>
+<h4>Snapshot deltas</h4>
+<pre><code>snapshot_delta:
+    [ 4] num_removed_items
+    [ 4] num_item_deltas
+    [ 4] _zero
+    [*4] removed_item_keys
+    [  ] item_deltas
+</code></pre>
+<p>Snapshot deltas are used to describe the differences between two snapshots, the &quot;old&quot; and the &quot;new&quot; one. You can use the delta together with the old snapshot to construct the new one. Note that the reverse does not work, because the values of snapshot items present in the old but not the new snapshot are not recorded in the delta.</p>
+<ul>
+<li><code>num_removed_items</code> is a positive signed 32-bit integer describing the length of the <code>removed_item_keys</code> array.</li>
+<li><code>num_item_deltas</code> is a positive signed 32-bit integer describing the number of item deltas in the <code>item_deltas</code> field.</li>
+<li><code>_zero</code> is a padding field which must be zeroed by any snapshot delta writer and ignored by any snapshot delta reader.</li>
+<li><code>removed_item_keys</code> is an array of <code>num_removed_items</code> item keys that are present in old snapshot, but not in the new one.</li>
+<li><code>item_deltas</code> is a concatenation of <code>num_item_deltas</code> item deltas.</li>
+</ul>
+<h4>Item deltas</h4>
+<pre><code>item_delta:
+    [ 4] type_id
+    [ 4] id
+    [ 4] _size
+    [*4] data_delta
+</code></pre>
+<ul>
+<li><code>type_id</code> is a 32-bit unsigned integer containing the 16-bit type id of the item.</li>
+<li><code>id</code> is 32-bit unsigned integer containing the 16-bit id of the item.</li>
+<li><code>_size</code> is a field that is only present if the size of items of type <code>type_id</code> is not pre-agreed for the protocol. A list of pre-agreed item sizes can be found in the appendix of this document.</li>
+<li><code>data_delta</code> is the data delta (an array of <code>_size</code> 32-bit signed integers). If the item was not present in the old snapshot (determined by the item key), then <code>data_delta</code> just contains the new item data. Otherwise, the <code>data_delta</code> needs to be added onto the current item's data (elementwise) using 32-bit integer addition that wraps around on overflow. Note that in the case of item update, the new size must be the same as the old size of the item data.</li>
+</ul>
+<h3>Appendix</h3>
+<h4>Pre-agreed item sizes</h4>
+<p>This describes the 0.6 protocol of Teeworlds.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;"><code>type_id</code></th>
+<th style="text-align: right;"><code>size</code></th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10</td>
+<td>obj_player_input</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">6</td>
+<td>obj_projectile</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">5</td>
+<td>obj_laser</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td>obj_pickup</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td>obj_flag</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">8</td>
+<td>obj_game_info</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+<td>obj_game_data</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">15</td>
+<td>obj_character_core</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">22</td>
+<td>obj_character</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">5</td>
+<td>obj_player_info</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">17</td>
+<td>obj_client_info</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">3</td>
+<td>obj_spectator_info</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">2</td>
+<td>event_common</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">2</td>
+<td>event_explosion</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2</td>
+<td>event_spawn</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2</td>
+<td>event_hammerhit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">3</td>
+<td>event_death</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">3</td>
+<td>event_sound_global</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">3</td>
+<td>event_sound_world</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">3</td>
+<td>event_damage_indicator</td>
+</tr>
+</tbody>
+</table>
+
+</div>

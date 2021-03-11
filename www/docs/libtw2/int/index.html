@@ -1,0 +1,59 @@
+---
+title: "Int"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/docs/libtw2/connection">Connection</a></li>
+    <li><a href="/docs/libtw2/datafile">Datafile</a></li>
+    <li><a href="/docs/libtw2/demo">Demo</a></li>
+    <li><a href="/docs/libtw2/huffman">Huffman</a></li>
+    <li><a href="/docs/libtw2/int">Int</a></li>
+    <li><a href="/docs/libtw2/map">Map</a></li>
+    <li><a href="/docs/libtw2/packet">Packet</a></li>
+    <li><a href="/docs/libtw2/packet7">Packet7</a></li>
+    <li><a href="/docs/libtw2/quirks">Quirks</a></li>
+    <li><a href="/docs/libtw2/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/docs/libtw2/snapshot">Snapshot</a></li>
+    <li><a href="/docs/libtw2/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Int</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/int.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<h3>Introduction</h3>
+<p>The Teeworlds protocol has several where 32-bit signed integers are encoded using a variable-length encoding. This documents describes this encoding.</p>
+<h3>Format</h3>
+<p>All sizes are specified in bits, from the highest bit in a byte to the lowest.</p>
+<pre><code>first_byte:
+    [1] flag_extend
+    [1] flag_sign
+    [6] bits
+
+next_byte:
+    [1] flag_extend
+    [7] bits
+
+last_byte:
+    [4] padding
+    [4] bits
+
+int:
+    first_byte [next_byte [next_byte [next_byte [last_byte]]]]
+</code></pre>
+<p>As specified, an encoded <code>int</code> can have a size of 1 to 5 bytes. Some bytes have the <code>flag_extend</code> variable which specifies whether they're followed by another byte. The bits of the final integer are the <code>bits</code> fields combined, with a little-endian order. If we call our bits 0 to r, with 0 being the least significant bit, then it looks like this:</p>
+<pre><code>ES54 3210  Ecba 9876  Ejih gfed  Eqpo nmlk  PPPP utsr
+  ^^ ^^^^   ^^^ ^^^^   ^^^ ^^^^   ^^^ ^^^^       ^^^^
+</code></pre>
+<p>Always use the least amount of bytes possible to encode a number. The padding must always be zeroed.</p>
+<p>The <code>flag_sign</code> specifies that all the bits of the resulting number should be flipped, including the sign bit.</p>
+<p>NOTE: The reference implementation has no problem with accepting an overlong representation. The reference implementation also interprets the padding as part of the number, which leads to weird results. It should always be zeroed.</p>
+<h3>Examples</h3>
+<p>0 is encoded as <code>0000 0000</code>. 1 is encoded as <code>0000 0001</code>. -1 is encoded as <code>0100 0000</code> (note that the <code>bits</code> field is all zeros).</p>
+<p>64 is encoded as <code>1000 0000 0000 0001</code>.</p>
+</div>

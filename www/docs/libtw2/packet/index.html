@@ -1,0 +1,65 @@
+---
+title: "Packet"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/docs/libtw2/connection">Connection</a></li>
+    <li><a href="/docs/libtw2/datafile">Datafile</a></li>
+    <li><a href="/docs/libtw2/demo">Demo</a></li>
+    <li><a href="/docs/libtw2/huffman">Huffman</a></li>
+    <li><a href="/docs/libtw2/int">Int</a></li>
+    <li><a href="/docs/libtw2/map">Map</a></li>
+    <li><a href="/docs/libtw2/packet">Packet</a></li>
+    <li><a href="/docs/libtw2/packet7">Packet7</a></li>
+    <li><a href="/docs/libtw2/quirks">Quirks</a></li>
+    <li><a href="/docs/libtw2/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/docs/libtw2/snapshot">Snapshot</a></li>
+    <li><a href="/docs/libtw2/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Packet</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/packet.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<p>This document describes packet headers and chunk headers in Teeworlds up to 0.6.x and in DDNet.</p>
+<p>All sizes in bits.</p>
+<pre><code>packet_header:
+    [ 1] flag_compression
+    [ 1] flag_request_resend
+    [ 1] flag_connless
+    [ 1] flag_control
+    [ 2] padding
+    [10] ack
+    [ 8] num_chunks
+
+    FFFF ppAA  AAAA AAAA  nnnn nnnn
+</code></pre>
+<p>NOTE: <code>padding</code> must be zeroed, it's incorrectly used as part of the <code>ack</code> field while unpacking in the reference implementation.</p>
+<pre><code>chunk_header_vital:
+    [ 1] flag_resend
+    [ 1] flag_vital
+    [ 6] &lt;----------
+    [ 4] padding   |-- size
+    [ 4] &lt;----------
+
+    FFss ssss  PPPP ssss
+
+
+chunk_header_nonvital:
+    [ 1] flag_resend
+    [ 1] flag_vital
+    [ 6] &lt;----------
+    [ 4] sequence  |-- size
+    [ 4] &lt;----------
+    [ 8] sequence part 2
+
+    FFss ssss  SSSS ssss  SSSS SSSS
+</code></pre>
+<p>In the packed form, the first four bits of sequence correspond to bits 10 to 6, and the second part corresponds to the bits 8 to 1.</p>
+<p>NOTE: The reference implementation just uses bitwise-or to resolve contradictions in the overlapping bits.</p>
+</div>

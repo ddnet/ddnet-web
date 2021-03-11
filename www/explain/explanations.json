@@ -50,11 +50,13 @@
   },
   {
     "layers": [
+      "game",
+      "front",
       "overlay"
     ],
     "index": 5,
-    "name": "UNHOOKABLE",
-    "explanation": "It's not possible to hook it,\nbut can collide with it."
+    "name": "HOOKTHROUGH",
+    "explanation": "Only hook can go through it."
   },
   {
     "layers": [
@@ -63,8 +65,8 @@
       "overlay"
     ],
     "index": 6,
-    "name": "HOOKTHROUGH",
-    "explanation": "Combined with (UN)HOOKABLE tiles, allows to hook through the walls."
+    "name": "OLD HOOKTHROUGH",
+    "explanation": "Deprecated. Combined with (UN)HOOKABLE tiles, allows to hook through the walls."
   },
   {
     "layers": [
@@ -514,6 +516,16 @@
       "type": "whole map"
     }
   ],
+  {
+    "layers": [
+      "game",
+      "front",
+      "overlay"
+    ],
+    "index": 76,
+    "name": "UNLOCK TEAM",
+    "explanation": "Unlocks the team, used on dummy maps."
+  },
   [
     {
       "layers": [
@@ -560,6 +572,28 @@
       "name": "SPEEDER",
       "explanation": "Causes weapons, SHIELD, HEART and SPINNING LASER to move.",
       "type": "fast"
+    }
+  ],
+  [
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 66,
+      "name": "HOOK BLOCK",
+      "explanation": "Blocks only the hook from going through."
+    },
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 67,
+      "name": "HOOK BLOCK SIDE",
+      "explanation": "Blocks only the hook from going through from one side."
     }
   ],
   [
@@ -968,6 +1002,88 @@
       "name": "STOPPER",
       "explanation": "You can hook and shoot through it.\nYou can't go through it.",
       "type": "all directions"
+    }
+  ],
+  [
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 96,
+      "name": "TELEGUN PISTOL ON",
+      "explanation": "Enables telegun on the pistol."
+    },
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 97,
+      "name": "TELEGUN PISTOL OFF",
+      "explanation": "Disables telegun on the grenade."
+    },
+    {
+      "layers": [
+        "front",
+        "switch",
+        "overlay"
+      ],
+      "index": 98,
+      "name": "TELEGUN TARGET WITHOUT MOMENTUM",
+      "explanation": "Combined with a collision tile, if a projectile touches it you are teleported, but don't keep momentum. In the case of laser enables the teleport at the end of the beam. If used on the switch layer, use the delay value to enable only for 1 weapon: 0 - All, 1 - Piston, 2 - Grenade, 3 - Laser"
+    },
+    {
+      "layers": [
+        "front",
+        "switch",
+        "overlay"
+      ],
+      "index": 99,
+      "name": "TELEGUN TARGET WITH MOMENTUM",
+      "explanation": "Combined with a collision tile, if a projectile touches it you are teleported and you keep momentum. In the case of laser enables the teleport at the end of the beam. If used on the switch layer, use the delay value to enable only for 1 weapon: 0 - All, 1 - Piston, 2 - Grenade, 3 - Laser"
+    },
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 112,
+      "name": "TELEGUN GRENADE ON",
+      "explanation": "Enables telegun on the grenade."
+    },
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 113,
+      "name": "TELEGUN GRENADE OFF",
+      "explanation": "Disables telegun on the grenade."
+    },
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 128,
+      "name": "TELEGUN LASER ON",
+      "explanation": "Enables telegun on the laser."
+    },
+    {
+      "layers": [
+        "game",
+        "front",
+        "overlay"
+      ],
+      "index": 129,
+      "name": "TELEGUN LASER OFF",
+      "explanation": "Disables telegun on the laser."
     }
   ],
   [

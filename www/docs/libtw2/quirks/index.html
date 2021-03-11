@@ -1,0 +1,38 @@
+---
+title: "Quirks"
+layout: default
+menu: |
+  <ul>
+    <li><a href="/docs/libtw2/connection">Connection</a></li>
+    <li><a href="/docs/libtw2/datafile">Datafile</a></li>
+    <li><a href="/docs/libtw2/demo">Demo</a></li>
+    <li><a href="/docs/libtw2/huffman">Huffman</a></li>
+    <li><a href="/docs/libtw2/int">Int</a></li>
+    <li><a href="/docs/libtw2/map">Map</a></li>
+    <li><a href="/docs/libtw2/packet">Packet</a></li>
+    <li><a href="/docs/libtw2/packet7">Packet7</a></li>
+    <li><a href="/docs/libtw2/quirks">Quirks</a></li>
+    <li><a href="/docs/libtw2/serverinfo_extended">Serverinfo extended</a></li>
+    <li><a href="/docs/libtw2/snapshot">Snapshot</a></li>
+    <li><a href="/docs/libtw2/teehistorian">Teehistorian</a></li>
+  </ul>
+---
+<div id="global" class="block">
+
+<h2>Quirks</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/quirks.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<ul>
+<li>Huffman compression has an extra byte if the actual end is at a byte boundary.</li>
+<li>The size field has a weird splitting in the chunk header.</li>
+<li>The ack field of the packet header is 12 instead of 10 bit wide.</li>
+<li>The sequence field of the chunk header has overlapping bits.</li>
+<li>The client doesn't care about the actual lengths of the snapshot chunks, it'll always pad to <code>MAX_SNAPSHOT_PADSIZE</code>.</li>
+<li>The client wants to receive the last snapshot part last, otherwise the resulting delta is too long.</li>
+<li>CCharacterCore has unused fields <code>m_HookDx</code>, <code>m_HookDy</code></li>
+</ul>
+</div>
