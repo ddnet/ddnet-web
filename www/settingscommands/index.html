@@ -5,6 +5,7 @@ menu: |
   <ul>
     <li><a href="#map-settings">Map Settings</a></li>
     <li><a href="#server-settings">Server Settings</a></li>
+    <li><a href="#econ-settings">Econ Settings</a></li>
     <li><a href="#server-commands">Server Commands</a></li>
     <li><a href="#chat-commands">Chat Commands</a></li>
     <li><a href="#client-settings">Client Settings</a></li>
@@ -81,6 +82,7 @@ menu: |
   <tr><td>sv_dnsbl_key</td><td>Optional Authentication Key for the specified DNSBL provider</td><td>&quot;&quot;</td></tr>
   <tr><td>sv_dnsbl_vote</td><td>Block votes by blacklisted addresses</td><td>0</td></tr>
   <tr><td>sv_dnsbl_ban</td><td>Automatically ban blacklisted addresses</td><td>0</td></tr>
+  <tr><td>sv_dnsbl_chat</td><td>Don&#x27;t allow chat from blacklisted addresses</td><td>0</td></tr>
   <tr><td>sv_rcon_vote</td><td>Only allow authed clients to call votes</td><td>0</td></tr>
   <tr><td>sv_player_demo_record</td><td>Automatically record demos for each player</td><td>0</td></tr>
   <tr><td>sv_demo_chat</td><td>Record chat for demos</td><td>0</td></tr>
@@ -179,6 +181,7 @@ menu: |
   <tr><td>sv_nameless_score</td><td>Whether nameless tee has a score or not</td><td>1</td></tr>
   <tr><td>sv_time_in_broadcast_interval</td><td>How often to update the broadcast time</td><td>1</td></tr>
   <tr><td>sv_default_timer_type</td><td>Default way of displaying time either game/round timer or broadcast. 0 = game/round timer, 1 = broadcast, 2 = 0+1, 3 = none</td><td>0</td></tr>
+  <tr><td>sv_chat_initial_delay</td><td>The time in seconds before the first message can be sent</td><td>0</td></tr>
   <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>250</td></tr>
   <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>1000</td></tr>
   <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>60</td></tr>
@@ -224,6 +227,19 @@ menu: |
   <tr><td>sv_rescue_delay</td><td>Number of seconds between two rescues</td><td>1</td></tr>
   <tr><td>sv_practice</td><td>Enable practice mode for teams. Means you can use /rescue, but in turn your rank doesn&#x27;t count.</td><td>1</td></tr>
   <tr><td>dbg_dummies</td><td></td><td>0</td></tr>
+</table></div>
+</div>
+<div class="block">
+<h2 id="econ-settings">Econ Settings</h2>
+<div style="overflow-x: auto;"><table class="settingscommands">
+  <tr><th>Setting</th><th>Description</th><th>Default</th></tr>
+  <tr><td>ec_bindaddr</td><td>Address to bind the external console to. Anything but &#x27;localhost&#x27; is dangerous</td><td>&quot;localhost&quot;</td></tr>
+  <tr><td>ec_port</td><td>Port to use for the external console</td><td>0</td></tr>
+  <tr><td>ec_password</td><td>External console password</td><td>&quot;&quot;</td></tr>
+  <tr><td>ec_bantime</td><td>The time a client gets banned if econ authentication fails. 0 just closes the connection</td><td>0</td></tr>
+  <tr><td>ec_auth_timeout</td><td>Time in seconds before the the econ authentication times out</td><td>30</td></tr>
+  <tr><td>ec_output_level</td><td>Adjusts the amount of information in the external console</td><td>1</td></tr>
+  <tr><td>ec_output_level</td><td>Adjusts the amount of information in the external console</td><td>1</td></tr>
 </table></div>
 </div>
 <div class="block">
@@ -378,7 +394,8 @@ menu: |
   <tr><td>rank</td><td>?r[player name]</td><td>Shows the rank of player with name r (your rank by default)</td></tr>
   <tr><td>top5team</td><td>?s[player name] ?i[rank to start with]</td><td>Shows five team ranks of the ladder or of a player beginning with rank i (1 by default, -1 for worst)</td></tr>
   <tr><td>teamtop5</td><td>?s[player name] ?i[rank to start with]</td><td>Shows five team ranks of the ladder or of a player beginning with rank i (1 by default, -1 for worst)</td></tr>
-  <tr><td>top5</td><td>?i[rank to start with]</td><td>Shows five ranks of the ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>top</td><td>?i[rank to start with]</td><td>Shows the top ranks of the global and regional ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
+  <tr><td>top5</td><td>?i[rank to start with]</td><td>Shows the top ranks of the global and regional ladder beginning with rank i (1 by default, -1 for worst)</td></tr>
   <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default, -1 for first)</td></tr>
   <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
   <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
@@ -683,6 +700,8 @@ menu: |
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players&#x27; hook collision line (2 to always show)</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>1</td></tr>
+  <tr><td>cl_show_own_hook_range_ind</td><td>Show a thin circle around your player that indicates your maximal hook length.</td><td>0</td></tr>
+  <tr><td>cl_show_other_hook_range_ind</td><td>Show a thin circle around all players that indicates their maximal hook length.</td><td>0</td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td></tr>
   <tr><td>cl_chat_old</td><td>Old chat style: No tee, no background</td><td>0</td></tr>
@@ -752,7 +771,6 @@ menu: |
   <tr><td>+hook</td><td></td><td>Hook</td></tr>
   <tr><td>+fire</td><td></td><td>Fire</td></tr>
   <tr><td>+showhookcoll</td><td></td><td>Show Hook Collision</td></tr>
-  <tr><td>+resetdummy</td><td></td><td>Reset Dummy</td></tr>
   <tr><td>+weapon1</td><td></td><td>Switch to hammer</td></tr>
   <tr><td>+weapon2</td><td></td><td>Switch to gun</td></tr>
   <tr><td>+weapon3</td><td></td><td>Switch to shotgun</td></tr>
@@ -769,8 +787,9 @@ menu: |
   <tr><td>team</td><td>i[team-id]</td><td>Switch team</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself to restart</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
-  <tr><td>dummy_connect</td><td></td><td>connect dummy</td></tr>
-  <tr><td>dummy_disconnect</td><td></td><td>disconnect dummy</td></tr>
+  <tr><td>dummy_connect</td><td></td><td>Connect dummy</td></tr>
+  <tr><td>dummy_disconnect</td><td></td><td>Disconnect dummy</td></tr>
+  <tr><td>dummy_reset</td><td></td><td>Reset dummy</td></tr>
   <tr><td>quit</td><td></td><td>Quit Teeworlds</td></tr>
   <tr><td>exit</td><td></td><td>Quit Teeworlds</td></tr>
   <tr><td>minimize</td><td></td><td>Minimize Teeworlds</td></tr>
