@@ -136,7 +136,9 @@ menu: |
   <tr><td>sv_region_name</td><td>Server region. Used for regional bans</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_savegames_delay</td><td>Delay in seconds for loading a savegame</td><td>60</td><td>0</td><td>10000</td></tr>
+  <tr><td>sv_saveswapgames_delay</td><td>Delay in seconds for loading a savegame or before swapping</td><td>180</td><td>0</td><td>10000</td></tr>
+  <tr><td>sv_saveswapgames_penalty</td><td>Penalty in seconds for saving or swapping position</td><td>60</td><td>0</td><td>10000</td></tr>
+  <tr><td>sv_swap_timeout</td><td>Timeout in seconds before option to swap expires</td><td>30</td><td>0</td><td>10000</td></tr>
   <tr><td>sv_use_sql</td><td>Enables MySQL backend instead of SQLite backend (sv_sqlite_file is still used as fallback write server when no MySQL server is reachable)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td><td>0</td><td>20</td></tr>
   <tr><td>sv_sqlite_file</td><td>File to store ranks in case sv_use_sql is turned off or used as backup sql server</td><td>&quot;ddnet-server.sqlite&quot;</td><td></td><td></td></tr>
@@ -385,6 +387,7 @@ menu: |
   <tr><td>mapinfo</td><td>?r[map]</td><td>Show info about the map with name r gives (current map by default)</td></tr>
   <tr><td>timeout</td><td>?s[code]</td><td>Set timeout protection code s</td></tr>
   <tr><td>practice</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Enable cheats (currently only /rescue) for your current team&#x27;s run, but you can&#x27;t earn a rank</td></tr>
+  <tr><td>swap</td><td>?r[player name]</td><td>Request to swap your tee with another team member</td></tr>
   <tr><td>save</td><td>?r[code]</td><td>Save team with code r.</td></tr>
   <tr><td>load</td><td>?r[code]</td><td>Load with code r. /load to check your existing saves</td></tr>
   <tr><td>map</td><td>?r[map]</td><td>Vote a map by name</td></tr>
@@ -527,10 +530,10 @@ menu: |
   <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy or player should stop pressing keys when you switch. 0 = off, 1 = dummy, 2 = player</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>cl_dummy_restore_weapon</td><td>Whether dummy should switch to last weapon after hammerfly</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_copy_moves</td><td>Whether dummy should copy your moves</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_dummy_control</td><td>Whether can you control dummy at the same time</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_dummy_jump</td><td>Whether dummy is jumping</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_dummy_fire</td><td>Whether dummy is firing</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_dummy_hook</td><td>Whether dummy is hooking</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_dummy_control</td><td>Whether can you control dummy at the same time (cl_dummy_jump, cl_dummy_fire, cl_dummy_hook)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_dummy_jump</td><td>Whether dummy is jumping (requires cl_dummy_control 1)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_dummy_fire</td><td>Whether dummy is firing (requires cl_dummy_control 1)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_dummy_hook</td><td>Whether dummy is hooking (requires cl_dummy_control 1)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_start_menu_images</td><td>Show start menu images</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_skip_start_menu</td><td>Skip the start menu</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_pausewithdemo</td><td>Pause video rendering when demo playing pause</td><td>1</td><td>0</td><td>1</td></tr>
@@ -624,7 +627,7 @@ menu: |
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_fullscreen</td><td>Fullscreen</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>gfx_fullscreen</td><td>Set fullscreen mode: 0=no fullscreen, 1=pure fullscreen, 2=desktop fullscreen, 3=windowed fullscreen</td><td>0</td><td>0</td><td>3</td></tr>
   <tr><td>gfx_highdpi</td><td>Enable high-dpi</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td><td>16</td><td>24</td></tr>
