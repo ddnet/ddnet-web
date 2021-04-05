@@ -25,10 +25,10 @@ menu: |
 <p>
 DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are around the world. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
-{% comment %}
 <div class="startvideo"><div class="video-container">
-  <div class="ytplayer" data-id="b9trI-CXviw"></div>
+  <div class="ytplayer" data-id="63X0Jg5tgY8"></div>
 </div></div>
+{% comment %}
 <style>
     .twitch-embed{
         position: relative;
@@ -36,7 +36,6 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
         padding-bottom: 42.1875%;
     }
 </style>
-{% endcomment %}
 <div id="twitch-embed"></div>
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script type="text/javascript">
@@ -46,6 +45,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
     channel: "LCSG47",
   });
 </script>
+{% endcomment %}
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
 <?php
