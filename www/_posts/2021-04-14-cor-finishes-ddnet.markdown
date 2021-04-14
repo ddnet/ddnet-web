@@ -32,4 +32,4 @@ Congratulations to [Cor](/players/Cor/) for finishing every single map on DDNet!
   <td class="rankglobal">20.</td><td class="points">21497 pts</td><td class="flag"><img src="/countryflags/ZAF.png" alt="ZAF" height="15"></td><td><a href="/players/NovaShock/">NovaShock</a></td></tr>
   </tbody></table>
 
-Previously [Starkiller](/players/Starkiller/) had finished all maps on DDNet, see the [news post from about 3 years ago](http://127.0.0.1:4001/news/starkiller-finishes-ddnet/).
+Previously [Starkiller](/players/Starkiller/) had finished all maps on DDNet, see the [news post from about 3 years ago](/news/starkiller-finishes-ddnet/).
