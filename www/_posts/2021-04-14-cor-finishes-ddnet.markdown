@@ -36,4 +36,4 @@ Congratulations to [Cor](/players/Cor/) for finishing every single map on DDNet!
 Previously [Starkiller](/players/Starkiller/) had finished all maps on DDNet, see the [news post from about 3 years ago](/news/starkiller-finishes-ddnet/).
 
 The video by Eki shows the development of points on DDNet:
-<div class="video-container"><div class="ytplayer" data-id="0Ts-fXAkj8s"></div></div>
+<div class="video-container"><div class="ytplayer" data-id="RirMlbgd5gY"></div></div>
