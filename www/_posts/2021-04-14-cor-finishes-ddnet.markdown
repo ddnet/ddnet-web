@@ -2,6 +2,7 @@
 layout: post
 title: "Cor finishes DDNet!"
 permalink: /news/cor-finishes-ddnet/
+head: <script src="/youtube.js?version=2" type="text/javascript"></script>
 tag: current
 ---
 
@@ -33,3 +34,6 @@ Congratulations to [Cor](/players/Cor/) for finishing every single map on DDNet!
   </tbody></table>
 
 Previously [Starkiller](/players/Starkiller/) had finished all maps on DDNet, see the [news post from about 3 years ago](/news/starkiller-finishes-ddnet/).
+
+The video by Eki shows the development of points on DDNet:
+<div class="video-container"><div class="ytplayer" data-id="0Ts-fXAkj8s"></div></div>
