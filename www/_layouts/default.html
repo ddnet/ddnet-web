@@ -52,6 +52,7 @@
             <li><a href="/switch-theme/">Switch Theme</a></li>
           </ul>
           {{ page.menu | flatify }}
+          {{ site.data.menus[page.menu-extern] | flatify }}
         </menu>
       </div>
     </header>

@@ -1,0 +1,170 @@
+<svg class="layer" width="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<style type="text/css" >
+		<![CDATA[
+			svg {{
+				overflow: visible !important;
+			}}
+			a rect {{
+				stroke: blue;
+				stroke-width: 3;
+				stroke-opacity: 1;
+				fill-opacity: 0.1;
+			}}
+			rect {{
+				fill-opacity: 0;
+			}}
+			rect:hover {{
+				fill-opacity: 0.3;
+				stroke: red;
+				stroke-width: 3;
+				stroke-opacity: 1;
+			}}
+			g:hover rect {{
+				fill-opacity: 0.3;
+				stroke: red;
+				stroke-width: 3;
+				stroke-opacity: 1;
+			}}
+		]]>
+	</style>
+	<image width="1024" height="1024" id="layer" xlink:href="{image_file}"></image>
+	<!-- add explanation texts here -->
+{explanations}
+		<script type="text/javascript"><![CDATA[
+		// generate multiline text box modified from https://www.petercollingridge.co.uk/tutorials/svg/multi-line-text-box/
+
+		var textBoxes = document.getElementsByClassName('multiline');
+		for (var i = 0; i < textBoxes.length; i++) {{
+			createMultiline(textBoxes[i])
+		}}
+
+		function createMultiline(textElement) {{
+			var words = textElement.firstChild.data.split(' ');
+			var startX = textElement.getAttributeNS(null, 'x');
+			var x = parseFloat(startX);
+			var y = parseFloat(textElement.getAttributeNS(null, 'y'));
+			var width = parseFloat(textElement.getAttributeNS(null, 'data-width'));
+			var MARGIN = 8;
+
+			var max_width = 0;
+			var cur_width = 0;
+			var max_height = 15 + 2 * MARGIN;
+
+			// Clear original text
+			textElement.firstChild.data = "";
+
+			// Create first tspan element
+			var headline = true;
+			var tspanElement = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+			tspanElement.setAttributeNS(null, "font-weight", "bold");
+			tspanElement.setAttributeNS(null, "style", "fill:#ffffff");
+
+			// Create text in tspan element
+			var textNode = document.createTextNode(words[0]);
+
+			// Add tspan element to DOM
+			tspanElement.appendChild(textNode);
+
+			// Add text to tspan element
+			textElement.appendChild(tspanElement);
+
+			for (var i = 1; i < words.length; i++) {{
+				var len = textNode.data.length;
+
+				// Add next word, but ignore first space after line break
+				if (tspanElement.firstChild.data != "") {{
+					tspanElement.firstChild.data += " ";
+				}}
+				tspanElement.firstChild.data += words[i];
+				cur_width = tspanElement.getComputedTextLength();
+
+				if (tspanElement.getComputedTextLength() > width || words[i] === "") {{
+					// Remove added word
+					tspanElement.firstChild.data = tspanElement.firstChild.data.slice(0, len);
+					
+					cur_width = tspanElement.getComputedTextLength();
+					max_width = Math.max(max_width, cur_width);
+
+					// Create new tspan element
+					tspanElement = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+					//tspanElement.setAttributeNS(null, "x", startX);
+					tspanElement.setAttributeNS(null, "dx", -cur_width);
+					tspanElement.setAttributeNS(null, "dy", 20);
+					if(words[i] === "") {{
+						headline = false;
+					}}
+					if(headline) {{
+						tspanElement.setAttributeNS(null, "font-weight", "bold");
+					}}
+					tspanElement.setAttributeNS(null, "style", "fill:#ffffff");
+					
+					max_height += 20;
+
+					textNode = document.createTextNode(words[i]);
+					tspanElement.appendChild(textNode);
+					textElement.appendChild(tspanElement);
+				}}
+			}}
+			
+			max_width = Math.max(max_width, cur_width) + MARGIN; // include 5px margin
+			boxX = Math.min(Math.max(MARGIN, x + MARGIN - max_width/2), 1024 - MARGIN - max_width);
+			// draw background box
+			if (textElement.getAttributeNS(null, 'direction') == "up") {{
+				boxY = y - max_height - 10;
+				boundings = [boxX, boxY,
+							 boxX + max_width + 2 * MARGIN, boxY,
+							 boxX + max_width + 2 * MARGIN, boxY + max_height,
+							 x + 10*2/3, y - 10,
+							 x, y,
+							 x - 10*2/3, y - 10,
+							 boxX, boxY + max_height].join(",");
+			}} else {{
+				boxY = y + 10;
+				boundings = [boxX, boxY,
+							 x - 10*2/3, boxY,
+							 x, y,
+							 x + 10*2/3, boxY,
+							 boxX + max_width + 2 * MARGIN, boxY,
+							 boxX + max_width + 2 * MARGIN, boxY + max_height,
+							 boxX, boxY + max_height].join(",");
+			}}
+			
+			TextX = boxX + MARGIN;
+			TextY = boxY + 15 + MARGIN;
+			
+			textElement.setAttributeNS(null, 'x', TextX);
+			textElement.setAttributeNS(null, 'y', TextY);
+			
+			var background = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+			var id = "box" + textElement.getAttributeNS(null, 'id').slice(4);
+			background.setAttributeNS(null, "id", id);
+			background.setAttributeNS(null, "visibility", "hidden");
+			background.setAttributeNS(null, "fill", "#404040");
+			background.setAttributeNS(null, "stroke", "#000000");
+			background.setAttributeNS(null, "stroke-width", "2");
+			background.setAttributeNS(null, "points", boundings);
+			textElement.parentNode.insertBefore(background, textElement);
+			//<polygon fill="#F3BC23" stroke="#F3BC23" stroke-width="1" points="16,16,498,16,60,60"/>
+			
+		}}
+	]]></script>
+	<script type="text/javascript"><![CDATA[
+		function showTooltip(e) {{
+			var tooltip = document.getElementById("desc" + e.target.id);
+			var box = document.getElementById("box" + e.target.id);
+			tooltip.setAttributeNS(null, "visibility", "visible");
+			box.setAttributeNS(null, "visibility", "visible");
+		}}
+		function hideTooltip(e) {{
+			var tooltip = document.getElementById("desc" + e.target.id);
+			var box = document.getElementById("box" + e.target.id);
+			tooltip.setAttributeNS(null, "visibility", "hidden");
+			box.setAttributeNS(null, "visibility", "hidden");
+		}}
+		var triggers = document.getElementsByClassName('tooltip');
+		for (var i = 0; i < triggers.length; i++) {{
+			triggers[i].addEventListener('mouseover', showTooltip);
+			triggers[i].addEventListener('mouseout', hideTooltip);
+		}}
+	]]></script>
+</svg>
