@@ -1,135 +1,136 @@
-0;Empty;Empty tile, used as an eraser in the map editor.
-1;Hookable;Block with collision, can be hooked.
-2;Kill;Kills on touch.
-3;Unhookable;Block with collision, can not be hooked.
-4;Dragger+Turret Blocker;Blocks sight of Draggers, Spinning Lasers and Turrets.
-5;Hookthrough Block;Editor Tile, places Unhookable and New Hookthrough to simulate placing Hookthrough Blocks.
-6;Old Hookthrough;Lets you hook through the surface of adjacent blocks.
-7;Jump Count Setter;Sets the amount of jumps available to you (2 by default).
-8;Timed Switch Activator;Activates switch for a set time (e.g. temporarily activates laser door).
-9;Freeze;Freezes (stuns) for a couple of seconds (for 3 seconds by default).
-10;Evil Teleporter;Teleports to Teleporter Exit with matching number, speed and hooks connected to the tee are lost.
-11;Unfreeze;Unfreezes instantly.
-12;Deep;Freezes (stuns) permanently, cancelled only by Undeep.
-13;Undeep;Cancels Deep freeze effect.
-14;Weapon Teleporter;Teleports shots from weapons to Teleporter Exit with matching number.
-15;Hook Teleporter;Teleports hooks to Teleporter Exit with matching number.
-16;Walljump;Allows to climb up adjacent surfaces of blocks.
-17;Endless Hook on;Enables endless hook (on other tees).
-18;Endless Hook off;Disables endless hook.
-19;Hit Others On;Enables hitting others with weapons.
-20;Hit Others Off;Disables hitting others with weapons.
-21;Solo;Enables solo part.
-22;Unsolo;Disables solo part.
-23;Timed Switch Deactivator;Deactivates switch for a set time (e.g. temporarily deactivates laser door).
-24;Switch Activator;Activates switch (e.g. activates laser door)
-25;Switch Deactivator;Deactivates switch (e.g. deactivates laser door)
-26;Teleporter;Teleports to Teleporter Exit with Matching number, resets the teleported tees hook.
-27;Teleporter Exit;Exit of various teleporters.
-28;Speedup;Speeds up the tee in a specified direction.
-29;Checkpoint;Sets current checkpoint of tee to the displayed number.
-30;Checkpoint Teleporter Exit;Teleporter exit for Checkpoint Teleporter.
-31;Checkpoint Teleporter;Teleports to Checkpoint Teleporter Exit with the number matching the current checkpoint of the tee, resets the teleported tees hook.
-32;Doublejump Refresher;Refreshes all doublejumps.
-33;Start;Marks begin of race, starts the timer.
-34;Finish;End of race.
-35;Time Checkpoint 1;Compares your current race time with your record time at this checkpoint, shows how you compare to it.
-36;Time Checkpoint 2;
-37;Time Checkpoint 3;
-38;Time Checkpoint 4;
-39;Time Checkpoint 5;
-40;Time Checkpoint 6;
-41;Time Checkpoint 7;
-42;Time Checkpoint 8;
-43;Time Checkpoint 9;
-44;Time Checkpoint 10;
-45;Time Checkpoint 11;
-46;Time Checkpoint 12;
-47;Time Checkpoint 13;
-48;Time Checkpoint 14;
-49;Time Checkpoint 15;
-50;Time Checkpoint 16;
-51;Time Checkpoint 17;
-52;Time Checkpoint 18;
-53;Time Checkpoint 19;
-54;Time Checkpoint 20;
-55;Time Checkpoint 21;
-56;Time Checkpoint 22;
-57;Time Checkpoint 23;
-58;Time Checkpoint 24;
-59;Time Checkpoint 25;
-60;Directional Stopper;Blocks movement in one direction.
-61;Bi-Directional Stopper;Blocks movement in two directions.
-62;Stopper;Blocks movement in all directions direction.
-63;Evil Checkpoint Teleporter;Teleports to Checkpoint Teleporter Exit with the number matching the current checkpoint of the tee, speed and all hooks connected to the tee are lost.
-64;Slow Speeder;Causes weapons, hearts, shields and rotating lasers to move around.
-65;Fast Speeder;Causes weapons, hearts, shields and rotating lasers to move around.
-66;New Hookthrough;Causes your hook to pass through the block underneath. Mid-air, this tile causes your hook to reset.
-67;Directional Hookthrough;Your hook passes through the block in one direction.
-68;Tune Zone;Zone with custom physical properties.
-71;Map: Old Laser;Affects entire map, laser and shotgun beams can't hit the tee they were shot from. Shotgun will always propel the hit tee in the direction of the shooter.
-72;Map: Tee Collision Off;Affects entire map, tees don't collide with each other.
-73;Map: Endless Hook;Affects entire map, tees have endless hook (can hook other tees indefinitely).
-74;Map: Hit Others Off;Affects entire map, tees can't hit other tees with weapons.
-75;Map: Hookthrough Tees;Affects entire map, hooks will pass through tees.
-76;Unlock Team;Forces team to unlock, used in dummy maps to kill off dummy.
-79;Time Penalty;Adds a set amount of seconds to your timer.
-88;Tee Collision Off;Disables collision with other tees.
-89;Infinite Doublejumps off;Disables unlimited doublejumps.
-90;Jetpack Off;Disables jetpack.
-91;Hookthrough Tees Off;You can now hook other tees.
-95;Time Bonus;Subtracts a set amount of seconds off your timer.
-96;Teleporter Pistol On;Pistol shots will teleport you if they hit a teleporter gun block or another tee.
-97;Teleporter Pistol Off;Pistol shots will no longer teleport you.
-98;Evil Teleporter Gun Block;Can be teleported with teleporter guns, tees lose their speed on teleporting.
-99;Teleporter Gun Block;Can be teleported to with teleporter guns, tees keep their speed on teleporting.
-104;Tee Collision On;Enables collision with other tees.
-105;Infinite Doublejumps On;Enables unlimited doublejumps.
-106;Jetpack On;Enables jetpack (hold down fire with the pistol to use it).
-107;Hookthrough Tees On;Your hook will now pass through other tees.
-112;Teleporter Grenade Launcher On;Grenade Launcher shots will teleport you if they hit a teleporter gun block or another tee.
-113;Teleporter Grenade Launcher Off;Grenade Launcher shots will no longer teleport you.
-128;Teleporter Laser On;Laser shots will teleport you if they hit a teleporter gun block or another tee.
-129;Teleporter Laser Off;Laser shots will no longer teleport you.
-140;Credits;Designer of the entities.
-190;Warning: Entities Off Sign;Warning for players playing in entities, informs that they should turn off entities in order to see important marks on the map.
-192;Spawn;Where you will spawn upon death or joining the server.
-193;Red Team Spawn;Not used in DDRace. Spawn for the red team
-194;Blue Team Spawn;Not used in DDRace. Spawn for the blue team.
-195;Red Flag;Not used in DDRace. Origin of the red flag.
-196;Blue Flag;Not used in DDRace. Origin of the blue flag.
-197;Shield;Removes all weapons (except for hammer and pistol).
-198;Heart;Freezes (stuns) for 3 seconds.
-199;Shotgun;Weapon, shoots beam that bounces off walls and pulls the first tee it hits.
-200;Grenade Launcher;Weapon, shoots exploding projectile in an arc.
-201;Ninja;Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have Ninja.
-202;Laser;Weapon, shoots beam that bounces off walls and unfreezes the first tee it hits.
-203;Counterclockwise, Fast Rotating Freezing Laser;Center of a continuous laser beam that freezes tees and rotates counterclockwise.
-204;Counterclockwise, Normal Rotating Freezing Laser;
-205;Counterclockwise, Slow Rotating Freezing Laser;
-206;Static Freezing Laser;Continuous laser beam that freezes tees.
-207;Clockwise, Slow Rotating Freezing Laser;Center of a continuous laser beam that freezes tees and rotates clockwise.
-208;Clockwise, Normal Rotating Freezing Laser;
-209;Clockwise, Fast Rotating Freezing Laser;
-210;Laser Length Setter;Sets the length of a laser door or rotating laser to 3 tiles.
-211;Laser Length Setter;Sets the length of a laser door or rotating laser to 6 tiles.
-212;Laser Length Setter;Sets the length of a laser door or rotating laser to 9 tiles.
-213;Slow Laser Lengthener;Causes laser length to lengthen and shorten, doesn't work with laser doors.
-214;Normal Laser Lengthener;
-215;Fast Laser Lengthener;
-216;Slow Laser Length Changer;Causes laser length to shorten and lengthen, doesn't work with laser doors.
-217;Normal Laser Length Changer;
-218;Fast Laser Length Changer;
-220;Explosion Turret;Locks onto the nearest tee and shoots projectiles at it that explode. Doesn't work through walls and turret blocker tiles.
-221;Freeze Turret;Locks onto the nearest tee and shoots projectiles at it that freeze for 3 seconds. Doesn't work through walls and turret blocker tiles.
-222;Freeze Explosion Turret;Locks onto the nearest tee and shoots projectiles at it that explode and freeze for 3 seconds. Doesn't work through walls and turret blocker tiles.
-223;Unfreeze Turret;Locks onto the nearest tee and shoots projectiles at it that unfreezes. Doesn't work through walls and turret blocker tiles.
-224;Exploding Bullet;Moving projectile that freezes it hits and explodes when bouncing off walls.
-225;Bullet;Moving projectile that freezes it hits and bounces off walls.
-233;Slow Dragger;Locks onto closest tee and drags it until it is out of sight again, blocked by walls and dragger blocker tiles.
-234;Normal Dragger;Locks onto closest tee and drags it until it is out of sight again, blocked by walls and dragger blocker tiles.
-235;Fast Dragger;Locks onto closest tee and drags it until it is out of sight again, blocked by walls and dragger blocker tiles.
-236;Slow Hookthrough Dragger;Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.
-237;Normal Hookthrough Dragger;Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.
-238;Fast Hookthrough Dragger;Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.
-240;Laser Door;Doesn't let tees through, controlled by switches and works like a row of stopper tiles.
+TileID,Title,Description,Link
+0,Empty,"Empty tile, used as an eraser in the map editor.",
+1,Hookable,"Block with collision, can be hooked.",
+2,Kill,Kills on touch.,
+3,Unhookable,"Block with collision, can not be hooked.",
+4,Dragger+Turret Blocker,"Blocks sight of Draggers, Spinning Lasers and Turrets.",
+5,Hookthrough Block,"Editor Tile, places Unhookable and New Hookthrough to simulate placing Hookthrough Blocks.",
+6,Old Hookthrough,Lets you hook through the surface of adjacent blocks.,
+7,Jump Count Setter,Sets the amount of jumps available to you (2 by default).,
+8,Timed Switch Activator,Activates switch for a set time (e.g. temporarily activates laser door).,
+9,Freeze,Freezes (stuns) for a couple of seconds (for 3 seconds by default).,
+10,Evil Teleporter,"Teleports to Teleporter Exit with matching number, speed and hooks connected to the tee are lost.",
+11,Unfreeze,Unfreezes instantly.,
+12,Deep,"Freezes (stuns) permanently, cancelled only by Undeep.",
+13,Undeep,Cancels Deep freeze effect.,
+14,Weapon Teleporter,Teleports shots from weapons to Teleporter Exit with matching number.,
+15,Hook Teleporter,Teleports hooks to Teleporter Exit with matching number.,
+16,Walljump,Allows to climb up adjacent surfaces of blocks.,
+17,Endless Hook on,Enables endless hook (on other tees).,
+18,Endless Hook off,Disables endless hook.,
+19,Hit Others On,Enables hitting others with weapons.,
+20,Hit Others Off,Disables hitting others with weapons.,
+21,Solo,Enables solo part.,
+22,Unsolo,Disables solo part.,
+23,Timed Switch Deactivator,Deactivates switch for a set time (e.g. temporarily deactivates laser door).,
+24,Switch Activator,Activates switch (e.g. activates laser door),
+25,Switch Deactivator,Deactivates switch (e.g. deactivates laser door),
+26,Teleporter,"Teleports to Teleporter Exit with Matching number, resets the teleported tees hook.",
+27,Teleporter Exit,Exit of various teleporters.,
+28,Speedup,Speeds up the tee in a specified direction.,
+29,Checkpoint,Sets current checkpoint of tee to the displayed number.,
+30,Checkpoint Teleporter Exit,Teleporter exit for Checkpoint Teleporter.,
+31,Checkpoint Teleporter,"Teleports to Checkpoint Teleporter Exit with the number matching the current checkpoint of the tee, resets the teleported tees hook.",
+32,Doublejump Refresher,Refreshes all doublejumps.,
+33,Start,"Marks begin of race, starts the timer.",
+34,Finish,End of race.,
+35,Time Checkpoint 1,"Compares your current race time with your record time at this checkpoint, shows how you compare to it.",
+36,Time Checkpoint 2,,
+37,Time Checkpoint 3,,
+38,Time Checkpoint 4,,
+39,Time Checkpoint 5,,
+40,Time Checkpoint 6,,
+41,Time Checkpoint 7,,
+42,Time Checkpoint 8,,
+43,Time Checkpoint 9,,
+44,Time Checkpoint 10,,
+45,Time Checkpoint 11,,
+46,Time Checkpoint 12,,
+47,Time Checkpoint 13,,
+48,Time Checkpoint 14,,
+49,Time Checkpoint 15,,
+50,Time Checkpoint 16,,
+51,Time Checkpoint 17,,
+52,Time Checkpoint 18,,
+53,Time Checkpoint 19,,
+54,Time Checkpoint 20,,
+55,Time Checkpoint 21,,
+56,Time Checkpoint 22,,
+57,Time Checkpoint 23,,
+58,Time Checkpoint 24,,
+59,Time Checkpoint 25,,
+60,Directional Stopper,Blocks movement in one direction.,
+61,Bi-Directional Stopper,Blocks movement in two directions.,
+62,Stopper,Blocks movement in all directions direction.,
+63,Evil Checkpoint Teleporter,"Teleports to Checkpoint Teleporter Exit with the number matching the current checkpoint of the tee, speed and all hooks connected to the tee are lost.",
+64,Slow Speeder,"Causes weapons, hearts, shields and rotating lasers to move around.",
+65,Fast Speeder,"Causes weapons, hearts, shields and rotating lasers to move around.",
+66,New Hookthrough,"Causes your hook to pass through the block underneath. Mid-air, this tile causes your hook to reset.",
+67,Directional Hookthrough,Your hook passes through the block in one direction.,
+68,Tune Zone,Zone with custom physical properties.,
+71,Map: Old Laser,"Affects entire map, laser and shotgun beams can't hit the tee they were shot from. Shotgun will always propel the hit tee in the direction of the shooter.",
+72,Map: Tee Collision Off,"Affects entire map, tees don't collide with each other.",
+73,Map: Endless Hook,"Affects entire map, tees have endless hook (can hook other tees indefinitely).",
+74,Map: Hit Others Off,"Affects entire map, tees can't hit other tees with weapons.",
+75,Map: Hookthrough Tees,"Affects entire map, hooks will pass through tees.",
+76,Unlock Team,"Forces team to unlock, used in dummy maps to kill off dummy.",
+79,Time Penalty,Adds a set amount of seconds to your timer.,
+88,Tee Collision Off,Disables collision with other tees.,
+89,Infinite Doublejumps off,Disables unlimited doublejumps.,
+90,Jetpack Off,Disables jetpack.,
+91,Hookthrough Tees Off,You can now hook other tees.,
+95,Time Bonus,Subtracts a set amount of seconds off your timer.,
+96,Teleporter Pistol On,Pistol shots will teleport you if they hit a teleporter gun block or another tee.,
+97,Teleporter Pistol Off,Pistol shots will no longer teleport you.,
+98,Evil Teleporter Gun Block,"Can be teleported with teleporter guns, tees lose their speed on teleporting.",
+99,Teleporter Gun Block,"Can be teleported to with teleporter guns, tees keep their speed on teleporting.",
+104,Tee Collision On,Enables collision with other tees.,
+105,Infinite Doublejumps On,Enables unlimited doublejumps.,
+106,Jetpack On,Enables jetpack (hold down fire with the pistol to use it).,
+107,Hookthrough Tees On,Your hook will now pass through other tees.,
+112,Teleporter Grenade Launcher On,Grenade Launcher shots will teleport you if they hit a teleporter gun block or another tee.,
+113,Teleporter Grenade Launcher Off,Grenade Launcher shots will no longer teleport you.,
+128,Teleporter Laser On,Laser shots will teleport you if they hit a teleporter gun block or another tee.,
+129,Teleporter Laser Off,Laser shots will no longer teleport you.,
+140,Credits,Designer of the entities.,
+190,Warning: Entities Off Sign,"Warning for players playing in entities, informs that they should turn off entities in order to see important marks on the map.",
+192,Spawn,Where you will spawn upon death or joining the server.,
+193,Red Team Spawn,Not used in DDRace. Spawn for the red team,
+194,Blue Team Spawn,Not used in DDRace. Spawn for the blue team.,
+195,Red Flag,Not used in DDRace. Origin of the red flag.,
+196,Blue Flag,Not used in DDRace. Origin of the blue flag.,
+197,Shield,Removes all weapons (except for hammer and pistol).,
+198,Heart,Freezes (stuns) for 3 seconds.,
+199,Shotgun,"Weapon, shoots beam that bounces off walls and pulls the first tee it hits.",
+200,Grenade Launcher,"Weapon, shoots exploding projectile in an arc.",
+201,Ninja,"Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have Ninja.",
+202,Laser,"Weapon, shoots beam that bounces off walls and unfreezes the first tee it hits.",
+203,"Counterclockwise, Fast Rotating Freezing Laser",Center of a continuous laser beam that freezes tees and rotates counterclockwise.,
+204,"Counterclockwise, Normal Rotating Freezing Laser",,
+205,"Counterclockwise, Slow Rotating Freezing Laser",,
+206,Static Freezing Laser,Continuous laser beam that freezes tees.,
+207,"Clockwise, Slow Rotating Freezing Laser",Center of a continuous laser beam that freezes tees and rotates clockwise.,
+208,"Clockwise, Normal Rotating Freezing Laser",,
+209,"Clockwise, Fast Rotating Freezing Laser",,
+210,Laser Length Setter,Sets the length of a laser door or rotating laser to 3 tiles.,
+211,Laser Length Setter,Sets the length of a laser door or rotating laser to 6 tiles.,
+212,Laser Length Setter,Sets the length of a laser door or rotating laser to 9 tiles.,
+213,Slow Laser Lengthener,"Causes laser length to lengthen and shorten, doesn't work with laser doors.",
+214,Normal Laser Lengthener,,
+215,Fast Laser Lengthener,,
+216,Slow Laser Length Changer,"Causes laser length to shorten and lengthen, doesn't work with laser doors.",
+217,Normal Laser Length Changer,,
+218,Fast Laser Length Changer,,
+220,Explosion Turret,Locks onto the nearest tee and shoots projectiles at it that explode. Doesn't work through walls and turret blocker tiles.,
+221,Freeze Turret,Locks onto the nearest tee and shoots projectiles at it that freeze for 3 seconds. Doesn't work through walls and turret blocker tiles.,
+222,Freeze Explosion Turret,Locks onto the nearest tee and shoots projectiles at it that explode and freeze for 3 seconds. Doesn't work through walls and turret blocker tiles.,
+223,Unfreeze Turret,Locks onto the nearest tee and shoots projectiles at it that unfreezes. Doesn't work through walls and turret blocker tiles.,
+224,Exploding Bullet,Moving projectile that freezes it hits and explodes when bouncing off walls.,
+225,Bullet,Moving projectile that freezes it hits and bounces off walls.,
+233,Slow Dragger,"Locks onto closest tee and drags it until it is out of sight again, blocked by walls and dragger blocker tiles.",
+234,Normal Dragger,"Locks onto closest tee and drags it until it is out of sight again, blocked by walls and dragger blocker tiles.",
+235,Fast Dragger,"Locks onto closest tee and drags it until it is out of sight again, blocked by walls and dragger blocker tiles.",
+236,Slow Hookthrough Dragger,"Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.",
+237,Normal Hookthrough Dragger,"Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.",
+238,Fast Hookthrough Dragger,"Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.",
+240,Laser Door,"Doesn't let tees through, controlled by switches and works like a row of stopper tiles.",
