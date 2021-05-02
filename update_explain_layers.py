@@ -26,6 +26,7 @@ import numpy as np
 import base64
 import os
 from typing import Optional
+import csv
 
 IMAGE_PATHS = {
         "entities": "data/editor/entities_clear/ddnet.png",
@@ -132,22 +133,20 @@ def parse_tiles_explanations(file_name: str):
     tiles = {}
     with open(file_name) as f:
         desc = None
-        for line in f:
-            line = [string.strip() for string in line.split(";")]
-            index = int(line[0])
-            label = line[1]
+        tiles_reader = csv.reader(f)
+        next(tiles_reader, None) # skip header row
+        for index, label, new_desc, link in tiles_reader:
+            index = int(index)
             # if no description is provided, keep the description from the previous tile
-            if line[2] != "":
-                desc = line[2]
+            if new_desc != "":
+                desc = new_desc
             # optionally include link
-            if len(line) == 4 and line[3] != "":
-                link = line[3]
-            else:
+            if link == "":
                 link = None
             tiles[index] = Tile(label, desc, index, link)
     return tiles
 
-# parses lines from 'groups.csv'
+# parses lines from 'groups.txt'
 def parse_ranges(line):
     indices = set()
     for string in line.split(","):
