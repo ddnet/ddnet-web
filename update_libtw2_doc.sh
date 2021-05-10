@@ -46,7 +46,7 @@ function import_article() {
 	curl "https://raw.githubusercontent.com/heinrich5991/libtw2/master/doc/${REMOTE_NAME}" \
 		| pandoc --from gfm --to commonmark \
 		| sed 's/^#/###/g' \
-		| sed 's/\.md)/)/g' \
+		| sed "s/(\\(.*\\)\\.md)/(..\/\\1)/g" \
 		| pandoc --from commonmark --to html \
 
 	echo '</div>'
