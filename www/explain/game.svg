@@ -34,15 +34,10 @@
 		<rect id="3" x="192" y="0" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
-		<rect id="203" x="704" y="768" width="64" height="64" class="tooltip"></rect>
-		<rect id="204" x="768" y="768" width="64" height="64" class="tooltip"></rect>
-		<rect id="205" x="832" y="768" width="64" height="64" class="tooltip"></rect>
-	</g>
-	<g>
-		<rect id="66" x="128" y="256" width="64" height="64" class="tooltip"></rect>
-		<rect id="67" x="192" y="256" width="64" height="64" class="tooltip"></rect>
 		<rect id="5" x="320" y="0" width="64" height="64" class="tooltip"></rect>
 		<rect id="6" x="384" y="0" width="64" height="64" class="tooltip"></rect>
+		<rect id="66" x="128" y="256" width="64" height="64" class="tooltip"></rect>
+		<rect id="67" x="192" y="256" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
 		<rect id="9" x="576" y="0" width="64" height="64" class="tooltip"></rect>
@@ -124,8 +119,8 @@
 		<rect id="106" x="640" y="384" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
-		<rect id="107" x="704" y="384" width="64" height="64" class="tooltip"></rect>
 		<rect id="91" x="704" y="320" width="64" height="64" class="tooltip"></rect>
+		<rect id="107" x="704" y="384" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
 		<rect id="96" x="0" y="384" width="64" height="64" class="tooltip"></rect>
@@ -153,15 +148,20 @@
 		<rect id="198" x="384" y="768" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
+		<rect id="199" x="448" y="768" width="64" height="64" class="tooltip"></rect>
 		<rect id="200" x="512" y="768" width="64" height="64" class="tooltip"></rect>
 		<rect id="201" x="576" y="768" width="64" height="64" class="tooltip"></rect>
 		<rect id="202" x="640" y="768" width="64" height="64" class="tooltip"></rect>
-		<rect id="199" x="448" y="768" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
+		<rect id="203" x="704" y="768" width="64" height="64" class="tooltip"></rect>
+		<rect id="204" x="768" y="768" width="64" height="64" class="tooltip"></rect>
+		<rect id="205" x="832" y="768" width="64" height="64" class="tooltip"></rect>
+	</g>
+	<g>
+		<rect id="207" x="960" y="768" width="64" height="64" class="tooltip"></rect>
 		<rect id="208" x="0" y="832" width="64" height="64" class="tooltip"></rect>
 		<rect id="209" x="64" y="832" width="64" height="64" class="tooltip"></rect>
-		<rect id="207" x="960" y="768" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
 		<rect id="210" x="128" y="832" width="64" height="64" class="tooltip"></rect>
@@ -210,13 +210,10 @@
 	<rect id="240" x="0" y="960" width="64" height="64" class="tooltip"></rect>
 	<text id="desc1" x="96" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookable (1)  Block with collision, can be hooked.</text>
 	<text id="desc3" x="224" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Unhookable (3)  Block with collision, can not be hooked.</text>
-	<text id="desc203" x="736" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Fast Rotating Freezing Laser (203)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
-	<text id="desc204" x="800" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Normal Rotating Freezing Laser (204)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
-	<text id="desc205" x="864" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Slow Rotating Freezing Laser (205)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
-	<text id="desc66" x="160" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">New Hookthrough (66)  Causes your hook to pass through the block underneath. Mid-air, this tile causes your hook to reset.</text>
-	<text id="desc67" x="224" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Directional Hookthrough (67)  Your hook passes through the block in one direction.</text>
 	<text id="desc5" x="352" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Block (5)  Editor Tile, places Unhookable and New Hookthrough to simulate placing Hookthrough Blocks.</text>
 	<text id="desc6" x="416" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Old Hookthrough (6)  Lets you hook through the surface of adjacent blocks.</text>
+	<text id="desc66" x="160" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">New Hookthrough (66)  Causes your hook to pass through the block underneath. Mid-air, this tile causes your hook to reset.</text>
+	<text id="desc67" x="224" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Directional Hookthrough (67)  Your hook passes through the block in one direction.</text>
 	<text id="desc9" x="608" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Freeze (9)  Freezes (stuns) for a couple of seconds (for 3 seconds by default).</text>
 	<text id="desc11" x="736" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Unfreeze (11)  Unfreezes instantly.</text>
 	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by Undeep.</text>
@@ -270,8 +267,8 @@
 	<text id="desc105" x="608" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Infinite Doublejumps On (105)  Enables unlimited doublejumps.</text>
 	<text id="desc90" x="672" y="384" direction="down" class="multiline" data-width="400" visibility="hidden">Jetpack Off (90)  Disables jetpack.</text>
 	<text id="desc106" x="672" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Jetpack On (106)  Enables jetpack (hold down fire with the pistol to use it).</text>
-	<text id="desc107" x="736" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Tees On (107)  Your hook will now pass through other tees.</text>
 	<text id="desc91" x="736" y="384" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Tees Off (91)  You can now hook other tees.</text>
+	<text id="desc107" x="736" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Tees On (107)  Your hook will now pass through other tees.</text>
 	<text id="desc96" x="32" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Pistol On (96)  Pistol shots will teleport you if they hit a teleporter gun block or another tee.</text>
 	<text id="desc97" x="96" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Pistol Off (97)  Pistol shots will no longer teleport you.</text>
 	<text id="desc112" x="32" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher On (112)  Grenade Launcher shots will teleport you if they hit a teleporter gun block or another tee.</text>
@@ -285,13 +282,16 @@
 	<text id="desc196" x="288" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Blue Flag (196)  Not used in DDRace. Origin of the blue flag.</text>
 	<text id="desc197" x="352" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shield (197)  Removes all weapons (except for hammer and pistol).</text>
 	<text id="desc198" x="416" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Heart (198)  Freezes (stuns) for 3 seconds.</text>
+	<text id="desc199" x="480" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun (199)  Weapon, shoots beam that bounces off walls and pulls the first tee it hits.</text>
 	<text id="desc200" x="544" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Launcher (200)  Weapon, shoots exploding projectile in an arc.</text>
 	<text id="desc201" x="608" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (201)  Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have Ninja.</text>
 	<text id="desc202" x="672" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Laser (202)  Weapon, shoots beam that bounces off walls and unfreezes the first tee it hits.</text>
-	<text id="desc199" x="480" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun (199)  Weapon, shoots beam that bounces off walls and pulls the first tee it hits.</text>
+	<text id="desc203" x="736" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Fast Rotating Freezing Laser (203)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
+	<text id="desc204" x="800" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Normal Rotating Freezing Laser (204)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
+	<text id="desc205" x="864" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Slow Rotating Freezing Laser (205)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
+	<text id="desc207" x="992" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Clockwise, Slow Rotating Freezing Laser (207)  Center of a continuous laser beam that freezes tees and rotates clockwise.</text>
 	<text id="desc208" x="32" y="832" direction="up" class="multiline" data-width="400" visibility="hidden">Clockwise, Normal Rotating Freezing Laser (208)  Center of a continuous laser beam that freezes tees and rotates clockwise.</text>
 	<text id="desc209" x="96" y="832" direction="up" class="multiline" data-width="400" visibility="hidden">Clockwise, Fast Rotating Freezing Laser (209)  Center of a continuous laser beam that freezes tees and rotates clockwise.</text>
-	<text id="desc207" x="992" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Clockwise, Slow Rotating Freezing Laser (207)  Center of a continuous laser beam that freezes tees and rotates clockwise.</text>
 	<text id="desc210" x="160" y="832" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Length Setter (210)  Sets the length of a laser door or rotating laser to 3 tiles.</text>
 	<text id="desc211" x="224" y="832" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Length Setter (211)  Sets the length of a laser door or rotating laser to 6 tiles.</text>
 	<text id="desc212" x="288" y="832" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Length Setter (212)  Sets the length of a laser door or rotating laser to 9 tiles.</text>
