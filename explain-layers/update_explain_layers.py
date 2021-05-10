@@ -24,32 +24,17 @@
 from PIL import Image
 import numpy as np
 import base64
-import os
 from typing import Optional
 import csv
-
-IMAGE_PATHS = {
-        "entities": "data/editor/entities_clear/ddnet.png",
-        "game": "data/editor/entities/DDNet.png",
-        "front": "data/editor/front.png",
-        "tele": "data/editor/tele.png",
-        "speedup": "data/editor/speedup.png",
-        "switch": "data/editor/switch.png",
-        "tune": "data/editor/tune.png",
-}
+import itertools
 
 class Tile:
-    def __init__(self, label: str, desc: str, index: int, link: Optional[str]):
-        self.label = label
+    def __init__(self, title: str, desc: str, index: int, group: str, link: Optional[str]):
+        self.title = title
         self.desc = desc
         self.index = index
+        self.group = group
         self.link = link
-
-    def copy_with_index(self, index):
-        """
-        In the switch layer the "Timed Switch Activator" is on a different index (22 instead of 8)
-        """
-        return Tile(self.label, self.desc, index, self.link)
 
     def get_dim(self):
         """
@@ -122,59 +107,63 @@ class Tile:
             raise ValueError('direction should be either "up" or "down"')
 
         return '\t<text id="desc{id}" x="{x}" y="{y}" direction="{direction}" class="multiline" data-width="400" visibility="hidden">{text}</text>\n' \
-            .format(id=self.index, x=x, y=y, direction=direction, text = "{} ({})  {}".format(self.label, self.index, self.desc))
+            .format(id=self.index, x=x, y=y, direction=direction, text = "{} ({})  {}".format(self.title, self.index, self.desc))
 
-def parse_tiles_explanations(file_name: str):
+def get_tile(tiles, column: str, row: str):
+    """
+    Returns the value of a new row, which can specify a previous row in the same column
+    """
+    inp = row[column]
+    if inp.startswith("$"):
+        idx = int(inp[1:])
+        if column == "Title":
+            return tiles[idx].title
+        elif column == "Group":
+            return tiles[idx].group
+        elif column == "Description":
+            return tiles[idx].desc
+        elif column == "Link":
+            return tiles[idx].link
+        else:
+            raise ValueError("Column doesn't exist")
+    else:
+        return inp
+
+def parse_tiles_explanations(tiles, file_name: str):
     """
     parses tiles explanations for the entities_clear image, since this contains
     allmost all game tiles
     returns dictionary mapping from tile_index to Tile
     """
-    tiles = {}
     with open(file_name) as f:
-        desc = None
-        tiles_reader = csv.reader(f)
-        next(tiles_reader, None) # skip header row
-        for index, label, new_desc, link in tiles_reader:
-            index = int(index)
-            # if no description is provided, keep the description from the previous tile
-            if new_desc != "":
-                desc = new_desc
+        tiles_reader = csv.DictReader(f)
+
+        for row in tiles_reader:
+            index = int(row["TileID"])
+            # allow copying previous tiles
+            title = get_tile(tiles, "Title", row)
+            desc = get_tile(tiles, "Description", row)
+            group = get_tile(tiles, "Group", row)
+            link = get_tile(tiles, "Link", row)
+
             # optionally include link
             if link == "":
                 link = None
-            tiles[index] = Tile(label, desc, index, link)
+            tiles[index] = Tile(title, desc, index, group, link)
     return tiles
 
-# parses lines from 'groups.txt'
-def parse_ranges(line):
-    indices = set()
-    for string in line.split(","):
-        x = string.split("-")
-        indices.update(range(int(x[0]), int(x[-1]) + 1))
-    return indices
-
-def merge_group(g, merge_groups):
-    for (i, group) in enumerate(merge_groups):
-        if not g.isdisjoint(group):
-            merge_groups[i] = g.union(group)
-            return
-    merge_groups.append(g)
-
-def union_non_disjunct(groups):
-    # union of all sets where the intersection != empty
-    merged_groups = []
-    for group in groups:
-        merge_group(group, merged_groups)
-    return merged_groups
-
-def parse_groups(file_name: str):
-    with open(file_name) as f:
-        groups = [parse_ranges(line) for line in f]
-    prev_num_groups = -1
-    while prev_num_groups != len(groups):
-        prev_num_groups = len(groups)
-        groups = union_non_disjunct(groups)
+def parse_groups(tiles):
+    """
+    return groups -> list of tile indices
+    """
+    groups = {}
+    for tile_idx in tiles:
+        tile = tiles[tile_idx]
+        if tile.group != "":
+            if tile.group in groups:
+                groups[tile.group].append(tile_idx)
+            else:
+                groups[tile.group] = [tile_idx]
     return groups
 
 # excluding transparent
@@ -190,17 +179,11 @@ def extract_layer_tiles(image_path, tiles):
             layer_tiles[index] = tiles[index]
     return layer_tiles
 
-def layer_filter_groups(layer, layer_tiles, groups):
+def layer_filter_groups(layer_tiles, groups):
     layer_groups = []
     for group in groups:
-        # hacky solution for the different index in the switch layer
-        if layer == "switch":
-            if 22 in group:
-                continue
-            if 8 in group:
-                group = [22 if x == 8 else x for x in group]
         # filter elements which are not present in the current layer
-        group = [t for t in group if t in layer_tiles]
+        group = [t for t in groups[group] if t in layer_tiles]
         if len(group) > 1:
             layer_groups.append(group)
     return layer_groups
@@ -208,40 +191,36 @@ def layer_filter_groups(layer, layer_tiles, groups):
 def main():
     import argparse
     parser = argparse.ArgumentParser(description='Generate DDNet explain svgs out of the source image and explain csv')
-    parser.add_argument('--ddnet', default='../ddnet', help='path to the ddnet git repository')
-    parser.add_argument('--explain', default='explain-layers/tiles.csv', help='Explain strings in the csv file')
-    parser.add_argument('--groups', default='explain-layers/groups.txt', help='File containing the grouped tiles')
+    parser.add_argument('--layer-image', help='path to the ddnet image to parse', required=True)
+    parser.add_argument('--explain', default='tiles.csv', help='Explain strings in the csv file')
+    parser.add_argument('--explain-override', help='Same as explain, but can override strings set in explain')
     parser.add_argument('--template', default='explain-layers/template.svg', help='template file to fill the svgs with')
-    parser.add_argument('--output', default='www/explain', help='output directory for the .svgs')
+    parser.add_argument('--output', default='output.svg', help='output .svg file')
+    parser.add_argument('--external-image', help='Load background image from external source. Image gets embedded if not set, can be a relative or an absolute link')
     args = parser.parse_args()
 
     # parses explain strings in tiles.csv and groups
-    tiles = parse_tiles_explanations(args.explain)
-    groups = parse_groups(args.groups)
+    tiles = {}
+    parse_tiles_explanations(tiles, args.explain)
+    if args.explain_override != None:
+        parse_tiles_explanations(tiles, args.explain_override)
+    groups = get_groups(tiles)
    
-    layer_tiles = {}
-    for layer in IMAGE_PATHS:
-        png_path = IMAGE_PATHS[layer]
-        # parses pngs of layers and maps all significant indices to its visual representation in that layer
-        layer_tiles[layer] = extract_layer_tiles(os.path.join(args.ddnet, png_path), tiles)
-
-    # In the switch layer the "Timed Switch Activator" is on a different index (22 instead of 8)
-    layer_tiles["switch"][22] = tiles[8].copy_with_index(22)
+    # parses pngs of layer and maps all non-empty indices to its visual representation in that layer
+    layer_tiles = extract_layer_tiles(args.layer_image, tiles)
 
     with open(args.template) as f:
         template = f.read()
 
-    for layer in IMAGE_PATHS:
-        image_path = IMAGE_PATHS[layer]
-        layer_groups = layer_filter_groups(layer, layer_tiles[layer], groups)
-        save_svg(layer,
-                layer_tiles[layer],
-                os.path.join(args.ddnet, image_path),
-                os.path.join(args.output, layer + '.svg'),
-                layer_groups,
-                template)
+    layer_groups = layer_filter_groups(layer_tiles, groups)
+    save_svg(layer_tiles,
+            args.layer_image,
+            args.output,
+            layer_groups,
+            template,
+            args.external_image)
 
-def save_svg(layer, layer_tiles, image_path, output_path, groups, template):
+def save_svg(layer_tiles, image_path, output_path, groups, template, external_image):
     tiles = []
     tooltips = []
 
@@ -262,12 +241,15 @@ def save_svg(layer, layer_tiles, image_path, output_path, groups, template):
             "".join(tiles),
             "".join(tooltips))
 
-    with open(image_path, "rb") as img:
-        # embedding the image, could link instead to reduce file size
-        embedded_image = img.read()
-        embedded_image = "data:image/png;base64," + base64.b64encode(embedded_image).decode()
+    if external_image != None:
+        image = external_image
+    else:
+        with open(image_path, "rb") as img:
+            # embedding the image, could link instead to reduce file size
+            image = img.read()
+            image = "data:image/png;base64," + base64.b64encode(image).decode()
     with open(output_path, "w") as w:
-        w.write(template.format(image_file = embedded_image, explanations = svg))
+        w.write(template.format(image_file = image, explanations = svg))
 
 if __name__ == "__main__":
     main()
