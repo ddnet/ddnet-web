@@ -186,9 +186,12 @@ ul.staff ul {
 }
 
 .block h2 {
-  padding-right: 0.5em;
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+.block.ladder h2 {
+  padding-right: 0.5em;
 }
 
 .longblock h2 {
