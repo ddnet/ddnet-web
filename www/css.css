@@ -190,10 +190,6 @@ ul.staff ul {
   margin-bottom: 0;
 }
 
-.block.ladder h2 {
-  padding-right: 0.5em;
-}
-
 .longblock h2 {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -223,6 +219,10 @@ ul.staff ul {
 
 #points div.block2 {
   max-width: 20em;
+}
+
+.block2.ladder h2 {
+  padding-right: 0.5em;
 }
 
 .smallpoints {
