@@ -221,6 +221,10 @@ ul.staff ul {
   max-width: 20em;
 }
 
+.block2.ladder h2 {
+  padding-right: 0.5em;
+}
+
 .smallpoints {
   text-align: right;
   min-width: 2em;
