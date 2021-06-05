@@ -57,3 +57,5 @@ Congratulations to [coradax](/players/coradax/) for taking the global top rank f
   <td class="rankglobal">20.</td><td class="points">2001 pts</td><td class="flag"><img src="/countryflags/ZAF.png" alt="ZAF" height="15"></td><td><a href="/players/NovaShock/">NovaShock</a></td></tr><tr class="allPoints" style="display: none">
 </tr></tbody></table></div>
 <br>
+
+You can also follow the latest top ranks on [Discord](https://ddnet.tw/discord) or the [Status page](https://ddnet.tw/status/) ([RSS feed](https://ddnet.tw/status/records/feed/)).
