@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Quick Tournament #58: Teetrader by SickCunt & Feuerfaust Ace"
+permalink: /news/quick-tournament-58/
+tag: current
+---
+
+I'm happy to present you this year's fifth Tournament, the Brutal (★★✰✰✰) map Teetrader by [SickCunt](/mappers/SickCunt/) & [Feuerfaust Ace](/mappers/Feuerfaust-32-Ace/):
+
+[<img class="demo" src="/Teetrader.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=7197)
+
+The Tournament will be played on Saturday, June 19 at 18:00 CEST on special Tournament servers in every DDNet location. No one has seen the map yet and the best time after 2 hours will win!
+
+Thanks to [louis](/mappers/louis/) & [DarkOort](/mappers/DarkOort/) for testing the map! Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=7197). The results will later be available on the [tournament page](/tournaments/58/).
