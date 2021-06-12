@@ -136,9 +136,10 @@ menu: |
   <tr><td>sv_region_name</td><td>Server region. Used for regional bans</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_saveswapgames_delay</td><td>Delay in seconds for loading a savegame or before swapping</td><td>180</td><td>0</td><td>10000</td></tr>
+  <tr><td>sv_saveswapgames_delay</td><td>Delay in seconds for loading a savegame or before swapping</td><td>30</td><td>0</td><td>10000</td></tr>
   <tr><td>sv_saveswapgames_penalty</td><td>Penalty in seconds for saving or swapping position</td><td>60</td><td>0</td><td>10000</td></tr>
   <tr><td>sv_swap_timeout</td><td>Timeout in seconds before option to swap expires</td><td>30</td><td>0</td><td>10000</td></tr>
+  <tr><td>sv_swap</td><td>Enable /swap</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_use_sql</td><td>Enables MySQL backend instead of SQLite backend (sv_sqlite_file is still used as fallback write server when no MySQL server is reachable)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td><td>0</td><td>20</td></tr>
   <tr><td>sv_sqlite_file</td><td>File to store ranks in case sv_use_sql is turned off or used as backup sql server</td><td>&quot;ddnet-server.sqlite&quot;</td><td></td><td></td></tr>
@@ -470,16 +471,16 @@ menu: |
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_mouse_deadzone</td><td></td><td>0</td><td>0</td><td>0</td></tr>
-  <tr><td>cl_mouse_followfactor</td><td></td><td>0</td><td>0</td><td>200</td></tr>
-  <tr><td>cl_mouse_max_distance</td><td></td><td>400</td><td>0</td><td>0</td></tr>
-  <tr><td>cl_mouse_min_distance</td><td></td><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>cl_mouse_deadzone</td><td>Deadzone for the camera to follow the cursor</td><td>0</td><td>0</td><td>3000</td></tr>
+  <tr><td>cl_mouse_followfactor</td><td>Factor for the camera to follow the cursor</td><td>0</td><td>0</td><td>200</td></tr>
+  <tr><td>cl_mouse_max_distance</td><td>Maximum cursor distance</td><td>400</td><td>0</td><td>5000</td></tr>
+  <tr><td>cl_mouse_min_distance</td><td>Minimum cursor distance</td><td>0</td><td>0</td><td>5000</td></tr>
   <tr><td>cl_dyncam</td><td>Enable dyncam</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_dyncam_max_distance</td><td>Maximum dynamic camera distance</td><td>1000</td><td>0</td><td>2000</td></tr>
-  <tr><td>cl_dyncam_min_distance</td><td>Minimum dynamic camera distance</td><td>0</td><td>0</td><td>2000</td></tr>
+  <tr><td>cl_dyncam_max_distance</td><td>Maximum dynamic camera cursor distance</td><td>1000</td><td>0</td><td>2000</td></tr>
+  <tr><td>cl_dyncam_min_distance</td><td>Minimum dynamic camera cursor distance</td><td>0</td><td>0</td><td>2000</td></tr>
   <tr><td>cl_dyncam_mousesens</td><td>Mouse sens used when dyncam is toggled on</td><td>0</td><td>0</td><td>100000</td></tr>
-  <tr><td>cl_dyncam_deadzone</td><td>Dynamic camera dead zone</td><td>300</td><td>1</td><td>1300</td></tr>
-  <tr><td>cl_dyncam_follow_factor</td><td>Dynamic camera follow factor</td><td>60</td><td>0</td><td>200</td></tr>
+  <tr><td>cl_dyncam_deadzone</td><td>Deadzone for the dynamic camera to follow the cursor</td><td>300</td><td>1</td><td>1300</td></tr>
+  <tr><td>cl_dyncam_follow_factor</td><td>Factor for the dynamic camera to follow the cursor</td><td>60</td><td>0</td><td>200</td></tr>
   <tr><td>cl_dyncam_smoothness</td><td>Transition amount of the camera movement, 0=instant, 100=slow and smooth</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>cl_dyncam_stabilizing</td><td>Amount of camera slowdown during fast cursor movement. High value can cause delay in camera movement</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td><td>0</td><td>1</td></tr>
@@ -560,7 +561,6 @@ menu: |
   <tr><td>cl_editor</td><td></td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_editor_dilate</td><td>Automatically dilates embedded images</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_load_country_flags</td><td>Load and show country flags</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_skin_filter_string</td><td>Skin filtering string</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_auto_demo_on_connect</td><td>Only start a new demo when connect while automatically record demos</td><td>0</td><td>0</td><td>1</td></tr>
@@ -597,6 +597,8 @@ menu: |
   <tr><td>br_filter_exclude_countries</td><td>Filter out DDNet servers by country</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_exclude_types</td><td>Filter out DDNet servers by type (mod)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info2.ddnet.tw/info)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>br_location</td><td>Override location for ping estimation, available: auto, af, as, as:cn, eu, na, oc, sa (Automatic, Africa, Asia, China, Europe, North America, Oceania/Australia, South America</td><td>&quot;auto&quot;</td><td></td><td></td></tr>
+  <tr><td>br_cached_best_serverinfo_url</td><td>Do not set this variable, instead create a serverlist_urls.cfg next to settings_ddnet.cfg to specify all possible serverlist URLs</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_exclude_countries_kog</td><td>Filter out kog servers by country</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_exclude_types_kog</td><td>Filter out kog servers by type (mod)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_sort</td><td>Sorting column in server browser</td><td>4</td><td>0</td><td>256</td></tr>
@@ -626,17 +628,16 @@ menu: |
   <tr><td>gfx_screen</td><td>Screen index</td><td>0</td><td>0</td><td>15</td></tr>
   <tr><td>gfx_screen_width</td><td>Screen resolution width</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_screen_height</td><td>Screen resolution height</td><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>gfx_desktop_height</td><td>Desktop resolution height for detecting display changes (not recommended to change manually)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_fullscreen</td><td>Set fullscreen mode: 0=no fullscreen, 1=pure fullscreen, 2=desktop fullscreen, 3=windowed fullscreen</td><td>0</td><td>0</td><td>3</td></tr>
+  <tr><td>gfx_fullscreen</td><td>Set fullscreen mode: 0=no fullscreen, 1=pure fullscreen, 2=desktop fullscreen</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>gfx_highdpi</td><td>Enable high-dpi</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_alphabits</td><td>Alpha bits for framebuffer (fullscreen only)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td><td>16</td><td>24</td></tr>
   <tr><td>gfx_clear</td><td>Clear screen before rendering</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_resizable</td><td>Enables window resizing</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_display_all_modes</td><td></td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_texture_compression_old</td><td>Use texture compression</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_texture_quality_old</td><td></td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>gfx_display_all_video_modes</td><td>Show all video modes</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_high_detail</td><td>High detail</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>0</td><td>0</td><td>16</td></tr>
   <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td><td>0</td><td>10000</td></tr>
@@ -702,6 +703,9 @@ menu: |
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players&#x27; hook collision line (2 to always show)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>1</td><td>0</td><td>2</td></tr>
+  <tr><td>cl_hook_coll_color_no_coll</td><td>Specifies the color of a hookline that hits nothing.</td><td>65407</td><td></td><td></td></tr>
+  <tr><td>cl_hook_coll_color_hookable_coll</td><td>Specifies the color of a hookline that hits hookable tiles.</td><td>6401973</td><td></td><td></td></tr>
+  <tr><td>cl_hook_coll_color_tee_coll</td><td>Specifies the color of a hookline that hits tees.</td><td>2817919</td><td></td><td></td></tr>
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_old</td><td>Old chat style: No tee, no background</td><td>0</td><td>0</td><td>1</td></tr>
@@ -806,7 +810,7 @@ menu: |
   <tr><td>record</td><td>?r[file]</td><td>Record to the file</td></tr>
   <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
   <tr><td>add_demomarker</td><td></td><td>Add demo timeline marker</td></tr>
-  <tr><td>add_favorite</td><td>r[host|ip]</td><td>Add a server as a favorite</td></tr>
+  <tr><td>add_favorite</td><td>s[host|ip] ?s[&#x27;allow_ping&#x27;]</td><td>Add a server as a favorite</td></tr>
   <tr><td>remove_favorite</td><td>r[host|ip]</td><td>Remove a server from favorites</td></tr>
   <tr><td>demo_slice_start</td><td></td><td></td></tr>
   <tr><td>demo_slice_end</td><td></td><td></td></tr>
@@ -858,11 +862,12 @@ menu: |
   <tr><td>explosion_strength</td><td>Explosion strength (grenade for example)</td><td> 6.0</td></tr>
   <tr><td>hammer_strength</td><td>Hammer strength</td><td> 1.0</td></tr>
   <tr><td>hook_duration</td><td>Hook duration</td><td> 1.25</td></tr>
-  <tr><td>hammer_fire_delay</td><td>Delay of hammering</td><td> 125</td></tr>
+  <tr><td>hammer_fire_delay</td><td>Delay of hammering (when hitting nothing)</td><td> 125</td></tr>
   <tr><td>gun_fire_delay</td><td>Delay of firing gun</td><td> 125</td></tr>
   <tr><td>shotgun_fire_delay</td><td>Delay of firing shotgun</td><td> 500</td></tr>
   <tr><td>grenade_fire_delay</td><td>Delay of firing grenade</td><td> 500</td></tr>
   <tr><td>laser_fire_delay</td><td>Delay of firing laser laser</td><td> 800</td></tr>
   <tr><td>ninja_fire_delay</td><td>Delay of firing ninja</td><td> 800</td></tr>
+  <tr><td>hammer_hit_fire_delay</td><td>Delay of hammering (when hitting another tee)</td><td> 320</td></tr>
 </table></div>
 </div>
