@@ -4,7 +4,27 @@ $token = "";
 $twdir = "/home/teeworlds/servers/";
 $banfile = $twdir."bans-global.cfg";
 
-if($_SERVER['HTTP_X_DDNET_TOKEN'] !== $token) {
+function e_handler($errno, $errstr, $errfile, $errline, $errcontext = null) {
+    $bt = debug_backtrace();
+    $bt_json = json_encode($bt);
+    $fname = "/tmp/php.fatal.". time(). ".log";
+
+    $f = fopen($fname, "c");
+    if(!$f) {
+        error_log("couldn't open btfile");
+        return false;
+    }
+
+    fwrite($f, $bt_json);
+    fwrite($f, "\n");
+    fclose($f);
+    error_log("See $fname ");
+
+    return false;
+}
+set_error_handler('e_handler', E_ERROR | E_USER_ERROR);
+
+if(empty($_SERVER['HTTP_X_DDNET_TOKEN']) || $_SERVER['HTTP_X_DDNET_TOKEN'] !== $token) {
     http_response_code(401);
     die("Unauthorized");
 }
