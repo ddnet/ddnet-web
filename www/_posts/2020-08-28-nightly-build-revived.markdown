@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Nightly Build Revivied"
+title: "Nightly Build Revived"
 permalink: /news/nightly-build-revived/
 tag: current
 ---
