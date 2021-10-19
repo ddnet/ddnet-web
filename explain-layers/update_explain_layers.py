@@ -204,7 +204,7 @@ def main():
     parse_tiles_explanations(tiles, args.explain)
     if args.explain_override != None:
         parse_tiles_explanations(tiles, args.explain_override)
-    groups = get_groups(tiles)
+    groups = parse_groups(tiles)
    
     # parses pngs of layer and maps all non-empty indices to its visual representation in that layer
     layer_tiles = extract_layer_tiles(args.layer_image, tiles)
