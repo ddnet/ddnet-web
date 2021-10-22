@@ -90,10 +90,10 @@ if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/">Download DDraceNetwork Client &amp; Server ' . $version . '</a></span></p>';
 }
 ?>
-<a href="https://store.steampowered.com/app/412220/DDraceNetwork/"><img width="36" src="steam.svg" alt="Steam"/></a>
-<a href="discord"><img width="36" src="discord.svg" alt="Discord"/></a>
-<a href="feed/"><img width="36" src="feed.svg" alt="Feed"/></a>
-<a href="https://github.com/ddnet/"><img width="36" src="github.svg" alt="GitHub"/></a>
+<a href="https://store.steampowered.com/app/412220/DDraceNetwork/"><img width="36" class="image-icon" src="steam.svg" alt="Steam"/></a>
+<a href="discord"><img width="36" class="image-icon" src="discord.svg" alt="Discord"/></a>
+<a href="feed/"><img width="36" class="image-icon" src="feed.svg" alt="Feed"/></a>
+<a href="https://github.com/ddnet/"><img width="36" class="image-icon" src="github.svg" alt="GitHub"/></a>
 
 <div class="right" style="width: 100%; max-width: 25em;">
   <a href="/funding/"><div class="progressbar" id="funding-total" style="width:100%; margin-top:0.25em"><div class="progress-label"></div></div></a>
