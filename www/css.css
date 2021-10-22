@@ -6,8 +6,14 @@
 }
 */
 
+:root {
+  --bg: #d8efff;
+  --bg-block: #ffffff;
+  --link: #882222;
+}
+
 html, body {
-  background-color: #d8efff;
+  background-color: var(--bg);
   font-family: sans-serif;
   margin: 0;
   padding: 0;
@@ -24,8 +30,13 @@ pre {
   overflow-y: hidden;
 }
 
+.image-icon:hover {
+  /* thanks to this tool to compute the color: https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(14%) sepia(91%) saturate(2180%) hue-rotate(350deg) brightness(94%) contrast(82%);
+}
+
 .block {
-  background-color: #ffffff;
+  background-color: var(--bg-block);
   border: 1px solid #aaaaaa;
   padding: 0.5em 1.5em 1em 1.5em;
   position: relative;
@@ -68,7 +79,32 @@ body:not(#phpbb) .block {
 }
 
 .news h3 a {
-  color: #000000;
+  color: var(--link);
+}
+
+.news blockquote {
+  border-left: 10px solid var(--link);
+  margin: 1.5em 0px;
+  padding: 0.5em 10px;
+  background-color: #00000012;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+body:not(#phpbb) code {
+  background-color: #00000012;
+  border-radius: 5px;
+}
+
+body:not(#phpbb) pre {
+  background-color: #00000012;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+body:not(#phpbb) pre code {
+  background-color: transparent;
+  padding: 0;
 }
 
 .news-content ul {
