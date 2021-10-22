@@ -74,11 +74,6 @@ section .longblock {
   border-bottom-right-radius: 4px;
 }
 
-.news:not(:last-of-type) {
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--link);
-}
-
 .ui-widget-content {
   border: none !important;
   margin: 2px;
