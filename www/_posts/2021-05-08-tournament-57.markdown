@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Quick Tournament #57: Bollermann by Cøke"
+permalink: /news/quick-tournament-57/
+tag: current
+---
+
+I'm happy to present you this year's fourth Tournament, the Brutal (★✰✰✰✰) map Bollermann by [Cøke](/mappers/C-248-ke/):
+
+[<img class="demo" src="/Bollermann.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=7148)
+
+The Tournament will be played on Sunday, May 16 at 20:00 CEST on special Tournament servers in every DDNet location. No one has seen the map yet and the best time after 90 min will win!
+
+Thanks to [Knuski](/mappers/Knuski/) & [QuiX](/mappers/QuiX/) for testing the map! Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=7148). The results will later be available on the [tournament page](/tournaments/57/).

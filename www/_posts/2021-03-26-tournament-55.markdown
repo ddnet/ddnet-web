@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Quick Tournament #55 on Moventer by Themix"
+permalink: /news/quick-tournament-55/
+tag: current
+---
+
+I'm happy to present you this year's second Tournament, the Solo (★✰✰✰✰) map "Moventer" by [Themix](/mappers/Themix/):
+
+[<img class="demo" src="/Moventer.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=7113)
+
+The Tournament will be played on Sunday, April 4 at 20:00 CEST on special Tournament servers in every DDNet location. No one has seen the map yet and the best time after 60 minutes will win! Since it's a Solo map the map is played alone.
+
+Thanks to [Ravie](/mappers/Ravie/), [Kicker](/mappers/Kicker) & [Lady Saavik](/mappers/Lady-32-Saavik/) for testing the map! Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=7113). The results will later be available on the [tournament page](/tournaments/55/).

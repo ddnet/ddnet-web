@@ -1,0 +1,10 @@
+---
+layout: post
+title: "New GER1 & USA2 game servers sponsored by secured.gg"
+permalink: /news/secured-gg/
+tag: current
+---
+
+[secured.gg](https://secured.gg/) is sponsoring new DDNet GER1 (Frankfurt) & USA2 (Dallas) servers with custom DDoS protection to us, free of charge. Thanks a lot! Please try out the new servers and report on [DDNet Discord](https://ddnet.tw/discord) if you have any problems with the new servers.
+
+This happened following a [blog post detailing our struggle with DoS attack](https://hookrace.net/blog/dos-attacks-against-online-game/).

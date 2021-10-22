@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Quick Tournament #56: Best of Three by Tridemy & Cøke"
+permalink: /news/quick-tournament-56/
+tag: current
+---
+
+I'm happy to present you this year's third Tournament, the Brutal (★★★✰✰) map "Best of Three" by [Tridemy](/mappers/Tridemy/) & [Cøke](/mappers/C-248-ke/):
+
+[<img class="demo" src="/Best_of_Three.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=7131)
+
+The Tournament will be played on Sunday, April 25 at 20:00 CEST on special Tournament servers in every DDNet location. No one has seen the map yet and the first finish will win! The map is for 3-player teams only!
+
+Thanks to [QuiX](/mappers/QuiX/), [Knuski](/mappers/Knuski/) & [louis](/mappers/louis/) for testing the map! Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=7131). The results will later be available on the [tournament page](/tournaments/56/).

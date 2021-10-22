@@ -15,7 +15,6 @@ menu: |
     <li><a href="/binds/">Useful&nbsp;Binds</a></li>
     <li><a href="/auto-font/">Auto-Font</a></li>
     <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
-    <li><a href="/staff/">Staff&nbsp;&amp;&nbsp;Contact</a></li>
     <li><a href="/renames/">Renames</a></li>
     <li><a href="/funding/">Funding</a></li>
   </ul>
@@ -26,7 +25,7 @@ menu: |
 DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are around the world. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/milk">collect points</a>!
 </p>
 <div class="startvideo"><div class="video-container">
-  <div class="ytplayer" data-id="gp4wXgS3uO4"></div>
+  <div class="ytplayer" data-id="1G3yj5s9Wlw"></div>
 </div></div>
 {% comment %}
 <style>
@@ -42,7 +41,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
   new Twitch.Embed("twitch-embed", {
     width: 1000,
     height: 480,
-    channel: "zikkiee",
+    channel: "LCSG47",
   });
 </script>
 {% endcomment %}
@@ -74,14 +73,14 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '15.3.2';
+$version = '15.5.4';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'win64') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'mac') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-osx.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for Mac OS X</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-osx.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for macOS</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'lin32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-linux_x86.tar.xz">Download DDraceNetwork Client &amp; Server ' . $version . ' for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'lin64') {
@@ -94,11 +93,6 @@ if ($user_os == 'win32') {
 <a href="discord"><img width="36" class="image-icon" src="discord.svg" alt="Discord"/></a>
 <a href="feed/"><img width="36" class="image-icon" src="feed.svg" alt="Feed"/></a>
 <a href="https://github.com/ddnet/"><img width="36" class="image-icon" src="github.svg" alt="GitHub"/></a>
-
-<div class="right" style="width: 100%; max-width: 25em;">
-  <a href="/funding/"><div class="progressbar" id="funding-total" style="width:100%; margin-top:0.25em"><div class="progress-label"></div></div></a>
-  {% include funding.html %}
-</div>
 </div>
 <br/>
 </div>
