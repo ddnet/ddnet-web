@@ -25,6 +25,11 @@ a:hover {
    filter: invert(1);
 }
 
+.image-icon:hover {
+  /* thanks to this tool to compute the color: https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(82%) sepia(47%) saturate(6319%) hue-rotate(1deg) brightness(106%) contrast(104%);
+}
+
 .contentleft {
   background: transparent linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%) repeat scroll 0% 0%;
   box-shadow: -4px 0px 3px rgba(0, 0, 0, 0.05) inset;
