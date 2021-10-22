@@ -1,17 +1,24 @@
 /* ========================= General ========================= */
+:root {
+  --link: #FFA500;
+  --hover: #E19201;
+  --bg: #2D2D2D;
+  --fg: #DFDEDE;
+}
+
 html,
 body {
-  background: #2D2D2D;
-  color: #C8C8C8;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 a,
 a:link,
 a:visited {
-  color: #F07141;
+  color: var(--link);
 }
 a:hover {
-  color: #C85326;
+  color: var(--hover);
 }
 
 .image-icon {
@@ -21,12 +28,12 @@ a:hover {
 .contentleft {
   background: transparent linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%) repeat scroll 0% 0%;
   box-shadow: -4px 0px 3px rgba(0, 0, 0, 0.05) inset;
-  border-right: 2px solid #C85326;
+  border-right: 2px solid var(--link);
   z-index: 1;
 }
 @media (max-width: 1099px) {
   .fade {
-    background: linear-gradient(to left, #2D2D2D, rgba(45,45,45,0) 5em);
+    background: linear-gradient(to left, var(--bg), rgba(45,45,45,0) 5em);
   }
   .contentleft {
     background: transparent;
@@ -46,7 +53,23 @@ section .longblock {
 /* ========================= Home ========================= */
 .news h3 a:link,
 .news h3 a:visited {
-  color: #C8C8C8;
+  color: var(--link);
+}
+
+.news h3 a:hover {
+  color: var(--hover);
+}
+
+.news blockquote {
+  border-left: 10px solid var(--link);
+  margin: 1.5em 0px;
+  padding: 0.5em 10px;
+  background-color: #4d4d4d;
+}
+
+.news:not(:last-of-type) {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--link);
 }
 
 .ui-widget-content {
@@ -57,6 +80,22 @@ section .longblock {
 
 .settingscommands tr {
   border-bottom: 1px solid #222222;
+}
+
+body:not(#phpbb) code {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+body:not(#phpbb) pre {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+body:not(#phpbb) pre code {
+  background-color: transparent;
+  padding: 0;
 }
 
 /* ========================= Status ========================= */
