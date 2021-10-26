@@ -209,6 +209,10 @@ ul.staff ul {
   margin-bottom: 1em;
 }
 
+.dlinfo li {
+  margin-bottom: 0.1em;
+}
+
 .longblock li {
   margin-bottom: 1em;
 }
