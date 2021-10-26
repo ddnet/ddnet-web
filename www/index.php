@@ -96,7 +96,9 @@ if ($user_os == 'win32') {
 </div>
 <br/>
 </div>
+<div class="block">
 <h2 id="news">News</h2>
+</div>
 {% for post in site.tags.current limit:10 %}
 <div class="block">
   <div class="news">
