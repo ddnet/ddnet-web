@@ -93,6 +93,10 @@ if ($user_os == 'win32') {
 <a href="discord"><img width="36" class="image-icon" src="discord.svg" alt="Discord"/></a>
 <a href="feed/"><img width="36" class="image-icon" src="feed.svg" alt="Feed"/></a>
 <a href="https://github.com/ddnet/"><img width="36" class="image-icon" src="github.svg" alt="GitHub"/></a>
+<div class="right" style="width: 100%; max-width: 25em;">
+  <a href="/funding/"><div class="progressbar" id="funding-total" style="width:100%; margin-top:0.25em"><div class="progress-label"></div></div></a>
+  {% include funding.html %}
+</div>
 </div>
 <br/>
 </div>
