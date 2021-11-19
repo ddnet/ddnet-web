@@ -4,6 +4,61 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3>DDNet 15.7</h3>
+<div class="dlfiles">
+  2021-11-26<br/><br/>
+  <ul>
+    <li><a href="DDNet-15.7-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-15.7-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-15.7-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-15.7-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a></li>
+    <li><a href="DDNet-15.7-osx.dmg">macOS</a></li>
+    <li><a href="DDNet-15.7.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] Make opening files for reading on windows case insensitive (again) [<strong>Robyt3</strong>]</li>
+    <li>[Client] Increase console backlog size from 64 KB to 1 MB</li>
+    <li>[Client] Fix cutting demos from KoG server</li>
+    <li>[Client] Fix steam names being cut off inside utf8 codepoints [<strong>Robyt3</strong>]</li>
+    <li>[Client] Make laser doors show correctly when spectating other players [<strong>trml</strong>]</li>
+    <li>[Client] Improve performance of SnapFindItem for extended item types [<strong>heinrich5991</strong>]</li>
+    <li>[Client] Fix spacing in HUD settings for 5:4 resolution</li>
+    <li>[Client] Fix serverinfo json parser to work with system libjsonparser</li>
+    <li>[Client] Don't overflow network statistics in debug view</li>
+    <li>[Client] Fix search bar cursor position with empty text [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Fix killmessage-colored player names [<strong>Jupeyy</strong>]</li>
+    <li>[Editor] Allow zooming any distance in editor (cl_limit_max_zoom_level 0)</li>
+    <li>[Editor] Use wasd to navigate in editor [<strong>ChillerDragon</strong>]</li>
+    <li>[Server] Server can disable dummy functionality in client [<strong>fokkonaut</strong>]</li>
+    <li>[Server] sv_plasma_per_sec 0 disables firing</li>
+    <li>[Server] Optimize entity sending [<strong>trml</strong>]</li>
+    <li>[Tools] Fix map_extract</li>
+    <li>[Tools] Lots of TSAN, UBSAN, ASAN fixes [<strong>Jupeyy, heinrich5991</strong>]</li>
+    <li>[Tools] Support ASAN manual memory poisoning for pool allocators [<strong>Learath2</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/15.6.2...15.7">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a>, <a href="DDNet-nightly-osx.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Mapping Graphics Tools: <a href="GraphicsTools-win32.zip">Windows&nbsp;32bit</a>, <a href="GraphicsTools-win64.zip">Windows&nbsp;64bit</a>, <a href="GraphicsTools-linux_x86.tar.gz">Linux&nbsp;x86</a>, <a href="GraphicsTools-linux_x86_64.tar.gz">Linux&nbsp;x86_64</a>, <a href="GraphicsTools-osx.zip">macOS</a></li>
+  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 15.6.2</h3>
 <div class="dlfiles">
   2021-11-07<br/><br/>
@@ -41,24 +96,6 @@ title: Downloads - DDraceNetwork
   </ul>
   and a lot of fixes, see the <a href="https://github.com/ddnet/ddnet/compare/15.5.4...15.6.2">full list of git changes</a>
 </div>
-<br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a>, <a href="DDNet-nightly-osx.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Mapping Graphics Tools: <a href="GraphicsTools-win32.zip">Windows&nbsp;32bit</a>, <a href="GraphicsTools-win64.zip">Windows&nbsp;64bit</a>, <a href="GraphicsTools-linux_x86.tar.gz">Linux&nbsp;x86</a>, <a href="GraphicsTools-linux_x86_64.tar.gz">Linux&nbsp;x86_64</a>, <a href="GraphicsTools-osx.zip">macOS</a></li>
-  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 15.5.4</h3>
 <div class="dlfiles">
   2021-06-20<br/><br/>
