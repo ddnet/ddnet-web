@@ -12,12 +12,12 @@ Current DDNet client translation status showing how many of the messages are tra
 100% spanish
 100% simplified_chinese
 100% russian
+100% hungarian
 100% german
+100% french
 100% brazilian_portuguese
-99% french
 98% catalan
 97% japanese
-96% hungarian
 92% polish
 92% norwegian
 92% finnish
