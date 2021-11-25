@@ -8,8 +8,6 @@ Huge thanks to all contributors!
 
 Numerous mappers in our community actively create new maps, huge thanks to them for all their efforts! See our [Recent Map Releases](https://ddnet.tw/releases/) for newly released maps!
 
-<img class="demo" src="/recent-maps.png" />
-
 Thanks to all our testers for testing these maps on our [DDNet Discord Server](https://ddnet.tw/discord), especially these, based on the [Discord Testing Activity](https://ddnet.tw/testlogs/):
 ```
 name      $ready  comments
