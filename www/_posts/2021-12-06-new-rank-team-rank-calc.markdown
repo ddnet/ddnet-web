@@ -126,4 +126,8 @@ Total:  81 points
   <tr title="03:27:49.30, 2021-10-28 17:28, 1 finish total"><td class="rank">6.</td><td class="time">03:27:49.30</td><td class="time">32</td><td class="time">10</td><td class="flag"><img src="/countryflags/FRA.png" alt="FRA" height="15"></td><td><a href="/players/Starkiller/">Starkiller</a></td></tr>
 </tbody></table>
 
+## TL;DR
+
+When you get faster, you'll get more ranks points, even if you don't move up a rank. No matter if you're first on the map already or not. If you don't make it into the top 10, you'll still get some ranks points.
+
 If you have any thoughts on this, feel free to discuss on [our Discord server](https://ddnet.tw/discord). If the general feedback is good, I'm planning to implement this change soon.
