@@ -128,6 +128,6 @@ Total:  81 points
 
 ## TL;DR
 
-When you get faster, you'll get more ranks points, even if you don't move up a rank. No matter if you're first on the map already or not. If you don't make it into the top 10, you'll still get some ranks points.
+When you get faster, you'll get more ranks points, even if you don't move up a rank. No matter if you're first on the map already or not. If you don't make it into the top 10, but are pretty fast on the map, you'll still get some ranks points. If a top player finishes multiple times in the top 10, they hurt their main ranks points.
 
 If you have any thoughts on this, feel free to discuss on [our Discord server](https://ddnet.tw/discord). If the general feedback is good, I'm planning to implement this change soon.
