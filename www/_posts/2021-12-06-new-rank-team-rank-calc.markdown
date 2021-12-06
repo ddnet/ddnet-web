@@ -29,7 +29,7 @@ This approach has irked me for a while as not ideal, so I thought about some thi
 - Player in second place should get something for improving their time a bit, even if they don't manage to reach rank 1
 - Still get points when there are many good ranks already on a popular map
 - Many players with close time should get similar points
-- Give some points also to worse players, don't just cutt off hard after 10 players
+- Give some points also to worse players, don't just cut off hard after 10 players
 - Worst rank shouldn't affect the points you get (don't use average, use median instead)
 
 ## New approach
