@@ -39,9 +39,9 @@ Top time (x=0): 100 points
 Tenth best time: 10 points
 Median time (x=1): 0 points
 Inbetween (x between 0 and 1): Exponential decay: points(x) = floor(100 * e ^ (-λ * x))
-  x = (rank - top) / (median - top)
+  x = (time - top) / (median - top)
   Calculate lambda based on tenth best time: λ = ln(10) / x
-  points(rank) = floor(100 * e ^ (-50 * (rank - top) / (median - top)))
+  points(time) = floor(100 * e ^ (-λ * (time - top) / (median - top)))
 First rank bonus: X points for being X% faster than next best time
   floor(100 * (second / top - 1))
 ```
