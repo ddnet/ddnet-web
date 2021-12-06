@@ -118,7 +118,7 @@ Total:  81 points
 ```
 <table class="tight">
   <tbody><th></th><th>Time</th><th>Old Points times 4 for comparison</th><th>New Points</th><th>Server</th><th>Rank</th>
-  <tbody><tr title="34:36.74, 2021-12-01 00:37, 4 finishes total"><td class="rank">1.</td><td class="time">34:36.74</td><td class="time">100</td><td class="time">143</td><td class="flag"><img src="/countryflags/GER.png" alt="GER" height="15"></td><td><a href="/players/lost-32-monke/">lost monke</a></td></tr>
+  <tr title="34:36.74, 2021-12-01 00:37, 4 finishes total"><td class="rank">1.</td><td class="time">34:36.74</td><td class="time">100</td><td class="time">143</td><td class="flag"><img src="/countryflags/GER.png" alt="GER" height="15"></td><td><a href="/players/lost-32-monke/">lost monke</a></td></tr>
   <tr title="49:36.90, 2021-10-27 20:48, 1 finish total"><td class="rank">2.</td><td class="time">49:36.90</td><td class="time">72</td><td class="time">81</td><td class="flag"><img src="/countryflags/RUS.png" alt="RUS" height="15"></td><td><a href="/players/-91-Wu-93--42-GzA/">[Wu]*GzA</a></td></tr>
   <tr title="01:47:45.28, 2021-10-28 23:24, 1 finish total"><td class="rank">3.</td><td class="time">01:47:45.28</td><td class="time">60</td><td class="time">37</td><td class="flag"><img src="/countryflags/GER.png" alt="GER" height="15"></td><td><a href="/players/Knuski/">Knuski</a></td></tr>
   <tr title="02:26:48.00, 2021-11-01 01:55, 1 finish total"><td class="rank">4.</td><td class="time">02:26:48.00</td><td class="time">48</td><td class="time">22</td><td class="flag"><img src="/countryflags/GER.png" alt="GER" height="15"></td><td><a href="/players/RedFight/">RedFight</a></td></tr>
