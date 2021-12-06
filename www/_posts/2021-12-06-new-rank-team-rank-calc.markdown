@@ -114,7 +114,7 @@ Total: 143 points
 
 2nd rank:
 Basis: floor(100 * e ^ (-0.43 * (2976 - 2076) / (4007 - 2076))) = 81
-Total:  67 points
+Total:  81 points
 ```
 <table class="tight">
   <tbody><th></th><th>Time</th><th>Old Points times 4 for comparison</th><th>New Points</th><th>Server</th><th>Rank</th>
