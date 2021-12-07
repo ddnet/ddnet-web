@@ -64,8 +64,8 @@ Bonus: floor(100 * (121 / 115 - 1)) = 5
 Total: 105 points
 
 2nd rank:
-Basis: floor(100 * e ^ (-50 * (121 - 115) / (882 - 115))) = 40
-Total:  40 points
+Basis: floor(100 * e ^ (-50 * (121 - 115) / (882 - 115))) = 67
+Total:  67 points
 
 Median rank:
 Basis: floor(100 * e ^ (-50 * (882 - 115) / (882 - 115))) = 0
