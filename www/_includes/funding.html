@@ -4,33 +4,30 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet":  [53, 174, "Mekrioz.'"],
-  "master": [31, 36, "Ikarus :3"], // hetzner.de
-  "db":     [50, 50, "KOMПOT"],
-  "nld":    91, // nforce.com
-  "fra":    [51, 51, "Davide"], // ovh.com
-  "ger1":   [124, 121], // cloud.google.com
-  "nuger1": "secured.gg", // secured.gg
+  "ddnet":  177,
+  "master": 36, // hetzner.de
+  "db":     50,
+  "fra":    "Davide", // ovh.com, runs out on 2022-06-13
+  "ger1":   "secured.gg", // secured.gg
   "ger2":   "heinrich5991", // hetzner.de
-  "pol":    [94, 94, "ScReeNy & Davide"], // ovh.com
-  "rus":    [36, 130, "0x314"], // myarena.ru
-  "tur":    33, // myhbd.net
-  "irn":    [30, 108, "kettu"],
-  "chl":    [173, 173, "Konsti"], // grupocg.cl
-  "bra1":   79, // heficed.com
-  "bra2":   151, // gcorelabs.com
-  "bra3":   380, // maxihost.com
-  "arg":    73, // baehost.com
-  "usa":    89, // nfoservers.com
+  "pol":    "Davide", // ovh.com, runs out on 2023-06-13
+  "rus":    155, // myarena.ru
+  "tur":    60, // myhbd.net
+  "chl":    156, // grupocg.cl
+  "bra":    1140, // maxihost.com
+  "usa1":   294, // nfoservers.com
   "usa2":   "secured.gg", // secured.gg
-  "can":    [94, 94, "YupHio & Davide"], // ovh.com
-  "jap":    360, // linode.com
-  "kor":    213, // gcorelabs.com
-  "sgp":    45, // linode.com
-  "zaf":    [62, 67, "Mariac & KuZu"], // gcorelabs.com
+  "can":    "Davide", // ovh.com, runs out on 2023-06-13
+  "jap":    516, // linode.com
+  "kor":    264, // gcorelabs.com
+  "sgp":    66, // linode.com
+  "zaf":    60, // gcorelabs.com
 };
-var donated = 1791;
-var old = 4902;
+var donated = 0;
+var yearStr = "2022";
+var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612;
+var donatedOld = 7422;
+var yearStrOld = "2013-21";
 
 var sum = 0;
 var sumToPay = 0;
@@ -79,9 +76,8 @@ for (var server in costs) {
 }
 
 var total = donated + sumPartSponsored;
-var rest = 4833;
 if (total > sum) {
-  rest += total - sum;
+  donatedOld += total - sum;
   total = sum;
 }
 var elements = [];
@@ -98,9 +94,9 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-total .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = total.toFixed() + " € donated / " + sum + " € cost 2021";
+    element.textContent = total.toFixed() + " € donated / " + sum + " € cost " + yearStr;
   else
-    element.innerText = total.toFixed() + " € donated / " + sum + " € cost 2021";
+    element.innerText = total.toFixed() + " € donated / " + sum + " € cost " + yearStr;
 });
 elements = document.querySelectorAll("#funding-total .ui-widget-header");
 elements.forEach(function(element, index, array) {
@@ -148,9 +144,9 @@ for (var server in costs) {
   }
 }
 
-var value = 100 * rest / old;
+var value = 100 * donatedOld / costOld;
 color = '#F6A828';
-if (rest >= old) {
+if (donatedOld >= costOld) {
   color = '#37d628';
 }  
 elements = document.querySelectorAll("#funding-old");
@@ -161,8 +157,8 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-old .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = rest.toFixed() + " € / " + old + " € cost 2013-20";
+    element.textContent = donatedOld.toFixed() + " € / " + costOld + " € cost " + yearStrOld;
   else
-    element.innerText = rest.toFixed() + " € / " + old + " € cost 2013-20";
+    element.innerText = donatedOld.toFixed() + " € / " + costOld + " € cost " + yearStrOld;
 });
 </script>
