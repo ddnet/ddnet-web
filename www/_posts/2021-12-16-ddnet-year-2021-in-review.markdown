@@ -3,6 +3,7 @@ layout: post
 title: "DDNet Year 2021 in Review"
 head: <script src="/youtube.js?version=2" type="text/javascript"></script>
 permalink: /news/ddnet-year-2021-in-review
+tag: current
 ---
 
 We released DDNet [on Steam](https://store.steampowered.com/app/412220/DDraceNetwork/) in August 2020 and things have changed quite a bit since then. Here's some highlights of the year 2021:
