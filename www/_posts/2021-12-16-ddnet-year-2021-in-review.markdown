@@ -85,6 +85,8 @@ The community has also been actively working on new stuff. [ChillerDragon](https
 
 A Chinese company is working on a [mobile phone DDNet-inspired game](https://www.taptap.com/app/211037), which they are building from scratch. They even hired [TsFreddie](https://github.com/TsFreddie) from our community as a lead developer! Yes, that's the same TsFreddie that's hosting most of the [Chinese DDNet servers](https://ddnet.tw/funding/) for us, huge thanks for that!
 
+There is now also a modern MediaWiki-based [DDNet Wiki](https://wiki.ddnet.tw/wiki/Main_Page) where the community is collecting information about the game.
+
 ## Current Challenges
 
 Half of DDNet's players are now Chinese, but they are quite separated from the rest of the community. Because of a [lack of English skill](https://docs.qq.com/doc/DWGFrV0xPRmVWVkla), Discord being blocked in China and foreigners being blocked in [Kaiheila, a Chinese Discord clone](https://www.kaiheila.cn/app/invite/pNXyP8) it is difficult to stay in touch. For moderation we have a bridge installed at least so that we can communicate with the Chinese moderators.
