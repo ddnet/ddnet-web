@@ -63,27 +63,7 @@ You can clearly see when the summer vacation and large Chinese holidays like Gol
 
 ## Code & Development
 
-[120 new maps](https://ddnet.tw/releases) by 71 mappers have so far been released this year. So the community is still really vibrant and active. Huge thanks also to our testers who tested all these maps!
-
-Here's the [Discord Testing activity](https://ddnet.tw/testlogs/):
-```
-name      $ready  comments
-Cøke          76      3653
-Ravie         33      1992
-jao           28      3844
-174           17       498
-Knuski        11      1043
-Kicker        10       909
-Welf           9      1019
-Sorah          6       554
-DarkOort       5      1034
-Qywinc         5       941
-texnonik       4      1388
-louis          4      3626
-Lady Saavik    4      1694
-Soapy Sandwich 2       568
-Dino           2       280
-```
+[120 new maps](https://ddnet.tw/releases) by 71 mappers have so far been released this year. So the community is still really vibrant and active. Huge thanks also to our [testers who tested all these maps](https://ddnet.tw/news/ddnet-community/)!
 
 We have gotten some new developers this year, we shipped [6 major releases](https://ddnet.tw/downloads) with a Release Candidate process to stabilize them before releasing them widely. The Release Candidates are always announced on [Discord](https://ddnet.tw/discord) and [GitHub](https://github.com/ddnet/ddnet/issues). Everyone is welcome to test and report issues.
 
