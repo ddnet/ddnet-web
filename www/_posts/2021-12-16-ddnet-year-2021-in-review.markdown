@@ -2,7 +2,7 @@
 layout: post
 title: "DDNet Year 2021 in Review"
 head: <script src="/youtube.js?version=2" type="text/javascript"></script>
-permalink: /news/ddnet-year-2021-in-review
+permalink: /news/ddnet-year-2021-in-review/
 tag: current
 ---
 
