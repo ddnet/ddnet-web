@@ -43,6 +43,8 @@ Since players are using every single physics behaviour to get such top ranks, we
 
 Our very dedicated player [Cor](https://ddnet.tw/players/Cor/) [finished every single map](https://ddnet.tw/news/cor-finishes-ddnet/) on DDNet this year.
 
+[rockuS](https://ddnet.tw/players/rockuS) & [Brokecdx-](https://ddnet.tw/players/Brokecdx-45-/) managed to get top 1 team rank on every single [Novice map](https://ddnet.tw/ranks/novice/) this year!
+
 ## Popularity Rise in East Asia
 
 The popularity of DDNet in East Asia exploded because of some streamers with lots of viewers. So I had to manually scale up the servers quickly.
