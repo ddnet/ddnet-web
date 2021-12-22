@@ -46,8 +46,6 @@ First rank bonus: X points for being X% faster than next best time
   floor(100 * (second / top - 1))
 ```
 
-If you have the only rank: 1000 points
-
 ## Example Calculation for Map Depressed
 
 To make it easier to see, let's just do an example calculation for the map [Depressed](https://ddnet.tw/maps/Depressed/), randomly chosen map with many ranks (2194 tees finished):
