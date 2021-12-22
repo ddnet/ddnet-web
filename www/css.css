@@ -30,6 +30,10 @@ pre {
   overflow-y: hidden;
 }
 
+math, math > * {
+  font-size: 120%;
+}
+
 .image-icon:hover {
   /* thanks to this tool to compute the color: https://codepen.io/sosuke/pen/Pjoqqp */
   filter: invert(14%) sepia(91%) saturate(2180%) hue-rotate(350deg) brightness(94%) contrast(82%);
@@ -254,7 +258,8 @@ ul.staff ul {
 }
 
 #points div.block2 {
-  max-width: 20em;
+  /*! max-width: 20em; */
+  flex: 1;
 }
 
 .block2.ladder h2 {
@@ -428,6 +433,24 @@ br {
 
 .block2 table {
   margin: 0 0 0 -1em;
+}
+
+.div-ranks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.div-ranks > h2 {
+  flex: 0 0 100%;
+}
+
+.div-ranks > block2 {
+  flex: 1;
+}
+
+.div-ranks h2 {
+  width: "100%;
 }
 
 .div-ranks p {
