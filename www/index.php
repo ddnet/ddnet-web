@@ -80,7 +80,7 @@ if ($user_os == 'win32') {
 } elseif ($user_os == 'win64') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'mac') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-osx.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for macOS</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-macos.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for macOS</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'lin32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-linux_x86.tar.xz">Download DDraceNetwork Client &amp; Server ' . $version . ' for Linux x86</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'lin64') {
