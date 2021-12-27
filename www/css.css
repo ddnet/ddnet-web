@@ -12,7 +12,8 @@
   --link: #882222;
 }
 
-html, body {
+html,
+body {
   background-color: var(--bg);
   font-family: sans-serif;
   margin: 0;
@@ -32,7 +33,8 @@ pre {
 
 .image-icon:hover {
   /* thanks to this tool to compute the color: https://codepen.io/sosuke/pen/Pjoqqp */
-  filter: invert(14%) sepia(91%) saturate(2180%) hue-rotate(350deg) brightness(94%) contrast(82%);
+  filter: invert(14%) sepia(91%) saturate(2180%) hue-rotate(350deg)
+    brightness(94%) contrast(82%);
 }
 
 .block {
@@ -46,7 +48,8 @@ body:not(#phpbb) .block {
   text-align: justify;
 }
 
-.block h2, .block h3 {
+.block h2,
+.block h3 {
   text-align: left;
 }
 
@@ -118,8 +121,8 @@ body:not(#phpbb) pre code {
 }
 
 .news figure.highlight {
-    overflow: auto;
-    margin-right: 0px;
+  overflow: auto;
+  margin-right: 0px;
 }
 
 .download-button {
@@ -136,7 +139,9 @@ h1 {
   border-bottom: 1px solid #cccccc;
 }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   font-weight: bold;
   color: #aa4444;
   text-decoration: none;
@@ -160,7 +165,8 @@ a:hover {
   text-decoration: none;
 }
 
-#staff h3 a, #staff h4 a {
+#staff h3 a,
+#staff h4 a {
   color: #000000;
 }
 
@@ -359,7 +365,7 @@ br {
   width: 100%;
   display: inline-block;
   font-size: 0;
-  line-height: 0
+  line-height: 0;
 }
 
 .block7 {
@@ -434,19 +440,19 @@ br {
   margin-right: 1em;
 }
 
-.div-ranks input[type=checkbox] {
+.div-ranks input[type="checkbox"] {
   display: none;
 }
 
-.div-ranks input[type=checkbox] ~ .unfinishedmaps {
+.div-ranks input[type="checkbox"] ~ .unfinishedmaps {
   display: inline-block;
 }
 
-.div-ranks input[type=checkbox]:checked ~ .unfinishedmaps {
+.div-ranks input[type="checkbox"]:checked ~ .unfinishedmaps {
   display: none;
 }
 
-.div-ranks label{
+.div-ranks label {
   cursor: pointer;
 }
 
@@ -518,19 +524,21 @@ body:not(#phpbb) .time {
 }
 
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    /*padding-top: 30px;*/ height: 0; overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  /*padding-top: 30px;*/
+  height: 0;
+  overflow: hidden;
 }
 
 .video-container iframe,
 .video-container object,
 .video-container embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .fullvideo {
@@ -545,67 +553,69 @@ body:not(#phpbb) .time {
   max-width: 100%;
 }
 
-.typeahead, .tt-query, .tt-hint {
-    border: 2px solid #ccc;
-    /*border-radius: 8px;*/
-    font-size: 100%;
-    height: 20px;
-    line-height: 20px;
-    outline: medium none;
-    padding: 4px 6px;
-    width: 240px;
+.typeahead,
+.tt-query,
+.tt-hint {
+  border: 2px solid #ccc;
+  /*border-radius: 8px;*/
+  font-size: 100%;
+  height: 20px;
+  line-height: 20px;
+  outline: medium none;
+  padding: 4px 6px;
+  width: 240px;
 }
 .typeahead {
-    background-color: #fff;
+  background-color: #fff;
 }
 .typeahead:focus {
-    border: 2px solid #aa4444;
+  border: 2px solid #aa4444;
 }
 .tt-query {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
 .tt-hint {
-    color: #999;
+  color: #999;
 }
 .tt-dropdown-menu {
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    /*border-radius: 8px;*/
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 12px;
-    padding: 8px 0;
-    width: 255px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  /*border-radius: 8px;*/
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 12px;
+  padding: 8px 0;
+  width: 255px;
 }
 .tt-suggestion {
-    font-size: 88%;
-    line-height: 18px;
-    padding: 3px 10px;
+  font-size: 88%;
+  line-height: 18px;
+  padding: 3px 10px;
 }
 .tt-suggestion.tt-cursor {
-    background-color: #aa4444;
-    color: #fff;
+  background-color: #aa4444;
+  color: #fff;
 }
 .tt-suggestion p {
-    margin: 0;
+  margin: 0;
 }
 .gist {
-    font-size: 14px;
+  font-size: 14px;
 }
 #custom-templates .empty-message {
-    padding: 5px 10px;
-    text-align: center;
+  padding: 5px 10px;
+  text-align: center;
 }
 #multiple-datasets .league-name {
-    border-bottom: 1px solid #ccc;
-    margin: 0 20px 5px;
-    padding: 3px 0;
+  border-bottom: 1px solid #ccc;
+  margin: 0 20px 5px;
+  padding: 3px 0;
 }
 #scrollable-dropdown-menu .tt-dropdown-menu {
-    max-height: 150px;
-    overflow-y: auto;
+  max-height: 150px;
+  overflow-y: auto;
 }
 #rtl-support .tt-dropdown-menu {
-    text-align: right;
+  text-align: right;
 }
 
 .dlfiles {
@@ -630,10 +640,10 @@ body:not(#phpbb) .time {
 .funding-table {
   width: auto;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
-.funding-table tr:nth-child(n+2) td {
+.funding-table tr:nth-child(n + 2) td {
   padding-top: 0.5em;
 }
 
@@ -667,9 +677,9 @@ body:not(#phpbb) .time {
   position: absolute;
   height: auto;
   cursor: pointer;
-  -webkit-transition: .4s all;
-  -moz-transition: .4s all;
-  transition: .4s all;
+  -webkit-transition: 0.4s all;
+  -moz-transition: 0.4s all;
+  transition: 0.4s all;
 }
 
 .ytplayer img:hover {
@@ -721,12 +731,38 @@ body:not(#phpbb) .time {
   }
 
   .contentleft {
-    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0.6))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* IE10+ */
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 100%); /* W3C */
+    background: -moz-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    ); /* FF3.6+ */
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0%, rgba(255, 255, 255, 0)),
+      color-stop(100%, rgba(255, 255, 255, 0.6))
+    ); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    ); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    ); /* Opera 11.10+ */
+    background: -ms-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    ); /* IE10+ */
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 100%
+    ); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#99ffffff',GradientType=1 ); /* IE6-9 */
 
     box-shadow: -4px 0 3px rgba(255, 255, 255, 0.05) inset;
@@ -736,7 +772,7 @@ body:not(#phpbb) .time {
     width: 18.6em;
     top: 18em;
     margin-left: 0em;
-    border-right: 3px solid #FFD246;
+    border-right: 3px solid #ffd246;
     transition-property: border-right-color;
   }
 
@@ -801,7 +837,7 @@ body:not(#phpbb) .time {
 
   .fade {
     position: relative;
-    background: linear-gradient(to left, #d8efff, rgba(216,239,255,0) 5em);
+    background: linear-gradient(to left, #d8efff, rgba(216, 239, 255, 0) 5em);
     z-index: initial;
     pointer-events: none;
   }
@@ -827,7 +863,7 @@ body:not(#phpbb) .time {
   }
 
   menu {
-    position:relative;
+    position: relative;
     margin: 0;
     padding: 0;
     white-space: nowrap;
@@ -910,7 +946,8 @@ body:not(#phpbb) .time {
     float: right;
   }
 
-  a, *:visited {
+  a,
+  *:visited {
     border-bottom: 0;
   }
 
@@ -924,7 +961,7 @@ body:not(#phpbb) .time {
 }
 
 @media (max-width: 800px) {
-  .funding-table tr:nth-child(n+2) td:nth-child(n+2) {
+  .funding-table tr:nth-child(n + 2) td:nth-child(n + 2) {
     padding-top: 0em;
   }
   .funding-table td {
@@ -932,7 +969,6 @@ body:not(#phpbb) .time {
     width: 100%;
   }
 }
-
 
 /* theme selection*/
 .theme_selector {
@@ -952,7 +988,7 @@ body:not(#phpbb) .time {
 }
 
 .switch input {
-  display:none;
+  display: none;
 }
 
 .slider {
@@ -963,7 +999,7 @@ body:not(#phpbb) .time {
   position: absolute;
   right: 0;
   top: 0;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -973,7 +1009,7 @@ body:not(#phpbb) .time {
   height: 17px;
   left: 4px;
   position: absolute;
-  transition: .4s;
+  transition: 0.4s;
   width: 18px;
 }
 
