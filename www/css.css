@@ -791,6 +791,9 @@ menu {
 .dlinfo {
   margin-left: 10em;
 }
+
+.dlinfo ul {
+  word-wrap: break-word;
 }
 
 @media (max-width: 1099px) {
