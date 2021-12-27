@@ -1,9 +1,9 @@
 /* ========================= General ========================= */
 :root {
-  --link: #FFA500;
-  --hover: #E19201;
-  --bg: #2D2D2D;
-  --fg: #DFDEDE;
+  --link: #ffa500;
+  --hover: #e19201;
+  --bg: #2d2d2d;
+  --fg: #dfdede;
 }
 
 html,
@@ -22,23 +22,26 @@ a:hover {
 }
 
 .image-icon {
-   filter: invert(1);
+  filter: invert(1);
 }
 
 .image-icon:hover {
   /* thanks to this tool to compute the color: https://codepen.io/sosuke/pen/Pjoqqp */
-  filter: invert(82%) sepia(47%) saturate(6319%) hue-rotate(1deg) brightness(106%) contrast(104%);
+  filter: invert(82%) sepia(47%) saturate(6319%) hue-rotate(1deg)
+    brightness(106%) contrast(104%);
 }
 
 .contentleft {
-  background: transparent linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%) repeat scroll 0% 0%;
+  background: transparent
+    linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%)
+    repeat scroll 0% 0%;
   box-shadow: -4px 0px 3px rgba(0, 0, 0, 0.05) inset;
   border-right: 2px solid var(--link);
   z-index: 1;
 }
 @media (max-width: 1099px) {
   .fade {
-    background: linear-gradient(to left, var(--bg), rgba(45,45,45,0) 5em);
+    background: linear-gradient(to left, var(--bg), rgba(45, 45, 45, 0) 5em);
   }
   .contentleft {
     background: transparent;
@@ -52,7 +55,7 @@ section .block,
 section .longblock {
   background: #555555;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* ========================= Home ========================= */
@@ -101,16 +104,20 @@ body:not(#phpbb) pre code {
 }
 
 /* ========================= Status ========================= */
-.table, .table-striped > tbody > tr:nth-child(2n+1) > td,
-.table-striped > tbody > tr:nth-child(2n+1) > th {
+.table,
+.table-striped > tbody > tr:nth-child(2n + 1) > td,
+.table-striped > tbody > tr:nth-child(2n + 1) > th {
   background: none;
 }
 .table > thead > tr > th {
   border-bottom: 2px solid #222222;
 }
-.table > thead > tr > th, .table > tbody > tr > th,
-.table > tfoot > tr > th, .table > thead > tr > td,
-.table > tbody > tr > td, .table > tfoot > tr > td {
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
   border-top: 1px solid #222222;
 }
 .progress {
@@ -120,13 +127,13 @@ body:not(#phpbb) pre code {
 
 /* ========================= Ranks ========================= */
 .typeahead:focus {
-  border: 2px solid #F07141;
+  border: 2px solid #f07141;
 }
 .tt-dropdown-menu {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .tt-suggestion.tt-cursor {
-  background-color: #F07141;
+  background-color: #f07141;
   color: #000000;
 }
 
@@ -178,13 +185,13 @@ body:not(#phpbb) pre code {
 
 .highcharts-title,
 .highcharts-container svg g.highcharts-axis text {
-  color: #C8C8C8 !important;
-  fill: #C8C8C8 !important;
+  color: #c8c8c8 !important;
+  fill: #c8c8c8 !important;
 }
 
 .highcharts-container svg g.highcharts-button rect {
-  fill: #FFFFFF;
-  stroke: #F07141;
+  fill: #ffffff;
+  stroke: #f07141;
 }
 .highcharts-container svg g.highcharts-button * {
   cursor: pointer;
@@ -193,14 +200,14 @@ body:not(#phpbb) pre code {
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
   background: #333333 !important;
-  color: #C8C8C8 !important;
+  color: #c8c8c8 !important;
 }
 .highcharts-contextmenu div div {
   border: none !important;
   box-shadow: none !important;
 }
 .highcharts-contextmenu div div:hover {
-  background-color: #F07141 !important;
+  background-color: #f07141 !important;
   color: #000000 !important;
 }
 .highcharts-contextmenu div hr {
@@ -213,23 +220,23 @@ body:not(#phpbb) pre code {
 }
 
 .highcharts-container svg g.highcharts-axis-labels text {
-  color: #CCCCCC !important;
-  fill: #CCCCCC !important;
+  color: #cccccc !important;
+  fill: #cccccc !important;
 }
 
 .highcharts-container svg g.highcharts-range-input text {
-  color: #CCCCCC !important;
-  fill: #CCCCCC !important;
+  color: #cccccc !important;
+  fill: #cccccc !important;
 }
 
 .highcharts-container svg g.highcharts-range-label text {
-  color: #CCCCCC !important;
-  fill: #CCCCCC !important;
+  color: #cccccc !important;
+  fill: #cccccc !important;
 }
 
 .highcharts-container svg g.highcharts-range-selector-buttons text {
-  color: #CCCCCC !important;
-  fill: #CCCCCC !important;
+  color: #cccccc !important;
+  fill: #cccccc !important;
 }
 
 .highcharts-container svg g.highcharts-button text {
@@ -238,8 +245,8 @@ body:not(#phpbb) pre code {
 }
 
 .highcharts-container svg g.highcharts-legend text {
-  color: #CCCCCC !important;
-  fill: #CCCCCC !important;
+  color: #cccccc !important;
+  fill: #cccccc !important;
 }
 
 /* ========================= Forum ========================= */
@@ -249,7 +256,7 @@ body:not(#phpbb) pre code {
 }
 
 #phpbb .block h2 {
-  color: #3F2E29;
+  color: #3f2e29;
 }
 
 #phpbb .block h3 {
@@ -257,65 +264,89 @@ body:not(#phpbb) pre code {
 }
 
 #phpbb .block a {
-  color: #892F11;
+  color: #892f11;
 }
 #phpbb .block a:hover {
-  color: #D34212;
+  color: #d34212;
 }
 
 #phpbb .forumbg .header a,
 #phpbb .forabg .header a,
 #phpbb th a {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 #phpbb .forumbg .header a:hover,
 #phpbb .forabg .header a:hover,
 #phpbb th a:hover {
-  color: #FFBEA8;
+  color: #ffbea8;
 }
 
 #phpbb .postlink {
-  border-bottom-color: #D25E37;
-  color: #D25E37;
+  border-bottom-color: #d25e37;
+  color: #d25e37;
 }
 
 #phpbb .postlink:visited {
-  border-bottom-color: #BD765E;
-  color: #BD765E;
+  border-bottom-color: #bd765e;
+  color: #bd765e;
 }
 
 #phpbb .postlink:hover {
-  background-color: #F6DAD1;
-  color: #73270E;
+  background-color: #f6dad1;
+  color: #73270e;
 }
 
 #phpbb .arrow-left:hover,
 #phpbb .arrow-right:hover {
-  color: #D25E37;
+  color: #d25e37;
 }
 
 #phpbb .wrap {
   background-color: transparent;
   border-color: transparent;
-  color: #C8C8C8;
+  color: #c8c8c8;
 }
 
 #phpbb .headerbar,
 #phpbb .forumbg {
-  background-color: #EB4913;
-  background-image: -webkit-linear-gradient(top, #FF906A 0%, #B12D00 2px, #EB4913 92px, #EB4913 100%);
-  background-image: linear-gradient(to bottom, #FF906A 0%, #B12D00 2px, #EB4913 92px, #EB4913 100%);
+  background-color: #eb4913;
+  background-image: -webkit-linear-gradient(
+    top,
+    #ff906a 0%,
+    #b12d00 2px,
+    #eb4913 92px,
+    #eb4913 100%
+  );
+  background-image: linear-gradient(
+    to bottom,
+    #ff906a 0%,
+    #b12d00 2px,
+    #eb4913 92px,
+    #eb4913 100%
+  );
 }
 
 #phpbb .forabg {
   /* background-color: #B12D00; */
-  background-image: -webkit-linear-gradient(top, #FF906A 0%, #EB4913 2px, #B12D00 92px, #B12D00 100%);
-  background-image: linear-gradient(to bottom, #FF906A 0%, #EB4913 2px, #B12D00 92px, #B12D00 100%);
+  background-image: -webkit-linear-gradient(
+    top,
+    #ff906a 0%,
+    #eb4913 2px,
+    #b12d00 92px,
+    #b12d00 100%
+  );
+  background-image: linear-gradient(
+    to bottom,
+    #ff906a 0%,
+    #eb4913 2px,
+    #b12d00 92px,
+    #b12d00 100%
+  );
 }
 
 #phpbb .navbar {
-  background-color: #EBD3CB;
+  background-color: #ebd3cb;
 }
 
 #phpbb li.rightside {
@@ -323,117 +354,117 @@ body:not(#phpbb) pre code {
 }
 
 #phpbb .panel {
-  background-color: #F3EEED;
-  color: #3F2E29;
+  background-color: #f3eeed;
+  color: #3f2e29;
 }
 
 #phpbb .bg1 {
-  background-color: #F7F0ED;
+  background-color: #f7f0ed;
 }
 
 #phpbb table.zebra-list tr:nth-child(odd) td,
 #phpbb ul.zebra-list li:nth-child(odd) {
-  background-color: #F7F0ED;
+  background-color: #f7f0ed;
 }
 
 #phpbb .bg2 {
-  background-color: #F2E6E2;
+  background-color: #f2e6e2;
 }
 
 #phpbb table.zebra-list tr:nth-child(even) td,
 #phpbb ul.zebra-list li:nth-child(even) {
-  background-color: #F2E6E2;
+  background-color: #f2e6e2;
 }
 
-#phpbb .bg3	{
-  background-color: #EBD3CB;
+#phpbb .bg3 {
+  background-color: #ebd3cb;
 }
 
 #phpbb .ucprowbg {
-  background-color: #E2DFDD;
+  background-color: #e2dfdd;
 }
 
 #phpbb .fieldsbg {
-  background-color: #EAE8E8;
+  background-color: #eae8e8;
 }
 
 #phpbb table.table1 tbody tr {
-  border-color: #CFC4C0;
+  border-color: #cfc4c0;
 }
 
 #phpbb table.table1 tbody tr:hover,
 #phpbb table.table1 tbody tr.hover {
-  background-color: #F6DAD0;
+  background-color: #f6dad0;
 }
 
 #phpbb table.table1 td {
-  color: #825F54;
+  color: #825f54;
 }
 
 #phpbb dl.details dd {
-  color: #825F54;
+  color: #825f54;
 }
 
 #phpbb .sep {
-  color: #D94412;
+  color: #d94412;
 }
 
 #phpbb .icon.icon-blue,
 #phpbb a:hover .icon.icon-blue {
-  color: #B5411A;
+  color: #b5411a;
 }
 
 #phpbb .jumpbox-cat-link {
-  background-color: #B12D00;
-  border-top-color: #B12D00;
+  background-color: #b12d00;
+  border-top-color: #b12d00;
 }
 
 #phpbb .jumpbox-cat-link:hover {
-  background-color: #EB4913;
-  border-top-color: #EB4913;
+  background-color: #eb4913;
+  border-top-color: #eb4913;
 }
 
 #phpbb .jumpbox-forum-link {
-  background-color: #F2E6E2;
+  background-color: #f2e6e2;
 }
 
 #phpbb .jumpbox-forum-link:hover {
-  background-color: #F6DAD1;
+  background-color: #f6dad1;
 }
 
 #phpbb .jumpbox .dropdown .pointer-inner {
-  border-color: #F2E6E2 transparent;
+  border-color: #f2e6e2 transparent;
 }
 
 #phpbb .jumpbox-sub-link {
-  background-color: #F2E6E2;
+  background-color: #f2e6e2;
 }
 
 #phpbb .jumpbox-sub-link:hover {
-  background-color: #FFF5F1;
+  background-color: #fff5f1;
 }
 
 #phpbb .copyright {
-  color: #C8C8C8;
+  color: #c8c8c8;
 }
 
 #phpbb ul.forums {
-  background-color: #F9F1EF;
-  background-image: -webkit-linear-gradient(top, #EBD9D3 0%, #F9F1EF 100%);
-  background-image: linear-gradient(to bottom, #EBD9D3 0%,#F9F1EF 100%);
+  background-color: #f9f1ef;
+  background-image: -webkit-linear-gradient(top, #ebd9d3 0%, #f9f1ef 100%);
+  background-image: linear-gradient(to bottom, #ebd9d3 0%, #f9f1ef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBD9D3', endColorstr='#F9F1EF',GradientType=0 );
 }
 
 #phpbb ul.topiclist li {
-  color: #77574D;
+  color: #77574d;
 }
 
 #phpbb li.row {
-  border-bottom-color: #8F2400;
+  border-bottom-color: #8f2400;
 }
 
 #phpbb li.row:hover {
-  background-color: #F6DAD1;
+  background-color: #f6dad1;
 }
 
 #phpbb .content h2,
@@ -442,20 +473,20 @@ body:not(#phpbb) pre code {
 }
 
 #phpbb blockquote {
-  background-color: #EBE1DE;
-  border-color:#DBD2CF;
+  background-color: #ebe1de;
+  border-color: #dbd2cf;
 }
 
 #phpbb blockquote blockquote {
-  background-color:#EFDFDA;
+  background-color: #efdfda;
 }
 
 #phpbb blockquote blockquote blockquote {
-  background-color: #EBE1DE;
+  background-color: #ebe1de;
 }
 
 #phpbb .codebox {
-  border-color: #D8CECA;
+  border-color: #d8ceca;
 }
 
 #phpbb .codebox code {
@@ -463,142 +494,141 @@ body:not(#phpbb) pre code {
 }
 
 #phpbb .attachbox {
-  border-color:  #D8CECA;
+  border-color: #d8ceca;
 }
 
 #phpbb .pm-message .attachbox {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
 #phpbb .attachbox dd {
-  border-top-color: #D8CECA;
+  border-top-color: #d8ceca;
 }
 
 #phpbb dl.thumbnail dt a:hover img {
-  border-color: #D25E37;
+  border-color: #d25e37;
 }
 
 #phpbb .button:hover,
 #phpbb .button:focus {
-  border-color: #D03C0B;
+  border-color: #d03c0b;
 }
 
 #phpbb .button-secondary:focus,
 #phpbb .button-secondary:hover,
 #phpbb .button:focus .icon,
 #phpbb .button:hover .icon {
-  color: #D03C0B;
+  color: #d03c0b;
 }
 
 #phpbb .contact-icons a:hover {
-  background-color: #F9F4F3;
+  background-color: #f9f4f3;
 }
 
 #phpbb .pagination li a {
-  background: #EEEDED;
-  border-color: #C0B8B5;
-  color: #8C695D;
+  background: #eeeded;
+  border-color: #c0b8b5;
+  color: #8c695d;
 }
 
 #phpbb .pagination li.active span {
-  background: #BF6547;
-  border-color: #BF6547;
+  background: #bf6547;
+  border-color: #bf6547;
 }
 
 #phpbb .pagination li a:hover,
 #phpbb .pagination li a:hover .icon,
 #phpbb .pagination .dropdown-visible a.dropdown-trigger,
 #phpbb.nojs .pagination .dropdown-container:hover a.dropdown-trigger {
-  background: #D25E37;
-  border-color: #D25E37;
+  background: #d25e37;
+  border-color: #d25e37;
 }
 
 #phpbb .search-header {
-  box-shadow: 0 0 10px #B02C00;
+  box-shadow: 0 0 10px #b02c00;
 }
 
 #phpbb .panel-container h3,
 #phpbb .panel-container hr,
 #phpbb .cp-menu hr {
-  border-color: #BFABA5;
+  border-color: #bfaba5;
 }
 
 #phpbb .panel-container .panel li.row {
-  border-bottom-color: #CBBBB6;
+  border-bottom-color: #cbbbb6;
 }
 
 #phpbb ul.cplist {
-  border-top-color: #CBBBB6;
+  border-top-color: #cbbbb6;
 }
 
 #phpbb .cp-main .pm-message {
-  border-color: #E2DEDC;
+  border-color: #e2dedc;
 }
 
 #phpbb .tabs .tab > a {
-  background: #D9C3BB;
-  color: #825F54;
+  background: #d9c3bb;
+  color: #825f54;
 }
 
 #phpbb .tabs .tab > a:hover {
-  background: #FBE5DE;
+  background: #fbe5de;
 }
 
 #phpbb .tabs .activetab > a,
 #phpbb .tabs .activetab > a:hover {
-  background-color: #EBD3CB;
-  background-image: -webkit-linear-gradient(top, #FFEAE2 0%, #EBD3CB 100%);
-  background-image: linear-gradient(to bottom, #FFEAE2 0%, #EBD3CB 100%);
+  background-color: #ebd3cb;
+  background-image: -webkit-linear-gradient(top, #ffeae2 0%, #ebd3cb 100%);
+  background-image: linear-gradient(to bottom, #ffeae2 0%, #ebd3cb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFEAE2', endColorstr='#EBD3CB', GradientType=0 );
-  border-color: #EBD3CB;
-  box-shadow: 0 1px 1px #FFF6F2 inset;
+  border-color: #ebd3cb;
+  box-shadow: 0 1px 1px #fff6f2 inset;
 }
 
 #phpbb .minitabs .tab > a {
-  background-color: #F2E6E2;
+  background-color: #f2e6e2;
 }
 
 #phpbb .responsive-tab .responsive-tab-link:before {
-  border-color: #825F54;
+  border-color: #825f54;
 }
 
 #phpbb .navigation a {
-  background: #EBD3CB;
-  background: -webkit-linear-gradient(left, #D1BCB5 50%, #EBD3CB 100%);
-  background: linear-gradient(to right, #D1BCB5 50%,#EBD3CB 100%);
+  background: #ebd3cb;
+  background: -webkit-linear-gradient(left, #d1bcb5 50%, #ebd3cb 100%);
+  background: linear-gradient(to right, #d1bcb5 50%, #ebd3cb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1BCB5', endColorstr='#EBD3CB',GradientType=1 );
 }
 
 #phpbb .rtl .navigation a {
-  background: #D1BCB5;
-  background: -webkit-linear-gradient(left, #EBD3CB 50%, #D1BCB5 100%);
-  background: linear-gradient(to right, #EBD3CB 50%,#D1BCB5 100%);
+  background: #d1bcb5;
+  background: -webkit-linear-gradient(left, #ebd3cb 50%, #d1bcb5 100%);
+  background: linear-gradient(to right, #ebd3cb 50%, #d1bcb5 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBD3CB', endColorstr='#D1BCB5',GradientType=1 );
 }
 
 #phpbb .navigation a:hover {
-  background: #C6B2AB;
+  background: #c6b2ab;
 }
 
 @media only screen and (max-width: 900px),
-       only screen and (max-device-width: 900px)
-{
+  only screen and (max-device-width: 900px) {
   #phpbb #navigation a,
   #phpbb.rtl #navigation a {
-    background: #CFBAB3;
+    background: #cfbab3;
   }
 }
 
 #phpbb .cp-mini {
-  background-color: #F9F1EF;
+  background-color: #f9f1ef;
 }
 
 #phpbb dl.mini dt {
-  color: #674C43;
+  color: #674c43;
 }
 
 #phpbb label {
-  color: #AE8E84;
+  color: #ae8e84;
 }
 
 #phpbb .message-box textarea.drag-n-drop-highlight {
@@ -606,43 +636,43 @@ body:not(#phpbb) pre code {
 }
 
 #phpbb .inputbox {
-  border-color: #C0B8B5;
+  border-color: #c0b8b5;
 }
 
 #phpbb .inputbox:hover {
-  border-color: #EA4812;
+  border-color: #ea4812;
 }
 
 #phpbb .inputbox:focus {
-  border-color: #EA4812;
+  border-color: #ea4812;
 }
 
 #phpbb input.button1:focus,
 #phpbb input.button2:focus,
 #phpbb input.button3:focus {
-  border-color: #EA4812;
-  color: #872E10;
+  border-color: #ea4812;
+  color: #872e10;
 }
 
 #phpbb .dropdown-extended ul li:hover {
-  background-color: #F6DAD0;
+  background-color: #f6dad0;
 }
 
 #phpbb .dropdown-extended .header {
-  background-color: #FFF5F1;
-  background-image: -webkit-linear-gradient(top, #FFF5F1 0%, #EBD3CB 100%);
-  background-image: linear-gradient(to bottom, #FFF5F1 0%, #EBD3CB 100%);
+  background-color: #fff5f1;
+  background-image: -webkit-linear-gradient(top, #fff5f1 0%, #ebd3cb 100%);
+  background-image: linear-gradient(to bottom, #fff5f1 0%, #ebd3cb 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFF5F1', endColorstr='#EBD3CB', GradientType=0 );
 }
 
 #phpbb .dropdown-extended .pointer-inner {
-  border-color: #FFF5F1 transparent;
+  border-color: #fff5f1 transparent;
 }
 
 #phpbb .notification_list p.notification-time {
-  color: #77574D;
+  color: #77574d;
 }
 
 #phpbb a.header-avatar span:after {
-  color: #892F11;
+  color: #892f11;
 }
