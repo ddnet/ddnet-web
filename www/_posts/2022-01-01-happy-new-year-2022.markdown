@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Happy New Year 2022 with a Photoshoot Event!
+title: "Happy New Year 2022 with a Photoshoot Event!"
 permalink: /news/happy-new-year-2022/
 tag: current
 ---
