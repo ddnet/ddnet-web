@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Happy New Year 2022 with a Photoshoot Event!
+permalink: /news/happy-new-year-2022/
+tag: current
+---
+
+Happy New Year 2022! We have a special photo capture event for the global DDNet community! Everyone can join one of the New Year Photshoot servers running in most regions now to be part of the community photo! Please only take a photo in one region, duplicates will be deleted.
+
+<img class="demo" src="/newyear.png" />
+
+If you are using DDNet on Steam you can use these links to connect directly to the servers:
+
+- [EUR](steam://run/412220//ger2.ddnet.tw:8297)
+- [RUS](steam://run/412220//rus4.ddnet.tw:8297)
+- [Turkey](steam://run/412220//tur2.ddnet.tw:8297)
+- [Chile](steam://run/412220//chl2.ddnet.tw:8297)
+- [Brazil](steam://run/412220//bra3.ddnet.tw:8297)
+- [USA + CAN](steam://run/412220//usa1.ddnet.tw:8297)
+- [CHN](steam://run/412220//chn1.ddnet.tw:8297)
+- [Singapore + Korea + Japan](steam://run/412220//sgp2.ddnet.tw:8297)
+- [South Africa + Iran](steam://run/412220//zaf2.ddnet.tw:8297)
+
+Thanks to [TsFreddie](https://github.com/TsFreddie) for the [modification](https://github.com/TeeworldsCN/MomentCap) and [bit](https://ddnet.tw/mappers/bit/) and [louis](https://ddnet.tw/mappers/louis/) for the map! You can check out the [Chinese community version from 2021](https://teeworldscn.github.io/EventScreenshots/2021newyear/) to see what the result can look like.
