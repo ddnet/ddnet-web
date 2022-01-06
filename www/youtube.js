@@ -3,7 +3,28 @@ window.onload = function() {
   for (n = 0; n < v.length; n++) {
       div = document.createElement("div");
       div.setAttribute("data-id", v[n].dataset.id);
-      div.innerHTML = '<img src="https://i.ytimg.com/vi/' + v[n].dataset.id + '/maxresdefault.jpg"><div class="play"></div>';
+      var img = document.createElement("img");
+      img.onload = function() {
+        if (this.naturalWidth === 120) {
+          if (this.src.includes('maxresdefault')) {
+            this.src = this.src.replace('maxresdefault', 'hq720');
+          } else if (this.src.includes('hq720')) {
+            this.src = this.src.replace('hq720', 'sddefault');
+          } else if (this.src.includes('sddefault')) {
+            this.src = this.src.replace('sddefault', 'hqdefault');
+            this.hidden = false;
+            this.style.visibility = 'visible';
+          }
+        } else {
+          this.style.visibility = 'visible';
+        }
+      }
+      img.src = 'https://i.ytimg.com/vi/' + v[n].dataset.id + '/maxresdefault.jpg';
+      img.style.visibility = 'hidden';
+      div.appendChild(img);
+      let play = document.createElement("div");
+      play.classList.add('play');
+      div.appendChild(play);
       div.onclick = ytiframe;
       v[n].appendChild(div);
   }
