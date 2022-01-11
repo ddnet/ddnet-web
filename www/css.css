@@ -318,10 +318,6 @@ td {
   padding-right: 1em;
 }
 
-.info {
-  text-align: center;
-}
-
 .release {
   text-align: center;
   margin: auto;
@@ -458,11 +454,14 @@ br {
 
 .info {
   text-align: center;
+  max-width: 400px;
 }
 
 .release {
   text-align: center;
   margin: auto;
+  max-width: 400px;
+  vertical-align: top;
 }
 
 .div-ranks .block2 p {
