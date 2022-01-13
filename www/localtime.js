@@ -5,28 +5,28 @@ $(document).ready(function () {
     const date = new Date($(this).data("date"));
     const hasTitle = typeof $(this).attr('title') !== undefined && $(this).attr('title') !== false;
     if (dateFormat === "time") {
-      const text = date.toLocaleTimeString('ja-JP', {
+      const text = date.toLocaleTimeString(undefined, {
         hour: "2-digit",
         minute: "2-digit",
       });
       $(this).text(text);
       if(hasTitle) $(this).attr('title', text);
     } else if (dateFormat === "date") {
-      const text = date.toLocaleDateString('ja-JP', {
+      const text = date.toLocaleDateString(undefined, {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
-      }).replace(/\//gi,'-'));
+      });
       $(this).text(text);
       if(hasTitle) $(this).attr('title', text);
     } else if (dateFormat === "datetime") {
-      const text = date.toLocaleString('ja-JP', {
+      const text = date.toLocaleString(undefined, {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
         hour: "2-digit",
         minute: "2-digit",
-      }).replace(/\//gi,'-'));
+      });
       $(this).text(text);
       if(hasTitle) $(this).attr('title', text);
     }
