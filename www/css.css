@@ -369,6 +369,7 @@ br {
   display: inline-block;
   width: auto;
   text-align: left;
+  margin-right: 1em;
 }
 
 .block6 {
@@ -377,6 +378,7 @@ br {
   width: auto;
   font-size: 88%;
   text-align: left;
+  margin-right: 1em;
 }
 
 .block5 {
