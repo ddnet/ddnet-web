@@ -1,0 +1,38 @@
+---
+layout: post
+title: "Happy New Year 2022 Photoshoot Result"
+permalink: /news/photoshoot-2022/
+tag: current
+head: |
+  <script src="/newyear2022/js/openseadragon.min.js"></script>
+  <style type="text/css">
+      v\:* {
+        behavior: url(#default#VML);
+      }
+  </style>
+---
+
+The [Photoshoot from a few a weeks ago](/news/happy-new-year-2022-result/) is finished! Thanks to [TsFreddie](https://github.com/TsFreddie) for creating the [final image](/newyear2022/)!
+<div id="screenshot" style="height: 800px; width: 100%;"></div>
+<script type="text/javascript">
+  var viewer = OpenSeadragon({
+    id: "screenshot",
+    prefixUrl: "/newyear2022/images/",
+    showNavigator: true,
+    navigatorHeight: "111px",
+    navigatorWidth: "197px",
+    wrapHorizontal: false,
+    zoomPerScroll: 1.8,
+    animationTime: 1,
+    springStiffness: 10,
+    tileSources: [
+      {
+        getTileUrl: (level, x, y) => `/newyear2022/data/2022.dzi_files/${level}/${x}_${y}.webp`,
+        width: 59300,
+        height: 33450,
+        tileSize: 256,
+        overlap: 2,
+      },
+    ],
+  });
+</script>
