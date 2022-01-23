@@ -3,15 +3,14 @@ layout: post
 title: "Happy New Year 2022 Photoshoot Result"
 permalink: /news/photoshoot-2022/
 tag: current
-head: |
-  <script src="/newyear2022/js/openseadragon.min.js"></script>
-  <style type="text/css">
-      v\:* {
-        behavior: url(#default#VML);
-      }
-  </style>
 ---
 
+<script src="/newyear2022/js/openseadragon.min.js"></script>
+<style type="text/css">
+    v\:* {
+      behavior: url(#default#VML);
+    }
+</style>
 The [Photoshoot from a few a weeks ago](/news/happy-new-year-2022-result/) is finished! Thanks to [TsFreddie](https://github.com/TsFreddie) for creating the [final image](/newyear2022/)!
 <div id="screenshot" style="height: 800px; width: 100%;"></div>
 <script type="text/javascript">
