@@ -4,6 +4,6 @@ title: "Happy New Year 2022 Photoshoot Result"
 permalink: /news/photoshoot-2022/
 tag: current
 ---
-The [Photoshoot from a few a weeks ago](/news/happy-new-year-2022-result/) is finished! Thanks to [TsFreddie](https://github.com/TsFreddie) for creating the [final image](/newyear2022/)!
+The [Photoshoot from a few a weeks ago](/news/happy-new-year-2022/) is finished! Thanks to [TsFreddie](https://github.com/TsFreddie) for creating the [final image](/newyear2022/)!
 
 [<img class="demo" src="/newyear2022.jpg" />](/newyear2022/)
