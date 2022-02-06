@@ -4,6 +4,79 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3>DDNet 15.9</h3>
+<div class="dlfiles">
+  2022-02-13<br/><br/>
+  <ul>
+    <li><a href="DDNet-15.9-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-15.9-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-15.9-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-15.9-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a></li>
+    <li><a href="DDNet-15.9-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86_64)</a></li>
+    <li><a href="DDNet-15.9.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Server] <strong>Live freeze tiles</strong> (cannot move or jump, but can use hook and weapons) [<strong>GiuCcc</strong>]</li>
+    <li>[Server] <strong>Add teleport/tp chat command to teleport yourself</strong> to another player or spectated location (requires /practice)</li>
+    <li>[Client] <strong>Add new icons and macOS installer graphics</strong> [<strong>Ravie</strong>]</li>
+    <li>[Client] Add windowed fullscreen mode on Windows [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Support 128 players in server browser [<strong>fokkonaut</strong>]</li>
+    <li>[Client] Adjustable prediction margin (cl_prediction_margin) [<strong>trml</strong>]</li>
+    <li>[Client] Improve projectile prediction [<strong>trml</strong>]</li>
+    <li>[Client] Use power button to quit (hopefully more clear)</li>
+    <li>[Client] Implement "reset" command to reset specific config values to default value</li>
+    <li>[Client] Add cl_port, cl_dummy_port, cl_contact_port for ISPs that throttle specific ports</li>
+    <li>[Client] Remove compatible version filter [<strong>heinrich5991</strong>]</li>
+    <li>[Client] Display more relevant version numbers on command line</li>
+    <li>[Client] Fix bullet rendered through walls [<strong>trml</strong>]</li>
+    <li>[Client] Fix ARM-specific crash in macOS when moving screen [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Fix console line offsets when resizing [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Fix changing resolution in fullscreen [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Improved double click handling [<strong>Robyt3</strong>]</li>
+    <li>[Client] Reduce default ambient volume to 30</li>
+    <li>[Client] Update score HUD immediately when switching dummy</li>
+    <li>[Client] Allow multiple commands when adding vote in UI</li>
+    <li>[Client] Allow "zoom" command to take smaller/larger values</li>
+    <li>[Client] Improve super prediction</li>
+    <li>[Client] Improve preformance when listing directories [<strong>Robyt3</strong>]</li>
+    <li>[Client] Lower chance of losing config files [<strong>heinrich5991</strong>]</li>
+    <li>[Client] Explicitly disable notch area on Macbook Pro for fullscreen</li>
+    <li>[Editor] Support enter and escape keys in editor when confirming save</li>
+    <li>[Editor] Don't react to server settings shortcuts when dialog is open</li>
+    <li>[Server] 255 jump tile acts as no double jump [<strong>heinrich5991</strong>]</li>
+    <li>[Server] Fail database queries faster [<strong>Zwelf</strong>]</li>
+    <li>[Server] Improve database writes during shutdown and bad network [<strong>Zwelf</strong>]</li>
+    <li>[Server] Extend and fix DDNet Server launcher on macOS</li>
+    <li>[Server] Also switch rescue tees when swapping</li>
+    <li>[Server] Implement sv_min_team_size to prevent too small teams counting as team finishes</li>
+    <li>[Server] Default players to being AFK when joining</li>
+    <li>[Server] Fix warnings to only warn every 3 seconds when touching start line</li>
+    <li>[Server] Reload map when changing sv_sixup [<strong>Robyt3</strong>]</li>
+    <li>[Client+Server] Handle signals (SIGINT, SIGTERM) [<strong>Robyt3</strong>]</li>
+    <li>[Client+Server] Fix lots of undefined behavior [<strong>Robyt3</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/15.8.1...15.9">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 15.8.1</h3>
 <div class="dlfiles">
   2021-12-28<br/><br/>
@@ -49,23 +122,6 @@ title: Downloads - DDraceNetwork
   </ul>
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/15.7...15.8.1">full list of git changes</a>
 </div>
-<br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86_64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 15.7</h3>
 <div class="dlfiles">
   2021-11-26<br/><br/>
