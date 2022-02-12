@@ -23,7 +23,8 @@ menu: |
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td><td>0</td><td>3</td></tr>
-  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>64</td><td>1</td><td>64</td></tr>
+  <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>64</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>64</td><td>1</td><td>64</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td><td>1</td><td>99999</td></tr>
@@ -56,6 +57,7 @@ menu: |
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td><td>0</td><td>2</td></tr>
+  <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_name</td><td>Server name</td><td>&quot;unnamed server&quot;</td><td></td><td></td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -138,8 +140,8 @@ menu: |
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_saveswapgames_delay</td><td>Delay in seconds for loading a savegame or before swapping</td><td>30</td><td>0</td><td>10000</td></tr>
   <tr><td>sv_saveswapgames_penalty</td><td>Penalty in seconds for saving or swapping position</td><td>60</td><td>0</td><td>10000</td></tr>
-  <tr><td>sv_swap_timeout</td><td>Timeout in seconds before option to swap expires</td><td>30</td><td>0</td><td>10000</td></tr>
-  <tr><td>sv_swap</td><td>Enable /swap</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_swap_timeout</td><td>Timeout in seconds before option to swap expires</td><td>180</td><td>0</td><td>10000</td></tr>
+  <tr><td>sv_swap</td><td>Enable /swap</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_use_sql</td><td>Enables MySQL backend instead of SQLite backend (sv_sqlite_file is still used as fallback write server when no MySQL server is reachable)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td><td>0</td><td>20</td></tr>
   <tr><td>sv_sqlite_file</td><td>File to store ranks in case sv_use_sql is turned off or used as backup sql server</td><td>&quot;ddnet-server.sqlite&quot;</td><td></td><td></td></tr>
@@ -156,7 +158,8 @@ menu: |
   <tr><td>sv_rules_line9</td><td>Rules line 9</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td><td>0</td><td>3</td></tr>
-  <tr><td>sv_max_team_size</td><td>Maximum team size (from 2 to 64)</td><td>64</td><td>1</td><td>64</td></tr>
+  <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>64</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>64</td><td>1</td><td>64</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>&quot;announcement.txt&quot;</td><td></td><td></td></tr>
   <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td><td>1</td><td>9999</td></tr>
@@ -266,7 +269,7 @@ menu: |
   <tr><td>ban_region_range</td><td>s[region] s[first ip] s[last ip] ?i[minutes] r[reason]</td><td>Ban range in a region</td></tr>
   <tr><td>kick</td><td>i[id] ?r[reason]</td><td>Kick player with specified id for any reason</td></tr>
   <tr><td>status</td><td>?r[name]</td><td>List players containing name or all players</td></tr>
-  <tr><td>shutdown</td><td></td><td>Shut down</td></tr>
+  <tr><td>shutdown</td><td>?r[reason]</td><td>Shut down</td></tr>
   <tr><td>logout</td><td></td><td>Logout of rcon</td></tr>
   <tr><td>show_ips</td><td>?i[show]</td><td>Show IP addresses in rcon commands (1 = on, 0 = off)</td></tr>
   <tr><td>record</td><td>?s[file]</td><td>Record to a file</td></tr>
@@ -352,9 +355,10 @@ menu: |
   <tr><td>vote_unmute</td><td>v[id]</td><td>Give back v&#x27;s right to vote.</td></tr>
   <tr><td>vote_mutes</td><td></td><td>List the current active vote mutes.</td></tr>
   <tr><td>mute</td><td></td><td></td></tr>
-  <tr><td>muteid</td><td>v[id] i[seconds] ?r[reason]</td><td></td></tr>
-  <tr><td>muteip</td><td>s[ip] i[seconds] ?r[reason]</td><td></td></tr>
-  <tr><td>unmute</td><td>v[id]</td><td></td></tr>
+  <tr><td>muteid</td><td>v[id] i[seconds] ?r[reason]</td><td>Mute player with id</td></tr>
+  <tr><td>muteip</td><td>s[ip] i[seconds] ?r[reason]</td><td>Mute player with IP address</td></tr>
+  <tr><td>unmute</td><td>i[muteid]</td><td></td></tr>
+  <tr><td>unmuteid</td><td>v[id]</td><td>Unmute player with id</td></tr>
   <tr><td>mutes</td><td></td><td></td></tr>
   <tr><td>moderate</td><td></td><td>Enables/disables active moderator mode for the player</td></tr>
   <tr><td>vote_no</td><td></td><td></td></tr>
@@ -416,6 +420,8 @@ menu: |
   <tr><td>timer</td><td>?s[&#x27;gametimer&#x27;|&#x27;broadcast&#x27;|&#x27;both&#x27;|&#x27;none&#x27;|&#x27;cycle&#x27;]</td><td>Personal Setting of showing time in either broadcast or game/round timer, timer s, where s = broadcast for broadcast, gametimer for game/round timer, cycle for cycle, both for both, none for no timer and nothing to show current status</td></tr>
   <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
+  <tr><td>tp</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating if no player name is given</td></tr>
+  <tr><td>teleport</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating if no player name is given</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself when kill-protected during a long game (use f1, kill for regular kill)</td></tr>
 </table></div>
 </div>
@@ -432,6 +438,7 @@ menu: |
   <tr><td>cl_antiping_weapons</td><td>Predict weapon projectiles (only enabled if cl_antiping is set to 1)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_antiping_smooth</td><td>Make the prediction of other player&#x27;s movement smoother</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_antiping_gunfire</td><td>Predict gunfire and show predicted weapon physics (with cl_antiping_grenade 1 and cl_antiping_weapons 1)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_prediction_margin</td><td>Prediction margin in ms (adds latency, can reduce lag from ping jumps)</td><td>10</td><td>1</td><td>2000</td></tr>
   <tr><td>cl_nameplates</td><td>Show name plates</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_afk_emote</td><td>Show zzz emote next to afk players</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td><td>0</td><td>1</td></tr>
@@ -543,7 +550,7 @@ menu: |
   <tr><td>cl_video_showchat</td><td>Show chat when rendering video</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_sound_enable</td><td>Use sound when rendering video</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_show_hook_coll_other</td><td>Show other players&#x27; hook collision lines when rendering video</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_video_showdirection</td><td>Show other players&#x27; key presses when rendering video</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_video_show_direction</td><td>Show players&#x27; key presses when rendering video (1 = other players&#x27;, 2 = also your own)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>cl_video_crf</td><td>Set crf when encode video with libx264 (0 for highest quality, 51 for lowest)</td><td>18</td><td>0</td><td>51</td></tr>
   <tr><td>cl_video_preset</td><td>Set preset when encode video with libx264, default is 5 (medium), 0 is ultrafast, 9 is placebo (the slowest, not recommend)</td><td>5</td><td>0</td><td>9</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td><td>0</td><td>1</td></tr>
@@ -554,13 +561,13 @@ menu: |
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td><td>0</td><td>2</td></tr>
+  <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>steam_name</td><td>Last seen name of the Steam profile</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>0</td><td>0</td><td>10000</td></tr>
   <tr><td>cl_refresh_rate_inactive</td><td>Refresh rate for updating the game when the window is inactive (in Hz)</td><td>120</td><td>0</td><td>10000</td></tr>
   <tr><td>cl_editor</td><td></td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_editorundo</td><td>Undo function in editor</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_editor_dilate</td><td>Automatically dilates embedded images</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_skin_filter_string</td><td>Skin filtering string</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>1</td><td>0</td><td>1</td></tr>
@@ -588,12 +595,10 @@ menu: |
   <tr><td>br_filter_country</td><td>Filter out servers with non-matching player country</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_country_index</td><td>Player country to filter by in the server browser</td><td>-1</td><td>-1</td><td>999</td></tr>
   <tr><td>br_filter_pw</td><td>Filter out password protected servers in browser</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>br_filter_ping</td><td>Ping to filter by in the server browser</td><td>999</td><td>0</td><td>999</td></tr>
   <tr><td>br_filter_gametype</td><td>Game types to filter</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_gametype_strict</td><td>Strict gametype filter</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_connecting_players</td><td>Filter connecting players</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_serveraddress</td><td>Server address to filter</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>br_filter_compatversion</td><td>Filter out non-compatible servers in browser</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_exclude_countries</td><td>Filter out DDNet servers by country</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_exclude_types</td><td>Filter out DDNet servers by type (mod)</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -612,12 +617,12 @@ menu: |
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td><td>0</td><td>0</td></tr>
   <tr><td>snd_enable</td><td>Sound enable</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>snd_volume</td><td>Sound volume</td><td>100</td><td>0</td><td>100</td></tr>
+  <tr><td>snd_volume</td><td>Sound volume</td><td>30</td><td>0</td><td>100</td></tr>
   <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>-1</td><td>0</td><td>0</td></tr>
-  <tr><td>snd_chat_volume</td><td>Chat sound volume</td><td>100</td><td>0</td><td>100</td></tr>
-  <tr><td>snd_game_volume</td><td>Game sound volume</td><td>100</td><td>0</td><td>100</td></tr>
-  <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>70</td><td>0</td><td>100</td></tr>
-  <tr><td>snd_background_music_volume</td><td>Background music sound volume</td><td>50</td><td>0</td><td>100</td></tr>
+  <tr><td>snd_chat_volume</td><td>Chat sound volume</td><td>30</td><td>0</td><td>100</td></tr>
+  <tr><td>snd_game_volume</td><td>Game sound volume</td><td>30</td><td>0</td><td>100</td></tr>
+  <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>30</td><td>0</td><td>100</td></tr>
+  <tr><td>snd_background_music_volume</td><td>Background music sound volume</td><td>30</td><td>0</td><td>100</td></tr>
   <tr><td>snd_nonactive_mute</td><td></td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>snd_gun</td><td>Enable gun sound</td><td>1</td><td>0</td><td>1</td></tr>
@@ -633,7 +638,7 @@ menu: |
   <tr><td>gfx_desktop_width</td><td>Desktop resolution width for detecting display changes (not recommended to change manually)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_desktop_height</td><td>Desktop resolution height for detecting display changes (not recommended to change manually)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_fullscreen</td><td>Set fullscreen mode: 0=no fullscreen, 1=pure fullscreen, 2=desktop fullscreen</td><td>0</td><td>0</td><td>2</td></tr>
+  <tr><td>gfx_fullscreen</td><td>Set fullscreen mode: 0=no fullscreen, 1=pure fullscreen, 2=desktop fullscreen, 3=windowed fullscreen</td><td>0</td><td>0</td><td>3</td></tr>
   <tr><td>gfx_highdpi</td><td>Enable high-dpi</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td><td>16</td><td>24</td></tr>
   <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>0</td><td>0</td><td>1</td></tr>
@@ -651,6 +656,9 @@ menu: |
   <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_translated_keys</td><td>Translate keys before interpreting them, respects keyboard layouts</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td><td>0</td><td>65536</td></tr>
+  <tr><td>cl_port</td><td>Port to use for client connections to server (0 to choose a random port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
+  <tr><td>cl_dummy_port</td><td>Port to use for dummy connections to server (0 to choose a random port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
+  <tr><td>cl_contact_port</td><td>Port to use for serverinfo connections to server (0 to choose a random port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td><td>0</td><td>1</td></tr>
@@ -695,6 +703,7 @@ menu: |
   <tr><td>cl_background_color</td><td>Background color</td><td>128</td><td></td><td></td></tr>
   <tr><td>cl_background_entities_color</td><td>Background (entities) color</td><td>128</td><td></td><td></td></tr>
   <tr><td>cl_background_entities</td><td>Background (entities)</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_run_on_join</td><td>Command to run when joining a server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_menu_map</td><td>Background map in the menu</td><td>&quot;auto&quot;</td><td></td><td></td></tr>
   <tr><td>cl_rotation_radius</td><td>Menu camera rotation radius</td><td>30</td><td>1</td><td>500</td></tr>
   <tr><td>cl_rotation_speed</td><td>Menu camera rotations in seconds</td><td>40</td><td>1</td><td>120</td></tr>
@@ -712,7 +721,7 @@ menu: |
   <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_old</td><td>Old chat style: No tee, no background</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_show_direction</td><td>Show tee direction</td><td>1</td><td>0</td><td>2</td></tr>
+  <tr><td>cl_show_direction</td><td>Show key presses (1 = other players&#x27;, 2 = also your own)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>cl_http_map_download</td><td>Try fast HTTP map download first</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_confirm_disconnect_time</td><td>Confirmation popup before disconnecting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td><td>-1</td><td>1440</td></tr>
@@ -806,6 +815,7 @@ menu: |
   <tr><td>disconnect</td><td></td><td>Disconnect from the server</td></tr>
   <tr><td>ping</td><td></td><td>Ping the current server</td></tr>
   <tr><td>screenshot</td><td></td><td>Take a screenshot</td></tr>
+  <tr><td>reset</td><td>s[config-name]</td><td>Reset a config its default value</td></tr>
   <tr><td>start_video</td><td></td><td>Start recording a video</td></tr>
   <tr><td>stop_video</td><td></td><td>Stop recording a video</td></tr>
   <tr><td>rcon</td><td>r[rcon-command]</td><td>Send specified command to rcon</td></tr>
