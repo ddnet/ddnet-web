@@ -93,6 +93,8 @@ TileID,Title,Group,Description,Link
 128,Teleporter Laser On,weapon-tele-laser,Laser shots will teleport you if they hit a teleporter gun block or another tee.,
 129,Teleporter Laser Off,weapon-tele-laser,Laser shots will no longer teleport you.,
 140,Credits,,Designer of the entities.,
+144,Live Freeze,live-freeze,"Disables movement keys permanently, cancelled only by Live Unfreeze.",
+145,Live Unfreeze,live-freeze,Cancels Live Freeze effect.,
 190,Warning: Entities Off Sign,,"Warning for players playing in entities, informs that they should turn off entities in order to see important marks on the map.",
 192,Spawn,spawn,Where you will spawn upon death or joining the server.,
 193,Red Team Spawn,spawn,Not used in DDRace. Spawn for the red team,
