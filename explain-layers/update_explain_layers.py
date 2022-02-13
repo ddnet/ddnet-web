@@ -92,7 +92,9 @@ class Tile:
         """
         get svg tooltip into the direction "up" or "down"
         """
-        if self.index < 140:
+        # set the credits to up, but everything in the credits row to down.
+        # fits nicely into the current whitespace
+        if self.index < 160 and self.index != 140:
             direction = "down"
         else:
             direction = "up"
