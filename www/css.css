@@ -1050,3 +1050,10 @@ body#phpbb .attachbox dl.thumbnail a::after {
   height: 100%;
   background-color: transparent;
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-around;
+}
