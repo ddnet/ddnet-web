@@ -14,11 +14,11 @@ function render(skin){
 	ctx.drawImage(skin,192,32,64,32,8,32,64,30); //back feet
 	ctx.drawImage(skin,0,0,96,96,16,0,64,64); //body
 	ctx.drawImage(skin,192,32,64,32,24,32,64,30); //front feet
-	ctx.drawImage(skin,64,96,32,32,39,18,24,24); //left eye
+	ctx.drawImage(skin,64,96,32,32,39,18,26,26); //left eye
 	//right eye (flip and draw)
 	ctx.save();
 	ctx.scale(-1,1);
-	ctx.drawImage(skin,64,96,32,32,-71,18,24,24);
+	ctx.drawImage(skin,64,96,32,32,-73,18,26,26);
 	ctx.restore();
 	//replace with image
 	skin.parentNode.replaceChild(canvas,skin);
@@ -32,3 +32,4 @@ document.body.onload=function(){
 		}
 	}
 }
+
