@@ -4,6 +4,83 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3>DDNet 16.0</h3>
+<div class="dlfiles">
+  2022-03-30<br/><br/>
+  <ul>
+    <li><a href="DDNet-16.0-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-16.0-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-16.0-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-16.0-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-16.0-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-16.0.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>New Vulkan graphics renderer for more FPS (enable in Graphics Settings)</strong> [<strong>Jupeyy</strong>]</li>
+    <li>[Client] <strong>Improved demo renderer performance</strong> [<strong>Jupeyy</strong>]</li>
+    <li>[Client] <strong>New players join Tutorial servers by default</strong></li>
+    <li>[Client] <strong>Replace browser icons with font icons</strong> [<strong>Jupeyy</strong>]</li>
+    <li>[Editor] <strong>Quad knife tool</strong> [<strong>Ravie</strong>]</li>
+    <li>[Client+Server] <strong>Exception handling on Windows</strong> (Crash reports in %APPDATA%\Teeworlds\dumps) [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Automatic font size in menu [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Make hook collision line size adjustable [<strong>sjrc6</strong>]</li>
+    <li>[Client] Automatically select search string on Ctrl+F [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Add optional save_replay parameter (filename) [<strong>simpygirl</strong>]</li>
+    <li>[Client] Improvement of the automatic completion of player names in chat [<strong>c0d3d3v</strong>]</li>
+    <li>[Client] Fix duplicated team messages with dummy [<strong>c0d3d3</strong>]</li>
+    <li>[Client] Fix binds, fix sounds and demo playback for violent gametypes [<strong>Kaffeine</strong>]</li>
+    <li>[Client] Fix sound bug on large maps (like Back in Time 3) [<strong>c0d3d3v</strong>]</li>
+    <li>[Client] Fix dummy connect on some vanilla servers [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Show key presses in nameplates [<strong>c0d3d3v</strong>]</li>
+    <li>[Client] Update local hook collision line every frame [<strong>sjrc6</strong>]</li>
+    <li>[Client] Allow the ghost to carry any weapon [<strong>c0d3d3v</strong>]</li>
+    <li>[Client] Show correct server address when connecting</li>
+    <li>[Client] Drop non-RGBA image-support in skins [<strong>Chairn</strong>]</li>
+    <li>[Client] Fix listbox item double click behaviour [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix bindings with modifiers [<strong>Kaffeine</strong>]</li>
+    <li>[Client] Support saving any size binds</li>
+    <li>[Client] HTTP Serverbrowser: Quit faster</li>
+    <li>[Client] Remove the totally unsafe editor undo</li>
+    <li>[Client] Fix client freezes if server sends funny ticks [<strong>ChillerDragon, heinrich5991</strong>]</li>
+    <li>[Client] Fix wrong warnings with saved config file</li>
+    <li>[Client] Fix integer overflow in CHud when server time exceeds around 248 days [<strong>Robyt3</strong>]</li>
+    <li>[Client] Set gfx_opengl_major 1 as default on 32bit Windows</li>
+    <li>[Client] Don't print binds into F1</li>
+    <li>[Client] Fix player death effect color [<strong>srdante</strong>]</li>
+    <li>[Server] Do not mute if spam protection is off [<strong>ChillerDragon</strong>]</li>
+    <li>[Server] Write log to disk on assert [<strong>Jupeyy</strong>]</li>
+    <li>[Server] Fix specteam 1 not showing teammates while spectating/freecam in solo [<strong>sjrc6</strong>]</li>
+    <li>[Server] Fix logging into rcon with dummy [<strong>heinrich5991</strong>]</li>
+    <li>[Server] No chat messages for live freeze</li>
+    <li>[Server] Make spawn position independent of players in other teams</li>
+    <li>[Server] Record player_ready event in Teehistorian [<strong>Zwelf</strong>]</li>
+    <li>[Server] Fix recording server-side demos [<strong>c0d3d3v</strong>]</li>
+    <li>[Server] Fix laser clipping [<strong>Kaffeine</strong>]</li>
+    <li>[Tools] Fixed bad DataReader loop on map_replace_image [<strong>sctt</strong>]</li>
+    <li>[Client+Server] Support NO_COLOR environment variable</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/15.9.1...16.0">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 15.9.1</h3>
 <div class="dlfiles">
   2022-02-15<br/><br/>
@@ -60,23 +137,6 @@ title: Downloads - DDraceNetwork
   </ul>
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/15.8.1...15.9.1">full list of git changes</a>
 </div>
-<br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.tw/">List of all maps</a>, <a href="https://maps.ddnet.tw/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3>DDNet 15.8.1</h3>
 <div class="dlfiles">
   2021-12-28<br/><br/>
