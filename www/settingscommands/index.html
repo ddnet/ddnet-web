@@ -663,7 +663,7 @@ menu: |
   <tr><td>debug</td><td>Debug mode</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>dbg_gfx</td><td>Show OpenGL warnings and errors, if the GPU supports it</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>dbg_gfx</td><td>Show graphic library warnings and errors, if the GPU supports it (0: none, 1: minimal, 2: affects performance, 3: verbose, 4: all)</td><td>0</td><td>0</td><td>4</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems (Debug build only)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>dbg_stress_network</td><td>Stress network (Debug build only)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>dbg_stress_server</td><td>Server to stress (Debug build only)</td><td>&quot;localhost&quot;</td><td></td><td></td></tr>
@@ -715,6 +715,7 @@ menu: |
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players&#x27; hook collision line (2 to always show)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>1</td><td>0</td><td>2</td></tr>
+  <tr><td>cl_hook_coll_size</td><td>Size of hook collision line</td><td>0</td><td>0</td><td>20</td></tr>
   <tr><td>cl_hook_coll_color_no_coll</td><td>Specifies the color of a hookline that hits nothing.</td><td>65407</td><td></td><td></td></tr>
   <tr><td>cl_hook_coll_color_hookable_coll</td><td>Specifies the color of a hookline that hits hookable tiles.</td><td>6401973</td><td></td><td></td></tr>
   <tr><td>cl_hook_coll_color_tee_coll</td><td>Specifies the color of a hookline that hits tees.</td><td>2817919</td><td></td><td></td></tr>
@@ -737,13 +738,16 @@ menu: |
   <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_demo_keyboard_shortcuts</td><td>Enable keyboard shortcuts in demo player</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_opengl_major</td><td>OpenGL major version</td><td>3</td><td>1</td><td>10</td></tr>
-  <tr><td>gfx_opengl_minor</td><td>OpenGL minor version</td><td>0</td><td>0</td><td>10</td></tr>
-  <tr><td>gfx_opengl_patch</td><td>OpenGL patch version</td><td>0</td><td>0</td><td>10</td></tr>
-  <tr><td>gfx_opengl_texture_lod_bias</td><td>The lod bias for OpenGL texture sampling multiplied by 1000</td><td>-500</td><td>-15000</td><td>15000</td></tr>
+  <tr><td>gfx_gl_major</td><td>Graphic library major version</td><td>1</td><td>1</td><td>10</td></tr>
+  <tr><td>gfx_gl_minor</td><td>Graphic library minor version</td><td>0</td><td>0</td><td>10</td></tr>
+  <tr><td>gfx_gl_patch</td><td>Graphic library patch version</td><td>0</td><td>0</td><td>10</td></tr>
+  <tr><td>gfx_gl_texture_lod_bias</td><td>The lod bias for graphic library texture sampling multiplied by 1000</td><td>-500</td><td>-15000</td><td>15000</td></tr>
   <tr><td>gfx_3d_texture_analysis_done</td><td>Analyzed, if sampling 3D/2D array textures was correct</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_3d_texture_analysis_renderer</td><td>The renderer on which the analysis was performed</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>gfx_3d_texture_analysis_version</td><td>The version on which the analysis was performed</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>gfx_gpu_name</td><td>The GPU&#x27;s name, which will be selected by the backend. (if supported by the backend)</td><td>&quot;auto&quot;</td><td></td><td></td></tr>
+  <tr><td>gfx_backend</td><td>The backend to use (e.g. OpenGL or Vulkan)</td><td>&quot;OpenGL&quot;</td><td></td><td></td></tr>
+  <tr><td>gfx_render_thread_count</td><td>Number of threads the backend can use for rendering. (note: the value can be ignored by the backend)</td><td>3</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_driver_is_blocked</td><td>If 1, the current driver is in a blocked error state.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_enable_texture_unit_optimization</td><td>Use multiple texture units, instead of only one.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_use_preinitialized_buffer</td><td>Use only one buffer for data, that is uploaded to the GPU(might help when using an iGPUs).</td><td>0</td><td>0</td><td>1</td></tr>
@@ -831,7 +835,7 @@ menu: |
   <tr><td>demo_slice_end</td><td></td><td></td></tr>
   <tr><td>demo_play</td><td></td><td>Play demo</td></tr>
   <tr><td>demo_speed</td><td>i[speed]</td><td>Set demo speed</td></tr>
-  <tr><td>save_replay</td><td>?i[length]</td><td>Save a replay of the last defined amount of seconds</td></tr>
+  <tr><td>save_replay</td><td>?i[length] ?s[filename]</td><td>Save a replay of the last defined amount of seconds</td></tr>
   <tr><td>benchmark_quit</td><td>i[seconds] r[file]</td><td>Benchmark frame times for number of seconds to file, then quit</td></tr>
 </table></div>
 </div>
