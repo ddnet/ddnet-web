@@ -1065,3 +1065,13 @@ html {
 @-webkit-keyframes rainbow {
   100% { -webkit-filter: hue-rotate(360deg); }
 }
+
+img {
+  -webkit-animation: spin 5s linear infinite;
+    animation: spin 5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0%   { -webkit-transform: rotate(0deg); }
+  100%   { -webkit-transform: rotate(360deg); }
+}
