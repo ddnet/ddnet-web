@@ -1057,21 +1057,3 @@ body#phpbb .attachbox dl.thumbnail a::after {
   gap: 5px;
   justify-content: space-around;
 }
-
-html {
-  -webkit-animation: rainbow 8s infinite;
-}
-
-@-webkit-keyframes rainbow {
-  100% { -webkit-filter: hue-rotate(360deg); }
-}
-
-img {
-  -webkit-animation: spin 5s linear infinite;
-    animation: spin 5s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0%   { -webkit-transform: rotate(0deg); }
-  100%   { -webkit-transform: rotate(360deg); }
-}
