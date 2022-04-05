@@ -1,0 +1,11 @@
+---
+layout: post
+title: "DDNet on Reddit's r/place"
+head: <script src="/youtube.js?version=2" type="text/javascript"></script>
+permalink: /news/r-place/
+tag: current
+---
+
+The DDNet community on [Discord](/discord/) had lots of fun creating DDNet logos the last 4 days on Reddit's [r/place](https://reddit.com/r/place/). See a summary of what happened in this video by ReD:
+
+<div class="video-container"><div class="ytplayer" data-id="mmfJStj0wXs"></div></div>
