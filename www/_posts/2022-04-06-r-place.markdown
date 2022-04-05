@@ -9,3 +9,5 @@ tag: current
 The DDNet community on [Discord](/discord/) had lots of fun creating DDNet logos the last 4 days on Reddit's [r/place](https://reddit.com/r/place/). See a summary of what happened in this video by ReD:
 
 <div class="video-container"><div class="ytplayer" data-id="mmfJStj0wXs"></div></div>
+
+See also the [Atlas](https://place-atlas.stefanocoding.me/?id=twvdo8) for a description of our neighbors in the final picture.
