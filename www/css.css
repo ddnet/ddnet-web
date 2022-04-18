@@ -508,10 +508,18 @@ body:not(#phpbb) .time {
 
 .name {
   width: 11em;
+  max-width: 11em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .clan {
   width: 8em;
+  max-width: 8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rightimages {
