@@ -36,6 +36,10 @@
 		<rect id="25" x="576" y="64" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
+		<rect id="9" x="576" y="0" width="64" height="64" class="tooltip"></rect>
+		<rect id="198" x="384" y="768" width="64" height="64" class="tooltip"></rect>
+	</g>
+	<g>
 		<rect id="12" x="768" y="0" width="64" height="64" class="tooltip"></rect>
 		<rect id="13" x="832" y="0" width="64" height="64" class="tooltip"></rect>
 	</g>
@@ -54,10 +58,6 @@
 	<g>
 		<rect id="144" x="0" y="576" width="64" height="64" class="tooltip"></rect>
 		<rect id="145" x="64" y="576" width="64" height="64" class="tooltip"></rect>
-	</g>
-	<g>
-		<rect id="197" x="320" y="768" width="64" height="64" class="tooltip"></rect>
-		<rect id="198" x="384" y="768" width="64" height="64" class="tooltip"></rect>
 	</g>
 	<g>
 		<rect id="199" x="448" y="768" width="64" height="64" class="tooltip"></rect>
@@ -112,14 +112,16 @@
 	</g>
 	<rect id="0" x="0" y="0" width="64" height="64" class="tooltip"></rect>
 	<rect id="7" x="448" y="0" width="64" height="64" class="tooltip"></rect>
-	<rect id="9" x="576" y="0" width="64" height="64" class="tooltip"></rect>
 	<rect id="140" x="768" y="512" width="256" height="128" class="tooltip"></rect>
+	<rect id="197" x="320" y="768" width="64" height="64" class="tooltip"></rect>
 	<rect id="206" x="896" y="768" width="64" height="64" class="tooltip"></rect>
 	<rect id="240" x="0" y="960" width="64" height="64" class="tooltip"></rect>
 	<text id="desc22" x="416" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Timed Switch Activator (22)  Activates switch for a set time (e.g. temporarily activates laser door).</text>
 	<text id="desc23" x="480" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Timed Switch Deactivator (23)  Deactivates switch for a set time (e.g. temporarily deactivates laser door).</text>
 	<text id="desc24" x="544" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Activator (24)  Activates switch (e.g. activates laser door)</text>
 	<text id="desc25" x="608" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Deactivator (25)  Deactivates switch (e.g. deactivates laser door)</text>
+	<text id="desc9" x="608" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Freeze (9)  Freezes (stuns) for a couple of seconds (for 3 seconds by default).</text>
+	<text id="desc198" x="416" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Heart (198)  Freezes (stuns) for 3 seconds.</text>
 	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by Undeep.</text>
 	<text id="desc13" x="864" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Undeep (13)  Cancels Deep freeze effect.</text>
 	<text id="desc19" x="224" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Hit Others On (19)  Enables hitting others with weapons.</text>
@@ -130,8 +132,6 @@
 	<text id="desc99" x="224" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Gun Block (99)  Can be teleported to with teleporter guns, tees keep their speed on teleporting.</text>
 	<text id="desc144" x="32" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Freeze (144)  Disables movement keys permanently, cancelled only by Live Unfreeze.</text>
 	<text id="desc145" x="96" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Unfreeze (145)  Cancels Live Freeze effect.</text>
-	<text id="desc197" x="352" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shield (197)  Removes all weapons (except for hammer and pistol).</text>
-	<text id="desc198" x="416" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Heart (198)  Freezes (stuns) for 3 seconds.</text>
 	<text id="desc199" x="480" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun (199)  Weapon, shoots beam that bounces off walls and pulls the first tee it hits.</text>
 	<text id="desc200" x="544" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Launcher (200)  Weapon, shoots exploding projectile in an arc.</text>
 	<text id="desc201" x="608" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (201)  Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have Ninja.</text>
@@ -165,8 +165,8 @@
 	<text id="desc238" x="928" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Fast Hookthrough Dragger (238)  Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.</text>
 	<text id="desc0" x="32" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Empty (0)  Empty tile, used as an eraser in the map editor.</text>
 	<text id="desc7" x="480" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Jump Count Setter (7)  Sets the amount of jumps available to you (2 by default).</text>
-	<text id="desc9" x="608" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Freeze (9)  Freezes (stuns) for a couple of seconds (for 3 seconds by default).</text>
 	<text id="desc140" x="896" y="512" direction="up" class="multiline" data-width="400" visibility="hidden">Credits (140)  Designer of the entities.</text>
+	<text id="desc197" x="352" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shield (197)  Takes all collectable weapons away: shotgun, grenade, laser, ninja</text>
 	<text id="desc206" x="928" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Static Freezing Laser (206)  Continuous laser beam that freezes tees.</text>
 	<text id="desc240" x="32" y="960" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Door (240)  Doesn't let tees through, controlled by switches and works like a row of stopper tiles.</text>
 
