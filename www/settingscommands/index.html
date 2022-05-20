@@ -28,6 +28,7 @@ menu: |
   <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>64</td><td>1</td><td>64</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_show_others_default</td><td>Whether players see others by default (2 for own team)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td><td>1</td><td>99999</td></tr>
   <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td><td>0</td><td>50</td></tr>
   <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>700</td><td>1</td><td>99999</td></tr>
@@ -342,6 +343,8 @@ menu: |
   <tr><td>unendless_hook</td><td></td><td>Removes endless hook from you</td></tr>
   <tr><td>unsolo</td><td></td><td>Puts you out of solo part</td></tr>
   <tr><td>undeep</td><td></td><td>Puts you out of deep freeze</td></tr>
+  <tr><td>livefreeze</td><td></td><td>Makes you live frozen</td></tr>
+  <tr><td>unlivefreeze</td><td></td><td>Puts you out of live freeze</td></tr>
   <tr><td>left</td><td></td><td>Makes you move 1 tile left</td></tr>
   <tr><td>right</td><td></td><td>Makes you move 1 tile right</td></tr>
   <tr><td>up</td><td></td><td>Makes you move 1 tile up</td></tr>
@@ -513,6 +516,7 @@ menu: |
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td><td></td><td></td></tr>
   <tr><td>player_color_feet</td><td>Player feet color</td><td>65408</td><td></td><td></td></tr>
   <tr><td>player_skin</td><td>Player skin</td><td>&quot;default&quot;</td><td></td><td></td></tr>
+  <tr><td>player_default_eyes</td><td>Player eyes when joining server. 0 = normal, 1 = pain, 2 = happy, 3 = surprise, 4 = angry, 5 = blink</td><td>0</td><td>0</td><td>5</td></tr>
   <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, santa)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>ui_page</td><td>Interface page</td><td>9</td><td>6</td><td>10</td></tr>
@@ -535,6 +539,7 @@ menu: |
   <tr><td>dummy_color_body</td><td>Dummy body color</td><td>65408</td><td></td><td></td></tr>
   <tr><td>dummy_color_feet</td><td>Dummy feet color</td><td>65408</td><td></td><td></td></tr>
   <tr><td>dummy_skin</td><td>Dummy skin</td><td>&quot;default&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy_default_eyes</td><td>Dummy eyes when joining server. 0 = normal, 1 = pain, 2 = happy, 3 = surprise, 4 = angry, 5 = blink</td><td>0</td><td>0</td><td>5</td></tr>
   <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy or player should stop pressing keys when you switch. 0 = off, 1 = dummy, 2 = player</td><td>0</td><td>0</td><td>2</td></tr>
@@ -645,7 +650,7 @@ menu: |
   <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_display_all_video_modes</td><td>Show all video modes</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_high_detail</td><td>High detail</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>0</td><td>0</td><td>16</td></tr>
+  <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>0</td><td>0</td><td>64</td></tr>
   <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td><td>0</td><td>10000</td></tr>
   <tr><td>gfx_finish</td><td></td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td><td>0</td><td>1</td></tr>
@@ -711,7 +716,6 @@ menu: |
   <tr><td>cl_camera_speed</td><td>Menu camera speed</td><td>5</td><td>1</td><td>40</td></tr>
   <tr><td>cl_background_show_tiles_layers</td><td>Whether draw tiles layers when using custom background (entities)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_unpredicted_shadow</td><td>Show unpredicted shadow tee (0 = off, 1 = on, -1 = don&#x27;t even show in debug mode)</td><td>0</td><td>-1</td><td>1</td></tr>
-  <tr><td>cl_predict_ddrace</td><td>Predict DDRace tiles and tunezones</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_predict_freeze</td><td>Predict freeze tiles (0 = off, 1 = on, 2 = partial (allow a small amount of movement in freeze)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players&#x27; hook collision line (2 to always show)</td><td>1</td><td>0</td><td>2</td></tr>
