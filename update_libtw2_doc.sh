@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# dependencies (on debian 10 to keep the diff minimal):
+# apt install curl pandoc
+
 URL="/docs/libtw2"
 
 if [ -z "$1" ]; then
