@@ -109,10 +109,20 @@ menu-extern: docs-libtw2
 <li>uuid: a111c04e-1ea8-38e0-90b1-d7f993ca0da9</li>
 <li>introduced in DDNet 15.6, <a href="https://github.com/ddnet/ddnet/commit/e9dec007b22a071e9d104682955c952633455c27">e9dec007b22a071e</a></li>
 </ul></li>
-<li>TEEHISTORIAN_TEAM_PRACTICE(<a href="mailto:teehistorian-team-practice@ddnet.tw">teehistorian-team-practice@ddnet.tw</a>): team(int), practice(int) records when a team enters practice mode, resulting ranks don't get sumbitted to the database
+<li>TEEHISTORIAN_TEAM_PRACTICE(<a href="mailto:teehistorian-team-practice@ddnet.tw">teehistorian-team-practice@ddnet.tw</a>): team(int), practice(int) records when a team enters practice mode, resulting ranks don't get submitted to the database
 <ul>
 <li>uuid: 5792834e-81d1-34c9-a29b-b5ff25dac3bc</li>
 <li>introduced in DDNet 15.6, <a href="https://github.com/ddnet/ddnet/commit/81f426342806952603a2d28290279e0a7107db5b">81f4263428069526</a></li>
+</ul></li>
+<li>TEEHISTORIAN_PLAYER_READY(<a href="mailto:teehistorian-player-ready@ddnet.tw">teehistorian-player-ready@ddnet.tw</a>): cid(int) records when the client messages that it is ready to join the game, leading to the tee being spawned in the following tick
+<ul>
+<li>uuid: 638587c9-3f75-3887-918e-a3c2614ffaa0</li>
+<li>introduced in DDNet 16.0, <a href="https://github.com/ddnet/ddnet/commit/3ea55dcc0ebc1c791e11cab0c268febe7e783504">3ea55dcc0ebc1c79</a></li>
+</ul></li>
+<li>TEEHISTORIAN_PLAYER_SWITCH(&quot;<a href="mailto:teehistorian-player-swap@ddnet.tw">teehistorian-player-swap@ddnet.tw</a>): cid1(int), cid2(int) records the ids of players swapping tees
+<ul>
+<li>uuid: 5de9b633-49cf-3e99-9a25-d4a78e9717d7</li>
+<li>introduced in DDNet 16.1, <a href="https://github.com/ddnet/ddnet/commit/86f57289c6ff1926e1e9802de33ceae69a026717">86f57289c6ff1926</a></li>
 </ul></li>
 </ul>
 <p>The following data types are used:</p>
