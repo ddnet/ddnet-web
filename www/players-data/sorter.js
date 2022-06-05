@@ -18,12 +18,18 @@ $(function(){
             emptyTo: 'bottom',
             sortReset: 'true',
             headers: {
-                4 : { sorter: 'time_min_sec' }
+                4 : { sorter: 'time_min_sec' },
+                5 : { sortInitialOrder: 'desc' },
             }
     });
 
     // tablesorter for `unfinished maps` tables
-    $(".unfinTable1").tablesorter({sortReset: 'true'}).bind('sortEnd', function(e, table) {
+    $(".unfinTable1").tablesorter({
+          sortReset: 'true',
+          headers: {
+            2 : { sortInitialOrder: 'desc' }
+          }
+        }).bind('sortEnd', function(e, table) {
             columnize("#" + this.id);
         });
 
