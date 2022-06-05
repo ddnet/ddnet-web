@@ -19,7 +19,7 @@ $(function(){
             sortReset: 'true',
             headers: {
                 4 : { sorter: 'time_min_sec' },
-                5 : { sortInitialOrder: 'desc' },
+                5 : { sortInitialOrder: 'asc' },
             }
     });
 
@@ -27,7 +27,7 @@ $(function(){
     $(".unfinTable1").tablesorter({
           sortReset: 'true',
           headers: {
-            2 : { sortInitialOrder: 'desc' }
+            2 : { sortInitialOrder: 'asc' }
           }
         }).bind('sortEnd', function(e, table) {
             columnize("#" + this.id);
