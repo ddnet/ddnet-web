@@ -24,12 +24,14 @@ function render(skin){
 	skin.parentNode.replaceChild(canvas,skin);
 }
 
-document.body.onload=function(){
-	var images = document.querySelectorAll(".nowraptable img");
-	for(i=0; i<images.length; i++){
-		if(images[i].naturalHeight){
-			render(images[i]);
+function OnTeeSkinRender(){
+	setTimeout(() => {
+		var images = document.querySelectorAll(".nowraptable img");
+		for(i=0; i<images.length; i++){
+			if(images[i].naturalHeight){
+				render(images[i]);
+			}
 		}
-	}
+	}, 10);
 }
 
