@@ -511,7 +511,7 @@ title: Skin Database - DDraceNetwork
       InnerHTML += "Download [" + FilteredCount.toString() + "]";
       InnerHTML += "</a>";
     }
-    if (SearchMode == "skin_pack") {
+    if (SearchMode == "skinpack") {
       InnerHTML += "All skins from skin pack '" + SearchStr + "' : <a href=\"javascript:DownloadSkins(false)\">";
       InnerHTML += "Download [" + FilteredCount.toString() + "]";
       InnerHTML += "</a>";
