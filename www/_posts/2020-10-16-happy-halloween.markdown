@@ -3,7 +3,7 @@ layout: post
 title: "Happy Halloween 2020!"
 permalink: /news/happy-halloween-2020/
 tag: current
-head: <link rel="stylesheet" href="/css-halloween.css" />
+head: <link rel="stylesheet" href="/css-halloween.css?version=7" />
 ---
 DDNet celebrates Halloween! [Enjoy the dark website theme by Soreu](/switch-theme/).
 

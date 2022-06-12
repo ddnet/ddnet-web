@@ -12,6 +12,10 @@ body {
   color: var(--fg);
 }
 
+.js-calendar-graph-svg {
+  fill: var(--fg);
+}
+
 a,
 a:link,
 a:visited {
