@@ -542,7 +542,8 @@ title: Skin Database - DDraceNetwork
       InnerHTML += "</a>";
     }
 
-    InnerHTML += " (<a href=\"javascript:DownloadSkins(true)\">available UHD</a>)";
+    if(FilteredHDCount > 0)
+      InnerHTML += " (<a href=\"javascript:DownloadSkins(true)\">UHD [" + FilteredHDCount + "]</a>)";
     InnerHTML += " (template skins are always automatically ignored)";
 
     SkinDownloaderObj.innerHTML = InnerHTML;
