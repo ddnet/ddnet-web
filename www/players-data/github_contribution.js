@@ -118,7 +118,7 @@ if (!String.prototype.formatString) {
           
           for(; start_date.getTime() <= end_date.getTime(); start_date.setDate(start_date.getDate() + 1)) {
 
-              if(start_date.getDay() == 0) {
+              if(start_date.getDay() == 1) {
                   var item_html = '<g transform="translate(' + g_x.toString() + ', 0)">';
               }
 
@@ -132,10 +132,10 @@ if (!String.prototype.formatString) {
               var count = getCount( data_date );
               var color = getColor( count );
 
-              var y = start_date.getDay() * step;
+              var y = (start_date.getDay() == 0 ? 6 : (start_date.getDay() - 1)) * step;
               item_html += '<rect class="day" width="11" height="11" y="'+ y +'" fill="'+ color + '" data-count="'+ count +'" data-date="'+ data_date +'" rx="'+radius+'" ry="'+radius+'"/>';  
 
-              if(start_date.getDay() == 6) {
+              if(start_date.getDay() == 0) {
                   item_html += "</g>";
                   loop_html += item_html;
 
@@ -161,13 +161,13 @@ if (!String.prototype.formatString) {
           for (  var i =0; i < month_position.length; i++){
             var item = month_position[i];
             var month_name =  settings.month_names[ item.month_index ];
-            loop_html += '<text x="'+ item.x +'" y="-5" class="month">'+ month_name +'</text>';
+            loop_html += '<text x="'+ item.x +'" y="-8" class="month">'+ month_name +'</text>';
           }
 
           //Add Monday, Wenesday, Friday label
-          loop_html +=  '<text text-anchor="middle" class="wday" dx="-10" dy="22">{0}</text>'.formatString( settings.h_days[0] )+
-                        '<text text-anchor="middle" class="wday" dx="-10" dy="48">{0}</text>'.formatString( settings.h_days[1] )+
-                        '<text text-anchor="middle" class="wday" dx="-10" dy="74">{0}</text>'.formatString( settings.h_days[2] );
+          loop_html +=  '<text text-anchor="middle" class="wday" dx="-12" dy="11">{0}</text>'.formatString( settings.h_days[0] )+
+                        // '<text text-anchor="middle" class="wday" dx="-10" dy="48">{0}</text>'.formatString( settings.h_days[1] )+
+                        '<text text-anchor="middle" class="wday" dx="-12" dy="89">{0}</text>'.formatString( settings.h_days[2] );
           
           //Fixed size for now with width= 721 and height = 110
           var wire_html = 
@@ -210,7 +210,7 @@ if (!String.prototype.formatString) {
           var count = $(evt.target).attr('data-count');
           var date = $(evt.target).attr('data-date');
           
-          var count_text = ( count > 1 ) ? settings.texts[1]: settings.texts[0];
+          var count_text = ( count == 1 ) ? settings.texts[0]: settings.texts[1];
           var text = "{0} {1} on {2}".formatString( count, count_text , date );
 
           var svg_tip = $('.svg-tip').show();
@@ -239,7 +239,7 @@ if (!String.prototype.formatString) {
           start_date: null,
           //List of name months
           month_names: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-          h_days : ['M','W','F'],
+          h_days : ['M','','S'],
           //Default is empty, it can be overrided
           data:[],
         }, options );
