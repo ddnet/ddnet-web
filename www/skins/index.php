@@ -91,10 +91,10 @@ title: Skin Database - DDraceNetwork
   <form action="edit/modify_skin.php" method="post" enctype="multipart/form-data" style="margin: 0;">
   <table cellpadding="5" style="margin: 0;">
   <tr><td>Skin</td><td><input id="changeskinname" name="skin_name2" type="text" disabled></td></tr>
-  <tr><td>Creator</td><td><input name="creator" type="text"></td></tr>
-  <tr><td>Skin pack</td><td><input name="skin_pack" type="text"></td></tr>
+  <tr><td>Creator</td><td><input id="changeskincreator" name="creator" type="text"></td></tr>
+  <tr><td>Skin pack</td><td><input id="changeskinskinpack" name="skin_pack" type="text"></td></tr>
   <tr><td>
-    License</td><td><input name="skin_license" type="text" placeholder="unknown"></td></tr>
+    License</td><td><input id="changeskinlicense" name="skin_license" type="text" placeholder="unknown"></td></tr>
   </table>
   <input id="changeskinname2" name="skin_name" type="hidden" value="">
   <input id="changeskinname3" name="skin_type" type="hidden" value="">
@@ -206,16 +206,21 @@ title: Skin Database - DDraceNetwork
     IsSkinAddZipOpen = !IsSkinAddZipOpen;
   }
 
-  function OpenChangeSkin(ChangeSkinName, ChangeSkinType) {
+  function OpenChangeSkin(ChangeSkinName, ChangeSkinType, ChangeSkinCreator, ChangeSkinSkinPack, ChangeSkinLicense) {
     var AddSkinPopup = document.getElementById("changeskinpopup");
     if(!IsSkinChangeOpen)
       AddSkinPopup.style.display = "block";
     else
       AddSkinPopup.style.display = "none";
 
-    document.getElementById("changeskinname").value = ChangeSkinName;
-    document.getElementById("changeskinname2").value = ChangeSkinName;
-    document.getElementById("changeskinname3").value = ChangeSkinType;
+    if(ChangeSkinName != undefined) {
+      document.getElementById("changeskinname").value = ChangeSkinName;
+      document.getElementById("changeskinname2").value = ChangeSkinName;
+      document.getElementById("changeskinname3").value = ChangeSkinType;
+      document.getElementById("changeskincreator").value = ChangeSkinCreator;
+      document.getElementById("changeskinskinpack").value = ChangeSkinSkinPack;
+      document.getElementById("changeskinlicense").value = ChangeSkinLicense;
+    }
 
     IsSkinChangeOpen = !IsSkinChangeOpen;
   }
@@ -537,11 +542,14 @@ title: Skin Database - DDraceNetwork
       InnerHTML += "</a>";
     }
 
-    InnerHTML += " (<a href=\"javascript:DownloadSkins(true)\">available UHD</a>)";
+    if(FilteredHDCount > 0)
+      InnerHTML += " (<a href=\"javascript:DownloadSkins(true)\">UHD [" + FilteredHDCount + "]</a>)";
     InnerHTML += " (template skins are always automatically ignored)";
 
     SkinDownloaderObj.innerHTML = InnerHTML;
   }
+
+  var SkinMap = new Map();
 
   function DrawSkinList() {
     var Filter = "";
@@ -561,16 +569,35 @@ title: Skin Database - DDraceNetwork
     var FilteredSkinList = GetSkinsFiltered(true);
 
     var FilteredCountDownload = 0;
+    var FilteredHDCountDownload = 0;
 
     for (var i = 0; i < FilteredSkinList.length; ++i) {
       var CurSkin = FilteredSkinList[i];
 
-      if(CurSkin.type != "template")
+      if(CurSkin.type != "template") {
         ++FilteredCountDownload;
+        if(CurSkin.hd.uhd)
+          ++FilteredHDCountDownload;
+      }
 
       const SkinPath = CurSkin.type == "normal" ? "skin/" : (CurSkin.type == "community" ? "skin/community/" : "skin/template/");
 
-      InnerHTML += "<tr><td style=\"width: 96px; height: 64px;\"><a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\"><img style=\"display: none\" onload=\"OnTeeSkinRender();\" src=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\" alt=\"" + CurSkin.name + "." + CurSkin.imgtype + "\" width=\"100\"></a></td>";
+      if(!SkinMap.has(CurSkin.name)) {
+        let Img = new Image();
+        SkinMap.set(CurSkin.name, {Loaded: false, ImgObj: Img, SkinName: CurSkin.name, ImgSrc: SkinPath + CurSkin.name + "." + CurSkin.imgtype});
+        Img.onload = function (SkinName) {
+          let CurItem = SkinMap.get(SkinName);
+          CurItem.Loaded = true;
+          SkinMap.set(SkinName, CurItem);
+          // render
+          let RenderEl = document.getElementById("skinrender_" + SkinName);
+          if(RenderEl != undefined)
+            OnTeeSkinRender(RenderEl, this);
+        }.bind(Img, CurSkin.name);
+      }
+
+      InnerHTML += "<tr><td style=\"width: 96px; height: 64px;\"><a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\">";
+      InnerHTML += "<canvas style=\"width: 96px; height: 64px\" id=\"skinrender_" + CurSkin.name + "\"></canvas></a></td>";
       InnerHTML += "<td><strong>" + CurSkin.name + "</strong></td>\n  <td>";
       InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$type:" + CurSkin.type.toLowerCase()) + "\">" + CurSkin.type + "</a>";
       InnerHTML += "</td><td>";
@@ -594,7 +621,7 @@ title: Skin Database - DDraceNetwork
       InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$uhd:" + (CurSkin.hd.uhd ? "yes" : "no")) + "\">" + (CurSkin.hd.uhd ? "yes" : "no") + "</a>";
       
       if(gIsEditMode)
-        InnerHTML += "</td><td><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
+        InnerHTML += "</td><td><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "', '" + CurSkin.creator + "', '" + CurSkin.skinpack +"', '" + CurSkin.license +"');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
       else {
         InnerHTML += "</td><td>";
         InnerHTML += "<a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\" download=\"" + CurSkin.name + "." + CurSkin.imgtype + "\">Download</a>";
@@ -607,7 +634,19 @@ title: Skin Database - DDraceNetwork
 
     SkinListObj.innerHTML = InnerHTML;
 
-    SetDownloadLink(FilteredCountDownload);
+    SkinMap.forEach((value) => {
+      if(!value.Loaded) {
+        value.ImgObj.src = value.ImgSrc;
+      }
+      else {
+        // render
+        let RenderEl = document.getElementById("skinrender_" + value.SkinName);
+        if(RenderEl != undefined)
+          OnTeeSkinRender(RenderEl, value.ImgObj);
+      }
+    });
+
+    SetDownloadLink(FilteredCountDownload, FilteredHDCountDownload);
   }
   
   var SkinList = {};

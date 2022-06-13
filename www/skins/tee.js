@@ -1,12 +1,12 @@
 //Prime 2015-31
 // Updated to be more realistic by Ryozuki on 2022-03-28.
 
-function render(skin){
+function RenderSkin(skin){
 	//create canvas
-	canvas = document.createElement("canvas");
+	let canvas = this;
 	canvas.width = "96";
 	canvas.height = "64";
-	ctx = canvas.getContext("2d");
+	let ctx = canvas.getContext("2d");
 
 	ctx.drawImage(skin,192,64,64,32,8,32,64,30); //back feet shadow
 	ctx.drawImage(skin,96,0,96,96,16,0,64,64); //body shadow
@@ -20,18 +20,11 @@ function render(skin){
 	ctx.scale(-1,1);
 	ctx.drawImage(skin,64,96,32,32,-73,18,26,26);
 	ctx.restore();
-	//replace with image
-	skin.parentNode.replaceChild(canvas,skin);
 }
 
-function OnTeeSkinRender(){
-	setTimeout(() => {
-		var images = document.querySelectorAll(".nowraptable img");
-		for(i=0; i<images.length; i++){
-			if(images[i].naturalHeight){
-				render(images[i]);
-			}
-		}
-	}, 10);
+function OnTeeSkinRender(SkinCanvas, SkinImg){
+	if(SkinImg.naturalHeight){
+		RenderSkin.call(SkinCanvas, SkinImg);
+	}
 }
 
