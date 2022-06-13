@@ -548,6 +548,8 @@ title: Skin Database - DDraceNetwork
     SkinDownloaderObj.innerHTML = InnerHTML;
   }
 
+  var SkinMap = new Map();
+
   function DrawSkinList() {
     var Filter = "";
       
@@ -566,16 +568,35 @@ title: Skin Database - DDraceNetwork
     var FilteredSkinList = GetSkinsFiltered(true);
 
     var FilteredCountDownload = 0;
+    var FilteredHDCountDownload = 0;
 
     for (var i = 0; i < FilteredSkinList.length; ++i) {
       var CurSkin = FilteredSkinList[i];
 
-      if(CurSkin.type != "template")
+      if(CurSkin.type != "template") {
         ++FilteredCountDownload;
+        if(CurSkin.hd.uhd)
+          ++FilteredHDCountDownload;
+      }
 
       const SkinPath = CurSkin.type == "normal" ? "skin/" : (CurSkin.type == "community" ? "skin/community/" : "skin/template/");
 
-      InnerHTML += "<tr><td style=\"width: 96px; height: 64px;\"><a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\"><img style=\"display: none\" onload=\"OnTeeSkinRender();\" src=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\" alt=\"" + CurSkin.name + "." + CurSkin.imgtype + "\" width=\"100\"></a></td>";
+      if(!SkinMap.has(CurSkin.name)) {
+        let Img = new Image();
+        SkinMap.set(CurSkin.name, {Loaded: false, ImgObj: Img, SkinName: CurSkin.name, ImgSrc: SkinPath + CurSkin.name + "." + CurSkin.imgtype});
+        Img.onload = function (SkinName) {
+          let CurItem = SkinMap.get(SkinName);
+          CurItem.Loaded = true;
+          SkinMap.set(SkinName, CurItem);
+          // render
+          let RenderEl = document.getElementById("skinrender_" + SkinName);
+          if(RenderEl != undefined)
+            OnTeeSkinRender(RenderEl, this);
+        }.bind(Img, CurSkin.name);
+      }
+
+      InnerHTML += "<tr><td style=\"width: 96px; height: 64px;\"><a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\">";
+      InnerHTML += "<canvas style=\"width: 96px; height: 64px\" id=\"skinrender_" + CurSkin.name + "\"></canvas></a></td>";
       InnerHTML += "<td><strong>" + CurSkin.name + "</strong></td>\n  <td>";
       InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$type:" + CurSkin.type.toLowerCase()) + "\">" + CurSkin.type + "</a>";
       InnerHTML += "</td><td>";
@@ -612,7 +633,19 @@ title: Skin Database - DDraceNetwork
 
     SkinListObj.innerHTML = InnerHTML;
 
-    SetDownloadLink(FilteredCountDownload);
+    SkinMap.forEach((value) => {
+      if(!value.Loaded) {
+        value.ImgObj.src = value.ImgSrc;
+      }
+      else {
+        // render
+        let RenderEl = document.getElementById("skinrender_" + value.SkinName);
+        if(RenderEl != undefined)
+          OnTeeSkinRender(RenderEl, value.ImgObj);
+      }
+    });
+
+    SetDownloadLink(FilteredCountDownload, FilteredHDCountDownload);
   }
   
   var SkinList = {};
