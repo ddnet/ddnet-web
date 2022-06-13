@@ -91,10 +91,10 @@ title: Skin Database - DDraceNetwork
   <form action="edit/modify_skin.php" method="post" enctype="multipart/form-data" style="margin: 0;">
   <table cellpadding="5" style="margin: 0;">
   <tr><td>Skin</td><td><input id="changeskinname" name="skin_name2" type="text" disabled></td></tr>
-  <tr><td>Creator</td><td><input name="creator" type="text"></td></tr>
-  <tr><td>Skin pack</td><td><input name="skin_pack" type="text"></td></tr>
+  <tr><td>Creator</td><td><input id="changeskincreator" name="creator" type="text"></td></tr>
+  <tr><td>Skin pack</td><td><input id="changeskinskinpack" name="skin_pack" type="text"></td></tr>
   <tr><td>
-    License</td><td><input name="skin_license" type="text" placeholder="unknown"></td></tr>
+    License</td><td><input id="changeskinlicense" name="skin_license" type="text" placeholder="unknown"></td></tr>
   </table>
   <input id="changeskinname2" name="skin_name" type="hidden" value="">
   <input id="changeskinname3" name="skin_type" type="hidden" value="">
@@ -206,16 +206,21 @@ title: Skin Database - DDraceNetwork
     IsSkinAddZipOpen = !IsSkinAddZipOpen;
   }
 
-  function OpenChangeSkin(ChangeSkinName, ChangeSkinType) {
+  function OpenChangeSkin(ChangeSkinName, ChangeSkinType, ChangeSkinCreator, ChangeSkinSkinPack, ChangeSkinLicense) {
     var AddSkinPopup = document.getElementById("changeskinpopup");
     if(!IsSkinChangeOpen)
       AddSkinPopup.style.display = "block";
     else
       AddSkinPopup.style.display = "none";
 
-    document.getElementById("changeskinname").value = ChangeSkinName;
-    document.getElementById("changeskinname2").value = ChangeSkinName;
-    document.getElementById("changeskinname3").value = ChangeSkinType;
+    if(ChangeSkinName != undefined) {
+      document.getElementById("changeskinname").value = ChangeSkinName;
+      document.getElementById("changeskinname2").value = ChangeSkinName;
+      document.getElementById("changeskinname3").value = ChangeSkinType;
+      document.getElementById("changeskincreator").value = ChangeSkinCreator;
+      document.getElementById("changeskinskinpack").value = ChangeSkinSkinPack;
+      document.getElementById("changeskinlicense").value = ChangeSkinLicense;
+    }
 
     IsSkinChangeOpen = !IsSkinChangeOpen;
   }
@@ -594,7 +599,7 @@ title: Skin Database - DDraceNetwork
       InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$uhd:" + (CurSkin.hd.uhd ? "yes" : "no")) + "\">" + (CurSkin.hd.uhd ? "yes" : "no") + "</a>";
       
       if(gIsEditMode)
-        InnerHTML += "</td><td><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
+        InnerHTML += "</td><td><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "', '" + CurSkin.creator + "', '" + CurSkin.skinpack +"', '" + CurSkin.license +"');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
       else {
         InnerHTML += "</td><td>";
         InnerHTML += "<a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\" download=\"" + CurSkin.name + "." + CurSkin.imgtype + "\">Download</a>";
