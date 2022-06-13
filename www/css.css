@@ -977,6 +977,14 @@ body:not(#phpbb) .time {
     display: inline-block;
     width: 100%;
   }
+  .block7  {
+    max-width: 100%;
+    overflow: auto;
+  }
+  #activity_graph  {
+    width: 100%;
+    overflow: auto;
+  }
 }
 
 /* theme selection*/
