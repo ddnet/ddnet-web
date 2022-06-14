@@ -18,7 +18,7 @@ if(!function_exists('str_ends_with')) {
       return false;
     
     $len = strlen($needle);
-    return substr_compare($haystack, $needle, -$len, $len);
+    return substr_compare($haystack, $needle, -$len, $len) === 0;
   }
 }
   
