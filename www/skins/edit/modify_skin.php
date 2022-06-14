@@ -11,6 +11,22 @@ if(!$fp || !flock($fp, LOCK_EX)) {
   echo "cannot lock skins lock, maybe someone else is modifying right now.";
   die();
 }
+  
+if(!function_exists('str_ends_with')) {
+  function str_ends_with($haystack, $needle) {
+    if($haystack === '' && $needle !== '')
+      return false;
+    
+    $len = strlen($needle);
+    return substr_compare($haystack, $needle, -$len, $len);
+  }
+}
+  
+if(!function_exists('str_contains')) {
+  function str_contains($haystack, $needle) {
+    return $needle === '' || strpos($haystack, $needle) !== false;
+  }
+}
 
 $skin_json_file_name = "../skin/skins.json";
 
