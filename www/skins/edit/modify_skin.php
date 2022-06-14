@@ -233,6 +233,11 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
         textarea_echo("skin to change not found.", 1);
         textarea_die();
       }
+      // if no skin is in the database and the request is to only add a UHD skin, disallow this. Needs a base skin first
+      else if($skinaction == "add" && $skinisuhd) {
+        textarea_echo("an UHD skin was requested to be added, but no previous non UHD skin was added, please upload a non UHD skin first.", 1);
+        textarea_die();
+      }
 
       textarea_echo("adding skin to $skin_json_file_name ...");
       $skinindex = 
