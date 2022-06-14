@@ -439,9 +439,9 @@ title: Skin Database - DDraceNetwork
       }
       else if(JS_GET['sort'] == "uhd") {
         if(JS_GET['dir'] == "down")
-          return Skin1.hd.uhd == Skin2.hd.uhd ? 0 : 1;
+          return Number(Skin1.hd.uhd) - Number(Skin2.hd.uhd);
         else
-          return -(Skin1.hd.uhd == Skin2.hd.uhd ? 0 : 1);
+          return -(Number(Skin1.hd.uhd) - Number(Skin2.hd.uhd));
       }
     });
 
