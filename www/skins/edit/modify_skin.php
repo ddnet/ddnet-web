@@ -100,7 +100,7 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
   $skinisuhd = (array_key_exists("skinisuhd", $_POST) && ($_POST["skinisuhd"] == "true" || $_POST["skinisuhd"] == "1" || $_POST["skinisuhd"] == "on")) ? true : false;
   settype($skinisuhd, "boolean");
 
-  if($skinaction == "add" || $skinaction == "change") {
+  if($skinaction == "add") {
     // check all parameters
     if(!array_key_exists("creator", $_POST) || !array_key_exists("skin_pack", $_POST) || !array_key_exists("skin_type", $_POST) || !array_key_exists("skin_license", $_POST) ||
       !array_key_exists("skin_part", $_POST) || !array_key_exists("game_version", $_POST)) {
@@ -127,8 +127,8 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
       textarea_die();
     }
     
-    if($skintype != "normal" && $skintype != "community" && $skintype != "template") {
-      echo "skin type must be \"normal\", \"template\" or \"community\"";
+    if($skintype != "normal" && $skintype != "community") {
+      echo "skin type must be \"normal\" or \"community\"";
       textarea_die();
     }
     
@@ -147,8 +147,8 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
       textarea_die();
     }
 
-    $imgispng = $skinaction == "change" || ($skinname_tmp != "" && exif_imagetype($skinname_tmp) == IMAGETYPE_PNG);
-    $imgiscorrectratio = $skinaction == "change" || ($imgispng && $skinname_tmp != "" && check_image_props(getimagesize($skinname_tmp)));
+    $imgispng = ($skinname_tmp != "" && exif_imagetype($skinname_tmp) == IMAGETYPE_PNG);
+    $imgiscorrectratio = ($imgispng && $skinname_tmp != "" && check_image_props(getimagesize($skinname_tmp)));
     $imgendswithpng = str_ends_with($skinname, ".png");
     $fullskinname = $skinname;
     $skinname = substr($skinname, 0, -4);
@@ -187,70 +187,56 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
       if($skinindex != -1) {
         if(isset($skin_json->skins[$skinindex]->hd->uhd) && $skin_json->skins[$skinindex]->hd->uhd == true)
           $skinhdexisted = true;
-        if($skinaction == "add") {
-          // if the request is not any HD modify request => drop old versions, if type also changed also drop HD skins
-          // if the request is HD modify request => only drop HD skins and only if type did not change
-          // if type did not change only replace the skin file
-          $alsodrophdskins = $skin_json->skins[$skinindex]->type != $skintype;
-          $onlydrophdskins = $skinisuhd;
-          if($alsodrophdskins && $skinisuhd) {
-            textarea_echo("you changed the skin's type from \"".$skin_json->skins[$skinindex]->type."\" to \"$skintype\", but also selected UHD as option, change the primary skin first before changing the HD skin", 1);
-            textarea_die();
+        // if the request is not any HD modify request => drop old versions, if type also changed also drop HD skins
+        // if the request is HD modify request => only drop HD skins and only if type did not change
+        // if type did not change only replace the skin file
+        $alsodrophdskins = $skin_json->skins[$skinindex]->type != $skintype;
+        $onlydrophdskins = $skinisuhd;
+        if($alsodrophdskins && $skinisuhd) {
+          textarea_echo("you changed the skin's type from \"".$skin_json->skins[$skinindex]->type."\" to \"$skintype\", but also selected UHD as option, change the primary skin first before changing the HD skin", 1);
+          textarea_die();
+        }
+        // if the skin type did not change OR it's not HD skin, old versions get dropped
+        if(!$alsodrophdskins || !$skinisuhd) {
+          textarea_echo("removing old skin with same name (type: " . $skin_json->skins[$skinindex]->type . ", has hd: ".($skinhdexisted ? "true" : "false").") ...", 2);
+          if($skin_json->skins[$skinindex]->type == "normal") {
+            if(!$onlydrophdskins)
+              unlink("../skin/".$fullskinname);
+            if($alsodrophdskins || ($onlydrophdskins && isset($skin_json->skins[$skinindex]->hd->uhd) && $skin_json->skins[$skinindex]->hd->uhd == true)) {
+              unlink("../skin/uhd/".$fullskinname);
+              $skinhdwasdropped = true;
+              if($alsodrophdskins)
+                textarea_echo("also dropping HD skins, because the skin type was changed!", 2);
+            }
           }
-          // if the skin type did not change OR it's not HD skin, old versions get dropped
-          if(!$alsodrophdskins || !$skinisuhd) {
-            textarea_echo("removing old skin with same name (type: " . $skin_json->skins[$skinindex]->type . ", has hd: ".($skinhdexisted ? "true" : "false").") ...", 2);
-            if($skin_json->skins[$skinindex]->type == "normal") {
-              if(!$onlydrophdskins)
-                unlink("../skin/".$fullskinname);
-              if($alsodrophdskins || ($onlydrophdskins && isset($skin_json->skins[$skinindex]->hd->uhd) && $skin_json->skins[$skinindex]->hd->uhd == true)) {
-                unlink("../skin/uhd/".$fullskinname);
-                $skinhdwasdropped = true;
-                if($alsodrophdskins)
-                  textarea_echo("also dropping HD skins, because the skin type was changed!", 2);
-              }
+          // normal skin is also mirrored in community path
+          if($skin_json->skins[$skinindex]->type == "normal" || $skin_json->skins[$skinindex]->type == "community") {
+            if(!$onlydrophdskins)
+              unlink("../skin/community/".$fullskinname);
+            if($alsodrophdskins || ($onlydrophdskins && isset($skin_json->skins[$skinindex]->hd->uhd) && $skin_json->skins[$skinindex]->hd->uhd == true)) {
+              unlink("../skin/community/uhd/".$fullskinname);
+              $skinhdwasdropped = true;
+              if($alsodrophdskins)
+                textarea_echo("also dropping community HD skins, because the skin type was changed!", 2);
             }
-            // normal skin is also mirrored in community path
-            if($skin_json->skins[$skinindex]->type == "normal" || $skin_json->skins[$skinindex]->type == "community") {
-              if(!$onlydrophdskins)
-                unlink("../skin/community/".$fullskinname);
-              if($alsodrophdskins || ($onlydrophdskins && isset($skin_json->skins[$skinindex]->hd->uhd) && $skin_json->skins[$skinindex]->hd->uhd == true)) {
-                unlink("../skin/community/uhd/".$fullskinname);
-                $skinhdwasdropped = true;
-                if($alsodrophdskins)
-                  textarea_echo("also dropping community HD skins, because the skin type was changed!", 2);
-              }
-            }
+          }
 
-            if($skin_json->skins[$skinindex]->type == "template") {
-              if(!$onlydrophdskins)
-                unlink("../skin/template/".$fullskinname);
-              if($alsodrophdskins || ($onlydrophdskins && isset($skin_json->skins[$skinindex]->hd->uhd) && $skin_json->skins[$skinindex]->hd->uhd == true)) {
-                unlink("../skin/template/uhd/".$fullskinname);
-                $skinhdwasdropped = true;
-                if($alsodrophdskins)
-                  textarea_echo("also dropping template HD skins, because the skin type was changed!", 2);
-              }
+          if($skin_json->skins[$skinindex]->type == "template") {
+            if(!$onlydrophdskins)
+              unlink("../skin/template/".$fullskinname);
+            if($alsodrophdskins || ($onlydrophdskins && isset($skin_json->skins[$skinindex]->hd->uhd) && $skin_json->skins[$skinindex]->hd->uhd == true)) {
+              unlink("../skin/template/uhd/".$fullskinname);
+              $skinhdwasdropped = true;
+              if($alsodrophdskins)
+                textarea_echo("also dropping template HD skins, because the skin type was changed!", 2);
             }
           }
         }
 
-        if($skinaction == "change" && $skin_json->skins[$skinindex]->type != $skintype) {
-          textarea_echo("Cannot change skin type, reupload as image and it will automatically remove the old skins", 1);
-          textarea_die();
-        }
-        if($skinaction == "change" && $skinisuhd) {
-          textarea_echo("Cannot change skin type as UHD option", 1);
-          textarea_die();
-        }
         array_splice($skin_json->skins, $skinindex, 1);
       }
-      else if($skinaction == "change") {
-        textarea_echo("skin to change not found.", 1);
-        textarea_die();
-      }
       // if no skin is in the database and the request is to only add a UHD skin, disallow this. Needs a base skin first
-      else if($skinaction == "add" && $skinisuhd) {
+      else if($skinisuhd) {
         textarea_echo("an UHD skin was requested to be added, but no previous non UHD skin was added, please upload a non UHD skin first.", 1);
         textarea_die();
       }
@@ -263,46 +249,44 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
                         "\"creator\": \"$skincreator\", \"license\": \"$skinlicense\", \"bodypart\": \"$skinbodypart\", \"gameversion\": \"$skingameversion\", \"date\": \"$skincreatedate\", \"skinpack\": \"$skinpack\", \"imgtype\": \"png\" }")
       ) - 1;
 
-      if($skinaction == "add") {
-        if(!is_dir("../skin"))
-          mkdir("../skin");
-        if(!is_dir("../skin/uhd"))
-          mkdir("../skin/uhd");
-          if(!is_dir("../skin/community"))
-            mkdir("../skin/community");
-          if(!is_dir("../skin/community/uhd"))
-            mkdir("../skin/community/uhd");
-            if(!is_dir("../skin/template"))
-              mkdir("../skin/template");
-            if(!is_dir("../skin/template/uhd"))
-              mkdir("../skin/template/uhd");
+      if(!is_dir("../skin"))
+        mkdir("../skin");
+      if(!is_dir("../skin/uhd"))
+        mkdir("../skin/uhd");
+        if(!is_dir("../skin/community"))
+          mkdir("../skin/community");
+        if(!is_dir("../skin/community/uhd"))
+          mkdir("../skin/community/uhd");
+          if(!is_dir("../skin/template"))
+            mkdir("../skin/template");
+          if(!is_dir("../skin/template/uhd"))
+            mkdir("../skin/template/uhd");
 
-        textarea_echo("adding skin to skin directory ...");
-        if($skin_json->skins[$skinindex]->type == "normal") {
-          if(!$skinisuhd)
-            file_put_contents("../skin/".$fullskinname, file_get_contents($skinname_tmp));
-          // if skin is uhd or nor UHD exists, add it as mirror
-          if($skinisuhd || !isset($skin_json->skins[$skinindex]->hd->uhd) || $skin_json->skins[$skinindex]->hd->uhd == false) {
-            file_put_contents("../skin/uhd/".$fullskinname, file_get_contents($skinname_tmp));
-          }
+      textarea_echo("adding skin to skin directory ...");
+      if($skin_json->skins[$skinindex]->type == "normal") {
+        if(!$skinisuhd)
+          file_put_contents("../skin/".$fullskinname, file_get_contents($skinname_tmp));
+        // if skin is uhd or nor UHD exists, add it as mirror
+        if($skinisuhd || !isset($skin_json->skins[$skinindex]->hd->uhd) || $skin_json->skins[$skinindex]->hd->uhd == false) {
+          file_put_contents("../skin/uhd/".$fullskinname, file_get_contents($skinname_tmp));
         }
-        // normal skin is also mirrored in community path
-        if($skin_json->skins[$skinindex]->type == "normal" || $skin_json->skins[$skinindex]->type == "community") {
-          if(!$skinisuhd)
-            file_put_contents("../skin/community/".$fullskinname, file_get_contents($skinname_tmp));
-          // if skin is uhd or nor UHD exists, add it as mirror
-          if($skinisuhd || !isset($skin_json->skins[$skinindex]->hd->uhd) || $skin_json->skins[$skinindex]->hd->uhd == false) {
-            file_put_contents("../skin/community/uhd/".$fullskinname, file_get_contents($skinname_tmp));
-          }
+      }
+      // normal skin is also mirrored in community path
+      if($skin_json->skins[$skinindex]->type == "normal" || $skin_json->skins[$skinindex]->type == "community") {
+        if(!$skinisuhd)
+          file_put_contents("../skin/community/".$fullskinname, file_get_contents($skinname_tmp));
+        // if skin is uhd or nor UHD exists, add it as mirror
+        if($skinisuhd || !isset($skin_json->skins[$skinindex]->hd->uhd) || $skin_json->skins[$skinindex]->hd->uhd == false) {
+          file_put_contents("../skin/community/uhd/".$fullskinname, file_get_contents($skinname_tmp));
         }
-        // template skins
-        if($skin_json->skins[$skinindex]->type == "template") {
-          if(!$skinisuhd)
-            file_put_contents("../skin/template/".$fullskinname, file_get_contents($skinname_tmp));
-          // if skin is uhd or nor UHD exists, add it as mirror
-          if($skinisuhd || !isset($skin_json->skins[$skinindex]->hd->uhd) || $skin_json->skins[$skinindex]->hd->uhd == false) {
-            file_put_contents("../skin/template/uhd/".$fullskinname, file_get_contents($skinname_tmp));
-          }
+      }
+      // template skins
+      if($skin_json->skins[$skinindex]->type == "template") {
+        if(!$skinisuhd)
+          file_put_contents("../skin/template/".$fullskinname, file_get_contents($skinname_tmp));
+        // if skin is uhd or nor UHD exists, add it as mirror
+        if($skinisuhd || !isset($skin_json->skins[$skinindex]->hd->uhd) || $skin_json->skins[$skinindex]->hd->uhd == false) {
+          file_put_contents("../skin/template/uhd/".$fullskinname, file_get_contents($skinname_tmp));
         }
       }
 
@@ -310,9 +294,9 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
       file_put_contents($skin_json_file_name, json_encode($skin_json));
       // create a backup
       file_put_contents("skins.json.bk", json_encode($skin_json));
-    }
 
-    textarea_echo("successfully ".$skinaction."ed skin");
+      textarea_echo("successfully ".$skinaction."ed skin");
+    }
   }
   else if($skinaction == "delete") {
     $skinisuhd = false;
