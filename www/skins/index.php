@@ -42,7 +42,7 @@ title: Skin Database - DDraceNetwork
   <tr><td>Creator</td><td><input name="creator" type="text"></td></tr>
   <tr><td>Skin pack</td><td><input name="skin_pack" type="text"></td></tr>
   <tr><td>License</td><td><input name="skin_license" type="text" placeholder="unknown"></td></tr>
-  <tr><td>Type</td><td><select name="skin_type"><option value="normal" selected>normal</option><option value="community">community</option><option value="template">template(not downloadable by client)</option></select></td></tr>
+  <tr><td>Type</td><td><select name="skin_type"><option value="normal" selected>normal</option><option value="community">community</option></select></td></tr>
   <tr><td>Is UHD</td><td><input type="checkbox" name="skinisuhd" /></td></tr>
   </table>
   <input name="game_version" type="hidden" value="tw-0.6">
@@ -95,13 +95,14 @@ title: Skin Database - DDraceNetwork
   <tr><td>Skin pack</td><td><input id="changeskinskinpack" name="skin_pack" type="text"></td></tr>
   <tr><td>
     License</td><td><input id="changeskinlicense" name="skin_license" type="text" placeholder="unknown"></td></tr>
+  <tr><td>Type</td><td><select name="skin_type" id="changeskinskintype"><option value="normal" selected>normal</option><option value="community">community</option></select></td></tr>
   </table>
-  <input id="changeskinname2" name="skin_name" type="hidden" value="">
-  <input id="changeskinname3" name="skin_type" type="hidden" value="">
+  <input id="changeskinname2" name="skin_name_list[0]" type="hidden" value="">
+  <input id="changeskinimg" name="skin_list[0]" type="hidden" value="">
   <input name="skinisuhd" type="hidden" value="false">
   <input name="game_version" type="hidden" value="tw-0.6">
   <input name="skin_part" type="hidden" value="full">
-  <input name="modifyaction" type="hidden" value="change">
+  <input name="modifyaction" type="hidden" value="add">
   <div style="display: flex; width: 100%">
     <input type="submit" value="Change Skin">
     <input type="button" value="Cancel" onclick="OpenChangeSkin();" style="margin-left: auto;">
@@ -206,7 +207,7 @@ title: Skin Database - DDraceNetwork
     IsSkinAddZipOpen = !IsSkinAddZipOpen;
   }
 
-  function OpenChangeSkin(ChangeSkinName, ChangeSkinType, ChangeSkinCreator, ChangeSkinSkinPack, ChangeSkinLicense) {
+  function OpenChangeSkin(ChangeSkinNamePure, ChangeSkinName, ChangeSkinType, ChangeSkinCreator, ChangeSkinSkinPack, ChangeSkinLicense) {
     var AddSkinPopup = document.getElementById("changeskinpopup");
     if(!IsSkinChangeOpen)
       AddSkinPopup.style.display = "block";
@@ -216,10 +217,20 @@ title: Skin Database - DDraceNetwork
     if(ChangeSkinName != undefined) {
       document.getElementById("changeskinname").value = ChangeSkinName;
       document.getElementById("changeskinname2").value = ChangeSkinName;
-      document.getElementById("changeskinname3").value = ChangeSkinType;
       document.getElementById("changeskincreator").value = ChangeSkinCreator;
       document.getElementById("changeskinskinpack").value = ChangeSkinSkinPack;
       document.getElementById("changeskinlicense").value = ChangeSkinLicense;
+      document.getElementById("changeskinskintype").value = ChangeSkinType;
+      let HasSkinImg = false;
+      if(SkinMap.has(ChangeSkinNamePure)) {
+        let SkinImg = SkinMap.get(ChangeSkinNamePure);
+        if(SkinImg.Loaded) {
+          document.getElementById("changeskinimg").value = SkinImg.ImgData;
+          HasSkinImg = true;
+        }
+      }
+      if(!HasSkinImg)
+        alert("Skin was not loaded yet. Try again.");
     }
 
     IsSkinChangeOpen = !IsSkinChangeOpen;
@@ -544,7 +555,6 @@ title: Skin Database - DDraceNetwork
 
     if(FilteredHDCount > 0)
       InnerHTML += " (<a href=\"javascript:DownloadSkins(true)\">UHD [" + FilteredHDCount + "]</a>)";
-    InnerHTML += " (template skins are always automatically ignored)";
 
     SkinDownloaderObj.innerHTML = InnerHTML;
   }
@@ -584,10 +594,28 @@ title: Skin Database - DDraceNetwork
 
       if(!SkinMap.has(CurSkin.name)) {
         let Img = new Image();
-        SkinMap.set(CurSkin.name, {Loaded: false, ImgObj: Img, SkinName: CurSkin.name, ImgSrc: SkinPath + CurSkin.name + "." + CurSkin.imgtype});
+        let SkinDataBase64 = "";
+        let SkinAjax = null;
+        let LoadState = 0;
+        SkinAjax = new XMLHttpRequest();
+        SkinAjax.responseType = "arraybuffer";
+        SkinAjax.onreadystatechange = function (SkinName) {
+          if (this.readyState == 4) {
+            if(this.status == 200) {
+              let CurItem = SkinMap.get(SkinName);
+              CurItem.Loaded = 1;
+              const Base64ImgData = btoa(String.fromCharCode(...new Uint8Array(this.response)));
+              CurItem.ImgData = Base64ImgData;
+              SkinMap.set(SkinName, CurItem);
+              CurItem.ImgObj.src = "data:image/png;base64," + Base64ImgData;
+            }
+          }
+        }.bind(SkinAjax, CurSkin.name);
+
+        SkinMap.set(CurSkin.name, {Loaded: LoadState, AjaxObj: SkinAjax, ImgData: SkinDataBase64, ImgObj: Img, SkinName: CurSkin.name, ImgSrc: SkinPath + CurSkin.name + "." + CurSkin.imgtype});
         Img.onload = function (SkinName) {
           let CurItem = SkinMap.get(SkinName);
-          CurItem.Loaded = true;
+          CurItem.Loaded = 2;
           SkinMap.set(SkinName, CurItem);
           // render
           let RenderEl = document.getElementById("skinrender_" + SkinName);
@@ -621,7 +649,7 @@ title: Skin Database - DDraceNetwork
       InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$uhd:" + (CurSkin.hd.uhd ? "yes" : "no")) + "\">" + (CurSkin.hd.uhd ? "yes" : "no") + "</a>";
       
       if(gIsEditMode)
-        InnerHTML += "</td><td><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "', '" + CurSkin.creator + "', '" + CurSkin.skinpack +"', '" + CurSkin.license +"');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
+        InnerHTML += "</td><td><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "', '" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "', '" + CurSkin.creator + "', '" + CurSkin.skinpack +"', '" + CurSkin.license +"');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
       else {
         InnerHTML += "</td><td>";
         InnerHTML += "<a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\" download=\"" + CurSkin.name + "." + CurSkin.imgtype + "\">Download</a>";
@@ -635,10 +663,11 @@ title: Skin Database - DDraceNetwork
     SkinListObj.innerHTML = InnerHTML;
 
     SkinMap.forEach((value) => {
-      if(!value.Loaded) {
-        value.ImgObj.src = value.ImgSrc;
+      if(value.Loaded == 0) {
+        value.AjaxObj.open("GET", value.ImgSrc);
+        value.AjaxObj.send();
       }
-      else {
+      else if(value.Loaded == 2) {
         // render
         let RenderEl = document.getElementById("skinrender_" + value.SkinName);
         if(RenderEl != undefined)
