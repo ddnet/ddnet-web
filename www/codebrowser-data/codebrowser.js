@@ -36,11 +36,6 @@ function switchStylestyle(styleName) {
         }
     });
 }
-function switchStylestyleAndSetCookie(styleName)
-{
-    switchStylestyle(styleName);
-    createCookie('style', styleName, 5)
-}
 function createCookie(name,value,days) {
     if (days) {
         var date = new Date();
@@ -61,14 +56,7 @@ function readCookie(name) {
     return null;
 }
 
-var style_match = location.search.match(/.*[?&]style=([^#&]+).*/);
-if (style_match) {
-    var style = style_match[1];
-    switchStylestyleAndSetCookie(style);
-} else {
-    var c = readCookie('style') || "qtcreator";
-    if (c) switchStylestyle(c);
-}
+switchStylestyle('qtcreator');
 
 if (setStyle != "") {
     //Webkit bug  https://bugs.webkit.org/show_bug.cgi?id=115347
@@ -1178,7 +1166,7 @@ $(function () {
         if (setStyle.toLowerCase() === title.toLowerCase()) styleOpt += " selected='true'";
         styleOpt += ">" + title + "</option>";
     });
-    $("#header").append("<p id='options'><a class='opt_linenum' href='#'>Toggle line number</a> -  Style: <select class='opt_style'>" + styleOpt + "</select></p>")
+    $("#header").append("<p id='options'><a class='opt_linenum' href='#'>Toggle line number</a></p>")
 
     var lineNumberShown = -1;
     $(".opt_linenum").click(function() {
@@ -1193,10 +1181,6 @@ $(function () {
             $(".code th").show();
         lineNumberShown = !lineNumberShown;
         return false;
-    });
-    $(".opt_style").change(function(e) {
-        switchStylestyleAndSetCookie(this.options[this.selectedIndex].value);
-        //return false;
     });
 
     var cwo_url = 'https://code.woboq.org';
