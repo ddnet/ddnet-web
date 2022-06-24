@@ -1166,7 +1166,6 @@ $(function () {
         if (setStyle.toLowerCase() === title.toLowerCase()) styleOpt += " selected='true'";
         styleOpt += ">" + title + "</option>";
     });
-    $("#header").append("<p id='options'><a class='opt_linenum' href='#'>Toggle line number</a></p>")
 
     var lineNumberShown = -1;
     $(".opt_linenum").click(function() {
