@@ -4,6 +4,87 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="16.2"><a href="#16.2">DDNet 16.2</a></h3>
+<div class="dlfiles">
+  2022-07-05<br/><br/>
+  <ul>
+    <li><a href="DDNet-16.2-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-16.2-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-16.2-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-16.2-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-16.2-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-16.2.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>DDNet HUD</strong> [<strong>c0d3d3v</strong>]</li>
+    <li>[Client] <strong>Controller support</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Client] <strong>Add community skin option</strong> [<strong>Jupeyy</strong>]</li>
+    <li>[Client] <strong>Prediction of switch state toggles</strong> [<strong>trml</strong>]</li>
+    <li>[Client] <strong>Use STUN to check network status when connecting</strong> [<strong>heinrich5991</strong>]</li>
+    <li>[Server] <strong>HTTP masterserver registering</strong> [<strong>heinrich5991</strong>]</li>
+    <li>[Client] Reworked draggers, turrets, hooks always visible [<strong>c0d3d3v</strong>]</li>
+    <li>[Client] Video Recorder: Don't ever skip any frame [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Use ellipsis in scoreboard for too long names [<strong>c0d3d3</strong>]</li>
+    <li>[Client] Added live freeze in comfort entities [<strong>louis</strong>]</li>
+    <li>[Client] Fix prediction input timing [<strong>trml</strong>]</li>
+    <li>[Client] Fix input getter for dummy [<strong>trml</strong>]</li>
+    <li>[Client] Fix dummy tick handling [<strong>sjrc6</strong>]</li>
+    <li>[Client] Remove ui_scale [<strong>Robyt3</strong>]</li>
+    <li>[Client] Remove cl_nameplates_ha(_size) [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix ingame menu button behavior when holding mouse button [<strong>Robyt3</strong>]</li>
+    <li>[Client] Prevent UI lockups [<strong>Robyt3</strong>]</li>
+    <li>[Client] Always render nameplate of spec char [<strong>c0d3d3v</strong>]</li>
+    <li>[Client] Fix pos1 only scrolling up one page in console [<strong>Robyt3</strong>]</li>
+    <li>[Client] Lower max allowed FSAA on OpenGL [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Fix toggle with multiple chains [<strong>Robyt3</strong>]</li>
+    <li>[Client] Remove cl_show_console [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix video rendering being too fast [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Add basic driver version parsing for Vulkan [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Update tooltip text after changing language</li>
+    <li>[Client] Support nesting CUI clipping regions and other UI elements [<strong>Robyt3</strong>]</li>
+    <li>[Client] Remove cl_reset_wanted_weapon_on_death [<strong>Chairn</strong>]</li>
+    <li>[Client] Fix crash because of hooks on non-DDNet servers [<strong>c0d3d3v</strong>]</li>
+    <li>[Editor] Fix deleting envelopes not updating sounds [<strong>Ravie &amp; c0d3d3v</strong>]</li>
+    <li>[Server] Practice: Unfreeze when rescued, reset speed when teleporting [<strong>kiw-q</strong>]</li>
+    <li>[Server] Practice: Unfreeze after teleporting [<strong>hus3h</strong>]</li>
+    <li>[Server] Add `/cptime name` to get checkpoint times of another player (for speedrunning)</li>
+    <li>[Server] Fix laser bounce physics on Putt Putt [<strong>c0d3d3v</strong>]</li>
+    <li>[Server] Fix server loading map twice on startup [<strong>Zwelf</strong>]</li>
+    <li>[Server] Fixed non-determinism in physics while keeping old behavior [<strong>c0d3d3v</strong>]</li>
+    <li>[Server] Swap: Also swap no-collision and no-hook status [<strong>c0d3d3v</strong>]</li>
+    <li>[Server] Prevent time overflow [<strong>c0d3d3v</strong>]</li>
+    <li>[Server] Weapon-specific shields: Send normal shields to old clients [<strong>c0d3d3v</strong>]</li>
+    <li>[Server] Explicitly delete game server from server list on shutdown [<strong>heinrich5991</strong>]</li>
+    <li>[Server] Make capital /WHISPER work</li>
+    <li>[Server] Remove sv_checkpoint_save</li>
+    <li>[Server] Paginate bans</li>
+    <li>[Server] Make input handling teehistorian-friendly [<strong>Zwelf</strong>]</li>
+    <li>[Server] Update unicode script generation [<strong>Chairn</strong>]</li>
+    <li>[Client+Server] Support outdated Windows 7 again (hopefully)</li>
+    <li>[Tooling] Add integration test script and coverage map [<strong>ChillerDragon</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/16.1...16.2">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps2.ddnet.tw/">List of all maps</a>, <a href="https://maps2.ddnet.tw/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="16.1"><a href="#16.1">DDNet 16.1</a></h3>
 <div class="dlfiles">
   2022-05-20<br/><br/>
@@ -60,22 +141,6 @@ title: Downloads - DDraceNetwork
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/16.0.3...16.1">full list of git changes</a>
 </div>
 <br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps2.ddnet.tw/">List of all maps</a>, <a href="https://maps2.ddnet.tw/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="16.0"><a href="#16.0">DDNet 16.0.3</a></h3>
 <div class="dlfiles">
   2022-04-04<br/><br/>
