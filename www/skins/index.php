@@ -33,6 +33,57 @@ title: Skin Database - DDraceNetwork
     padding: 0;
     height: 70px;
   }
+
+  .ourgriditem1 {
+    width: 96px;
+  }
+  .ourgriditem2 {
+    width: 192px;
+  }
+  .ourgriditem3 {
+    width: 112px;
+  }
+  .ourgriditem4 {
+    width: 112px;
+  }
+  .ourgriditem5 {
+    width: 112px;
+  }
+  .ourgriditem6 {
+    width: 128px;
+  }
+  .ourgriditem7 {
+    width: 112px;
+  }
+  .ourgriditem8 {
+    width: 112px;
+  }
+  .ourgriditem9 {
+    width: 192px;
+  }
+
+  .ourgriditem {
+    display: inline-block;
+    overflow-wrap: anywhere;
+  }
+
+  .ourgriditemheader {
+    display: inline-block;
+    overflow-wrap: anywhere;
+    height: 100%;
+    background-color: var(--bg-block);
+  }
+  html, body {
+    height: 100%;
+  }
+  .vrow {
+    width: max-content;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
 </style>
 
 <div id="addskinpopup" class="modifyskinpopup">
@@ -128,7 +179,8 @@ title: Skin Database - DDraceNetwork
 <script src="tee.js"></script>
 <script src="jszip.min.js"></script>
 <script src="FileSaver.js"></script>
-<div class="block">
+<script src="vlist.js"></script>
+<div class="block" id="contentblock">
 
 <div style="display: flex; align-items: center;">
   <h2 id="skin-database" style="display:inline; flex: 0 0 auto; margin-top: 5px;">Skin Database</h2>
@@ -560,23 +612,76 @@ title: Skin Database - DDraceNetwork
   }
 
   var SkinMap = new Map();
+  var SkinNeedRender = new Array();
+
+  function DrawSkinListRow(SkinRenderID, CurSkin, RowIndex) {
+    const SkinPath = CurSkin.type == "normal" ? "skin/" : (CurSkin.type == "community" ? "skin/community/" : "skin/template/");
+    let InnerHTML = '';
+    InnerHTML += "<div class='ourgriditem ourgriditem1'><a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\">";
+    InnerHTML += "<canvas style=\"width: 96px; height: 64px\" id=\"skinrender_" + SkinRenderID + CurSkin.name + "\"></canvas></a></div>";
+    InnerHTML += "<div class='ourgriditem ourgriditem2'><strong>" + CurSkin.name + "</strong></div><div class='ourgriditem ourgriditem3'>";
+    InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$type:" + CurSkin.type.toLowerCase()) + "\">" + CurSkin.type + "</a>";
+    InnerHTML += "</div><div class='ourgriditem ourgriditem4'>";
+
+    if (CurSkin.creator != "")
+      InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$creator:" + CurSkin.creator.toLowerCase()) + "\">" + CurSkin.creator + "</a>";
+
+    InnerHTML += "</div><div class='ourgriditem ourgriditem5'>";
+
+    if (CurSkin.skinpack != "")
+      InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$skinpack:" + CurSkin.skinpack.toLowerCase()) + "\">" + CurSkin.skinpack + "</a>";
+
+    InnerHTML += "</div><div class='ourgriditem ourgriditem6'>" + CurSkin.date;
+
+    InnerHTML += "</div><div class='ourgriditem ourgriditem7'>";
+
+    if (CurSkin.license != "")
+      InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$license:" + CurSkin.license.toLowerCase()) + "\">" + CurSkin.license + "</a>";
+
+    InnerHTML += "</div><div class='ourgriditem ourgriditem8'>";
+    InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$uhd:" + (CurSkin.hd.uhd ? "yes" : "no")) + "\">" + (CurSkin.hd.uhd ? "yes" : "no") + "</a>";
+    
+    if(gIsEditMode)
+      InnerHTML += "</div><div class='ourgriditem ourgriditem9'><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "', '" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "', '" + CurSkin.creator.replace("'", "\\'") + "', '" + CurSkin.skinpack +"', '" + CurSkin.license +"');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
+    else {
+      InnerHTML += "</div><div class='ourgriditem ourgriditem9'>";
+      InnerHTML += "<a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\" download=\"" + CurSkin.name + "." + CurSkin.imgtype + "\">Download</a>";
+      if(CurSkin.hd.uhd)
+        InnerHTML += "&nbsp;&nbsp;&nbsp;<a href=\"" + (SkinPath + "uhd/") + CurSkin.name + "." + CurSkin.imgtype + "\" download=\"" + CurSkin.name + "." + CurSkin.imgtype + "\">UHD</a>";
+    }
+    
+    InnerHTML += "</div>";
+    return InnerHTML;
+  }
+
+  function DrawSkinListHeaderRow() {
+    let InnerHTML = '';
+    InnerHTML += "<div class='ourgriditemheader ourgriditem1'>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem2'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("name", "Name") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem3'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("type", "Group") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem4'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("creator", "Creator") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem5'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("skin_pack", "Skin Pack") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem6'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("release_date", "Release Date") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem7'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("license", "License") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem8'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("uhd", "UHD") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem9'></div>";
+    return InnerHTML;
+  }
+
+  var lastVList = null;
+  var FilteredSkinList = null;
+
+  function genRenderID() {
+    return (new Date()).getTime().toString() + "___" + Math.random().toString(16).slice(2) + "___";
+  }
 
   function DrawSkinList() {
     var Filter = "";
       
     var SkinListObj = document.getElementById("skinlist");
-    var InnerHTML = "";
-    InnerHTML += "<tr><td style=\"width: 96px;\">";
-    InnerHTML += "</td><td><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("name", "Name") + "</a>";
-    InnerHTML += "</td><td><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("type", "Group") + "</a>";
-    InnerHTML += "</td><td><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("creator", "Creator") + "</a>";
-    InnerHTML += "</td><td><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("skin_pack", "Skin Pack") + "</a>";
-    InnerHTML += "</td><td><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("release_date", "Release Date") + "</a>";
-    InnerHTML += "</td><td><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("license", "License") + "</a>";
-    InnerHTML += "</td><td><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("uhd", "UHD") + "</a>";
-    InnerHTML += "</td><td></td></tr>\n";
+    var InnerHTML = '';
 
-    var FilteredSkinList = GetSkinsFiltered(true);
+    FilteredSkinList = GetSkinsFiltered(true);
 
     var FilteredCountDownload = 0;
     var FilteredHDCountDownload = 0;
@@ -612,52 +717,17 @@ title: Skin Database - DDraceNetwork
           }
         }.bind(SkinAjax, CurSkin.name);
 
-        SkinMap.set(CurSkin.name, {Loaded: LoadState, AjaxObj: SkinAjax, ImgData: SkinDataBase64, ImgObj: Img, SkinName: CurSkin.name, ImgSrc: SkinPath + CurSkin.name + "." + CurSkin.imgtype});
+        SkinMap.set(CurSkin.name, {Loaded: LoadState, AjaxObj: SkinAjax, ImgData: SkinDataBase64, ImgObj: Img, SkinName: CurSkin.name, ImgSrc: SkinPath + CurSkin.name + "." + CurSkin.imgtype, skinrenderid: "unused"});
         Img.onload = function (SkinName) {
           let CurItem = SkinMap.get(SkinName);
           CurItem.Loaded = 2;
           SkinMap.set(SkinName, CurItem);
           // render
-          let RenderEl = document.getElementById("skinrender_" + SkinName);
+          let RenderEl = document.getElementById("skinrender_" + CurItem.skinrenderid + SkinName);
           if(RenderEl != undefined)
             OnTeeSkinRender(RenderEl, this);
         }.bind(Img, CurSkin.name);
       }
-
-      InnerHTML += "<tr><td style=\"width: 96px; height: 64px;\"><a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\">";
-      InnerHTML += "<canvas style=\"width: 96px; height: 64px\" id=\"skinrender_" + CurSkin.name + "\"></canvas></a></td>";
-      InnerHTML += "<td><strong>" + CurSkin.name + "</strong></td>\n  <td>";
-      InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$type:" + CurSkin.type.toLowerCase()) + "\">" + CurSkin.type + "</a>";
-      InnerHTML += "</td><td>";
-
-      if (CurSkin.creator != "")
-        InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$creator:" + CurSkin.creator.toLowerCase()) + "\">" + CurSkin.creator + "</a>";
-
-      InnerHTML += "</td><td>";
-
-      if (CurSkin.skinpack != "")
-        InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$skinpack:" + CurSkin.skinpack.toLowerCase()) + "\">" + CurSkin.skinpack + "</a>";
-
-      InnerHTML += "</td><td>" + CurSkin.date;
-
-      InnerHTML += "</td><td>";
-
-      if (CurSkin.license != "")
-        InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$license:" + CurSkin.license.toLowerCase()) + "\">" + CurSkin.license + "</a>";
-
-      InnerHTML += "</td><td>";
-      InnerHTML += "<a href=\"index.php?search=" + encodeURIComponent("$uhd:" + (CurSkin.hd.uhd ? "yes" : "no")) + "\">" + (CurSkin.hd.uhd ? "yes" : "no") + "</a>";
-      
-      if(gIsEditMode)
-        InnerHTML += "</td><td><a href=\"javascript:OpenChangeSkin('" + CurSkin.name + "', '" + CurSkin.name + "." + CurSkin.imgtype + "', '" + CurSkin.type + "', '" + CurSkin.creator + "', '" + CurSkin.skinpack +"', '" + CurSkin.license +"');\">change</a>&nbsp;&nbsp;&nbsp;<a href=\"javascript:OpenRemoveSkin('" + CurSkin.name + "." + CurSkin.imgtype + "');\">delete</a>";
-      else {
-        InnerHTML += "</td><td>";
-        InnerHTML += "<a href=\"" + SkinPath + CurSkin.name + "." + CurSkin.imgtype + "\" download=\"" + CurSkin.name + "." + CurSkin.imgtype + "\">Download</a>";
-        if(CurSkin.hd.uhd)
-          InnerHTML += "&nbsp;&nbsp;&nbsp;<a href=\"" + (SkinPath + "uhd/") + CurSkin.name + "." + CurSkin.imgtype + "\" download=\"" + CurSkin.name + "." + CurSkin.imgtype + "\">UHD</a>";
-      }
-      
-      InnerHTML += "</td></tr>\n";
     }
 
     SkinListObj.innerHTML = InnerHTML;
@@ -667,19 +737,86 @@ title: Skin Database - DDraceNetwork
         value.AjaxObj.open("GET", value.ImgSrc);
         value.AjaxObj.send();
       }
-      else if(value.Loaded == 2) {
-        // render
-        let RenderEl = document.getElementById("skinrender_" + value.SkinName);
-        if(RenderEl != undefined)
-          OnTeeSkinRender(RenderEl, value.ImgObj);
-      }
     });
 
     SetDownloadLink(FilteredCountDownload, FilteredHDCountDownload);
+
+    const TableHeight = document.body.clientHeight - SkinListObj.offsetTop - parseInt(SkinListObj.style.marginTop) - 40;
+
+    if(lastVList != null) {
+      if(lastVList.rmNodeInterval != -1)
+        clearTimeout(lastVList.rmNodeInterval);
+      if(lastVList.lastScrolledTimeout != -1)
+        clearTimeout(lastVList.lastScrolledTimeout);
+    }
+    lastVList = new VirtualList({
+      w: 300,
+      h: TableHeight,
+      itemHeight: 64,
+      table: SkinListObj,
+      totalRows: FilteredSkinList.length + 1,
+      generatorFn: function(SkinList, row) {
+        var el = document.createElement("div");
+        const RowIndex = row - 1;
+        if(RowIndex == -1) {
+          el.innerHTML = DrawSkinListHeaderRow();
+          el.style.zIndex = 100;
+          el.style.backgroundColor = "var(--bg-block)";
+        }
+        else if(RowIndex < SkinList.length) {
+          var CurSkin = SkinList[RowIndex];
+          const skinrenderid = genRenderID();
+          el.innerHTML = DrawSkinListRow(skinrenderid, CurSkin, RowIndex);
+          el.setAttribute("id", "skinneedrender" + skinrenderid + RowIndex.toString());
+          SkinNeedRender.push(RowIndex);
+          const MapObj = SkinMap.get(CurSkin.name);
+          if(MapObj != null) {
+            MapObj.skinrenderid = skinrenderid;
+            SkinMap.set(CurSkin.name, MapObj);
+          }
+        }
+        return el;
+      }.bind(null, FilteredSkinList),
+    });
+    let observer = new MutationObserver((mutations) => {
+      const SkinRenderCopy = [...SkinNeedRender];
+      for(const RowIndex of SkinRenderCopy) {
+        if(RowIndex < FilteredSkinList.length) {
+          const CurSkin = FilteredSkinList[RowIndex];
+          const MapObj = SkinMap.get(CurSkin.name);
+          let RenderEl = undefined;
+          let el = undefined;
+          if(MapObj != undefined) {
+            el = document.getElementById("skinneedrender" + MapObj.skinrenderid + RowIndex.toString());
+            RenderEl = document.getElementById("skinrender_" + MapObj.skinrenderid + CurSkin.name);
+          }
+          if(el != undefined && RenderEl != undefined && MapObj.ImgObj != undefined && MapObj.Loaded == 2) {
+            SkinNeedRender.splice(SkinNeedRender.indexOf(RowIndex), 1);
+            OnTeeSkinRender(RenderEl, MapObj.ImgObj);
+          }
+        }
+      }
+    });
+
+    SkinListObj.appendChild(lastVList.container);
+    observer.observe(lastVList.container, {
+      characterDataOldValue: true, 
+      subtree: true, 
+      childList: true, 
+      characterData: true
+    });
+    lastVList._renderChunk(lastVList.container, 0);
   }
-  
+    
   var SkinList = {};
   documentIsReady(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      if(Object.keys(SkinList).length > 0)
+        DrawSkinList();
+    });
+
+    resizeObserver.observe(document.body);
+
     // get skin list
     let GetSkinJSON = new XMLHttpRequest();
     GetSkinJSON.onreadystatechange = function () {
@@ -706,7 +843,5 @@ title: Skin Database - DDraceNetwork
 </script>
 
 
-<div style="overflow: auto; padding-right:30px">
-<table id="skinlist" class="nowraptable" cellpadding="5" style="width:100%; margin: 0; margin-top: 20px;">
-</table>
+<div id="skinlist" class="nowraptable" cellpadding="5" style="width:100%; margin: 0; margin-top: 20px; display: flex;">
 </div>
