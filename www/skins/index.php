@@ -71,6 +71,7 @@ title: Skin Database - DDraceNetwork
     display: inline-block;
     overflow-wrap: anywhere;
     height: 100%;
+    background-color: var(--bg-block);
   }
   html, body {
     height: 100%;
