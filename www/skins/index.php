@@ -71,7 +71,6 @@ title: Skin Database - DDraceNetwork
     display: inline-block;
     overflow-wrap: anywhere;
     height: 100%;
-    background-color: var(--bg-block);
   }
   html, body {
     height: 100%;
@@ -761,7 +760,6 @@ title: Skin Database - DDraceNetwork
         if(RowIndex == -1) {
           el.innerHTML = DrawSkinListHeaderRow();
           el.style.zIndex = 100;
-          el.style.backgroundColor = "var(--bg-block)";
         }
         else if(RowIndex < SkinList.length) {
           var CurSkin = SkinList[RowIndex];
