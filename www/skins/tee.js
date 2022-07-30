@@ -4,9 +4,12 @@
 function RenderSkin(skin){
 	//create canvas
 	let canvas = this;
+	if(canvas.hasAttribute("isrenderedskin"))
+		return;
 	canvas.width = "96";
 	canvas.height = "64";
 	let ctx = canvas.getContext("2d");
+	canvas.setAttribute("isrenderedskin", "1");
 
 	ctx.drawImage(skin,192,64,64,32,8,32,64,30); //back feet shadow
 	ctx.drawImage(skin,96,0,96,96,16,0,64,64); //body shadow
