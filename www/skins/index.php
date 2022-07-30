@@ -761,6 +761,7 @@ title: Skin Database - DDraceNetwork
         if(RowIndex == -1) {
           el.innerHTML = DrawSkinListHeaderRow();
           el.style.zIndex = 100;
+          el.style.backgroundColor = "var(--bg-block)";
         }
         else if(RowIndex < SkinList.length) {
           var CurSkin = SkinList[RowIndex];
