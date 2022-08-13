@@ -47,8 +47,8 @@ packet7_header_connless:
     [ 1] flag_resend
     [ 1] flag_vital
     [ 6] &lt;----------
-    [ 4] padding   |-- size
-    [ 4] &lt;----------
+    [ 2] padding   |-- size
+    [ 6] &lt;----------
 
     FFss ssss  PPss ssss
 
@@ -57,8 +57,8 @@ chunk7_header_nonvital:
     [ 1] flag_resend
     [ 1] flag_vital
     [ 6] &lt;----------
-    [ 4] sequence  |-- size
-    [ 4] &lt;----------
+    [ 2] sequence  |-- size
+    [ 6] &lt;----------
     [ 8] sequence
 
     FFss ssss  SSss ssss  SSSS SSSS
