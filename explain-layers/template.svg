@@ -1,4 +1,4 @@
-<svg class="layer" width="100%" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg class="layer" width="100%" viewBox="0 0 {width} {height}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<style type="text/css" >
 		<![CDATA[
 			svg {{
@@ -27,7 +27,7 @@
 			}}
 		]]>
 	</style>
-	<image width="1024" height="1024" id="layer" xlink:href="{image_file}"></image>
+	<image width="{width}" height="{height}" id="layer" xlink:href="{image_file}"></image>
 	<!-- add explanation texts here -->
 {explanations}
 		<script type="text/javascript"><![CDATA[
@@ -107,7 +107,7 @@
 			}}
 			
 			max_width = Math.max(max_width, cur_width) + MARGIN; // include 5px margin
-			boxX = Math.min(Math.max(MARGIN, x + MARGIN - max_width/2), 1024 - MARGIN - max_width);
+			boxX = Math.min(Math.max(MARGIN, x + MARGIN - max_width/2), {width} - MARGIN - max_width);
 			// draw background box
 			if (textElement.getAttributeNS(null, 'direction') == "up") {{
 				boxY = y - max_height - 10;
