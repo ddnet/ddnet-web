@@ -3,7 +3,7 @@
 # zlib License
 #
 # (C) 2020 Patiga
-# (C) 2021 Zwelf
+# (C) 2022 Zwelf
 #
 # This software is provided 'as-is', without any express or implied
 # warranty.  In no event will the authors be held liable for any damages
@@ -29,52 +29,33 @@ import csv
 import itertools
 
 class Tile:
-    def __init__(self, title: str, desc: str, index: int, group: str, link: Optional[str]):
+    def __init__(self, title: str, desc: str, x: int, y: int, dx: int, dy: int, group: str, direction: str, link: Optional[str]):
         self.title = title
         self.desc = desc
-        self.index = index
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
         self.group = group
+        self.direction = direction
         self.link = link
-
-    def get_dim(self):
-        """
-        returns how many tiles in the x and y direction are occupied by this tile
-        """
-        if self.index == 140:
-            return (4, 2) # Credit Tile
-        if self.index == 190:
-            return (2, 1) # Entities Off Warning Tile
-        return (1, 1)
 
     def get_pos(self):
         """
         returns the pixel coordinates on the layer image of the tile
         on an layer image there are 16x16 tiles and each with a dimension of 64x64 pixels
         """
-        dim = self.get_dim()
-        x = self.index % 16
-        x1 = x * 64
-        x2 = (x + dim[0]) * 64
-        y = self.index // 16
-        y1 = y * 64
-        y2 = (y + dim[1]) * 64
-        return (x1, x2, y1, y2)
-
-    # takes a layer_image and extracts this tile
-    def get_image(self, layer_image):
-        x1, x2, y1, y2 = self.get_pos()
-        return layer_image[y1:y2, x1:x2]
+        return (self.x, self.x + self.dx, self.y, self.y + self.dy)
 
     def get_svg(self, is_grouped):
         x1, x2, y1, y2 = self.get_pos()
-        dim = self.get_dim()
         width = x2 - x1
         height = y2 - y1
         tabs = 1
         if is_grouped:
             tabs += 1
         rectangle = "\t" * tabs + "<rect id=\"{index}\" x=\"{x}\" y=\"{y}\" width=\"{width}\" height=\"{height}\" class=\"tooltip\"></rect>\n" \
-            .format(index=self.index,
+            .format(index=self.title,
                     x=x1,
                     y=y1,
                     width=width,
@@ -92,44 +73,17 @@ class Tile:
         """
         get svg tooltip into the direction "up" or "down"
         """
-        # set the credits to up, but everything in the credits row to down.
-        # fits nicely into the current whitespace
-        if self.index < 160 and self.index != 140:
-            direction = "down"
-        else:
-            direction = "up"
-
         x1, x2, y1, y2 = self.get_pos()
         x = (x1 + x2) // 2
-        if direction == "up":
+        if self.direction == "up":
             y = y1
-        elif direction == "down":
+        elif self.direction == "down":
             y = y2
         else:
             raise ValueError('direction should be either "up" or "down"')
 
         return '\t<text id="desc{id}" x="{x}" y="{y}" direction="{direction}" class="multiline" data-width="400" visibility="hidden">{text}</text>\n' \
-            .format(id=self.index, x=x, y=y, direction=direction, text = "{} ({})  {}".format(self.title, self.index, self.desc))
-
-def get_tile(tiles, column: str, row: str):
-    """
-    Returns the value of a new row, which can specify a previous row in the same column
-    """
-    inp = row[column]
-    if inp.startswith("$"):
-        idx = int(inp[1:])
-        if column == "Title":
-            return tiles[idx].title
-        elif column == "Group":
-            return tiles[idx].group
-        elif column == "Description":
-            return tiles[idx].desc
-        elif column == "Link":
-            return tiles[idx].link
-        else:
-            raise ValueError("Column doesn't exist")
-    else:
-        return inp
+            .format(id=self.title, x=x, y=y, direction=self.direction, text = "{} ({}x{}+{}+{})  {}".format(self.title, self.dx, self.dy, self.x, self.y, self.desc))
 
 def parse_tiles_explanations(tiles, file_name: str):
     """
@@ -141,17 +95,21 @@ def parse_tiles_explanations(tiles, file_name: str):
         tiles_reader = csv.DictReader(f)
 
         for row in tiles_reader:
-            index = int(row["TileID"])
             # allow copying previous tiles
-            title = get_tile(tiles, "Title", row)
-            desc = get_tile(tiles, "Description", row)
-            group = get_tile(tiles, "Group", row)
-            link = get_tile(tiles, "Link", row)
+            title = row["Title"]
+            group = row["Group"]
+            x = int(row["Offset-width"])
+            y = int(row["Offset-height"])
+            dx = int(row["Width"])
+            dy = int(row["Height"])
+            direction = row["Direction"]
+            desc = row["Description"]
+            link = row["Link"]
 
             # optionally include link
             if link == "":
                 link = None
-            tiles[index] = Tile(title, desc, index, group, link)
+            tiles[title] = Tile(title, desc, x, y, dx, dy, group, direction, link)
     return tiles
 
 def parse_groups(tiles):
@@ -168,19 +126,6 @@ def parse_groups(tiles):
                 groups[tile.group] = [tile_idx]
     return groups
 
-# excluding transparent
-def extract_layer_tiles(image_path, tiles):
-    layer_image = np.array(Image.open(image_path)).astype("int32")
-    # store for each pixel, if is it fully transparent (the a value of the rgba equals to zero)
-    is_transparent = layer_image[:, :, 3:4] == 0
-    layer_tiles = {}
-    for index in tiles:
-        tile_image = tiles[index].get_image(layer_image)
-        # only add tiles with some sort of content (or the air tile)
-        if index == 0 or np.any(tile_image[:, :, 3:4] != 0):
-            layer_tiles[index] = tiles[index]
-    return layer_tiles
-
 def layer_filter_groups(layer_tiles, groups):
     layer_groups = []
     for group in groups:
@@ -193,36 +138,37 @@ def layer_filter_groups(layer_tiles, groups):
 def main():
     import argparse
     parser = argparse.ArgumentParser(description='Generate DDNet explain svgs out of the source image and explain csv')
+    parser.add_argument('--width', help='width of the image', default=1024, type=int)
+    parser.add_argument('--height', help='height of the image', default=1024, type=int)
     parser.add_argument('--layer-image', help='path to the ddnet image to parse', required=True)
-    parser.add_argument('--explain', default='tiles.csv', help='Explain strings in the csv file')
+    parser.add_argument('--explain', default='explain-layers/game.csv', help='Explain strings in the csv file')
     parser.add_argument('--explain-override', help='Same as explain, but can override strings set in explain')
     parser.add_argument('--template', default='explain-layers/template.svg', help='template file to fill the svgs with')
     parser.add_argument('--output', default='output.svg', help='output .svg file')
     parser.add_argument('--external-image', help='Load background image from external source. Image gets embedded if not set, can be a relative or an absolute link')
     args = parser.parse_args()
 
-    # parses explain strings in tiles.csv and groups
+    # parses explain and groups strings from csv 
     tiles = {}
     parse_tiles_explanations(tiles, args.explain)
     if args.explain_override != None:
         parse_tiles_explanations(tiles, args.explain_override)
     groups = parse_groups(tiles)
    
-    # parses pngs of layer and maps all non-empty indices to its visual representation in that layer
-    layer_tiles = extract_layer_tiles(args.layer_image, tiles)
-
     with open(args.template) as f:
         template = f.read()
 
-    layer_groups = layer_filter_groups(layer_tiles, groups)
-    save_svg(layer_tiles,
+    layer_groups = layer_filter_groups(tiles, groups)
+    save_svg(tiles,
             args.layer_image,
+            args.width,
+            args.height,
             args.output,
             layer_groups,
             template,
             args.external_image)
 
-def save_svg(layer_tiles, image_path, output_path, groups, template, external_image):
+def save_svg(layer_tiles, image_path, width, height, output_path, groups, template, external_image):
     tiles = []
     tooltips = []
 
@@ -251,7 +197,7 @@ def save_svg(layer_tiles, image_path, output_path, groups, template, external_im
             image = img.read()
             image = "data:image/png;base64," + base64.b64encode(image).decode()
     with open(output_path, "w") as w:
-        w.write(template.format(image_file = image, explanations = svg, width = 1024, height = 1024))
+        w.write(template.format(image_file = image, explanations = svg, width = width, height = height))
 
 if __name__ == "__main__":
     main()

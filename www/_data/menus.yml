@@ -7,6 +7,7 @@ explain-layers: |
     <li><a href="/explain/speedup">Speedup layer</a></li>
     <li><a href="/explain/switch">Switch layer</a></li>
     <li><a href="/explain/tune">Tune layer</a></li>
+    <li><a href="/explain/game-png">Game.png</a></li>
   </ul>
 
 docs-libtw2: |
