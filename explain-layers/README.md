@@ -20,5 +20,11 @@ The following command line arguments are possible, assuming the svg is located i
 --external-image "/explain/f-ddrace.png"
 ```
 
+Edit layout in
+* `layouts/partials/custom-header.html`: including dependencies
+* `layouts/shortcodes/explain.html`: layout for embedding
+* `static/explain/tiles.csv`: descriptions
+* `static/explain/template.svg`: layout for hovering
+
 [1]: https://www.libreoffice.org/
 [2]: https://github.com/ddnet/ddnet-web/edit/master/explain-layers/tiles.csv
