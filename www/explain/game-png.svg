@@ -87,7 +87,7 @@
 	</g>
 	<g>
 		<rect id="Grenade shield" x="544" y="64" width="64" height="64" class="tooltip"></rect>
-		<rect id="Grenade" x="64" y="256" width="224" height="64" class="tooltip"></rect>
+		<rect id="Grenade Launcher" x="64" y="256" width="224" height="64" class="tooltip"></rect>
 		<rect id="Grenade crosshair" x="0" y="256" width="64" height="64" class="tooltip"></rect>
 		<rect id="Grenade projectile" x="320" y="256" width="64" height="64" class="tooltip"></rect>
 	</g>
@@ -107,59 +107,59 @@
 		<rect id="Flag red" x="512" y="256" width="128" height="256" class="tooltip"></rect>
 	</g>
 	<rect id="Entity" x="256" y="64" width="64" height="64" class="tooltip"></rect>
-	<text id="descHammer crosshair" x="32" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hammer crosshair (64x64+0+0)  Crosshair shown, when hammer active</text>
-	<text id="descHammer" x="128" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Hammer (128x96+64+32)  Auto-equipped melee weapon</text>
-	<text id="descHook" x="80" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Hook (32x32+64+0)  Hook chain</text>
-	<text id="descHook anchor" x="144" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Hook anchor (96x32+96+0)  Hook anchor</text>
-	<text id="descDust 1" x="208" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 1 (32x32+192+0)  Shown when tee is sliding</text>
-	<text id="descDust 2" x="208" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 2 (32x32+192+32)  Shown when tee is sliding</text>
-	<text id="descDust 3" x="240" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 3 (32x32+224+0)  Shown when tee is sliding</text>
-	<text id="descDust 4" x="240" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 4 (32x32+224+32)  Shown when tee is sliding</text>
-	<text id="descDust 5" x="272" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 5 (32x32+256+0)  Shown when tee is sliding</text>
-	<text id="descDust 6" x="272" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 6 (32x32+256+32)  Shown when tee is sliding</text>
-	<text id="descDust 7" x="320" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 7 (64x64+288+0)  Shown when tee is sliding</text>
-	<text id="descDust 8" x="384" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 8 (64x64+352+0)  Shown when tee is sliding</text>
-	<text id="descDust 9" x="448" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 9 (64x64+416+0)  Shown when tee is sliding</text>
-	<text id="descDamage indicator 1" x="512" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Damage indicator 1 (64x64+480+0)  Damage indicator used in vanilla</text>
-	<text id="descDamage indicator 2" x="576" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Damage indicator 2 (64x64+544+0)  Damage indicator used in vanilla</text>
-	<text id="descDamage indicator 3" x="640" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Damage indicator 3 (64x64+608+0)  Damage indicator used in vanilla</text>
-	<text id="descHeart full" x="704" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Heart full (64x64+672+0)  Health bar used in vanilla</text>
-	<text id="descHeart empty" x="768" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Heart empty (64x64+736+0)  Health bar used in vanilla</text>
-	<text id="descHeart" x="352" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Heart (64x64+320+64)  Heart entity used for freeze</text>
-	<text id="descPistol" x="128" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol (128x64+64+128)  Auto-equipped ranged weapon</text>
-	<text id="descPistol crosshair" x="32" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol crosshair (64x64+0+128)  Crosshair shown, when pistol active</text>
-	<text id="descPistol projectile" x="224" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol projectile (64x64+192+128)  Projectile emitted from pistol</text>
-	<text id="descPistol fire 1" x="320" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol fire 1 (128x64+256+128)  Fire animation of pistol</text>
-	<text id="descPistol fire 2" x="448" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol fire 2 (128x64+384+128)  Fire animation of pistol</text>
-	<text id="descPistol fire 3" x="576" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol fire 3 (128x64+512+128)  Fire animation of pistol</text>
-	<text id="descNinjabar full" x="704" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Ninjabar full (64x64+672+128)  Ninjabar showing remaining ninja time</text>
-	<text id="descNinjabar empty" x="768" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Ninjabar empty (64x64+736+128)  Ninjabar showing remaining ninja time</text>
-	<text id="descNinja" x="208" y="320" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (224x64+96+320)  Collectable powerup, active for 30 seconds, allows to dash and redirect speed</text>
-	<text id="descNinja crosshair" x="32" y="320" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja crosshair (64x64+0+320)  Crosshair shown, when ninja active</text>
-	<text id="descNinja shield" x="352" y="320" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja shield (64x64+320+320)  Weapon shild removing ninja</text>
-	<text id="descNinja dash 1" x="912" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Ninja dash 1 (224x128+800+0)  Graphic shown when dashing with ninja</text>
-	<text id="descNinja dash 2" x="912" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Ninja dash 2 (224x128+800+128)  Graphic shown when dashing with ninja</text>
-	<text id="descNinja dash 3" x="912" y="384" direction="down" class="multiline" data-width="400" visibility="hidden">Ninja dash 3 (224x128+800+256)  Graphic shown when dashing with ninja</text>
-	<text id="descShotgun" x="192" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun (256x64+64+192)  Collectable weapon, shoots laser eliciting pulling force to tees</text>
-	<text id="descShotgun crosshair" x="32" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun crosshair (64x64+0+192)  Crosshair shown, when shotgun active</text>
-	<text id="descShotgun projectile" x="352" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun projectile (64x64+320+192)  Projectile emitted from shotgun in vanilla, used ass freezing bullets in DDNet</text>
-	<text id="descShotgun fire 1" x="448" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun fire 1 (128x64+384+192)  Fire animation of shotgun</text>
-	<text id="descShotgun fire 2" x="576" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun fire 2 (128x64+512+192)  Fire animation of shotgun</text>
-	<text id="descShotgun fire 3" x="704" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun fire 3 (128x64+640+192)  Fire animation of shotgun</text>
-	<text id="descShotgun shield" x="512" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun shield (64x64+480+64)  Weapon shild removing shotgun</text>
-	<text id="descGrenade shield" x="576" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Grenade shield (64x64+544+64)  Weapon shild removing grenade</text>
-	<text id="descGrenade" x="176" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade (224x64+64+256)  Collectable weapon, projectile elicits push force when hitting a exploding</text>
-	<text id="descGrenade crosshair" x="32" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade crosshair (64x64+0+256)  Crosshair shown, when grenade active</text>
-	<text id="descGrenade projectile" x="352" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade projectile (64x64+320+256)  Projectile emitted from grenade</text>
-	<text id="descLaser shield" x="640" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Laser shield (64x64+608+64)  Weapon shild removing laser</text>
-	<text id="descLaser" x="176" y="384" direction="up" class="multiline" data-width="400" visibility="hidden">Laser (224x96+64+384)  Collectable weapon, shoots laser leading to target getting unfreezed</text>
+	<text id="descHammer crosshair" x="32" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hammer crosshair (64x64+0+0)  Crosshair for the hammer</text>
+	<text id="descHammer" x="128" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Hammer (128x96+64+32)  Always available melee weapon that unfreezes and pushes tees</text>
+	<text id="descHook" x="80" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Hook (32x32+64+0)  Singular link of the hook’s chain</text>
+	<text id="descHook anchor" x="144" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Hook anchor (96x32+96+0)  End point of the hook which attaches</text>
+	<text id="descDust 1" x="208" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 1 (32x32+192+0)  Skid mark particle</text>
+	<text id="descDust 2" x="208" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 2 (32x32+192+32)  Skid mark particle</text>
+	<text id="descDust 3" x="240" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 3 (32x32+224+0)  Skid mark particle</text>
+	<text id="descDust 4" x="240" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 4 (32x32+224+32)  Skid mark particle</text>
+	<text id="descDust 5" x="272" y="32" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 5 (32x32+256+0)  Skid mark particle</text>
+	<text id="descDust 6" x="272" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 6 (32x32+256+32)  Skid mark particle</text>
+	<text id="descDust 7" x="320" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 7 (64x64+288+0)  Skid mark particle</text>
+	<text id="descDust 8" x="384" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 8 (64x64+352+0)  Skid mark particle</text>
+	<text id="descDust 9" x="448" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dust 9 (64x64+416+0)  Skid mark particle</text>
+	<text id="descDamage indicator 1" x="512" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Damage indicator 1 (64x64+480+0)  Damage indicator used in vanilla Teeworlds</text>
+	<text id="descDamage indicator 2" x="576" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Damage indicator 2 (64x64+544+0)  Damage indicator used in vanilla Teeworlds</text>
+	<text id="descDamage indicator 3" x="640" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Damage indicator 3 (64x64+608+0)  Damage indicator used in vanilla Teeworlds</text>
+	<text id="descHeart full" x="704" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Heart full (64x64+672+0)  Health bar used in vanilla Teeworlds</text>
+	<text id="descHeart empty" x="768" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Heart empty (64x64+736+0)  Health bar used in vanilla Teeworlds</text>
+	<text id="descHeart" x="352" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Heart (64x64+320+64)  Heart entity which freezes tees</text>
+	<text id="descPistol" x="128" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol (128x64+64+128)  Always available ranged weapon that doesn’t interact with physics</text>
+	<text id="descPistol crosshair" x="32" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol crosshair (64x64+0+128)  Crosshair for the pistol</text>
+	<text id="descPistol projectile" x="224" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol projectile (64x64+192+128)  Projectile of the pistol</text>
+	<text id="descPistol fire 1" x="320" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol fire 1 (128x64+256+128)  Muzzle flash of the pistol</text>
+	<text id="descPistol fire 2" x="448" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol fire 2 (128x64+384+128)  Muzzle flash of the pistol</text>
+	<text id="descPistol fire 3" x="576" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Pistol fire 3 (128x64+512+128)  Muzzle flash of the pistol</text>
+	<text id="descNinjabar full" x="704" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Ninjabar full (64x64+672+128)  Ninja and freeze timer</text>
+	<text id="descNinjabar empty" x="768" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Ninjabar empty (64x64+736+128)  Ninja and freeze timer</text>
+	<text id="descNinja" x="208" y="320" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (224x64+96+320)  Powerup, lasts 15 seconds, allows dashing which redirects momentum</text>
+	<text id="descNinja crosshair" x="32" y="320" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja crosshair (64x64+0+320)  Crosshair for ninja</text>
+	<text id="descNinja shield" x="352" y="320" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja shield (64x64+320+320)  Weapon shield which only removes ninja</text>
+	<text id="descNinja dash 1" x="912" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Ninja dash 1 (224x128+800+0)  Ninja dash particle</text>
+	<text id="descNinja dash 2" x="912" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Ninja dash 2 (224x128+800+128)  Ninja dash particle</text>
+	<text id="descNinja dash 3" x="912" y="384" direction="down" class="multiline" data-width="400" visibility="hidden">Ninja dash 3 (224x128+800+256)  Ninja dash particle</text>
+	<text id="descShotgun" x="192" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun (256x64+64+192)  Collectable weapon, shoots lasers which pulls tees</text>
+	<text id="descShotgun crosshair" x="32" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun crosshair (64x64+0+192)  Crosshair for the shotgun</text>
+	<text id="descShotgun projectile" x="352" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun projectile (64x64+320+192)  Freezing, sometimes exploding bullet. Shotgun projectile in vanilla Teeworlds</text>
+	<text id="descShotgun fire 1" x="448" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun fire 1 (128x64+384+192)  Muzzle flash of the shotgun</text>
+	<text id="descShotgun fire 2" x="576" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun fire 2 (128x64+512+192)  Muzzle flash of the shotgun</text>
+	<text id="descShotgun fire 3" x="704" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun fire 3 (128x64+640+192)  Muzzle flash of the shotgun</text>
+	<text id="descShotgun shield" x="512" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shotgun shield (64x64+480+64)  Weapon shield which only removes the shotgun</text>
+	<text id="descGrenade shield" x="576" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Grenade shield (64x64+544+64)  Weapon shield which only removes the grenade launcher</text>
+	<text id="descGrenade Launcher" x="176" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Launcher (224x64+64+256)  Collectable weapon, shoots projectiles which explode and push tees away</text>
+	<text id="descGrenade crosshair" x="32" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade crosshair (64x64+0+256)  Crosshair for the grenade launcher</text>
+	<text id="descGrenade projectile" x="352" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade projectile (64x64+320+256)  Projectile of the grenade launcher</text>
+	<text id="descLaser shield" x="640" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Laser shield (64x64+608+64)  Weapon shield which only removes the laser</text>
+	<text id="descLaser" x="176" y="384" direction="up" class="multiline" data-width="400" visibility="hidden">Laser (224x96+64+384)  Collectable weapon, shoots lasers that unfreeze tees</text>
 	<text id="descLaser crosshair" x="32" y="384" direction="up" class="multiline" data-width="400" visibility="hidden">Laser crosshair (64x64+0+384)  Crosshair shown, when laser active</text>
-	<text id="descLaser projectile" x="352" y="384" direction="up" class="multiline" data-width="400" visibility="hidden">Laser projectile (64x64+320+384)  Laser projectile used for turrets</text>
-	<text id="descShield full" x="704" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shield full (64x64+672+64)  Shield bar used in vanilla</text>
-	<text id="descShield empty" x="768" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shield empty (64x64+736+64)  Shield bar used in vanilla</text>
-	<text id="descShield" x="416" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shield (64x64+384+64)  Shield entity used to remove all weapons</text>
-	<text id="descFlag blue" x="448" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Flag blue (128x256+384+256)  Blue flag, used in CTF</text>
-	<text id="descFlag red" x="576" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Flag red (128x256+512+256)  Red flag, used in CTF</text>
+	<text id="descLaser projectile" x="352" y="384" direction="up" class="multiline" data-width="400" visibility="hidden">Laser projectile (64x64+320+384)  Laser ammo indicator used in vanilla Teeworlds</text>
+	<text id="descShield full" x="704" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shield full (64x64+672+64)  Shield bar used in vanilla Teeworlds</text>
+	<text id="descShield empty" x="768" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shield empty (64x64+736+64)  Shield bar used in vanilla Teeworlds</text>
+	<text id="descShield" x="416" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Shield (64x64+384+64)  Shield entity which removes all (collectable) weapons</text>
+	<text id="descFlag blue" x="448" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Flag blue (128x256+384+256)  Blue flag, used in vanilla Teeworlds for CTF</text>
+	<text id="descFlag red" x="576" y="256" direction="up" class="multiline" data-width="400" visibility="hidden">Flag red (128x256+512+256)  Red flag, used in vanilla Teeworlds for CTF</text>
 	<text id="descEntity" x="288" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Entity (64x64+256+64)  Unused</text>
 
 		<script type="text/javascript"><![CDATA[
