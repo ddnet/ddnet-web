@@ -27,6 +27,7 @@ menu: |
   <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>64</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>64</td><td>1</td><td>64</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_no_weak_hook_and_bounce</td><td>Whether to use an alternative calculation for world ticks, that makes hook and bounce behave like all players have strong.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_show_others_default</td><td>Whether players see others by default (2 for own team)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td><td>1</td><td>99999</td></tr>
@@ -43,7 +44,7 @@ menu: |
 </table></div>
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
-  <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
+  <tr><td>tune</td><td>s[tuning] ?i[value]</td><td>Tune variable to value or show current value</td></tr>
   <tr><td>toggle_tune</td><td>s[tuning] i[value 1] i[value 2]</td><td>Toggle tune variable</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
@@ -58,6 +59,7 @@ menu: |
   <tr><th>Setting</th><th>Description</th><th>Default</th><th>Min</th><th>Max</th></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>loglevel</td><td>Log level (0 = Error, 1 = Warn, 2 = Info, 3 = Debug, 4 = Trace)</td><td>2</td><td>0</td><td>4</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
@@ -71,7 +73,9 @@ menu: |
   <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>64</td><td>1</td><td>64</td></tr>
   <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>4</td><td>1</td><td>64</td></tr>
   <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_register</td><td>Register server with master server for public listing</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_register</td><td>Register server with master server for public listing, can also accept a comma-separated list of protocols to register on, like &#x27;ipv4,ipv6&#x27;</td><td>&quot;1&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_register_extra</td><td>Extra headers to send to the register endpoint, comma separated &#x27;Header: Value&#x27; pairs</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_register_url</td><td>Masterserver URL to register to</td><td>&quot;https://master1.ddnet.tw/ddnet/15/register&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_password</td><td>Remote console password (full access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_mod_password</td><td>Remote console password for moderators (limited access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_helper_password</td><td>Remote console password for helpers (limited access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -135,7 +139,6 @@ menu: |
   <tr><td>sv_map_window</td><td>Map downloading send-ahead window</td><td>15</td><td>0</td><td>100</td></tr>
   <tr><td>sv_fast_download</td><td>Enables fast download of maps</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_shotgun_bullet_sound</td><td>Crazy shotgun bullet sound on/off</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_checkpoint_save</td><td>Whether to save checkpoint times to the score file</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>&quot;records&quot;</td><td></td><td></td></tr>
   <tr><td>sv_region_name</td><td>Server region. Used for regional bans</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
@@ -169,14 +172,14 @@ menu: |
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_slash_me</td><td>Whether /me is active on the server or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_rejoin_team_0</td><td>Make a team automatically rejoin team 0 after finish (only if not locked)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_no_weak_hook_and_bounce</td><td>Whether to use an alternative calculation for world ticks, that makes hook and bounce behave like all players have strong.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td><td>5</td><td>1000</td></tr>
   <tr><td>conn_timeout_protection</td><td>Network timeout protection</td><td>1000</td><td>5</td><td>10000</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_show_others</td><td>Whether players can use the command showothers or not</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_show_others_default</td><td>Whether players see others by default (2 for own team)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>sv_show_all_default</td><td>Whether players see all tees by default</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_max_afk_time</td><td>The time in seconds a player is allowed to be afk (0 = disabled)</td><td>0</td><td>0</td><td>9999</td></tr>
-  <tr><td>sv_max_afk_vote_time</td><td>The time in seconds a player can be afk and his votes still count (0 = disabled)</td><td>300</td><td>0</td><td>9999</td></tr>
+  <tr><td>sv_max_afk_time</td><td>The time in seconds a player to be afk (0 = disabled)</td><td>300</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td><td>1</td><td>99999</td></tr>
   <tr><td>sv_plasma_per_sec</td><td>How many shots does the plasma gun fire per seconds</td><td>3</td><td>0</td><td>50</td></tr>
   <tr><td>sv_dragger_range</td><td>How far will the dragger track tees</td><td>700</td><td>1</td><td>99999</td></tr>
@@ -264,7 +267,7 @@ menu: |
   <tr><td>unban</td><td>s[ip|entry]</td><td>Unban ip/banlist entry</td></tr>
   <tr><td>unban_range</td><td>s[first ip] s[last ip]</td><td>Unban ip range</td></tr>
   <tr><td>unban_all</td><td></td><td>Unban all entries</td></tr>
-  <tr><td>bans</td><td></td><td>Show banlist</td></tr>
+  <tr><td>bans</td><td>?i[page]</td><td>Show banlist (page 0 by default, 20 entries per page)</td></tr>
   <tr><td>bans_save</td><td>s[file]</td><td>Save banlist in a file</td></tr>
   <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban player with ip/client id for x minutes for any reason</td></tr>
   <tr><td>ban_region</td><td>s[region] s[ip|id] ?i[minutes] r[reason]</td><td>Ban player in a region</td></tr>
@@ -288,12 +291,10 @@ menu: |
   <tr><td>name_ban</td><td>s[name] ?i[distance] ?i[is_substring] ?r[reason]</td><td>Ban a certain nickname</td></tr>
   <tr><td>name_unban</td><td>s[name]</td><td>Unban a certain nickname</td></tr>
   <tr><td>name_bans</td><td></td><td>List all name bans</td></tr>
-  <tr><td>sv_test_cmds</td><td></td><td>Turns testing commands aka cheats on/off (setting only works in initial config)</td></tr>
-  <tr><td>sv_rescue</td><td></td><td>Allow /rescue command so players can teleport themselves out of freeze (setting only works in initial config)</td></tr>
-  <tr><td>tune</td><td>s[tuning] i[value]</td><td>Tune variable to value</td></tr>
+  <tr><td>tune</td><td>s[tuning] ?i[value]</td><td>Tune variable to value or show current value</td></tr>
   <tr><td>toggle_tune</td><td>s[tuning] i[value 1] i[value 2]</td><td>Toggle tune variable</td></tr>
-  <tr><td>tune_reset</td><td></td><td>Reset tuning</td></tr>
-  <tr><td>tune_dump</td><td></td><td>Dump tuning</td></tr>
+  <tr><td>tune_reset</td><td>?s[tuning]</td><td>Reset all or one tuning variable to default</td></tr>
+  <tr><td>tunes</td><td></td><td>List all tuning variables and their values</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_dump</td><td>i[zone]</td><td>Dump zone tuning in zone x</td></tr>
   <tr><td>tune_zone_reset</td><td>?i[zone]</td><td>reset zone tuning in zone x or in all zones</td></tr>
@@ -410,6 +411,7 @@ menu: |
   <tr><td>times</td><td>?s[player name] ?i[number of times to skip]</td><td>/times ?s?i shows last 5 times of the server or of a player beginning with name s starting with time i (i = 1 by default, -1 for first)</td></tr>
   <tr><td>points</td><td>?r[player name]</td><td>Shows the global points of a player beginning with name r (your rank by default)</td></tr>
   <tr><td>top5points</td><td>?i[number]</td><td>Shows five points of the global point ladder beginning with rank i (1 by default)</td></tr>
+  <tr><td>timecp</td><td>?r[player name]</td><td>Set your checkpoints based on another player</td></tr>
   <tr><td>team</td><td>?i[id]</td><td>Lets you join team i (shows your team if left blank)</td></tr>
   <tr><td>lock</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Toggle team lock so no one else can join and so the team restarts when a player dies. /lock 0 to unlock, /lock 1 to lock.</td></tr>
   <tr><td>unlock</td><td></td><td>Unlock a team</td></tr>
@@ -451,8 +453,6 @@ menu: |
   <tr><td>cl_nameplates_clan</td><td>Show clan in name plates</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td><td>0</td><td>100</td></tr>
   <tr><td>cl_nameplates_ids</td><td>Show IDs in name plates</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_nameplates_ha</td><td>Show Health and Armor in name plates</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_nameplates_ha_size</td><td>Size of the health and armor nameplates from 0 to 100%</td><td>50</td><td>0</td><td>100</td></tr>
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_friendmark</td><td>Show friend mark (♥) in name plates</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_strong</td><td>Show strong/weak in name plates (0 - off, 1 - icons, 2 - icons + numbers)</td><td>0</td><td>0</td><td>2</td></tr>
@@ -467,6 +467,14 @@ menu: |
   <tr><td>cl_showhud_healthammo</td><td>Show ingame HUD (Health + Ammo)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_score</td><td>Show ingame HUD (Score)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_timer</td><td>Show ingame HUD (Timer)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_dummy_actions</td><td>Show ingame HUD (Dummy Actions)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_player_position</td><td>Show ingame HUD (Player Position)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_player_speed</td><td>Show ingame HUD (Player Speed)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_player_angle</td><td>Show ingame HUD (Player Aim Angle)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_ddrace</td><td>Show ingame HUD (DDRace HUD)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_jumps_indicator</td><td>Show ingame HUD (Jumps you have and have used)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_show_freeze_bars</td><td>Whether to show a freeze bar under frozen players to indicate the thaw time</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_freezebars_alpha_inside_freeze</td><td>Opacity of freeze bars inside freeze (0 invisible, 100 fully visible)</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>cl_showrecord</td><td>Show old style DDRace client records</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_shownotifications</td><td>Make the client notify when someone highlights you</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showemotes</td><td>Show tee emotes</td><td>1</td><td>0</td><td>1</td></tr>
@@ -505,8 +513,10 @@ menu: |
   <tr><td>cl_map_download_low_speed_time</td><td>HTTP map downloads: Set low speed limit time period (0 to disable)</td><td>3</td><td>0</td><td>100000</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_skin_download_url</td><td>URL used to download skins</td><td>&quot;https://skins.ddnet.tw/skin/&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_skin_community_download_url</td><td>URL used to download community skins</td><td>&quot;https://skins.ddnet.tw/skin/community/&quot;</td><td></td><td></td></tr>
   <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_download_skins</td><td>Download skins from cl_skin_download_url on-the-fly</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_download_community_skins</td><td>Allow to download skins created by the community. Uses cl_skin_community_download_url instead of cl_skin_download_url for the download</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
   <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td><td>0</td><td>20</td></tr>
@@ -523,8 +533,8 @@ menu: |
   <tr><td>ui_settings_page</td><td>Interface settings page</td><td>0</td><td>0</td><td>9</td></tr>
   <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>ui_server_address</td><td>Interface server address</td><td>&quot;localhost:8303&quot;</td><td></td><td></td></tr>
-  <tr><td>ui_scale</td><td>Interface scale</td><td>100</td><td>50</td><td>150</td></tr>
   <tr><td>ui_mousesens</td><td>Mouse sensitivity for menus/editor</td><td>200</td><td>1</td><td>100000</td></tr>
+  <tr><td>ui_controller_sens</td><td>Controller sensitivity for menus/editor</td><td>100</td><td>1</td><td>100000</td></tr>
   <tr><td>ui_color</td><td>Interface color</td><td>0xE4A046AF</td><td></td><td></td></tr>
   <tr><td>ui_colorize_ping</td><td>Highlight ping</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>ui_colorize_gametype</td><td>Highlight gametype</td><td>1</td><td>0</td><td>1</td></tr>
@@ -560,12 +570,13 @@ menu: |
   <tr><td>cl_video_crf</td><td>Set crf when encode video with libx264 (0 for highest quality, 51 for lowest)</td><td>18</td><td>0</td><td>51</td></tr>
   <tr><td>cl_video_preset</td><td>Set preset when encode video with libx264, default is 5 (medium), 0 is ultrafast, 9 is placebo (the slowest, not recommend)</td><td>5</td><td>0</td><td>9</td></tr>
   <tr><td>dbg_focus</td><td></td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>dbg_tuning</td><td></td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>dbg_tuning</td><td>Display information about the tuning parameters that affect the own player</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>player_clan</td><td>Clan of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>player_country</td><td>Country of the player</td><td>-1</td><td>-1</td><td>1000</td></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>loglevel</td><td>Log level (0 = Error, 1 = Warn, 2 = Info, 3 = Debug, 4 = Trace)</td><td>2</td><td>0</td><td>4</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
@@ -583,7 +594,6 @@ menu: |
   <tr><td>cl_auto_screenshot_max</td><td>Maximum number of automatically created screenshots (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
   <tr><td>cl_auto_csv</td><td>Automatically create game over csv</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_auto_csv_max</td><td>Maximum number of automatically created csvs (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
-  <tr><td>cl_reset_wanted_weapon_on_death</td><td>Reset wanted weapon on death</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_broadcasts</td><td>Show broadcasts ingame</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_print_broadcasts</td><td>Print broadcasts to console</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_print_motd</td><td>Print motd to console</td><td>1</td><td>0</td><td>1</td></tr>
@@ -592,6 +602,8 @@ menu: |
   <tr><td>cl_asset_game</td><td>The asset for game</td><td>&quot;default&quot;</td><td></td><td></td></tr>
   <tr><td>cl_asset_emoticons</td><td>The asset for emoticons</td><td>&quot;default&quot;</td><td></td><td></td></tr>
   <tr><td>cl_asset_particles</td><td>The asset for particles</td><td>&quot;default&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_asset_hud</td><td>The asset for HUD</td><td>&quot;default&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_asset_extras</td><td>The asset for the game graphics that do not come from Teeworlds</td><td>&quot;default&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_string</td><td>Server browser filtering string</td><td>&quot;Novice&quot;</td><td></td><td></td></tr>
   <tr><td>br_exclude_string</td><td>Server browser exclusion string</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_full</td><td>Filter out full server in browser</td><td>0</td><td>0</td><td>1</td></tr>
@@ -662,9 +674,16 @@ menu: |
   <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_translated_keys</td><td>Translate keys before interpreting them, respects keyboard layouts</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td><td>0</td><td>65536</td></tr>
-  <tr><td>cl_port</td><td>Port to use for client connections to server (0 to choose a random port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
-  <tr><td>cl_dummy_port</td><td>Port to use for dummy connections to server (0 to choose a random port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
-  <tr><td>cl_contact_port</td><td>Port to use for serverinfo connections to server (0 to choose a random port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
+  <tr><td>inp_controller_enable</td><td>Enable controller</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>inp_controller_guid</td><td>Controller GUID which uniquely identifies the active controller</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>inp_controller_absolute</td><td>Enable absolute controller aiming ingame</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>inp_controller_sens</td><td>Ingame controller sensitivity</td><td>100</td><td>1</td><td>100000</td></tr>
+  <tr><td>inp_controller_x</td><td>Controller axis that controls X axis of cursor</td><td>0</td><td>0</td><td>12</td></tr>
+  <tr><td>inp_controller_y</td><td>Controller axis that controls Y axis of cursor</td><td>1</td><td>0</td><td>12</td></tr>
+  <tr><td>inp_controller_tolerance</td><td>Controller axis tolerance to account for jitter</td><td>5</td><td>0</td><td>50</td></tr>
+  <tr><td>cl_port</td><td>Port to use for client connections to server (0 to choose a random port, 1024 or higher to set a manual port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
+  <tr><td>cl_dummy_port</td><td>Port to use for dummy connections to server (0 to choose a random port, 1024 or higher to set a manual port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
+  <tr><td>cl_contact_port</td><td>Port to use for serverinfo connections to server (0 to choose a random port, 1024 or higher to set a manual port, requires a restart)</td><td>0</td><td>0</td><td>65535</td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td><td>0</td><td>1</td></tr>
@@ -704,7 +723,7 @@ menu: |
   <tr><td>cl_show_others</td><td>Show players in other teams (2 to show own team only)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>40</td><td>0</td><td>100</td></tr>
   <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td><td>0</td><td>100</td></tr>
-  <tr><td>cl_show_quads</td><td>Show quads</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showquads</td><td>Show quads (only interesting for mappers, or if your system has extremely bad performance)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_zoom_background_layers</td><td>Zoom background layers</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_background_color</td><td>Background color</td><td>128</td><td></td><td></td></tr>
   <tr><td>cl_background_entities_color</td><td>Background (entities) color</td><td>128</td><td></td><td></td></tr>
@@ -737,8 +756,6 @@ menu: |
   <tr><td>cl_dummy_timeout_code</td><td>Dummy Timeout code to use</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_timeout_seed</td><td>Timeout seed</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_input_fifo</td><td>Fifo file to use as input for client console</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>cl_show_console</td><td>Show console window (Windows only)</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>inp_joystick</td><td>Try to use a joystick as input</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_config_version</td><td>The config version. Helps newer clients fix bugs with older configs.</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td><td>0</td><td>0</td></tr>
@@ -755,8 +772,6 @@ menu: |
   <tr><td>gfx_backend</td><td>The backend to use (e.g. OpenGL or Vulkan)</td><td>&quot;OpenGL&quot;</td><td></td><td></td></tr>
   <tr><td>gfx_render_thread_count</td><td>Number of threads the backend can use for rendering. (note: the value can be ignored by the backend)</td><td>3</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_driver_is_blocked</td><td>If 1, the current driver is in a blocked error state.</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_enable_texture_unit_optimization</td><td>Use multiple texture units, instead of only one.</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_use_preinitialized_buffer</td><td>Use only one buffer for data, that is uploaded to the GPU(might help when using an iGPUs).</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_recorder_fps</td><td>At which FPS the videorecorder should record demos.</td><td>60</td><td>1</td><td>1000</td></tr>
 </table></div>
 </div>
@@ -771,8 +786,8 @@ menu: |
   <tr><td>toggle_remote_console</td><td></td><td>Toggle remote console</td></tr>
   <tr><td>clear_local_console</td><td></td><td>Clear local console</td></tr>
   <tr><td>clear_remote_console</td><td></td><td>Clear remote console</td></tr>
-  <tr><td>dump_local_console</td><td></td><td>Dump local console</td></tr>
-  <tr><td>dump_remote_console</td><td></td><td>Dump remote console</td></tr>
+  <tr><td>dump_local_console</td><td></td><td>Write local console contents to a text file</td></tr>
+  <tr><td>dump_remote_console</td><td></td><td>Write remote console contents to a text file</td></tr>
   <tr><td>console_page_up</td><td></td><td>Previous page in console</td></tr>
   <tr><td>console_page_down</td><td></td><td>Next page in console</td></tr>
   <tr><td>callvote</td><td>s[command] s[id] ?r[reason]</td><td>Call vote</td></tr>
@@ -835,6 +850,8 @@ menu: |
   <tr><td>record</td><td>?r[file]</td><td>Record to the file</td></tr>
   <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
   <tr><td>add_demomarker</td><td></td><td>Add demo timeline marker</td></tr>
+  <tr><td>begin_favorite_group</td><td></td><td>Use this before `add_favorite` to group favorites. End with `end_favorite_group`</td></tr>
+  <tr><td>end_favorite_group</td><td></td><td>Use this after `add_favorite` to group favorites. Start with `begin_favorite_group`</td></tr>
   <tr><td>add_favorite</td><td>s[host|ip] ?s[&#x27;allow_ping&#x27;]</td><td>Add a server as a favorite</td></tr>
   <tr><td>remove_favorite</td><td>r[host|ip]</td><td>Remove a server from favorites</td></tr>
   <tr><td>demo_slice_start</td><td></td><td></td></tr>
