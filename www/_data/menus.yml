@@ -1,6 +1,7 @@
 explain-layers: |
   <ul>
     <li><a href="/explain/">Entities overlay</a></li>
+    <li><a href="/explain/entities-comfort">Entities comfort</a></li>
     <li><a href="/explain/game">Game layer</a></li>
     <li><a href="/explain/front">Front layer</a></li>
     <li><a href="/explain/tele">Tele layer</a></li>
