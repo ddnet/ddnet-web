@@ -21,8 +21,6 @@
 #   misrepresented as being the original software.
 # 3. This notice may not be removed or altered from any source distribution.
 
-from PIL import Image
-import numpy as np
 import base64
 from typing import Optional
 import csv
@@ -141,9 +139,9 @@ def main():
     parser.add_argument('--width', help='width of the image', default=1024, type=int)
     parser.add_argument('--height', help='height of the image', default=1024, type=int)
     parser.add_argument('--layer-image', help='path to the ddnet image to parse', required=True)
-    parser.add_argument('--explain', default='explain-layers/game.csv', help='Explain strings in the csv file')
+    parser.add_argument('--explain', default='game.csv', help='Explain strings in the csv file')
     parser.add_argument('--explain-override', help='Same as explain, but can override strings set in explain')
-    parser.add_argument('--template', default='explain-layers/template.svg', help='template file to fill the svgs with')
+    parser.add_argument('--template', default='template.svg', help='template file to fill the svgs with')
     parser.add_argument('--output', default='output.svg', help='output .svg file')
     parser.add_argument('--external-image', help='Load background image from external source. Image gets embedded if not set, can be a relative or an absolute link')
     args = parser.parse_args()

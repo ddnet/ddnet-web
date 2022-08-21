@@ -11,6 +11,11 @@ OUT_DIR="www/explain"
 
 ./explain-layers/update_explain_layers.py $ARGS \
 	--explain explain-layers/tiles.csv \
+	--layer-image "${DDNET_DIR}/data/assets/entities/comfort/ddnet.png" \
+	--output "${OUT_DIR}/entities-comfort.svg"
+
+./explain-layers/update_explain_layers.py $ARGS \
+	--explain explain-layers/tiles.csv \
 	--layer-image "${DDNET_DIR}/data/editor/entities/DDNet.png" \
 	--output "${OUT_DIR}/game.svg"
 
