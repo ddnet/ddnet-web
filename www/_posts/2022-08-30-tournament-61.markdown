@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tournament #61: Strategic Paraplegic by Soapy Sandwich"
+title: "Tournament #61: Strategic Paraplegic by Soapy Sandwich & Jimmy Jazz"
 permalink: /news/tournament-61/
 tag: current
 ---
