@@ -1,5 +1,5 @@
 var mappers = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('mapper'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   remote: '/maps/?qmapper=%QUERY',
   limit: 10
@@ -9,7 +9,7 @@ mappers.initialize();
 
 $('#mapperform .typeahead').typeahead(null, {
   name: 'mappers',
-  displayKey: 'name',
+  displayKey: 'mapper',
   source: mappers.ttAdapter(),
   templates: {
     suggestion: function(o) {
