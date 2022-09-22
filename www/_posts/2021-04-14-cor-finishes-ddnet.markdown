@@ -6,7 +6,7 @@ head: <script src="/youtube.js?version=2" type="text/javascript"></script>
 tag: current
 ---
 
-Congratulations to [Cor](/players/Cor/) for finishing every single map on DDNet! His last finish was [New Generation II](https://ddnet.tw/maps/New-32-Generation-32-II/) 4 days ago with [Aoe](/players/Aoe/), [coradax](/players/coradax/) and [@everyone](/players/-64-everyone/). The current [global scoreboard](/ranks/):
+Congratulations to [Cor](/players/Cor/) for finishing every single map on DDNet! His last finish was [New Generation II](https://ddnet.org/maps/New-32-Generation-32-II/) 4 days ago with [Aoe](/players/Aoe/), [coradax](/players/coradax/) and [@everyone](/players/-64-everyone/). The current [global scoreboard](/ranks/):
 
 <h3>Points (26932 total)</h3>
 <table class="tight">

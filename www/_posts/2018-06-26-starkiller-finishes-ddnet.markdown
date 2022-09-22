@@ -37,15 +37,15 @@ The current [scoreboard](/ranks/):
 </tbody>
 </table>
 
-You can use the [Internet Archive](https://web.archive.org/) to look at [old versions of the DDNet Ranks](https://web.archive.org/web/20130815000000*/https://ddnet.tw/ranks/):
+You can use the [Internet Archive](https://web.archive.org/) to look at [old versions of the DDNet Ranks](https://web.archive.org/web/20130815000000*/https://ddnet.org/ranks/):
 
-- In [August 2013](https://web.archive.org/web/20130830014948/https://ddnet.tw/ranks/) [\*WuDL\*](/players/-42-WuDL-42-/) was leading with just 728 points out of 1566 total
-- In [October 2013](https://web.archive.org/web/20131019024011/https://ddnet.tw/ranks/) [Aoe](/players/Aoe/) took the lead with 1220 points out of 2900 total (and it's the only time I managed to be in the Top 10 of Global Points myself!)
-- In [February 2014](https://web.archive.org/web/20140228075657/https://ddnet.tw/ranks/) [aMu](/players/aMu/) took over with 2447 points out of 4620 total
-- Finally in [June 2014](https://web.archive.org/web/20140613192623/https://ddnet.tw/ranks/) we see [milk](/players/milk/), who was playing predominantly on the Russian server, appearing out of nowhere with 4985 points out of 6665
-- In [January 2015](https://web.archive.org/web/20150105011026/https://ddnet.tw/ranks/) [gB. &#x007C; Kayumi](/players/gB-46--32--124--32-Kayumi/) is the first girl to top DDNet's ranks with 7812 points out of 10254
-- But in [April 2015](https://web.archive.org/web/20150401061156/https://ddnet.tw/ranks/) milk overtook her again with 9457 points out of 11323 and stayed in the lead even until [February 2017](https://web.archive.org/web/20170206003356/https://ddnet.tw/ranks/) with 18683 points out of 20643
+- In [August 2013](https://web.archive.org/web/20130830014948/https://ddnet.org/ranks/) [\*WuDL\*](/players/-42-WuDL-42-/) was leading with just 728 points out of 1566 total
+- In [October 2013](https://web.archive.org/web/20131019024011/https://ddnet.org/ranks/) [Aoe](/players/Aoe/) took the lead with 1220 points out of 2900 total (and it's the only time I managed to be in the Top 10 of Global Points myself!)
+- In [February 2014](https://web.archive.org/web/20140228075657/https://ddnet.org/ranks/) [aMu](/players/aMu/) took over with 2447 points out of 4620 total
+- Finally in [June 2014](https://web.archive.org/web/20140613192623/https://ddnet.org/ranks/) we see [milk](/players/milk/), who was playing predominantly on the Russian server, appearing out of nowhere with 4985 points out of 6665
+- In [January 2015](https://web.archive.org/web/20150105011026/https://ddnet.org/ranks/) [gB. &#x007C; Kayumi](/players/gB-46--32--124--32-Kayumi/) is the first girl to top DDNet's ranks with 7812 points out of 10254
+- But in [April 2015](https://web.archive.org/web/20150401061156/https://ddnet.org/ranks/) milk overtook her again with 9457 points out of 11323 and stayed in the lead even until [February 2017](https://web.archive.org/web/20170206003356/https://ddnet.tw/ranks/) with 18683 points out of 20643
 
 Inbetween I probably missed a few leaders ([Wombat](/players/Wombat), [TyшkaNчuk](/players/Ty-1096-kaN-1095-uk/), [HaHAxD\*](/players/HaHAxD-42-/) come to mind) since the Internet Archive was recording rather seldom.
 
-If anyone has further information or a good memory please post it in the [forum discussion](https://forum.ddnet.tw/viewtopic.php?f=3&t=6548).
+If anyone has further information or a good memory please post it in the [forum discussion](https://forum.ddnet.org/viewtopic.php?f=3&t=6548).

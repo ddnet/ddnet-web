@@ -20,4 +20,4 @@ The goal is to teach an AI to play Teeworlds Deathmatch. Here's an example of ho
 
 Once the AI is a little bit competent I will experimenting with reinforcement learning, which basically means letting the AI playing against another instance of itself and training it on the gameplay data of the winner. I will release my results and the source code in the future, if the project is successful.
 
-Post by [timakro](https://timakro.de/). Discussion on [Forum](https://forum.ddnet.tw/viewtopic.php?f=29&t=6821).
+Post by [timakro](https://timakro.de/). Discussion on [Forum](https://forum.ddnet.org/viewtopic.php?f=29&t=6821).

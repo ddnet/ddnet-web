@@ -18,4 +18,4 @@ In the new window select the BETAS tab and opt into "beta - Nightly Builds":
 
 <img class="demo" src="/steambeta2.png">
 
-Please report any problems you have with the nightly build on our [Discord](https://ddnet.tw/discord) or directly on [GitHub](https://github.com/ddnet/ddnet/issues/).
+Please report any problems you have with the nightly build on our [Discord](https://ddnet.org/discord) or directly on [GitHub](https://github.com/ddnet/ddnet/issues/).

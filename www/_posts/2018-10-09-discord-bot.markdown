@@ -5,7 +5,7 @@ permalink: /news/discord-bot/
 tag: current
 ---
 
-Recently the @DDNet bot on the official [DDNet Discord server](https://ddnet.tw/discord) has been extended by jao.
+Recently the @DDNet bot on the official [DDNet Discord server](https://ddnet.org/discord) has been extended by jao.
 
 - `$profile <player>` shows a player's points, teamrank points and rank points:
 

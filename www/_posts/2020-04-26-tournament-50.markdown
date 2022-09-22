@@ -7,8 +7,8 @@ tag: current
 
 I'm happy to present you the 3rd DDNet Tournament of 2020, the Brutal (★★✰✰✰) map "2 To Tango" by [Soapy Sandwich](/mappers/Soapy-32-Sandwich/) & [stompie](/mappers/stompie):
 
-[<img class="demo" src="/2_To_Tango.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=6920)
+[<img class="demo" src="/2_To_Tango.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=6920)
 
 The Tournament will be played on Sunday, May 3 at 20:00 CEST. The first team to finish wins! Thanks to jao for selecting and testing the map!
 
-Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=6920).
+Discussion on the [forum](//forum.ddnet.org/viewtopic.php?f=33&t=6920).

@@ -4,7 +4,7 @@ title: "Spooky takes Global #1 in Ranks and Team Ranks"
 permalink: /news/spooky-first/
 tag: current
 ---
-Congrats to [Spooky](https://ddnet.tw/players/Spooky) for reaching #1 globally in both [rank and team rank points](https://ddnet.tw/ranks/)! Half a year ago we had [coradax in the lead](https://ddnet.tw/news/coradax-takes-top-rank/). Here's the current state of the global scoreboard:
+Congrats to [Spooky](https://ddnet.org/players/Spooky) for reaching #1 globally in both [rank and team rank points](https://ddnet.tw/ranks/)! Half a year ago we had [coradax in the lead](https://ddnet.tw/news/coradax-takes-top-rank/). Here's the current state of the global scoreboard:
 <div class="block2 ladder">
 <h3>Team Rank</h3>
 <table class="tight">
@@ -56,4 +56,4 @@ Congrats to [Spooky](https://ddnet.tw/players/Spooky) for reaching #1 globally i
   </tr></tbody></table></div>
 <br>
 
-You can also follow the latest top ranks on [Discord](https://ddnet.tw/discord) or the [Status page](https://ddnet.tw/status/) ([RSS feed](https://ddnet.tw/status/records/feed/)).
+You can also follow the latest top ranks on [Discord](https://ddnet.org/discord) or the [Status page](https://ddnet.tw/status/) ([RSS feed](https://ddnet.tw/status/records/feed/)).

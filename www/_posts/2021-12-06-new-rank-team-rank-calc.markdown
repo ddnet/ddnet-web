@@ -6,7 +6,7 @@ tag: current
 ---
 Disclaimer: This proposal is only about the global (team) rank points calculation, not the normal points, which you get for each map finish, can request with `/points` ingame, and have no change planned.
 
-The [old approach](https://ddnet.tw/ranks/#points) for calculating ranks and team ranks for the best times on a map is as follows:
+The [old approach](https://ddnet.org/ranks/#points) for calculating ranks and team ranks for the best times on a map is as follows:
 
 <table class="points">
   <tbody><tr><td>1st place</td><td>25 points</td></tr>
@@ -48,7 +48,7 @@ First rank bonus: X points for being X% faster than next best time
 
 ## Example Calculation for Map Depressed
 
-To make it easier to see, let's just do an example calculation for the map [Depressed](https://ddnet.tw/maps/Depressed/), randomly chosen map with many ranks (2194 tees finished):
+To make it easier to see, let's just do an example calculation for the map [Depressed](https://ddnet.org/maps/Depressed/), randomly chosen map with many ranks (2194 tees finished):
 
 ```
 Top time:    01:55 = 115 s
@@ -97,7 +97,7 @@ Total:   0 points
 
 ## Example Calculation for Map Luna
 
-Another calculation for a map with few ranks (only 6 tees finished): [Luna](https://ddnet.tw/maps/Luna/):
+Another calculation for a map with few ranks (only 6 tees finished): [Luna](https://ddnet.org/maps/Luna/):
 
 ```
 Top time:    34:36 =  2076 s
@@ -128,7 +128,7 @@ Total:  81 points
 
 ## Example Calculation for Map Springlobe 3
 
-Another calculation for a map with very long ranks (196 tees finished): [Springlobe 3](https://ddnet.tw/maps/Springlobe 3/):
+Another calculation for a map with very long ranks (196 tees finished): [Springlobe 3](https://ddnet.org/maps/Springlobe 3/):
 
 ```
 Top time:    01:22:38 =  4958 s
@@ -175,4 +175,4 @@ Total:  37 points
 
 When you get faster, you'll get more ranks points, even if you don't move up a rank. No matter if you're first on the map already or not. If you don't make it into the top 10, but are pretty fast on the map, you'll still get some ranks points. If a top player finishes multiple times in the top 10 with fakes names, they hurt their main ranks points.
 
-If you have any thoughts on this, feel free to discuss on [our Discord server](https://ddnet.tw/discord). If the general feedback is good, I'm planning to implement this change soon.
+If you have any thoughts on this, feel free to discuss on [our Discord server](https://ddnet.org/discord). If the general feedback is good, I'm planning to implement this change soon.

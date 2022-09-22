@@ -5,7 +5,7 @@ permalink: /news/country-ranks/
 tag: current
 ---
 
-After a suggestion by <a href="https://forum.ddnet.tw/viewtopic.php?t=3697">sorgaxD</a> I now implemented country specific ranks pages. This means you can now compare your ranks against everyone else playing on your own country server!
+After a suggestion by <a href="https://forum.ddnet.org/viewtopic.php?t=3697">sorgaxD</a> I now implemented country specific ranks pages. This means you can now compare your ranks against everyone else playing on your own country server!
 
 - [Global Ranks](/ranks/)
 - [GER Ranks](/ranks/ger/)

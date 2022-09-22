@@ -16,4 +16,4 @@ DDNet7 Server by fokkonaut and ChillerDragon has been released in its initial ve
 
 Development happens on [GitHub](https://github.com/ddnet/ddnet7). If you require MySQL/MariaDB support compile the server yourself as instructed in the [DDNet README](https://github.com/ddnet/ddnet/#building-on-linux-and-macos).
 
-The `map_convert_07` binary from [DDNet](http://github.com/ddnet/ddnet) project can be used to automatically embed all graphics into maps for DDNet7 server compatibility. Preconverted DDNet maps are available as a [map collection](https://maps.ddnet.tw/compilations/maps7.zip).
+The `map_convert_07` binary from [DDNet](http://github.com/ddnet/ddnet) project can be used to automatically embed all graphics into maps for DDNet7 server compatibility. Preconverted DDNet maps are available as a [map collection](https://maps.ddnet.org/compilations/maps7.zip).

@@ -9,7 +9,7 @@ DDNet 10.0 has been released with the following changes:
 
 <ul>
   <li>[Client] <strong>Switched to SDL2, allows pasting from clipboard and a better compatibility with new environments (mostly by swick & oy)</strong></li>
-  <li>[Server/Client] <strong>Add a faster and easier to use hookthrough tile, read the <a href="https://forum.ddnet.tw/viewtopic.php?f=16&t=3552&p=37323#p37323">tutorial</a> (by timakro)</strong></li>
+  <li>[Server/Client] <strong>Add a faster and easier to use hookthrough tile, read the <a href="https://forum.ddnet.org/viewtopic.php?f=16&t=3552&p=37323#p37323">tutorial</a> (by timakro)</strong></li>
   <li>[Client] <strong>Added overlay entities support for other gametypes including OpenFNG and Race (by Soreu & timakro)</strong></li>
   <li>[Client] Update mapping and overlay entities (by Soreu)</li>
   <li>[Client] Add client setting <i>cl_show_local_time_always=0</i> if true show the current time ingame at the top of the screen</li>

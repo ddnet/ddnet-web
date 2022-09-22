@@ -7,7 +7,7 @@ head: |
 tag: current
 ---
 
-[Eki](/players/Eki/) made a video showing the total [points](https://ddnet.tw/ranks/) development of top 25 players on DDNet since the start of the project in 2013:
+[Eki](/players/Eki/) made a video showing the total [points](https://ddnet.org/ranks/) development of top 25 players on DDNet since the start of the project in 2013:
 
 <div class="startvideo"><div class="video-container">
   <div class="ytplayer" data-id="foWISJIoCSo"></div>

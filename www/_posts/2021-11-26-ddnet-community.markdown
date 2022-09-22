@@ -6,9 +6,9 @@ tag: current
 ---
 Huge thanks to all contributors!
 
-Numerous mappers in our community actively create new maps, huge thanks to them for all their efforts! See our [Recent Map Releases](https://ddnet.tw/releases/) for newly released maps!
+Numerous mappers in our community actively create new maps, huge thanks to them for all their efforts! See our [Recent Map Releases](https://ddnet.org/releases/) for newly released maps!
 
-Thanks to all our testers for testing these maps on our [DDNet Discord Server](https://ddnet.tw/discord), especially these, based on the [Discord Testing Activity](https://ddnet.tw/testlogs/):
+Thanks to all our testers for testing these maps on our [DDNet Discord Server](https://ddnet.org/discord), especially these, based on the [Discord Testing Activity](https://ddnet.tw/testlogs/):
 ```
 name      $ready  comments
 Cøke          76      3653
@@ -27,11 +27,11 @@ Lady Saavik    4      1694
 Soapy Sandwich 2       568
 Dino           2       280
 ```
-As DDNet is open source we continuously improve the game itself and the client experience. See the recent [changelogs](https://ddnet.tw/downloads/) for new features and improvements. You can also contribute to DDNet yourself on [GitHub](https://github.com/ddnet/ddnet), including [client translations](https://ddnet.tw/news/client-translations/) in your native language.
+As DDNet is open source we continuously improve the game itself and the client experience. See the recent [changelogs](https://ddnet.org/downloads/) for new features and improvements. You can also contribute to DDNet yourself on [GitHub](https://github.com/ddnet/ddnet), including [client translations](https://ddnet.tw/news/client-translations/) in your native language.
 
 <img class="demo" src="/code-changes.png" />
 
-Come join our community on our [Discord Server](https://ddnet.tw/discord)!
+Come join our community on our [Discord Server](https://ddnet.org/discord)!
 
 If you like what we are doing consider nominating DDNet in the [Labor of Love category of the Steam Awards](https://store.steampowered.com/news/app/412220/view/3102413283516200193):
 > This game has been out for a while. The team is well past the debut of their creative baby, but being the good parents they are, these devs continue to nurture and support their creation. This game, to this day, is still getting new content after all these years.

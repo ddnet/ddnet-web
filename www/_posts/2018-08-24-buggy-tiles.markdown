@@ -5,7 +5,7 @@ permalink: /news/buggy-tiles/
 tag: current
 ---
 
-On August 21 DDNet 11.4 was released with a server bug that made some tiles have no effect. As of 22:50 on August 23 the official servers were rebooted with the new version 11.4.1 (skipping 11.4) that had the same bug. The effect was that players since then could finish maps much easier and as we saw on [Discord](https://ddnet.tw/discord) this was widely abused immediately:
+On August 21 DDNet 11.4 was released with a server bug that made some tiles have no effect. As of 22:50 on August 23 the official servers were rebooted with the new version 11.4.1 (skipping 11.4) that had the same bug. The effect was that players since then could finish maps much easier and as we saw on [Discord](https://ddnet.org/discord) this was widely abused immediately:
 
 <img class="demo" src="/buggy-tiles-discord.png" />
 

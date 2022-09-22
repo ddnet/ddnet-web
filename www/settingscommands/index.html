@@ -49,7 +49,7 @@ menu: |
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
   <tr><td>tune_zone_leave</td><td>i[zone] r[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
-  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
+  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.org)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
 </table></div>
 </div>
@@ -75,7 +75,7 @@ menu: |
   <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_register</td><td>Register server with master server for public listing, can also accept a comma-separated list of protocols to register on, like &#x27;ipv4,ipv6&#x27;</td><td>&quot;1&quot;</td><td></td><td></td></tr>
   <tr><td>sv_register_extra</td><td>Extra headers to send to the register endpoint, comma separated &#x27;Header: Value&#x27; pairs</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_register_url</td><td>Masterserver URL to register to</td><td>&quot;https://master1.ddnet.tw/ddnet/15/register&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_register_url</td><td>Masterserver URL to register to</td><td>&quot;https://master1.ddnet.org/ddnet/15/register&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_password</td><td>Remote console password (full access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_mod_password</td><td>Remote console password for moderators (limited access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_helper_password</td><td>Remote console password for helpers (limited access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -300,7 +300,7 @@ menu: |
   <tr><td>tune_zone_reset</td><td>?i[zone]</td><td>reset zone tuning in zone x or in all zones</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
   <tr><td>tune_zone_leave</td><td>i[zone] r[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
-  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.tw)</td></tr>
+  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.org)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
   <tr><td>pause_game</td><td></td><td>Pause/unpause game</td></tr>
   <tr><td>change_map</td><td>?r[map]</td><td>Change map</td></tr>
@@ -507,13 +507,13 @@ menu: |
   <tr><td>ed_showkeys</td><td></td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_welcome</td><td></td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td><td>0</td><td>100</td></tr>
-  <tr><td>cl_map_download_url</td><td>URL used to download maps (can start with http:// or https://)</td><td>&quot;https://maps2.ddnet.tw&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_map_download_url</td><td>URL used to download maps (can start with http:// or https://)</td><td>&quot;https://maps2.ddnet.org&quot;</td><td></td><td></td></tr>
   <tr><td>cl_map_download_connect_timeout_ms</td><td>HTTP map downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td><td>0</td><td>100000</td></tr>
   <tr><td>cl_map_download_low_speed_limit</td><td>HTTP map downloads: Set low speed limit in bytes per second (0 to disable)</td><td>4000</td><td>0</td><td>100000</td></tr>
   <tr><td>cl_map_download_low_speed_time</td><td>HTTP map downloads: Set low speed limit time period (0 to disable)</td><td>3</td><td>0</td><td>100000</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>cl_skin_download_url</td><td>URL used to download skins</td><td>&quot;https://skins.ddnet.tw/skin/&quot;</td><td></td><td></td></tr>
-  <tr><td>cl_skin_community_download_url</td><td>URL used to download community skins</td><td>&quot;https://skins.ddnet.tw/skin/community/&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_skin_download_url</td><td>URL used to download skins</td><td>&quot;https://skins.ddnet.org/skin/&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_skin_community_download_url</td><td>URL used to download community skins</td><td>&quot;https://skins.ddnet.org/skin/community/&quot;</td><td></td><td></td></tr>
   <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_download_skins</td><td>Download skins from cl_skin_download_url on-the-fly</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_download_community_skins</td><td>Allow to download skins created by the community. Uses cl_skin_community_download_url instead of cl_skin_download_url for the download</td><td>0</td><td>0</td><td>1</td></tr>
@@ -620,7 +620,7 @@ menu: |
   <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_exclude_countries</td><td>Filter out DDNet servers by country</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_exclude_types</td><td>Filter out DDNet servers by type (mod)</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info2.ddnet.tw/info)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info2.ddnet.org/info)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>br_location</td><td>Override location for ping estimation, available: auto, af, as, as:cn, eu, na, oc, sa (Automatic, Africa, Asia, China, Europe, North America, Oceania/Australia, South America</td><td>&quot;auto&quot;</td><td></td><td></td></tr>
   <tr><td>br_cached_best_serverinfo_url</td><td>Do not set this variable, instead create a ddnet-serverlist-urls.cfg next to settings_ddnet.cfg to specify all possible serverlist URLs</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_exclude_countries_kog</td><td>Filter out kog servers by country</td><td>&quot;&quot;</td><td></td><td></td></tr>

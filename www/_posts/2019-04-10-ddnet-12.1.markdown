@@ -29,4 +29,4 @@ DDNet 12.1 has been released with the following highlights:
   <li>Many minor fixes and improvements</li>
 </ul>
 
-You can download DDNet 12.1 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/12.0.1...12.1).
+You can download DDNet 12.1 on our [download page](https://ddnet.org/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/12.0.1...12.1).

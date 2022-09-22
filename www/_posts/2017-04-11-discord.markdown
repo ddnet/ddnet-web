@@ -5,4 +5,4 @@ permalink: /news/ddnet-discord-server/
 tag: current
 ---
 
-Welf is running a [DDNet Discord server at ddnet.tw/discord](/discord) where you can chat with the community and get in touch with moderators.
+Welf is running a [DDNet Discord server at ddnet.org/discord](/discord) where you can chat with the community and get in touch with moderators.

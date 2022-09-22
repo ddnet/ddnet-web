@@ -12,4 +12,4 @@ Now we need your support to get DDNet accepted, so that it can be released on St
 
 Hopefully this will give DDNet new, enthusiastic players. It would also be nice to have for all the existing DDNet players who want to use it on Steam.
 
-Discuss this [on the forum](//forum.ddnet.tw/viewtopic.php?f=3&t=2125).
+Discuss this [on the forum](//forum.ddnet.org/viewtopic.php?f=3&t=2125).

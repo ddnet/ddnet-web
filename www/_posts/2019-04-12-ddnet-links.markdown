@@ -10,10 +10,10 @@ With recent versions of DDNet client you can play demo files directly by pulling
 A less known feature that has existed for a few months is opening links to DDNet server with the client directly. The links can look like this:
 
 - [ddnet:92.172.92.151:8303](ddnet:95.172.92.151:8303)
-- Domains are supported as well: [ddnet:ger.ddnet.tw:8303](ddnet:ger.ddnet.tw:8303)
-- Default port is 8303: [ddnet:ger.ddnet.tw](ddnet:ger.ddnet.tw)
+- Domains are supported as well: [ddnet:ger.ddnet.org:8303](ddnet:ger.ddnet.tw:8303)
+- Default port is 8303: [ddnet:ger.ddnet.org](ddnet:ger.ddnet.tw)
 
-You can see those links on our [status](https://ddnet.tw/status/) page as well.
+You can see those links on our [status](https://ddnet.org/status/) page as well.
 
 On Windows you can set the default program to open ddnet: links using [this guide](https://www.howtogeek.com/223144/how-to-set-your-default-apps-in-windows-10/) by following the instructions for "Manage Launch Options by Protocol".
 

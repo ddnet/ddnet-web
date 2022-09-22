@@ -6,10 +6,10 @@ permalink: /news/tournament-61/
 tag: current
 ---
 
-It's time for the third tournament of the year! We will play the brand-new Brutal (★★★✰✰) map Strategic Paraplegic by [Soapy Sandwich](https://ddnet.tw/mappers/Soapy-32-Sandwich/) & [Jimmy Jazz](https://ddnet.tw/mappers/Jimmy-32-Jazz/):
+It's time for the third tournament of the year! We will play the brand-new Brutal (★★★✰✰) map Strategic Paraplegic by [Soapy Sandwich](https://ddnet.org/mappers/Soapy-32-Sandwich/) & [Jimmy Jazz](https://ddnet.tw/mappers/Jimmy-32-Jazz/):
 
 <div class="video-container"><div class="ytplayer" data-id="-QlS_KRqLSs"></div></div>
 
 The Tournament will be played on Sunday, September 4 at 20:00 CEST on special Tournament servers in every DDNet location! No one has seen the map yet and the first finish will win! The map can only be played in 2-player teams and requires real players, not dummy.
 
-Thanks to [louis](/mappers/louis/) for testing the map! Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=114&t=7527). The results will later be available on the [Tournament page](/tournaments/61/).
+Thanks to [louis](/mappers/louis/) for testing the map! Discussion on the [forum](//forum.ddnet.org/viewtopic.php?f=114&t=7527). The results will later be available on the [Tournament page](/tournaments/61/).

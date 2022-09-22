@@ -21,4 +21,4 @@ After a long time DDNet 11.0 has finally been released today with the following 
   <li>Fix crashes in client and server</li>
 </ul>
 
-You can download DDNet 11.0 on our [download page](https://ddnet.tw/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/10.8.6...11.0).
+You can download DDNet 11.0 on our [download page](https://ddnet.org/downloads/) and see the full changes on [GitHub](https://github.com/ddnet/ddnet/compare/10.8.6...11.0).

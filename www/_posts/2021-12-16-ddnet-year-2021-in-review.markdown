@@ -29,7 +29,7 @@ A large cloud company CEO even reached out personally offering to help, since we
 
 ## Skill Level
 
-The skill levels of players has increased a lot, for example we have the new 2021 rank 1 for the map [Just Triple Fly](https://ddnet.tw/maps/Just%20Triple%20Fly) on the frontpage currently:
+The skill levels of players has increased a lot, for example we have the new 2021 rank 1 for the map [Just Triple Fly](https://ddnet.org/maps/Just%20Triple%20Fly) on the frontpage currently:
 <div class="video-container"><div class="ytplayer" data-id="ELE9iad_Pqo"></div></div>
 
 The top times for this map improved significantly since the release in 2015:
@@ -41,9 +41,9 @@ The top times for this map improved significantly since the release in 2015:
 ```
 Since players are using every single physics behaviour to get such top ranks, we have to keep supporting them. This means that old physics can only be deprecated and new ones be introduced for new maps, but old maps can't be changed. Otherwise the top ranks might not be beatable anymore, or might be easier to beat than before.
 
-Our very dedicated player [Cor](https://ddnet.tw/players/Cor/) [finished every single map](https://ddnet.tw/news/cor-finishes-ddnet/) on DDNet this year.
+Our very dedicated player [Cor](https://ddnet.org/players/Cor/) [finished every single map](https://ddnet.tw/news/cor-finishes-ddnet/) on DDNet this year.
 
-[rockuS](https://ddnet.tw/players/rockuS) & [Brokecdx-](https://ddnet.tw/players/Brokecdx-45-/) managed to get top 1 team rank on every single [Novice map](https://ddnet.tw/ranks/novice/) this year!
+[rockuS](https://ddnet.org/players/rockuS) & [Brokecdx-](https://ddnet.tw/players/Brokecdx-45-/) managed to get top 1 team rank on every single [Novice map](https://ddnet.tw/ranks/novice/) this year!
 
 ## Popularity Rise in East Asia
 
@@ -57,7 +57,7 @@ Watching these videos is super frustrating to me though, especially because we d
 
 We now have about 1200 players online average (+41% compared to one year ago), 14.000 daily active users (+40%) and a total of 11 million map finishes (+100%) by 492.000 players (+83%). So we can say that half of all finishes on DDNet were made this year, even though DDNet existed for 8 years already!
 
-Check out this annotated [player-hours development](https://ddnet.tw/stats/):
+Check out this annotated [player-hours development](https://ddnet.org/stats/):
 
 <img class="demo" src="/playersannotated.png" />
 
@@ -65,9 +65,9 @@ You can clearly see when the summer vacation and large Chinese holidays like Gol
 
 ## Code & Development
 
-[120 new maps](https://ddnet.tw/releases) by 71 mappers have so far been released this year. So the community is still really vibrant and active. Huge thanks also to our [testers who tested all these maps](https://ddnet.tw/news/ddnet-community/)!
+[120 new maps](https://ddnet.org/releases) by 71 mappers have so far been released this year. So the community is still really vibrant and active. Huge thanks also to our [testers who tested all these maps](https://ddnet.tw/news/ddnet-community/)!
 
-We have gotten some new developers this year, we shipped [6 major releases](https://ddnet.tw/downloads) with a Release Candidate process to stabilize them before releasing them widely. The Release Candidates are always announced on [Discord](https://ddnet.tw/discord) and [GitHub](https://github.com/ddnet/ddnet/issues). Everyone is welcome to test and report issues.
+We have gotten some new developers this year, we shipped [6 major releases](https://ddnet.org/downloads) with a Release Candidate process to stabilize them before releasing them widely. The Release Candidates are always announced on [Discord](https://ddnet.tw/discord) and [GitHub](https://github.com/ddnet/ddnet/issues). Everyone is welcome to test and report issues.
 
 By using the Address Sanitizer and Undefined Behaviour Sanitizer tools we managed to find and pinpoint many bugs in our server and client code. Those [tools](https://github.com/ddnet/ddnet/#using-addresssanitizer--undefinedbehavioursanitizer-or-valgrinds-memcheck) are vital for a programming language like C++.
 
@@ -85,15 +85,15 @@ The community has also been actively working on new stuff. [ChillerDragon](https
 > 
 > At the end, the player with the highest score wins, and will be given the ability to splat everyone on the lobby! A few seconds after this intermission, all player scores are reset to zero and the game loops once more.
 
-A Chinese company is working on a [mobile phone DDNet-inspired game](https://www.taptap.com/app/211037), which they are building from scratch. They even hired [TsFreddie](https://github.com/TsFreddie) from our community as a lead developer! Yes, that's the same TsFreddie that's hosting most of the [Chinese DDNet servers](https://ddnet.tw/funding/) for us, huge thanks for that!
+A Chinese company is working on a [mobile phone DDNet-inspired game](https://www.taptap.com/app/211037), which they are building from scratch. They even hired [TsFreddie](https://github.com/TsFreddie) from our community as a lead developer! Yes, that's the same TsFreddie that's hosting most of the [Chinese DDNet servers](https://ddnet.org/funding/) for us, huge thanks for that!
 
-There is now also a modern MediaWiki-based [DDNet Wiki](https://wiki.ddnet.tw/wiki/Main_Page) where the community is collecting information about the game.
+There is now also a modern MediaWiki-based [DDNet Wiki](https://wiki.ddnet.org/wiki/Main_Page) where the community is collecting information about the game.
 
 ## Current Challenges
 
 Half of DDNet's players are now Chinese, but they are quite separated from the rest of the community. Because of a [lack of English skill](https://docs.qq.com/doc/DWGFrV0xPRmVWVkla), Discord being blocked in China and foreigners being blocked in [Kaiheila, a Chinese Discord clone](https://www.kaiheila.cn/app/invite/pNXyP8) it is difficult to stay in touch. For moderation we have a bridge installed at least so that we can communicate with the Chinese moderators.
 
-We had a problem with Denial of Service attacks against players. Every server hoster was able to find out the IP addresses of every player, since clients have to ping each server to load the Internet tab of the server browser. This has been fixed by using a decentralized [JSON-based server info](https://master1.ddnet.tw/ddnet/15/servers.json). As a side-effect the server browser loads much faster on slow internet connections now.
+We had a problem with Denial of Service attacks against players. Every server hoster was able to find out the IP addresses of every player, since clients have to ping each server to load the Internet tab of the server browser. This has been fixed by using a decentralized [JSON-based server info](https://master1.ddnet.org/ddnet/15/servers.json). As a side-effect the server browser loads much faster on slow internet connections now.
 
 We ran into a [JSON parser bug](https://github.com/ddnet/ddnet/issues/4202) with this exact feature on Debian, Ubuntu, Fedora and related distributions. The reason is that we patched our JSON library internally to be more convenient to use, but never brought these improvements upstream. Since our own releases are built with our version of the JSON library we never had any problem with those. But Linux distributions (for good reasons) prefer to use system libraries instead of bundled ones, and so this caused a failure in loading the server informations.
 
@@ -103,7 +103,7 @@ To find those cheats we are archiving all player inputs (no chat and IP addresse
 
 ## Some Updated Statistics
 
-If you want to read about older DDNet history also check out this [forum post from 2015](https://forum.ddnet.tw/viewtopic.php?t=1824). I have updated some of the statistics here:
+If you want to read about older DDNet history also check out this [forum post from 2015](https://forum.ddnet.org/viewtopic.php?t=1824). I have updated some of the statistics here:
 
 Oldest top ranks still standing:
 ```

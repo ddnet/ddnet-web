@@ -5,7 +5,7 @@ permalink: /news/coradax-takes-top-rank/
 tag: current
 ---
 
-Congratulations to [coradax](/players/coradax/) for taking the global top rank from long-time top player [N9mkOik](/players/N9mkOik) as well as global top team rank from [Brokecdx-](/players/Brokecdx-45-)! See the [Points Calculation](https://ddnet.tw/ranks/#points) for how top ranks are calculated. The current [global scoreboard](/ranks/):
+Congratulations to [coradax](/players/coradax/) for taking the global top rank from long-time top player [N9mkOik](/players/N9mkOik) as well as global top team rank from [Brokecdx-](/players/Brokecdx-45-)! See the [Points Calculation](https://ddnet.org/ranks/#points) for how top ranks are calculated. The current [global scoreboard](/ranks/):
 <div class="block2 ladder">
 <h3>Team Rank</h3>
 <table class="tight">
@@ -58,4 +58,4 @@ Congratulations to [coradax](/players/coradax/) for taking the global top rank f
 </tr></tbody></table></div>
 <br>
 
-You can also follow the latest top ranks on [Discord](https://ddnet.tw/discord) or the [Status page](https://ddnet.tw/status/) ([RSS feed](https://ddnet.tw/status/records/feed/)).
+You can also follow the latest top ranks on [Discord](https://ddnet.org/discord) or the [Status page](https://ddnet.tw/status/) ([RSS feed](https://ddnet.tw/status/records/feed/)).

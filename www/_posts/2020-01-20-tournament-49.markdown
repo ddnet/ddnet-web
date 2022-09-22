@@ -7,8 +7,8 @@ tag: current
 
 I'm happy to present you the first DDNet Tournament of 2020, the Moderate map luminati by [SUKA](/mappers/SUKA/):
 
-[<img class="demo" src="/luminati.png" />](//forum.ddnet.tw/viewtopic.php?f=33&t=6897)
+[<img class="demo" src="/luminati.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=6897)
 
 The Tournament will be played on Sunday, January 26 at 20:00 CET. The best team finish time after 90 minutes wins! The map is well-playable with dummy. Special feature of the map is that there are 65 parts in total of which you have to finish only 15 to finish, so choose your path wisely. Thanks to jao for selecting and testing the map!
 
-Discussion on the [forum](//forum.ddnet.tw/viewtopic.php?f=33&t=6897).
+Discussion on the [forum](//forum.ddnet.org/viewtopic.php?f=33&t=6897).
