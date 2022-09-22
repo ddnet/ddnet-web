@@ -14,7 +14,7 @@ $('#mapperform .typeahead').typeahead(null, {
   templates: {
     suggestion: function(o) {
       let result = '<p><strong>' + o.mapper.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + '</strong>';
-      result += ': ' + o.num_maps + ' maps)</p>'
+      result += ': ' + o.num_maps + ' maps</p>'
       return result;
     }
   }
