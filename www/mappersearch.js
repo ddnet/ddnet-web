@@ -1,7 +1,7 @@
 var mappers = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  remote: '/maps/?mapper=%QUERY',
+  remote: '/maps/?qmapper=%QUERY',
   limit: 10
 });
 
