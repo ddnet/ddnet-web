@@ -113,7 +113,7 @@ function uptime() {
 			}
 
 			// Online4
-			if (result.servers[i].online4) {
+			if (result.servers[i].online4 || result.servers[i].online6) {
 				TableRow.children["online4"].children[0].children[0].className = "progress-bar progress-bar-success";
 				TableRow.children["online4"].children[0].children[0].innerHTML = "<small>Up</small>";
 			} else {
