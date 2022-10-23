@@ -58,4 +58,4 @@ Congratulations to [coradax](/players/coradax/) for taking the global top rank f
 </tr></tbody></table></div>
 <br>
 
-You can also follow the latest top ranks on [Discord](https://ddnet.org/discord) or the [Status page](https://ddnet.tw/status/) ([RSS feed](https://ddnet.tw/status/records/feed/)).
+You can also follow the latest top ranks on [Discord](https://ddnet.org/discord) or the [Status page](https://ddnet.org/status/) ([RSS feed](https://ddnet.org/status/records/feed/)).

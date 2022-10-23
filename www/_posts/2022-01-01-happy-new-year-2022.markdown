@@ -21,4 +21,4 @@ If you are using DDNet on Steam you can use these links to connect directly to t
 - [Singapore + Korea + Japan](steam://run/412220//sgp2.ddnet.org:8297)
 - [South Africa + Iran](steam://run/412220//zaf2.ddnet.org:8297)
 
-Thanks to [TsFreddie](https://github.com/TsFreddie) for the [modification](https://github.com/TeeworldsCN/MomentCap) and [bit](https://ddnet.org/mappers/bit/) and [louis](https://ddnet.tw/mappers/louis/) for the map! You can check out the [Chinese community version from 2021](https://teeworldscn.github.io/EventScreenshots/2021newyear/) to see what the result can look like.
+Thanks to [TsFreddie](https://github.com/TsFreddie) for the [modification](https://github.com/TeeworldsCN/MomentCap) and [bit](https://ddnet.org/mappers/bit/) and [louis](https://ddnet.org/mappers/louis/) for the map! You can check out the [Chinese community version from 2021](https://teeworldscn.github.io/EventScreenshots/2021newyear/) to see what the result can look like.

@@ -41,9 +41,9 @@ The top times for this map improved significantly since the release in 2015:
 ```
 Since players are using every single physics behaviour to get such top ranks, we have to keep supporting them. This means that old physics can only be deprecated and new ones be introduced for new maps, but old maps can't be changed. Otherwise the top ranks might not be beatable anymore, or might be easier to beat than before.
 
-Our very dedicated player [Cor](https://ddnet.org/players/Cor/) [finished every single map](https://ddnet.tw/news/cor-finishes-ddnet/) on DDNet this year.
+Our very dedicated player [Cor](https://ddnet.org/players/Cor/) [finished every single map](https://ddnet.org/news/cor-finishes-ddnet/) on DDNet this year.
 
-[rockuS](https://ddnet.org/players/rockuS) & [Brokecdx-](https://ddnet.tw/players/Brokecdx-45-/) managed to get top 1 team rank on every single [Novice map](https://ddnet.tw/ranks/novice/) this year!
+[rockuS](https://ddnet.org/players/rockuS) & [Brokecdx-](https://ddnet.org/players/Brokecdx-45-/) managed to get top 1 team rank on every single [Novice map](https://ddnet.org/ranks/novice/) this year!
 
 ## Popularity Rise in East Asia
 
@@ -65,9 +65,9 @@ You can clearly see when the summer vacation and large Chinese holidays like Gol
 
 ## Code & Development
 
-[120 new maps](https://ddnet.org/releases) by 71 mappers have so far been released this year. So the community is still really vibrant and active. Huge thanks also to our [testers who tested all these maps](https://ddnet.tw/news/ddnet-community/)!
+[120 new maps](https://ddnet.org/releases) by 71 mappers have so far been released this year. So the community is still really vibrant and active. Huge thanks also to our [testers who tested all these maps](https://ddnet.org/news/ddnet-community/)!
 
-We have gotten some new developers this year, we shipped [6 major releases](https://ddnet.org/downloads) with a Release Candidate process to stabilize them before releasing them widely. The Release Candidates are always announced on [Discord](https://ddnet.tw/discord) and [GitHub](https://github.com/ddnet/ddnet/issues). Everyone is welcome to test and report issues.
+We have gotten some new developers this year, we shipped [6 major releases](https://ddnet.org/downloads) with a Release Candidate process to stabilize them before releasing them widely. The Release Candidates are always announced on [Discord](https://ddnet.org/discord) and [GitHub](https://github.com/ddnet/ddnet/issues). Everyone is welcome to test and report issues.
 
 By using the Address Sanitizer and Undefined Behaviour Sanitizer tools we managed to find and pinpoint many bugs in our server and client code. Those [tools](https://github.com/ddnet/ddnet/#using-addresssanitizer--undefinedbehavioursanitizer-or-valgrinds-memcheck) are vital for a programming language like C++.
 

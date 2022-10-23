@@ -44,7 +44,7 @@ You can use the [Internet Archive](https://web.archive.org/) to look at [old ver
 - In [February 2014](https://web.archive.org/web/20140228075657/https://ddnet.org/ranks/) [aMu](/players/aMu/) took over with 2447 points out of 4620 total
 - Finally in [June 2014](https://web.archive.org/web/20140613192623/https://ddnet.org/ranks/) we see [milk](/players/milk/), who was playing predominantly on the Russian server, appearing out of nowhere with 4985 points out of 6665
 - In [January 2015](https://web.archive.org/web/20150105011026/https://ddnet.org/ranks/) [gB. &#x007C; Kayumi](/players/gB-46--32--124--32-Kayumi/) is the first girl to top DDNet's ranks with 7812 points out of 10254
-- But in [April 2015](https://web.archive.org/web/20150401061156/https://ddnet.org/ranks/) milk overtook her again with 9457 points out of 11323 and stayed in the lead even until [February 2017](https://web.archive.org/web/20170206003356/https://ddnet.tw/ranks/) with 18683 points out of 20643
+- But in [April 2015](https://web.archive.org/web/20150401061156/https://ddnet.org/ranks/) milk overtook her again with 9457 points out of 11323 and stayed in the lead even until [February 2017](https://web.archive.org/web/20170206003356/https://ddnet.org/ranks/) with 18683 points out of 20643
 
 Inbetween I probably missed a few leaders ([Wombat](/players/Wombat), [TyшkaNчuk](/players/Ty-1096-kaN-1095-uk/), [HaHAxD\*](/players/HaHAxD-42-/) come to mind) since the Internet Archive was recording rather seldom.
 

@@ -8,7 +8,7 @@ Huge thanks to all contributors!
 
 Numerous mappers in our community actively create new maps, huge thanks to them for all their efforts! See our [Recent Map Releases](https://ddnet.org/releases/) for newly released maps!
 
-Thanks to all our testers for testing these maps on our [DDNet Discord Server](https://ddnet.org/discord), especially these, based on the [Discord Testing Activity](https://ddnet.tw/testlogs/):
+Thanks to all our testers for testing these maps on our [DDNet Discord Server](https://ddnet.org/discord), especially these, based on the [Discord Testing Activity](https://ddnet.org/testlogs/):
 ```
 name      $ready  comments
 Cøke          76      3653
@@ -27,7 +27,7 @@ Lady Saavik    4      1694
 Soapy Sandwich 2       568
 Dino           2       280
 ```
-As DDNet is open source we continuously improve the game itself and the client experience. See the recent [changelogs](https://ddnet.org/downloads/) for new features and improvements. You can also contribute to DDNet yourself on [GitHub](https://github.com/ddnet/ddnet), including [client translations](https://ddnet.tw/news/client-translations/) in your native language.
+As DDNet is open source we continuously improve the game itself and the client experience. See the recent [changelogs](https://ddnet.org/downloads/) for new features and improvements. You can also contribute to DDNet yourself on [GitHub](https://github.com/ddnet/ddnet), including [client translations](https://ddnet.org/news/client-translations/) in your native language.
 
 <img class="demo" src="/code-changes.png" />
 

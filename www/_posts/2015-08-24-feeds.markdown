@@ -6,4 +6,4 @@ tag: current
 ---
 There is now a news feed for [general news](/feed/) as well as for [new map releases](/releases/feed/). These should help you keep up to date with what's happening at DDraceNetwork.
 
-The [DDNet Forum](//forum.ddnet.org/) has always had a news feed for [new topics](//forum.ddnet.tw/feed.php?mode=topics) and [all new posts](//forum.ddnet.tw/feed.php).
+The [DDNet Forum](//forum.ddnet.org/) has always had a news feed for [new topics](//forum.ddnet.org/feed.php?mode=topics) and [all new posts](//forum.ddnet.org/feed.php).

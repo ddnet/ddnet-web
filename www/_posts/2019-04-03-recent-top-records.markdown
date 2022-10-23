@@ -9,6 +9,6 @@ Previously the recent top records on DDNet were only visible in the #records cha
 
 While we're at it, you can also check out:
 
-- [Recent map releases](https://ddnet.org/releases/) ([feed](https://ddnet.tw/releases/feed/))
-- [News](https://ddnet.org/news/) ([feed](https://ddnet.tw/feed/))
+- [Recent map releases](https://ddnet.org/releases/) ([feed](https://ddnet.org/releases/feed/))
+- [News](https://ddnet.org/news/) ([feed](https://ddnet.org/feed/))
 - [Downloads](https://ddnet.org/downloads/) (use the autoupdater or OS updater)
