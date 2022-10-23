@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Tournament #62: Behemoth 2 by Pulsar, Ravie & Sorah"
+permalink: /news/tournament-62/
+tag: current
+---
+
+It's time for the fourth tournament of the year! We will play the brand-new Brutal (★★★★★) map Behemoth 2 by [Pulsar](https://ddnet.org/mappers/Pulsar/), [Ravie](https://ddnet.org/mappers/Ravie/) & [Sorah](https://ddnet.org/mappers/Sorah/):
+
+[<img class="demo" src="/Behemoth_2.png" />](//forum.ddnet.org/viewtopic.php?f=14&t=7537)
+
+The Tournament will be played on Sunday, October 30 at 20:00 CET (summer time end on same day!) on special Tournament servers in every DDNet location! No one has seen the map yet and the first finish will win!
+
+Thanks to [Pipou](/mappers/Pipou/) for testing the map! Discussion on the [forum](//forum.ddnet.org/viewtopic.php?f=114&t=7537). The results will later be available on the [Tournament page](/tournaments/62/).
