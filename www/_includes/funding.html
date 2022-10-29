@@ -4,40 +4,38 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet":  [269, 338, "Brokecdx- & NeXus"], // includes vpn and blocklist
-  "master": [36, 36, "Brokecdx-"], // hetzner.de
-  "db":     [50, 50, "David*°Villa"],
-  "nld":    193, // nforce.com
-  "fra":    "Davide", // ovh.com, runs out on 2022-06-13
+  "ddnet":  320 + 60 + 59, // includes vpn
+  "master": 29, // hetzner.de
+  "db":     43,
   "nld":    "labixe", // labixe.net
   "ger2":   "heinrich5991", // hetzner.de
-  "ger3":   [66, 66, "Insanity"], // kernelhost.com
-  "ger10":   "Davide",
+  "ger4":   55, // hetzner.de
+  "ger6":   55,
+  "ger10":  "Davide",
   "pol":    "Davide", // ovh.com, runs out on 2023-06-13
-  "rus1":   155, // myarena.ru
-  "rus2":   [10, 10, "Pepsicola_o0"], // vdsina.ru
-  "tur":    164, // hostingdunyam.com.tr
+  "rus":    250, // myarena.ru
+  "tur":    120, // hostingdunyam.com.tr
   "irn":    "NotAriaN",
   "chl":    156, // grupocg.cl
-  "bra":    [143, 903, "Miguilim"], // maxihost.com
+  "bra":    "Miguilim", // maxihost.com
   "arg":    "Miguilim",
-  "usa1":   [93, 103, "YupHio"], // nfoservers.com
-  "usa2":   [41, 69, "Meeu"], // nfoservers.com
+  "usa1":   109, // nfoservers.com
+  "usa2":   109, // nfoservers.com
   "can":    "Davide", // ovh.com, runs out on 2023-06-13
-  "chn":    [287, 537, "TsFreddie"],
+  "chn":    537,
   "chn5":   "紫川",
-  "jap":    208, // linode.com
-  "kor":    264, // vultr.com
-  "sgp":    [66, 66, "Jem"], // linode.com
-  "ind":    39, // linode.com
-  "aus":    [29, 29, "Lem0n"], // ovh.com
-  "zaf":    [62, 60, "Mariac & Her0"], // absolutehosting.co.za
+  "jap":    73, // linode.com
+  "kor":    276, // vultr.com
+  "sgp":    73, // linode.com
+  "ind":    73, // linode.com
+  "aus":    43, // ovh.com
+  "zaf":    66, // ivecloud.co.za
 };
-var donated = 2193;
-var yearStr = "2022";
-var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612;
-var donatedOld = 7422;
-var yearStrOld = "2013-21";
+var donated = 0;
+var yearStr = "2023";
+var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253;
+var donatedOld = 10767;
+var yearStrOld = "2013-22";
 
 var sum = 0;
 var sumToPay = 0;
