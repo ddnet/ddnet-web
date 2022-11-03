@@ -71,6 +71,16 @@ function textarea_die() {
 echo("Script Output:<br>\n");
 echo("<div style=\"border: 1px solid black; font-family: monospace;\" readonly>\n");
 
+function check_for_skin_case_not_matching($skinarr, $skinname) {
+  $reti = 0;
+  foreach($skinarr as $skin_obj) {
+    if($skin_obj->name != $skinname && strtolower($skin_obj->name) == strtolower($skinname))
+      return $reti;
+    $reti = $reti + 1;
+  }
+  return -1;
+}
+
 function check_for_skin($skinarr, $skinname) {
   $reti = 0;
   foreach($skinarr as $skin_obj) {
@@ -180,6 +190,12 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
     }
     else {
       textarea_echo("modify skin: action=\"$skinaction\" skinname=\"".$fullskinname."\" creator=\"".$skincreator."\" skinpack=\"".$skinpack."\" releasedate=\"".$skincreatedate."\" license=\"$skinlicense\" skintype=\"$skintype\" skinhd=\"".($skinisuhd ? "true" : "false")."\"");
+
+      $skinindexcasenotmatching = check_for_skin_case_not_matching($skin_json->skins, $skinname);
+      if($skinindexcasenotmatching != -1) {
+        textarea_echo("A skin with the name \"".$skin_json->skins[$skinindexcasenotmatching]->name."\" already exists", 1);
+        textarea_die();
+      }
 
       $skinindex = check_for_skin($skin_json->skins, $skinname);
       $skinhdwasdropped = false;
