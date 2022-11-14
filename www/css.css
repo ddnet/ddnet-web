@@ -43,7 +43,6 @@ pre {
   padding: 0.5em 1.5em 1em 1.5em;
   position: relative;
   margin: 0 0 1em 0;
-  white-space: pre-wrap;
 }
 body:not(#phpbb) .block {
   text-align: justify;
@@ -512,7 +511,7 @@ body:not(#phpbb) .time {
   max-width: 11em;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: pre;
+  white-space: nowrap;
 }
 
 .clan {
@@ -520,7 +519,7 @@ body:not(#phpbb) .time {
   max-width: 8em;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: pre;
+  white-space: nowrap;
 }
 
 .rightimages {
