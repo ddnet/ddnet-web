@@ -19,7 +19,7 @@ menu-extern: docs-libtw2
 <h3>Format</h3>
 <p>A teehistorian file is fundamentally a header followed by a stream of messages.</p>
 <h4>Header</h4>
-<p>The header starts with the teehistorian UUID (699db17b-8efb-34ff-b1d8-da6f60c15dd1, version 3 UUID derived from the Teeworlds namespace e05ddaaa-c4e6-4cfb-b642-5d48e80c0029 and the name &quot;<a href="mailto:teehistorian@ddnet.org">teehistorian@ddnet.org</a>&quot;), encoded as a <a href="https://en.wikipedia.org/w/index.php?title=Universally_unique_identifier&amp;oldid=844235295#Encoding">big endian binary encoded UUID</a> (16 bytes). It is followed by a null-terminated string that contains a JSON object containing at least the following keys:</p>
+<p>The header starts with the teehistorian UUID (699db17b-8efb-34ff-b1d8-da6f60c15dd1, version 3 UUID derived from the Teeworlds namespace e05ddaaa-c4e6-4cfb-b642-5d48e80c0029 and the name &quot;<a href="mailto:teehistorian@ddnet.tw">teehistorian@ddnet.tw</a>&quot;), encoded as a <a href="https://en.wikipedia.org/w/index.php?title=Universally_unique_identifier&amp;oldid=844235295#Encoding">big endian binary encoded UUID</a> (16 bytes). It is followed by a null-terminated string that contains a JSON object containing at least the following keys:</p>
 <ul>
 <li><code>version</code>: This is the version number of the teehistorian format. It must be <code>&quot;1&quot;</code> or <code>&quot;2&quot;</code> for this document.</li>
 </ul>
@@ -44,82 +44,82 @@ menu-extern: docs-libtw2
 </ul>
 <p>The following extra messages are known right now:</p>
 <ul>
-<li>TEST(<a href="mailto:teehistorian-test@ddnet.org">teehistorian-test@ddnet.org</a>): is just a test message
+<li>TEST(<a href="mailto:teehistorian-test@ddnet.tw">teehistorian-test@ddnet.tw</a>): is just a test message
 <ul>
 <li>uuid: 6bb8ba88-0f0b-382e-8dae-dbf4052b8b7d</li>
 <li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/6c378b972b70b0556d3b434b26baa0b9ffe490f1">6c378b972b70b055</a></li>
 </ul></li>
-<li>DDNETVER_OLD(<a href="mailto:teehistorian-ddnetver-old@ddnet.org">teehistorian-ddnetver-old@ddnet.org</a>): cid(int), version(int)
+<li>DDNETVER_OLD(<a href="mailto:teehistorian-ddnetver-old@ddnet.tw">teehistorian-ddnetver-old@ddnet.tw</a>): cid(int), version(int)
 <ul>
 <li>uuid: 41b49541-f26f-325d-8715-9baf4b544ef9</li>
 <li>introduced in DDNet 13.2, <a href="https://github.com/ddnet/ddnet/commit/0d7872c79eaeb19b3fd08c39c013a1043db1fd9b">0d7872c79eaeb19b</a></li>
 </ul></li>
-<li>DDNETVER(<a href="mailto:teehistorian-ddnetver@ddnet.org">teehistorian-ddnetver@ddnet.org</a>): cid(int), connection_id(uuid), version(int), version_str(str)
+<li>DDNETVER(<a href="mailto:teehistorian-ddnetver@ddnet.tw">teehistorian-ddnetver@ddnet.tw</a>): cid(int), connection_id(uuid), version(int), version_str(str)
 <ul>
 <li>uuid: 1397b63e-ee4e-3919-b86a-b058887fcaf5</li>
 <li>introduced in DDNet 13.2, <a href="https://github.com/ddnet/ddnet/commit/0d7872c79eaeb19b3fd08c39c013a1043db1fd9b">0d7872c79eaeb19b</a></li>
 </ul></li>
-<li>AUTH_INIT(<a href="mailto:teehistorian-auth-init@ddnet.org">teehistorian-auth-init@ddnet.org</a>): cid(int) level(int) auth_name(str) records that a player with cid got rcon access with level under the account name auth_name since the start of the map (because they had it before the map change as well)
+<li>AUTH_INIT(<a href="mailto:teehistorian-auth-init@ddnet.tw">teehistorian-auth-init@ddnet.tw</a>): cid(int) level(int) auth_name(str) records that a player with cid got rcon access with level under the account name auth_name since the start of the map (because they had it before the map change as well)
 <ul>
 <li>uuid: 60daba5c-52c4-3aeb-b8ba-b2953fb55a17</li>
 <li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/1c3dc8c316c2bf37b94814d390c1c214422d46a9">1c3dc8c316c2bf37</a></li>
 </ul></li>
-<li>AUTH_LOGIN(<a href="mailto:teehistorian-auth-login@ddnet.org">teehistorian-auth-login@ddnet.org</a>): cid(int) level(int) auth_name(str) records that a player with cid just logged into rcon with level under the account name auth_name
+<li>AUTH_LOGIN(<a href="mailto:teehistorian-auth-login@ddnet.tw">teehistorian-auth-login@ddnet.tw</a>): cid(int) level(int) auth_name(str) records that a player with cid just logged into rcon with level under the account name auth_name
 <ul>
 <li>uuid: 37ecd3b8-9218-3bb9-a71b-a935b86f6a81</li>
 <li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/1c3dc8c316c2bf37b94814d390c1c214422d46a9">1c3dc8c316c2bf37</a></li>
 </ul></li>
-<li>AUTH_LOGOUT(<a href="mailto:teehistorian-auth-logout@ddnet.org">teehistorian-auth-logout@ddnet.org</a>): cid(int) records that a player with cid just logged out of rcon
+<li>AUTH_LOGOUT(<a href="mailto:teehistorian-auth-logout@ddnet.tw">teehistorian-auth-logout@ddnet.tw</a>): cid(int) records that a player with cid just logged out of rcon
 <ul>
 <li>uuid: d4f5abe8-edd2-3fb9-abd8-1c8bb84f4a63</li>
 <li>introduced in DDNet 11.0.3, <a href="https://github.com/ddnet/ddnet/commit/1c3dc8c316c2bf37b94814d390c1c214422d46a9">1c3dc8c316c2bf37</a></li>
 </ul></li>
-<li>JOINVER6(<a href="mailto:teehistorian-joinver6@ddnet.org">teehistorian-joinver6@ddnet.org</a>): cid(int)
+<li>JOINVER6(<a href="mailto:teehistorian-joinver6@ddnet.tw">teehistorian-joinver6@ddnet.tw</a>): cid(int)
 <ul>
 <li>uuid: 1899a382-71e3-36da-937d-c9de6bb95b1d</li>
 <li>introduced in DDNet 14.0, <a href="https://github.com/ddnet/ddnet/commit/e294da41ba7142cb583a5dd2eab45af2ec9a8447">e294da41ba7142cb</a></li>
 </ul></li>
-<li>JOINVER7(<a href="mailto:teehistorian-joinver7@ddnet.org">teehistorian-joinver7@ddnet.org</a>): cid(int)
+<li>JOINVER7(<a href="mailto:teehistorian-joinver7@ddnet.tw">teehistorian-joinver7@ddnet.tw</a>): cid(int)
 <ul>
 <li>uuid: 59239b05-0540-318d-bea4-9aa1e80e7d2b</li>
 <li>introduced in DDNet 14.0 <a href="https://github.com/ddnet/ddnet/commit/e294da41ba7142cb583a5dd2eab45af2ec9a8447">e294da41ba7142cb</a></li>
 </ul></li>
-<li>TEAM_SAVE_SUCCESS(<a href="mailto:teehistorian-save-success@ddnet.org">teehistorian-save-success@ddnet.org</a>): team(int), save_id(uuid), save(str)
+<li>TEAM_SAVE_SUCCESS(<a href="mailto:teehistorian-save-success@ddnet.tw">teehistorian-save-success@ddnet.tw</a>): team(int), save_id(uuid), save(str)
 <ul>
 <li>uuid: 4560c756-da29-3036-81d4-90a50f0182cd</li>
 <li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
 </ul></li>
-<li>TEAM_SAVE_FAILURE(<a href="mailto:teehistorian-save-failure@ddnet.org">teehistorian-save-failure@ddnet.org</a>): team(int)
+<li>TEAM_SAVE_FAILURE(<a href="mailto:teehistorian-save-failure@ddnet.tw">teehistorian-save-failure@ddnet.tw</a>): team(int)
 <ul>
 <li>uuid: b29901d5-1244-3bd0-bbde-23d04b1f7ba9</li>
 <li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
 </ul></li>
-<li>TEAM_LOAD_SUCCESS(<a href="mailto:teehistorian-load-success@ddnet.org">teehistorian-load-success@ddnet.org</a>): team(int), save_id(uuid), save(str)
+<li>TEAM_LOAD_SUCCESS(<a href="mailto:teehistorian-load-success@ddnet.tw">teehistorian-load-success@ddnet.tw</a>): team(int), save_id(uuid), save(str)
 <ul>
 <li>uuid: e05408d3-a313-33df-9eb3-ddb990ab954a</li>
 <li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
 </ul></li>
-<li>TEAM_LOAD_FAILURE(<a href="mailto:teehistorian-load-failure@ddnet.org">teehistorian-load-failure@ddnet.org</a>): team(int)
+<li>TEAM_LOAD_FAILURE(<a href="mailto:teehistorian-load-failure@ddnet.tw">teehistorian-load-failure@ddnet.tw</a>): team(int)
 <ul>
 <li>uuid: ef8905a2-c695-3591-a1cd-53d2015992dd</li>
 <li>introduced in DDNet 14.0.2, <a href="https://github.com/ddnet/ddnet/commit/d8aab366fc8489c8cba4c77d73a6a7bfcce83bbc">d8aab366fc8489c8</a></li>
 </ul></li>
-<li>TEEHISTORIAN_PLAYER_TEAM(<a href="mailto:teehistorian-player-team@ddnet.org">teehistorian-player-team@ddnet.org</a>): cid(int), team(int) records team changes
+<li>TEEHISTORIAN_PLAYER_TEAM(<a href="mailto:teehistorian-player-team@ddnet.tw">teehistorian-player-team@ddnet.tw</a>): cid(int), team(int) records team changes
 <ul>
 <li>uuid: a111c04e-1ea8-38e0-90b1-d7f993ca0da9</li>
 <li>introduced in DDNet 15.6, <a href="https://github.com/ddnet/ddnet/commit/e9dec007b22a071e9d104682955c952633455c27">e9dec007b22a071e</a></li>
 </ul></li>
-<li>TEEHISTORIAN_TEAM_PRACTICE(<a href="mailto:teehistorian-team-practice@ddnet.org">teehistorian-team-practice@ddnet.org</a>): team(int), practice(int) records when a team enters practice mode, resulting ranks don't get submitted to the database
+<li>TEEHISTORIAN_TEAM_PRACTICE(<a href="mailto:teehistorian-team-practice@ddnet.tw">teehistorian-team-practice@ddnet.tw</a>): team(int), practice(int) records when a team enters practice mode, resulting ranks don't get submitted to the database
 <ul>
 <li>uuid: 5792834e-81d1-34c9-a29b-b5ff25dac3bc</li>
 <li>introduced in DDNet 15.6, <a href="https://github.com/ddnet/ddnet/commit/81f426342806952603a2d28290279e0a7107db5b">81f4263428069526</a></li>
 </ul></li>
-<li>TEEHISTORIAN_PLAYER_READY(<a href="mailto:teehistorian-player-ready@ddnet.org">teehistorian-player-ready@ddnet.org</a>): cid(int) records when the client messages that it is ready to join the game, leading to the tee being spawned in the following tick
+<li>TEEHISTORIAN_PLAYER_READY(<a href="mailto:teehistorian-player-ready@ddnet.tw">teehistorian-player-ready@ddnet.tw</a>): cid(int) records when the client messages that it is ready to join the game, leading to the tee being spawned in the following tick
 <ul>
 <li>uuid: 638587c9-3f75-3887-918e-a3c2614ffaa0</li>
 <li>introduced in DDNet 16.0, <a href="https://github.com/ddnet/ddnet/commit/3ea55dcc0ebc1c791e11cab0c268febe7e783504">3ea55dcc0ebc1c79</a></li>
 </ul></li>
-<li>TEEHISTORIAN_PLAYER_SWITCH(&quot;<a href="mailto:teehistorian-player-swap@ddnet.org">teehistorian-player-swap@ddnet.org</a>): cid1(int), cid2(int) records the ids of players swapping tees
+<li>TEEHISTORIAN_PLAYER_SWITCH(&quot;<a href="mailto:teehistorian-player-swap@ddnet.tw">teehistorian-player-swap@ddnet.tw</a>): cid1(int), cid2(int) records the ids of players swapping tees
 <ul>
 <li>uuid: 5de9b633-49cf-3e99-9a25-d4a78e9717d7</li>
 <li>introduced in DDNet 16.1, <a href="https://github.com/ddnet/ddnet/commit/86f57289c6ff1926e1e9802de33ceae69a026717">86f57289c6ff1926</a></li>
