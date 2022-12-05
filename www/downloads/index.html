@@ -4,6 +4,84 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="16.6"><a href="#16.6">DDNet 16.6</a></h3>
+<div class="dlfiles">
+  2022-12-12<br/><br/>
+  <ul>
+    <li><a href="DDNet-16.6-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-16.6-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-16.6-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-16.6-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-16.6-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-16.6.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Tooling] <strong>Add support for <a href="https://www.rust-lang.org/">Rust</a> code in DDNet</strong> [<strong>heinrich5991</strong>]</li>
+    <li>[Client] <strong>Add friend counter in server browser</strong> [<strong>louis</strong>]</li>
+    <li>[Client] <strong>Add buttons+increased length on demo viewbar</strong> [<strong>louis</strong>]</li>
+    <li>[Editor] <strong>Improve UI</strong> [<strong>Voxel</strong>]</li>
+    <li>[Editor] <strong>Smooth zoom</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Server] <strong>Add 4 minutes of logs for moderators</strong> [<strong>Vy0x2</strong>]</li>
+    <li>[Client] Fix crash when cutting a demo opened from command line [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix heap-buffer-overflow in DDNetLaser prediction code [<strong>Zwelf</strong>]</li>
+    <li>[Client] Fix incorrect cursor position after exiting pause/spec [<strong>Robyt3</strong>]</li>
+    <li>[Client] More confirmation menus [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix client crash when launching with screenshot command [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix key reader text flashing for one frame [<strong>Robyt3</strong>]</li>
+    <li>[Client] Remove // in ddnet:// url handler</li>
+    <li>[Client] Fix client crash when unpacking a sixup packet [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix invalid demo cutting, Add slice highlighting [<strong>Voxel</strong>]</li>
+    <li>[Client] Fix choppy demo seeking when start/end ticks are very large [<strong>Robyt3</strong>]</li>
+    <li>[Client] Allow both shift keys to be used for all hotkeys [<strong>Robyt3</strong>]</li>
+    <li>[Client] Switch to Vulkan 1.1 [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Correct color for Gores gametype in serverbrowser [<strong>Avolicious</strong>]</li>
+    <li>[Client] Fix Ctrl+F hotkey not checking for Ctrl key, minor improvement to tile details popup layout [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Add "Tools &gt; Remove unused envelopes" [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix large popups being outside of screen, add margin [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix incorrect minimum values for tele, speedup and switch layers [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Change hotkey Ctrl+A to Ctrl+T for layer/tile details [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Also append sounds when appending a map to another map [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix height and margin of sound and image popups [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Search for images/sounds in subfolders when readding in editor, show selection dialog if multiple files with the same are found, show error popup when file cannot be found [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Add Shift+G editor hotkey to toggle visibility of game layers [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix editor crash when shifting left/right, fix wrong up/down shifting [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Adjust quad point position and texture U/V relatively [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Hex values in info feature [<strong>Voxel</strong>]</li>
+    <li>[Editor] Fix crashes when scrolling with up/down keys on empty sounds/images lists [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix text input not working when entering editor with bind, fix IME not being deactivated when editor is closed [<strong>Robyt3</strong>]</li>
+    <li>[Server] Fix physics change by weak hook fix [<strong>fokkonaut</strong>]</li>
+    <li>[Server] Write log and sqlite files to storage unless given as absolute path [<strong>Robyt3</strong>]</li>
+    <li>[Server] Add reason to vote mute, fix vote mute [<strong>Vy0x2</strong>]</li>
+    <li>[Server] Reset teams when restarting round [<strong>Robyt3</strong>]</li>
+    <li>[Server] Report extra player info to master http [<strong>Ryozuki</strong>]</li>
+    <li>[Server] Fix CGun::Fire server crash</li>
+    <li>[Tooling] Add an optional vscode workspace [<strong>Jupeyy</strong>]</li>
+    <li>[Tooling] Add vim syntax files for config files [<strong>Ryozuki</strong>]</li>
+    <li>[Tooling] Add tests for int packer, huffman compression [<strong>ChillerDragon</strong>]</li>
+    <li>[Tooling] Add more tests for hashing, CSemaphore and utf8 confusables [<strong>Robyt3</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/16.5...16.6">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="16.5"><a href="#16.5">DDNet 16.5</a></h3>
 <div class="dlfiles">
   2022-10-26<br/><br/>
@@ -46,22 +124,6 @@ title: Downloads - DDraceNetwork
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/16.4...16.5">full list of git changes</a>
 </div>
 <br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="16.4"><a href="#16.4">DDNet 16.4</a></h3>
 <div class="dlfiles">
   2022-09-23<br/><br/>
