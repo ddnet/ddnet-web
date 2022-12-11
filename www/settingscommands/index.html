@@ -27,7 +27,7 @@ menu: |
   <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>64</td></tr>
   <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>64</td><td>1</td><td>64</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_no_weak_hook_and_bounce</td><td>Whether to use an alternative calculation for world ticks, that makes hook and bounce behave like all players have strong.</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_no_weak_hook</td><td>Whether to use an alternative calculation for world ticks, that makes the hook behave like all players have strong.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_show_others_default</td><td>Whether players see others by default (2 for own team)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>sv_plasma_range</td><td>How far will the plasma gun track tees</td><td>700</td><td>1</td><td>99999</td></tr>
@@ -49,7 +49,7 @@ menu: |
   <tr><td>tune_zone</td><td>i[zone] s[tuning] i[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
   <tr><td>tune_zone_leave</td><td>i[zone] r[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
-  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.org)</td></tr>
+  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doubleexplosion@ddnet.tw)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
 </table></div>
 </div>
@@ -84,7 +84,7 @@ menu: |
   <tr><td>sv_auto_demo_record</td><td>Automatically record demos</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_auto_demo_max</td><td>Maximum number of automatically recorded demos (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_tee_historian</td><td>Activate the tee historian that writes complete gameplay data to disk (WARNING: This will use a lot of disk space)</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_vanilla_antispoof</td><td>Enable vanilla Antispoof</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_dnsbl</td><td>Enable DNSBL (DNS-based Blackhole List)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_dnsbl_host</td><td>Hostname of DNSBL provider to use for IP Verification</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_dnsbl_key</td><td>Optional Authentication Key for the specified DNSBL provider</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -174,7 +174,7 @@ menu: |
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_slash_me</td><td>Whether /me is active on the server or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_rejoin_team_0</td><td>Make a team automatically rejoin team 0 after finish (only if not locked)</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_no_weak_hook_and_bounce</td><td>Whether to use an alternative calculation for world ticks, that makes hook and bounce behave like all players have strong.</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_no_weak_hook</td><td>Whether to use an alternative calculation for world ticks, that makes the hook behave like all players have strong.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td><td>5</td><td>1000</td></tr>
   <tr><td>conn_timeout_protection</td><td>Network timeout protection</td><td>1000</td><td>5</td><td>10000</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td><td>0</td><td>1</td></tr>
@@ -302,7 +302,7 @@ menu: |
   <tr><td>tune_zone_reset</td><td>?i[zone]</td><td>reset zone tuning in zone x or in all zones</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>which message to display on zone enter; use 0 for normal area</td></tr>
   <tr><td>tune_zone_leave</td><td>i[zone] r[message]</td><td>which message to display on zone leave; use 0 for normal area</td></tr>
-  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doublexplosion@ddnet.org)</td></tr>
+  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doubleexplosion@ddnet.tw)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
   <tr><td>pause_game</td><td></td><td>Pause/unpause game</td></tr>
   <tr><td>change_map</td><td>?r[map]</td><td>Change map</td></tr>
@@ -356,9 +356,9 @@ menu: |
   <tr><td>move_raw</td><td>i[x] i[y]</td><td>Moves to the point with x/y-coordinates ii</td></tr>
   <tr><td>force_pause</td><td>v[id] i[seconds]</td><td>Force i to pause for i seconds</td></tr>
   <tr><td>force_unpause</td><td>v[id]</td><td>Set force-pause timer of i to 0.</td></tr>
-  <tr><td>set_team_ddr</td><td>v[id] ?i[team]</td><td>Set ddrace team of a player</td></tr>
-  <tr><td>uninvite</td><td>v[id] ?i[team]</td><td>Uninvite player from team</td></tr>
-  <tr><td>vote_mute</td><td>v[id] i[seconds]</td><td>Remove v&#x27;s right to vote for i seconds</td></tr>
+  <tr><td>set_team_ddr</td><td>v[id] i[team]</td><td>Set ddrace team of a player</td></tr>
+  <tr><td>uninvite</td><td>v[id] i[team]</td><td>Uninvite player from team</td></tr>
+  <tr><td>vote_mute</td><td>v[id] i[seconds] ?r[reason]</td><td>Remove v&#x27;s right to vote for i seconds</td></tr>
   <tr><td>vote_unmute</td><td>v[id]</td><td>Give back v&#x27;s right to vote.</td></tr>
   <tr><td>vote_mutes</td><td></td><td>List the current active vote mutes.</td></tr>
   <tr><td>mute</td><td></td><td></td></tr>
@@ -370,6 +370,7 @@ menu: |
   <tr><td>moderate</td><td></td><td>Enables/disables active moderator mode for the player</td></tr>
   <tr><td>vote_no</td><td></td><td></td></tr>
   <tr><td>save_dry</td><td></td><td>Dump the current savestring</td></tr>
+  <tr><td>dump_log</td><td>?i[seconds]</td><td>Show logs of the last i seconds</td></tr>
   <tr><td>freezehammer</td><td>v[id]</td><td>Gives a player Freeze Hammer</td></tr>
   <tr><td>unfreezehammer</td><td>v[id]</td><td>Removes Freeze Hammer from a player</td></tr>
 </table></div>
@@ -505,6 +506,7 @@ menu: |
   <tr><td>cl_dyncam_follow_factor</td><td>Factor for the dynamic camera to follow the cursor</td><td>60</td><td>0</td><td>200</td></tr>
   <tr><td>cl_dyncam_smoothness</td><td>Transition amount of the camera movement, 0=instant, 100=slow and smooth</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>cl_dyncam_stabilizing</td><td>Amount of camera slowdown during fast cursor movement. High value can cause delay in camera movement</td><td>0</td><td>0</td><td>100</td></tr>
+  <tr><td>ed_smooth_zoom_time</td><td>Time of smooth zoom animation in the editor in ms (0 for off)</td><td>250</td><td>0</td><td>5000</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>ed_showkeys</td><td></td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_welcome</td><td></td><td>1</td><td>0</td><td>1</td></tr>
@@ -521,8 +523,8 @@ menu: |
   <tr><td>cl_download_community_skins</td><td>Allow to download skins created by the community. Uses cl_skin_community_download_url instead of cl_skin_download_url for the download</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_auto_statboard_screenshot</td><td>Automatically take game over statboard screenshot</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_auto_statboard_screenshot_max</td><td>Maximum number of automatically created statboard screenshots (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
-  <tr><td>cl_default_zoom</td><td>Default zoom level (10 default, min 0, max 20)</td><td>10</td><td>0</td><td>20</td></tr>
-  <tr><td>cl_smooth_zoom_time</td><td>Time of smooth zoom animation in ms (0 for off)</td><td>250</td><td>0</td><td>5000</td></tr>
+  <tr><td>cl_default_zoom</td><td>Default zoom level</td><td>10</td><td>0</td><td>20</td></tr>
+  <tr><td>cl_smooth_zoom_time</td><td>Time of smooth zoom animation ingame in ms (0 for off)</td><td>250</td><td>0</td><td>5000</td></tr>
   <tr><td>cl_limit_max_zoom_level</td><td>Specifies, if zooming should be limited or not (0 = no limit)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>player_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>player_color_body</td><td>Player body color</td><td>65408</td><td></td><td></td></tr>
@@ -797,7 +799,7 @@ menu: |
   <tr><td>dump_remote_console</td><td></td><td>Write remote console contents to a text file</td></tr>
   <tr><td>console_page_up</td><td></td><td>Previous page in console</td></tr>
   <tr><td>console_page_down</td><td></td><td>Next page in console</td></tr>
-  <tr><td>callvote</td><td>s[command] s[id] ?r[reason]</td><td>Call vote</td></tr>
+  <tr><td>callvote</td><td>s[&#x27;kick&#x27;|&#x27;spectate&#x27;|&#x27;option&#x27;] s[id|option text] ?r[reason]</td><td>Call vote</td></tr>
   <tr><td>vote</td><td>r[&#x27;yes&#x27;|&#x27;no&#x27;]</td><td>Vote yes/no</td></tr>
   <tr><td>+emote</td><td></td><td>Open emote selector</td></tr>
   <tr><td>emote</td><td>i[emote-id]</td><td>Use emote</td></tr>
@@ -865,7 +867,7 @@ menu: |
   <tr><td>demo_slice_end</td><td></td><td></td></tr>
   <tr><td>demo_play</td><td></td><td>Play demo</td></tr>
   <tr><td>demo_speed</td><td>i[speed]</td><td>Set demo speed</td></tr>
-  <tr><td>save_replay</td><td>?i[length] ?s[filename]</td><td>Save a replay of the last defined amount of seconds</td></tr>
+  <tr><td>save_replay</td><td>?i[length] s[filename]</td><td>Save a replay of the last defined amount of seconds</td></tr>
   <tr><td>benchmark_quit</td><td>i[seconds] r[file]</td><td>Benchmark frame times for number of seconds to file, then quit</td></tr>
 </table></div>
 </div>
