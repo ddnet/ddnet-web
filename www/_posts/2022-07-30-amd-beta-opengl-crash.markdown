@@ -13,3 +13,5 @@ So far we have no solution and have reported this problem to AMD. As a workaroun
 > (notice you HAVE to include the ")
 
 For non-Steam version you can edit the %appdata%\DDNet\settings_ddnet.cfg or %appdata%\Teeworlds\settings_ddnet.cfg and add a line with `gfx_backend Vulkan`, then start client.
+
+Update on 2022-12-17: The new stable driver has fixed this issue, there is currently no beta driver. So just update to the latest driver for a fix.
