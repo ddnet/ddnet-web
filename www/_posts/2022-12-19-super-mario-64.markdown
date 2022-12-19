@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Super Mario 64 in DDNet"
+permalink: /news/super-mario-64/
+head: <script src="/youtube.js?version=2" type="text/javascript"></script>
+tag: current
+---
+
+DDNet community member and developer [headshot2018](https://github.com/headshot2017) (also check out his fun [Teeware](https://github.com/headshot2017/teeware-mod) modification) has combined Super Mario 64 and DDNet!
+
+<div class="video-container"><div class="ytplayer" data-id="Rpq889gZU4A"></div></div>
+
+It's a client-only modification, so you can try it out on [Github](https://github.com/headshot2017/ddnet-sm64/releases). Discussion on [forum](https://forum.ddnet.org/viewtopic.php?p=71123).
