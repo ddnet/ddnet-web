@@ -1,0 +1,19 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\ddnet]
+@="URL:DDNet Protocol"
+"URL Protocol"=""
+
+# REPLACE PATH TO DDNET.EXE
+
+[HKEY_CLASSES_ROOT\ddnet\DefaultIcon]
+@="\"C:\\Users\\YourUserName\\Desktop\\DDNetFolder\\DDNet.exe\""
+
+[HKEY_CLASSES_ROOT\ddnet\shell]
+
+[HKEY_CLASSES_ROOT\ddnet\shell\open]
+
+# REPLACE PATH TO DDNET.EXE
+
+[HKEY_CLASSES_ROOT\ddnet\shell\open\command]
+@="\"C:\\Users\\YourUserName\\Desktop\\DDNetFolder\\DDNet.exe\" \"%1\""
