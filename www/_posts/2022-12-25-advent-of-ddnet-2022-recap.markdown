@@ -93,7 +93,7 @@ Let's compare the number of finishes against how the map did before December 1, 
       <td style="text-align: right">2</td>
       <td>Dubush</td>
       <td style="text-align: right">712</td>
-      <td style="text-align: right">712</td>
+      <td style="text-align: right">73</td>
       <td style="text-align: right">9.7</td>
       <td>&nbsp;</td>
     </tr>
