@@ -85,7 +85,7 @@ Let's compare the number of finishes against how the map did before December 1, 
       <td style="text-align: right">1</td>
       <td>Multeasymap</td>
       <td style="text-align: right">1555</td>
-      <td style="text-align: right">1001</td>
+      <td style="text-align: right">1001.8</td>
       <td style="text-align: right">1.6</td>
       <td>&nbsp;</td>
     </tr>
@@ -93,15 +93,15 @@ Let's compare the number of finishes against how the map did before December 1, 
       <td style="text-align: right">2</td>
       <td>Dubush</td>
       <td style="text-align: right">712</td>
-      <td style="text-align: right">73</td>
-      <td style="text-align: right">9.7</td>
+      <td style="text-align: right">3.5</td>
+      <td style="text-align: right">205.6</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">3</td>
       <td>Sincera 2</td>
       <td style="text-align: right">1853</td>
-      <td style="text-align: right">134</td>
+      <td style="text-align: right">133.4</td>
       <td style="text-align: right">13.9</td>
       <td>&nbsp;</td>
     </tr>
@@ -109,31 +109,31 @@ Let's compare the number of finishes against how the map did before December 1, 
       <td style="text-align: right">4</td>
       <td>Exit</td>
       <td style="text-align: right">661</td>
-      <td style="text-align: right">9</td>
-      <td style="text-align: right">70.3</td>
+      <td style="text-align: right">3.2</td>
+      <td style="text-align: right">206.6</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">5</td>
       <td>Maui Wowie</td>
       <td style="text-align: right">1214</td>
-      <td style="text-align: right">32</td>
-      <td style="text-align: right">38.5</td>
+      <td style="text-align: right">23.7</td>
+      <td style="text-align: right">51.3</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">6</td>
       <td>Intothenight</td>
       <td style="text-align: right">536</td>
-      <td style="text-align: right">12</td>
-      <td style="text-align: right">46.4</td>
+      <td style="text-align: right">2.1</td>
+      <td style="text-align: right">259.0</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">7</td>
       <td>Volt180°</td>
       <td style="text-align: right">655</td>
-      <td style="text-align: right">46</td>
+      <td style="text-align: right">46.1</td>
       <td style="text-align: right">14.2</td>
       <td>Volt</td>
     </tr>
@@ -141,111 +141,111 @@ Let's compare the number of finishes against how the map did before December 1, 
       <td style="text-align: right">8</td>
       <td>TsinmaS</td>
       <td style="text-align: right">783</td>
-      <td style="text-align: right">8</td>
-      <td style="text-align: right">93.2</td>
+      <td style="text-align: right">1.9</td>
+      <td style="text-align: right">422.1</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">9</td>
       <td>Orange 2</td>
       <td style="text-align: right">292</td>
-      <td style="text-align: right">8</td>
-      <td style="text-align: right">35.0</td>
+      <td style="text-align: right">1.3</td>
+      <td style="text-align: right">231.9</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">10</td>
       <td>Adrenachill 5 Part 1</td>
       <td style="text-align: right">210</td>
-      <td style="text-align: right">3</td>
-      <td style="text-align: right">74.5</td>
+      <td style="text-align: right">0.03</td>
+      <td style="text-align: right">8171.2</td>
       <td>Adrenaline 5</td>
     </tr>
     <tr>
       <td style="text-align: right">11</td>
       <td>Tinyhold</td>
       <td style="text-align: right">861</td>
-      <td style="text-align: right">14</td>
-      <td style="text-align: right">61.8</td>
+      <td style="text-align: right">8.6</td>
+      <td style="text-align: right">100.2</td>
       <td>Stronghold</td>
     </tr>
     <tr>
       <td style="text-align: right">12</td>
       <td>Zap</td>
       <td style="text-align: right">863</td>
-      <td style="text-align: right">9</td>
-      <td style="text-align: right">95.7</td>
+      <td style="text-align: right">6.2</td>
+      <td style="text-align: right">139.8</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">13</td>
       <td>AiP-Bores</td>
       <td style="text-align: right">1275</td>
-      <td style="text-align: right">19</td>
-      <td style="text-align: right">68.8</td>
+      <td style="text-align: right">15.7</td>
+      <td style="text-align: right">81.1</td>
       <td>AiP-Gores</td>
     </tr>
     <tr>
       <td style="text-align: right">14</td>
       <td>Supernova</td>
       <td style="text-align: right">290</td>
-      <td style="text-align: right">6</td>
-      <td style="text-align: right">49.0</td>
+      <td style="text-align: right">2.3</td>
+      <td style="text-align: right">128.9</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">15</td>
-      <td>Not Really Yo’Ci</td>
+      <td>Not Really Yo'Ci</td>
       <td style="text-align: right">1057</td>
-      <td style="text-align: right">3</td>
-      <td style="text-align: right">333.5</td>
-      <td>Yo’Ci</td>
+      <td style="text-align: right">0.1</td>
+      <td style="text-align: right">11930.0</td>
+      <td>Yo'Ci</td>
     </tr>
     <tr>
       <td style="text-align: right">16</td>
       <td>2 Days in the back</td>
       <td style="text-align: right">511</td>
-      <td style="text-align: right">12</td>
-      <td style="text-align: right">43.2</td>
+      <td style="text-align: right">0.8</td>
+      <td style="text-align: right">630.7</td>
       <td>Back in the days 2</td>
     </tr>
     <tr>
       <td style="text-align: right">17</td>
       <td>Adrenachill 5 Part 2</td>
       <td style="text-align: right">322</td>
-      <td style="text-align: right">3</td>
-      <td style="text-align: right">114.3</td>
+      <td style="text-align: right">0.03</td>
+      <td style="text-align: right">12529.2</td>
       <td>Adrenaline 5</td>
     </tr>
     <tr>
       <td style="text-align: right">18</td>
       <td>Arctic Festivity</td>
       <td style="text-align: right">1176</td>
-      <td style="text-align: right">7</td>
-      <td style="text-align: right">168.0</td>
+      <td style="text-align: right">0.3</td>
+      <td style="text-align: right">3853.2</td>
       <td>Arctic Frost</td>
     </tr>
     <tr>
       <td style="text-align: right">19</td>
       <td>xyzyx</td>
       <td style="text-align: right">6504</td>
-      <td style="text-align: right">21</td>
-      <td style="text-align: right">306.5</td>
+      <td style="text-align: right">15.4</td>
+      <td style="text-align: right">422.5</td>
       <td>xyz_ddrace2</td>
     </tr>
     <tr>
       <td style="text-align: right">20</td>
       <td>DaoYu</td>
       <td style="text-align: right">350</td>
-      <td style="text-align: right">42</td>
-      <td style="text-align: right">8.3</td>
+      <td style="text-align: right">41.6</td>
+      <td style="text-align: right">8.4</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">21</td>
       <td>Slippy Slide Up</td>
       <td style="text-align: right">3957</td>
-      <td style="text-align: right">743</td>
+      <td style="text-align: right">742.8</td>
       <td style="text-align: right">5.3</td>
       <td>Sunny Side Up</td>
     </tr>
@@ -253,24 +253,24 @@ Let's compare the number of finishes against how the map did before December 1, 
       <td style="text-align: right">22</td>
       <td>Pranki</td>
       <td style="text-align: right">295</td>
-      <td style="text-align: right">6</td>
-      <td style="text-align: right">47.4</td>
+      <td style="text-align: right">2.6</td>
+      <td style="text-align: right">112.9</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
       <td style="text-align: right">23</td>
       <td>run_guys_25</td>
       <td style="text-align: right">909</td>
-      <td style="text-align: right">8</td>
-      <td style="text-align: right">108.3</td>
+      <td style="text-align: right">7.3</td>
+      <td style="text-align: right">125.1</td>
       <td>run_guy_25</td>
     </tr>
     <tr>
       <td style="text-align: right">24</td>
       <td>Snow Problem</td>
       <td style="text-align: right">503</td>
-      <td style="text-align: right">14</td>
-      <td style="text-align: right">35.4</td>
+      <td style="text-align: right">8.5</td>
+      <td style="text-align: right">59.0</td>
       <td>&nbsp;</td>
     </tr>
   </tbody>
