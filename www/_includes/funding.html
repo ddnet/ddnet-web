@@ -5,7 +5,7 @@ var isArray = Array.isArray || function(arr) {
 };
 var costs = {
   "ddnet":  353 + 60 + 59, // includes vpn
-  "master": 32, // hetzner.de
+  "master": [32, 32, "Izanagi"], // hetzner.de
   "db":     47,
   "ger2":   "heinrich5991", // hetzner.de
   "ger4":   55, // hetzner.de
@@ -31,7 +31,7 @@ var costs = {
   "aus":    43, // ovh.com
   "zaf":    66, // ivecloud.co.za
 };
-var donated = 0;
+var donated = 5;
 var yearStr = "2023";
 var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253;
 var donatedOld = 10767;
