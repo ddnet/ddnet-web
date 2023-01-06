@@ -10,8 +10,8 @@ Current DDNet client translation status showing how many of the messages are tra
 ```
 100% russian
 100% german
+100% spanish
 96% traditional_chinese
-96% spanish
 96% simplified_chinese
 96% french
 96% brazilian_portuguese
