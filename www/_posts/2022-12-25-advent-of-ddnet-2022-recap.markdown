@@ -69,6 +69,7 @@ On day 21 our testing co-leader [Ravie](/mappers/Ravie/) came out with [Slippy S
 
 Let's compare the number of finishes against how the map did before December 1, and for modified maps how the original map did in that time:
 
+<div style="overflow-x: auto;">
 <table class="tight" style="border-collapse: separate; border-spacing: 1em 0;">
   <thead>
     <tr>
@@ -275,11 +276,13 @@ Let's compare the number of finishes against how the map did before December 1, 
     </tr>
   </tbody>
 </table>
+</div>
 
 ## Going all the Way
 
 Since you got 10 points for each finished map, most likely everyone with 240 or more points finished every map:
 
+<div style="overflow-x: auto;">
 <table class="tight">
 <tbody><tr>
   <td class="rankglobal">1.</td><td class="points">339 points</td><td><a href="/players/Brokecdx-45-/">Brokecdx-</a></td></tr><tr>
@@ -315,5 +318,6 @@ Since you got 10 points for each finished map, most likely everyone with 240 or 
   <td class="rankglobal">16.</td><td class="points">240 points</td><td><a href="/players/tae/">tae</a></td></tr><tr class="allPoints" style="">
 </tr></tbody>
 </table>
+</div>
 
 Congrats to the winners [Brokecdx-](/players/Brokecdx-45-/) & [paradise](/players/paradise/)!
