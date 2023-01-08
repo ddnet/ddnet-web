@@ -4,3 +4,4 @@ markdown: kramdown
 highlighter: true
 author:
   name: deen
+include: [".well-known"]
