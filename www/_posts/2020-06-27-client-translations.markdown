@@ -14,8 +14,8 @@ Current DDNet client translation status showing how many of the messages are tra
 100% korean
 100% french
 100% brazilian_portuguese
-96% traditional_chinese
-96% simplified_chinese
+100% traditional_chinese
+100% simplified_chinese
 91% serbian_cyrillic
 91% hungarian
 90% serbian
