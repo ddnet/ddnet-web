@@ -4,6 +4,72 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="16.7"><a href="#16.7">DDNet 16.7</a></h3>
+<div class="dlfiles">
+  2023-01-11<br/><br/>
+  <ul>
+    <li><a href="DDNet-16.7-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-16.7-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-16.7-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-16.7-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-16.7-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-16.7.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>Default to Vulkan graphics backend (higher FPS) and handle errors</strong> [<strong>Jupeyy</strong>]</li>
+    <li>[Client] <strong>Implement exact matches in search and exclude strings using "" in serverbrowser</strong></li>
+    <li>[Client] <strong>Register protocol (<a href="ddnet://ger2.ddnet.org">ddnet://ger2.ddnet.org</a>) and file extensions (.demo and .map) on client launch on Windows</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Client] <strong>Register protocol and file extensions on macOS during installation</strong></li>
+    <li>[Client] Render bar below server browser to show loading progression [<strong>Robyt3</strong>]</li>
+    <li>[Client] Allow translations to reorder string substitutions [<strong>heinrich5991</strong>]</li>
+    <li>[Client] Ignore connecting players in search terms when "Filter connecting players" is on</li>
+    <li>[Client] Adjust no weak prediction to updated server code [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Copy the demo timeline markers when slicing a demo [<strong>Robyt3</strong>]</li>
+    <li>[Client] Handle ordinal joystick hat keys as combined cardinal hat keys [<strong>Robyt3</strong>]</li>
+    <li>[Client] Add support for hot-plugging gamecontrollers [<strong>Robyt3</strong>]</li>
+    <li>[Client] Register application separately to specify its displayed name [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix signed integer overflow on client input message [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix undefined behavior when unpacking snapshot deltas [<strong>Robyt3</strong>]</li>
+    <li>[Client] Remove possible overflow in str_comp_filenames [<strong>Chairn</strong>]</li>
+    <li>[Client] Fix edge cases where demo tick seeking did not work [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix smooth zooming overshooting the target zoom level [<strong>Robyt3</strong>]</li>
+    <li>[Client] Add button that tells you how to save power</li>
+    <li>[Client] Colorify BW &amp; F-DDrace gamemodes [<strong>NouaaTW &amp; fokkonaut</strong>]</li>
+    <li>[Editor] Add tooltips for the buttons that open directories and files [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Add separate ed_limit_max_zoom_level for editor, fix editor smooth zooming when joining/reloading game [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Deactivate editor hotkeys while dialog or editbox is active [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix issues when closing multiple editor popups at the same time [<strong>Robyt3</strong>]</li>
+    <li>[Server] Make restart command work [<strong>Robyt3</strong>]</li>
+    <li>[Server] Send laser objects as DDNetLaser with type [<strong>fokkonaut</strong>]</li>
+    <li>[Server] Add README.md for the mastersrv, briefly explaining the setup [<strong>heinrich5991</strong>]</li>
+    <li>[Server] Add tool to manually ping the mastersrv [<strong>heinrich5991</strong>]</li>
+    <li>[Server] Persist AFK state of players on map change, fix players always being considered AFK with sv_max_afk_time 0 [<strong>Robyt3</strong>]</li>
+    <li>[Server] Fix scoreboard showing wrong best time</li>
+    <li>[Server] Swap times should be per player, not per team</li>
+    <li>[Server] Improve move_sqlite script to adapt timezone [<strong>Zwelf</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/16.6...16.7">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="16.6"><a href="#16.6">DDNet 16.6</a></h3>
 <div class="dlfiles">
   2022-12-12<br/><br/>
@@ -66,22 +132,6 @@ title: Downloads - DDraceNetwork
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/16.5...16.6">full list of git changes</a>
 </div>
 <br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="md5sums.txt">MD5</a>, <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="16.5"><a href="#16.5">DDNet 16.5</a></h3>
 <div class="dlfiles">
   2022-10-26<br/><br/>
