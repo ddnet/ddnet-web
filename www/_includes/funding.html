@@ -6,7 +6,7 @@ var isArray = Array.isArray || function(arr) {
 var costs = {
   "ddnet":  353 + 60 + 59, // includes vpn
   "master": [32, 32, "Izanagi"], // hetzner.de
-  "db":     47,
+  "db":     [47, 47, "Default0"],
   "ger2":   "heinrich5991", // hetzner.de
   "ger10":  "Davide",
   "pol":    "Davide", // ovh.com, runs out on 2023-06-13
@@ -28,7 +28,7 @@ var costs = {
   "aus":    43, // ovh.com
   "zaf":    66, // ivecloud.co.za
 };
-var donated = 35;
+var donated = 38;
 var yearStr = "2023";
 var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253;
 var donatedOld = 10767;
