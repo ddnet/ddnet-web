@@ -8,41 +8,41 @@ tag: current
 Current DDNet client translation status showing how many of the messages are translated:
 
 ```
-100% russian
 100% german
-100% spanish
-100% korean
-100% french
-100% brazilian_portuguese
-100% traditional_chinese
-100% simplified_chinese
-91% serbian_cyrillic
-91% hungarian
+99% traditional_chinese
+99% spanish
+99% simplified_chinese
+99% russian
+99% korean
+99% french
+99% brazilian_portuguese
+97% persian
+90% serbian_cyrillic
 90% serbian
+90% hungarian
 78% polish
 78% dutch
 76% catalan
-75% swedish
-74% ukrainian
-72% japanese
+74% swedish
+73% ukrainian
+71% japanese
 69% norwegian
-69% italian
-69% finnish
 69% danish
 69% czech
-69% arabic
-63% turkish
-60% bosnian
+68% italian
+68% finnish
+68% arabic
+62% turkish
+59% bosnian
 56% portuguese
-52% persian
-35% slovak
 35% romanian
 35% kyrgyz
 35% greek
-35% esperanto
-35% chuvash
-35% belarusian
+34% slovak
+34% esperanto
+34% chuvash
 34% bulgarian
+34% belarusian
 ```
 
 If you want to help translate: For the translation edit the respective language file in [data/languages](https://github.com/ddnet/ddnet/tree/master/data/languages) and create a [Pull Request on GitHub](https://github.com/ddnet/ddnet/) (or just send it to us on [Discord](/discord/)).
