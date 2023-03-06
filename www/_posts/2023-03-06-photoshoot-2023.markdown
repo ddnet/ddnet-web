@@ -1,0 +1,8 @@
+---
+layout: post
+title: "Happy New Year 2023 Photoshoot Result"
+permalink: /news/photoshoot-2023/
+tag: current
+---
+The [Photoshoot from nearly 2 months ago](/news/happy-belated-new-year-2023/) is finished! Check out the [final image](/newyear2023/):
+[<img class="demo" src="/newyear2023.jpg" />](/newyear2023/)
