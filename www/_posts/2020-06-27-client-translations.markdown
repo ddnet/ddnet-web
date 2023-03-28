@@ -8,14 +8,14 @@ tag: current
 Current DDNet client translation status showing how many of the messages are translated:
 
 ```
+100% russian
+100% korean
 100% german
+100% brazilian_portuguese
 99% traditional_chinese
 99% spanish
 99% simplified_chinese
-99% russian
-99% korean
 99% french
-99% brazilian_portuguese
 97% persian
 90% serbian_cyrillic
 90% hungarian
