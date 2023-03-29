@@ -207,6 +207,8 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
         // if the request is HD modify request => only drop HD skins and only if type did not change
         // if type did not change only replace the skin file
         $alsodrophdskins = $skin_json->skins[$skinindex]->type != $skintype;
+        // if skin existed, use the previous creation date
+        $skincreatedate = $skin_json->skins[$skinindex]->date;
         $onlydrophdskins = $skinisuhd;
         if($alsodrophdskins && $skinisuhd) {
           textarea_echo("you changed the skin's type from \"".$skin_json->skins[$skinindex]->type."\" to \"$skintype\", but also selected UHD as option, change the primary skin first before changing the HD skin", 1);
