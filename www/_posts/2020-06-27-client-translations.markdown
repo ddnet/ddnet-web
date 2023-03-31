@@ -8,12 +8,13 @@ tag: current
 Current DDNet client translation status showing how many of the messages are translated:
 
 ```
+100% spanish
 100% russian
 100% korean
 100% german
 100% brazilian_portuguese
+100% belarusian
 99% traditional_chinese
-99% spanish
 99% simplified_chinese
 99% french
 97% persian
@@ -42,7 +43,6 @@ Current DDNet client translation status showing how many of the messages are tra
 34% esperanto
 34% chuvash
 34% bulgarian
-34% belarusian
 ```
 
 If you want to help translate: For the translation edit the respective language file in [data/languages](https://github.com/ddnet/ddnet/tree/master/data/languages) and create a [Pull Request on GitHub](https://github.com/ddnet/ddnet/) (or just send it to us on [Discord](/discord/)).
