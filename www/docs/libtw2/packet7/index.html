@@ -43,7 +43,7 @@ packet7_header_connless:
 </code></pre>
 <p>NOTE: <code>padding</code> must be zeroed. If <code>flag_connless</code> is set, the other flags must not be set. <code>flag_control</code> implies <code>!flag_compression</code>.</p>
 <p>NOTE: In <code>packet7_header_connless</code>, <code>version</code> must be set to 1.</p>
-<pre><code>chunk7_header_vital:
+<pre><code>chunk7_header_nonvital:
     [ 1] flag_resend
     [ 1] flag_vital
     [ 6] &lt;----------
@@ -53,7 +53,7 @@ packet7_header_connless:
     FFss ssss  PPss ssss
 
 
-chunk7_header_nonvital:
+chunk7_header_vital:
     [ 1] flag_resend
     [ 1] flag_vital
     [ 6] &lt;----------

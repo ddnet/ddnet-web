@@ -26,7 +26,7 @@ menu-extern: docs-libtw2
     FFFF ppAA  AAAA AAAA  nnnn nnnn
 </code></pre>
 <p>NOTE: <code>padding</code> must be zeroed, it's incorrectly used as part of the <code>ack</code> field while unpacking in the reference implementation.</p>
-<pre><code>chunk_header_vital:
+<pre><code>chunk_header_nonvital:
     [ 1] flag_resend
     [ 1] flag_vital
     [ 6] &lt;----------
@@ -36,7 +36,7 @@ menu-extern: docs-libtw2
     FFss ssss  PPPP ssss
 
 
-chunk_header_nonvital:
+chunk_header_vital:
     [ 1] flag_resend
     [ 1] flag_vital
     [ 6] &lt;----------
