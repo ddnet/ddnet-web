@@ -189,7 +189,7 @@ menu: |
   <tr><td>sv_vote_pause_time</td><td>The time (in seconds) players have to wait in pause when paused by vote</td><td>10</td><td>0</td><td>360</td></tr>
   <tr><td>sv_tune_reset</td><td>Whether tuning is reset after each map change or not</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_reset_file</td><td>File to execute on map change or reload to set the default server settings</td><td>&quot;reset.cfg&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_input_fifo</td><td>Fifo file to use as input for server console</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_input_fifo</td><td>Fifo file (non-Windows) or Named Pipe (Windows) to use as input for server console</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_ddrace_tune_reset</td><td>Whether DDRace tuning (sv_hit, sv_endless_drag and sv_old_laser) is reset after each map change or not</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_nameless_score</td><td>Whether nameless tee has a score or not</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_time_in_broadcast_interval</td><td>How often to update the broadcast time</td><td>1</td><td>0</td><td>60</td></tr>
@@ -260,6 +260,7 @@ menu: |
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>echo</td><td>r[text]</td><td>Echo the text</td></tr>
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
+  <tr><td>reset</td><td>s[config-name]</td><td>Reset a config to its default value</td></tr>
   <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
   <tr><td>access_level</td><td>s[command] ?i[accesslevel]</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
   <tr><td>access_status</td><td>i[accesslevel]</td><td>List all commands which are accessible for admin = 0, moderator = 1, helper = 2, all = 3</td></tr>
@@ -766,14 +767,14 @@ menu: |
   <tr><td>cl_timeout_code</td><td>Timeout code to use</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_dummy_timeout_code</td><td>Dummy Timeout code to use</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_timeout_seed</td><td>Timeout seed</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>cl_input_fifo</td><td>Fifo file to use as input for client console</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_input_fifo</td><td>Fifo file (non-Windows) or Named Pipe (Windows) to use as input for client console</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_config_version</td><td>The config version. Helps newer clients fix bugs with older configs.</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_demo_keyboard_shortcuts</td><td>Enable keyboard shortcuts in demo player</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_gl_major</td><td>Graphic library major version</td><td>1</td><td>1</td><td>10</td></tr>
-  <tr><td>gfx_gl_minor</td><td>Graphic library minor version</td><td>0</td><td>0</td><td>10</td></tr>
+  <tr><td>gfx_gl_minor</td><td>Graphic library minor version</td><td>3</td><td>0</td><td>10</td></tr>
   <tr><td>gfx_gl_patch</td><td>Graphic library patch version</td><td>0</td><td>0</td><td>10</td></tr>
   <tr><td>gfx_gl_texture_lod_bias</td><td>The lod bias for graphic library texture sampling multiplied by 1000</td><td>-500</td><td>-15000</td><td>15000</td></tr>
   <tr><td>gfx_3d_texture_analysis_ran</td><td>Ran an analyzer to check if sampling 3D/2D array textures works correctly</td><td>0</td><td>0</td><td>1</td></tr>
@@ -791,6 +792,7 @@ menu: |
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
+  <tr><td>reset</td><td>s[config-name]</td><td>Reset a config to its default value</td></tr>
   <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
   <tr><td>+toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value via keypress</td></tr>
   <tr><td>toggle_local_console</td><td></td><td>Toggle local console</td></tr>
@@ -844,14 +846,14 @@ menu: |
   <tr><td>dummy_connect</td><td></td><td>Connect dummy</td></tr>
   <tr><td>dummy_disconnect</td><td></td><td>Disconnect dummy</td></tr>
   <tr><td>dummy_reset</td><td></td><td>Reset dummy</td></tr>
-  <tr><td>quit</td><td></td><td>Quit Teeworlds</td></tr>
-  <tr><td>exit</td><td></td><td>Quit Teeworlds</td></tr>
-  <tr><td>minimize</td><td></td><td>Minimize Teeworlds</td></tr>
+  <tr><td>quit</td><td></td><td>Quit the client</td></tr>
+  <tr><td>exit</td><td></td><td>Quit the client</td></tr>
+  <tr><td>restart</td><td></td><td>Restart the client</td></tr>
+  <tr><td>minimize</td><td></td><td>Minimize the client</td></tr>
   <tr><td>connect</td><td>r[host|ip]</td><td>Connect to the specified host/ip</td></tr>
   <tr><td>disconnect</td><td></td><td>Disconnect from the server</td></tr>
   <tr><td>ping</td><td></td><td>Ping the current server</td></tr>
   <tr><td>screenshot</td><td></td><td>Take a screenshot</td></tr>
-  <tr><td>reset</td><td>s[config-name]</td><td>Reset a config its default value</td></tr>
   <tr><td>start_video</td><td></td><td>Start recording a video</td></tr>
   <tr><td>stop_video</td><td></td><td>Stop recording a video</td></tr>
   <tr><td>rcon</td><td>r[rcon-command]</td><td>Send specified command to rcon</td></tr>
