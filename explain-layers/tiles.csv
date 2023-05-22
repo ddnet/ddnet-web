@@ -61,7 +61,7 @@ TileID,Title,Group,Description,Link
 59,Time Checkpoint 25,time-checkpoint,$35,
 60,Directional Stopper,stopper,Blocks movement in one direction.,
 61,Bi-Directional Stopper,stopper,Blocks movement in two directions.,
-62,Stopper,stopper,Blocks movement in all directions direction.,
+62,Stopper,stopper,Blocks movement in all directions.,
 63,Evil Checkpoint Teleporter,checkpoint-tele,"Teleports to Checkpoint Teleporter Exit with the number matching the current checkpoint of the tee, speed and all hooks connected to the tee are lost.",
 64,Slow Speeder,speeder,"Causes weapons, hearts, shields and rotating lasers to move around.",
 65,Fast Speeder,speeder,"Causes weapons, hearts, shields and rotating lasers to move around.",

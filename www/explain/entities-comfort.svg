@@ -262,7 +262,7 @@
 	<text id="desc59" x="736" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Time Checkpoint 25 (59)  Compares your current race time with your record time at this checkpoint, shows how you compare to it.</text>
 	<text id="desc60" x="800" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Directional Stopper (60)  Blocks movement in one direction.</text>
 	<text id="desc61" x="864" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Bi-Directional Stopper (61)  Blocks movement in two directions.</text>
-	<text id="desc62" x="928" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Stopper (62)  Blocks movement in all directions direction.</text>
+	<text id="desc62" x="928" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Stopper (62)  Blocks movement in all directions.</text>
 	<text id="desc64" x="32" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Slow Speeder (64)  Causes weapons, hearts, shields and rotating lasers to move around.</text>
 	<text id="desc65" x="96" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Fast Speeder (65)  Causes weapons, hearts, shields and rotating lasers to move around.</text>
 	<text id="desc71" x="480" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Map: Old Laser (71)  Affects entire map, laser and shotgun beams can't hit the tee they were shot from. Shotgun will always propel the hit tee in the direction of the shooter.</text>
