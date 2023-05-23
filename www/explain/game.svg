@@ -218,14 +218,14 @@
 	<rect id="240" x="0" y="960" width="64" height="64" class="tooltip"></rect>
 	<text id="desc1" x="96" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookable (1)  Block with collision, can be hooked.</text>
 	<text id="desc3" x="224" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Unhookable (3)  Block with collision, can not be hooked.</text>
-	<text id="desc5" x="352" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Block (5)  Editor Tile, places Unhookable and New Hookthrough to simulate placing Hookthrough Blocks.</text>
+	<text id="desc5" x="352" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Block (5)  Editor tile, places unhookable and new hookthrough to simulate placing hookthrough blocks.</text>
 	<text id="desc6" x="416" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Old Hookthrough (6)  Lets you hook through the surface of adjacent blocks.</text>
 	<text id="desc66" x="160" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">New Hookthrough (66)  Causes your hook to pass through the block underneath. Mid-air, this tile causes your hook to reset.</text>
 	<text id="desc67" x="224" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Directional Hookthrough (67)  Your hook passes through the block in one direction.</text>
 	<text id="desc9" x="608" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Freeze (9)  Freezes (stuns) for a couple of seconds (for 3 seconds by default).</text>
 	<text id="desc11" x="736" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Unfreeze (11)  Unfreezes instantly.</text>
 	<text id="desc198" x="416" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Heart (198)  Freezes (stuns) for 3 seconds.</text>
-	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by Undeep.</text>
+	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by undeep.</text>
 	<text id="desc13" x="864" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Undeep (13)  Cancels Deep freeze effect.</text>
 	<text id="desc17" x="96" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Endless Hook on (17)  Enables endless hook (on other tees).</text>
 	<text id="desc18" x="160" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Endless Hook off (18)  Disables endless hook.</text>
@@ -262,7 +262,7 @@
 	<text id="desc59" x="736" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Time Checkpoint 25 (59)  Compares your current race time with your record time at this checkpoint, shows how you compare to it.</text>
 	<text id="desc60" x="800" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Directional Stopper (60)  Blocks movement in one direction.</text>
 	<text id="desc61" x="864" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Bi-Directional Stopper (61)  Blocks movement in two directions.</text>
-	<text id="desc62" x="928" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Stopper (62)  Blocks movement in all directions direction.</text>
+	<text id="desc62" x="928" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Stopper (62)  Blocks movement in all directions.</text>
 	<text id="desc64" x="32" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Slow Speeder (64)  Causes weapons, hearts, shields and rotating lasers to move around.</text>
 	<text id="desc65" x="96" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Fast Speeder (65)  Causes weapons, hearts, shields and rotating lasers to move around.</text>
 	<text id="desc71" x="480" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Map: Old Laser (71)  Affects entire map, laser and shotgun beams can't hit the tee they were shot from. Shotgun will always propel the hit tee in the direction of the shooter.</text>
@@ -280,25 +280,25 @@
 	<text id="desc107" x="736" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Tees On (107)  Your hook will now pass through other tees.</text>
 	<text id="desc96" x="32" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Pistol On (96)  Pistol shots will teleport you if they hit a teleporter gun block or another tee.</text>
 	<text id="desc97" x="96" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Pistol Off (97)  Pistol shots will no longer teleport you.</text>
-	<text id="desc112" x="32" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher On (112)  Grenade Launcher shots will teleport you if they hit a teleporter gun block or another tee.</text>
-	<text id="desc113" x="96" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher Off (113)  Grenade Launcher shots will no longer teleport you.</text>
+	<text id="desc112" x="32" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher On (112)  Grenade launcher shots will teleport you, if they hit a teleporter gun block or another tee.</text>
+	<text id="desc113" x="96" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher Off (113)  Grenade launcher shots will no longer teleport you.</text>
 	<text id="desc128" x="32" y="576" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Laser On (128)  Laser shots will teleport you if they hit a teleporter gun block or another tee.</text>
 	<text id="desc129" x="96" y="576" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Laser Off (129)  Laser shots will no longer teleport you.</text>
-	<text id="desc144" x="32" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Freeze (144)  Disables movement keys permanently, cancelled only by Live Unfreeze.</text>
-	<text id="desc145" x="96" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Unfreeze (145)  Cancels Live Freeze effect.</text>
+	<text id="desc144" x="32" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Freeze (144)  Disables movement keys permanently, cancelled only by live unfreeze.</text>
+	<text id="desc145" x="96" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Unfreeze (145)  Cancels live freeze effect.</text>
 	<text id="desc192" x="32" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Spawn (192)  Where you will spawn upon death or joining the server.</text>
-	<text id="desc193" x="96" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Red Team Spawn (193)  Not used in DDRace. Spawn for the red team</text>
+	<text id="desc193" x="96" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Red Team Spawn (193)  Not used in DDRace. Spawn for the red team.</text>
 	<text id="desc194" x="160" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Blue Team Spawn (194)  Not used in DDRace. Spawn for the blue team.</text>
 	<text id="desc195" x="224" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Red Flag (195)  Not used in DDRace. Origin of the red flag.</text>
 	<text id="desc196" x="288" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Blue Flag (196)  Not used in DDRace. Origin of the blue flag.</text>
-	<text id="desc197" x="352" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shield (197)  Takes all collectable weapons away: shotgun, grenade, laser, ninja</text>
-	<text id="desc226" x="160" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun Shield (226)  Takes shotgun away</text>
-	<text id="desc227" x="224" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Shield (227)  Takes grenade away</text>
-	<text id="desc228" x="288" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja Shield (228)  Takes ninja away</text>
-	<text id="desc229" x="352" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Shield (229)  Takes laser away</text>
+	<text id="desc197" x="352" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shield (197)  Takes all collectable weapons away: shotgun, grenade, laser and ninja.</text>
+	<text id="desc226" x="160" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun Shield (226)  Takes shotgun away.</text>
+	<text id="desc227" x="224" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Shield (227)  Takes grenade away.</text>
+	<text id="desc228" x="288" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja Shield (228)  Takes ninja away.</text>
+	<text id="desc229" x="352" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Shield (229)  Takes laser away.</text>
 	<text id="desc199" x="480" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun (199)  Weapon, shoots beam that bounces off walls and pulls the first tee it hits.</text>
 	<text id="desc200" x="544" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Launcher (200)  Weapon, shoots exploding projectile in an arc.</text>
-	<text id="desc201" x="608" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (201)  Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have Ninja.</text>
+	<text id="desc201" x="608" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (201)  Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have ninja.</text>
 	<text id="desc202" x="672" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Laser (202)  Weapon, shoots beam that bounces off walls and unfreezes the first tee it hits.</text>
 	<text id="desc203" x="736" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Fast Rotating Freezing Laser (203)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
 	<text id="desc204" x="800" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Normal Rotating Freezing Laser (204)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
@@ -329,7 +329,7 @@
 	<text id="desc238" x="928" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Fast Hookthrough Dragger (238)  Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.</text>
 	<text id="desc0" x="32" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Empty (0)  Empty tile, used as an eraser in the map editor.</text>
 	<text id="desc2" x="160" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Kill (2)  Kills on touch.</text>
-	<text id="desc4" x="288" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dragger+Turret Blocker (4)  Blocks sight of Draggers, Spinning Lasers and Turrets.</text>
+	<text id="desc4" x="288" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dragger+Turret Blocker (4)  Blocks sight of draggers, spinning lasers and turrets.</text>
 	<text id="desc16" x="32" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Walljump (16)  Allows to climb up adjacent surfaces of blocks.</text>
 	<text id="desc32" x="32" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Doublejump Refresher (32)  Refreshes all doublejumps.</text>
 	<text id="desc76" x="800" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Unlock Team (76)  Forces team to unlock, used in dummy maps to kill off dummy.</text>
