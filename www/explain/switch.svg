@@ -124,11 +124,11 @@
 	<rect id="240" x="0" y="960" width="64" height="64" class="tooltip"></rect>
 	<text id="desc22" x="416" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Timed Switch Activator (22)  Activates switch for a set time (e.g. temporarily activates laser door).</text>
 	<text id="desc23" x="480" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Timed Switch Deactivator (23)  Deactivates switch for a set time (e.g. temporarily deactivates laser door).</text>
-	<text id="desc24" x="544" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Activator (24)  Activates switch (e.g. activates laser door)</text>
-	<text id="desc25" x="608" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Deactivator (25)  Deactivates switch (e.g. deactivates laser door)</text>
+	<text id="desc24" x="544" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Activator (24)  Activates switch (e.g. activates laser door).</text>
+	<text id="desc25" x="608" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Deactivator (25)  Deactivates switch (e.g. deactivates laser door).</text>
 	<text id="desc9" x="608" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Freeze (9)  Freezes (stuns) for a couple of seconds (for 3 seconds by default).</text>
 	<text id="desc198" x="416" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Heart (198)  Freezes (stuns) for 3 seconds.</text>
-	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by Undeep.</text>
+	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by undeep.</text>
 	<text id="desc13" x="864" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Undeep (13)  Cancels Deep freeze effect.</text>
 	<text id="desc19" x="224" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Hit Others On (19)  Enables hitting others with weapons.</text>
 	<text id="desc20" x="288" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Hit Others Off (20)  Disables hitting others with weapons.</text>
@@ -136,16 +136,16 @@
 	<text id="desc95" x="992" y="384" direction="down" class="multiline" data-width="400" visibility="hidden">Time Bonus (95)  Subtracts a set amount of seconds off your timer.</text>
 	<text id="desc98" x="160" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Evil Teleporter Gun Block (98)  Can be teleported with teleporter guns, tees lose their speed on teleporting.</text>
 	<text id="desc99" x="224" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Gun Block (99)  Can be teleported to with teleporter guns, tees keep their speed on teleporting.</text>
-	<text id="desc144" x="32" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Freeze (144)  Disables movement keys permanently, cancelled only by Live Unfreeze.</text>
-	<text id="desc145" x="96" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Unfreeze (145)  Cancels Live Freeze effect.</text>
-	<text id="desc197" x="352" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shield (197)  Takes all collectable weapons away: shotgun, grenade, laser, ninja</text>
-	<text id="desc226" x="160" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun Shield (226)  Takes shotgun away</text>
-	<text id="desc227" x="224" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Shield (227)  Takes grenade away</text>
-	<text id="desc228" x="288" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja Shield (228)  Takes ninja away</text>
-	<text id="desc229" x="352" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Shield (229)  Takes laser away</text>
+	<text id="desc144" x="32" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Freeze (144)  Disables movement keys permanently, cancelled only by live unfreeze.</text>
+	<text id="desc145" x="96" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Unfreeze (145)  Cancels live freeze effect.</text>
+	<text id="desc197" x="352" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shield (197)  Takes all collectable weapons away: shotgun, grenade, laser and ninja.</text>
+	<text id="desc226" x="160" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun Shield (226)  Takes shotgun away.</text>
+	<text id="desc227" x="224" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Shield (227)  Takes grenade away.</text>
+	<text id="desc228" x="288" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja Shield (228)  Takes ninja away.</text>
+	<text id="desc229" x="352" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Laser Shield (229)  Takes laser away.</text>
 	<text id="desc199" x="480" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Shotgun (199)  Weapon, shoots beam that bounces off walls and pulls the first tee it hits.</text>
 	<text id="desc200" x="544" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Grenade Launcher (200)  Weapon, shoots exploding projectile in an arc.</text>
-	<text id="desc201" x="608" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (201)  Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have Ninja.</text>
+	<text id="desc201" x="608" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Ninja (201)  Weapon, lasts 15 seconds at max, allows you to dash, you can't use other weapons while you have ninja.</text>
 	<text id="desc202" x="672" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Laser (202)  Weapon, shoots beam that bounces off walls and unfreezes the first tee it hits.</text>
 	<text id="desc203" x="736" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Fast Rotating Freezing Laser (203)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>
 	<text id="desc204" x="800" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Counterclockwise, Normal Rotating Freezing Laser (204)  Center of a continuous laser beam that freezes tees and rotates counterclockwise.</text>

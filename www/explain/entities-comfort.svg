@@ -206,22 +206,22 @@
 	<rect id="190" x="896" y="704" width="128" height="64" class="tooltip"></rect>
 	<text id="desc1" x="96" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookable (1)  Block with collision, can be hooked.</text>
 	<text id="desc3" x="224" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Unhookable (3)  Block with collision, can not be hooked.</text>
-	<text id="desc5" x="352" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Block (5)  Editor Tile, places Unhookable and New Hookthrough to simulate placing Hookthrough Blocks.</text>
+	<text id="desc5" x="352" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hookthrough Block (5)  Editor tile, places unhookable and new hookthrough to simulate placing hookthrough blocks.</text>
 	<text id="desc6" x="416" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Old Hookthrough (6)  Lets you hook through the surface of adjacent blocks.</text>
 	<text id="desc66" x="160" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">New Hookthrough (66)  Causes your hook to pass through the block underneath. Mid-air, this tile causes your hook to reset.</text>
 	<text id="desc67" x="224" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Directional Hookthrough (67)  Your hook passes through the block in one direction.</text>
 	<text id="desc8" x="544" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Timed Switch Activator (8)  Activates switch for a set time (e.g. temporarily activates laser door).</text>
 	<text id="desc23" x="480" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Timed Switch Deactivator (23)  Deactivates switch for a set time (e.g. temporarily deactivates laser door).</text>
-	<text id="desc24" x="544" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Activator (24)  Activates switch (e.g. activates laser door)</text>
-	<text id="desc25" x="608" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Deactivator (25)  Deactivates switch (e.g. deactivates laser door)</text>
+	<text id="desc24" x="544" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Activator (24)  Activates switch (e.g. activates laser door).</text>
+	<text id="desc25" x="608" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Switch Deactivator (25)  Deactivates switch (e.g. deactivates laser door).</text>
 	<text id="desc9" x="608" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Freeze (9)  Freezes (stuns) for a couple of seconds (for 3 seconds by default).</text>
 	<text id="desc11" x="736" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Unfreeze (11)  Unfreezes instantly.</text>
-	<text id="desc10" x="672" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Evil Teleporter (10)  Teleports to Teleporter Exit with matching number, speed and hooks connected to the tee are lost.</text>
-	<text id="desc14" x="928" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Weapon Teleporter (14)  Teleports shots from weapons to Teleporter Exit with matching number.</text>
-	<text id="desc15" x="992" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hook Teleporter (15)  Teleports hooks to Teleporter Exit with matching number.</text>
-	<text id="desc26" x="672" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter (26)  Teleports to Teleporter Exit with Matching number, resets the teleported tees hook.</text>
+	<text id="desc10" x="672" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Evil Teleporter (10)  Teleports to teleporter exit with matching number, speed and hooks connected to the tee are lost.</text>
+	<text id="desc14" x="928" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Weapon Teleporter (14)  Teleports shots from weapons to teleporter exit with matching number.</text>
+	<text id="desc15" x="992" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Hook Teleporter (15)  Teleports hooks to teleporter exit with matching number.</text>
+	<text id="desc26" x="672" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter (26)  Teleports to teleporter exit with matching number, resets the teleported tee's hook.</text>
 	<text id="desc27" x="736" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Exit (27)  Exit of various teleporters.</text>
-	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by Undeep.</text>
+	<text id="desc12" x="800" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Deep (12)  Freezes (stuns) permanently, cancelled only by undeep.</text>
 	<text id="desc13" x="864" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Undeep (13)  Cancels Deep freeze effect.</text>
 	<text id="desc17" x="96" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Endless Hook on (17)  Enables endless hook (on other tees).</text>
 	<text id="desc18" x="160" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Endless Hook off (18)  Disables endless hook.</text>
@@ -230,9 +230,9 @@
 	<text id="desc21" x="352" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Solo (21)  Enables solo part.</text>
 	<text id="desc22" x="416" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Unsolo (22)  Disables solo part.</text>
 	<text id="desc29" x="864" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Checkpoint (29)  Sets current checkpoint of tee to the displayed number.</text>
-	<text id="desc30" x="928" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Checkpoint Teleporter Exit (30)  Teleporter exit for Checkpoint Teleporter.</text>
-	<text id="desc31" x="992" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Checkpoint Teleporter (31)  Teleports to Checkpoint Teleporter Exit with the number matching the current checkpoint of the tee, resets the teleported tees hook.</text>
-	<text id="desc63" x="992" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Evil Checkpoint Teleporter (63)  Teleports to Checkpoint Teleporter Exit with the number matching the current checkpoint of the tee, speed and all hooks connected to the tee are lost.</text>
+	<text id="desc30" x="928" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Checkpoint Teleporter Exit (30)  Teleporter exit for checkpoint teleporter.</text>
+	<text id="desc31" x="992" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Checkpoint Teleporter (31)  Teleports to checkpoint teleporter exit with the number matching the current checkpoint of the tee, resets the teleported tee's hook.</text>
+	<text id="desc63" x="992" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Evil Checkpoint Teleporter (63)  Teleports to checkpoint teleporter exit with the number matching the current checkpoint of the tee, speed and all hooks connected to the tee are lost.</text>
 	<text id="desc33" x="96" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Start (33)  Marks begin of race, starts the timer.</text>
 	<text id="desc34" x="160" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Finish (34)  End of race.</text>
 	<text id="desc35" x="224" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Time Checkpoint 1 (35)  Compares your current race time with your record time at this checkpoint, shows how you compare to it.</text>
@@ -262,7 +262,7 @@
 	<text id="desc59" x="736" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Time Checkpoint 25 (59)  Compares your current race time with your record time at this checkpoint, shows how you compare to it.</text>
 	<text id="desc60" x="800" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Directional Stopper (60)  Blocks movement in one direction.</text>
 	<text id="desc61" x="864" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Bi-Directional Stopper (61)  Blocks movement in two directions.</text>
-	<text id="desc62" x="928" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Stopper (62)  Blocks movement in all directions direction.</text>
+	<text id="desc62" x="928" y="256" direction="down" class="multiline" data-width="400" visibility="hidden">Stopper (62)  Blocks movement in all directions.</text>
 	<text id="desc64" x="32" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Slow Speeder (64)  Causes weapons, hearts, shields and rotating lasers to move around.</text>
 	<text id="desc65" x="96" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Fast Speeder (65)  Causes weapons, hearts, shields and rotating lasers to move around.</text>
 	<text id="desc71" x="480" y="320" direction="down" class="multiline" data-width="400" visibility="hidden">Map: Old Laser (71)  Affects entire map, laser and shotgun beams can't hit the tee they were shot from. Shotgun will always propel the hit tee in the direction of the shooter.</text>
@@ -284,14 +284,14 @@
 	<text id="desc97" x="96" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Pistol Off (97)  Pistol shots will no longer teleport you.</text>
 	<text id="desc98" x="160" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Evil Teleporter Gun Block (98)  Can be teleported with teleporter guns, tees lose their speed on teleporting.</text>
 	<text id="desc99" x="224" y="448" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Gun Block (99)  Can be teleported to with teleporter guns, tees keep their speed on teleporting.</text>
-	<text id="desc112" x="32" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher On (112)  Grenade Launcher shots will teleport you if they hit a teleporter gun block or another tee.</text>
-	<text id="desc113" x="96" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher Off (113)  Grenade Launcher shots will no longer teleport you.</text>
+	<text id="desc112" x="32" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher On (112)  Grenade launcher shots will teleport you, if they hit a teleporter gun block or another tee.</text>
+	<text id="desc113" x="96" y="512" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Grenade Launcher Off (113)  Grenade launcher shots will no longer teleport you.</text>
 	<text id="desc128" x="32" y="576" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Laser On (128)  Laser shots will teleport you if they hit a teleporter gun block or another tee.</text>
 	<text id="desc129" x="96" y="576" direction="down" class="multiline" data-width="400" visibility="hidden">Teleporter Laser Off (129)  Laser shots will no longer teleport you.</text>
-	<text id="desc144" x="32" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Freeze (144)  Disables movement keys permanently, cancelled only by Live Unfreeze.</text>
-	<text id="desc145" x="96" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Unfreeze (145)  Cancels Live Freeze effect.</text>
+	<text id="desc144" x="32" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Freeze (144)  Disables movement keys permanently, cancelled only by live unfreeze.</text>
+	<text id="desc145" x="96" y="640" direction="down" class="multiline" data-width="400" visibility="hidden">Live Unfreeze (145)  Cancels live freeze effect.</text>
 	<text id="desc192" x="32" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Spawn (192)  Where you will spawn upon death or joining the server.</text>
-	<text id="desc193" x="96" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Red Team Spawn (193)  Not used in DDRace. Spawn for the red team</text>
+	<text id="desc193" x="96" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Red Team Spawn (193)  Not used in DDRace. Spawn for the red team.</text>
 	<text id="desc194" x="160" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Blue Team Spawn (194)  Not used in DDRace. Spawn for the blue team.</text>
 	<text id="desc195" x="224" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Red Flag (195)  Not used in DDRace. Origin of the red flag.</text>
 	<text id="desc196" x="288" y="768" direction="up" class="multiline" data-width="400" visibility="hidden">Blue Flag (196)  Not used in DDRace. Origin of the blue flag.</text>
@@ -309,7 +309,7 @@
 	<text id="desc238" x="928" y="896" direction="up" class="multiline" data-width="400" visibility="hidden">Fast Hookthrough Dragger (238)  Locks onto closest tee and drags it until it is out of sight again, blocked only by dragger blocker tiles.</text>
 	<text id="desc0" x="32" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Empty (0)  Empty tile, used as an eraser in the map editor.</text>
 	<text id="desc2" x="160" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Kill (2)  Kills on touch.</text>
-	<text id="desc4" x="288" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dragger+Turret Blocker (4)  Blocks sight of Draggers, Spinning Lasers and Turrets.</text>
+	<text id="desc4" x="288" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Dragger+Turret Blocker (4)  Blocks sight of draggers, spinning lasers and turrets.</text>
 	<text id="desc7" x="480" y="64" direction="down" class="multiline" data-width="400" visibility="hidden">Jump Count Setter (7)  Sets the amount of jumps available to you (2 by default).</text>
 	<text id="desc16" x="32" y="128" direction="down" class="multiline" data-width="400" visibility="hidden">Walljump (16)  Allows to climb up adjacent surfaces of blocks.</text>
 	<text id="desc32" x="32" y="192" direction="down" class="multiline" data-width="400" visibility="hidden">Doublejump Refresher (32)  Refreshes all doublejumps.</text>
