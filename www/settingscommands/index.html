@@ -60,6 +60,7 @@ menu: |
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>loglevel</td><td>Log level (0 = Error, 1 = Warn, 2 = Info, 3 = Debug, 4 = Trace)</td><td>2</td><td>0</td><td>4</td></tr>
+  <tr><td>logappend</td><td>Append to logfile instead of overwriting it every time</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
@@ -67,7 +68,6 @@ menu: |
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_ipv4only</td><td>Whether to bind only to ipv4, otherwise bind to all available interfaces</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser, 0 to automatically find a free port in 8303-8310)</td><td>0</td><td>0</td><td>0</td></tr>
-  <tr><td>sv_external_port</td><td>External port to report to the master servers</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>sv_hostname</td><td>Server hostname (0.7 only)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Sunny Side Up&quot;</td><td></td><td></td></tr>
   <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>64</td><td>1</td><td>64</td></tr>
@@ -100,14 +100,13 @@ menu: |
   <tr><td>sv_skill_level</td><td>Difficulty level for Teeworlds 0.7 (0: Casual, 1: Normal, 2: Competitive)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>dbg_pref</td><td>Performance outputs</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_hitch</td><td>Hitch warnings</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems (Debug build only)</td><td>0</td><td>0</td><td>0</td></tr>
-  <tr><td>dbg_stress_network</td><td>Stress network (Debug build only)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>http_allow_insecure</td><td>Allow insecure HTTP protocol in addition to the secure HTTPS one. Mostly useful for testing.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_welcome</td><td>Message that will be displayed to players who join the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_reserved_slots</td><td>The number of slots that are reserved for special players</td><td>0</td><td>0</td><td>64</td></tr>
   <tr><td>sv_reserved_slots_pass</td><td>The password that is required to use a reserved slot</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_reserved_slots_auth_level</td><td>Minimum rcon auth level needed to use a reserved slot. 4 = rcon auth disabled</td><td>1</td><td>1</td><td>4</td></tr>
   <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser each other or not</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_endless_drag</td><td>Turns endless hooking on/off</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_test_cmds</td><td>Turns testing commands aka cheats on/off (setting only works in initial config)</td><td>0</td><td>0</td><td>1</td></tr>
@@ -122,7 +121,8 @@ menu: |
   <tr><td>sv_invite_frequency</td><td>The minimum allowed delay between invites</td><td>1</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_tele_others_auth_level</td><td>The auth level you need to tele others</td><td>1</td><td>1</td><td>3</td></tr>
   <tr><td>sv_emotional_tees</td><td>Whether eye change of tees is enabled with emoticons = 1, not = 0, -1 not at all</td><td>1</td><td>-1</td><td>1</td></tr>
-  <tr><td>sv_emoticon_delay</td><td>The time in seconds between over-head emoticons</td><td>3</td><td>0</td><td>9999</td></tr>
+  <tr><td>sv_emoticon_ms_delay</td><td>The time in ms a player has to wait before allowing the next over-head emoticons</td><td>3000</td><td>20</td><td>999999999</td></tr>
+  <tr><td>sv_global_emoticon_ms_delay</td><td>The time in ms a player has to wait before allowing the next over-head emoticons that is send to all clients (this config must be higher or equal to sv_emoticon_ms_delay to have an effect)</td><td>3000</td><td>20</td><td>999999999</td></tr>
   <tr><td>sv_eye_emote_change_delay</td><td>The time in seconds between eye emoticons change</td><td>1</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_chat_delay</td><td>The time in seconds between chat messages</td><td>1</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_team_change_delay</td><td>The time in seconds between team changes (spectator/in game)</td><td>3</td><td>0</td><td>9999</td></tr>
@@ -140,7 +140,6 @@ menu: |
   <tr><td>sv_map_window</td><td>Map downloading send-ahead window</td><td>15</td><td>0</td><td>100</td></tr>
   <tr><td>sv_fast_download</td><td>Enables fast download of maps</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_shotgun_bullet_sound</td><td>Crazy shotgun bullet sound on/off</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_score_folder</td><td>Folder to save score files to</td><td>&quot;records&quot;</td><td></td><td></td></tr>
   <tr><td>sv_region_name</td><td>Server region. Used for regional bans</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
   <tr><td>sv_sql_servername</td><td>SQL Server name that is inserted into record table</td><td>&quot;UNK&quot;</td><td></td><td></td></tr>
   <tr><td>sv_savegames</td><td>Enables savegames (/save and /load)</td><td>1</td><td>0</td><td>1</td></tr>
@@ -151,7 +150,6 @@ menu: |
   <tr><td>sv_use_sql</td><td>Enables MySQL backend instead of SQLite backend (sv_sqlite_file is still used as fallback write server when no MySQL server is reachable)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td><td>0</td><td>20</td></tr>
   <tr><td>sv_sqlite_file</td><td>File to store ranks in case sv_use_sql is turned off or used as backup sql server</td><td>&quot;ddnet-server.sqlite&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_sql_bindaddr</td><td>Address to bind the SQL connections to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_use_upnp</td><td>Enables UPnP support. (Requires -DCONF_UPNP=ON when compiling)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_ddrace_rules</td><td>Whether the default mod rules are displayed or not</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_rules_line1</td><td>Rules line 1</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -198,7 +196,6 @@ menu: |
   <tr><td>sv_chat_penalty</td><td>chat score will be increased by this on every message, and decremented by 1 on every tick.</td><td>250</td><td>50</td><td>1000</td></tr>
   <tr><td>sv_chat_threshold</td><td>if chats core exceeds this, the player will be muted for sv_spam_mute_duration seconds</td><td>1000</td><td>50</td><td>10000</td></tr>
   <tr><td>sv_spam_mute_duration</td><td>how many seconds to mute, if player triggers mute on spam. 0 = off</td><td>60</td><td>0</td><td>3600</td></tr>
-  <tr><td>sv_rank_cheats</td><td>Enable ranks after cheats have been used (file based server only)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_shutdown_when_empty</td><td>Shutdown server as soon as no one is on it anymore</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_reload_when_empty</td><td>Reload map when server is empty (1 = reload once, 2 = reload every time server gets empty)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>sv_kill_protection</td><td>0 - Disable, 1-9999 minutes</td><td>20</td><td>0</td><td>9999</td></tr>
@@ -239,7 +236,7 @@ menu: |
   <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze (setting only works in initial config)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_rescue_delay</td><td>Number of seconds between two rescues</td><td>1</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_practice</td><td>Enable practice mode for teams. Means you can use /rescue, but in turn your rank doesn&#x27;t count.</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>dbg_dummies</td><td>(Debug build only)</td><td>0</td><td>0</td><td>15</td></tr>
+  <tr><td>dbg_dummies</td><td>(Debug build only)</td><td>0</td><td>0</td><td>64</td></tr>
 </table></div>
 </div>
 <div class="block">
@@ -432,6 +429,8 @@ menu: |
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>tp</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating if no player name is given</td></tr>
   <tr><td>teleport</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating if no player name is given</td></tr>
+  <tr><td>unsolo</td><td></td><td>Puts you out of solo part</td></tr>
+  <tr><td>undeep</td><td></td><td>Puts you out of deep freeze</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself when kill-protected during a long game (use f1, kill for regular kill)</td></tr>
 </table></div>
 </div>
@@ -493,7 +492,7 @@ menu: |
   <tr><td>cl_eye_wheel</td><td>Show eye wheel along together with emotes</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_eye_duration</td><td>How long the eyes emotes last</td><td>999999</td><td>1</td><td>999999</td></tr>
   <tr><td>cl_airjumpindicator</td><td></td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_mouse_deadzone</td><td>Deadzone for the camera to follow the cursor</td><td>0</td><td>0</td><td>3000</td></tr>
   <tr><td>cl_mouse_followfactor</td><td>Factor for the camera to follow the cursor</td><td>0</td><td>0</td><td>200</td></tr>
@@ -507,6 +506,8 @@ menu: |
   <tr><td>cl_dyncam_follow_factor</td><td>Factor for the dynamic camera to follow the cursor</td><td>60</td><td>0</td><td>200</td></tr>
   <tr><td>cl_dyncam_smoothness</td><td>Transition amount of the camera movement, 0=instant, 100=slow and smooth</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>cl_dyncam_stabilizing</td><td>Amount of camera slowdown during fast cursor movement. High value can cause delay in camera movement</td><td>0</td><td>0</td><td>100</td></tr>
+  <tr><td>ed_autosave_interval</td><td>Interval in minutes at which a copy of the current editor map is automatically saved to the &#x27;auto&#x27; folder (0 for off)</td><td>10</td><td>0</td><td>240</td></tr>
+  <tr><td>ed_autosave_max</td><td>Maximum number of autosaves that are kept per map name (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
   <tr><td>ed_smooth_zoom_time</td><td>Time of smooth zoom animation in the editor in ms (0 for off)</td><td>250</td><td>0</td><td>5000</td></tr>
   <tr><td>ed_limit_max_zoom_level</td><td>Specifies, if zooming in the editor should be limited or not (0 = no limit)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td><td>0</td><td>1</td></tr>
@@ -576,7 +577,6 @@ menu: |
   <tr><td>cl_video_show_direction</td><td>Show players&#x27; key presses when rendering video (1 = other players&#x27;, 2 = also your own)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>cl_video_crf</td><td>Set crf when encode video with libx264 (0 for highest quality, 51 for lowest)</td><td>18</td><td>0</td><td>51</td></tr>
   <tr><td>cl_video_preset</td><td>Set preset when encode video with libx264, default is 5 (medium), 0 is ultrafast, 9 is placebo (the slowest, not recommend)</td><td>5</td><td>0</td><td>9</td></tr>
-  <tr><td>dbg_focus</td><td></td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_tuning</td><td>Display information about the tuning parameters that affect the own player</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>player_clan</td><td>Clan of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -584,6 +584,7 @@ menu: |
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>loglevel</td><td>Log level (0 = Error, 1 = Warn, 2 = Info, 3 = Debug, 4 = Trace)</td><td>2</td><td>0</td><td>4</td></tr>
+  <tr><td>logappend</td><td>Append to logfile instead of overwriting it every time</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>console_output_level</td><td>Adjusts the amount of information in the console</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
@@ -639,11 +640,10 @@ menu: |
   <tr><td>br_demo_sort_order</td><td>Sorting order in demo browser</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_demo_fetch_info</td><td>Whether to auto fetch demo infos on refresh</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>snd_buffer_size</td><td>Sound buffer size</td><td>512</td><td>128</td><td>32768</td></tr>
-  <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td><td>0</td><td>0</td></tr>
+  <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td><td>5512</td><td>384000</td></tr>
   <tr><td>snd_enable</td><td>Sound enable</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>snd_enable_music</td><td>Play background music</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>snd_volume</td><td>Sound volume</td><td>30</td><td>0</td><td>100</td></tr>
-  <tr><td>snd_device</td><td>(deprecated) Sound device to use</td><td>-1</td><td>0</td><td>0</td></tr>
   <tr><td>snd_chat_volume</td><td>Chat sound volume</td><td>30</td><td>0</td><td>100</td></tr>
   <tr><td>snd_game_volume</td><td>Game sound volume</td><td>30</td><td>0</td><td>100</td></tr>
   <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>30</td><td>0</td><td>100</td></tr>
@@ -675,12 +675,11 @@ menu: |
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td><td>1</td><td>100</td></tr>
   <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_tune_overlay</td><td>Stop rendering text overlay in tuning zone in editor: high value = less details = more speed</td><td>20</td><td>1</td><td>100</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>200</td><td>1</td><td>100000</td></tr>
-  <tr><td>inp_mouseold</td><td>Use old mouse mode (warp mouse instead of raw input)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_translated_keys</td><td>Translate keys before interpreting them, respects keyboard layouts</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_ignored_modifiers</td><td>Ignored keyboard modifier mask</td><td>0</td><td>0</td><td>65536</td></tr>
+  <tr><td>inp_ime_native_ui</td><td>Use native UI for IME (may cause IME to not work in fullscreen mode) (changing requires restart)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_controller_enable</td><td>Enable controller</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_controller_guid</td><td>Controller GUID which uniquely identifies the active controller</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>inp_controller_absolute</td><td>Enable absolute controller aiming ingame</td><td>0</td><td>0</td><td>1</td></tr>
@@ -697,7 +696,6 @@ menu: |
   <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_gfx</td><td>Show graphic library warnings and errors, if the GPU supports it (0: none, 1: minimal, 2: affects performance, 3: verbose, 4: all)</td><td>0</td><td>0</td><td>4</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems (Debug build only)</td><td>0</td><td>0</td><td>0</td></tr>
-  <tr><td>dbg_stress_network</td><td>Stress network (Debug build only)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>dbg_stress_server</td><td>Server to stress (Debug build only)</td><td>&quot;localhost&quot;</td><td></td><td></td></tr>
   <tr><td>http_allow_insecure</td><td>Allow insecure HTTP protocol in addition to the secure HTTPS one. Mostly useful for testing.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_race_binds_set</td><td>What level the DDRace binds are set to (this is automated, you don&#x27;t need to use this)</td><td>0</td><td>0</td><td>1</td></tr>
