@@ -1,0 +1,91 @@
+---
+title: "Protocol"
+layout: default
+menu-extern: docs-libtw2
+---
+<div id="global" class="block">
+
+<h2>Protocol</h2>
+
+<!-- File imported from https://github.com/heinrich5991/libtw2/blob/master/doc/protocol.md. -->
+<!-- Please create pull requests at https://github.com/heinrich5991/libtw2 if you want to edit this page. -->
+
+<small><i>This file is mirrored from the <a href="https://github.com/heinrich5991/libtw2">libtw2</a> documentation and is dual-licensed under MIT or APACHE.</i></small><br>
+
+<p>This document describes the low-level Teeworlds protocol up to 0.6.x and in DDNet. The packet headers are described in <a href="../packet">packet.md</a>.</p>
+<p>The Teeworlds protocol is a layer over UDP. It offers connectionless (stateless) messages, and connections. Connections can be established and torn down. Within connections, reliable (&quot;vital&quot;) and unreliable (&quot;non-vital&quot;) messages can be sent. Unreliable messages might or might not be delivered and might be received in any order. Reliable messages are guaranteed to arrive in-order, and will get re-sent if they're lost, so they will arrive eventually as long as the connection is not closed.</p>
+<p>The Teeworlds 0.6 protocol does not offer protection against IP spoofing, neither for connectionless messages nor for the connections themselves. DDNet extends this network protocol to offer protection against IP spoofing for connections.</p>
+<p>The Teeworlds protocol defines three different kinds of packets. There are connectionless packets, and two kinds of connection-oriented packets, namely control packets and &quot;normal&quot; packets.</p>
+<h3>Connectionless packets</h3>
+<p>Any packet having the <code>flag_connless</code> header flag set is considered connectionless. All other header flags and fields are ignored. After the header, there are 3 bytes of padding. The bits of these first 6 bytes are supposed to be all-ones.</p>
+<p>All sizes in bits.</p>
+<pre><code>packet_connless:
+    [24] packet_header
+    [24] padding
+    [  ] payload
+</code></pre>
+<p>NOTE: The reference implementation only care about the <code>flag_connless</code> header flag being set and ignores all of the other 47 bits.</p>
+<h3>Connection-oriented packets</h3>
+<p>In order to guarantee reliable messages being received in the right order, each reliable message gets assigned a 10-bit sequence number, starting at 0, incremented for each message and wrapping around after 1023 to 0.</p>
+<p>All connection-oriented packets have <code>flag_connless</code> set to 0. Each peer keeps track of the highest sequence number such that it has received all reliable messages with sequence numbers smaller or equal to it (note: this is simplified: sequence numbers wrap around, so it's not straightforward to say which sequence numbers are larger and which are smaller). This highest sequence number must be reported in the <code>ack</code> field, it tells the other peer that it can forget about these reliable messages.</p>
+<p>If a peer detects that it's missing reliable messages (when receiving higher sequence numbers without the ones in between), it sets <code>flag_resend</code>. This tells the other peer to start re-sending messages starting from the client's current <code>ack</code>.</p>
+<p><code>flag_compression</code> tells us whether the <code>maybe_compressed_payload</code> of the packet (everything after the header) has been compressed using the Huffman compression described in <a href="../huffman">huffman.md</a>. Peers compress the payload and then send whichever of the compressed or uncompressed payload is smaller. Packets with <code>flag_control</code> must not have <code>flag_compression</code> set.</p>
+<p>NOTE: The reference implementation still interprets <code>flag_compression</code> for packets with <code>flag_control</code>.</p>
+<p>Finally, <code>flag_control</code> determines if the payload is a control packet or a &quot;normal&quot; packet.</p>
+<pre><code>packet_connected:
+    [24] packet_header
+    [  ] maybe_compressed_payload
+</code></pre>
+<h4>Control packet</h4>
+<p><code>num_chunks</code> should be 0.</p>
+<p>There are five different control messages. The first byte of the payload determines the kind of control message. There are five different defined control messages.</p>
+<pre><code>keepalive = 0
+connect = 1
+connectaccept = 2
+accept = 3
+close = 4
+</code></pre>
+<p>All of these do not have extra data, except for the <code>close</code> control message which can optionally take a nul-terminated UTF-8 string as the close reason.</p>
+<pre><code>packet_control:
+    [24] packet_header
+    [ 8] control_message
+
+packet_control_close:
+    [24] packet_header
+    [ 8] control_message
+    [  ] reason
+</code></pre>
+<!-- TODO: a diagram for connection establishment would be nice here -->
+
+<p>When a connection is being established, there's a clear difference between client and server. The client starts by sending a <code>connect</code> control message. When the server receives a <code>connect</code>, it responds with a <code>connectaccept</code>. When the client sees a <code>connectaccept</code>, it sends an <code>accept</code> (which is ignored by the server) and considers the connection active. When the server receives its first normal packet, it also considers the connection active.</p>
+<p>Either party may send a <code>close</code> at any point (as a response to <code>connect</code>, <code>connectaccept</code>, during an active connection or even just upon receiving a packet belonging to an unknown connection).</p>
+<h4>Normal packets</h4>
+<p>Normal packets carry reliable and unreliable messages (&quot;chunks&quot;).</p>
+<p>Each message is prepended a <code>chunk_header_nonvital</code> or <code>chunk_header_vital</code>, depending on whether <code>flag_vital</code> is set. <code>flag_resend</code> indicates whether the message was sent in response to a <code>flag_request_resend</code> of a packet header. <code>size</code> is the size of the message <em>excluding</em> the header. <code>sequence</code> indicates the 10-bit sequence number of a reliable message.</p>
+<p>Then all of the messages are concatenated (up to a maximum packet size of 1400 bytes), <code>num_chunks</code> specifies the number of these messages.</p>
+<p>NOTE: The reference implementation ignores <code>num_chunks</code> and simply reads chunks from the payload until it reaches the end.</p>
+<h3>DDNet token extension</h3>
+<p>In order to secure the protocol against IP spoofing. It introduces a 4-byte token that needs to be included as part of every conection-oriented message. The server decides the token, usually based on IP address of the client, so that it doesn't need to save anything before the client IP address is validated.</p>
+<p>There are two special tokens. The first one is the all-zero token which is used by the reference implementation for internal tracking and should not be used. The other is the all-ones token which is used before the actual token is known, i.e. in the <code>connect</code> control message.</p>
+<p><strong>The token is simply appended to each of the connection-oriented packets,</strong> before compression takes place. This means that the receiver needs to decompress the packet before it can validate the token. This is a design flaw, because it requires computational overhead before a packet can be validated.</p>
+<pre><code>packet_control_ddnet:
+    [24] packet_header
+    [ 8] control_message
+    [32] token
+
+packet_control_close_ddnet:
+    [24] packet_header
+    [ 8] control_message
+    [  ] close_reason
+    [32] token
+</code></pre>
+<p>In the <code>connect</code> packet, since the token isn't known at that time (the server decides on which token to use), it is set to the all-ones token. The <code>connect</code> and <code>connectaccept</code> packets are additionally special in the sense that they are used to signal support for the DDNet token extension.</p>
+<pre><code>packet_control_connect_connectaccept_ddnet:
+    [24] packet_header
+    [ 8] control_message
+    [32] token_magic
+    [32] token
+</code></pre>
+<p>The <code>token_magic</code> is the ASCII string <code>TKEN</code>, in hex <code>54 4b 45 4e</code>.</p>
+<p>NOTE: The DDNet reference implementation unfortunately uses the <code>accept</code> message to actually let a client connect. Since that one is not re-sent, it means that a single lost packet can cause the connection establishment to get stuck.</p>
+</div>
