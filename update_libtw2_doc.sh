@@ -21,6 +21,7 @@ function file_names() {
 	echo map.md,Map
 	echo packet.md,Packet
 	echo packet7.md,Packet7
+	echo protocol.md,Protocol
 	echo quirks.md,Quirks
 	echo serverinfo_extended.md,Serverinfo extended
 	echo snapshot.md,Snapshot

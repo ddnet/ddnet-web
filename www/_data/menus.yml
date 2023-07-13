@@ -21,6 +21,7 @@ docs-libtw2: |
     <li><a href="/docs/libtw2/map">Map</a></li>
     <li><a href="/docs/libtw2/packet">Packet</a></li>
     <li><a href="/docs/libtw2/packet7">Packet7</a></li>
+    <li><a href="/docs/libtw2/protocol">Protocol</a></li>
     <li><a href="/docs/libtw2/quirks">Quirks</a></li>
     <li><a href="/docs/libtw2/serverinfo_extended">Serverinfo extended</a></li>
     <li><a href="/docs/libtw2/snapshot">Snapshot</a></li>
