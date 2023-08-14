@@ -37,6 +37,7 @@ group by record_race.Map order by count(*) desc limit 20;
 +-----------+-----------------+----------+---------------------+
 20 rows in set (17.067 sec)
 ```
+Check it out yourself on [ddstats](https://db.ddstats.org/ddnet-a1a1247?sql=select+maps.Server%2C+race.Map%2C+count%28*%29%2C+maps.timestamp%0D%0Afrom+race+join+maps+on+race.Map+%3D+maps.Map%0D%0Agroup+by+race.Map+order+by+count%28*%29+desc+limit+20%3B).
 
 This is especially impressive since the map was released less than 3 years ago!
 
