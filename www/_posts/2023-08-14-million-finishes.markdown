@@ -42,3 +42,5 @@ Check it out yourself on [ddstats](https://db.ddstats.org/ddnet-a1a1247?sql=sele
 This is especially impressive since the map was released less than 3 years ago!
 
 Who will get the 1 millionth finish? I'll update this post once the finishes are in.
+
+Edit: Congrats to nouis & deenouis for getting the 1 millionth finish on Multeasymap!
