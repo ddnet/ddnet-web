@@ -43,4 +43,23 @@ This is especially impressive since the map was released less than 3 years ago!
 
 Who will get the 1 millionth finish? I'll update this post once the finishes are in.
 
-Edit: Congrats to nouis & deenouis for getting the 1 millionth finish on Multeasymap!
+Edit: Congrats to [Quit](/players/Quit), [nouis](/players/nouis)) & [deenouis](/players/deenouis) for getting the 1 millionth finish on Multeasymap!
+```
+MariaDB [teeworlds]> select Name, Time, Server, Timestamp, rank() over (order by Timestamp asc) as "x-th Finish" from record_race where Map = "Multeasymap" limit 11 offset 999996;
++----------+---------+--------+---------------------+-------------+
+| Name     | Time    | Server | Timestamp           | x-th Finish |
++----------+---------+--------+---------------------+-------------+
+| deenouis |   971.9 | GER    | 2023-08-17 18:46:18 |      999997 |
+| nouis    |   971.9 | GER    | 2023-08-17 18:46:18 |      999997 |
+| Quit     | 1206.62 | RUS    | 2023-08-17 18:46:20 |      999999 |
+| deenouis |   809.5 | GER    | 2023-08-17 18:46:20 |      999999 |
+| nouis    |   809.5 | GER    | 2023-08-17 18:46:20 |      999999 |
+| deenouis |  784.44 | GER    | 2023-08-17 18:46:22 |     1000002 |
+| nouis    |  784.44 | GER    | 2023-08-17 18:46:22 |     1000002 |
+| deenouis |  751.72 | GER    | 2023-08-17 18:46:23 |     1000004 |
+| nouis    |  751.72 | GER    | 2023-08-17 18:46:23 |     1000004 |
+| Yumiko   |  639.44 | GER    | 2023-08-17 18:46:29 |     1000006 |
+| bencie   |  639.44 | GER    | 2023-08-17 18:46:29 |     1000006 |
++----------+---------+--------+---------------------+-------------+
+11 rows in set (2.140 sec)
+```
