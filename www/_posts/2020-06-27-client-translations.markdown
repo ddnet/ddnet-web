@@ -9,14 +9,14 @@ Current DDNet client translation status showing how many of the messages are tra
 
 ```
 100% ukrainian
+100% turkish
 100% swedish
 100% spanish
+100% russian
 100% german
-98% turkish
 98% traditional_chinese
 98% simplified_chinese
 98% serbian
-98% russian
 98% brazilian_portuguese
 96% belarusian
 94% galician
