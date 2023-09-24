@@ -58,13 +58,13 @@ menu: |
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th><th>Min</th><th>Max</th></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>loglevel</td><td>Log level (-3 = none, -2 = error, 1 = Warn, 2 = Info, 3 = Debug, 4 = Trace)</td><td>0</td><td>-3</td><td>2</td></tr>
-  <tr><td>logappend</td><td>Append to logfile instead of overwriting it every time</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>stdout_output_level</td><td>Adjusts the amount of information in the console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
-  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
-  <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>logappend</td><td>Append to logfile instead of overwriting it every time</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>loglevel</td><td>Adjusts the amount of information in the logfile (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
+  <tr><td>stdout_output_level</td><td>Adjusts the amount of information in the system console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
+  <tr><td>console_output_level</td><td>Adjusts the amount of information in the local/remote console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
+  <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_name</td><td>Server name</td><td>&quot;unnamed server&quot;</td><td></td><td></td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_ipv4only</td><td>Whether to bind only to ipv4, otherwise bind to all available interfaces</td><td>0</td><td>0</td><td>1</td></tr>
@@ -101,7 +101,6 @@ menu: |
   <tr><td>sv_skill_level</td><td>Difficulty level for Teeworlds 0.7 (0: Casual, 1: Normal, 2: Competitive)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>dbg_hitch</td><td>Hitch warnings</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems (Debug build only)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>http_allow_insecure</td><td>Allow insecure HTTP protocol in addition to the secure HTTPS one. Mostly useful for testing.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_welcome</td><td>Message that will be displayed to players who join the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -137,7 +136,6 @@ menu: |
   <tr><td>sv_vote_max_total</td><td>How many people can participate in a vote at max (0 = no limit by default)</td><td>0</td><td>0</td><td>64</td></tr>
   <tr><td>sv_vote_veto_time</td><td>Minutes of time on a server until a player can veto map change votes (0 = disabled)</td><td>20</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>1</td><td>0</td><td>9999</td></tr>
-  <tr><td>sv_suicide_penalty</td><td>The minimum time in seconds between kill or /kills and respawn</td><td>0</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_map_window</td><td>Map downloading send-ahead window</td><td>15</td><td>0</td><td>100</td></tr>
   <tr><td>sv_fast_download</td><td>Enables fast download of maps</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_shotgun_bullet_sound</td><td>Crazy shotgun bullet sound on/off</td><td>0</td><td>0</td><td>1</td></tr>
@@ -339,18 +337,21 @@ menu: |
   <tr><td>unjetpack</td><td></td><td>Removes the jetpack from you</td></tr>
   <tr><td>unweapons</td><td></td><td>Removes all weapons from you</td></tr>
   <tr><td>ninja</td><td></td><td>Makes you a ninja</td></tr>
+  <tr><td>unninja</td><td></td><td>Removes ninja from you</td></tr>
   <tr><td>super</td><td></td><td>Makes you super</td></tr>
   <tr><td>unsuper</td><td></td><td>Removes super from you</td></tr>
   <tr><td>endless_hook</td><td></td><td>Gives you endless hook</td></tr>
   <tr><td>unendless_hook</td><td></td><td>Removes endless hook from you</td></tr>
+  <tr><td>solo</td><td></td><td>Puts you into solo part</td></tr>
   <tr><td>unsolo</td><td></td><td>Puts you out of solo part</td></tr>
+  <tr><td>deep</td><td></td><td>Puts you into deep freeze</td></tr>
   <tr><td>undeep</td><td></td><td>Puts you out of deep freeze</td></tr>
   <tr><td>livefreeze</td><td></td><td>Makes you live frozen</td></tr>
   <tr><td>unlivefreeze</td><td></td><td>Puts you out of live freeze</td></tr>
-  <tr><td>left</td><td></td><td>Makes you move 1 tile left</td></tr>
-  <tr><td>right</td><td></td><td>Makes you move 1 tile right</td></tr>
-  <tr><td>up</td><td></td><td>Makes you move 1 tile up</td></tr>
-  <tr><td>down</td><td></td><td>Makes you move 1 tile down</td></tr>
+  <tr><td>left</td><td>?i[tiles]</td><td>Makes you move 1 tile left</td></tr>
+  <tr><td>right</td><td>?i[tiles]</td><td>Makes you move 1 tile right</td></tr>
+  <tr><td>up</td><td>?i[tiles]</td><td>Makes you move 1 tile up</td></tr>
+  <tr><td>down</td><td>?i[tiles]</td><td>Makes you move 1 tile down</td></tr>
   <tr><td>move</td><td>i[x] i[y]</td><td>Moves to the tile with x/y-number ii</td></tr>
   <tr><td>move_raw</td><td>i[x] i[y]</td><td>Moves to the point with x/y-coordinates ii</td></tr>
   <tr><td>force_pause</td><td>v[id] i[seconds]</td><td>Force i to pause for i seconds</td></tr>
@@ -429,6 +430,7 @@ menu: |
   <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>tp</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating if no player name is given</td></tr>
+  <tr><td>lasttp</td><td></td><td>Teleport yourself to the last location you teleported to.</td></tr>
   <tr><td>teleport</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating if no player name is given</td></tr>
   <tr><td>unsolo</td><td></td><td>Puts you out of solo part</td></tr>
   <tr><td>undeep</td><td></td><td>Puts you out of deep freeze</td></tr>
@@ -492,7 +494,7 @@ menu: |
   <tr><td>cl_showpred</td><td>Show ingame prediction time in milliseconds</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_eye_wheel</td><td>Show eye wheel along together with emotes</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_eye_duration</td><td>How long the eyes emotes last</td><td>999999</td><td>1</td><td>999999</td></tr>
-  <tr><td>cl_airjumpindicator</td><td></td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_airjumpindicator</td><td>Show the air jump indicator</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_mouse_deadzone</td><td>Deadzone for the camera to follow the cursor</td><td>0</td><td>0</td><td>3000</td></tr>
@@ -508,15 +510,14 @@ menu: |
   <tr><td>cl_dyncam_smoothness</td><td>Transition amount of the camera movement, 0=instant, 100=slow and smooth</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>cl_dyncam_stabilizing</td><td>Amount of camera slowdown during fast cursor movement. High value can cause delay in camera movement</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>cl_multiview_sensitivity</td><td>Set how fast the camera will move to the desired location (higher = faster)</td><td>100</td><td>0</td><td>200</td></tr>
-  <tr><td>cl_multiview_use_freeview</td><td>Use the free-view mode when using multi-view from free-view (/showall 1 has to be activated)</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_multiview_zoom_smoothness</td><td>Set the smoothness of the multi-view zoom (in ms, higher = slower)</td><td>1300</td><td>0</td><td>5000</td></tr>
+  <tr><td>cl_multiview_zoom_smoothness</td><td>Set the smoothness of the multi-view zoom (in ms, higher = slower)</td><td>1300</td><td>50</td><td>5000</td></tr>
   <tr><td>ed_autosave_interval</td><td>Interval in minutes at which a copy of the current editor map is automatically saved to the &#x27;auto&#x27; folder (0 for off)</td><td>10</td><td>0</td><td>240</td></tr>
   <tr><td>ed_autosave_max</td><td>Maximum number of autosaves that are kept per map name (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
   <tr><td>ed_smooth_zoom_time</td><td>Time of smooth zoom animation in the editor in ms (0 for off)</td><td>250</td><td>0</td><td>5000</td></tr>
   <tr><td>ed_limit_max_zoom_level</td><td>Specifies, if zooming in the editor should be limited or not (0 = no limit)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>ed_zoom_target</td><td>Zoom to the current mouse target</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>ed_showkeys</td><td></td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_show_welcome</td><td></td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>ed_showkeys</td><td>Show pressed keys</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_show_welcome</td><td>Show welcome message indicating the first launch of the client</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td><td>0</td><td>100</td></tr>
   <tr><td>cl_map_download_url</td><td>URL used to download maps (can start with http:// or https://)</td><td>&quot;https://maps.ddnet.org&quot;</td><td></td><td></td></tr>
   <tr><td>cl_map_download_connect_timeout_ms</td><td>HTTP map downloads: timeout for the connect phase in milliseconds (0 to disable)</td><td>2000</td><td>0</td><td>100000</td></tr>
@@ -576,28 +577,27 @@ menu: |
   <tr><td>cl_video_showhud</td><td>Show ingame HUD when rendering video</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_showchat</td><td>Show chat when rendering video</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_sound_enable</td><td>Use sound when rendering video</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_video_pause_on_start</td><td>Pause video rendering on start</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_show_hook_coll_other</td><td>Show other players&#x27; hook collision lines when rendering video</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_video_show_direction</td><td>Show players&#x27; key presses when rendering video (1 = other players&#x27;, 2 = also your own)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>cl_video_crf</td><td>Set crf when encode video with libx264 (0 for highest quality, 51 for lowest)</td><td>18</td><td>0</td><td>51</td></tr>
   <tr><td>cl_video_preset</td><td>Set preset when encode video with libx264, default is 5 (medium), 0 is ultrafast, 9 is placebo (the slowest, not recommend)</td><td>5</td><td>0</td><td>9</td></tr>
-  <tr><td>dbg_tuning</td><td>Display information about the tuning parameters that affect the own player</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>dbg_tuning</td><td>Display information about the tuning parameters that affect the own player (0 = off, 1 = show changed, 2 = show all)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>player_clan</td><td>Clan of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>player_country</td><td>Country of the player</td><td>-1</td><td>-1</td><td>1000</td></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>loglevel</td><td>Log level (-3 = none, -2 = error, 1 = Warn, 2 = Info, 3 = Debug, 4 = Trace)</td><td>0</td><td>-3</td><td>2</td></tr>
-  <tr><td>logappend</td><td>Append to logfile instead of overwriting it every time</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>stdout_output_level</td><td>Adjusts the amount of information in the console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
-  <tr><td>console_output_level</td><td>Adjusts the amount of information in the console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
-  <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>steam_name</td><td>Last seen name of the Steam profile</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>logappend</td><td>Append to logfile instead of overwriting it every time</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>loglevel</td><td>Adjusts the amount of information in the logfile (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
+  <tr><td>stdout_output_level</td><td>Adjusts the amount of information in the system console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
+  <tr><td>console_output_level</td><td>Adjusts the amount of information in the local/remote console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
+  <tr><td>console_enable_colors</td><td>Enable colors in console output</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_save_settings</td><td>Write the settings file on exit</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_refresh_rate</td><td>Refresh rate for updating the game (in Hz)</td><td>0</td><td>0</td><td>10000</td></tr>
   <tr><td>cl_refresh_rate_inactive</td><td>Refresh rate for updating the game when the window is inactive (in Hz)</td><td>120</td><td>0</td><td>10000</td></tr>
-  <tr><td>cl_editor</td><td></td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_editor</td><td>Open the map editor</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_editor_dilate</td><td>Automatically dilates embedded images</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_skin_filter_string</td><td>Skin filtering string</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_auto_demo_record</td><td>Automatically record demos</td><td>1</td><td>0</td><td>1</td></tr>
@@ -653,7 +653,7 @@ menu: |
   <tr><td>snd_game_volume</td><td>Game sound volume</td><td>30</td><td>0</td><td>100</td></tr>
   <tr><td>snd_ambient_volume</td><td>Map Sound sound volume</td><td>30</td><td>0</td><td>100</td></tr>
   <tr><td>snd_background_music_volume</td><td>Background music sound volume</td><td>30</td><td>0</td><td>100</td></tr>
-  <tr><td>snd_nonactive_mute</td><td></td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>snd_nonactive_mute</td><td>Mute sounds when window is not active</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>snd_game</td><td>Enable game sounds</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>snd_gun</td><td>Enable gun sound</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>snd_long_pain</td><td>Enable long pain sound (used when shooting in freeze)</td><td>1</td><td>0</td><td>1</td></tr>
@@ -674,12 +674,11 @@ menu: |
   <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_display_all_video_modes</td><td>Show all video modes</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_high_detail</td><td>High detail</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>gfx_fsaa_samples</td><td>FSAA Samples</td><td>0</td><td>0</td><td>64</td></tr>
+  <tr><td>gfx_fsaa_samples</td><td>FSAA samples (may cause delay)</td><td>0</td><td>0</td><td>64</td></tr>
   <tr><td>gfx_refresh_rate</td><td>Screen refresh rate</td><td>0</td><td>0</td><td>10000</td></tr>
-  <tr><td>gfx_finish</td><td></td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_backgroundrender</td><td>Render graphics when window is in background</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_text_overlay</td><td>Stop rendering textoverlay in editor or with entities: high value = less details = more speed</td><td>10</td><td>1</td><td>100</td></tr>
-  <tr><td>gfx_asyncrender_old</td><td>Do rendering async from the the update</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>gfx_asyncrender_old</td><td>During an update cycle, skip the render cycle, if the render cycle would need to wait for the previous render cycle to finish</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_quad_as_triangle</td><td>Render quads as triangles (fixes quad coloring on some GPUs)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>inp_mousesens</td><td>Mouse sensitivity</td><td>200</td><td>1</td><td>100000</td></tr>
   <tr><td>inp_translated_keys</td><td>Translate keys before interpreting them, respects keyboard layouts</td><td>0</td><td>0</td><td>1</td></tr>
@@ -775,6 +774,7 @@ menu: |
   <tr><td>cl_demo_slice_begin</td><td>Begin marker for demo slice</td><td>-1</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_slice_end</td><td>End marker for demo slice</td><td>-1</td><td>0</td><td>0</td></tr>
   <tr><td>cl_demo_show_speed</td><td>Show speed meter on change</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_demo_show_pause</td><td>Show pause/play indicator on change</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_demo_keyboard_shortcuts</td><td>Enable keyboard shortcuts in demo player</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_gl_major</td><td>Graphic library major version</td><td>1</td><td>1</td><td>10</td></tr>
   <tr><td>gfx_gl_minor</td><td>Graphic library minor version</td><td>3</td><td>0</td><td>10</td></tr>
@@ -815,7 +815,7 @@ menu: |
   <tr><td>spectate_next</td><td></td><td>Spectate the next player</td></tr>
   <tr><td>spectate_previous</td><td></td><td>Spectate the previous player</td></tr>
   <tr><td>spectate_closest</td><td></td><td>Spectate the closest player</td></tr>
-  <tr><td>spectate_multiview</td><td>i[id]</td><td>Add/remove Client-IDs to spectate them exclusivly (-1 to reset)</td></tr>
+  <tr><td>spectate_multiview</td><td>i[id]</td><td>Add/remove Client-IDs to spectate them exclusively (-1 to reset)</td></tr>
   <tr><td>zoom+</td><td></td><td>Zoom increase</td></tr>
   <tr><td>zoom-</td><td></td><td>Zoom decrease</td></tr>
   <tr><td>zoom</td><td>?i</td><td>Change zoom</td></tr>
