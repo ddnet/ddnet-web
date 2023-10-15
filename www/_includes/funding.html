@@ -4,9 +4,9 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet":  [65, 383 + 60 + 59, "Insanity"], // includes vpn
+  "ddnet":  [65 + 50, 383 + 60 + 59, "Insanity"], // includes vpn
   "master": [32, 32, "Izanagi"], // hetzner.de
-  "db":     [47, 92, "DefaultO"],
+  "db":     [47 + 29, 92, "DefaultO & Insanity"],
   "ger2":   "heinrich5991", // hetzner.de
   "ger10":  "Davide",
   "pol":    [103, 78, "Davide"], // ovh.com
