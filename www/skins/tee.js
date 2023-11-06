@@ -1,33 +1,37 @@
-//Prime 2015-31
+// Prime 2015-31
 // Updated to be more realistic by Ryozuki on 2022-03-28.
 
-function RenderSkin(skin){
+function RenderSkin(skin) {
 	//create canvas
 	let canvas = this;
-	if(canvas.hasAttribute("isrenderedskin"))
+	if (canvas.hasAttribute("isrenderedskin"))
 		return;
-	canvas.width = "96";
-	canvas.height = "64";
-	let ctx = canvas.getContext("2d");
-	canvas.setAttribute("isrenderedskin", "1");
 
-	ctx.drawImage(skin,192,64,64,32,8,32,64,30); //back feet shadow
-	ctx.drawImage(skin,96,0,96,96,16,0,64,64); //body shadow
-	ctx.drawImage(skin,192,64,64,32,24,32,64,30); //front feet shadow
-	ctx.drawImage(skin,192,32,64,32,8,32,64,30); //back feet
-	ctx.drawImage(skin,0,0,96,96,16,0,64,64); //body
-	ctx.drawImage(skin,192,32,64,32,24,32,64,30); //front feet
-	ctx.drawImage(skin,64,96,32,32,39,18,26,26); //left eye
+	// scale
+	const s = skin.naturalWidth / 256
+
+	canvas.width = 96 * s;
+	canvas.height = 64 * s;
+	let ctx = canvas.getContext("2d");
+	canvas.setAttribute("isrenderedskin", 1);
+
+	ctx.drawImage(skin, 192 * s, 64 * s, 64 * s, 32 * s, 8 * s, 32 * s, 64 * s, 30 * s) //back feet shadow
+	ctx.drawImage(skin, 96 * s, 0 * s, 96 * s, 96 * s, 16 * s, 0 * s, 64 * s, 64 * s) //body shadow
+	ctx.drawImage(skin, 192 * s, 64 * s, 64 * s, 32 * s, 24 * s, 32 * s, 64 * s, 30 * s) //front feet shadow
+	ctx.drawImage(skin, 192 * s, 32 * s, 64 * s, 32 * s, 8 * s, 32 * s, 64 * s, 30 * s) //back feet
+	ctx.drawImage(skin, 0 * s, 0 * s, 96 * s, 96 * s, 16 * s, 0 * s, 64 * s, 64 * s) //body
+	ctx.drawImage(skin, 192 * s, 32 * s, 64 * s, 32 * s, 24 * s, 32 * s, 64 * s, 30 * s) //front feet
+	ctx.drawImage(skin, 64 * s, 96 * s, 32 * s, 32 * s, 39 * s, 18 * s, 26 * s, 26 * s) //left eye
+
 	//right eye (flip and draw)
 	ctx.save();
-	ctx.scale(-1,1);
-	ctx.drawImage(skin,64,96,32,32,-73,18,26,26);
+	ctx.scale(-1, 1);
+	ctx.drawImage(skin, 64 * s, 96 * s, 32 * s, 32 * s, -73 * s, 18 * s, 26 * s, 26 * s)
 	ctx.restore();
 }
 
-function OnTeeSkinRender(SkinCanvas, SkinImg){
-	if(SkinImg.naturalHeight){
+function OnTeeSkinRender(SkinCanvas, SkinImg) {
+	if (SkinImg.naturalHeight) {
 		RenderSkin.call(SkinCanvas, SkinImg);
 	}
 }
-
