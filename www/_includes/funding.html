@@ -64,6 +64,7 @@ for (var server in costs) {
     paid[server] = 0;
     if (donatedRest > 0) {
       paid[server] += donatedRest;
+      donatedRest = 0;
     }
     if (val.toFixed) {
       paid[server] += val * donated / sumToPay;
