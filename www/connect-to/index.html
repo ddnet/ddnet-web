@@ -3,56 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <title>Connect to server</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;;
+            background-image: url('bg/banana.png');
+            background-size: cover;
+            background-position: center center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 {
+            color: #609bcc;
+            margin-top: 5px;
+        }
+
+        p {
+            color: #495057;
+        }
+
+        button {
+            background-color: #82befb;
+            color: #fff;
+            width: 100px;
+            height: 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            line-height: 10px;
+        }
+
+        button:hover {
+            background-color: #6499e2;
+        }
+    </style>
 </head>
 <body>
-    <script src="../jquery.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div id="DDNet-Connect" class="modal">
+        <h2 id="Title"></h2>
+        <p id="Description"></p>
+        <button id="btnSteam">Steam</button>
+        <button id="btnDDNet">Standalone</button>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const addr = new URLSearchParams(window.location.search).get('addr');
+        document.addEventListener('DOMContentLoaded', async () => {
+            const addr = (new URLSearchParams(window.location.search).get('addr') || '').replace(/\/$/, '');
 
             if (addr) {
-                confirmDialog("Would you like to join via Steam or standalone?", (choice) => {
-                    if (choice) {
-                        window.location.href = `steam://run/412220//${addr}`;
-                    } else {
-                        window.location.href = `ddnet://${addr}`;
-                    }
+                const title = await getServerName(addr);
+                const message = "Would you like to join via Steam or Standalone?";
+                showModal(title, message);
+
+                document.getElementById('btnSteam').addEventListener('click', () => {
+                    window.location.href = `steam://run/412220//${addr}`;
+                });
+
+                document.getElementById('btnDDNet').addEventListener('click', () => {
+                    window.location.href = `ddnet://${addr}`;
                 });
             }
         });
 
-        function confirmDialog(message, callback) {
-            const modal = $(`
-                <div class="modal fade" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">${message}</div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="confirmChoice(true)">Steam</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="confirmChoice(false)">DDNet</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `);
+		async function getServerName(addr) {
+			const response = await fetch("https://master1.ddnet.tw/ddnet/15/servers.json");
+			const jsondata = await response.json();
+			const serverList = jsondata.servers;
 
-            window.confirmChoice = (choice) => {
-                callback(choice);
-                delete window.confirmChoice;
-            };
+			for (const server of serverList) {
+				const addresses = server.addresses || [];
+				if (addresses.includes(`tw-0.6+udp://${addr}`)) {
+					return server.info.name;
+                }
+            }
+            return "Unknown Server";
+		}
 
-            modal.on('hidden.bs.modal', () => {
-                modal.remove();
-            });
 
-            modal.modal('show');
+        function showModal(title, message) {
+            const modal = document.getElementById('DDNet-Connect');
+            const modalTitle = document.getElementById('Title');
+            const modalMessage = document.getElementById('Description');
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            modal.style.display = 'block';
         }
-
-		window.addEventListener('blur', function() {
-			window.close();
-		});
     </script>
 </body>
 </html>
