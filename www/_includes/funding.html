@@ -4,37 +4,34 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet":  [65 + 50 + 34, 383 + 60 + 59, "Insanity & Matrose l_I"], // includes vpn
-  "master": [32, 32, "Izanagi"], // hetzner.de
-  "db":     [47 + 29 + 16, 92, "DefaultO, Insanity & Matrose l_I"],
+  "ddnet":  431 + 60 + 59, // includes vpn
+  "master": 32, // hetzner.de
+  "db":     101,
   "ger2":   "heinrich5991", // hetzner.de
   "ger10":  "Davide",
-  "pol":    [78, 103, "Davide"], // ovh.com
+  "pol":    71, // ovh.com
   "rus":    403, // myarena.ru
-  "tur":    [72, 4, "Learath2"], // hostingturkiye.com.tr
   "irn":    "NotAriaN",
   "chl":    156, // grupocg.cl
-  "bra":    [300, 520, "Miguilim"], // lightnode.com
+  "bra":    520, // lightnode.com
   "arg":    "Miguilim",
   "per":    "Miguilim",
-  "usa1":   [88, 109, "YupHio"], // nfoservers.com
-  "usa2":   [109, 109, "Meeu"], // hetzner.com
-  "usa3":   "Davide", // lowhosting.com
-  "can":    "Davide", // ovh.com, runs out on 2023-06-13
+  "usa1":   120, // nfoservers.com
+  "usa2":   55, // hetzner.com
   "chn":    537, // www.fxyun.com for CHN0-2
   "chn5":   "紫川",
-  "twn":    [60, 216, "murpi"], // lightnode.com
+  "twn":    216, // lightnode.com
   "kor":    276, // vultr.com
   "sgp":    73, // linode.com
   "ind":    73, // linode.com
-  "aus":    [43, 43, "Lem0n"], // ovh.com
-  "zaf":    [65, 66, "Mariac & UnlucksMcGee"], // ivecloud.co.za
+  "aus":    43, // ovh.com
+  "zaf":    66, // ivecloud.co.za
 };
-var donated = 2220 + 6 /* not really donated 6€ but stopped donations already */;
-var yearStr = "2023";
-var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253;
-var donatedOld = 10767;
-var yearStrOld = "2013-22";
+var donated = 0;
+var yearStr = "2024";
+var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253 + /*2023:*/ 3308;
+var donatedOld = 14075;
+var yearStrOld = "2013-23";
 
 var sum = 0;
 var sumToPay = 0;
