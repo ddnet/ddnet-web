@@ -16,33 +16,177 @@ menu: |
     <li><a href="/funding/">Funding</a></li>
   </ul>
 ---
+
 <div class="block">
-<h2 id="mapping-rules">Mapping Rules</h2>
-<p>If you want your map to be released on DDNet, you must follow these rules. Before you submit your map on <a href="/discord/">DDNet Discord</a>, make sure it is already thoroughly tested by you and your friends, parts work smoothly, and the design is finished!</p>
-<h3>Gameplay:</h3>
-<ul>
-  <li>There has to be enough space in parts for comfortable movement.</li>
-  <li>There can't be large spikes in difficulty.</li>
-  <li>In parts where it's easy to fail, there should be ways to recover.</li>
-  <li>Parts can't be excessively precise or punishing only to increase the difficulty.</li>
-  <li>Special tiles can't be overused, used if they're not needed or used to fix cheats.</li>
-  <li>Gameplay can't be intentionally misleading or confusing.</li>
-  <li>Parts can't use bugs that exploit game physics.</li>
-</ul>
-<h3>Visuals:</h3>
-<ul>
-  <li>Every tile that players need to know about has to be clearly marked.</li>
-  <li>Different tiles and markings have to be easy to tell apart.</li>
-  <li>There has to be a clear distinction between foreground and background elements.</li>
-  <li>Contrast and saturation shouldn't be too high so the map isn't an eyesore.</li>
-  <li>Signs, hints and warnings have to be marked using the "Turn Off Entities" tile.</li>
-  <li>If custom elements from another map are used, the original creator needs to give permission.</li>
-</ul>
-<h3>Additional:</h3>
-<ul>
-  <li>All tees have to cross the startline.</li>
-  <li>Every map has to have time checkpoints.</li>
-</ul>
-<h3>Note:</h3>
-<p>While unique and creative parts are important, good level design is even more so. A simple map with solid level design and nice visuals has a better chance to get released than a complex one with problems.</p>
+  <h1 id="mapping-rules">📄 Mapping Rules</h1>
+  <p>
+    If you want your map to be released on DDNet, you must follow these rules.
+    Before you submit your map on <a href="/discord/">DDNet Discord</a>, make
+    sure it is already thoroughly tested by you and your friends, parts work
+    smoothly, and the design is finished!
+  </p>
+
+  <h2>🎮 Gameplay general rules</h2>
+
+  <h4>1. Start and finish line</h4>
+  <ul>
+    <li>
+      <strong>1.1 Start line</strong>
+      <ul>
+        <li>No startline skips. All tees have to cross the startline.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>1.2 Finish line</strong>
+      <ul>
+        <li>
+          You must allow the finish line to be reachable from the winner room so
+          that a team may still finish if the last one dies. Make sure players
+          have a chance to help others after finishing.
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>2. Time CPs</h4>
+  <ul>
+    <li>
+      Your map must have time CPs (<a href="https://ddnet.org/explain/game/"
+        >index 35-59</a
+      >). They compare your current race time with your record time at a same
+      checkpoint when crossing them.
+    </li>
+  </ul>
+
+  <h4>3. Bugs</h4>
+  <ul>
+    <li>
+      Ensure that your map doesn't include any of the listed
+      <a href="https://forum.ddnet.org/viewtopic.php?f=9&amp;t=5137">bugs</a>.
+    </li>
+  </ul>
+
+  <h4>4. Functional gameplay</h4>
+  <ul>
+    <li>
+      Your start area should be big enough for at least 10 players to start.
+      Also, Make sure to place multiple map spawns off the ground.
+      <strong>**</strong>
+    </li>
+    <li>
+      Small part skips are permitted, provided they do not undermine the
+      intended purpose of the part.
+    </li>
+    <p><strong>** Does not apply to Solo maps.</strong></p>
+  </ul>
+
+  <h4>5. Fake tiles</h4>
+  <ul>
+    <li>
+      Don't use any "fake entities". Players have to be able to fully understand
+      a map when using overlay entities. This also includes easter eggs.
+    </li>
+  </ul>
+
+  <h4>6. Marking</h4>
+  <ul>
+    <li>
+      Every entity that the player should know about should likewise be clearly
+      marked with a visible tile.
+    </li>
+  </ul>
+
+  <h4>7. Naming your map</h4>
+  <ul>
+    <li>
+      You should make sure that your map's name isn't similar to an existing map
+      on DDNet. Check the availabilities at
+      <a href="https://ddnet.org/releases/">Map search</a>.
+    </li>
+  </ul>
+
+  <h2>🗃️ Server Type Rules</h2>
+
+  <h4>👶 Novice maps</h4>
+  <ul>
+    <li>Faily parts should be rare in Novice maps.</li>
+    <li>Novice maps should not contain any faily solo parts.</li>
+  </ul>
+
+  <h4>👴 Oldschool maps</h4>
+  <ul>
+    <li>The map is finishable.</li>
+    <li>
+      The map doesn't contain big cheats leading to 20-100% of the map being
+      cheated.
+    </li>
+    <li>The difficulty isn't unbalanced.</li>
+    <li>
+      There are no visual bugs. Every tile has to be marked properly. Fix color
+      issues (clashing or bright colors).
+    </li>
+  </ul>
+
+  <h4>♿ Dummy maps</h4>
+  <ul>
+    <li>
+      Make sure deepfly is off unless it's necessary to complete the map (if the
+      gameplay revolves around the use of deepfly). Inside the editor, go to
+      "Server settings" and write "sv_deepfly 0". Deepfly allows you to fly with
+      your dummy, even if he's deep frozen; therefore it can lead to cheats.
+    </li>
+    <li>
+      Verify that the deep isn't skippable. Look at our current dummy maps to
+      see how it's done properly.
+    </li>
+    <li>
+      Add an unlock team tile before the player has to kill their dummy so that
+      the actual player isn't killed as well.
+    </li>
+    <li>
+      Make sure that you can't reach the finish line with the dummy. Team ranks
+      are not allowed.
+    </li>
+  </ul>
+
+  <h4>🏁 Race maps</h4>
+  <ul>
+    <p>DDNet is focused around DDRace but we host a few race maps.</p>
+    <li>
+      Before posting it on DDNet, ensure that the map doesn't already exist on
+      https://uniqueclan.net/. **
+    </li>
+    <li>
+      Race maps can only use Race tiles, thus contain the following tiles:
+      hookable, unhookable, teleport, kill, grenade, time CPs, start and finish
+      line.
+    </li>
+    <p>
+      ** Unique is a Race community and we do not intend to compete with them.
+      Occasionally, we allow a few rare but good race maps to provide players
+      with the opportunity to discover and enjoy such content, as our community
+      is dispersed across the world, unlike Unique.
+    </p>
+  </ul>
+
+  <h4>🚀 Solo maps</h4>
+  <ul>
+    <li>"sv_solo_server 1" must be set as map setting.</li>
+    <li>
+      Spawn, totele and ctotele tiles must be placed on the ground. Only place 1
+      spawn and only 1 totele or ctotele per tele.
+    </li>
+    <li>Noob filters are forbidden.</li>
+  </ul>
+
+  <h4>🎉 Fun maps</h4>
+  <ul>
+    <li>
+      Those maps do not need to contain a start and a finish line, nor time CPs.
+    </li>
+  </ul>
+
+  <footer>
+    <p><strong>Credits: Pipou</strong></p>
+  </footer>
 </div>
