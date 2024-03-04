@@ -13,6 +13,7 @@ Current DDNet client translation status showing how many of the messages are tra
 100% simplified_chinese
 100% russian
 100% german
+100% czech
 100% brazilian_portuguese
 99% turkish
 98% traditional_chinese
@@ -32,7 +33,6 @@ Current DDNet client translation status showing how many of the messages are tra
 61% japanese
 59% norwegian
 59% danish
-59% czech
 58% finnish
 58% arabic
 50% bosnian
