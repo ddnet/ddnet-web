@@ -208,6 +208,11 @@ body:not(#phpbb) pre code {
   stroke: #222222;
 }
 
+.highcharts-range-selector {
+  background: #555555;
+  color: #cccccc;
+}
+
 .highcharts-container svg g.highcharts-axis-labels text {
   color: #cccccc !important;
   fill: #cccccc !important;
