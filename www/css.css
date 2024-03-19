@@ -662,7 +662,7 @@ body:not(#phpbb) .time {
   width: 80%;
 }
 
-.progress {
+.progress, .progressbar {
   background-image: linear-gradient(to bottom, #ddd 0%, #eee 100%);
 }
 
