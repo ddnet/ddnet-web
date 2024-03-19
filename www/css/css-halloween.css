@@ -184,21 +184,22 @@ body:not(#phpbb) pre code {
   fill: #ffffff;
   stroke: #f07141;
 }
-.highcharts-contextmenu div {
+.highcharts-contextmenu ul {
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
   background: #333333 !important;
   color: #c8c8c8 !important;
 }
-.highcharts-contextmenu div div {
+.highcharts-contextmenu ul li {
   border: none !important;
   box-shadow: none !important;
+  color: #c8c8c8 !important;
 }
-.highcharts-contextmenu div div:hover {
+.highcharts-contextmenu ul li:hover {
   background-color: #f07141 !important;
   color: #000000 !important;
 }
-.highcharts-contextmenu div hr {
+.highcharts-contextmenu ul hr {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
