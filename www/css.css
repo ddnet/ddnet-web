@@ -597,6 +597,7 @@ body:not(#phpbb) .time {
   width: 255px;
 }
 .tt-suggestion {
+  cursor: pointer;
   font-size: 88%;
   line-height: 18px;
   padding: 3px 10px;
@@ -659,6 +660,10 @@ body:not(#phpbb) .time {
 
 .funding-bar {
   width: 80%;
+}
+
+.progress {
+  background-image: linear-gradient(to bottom, #ddd 0%, #eee 100%);
 }
 
 .progressbar {
