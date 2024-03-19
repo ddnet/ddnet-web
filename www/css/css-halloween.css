@@ -182,7 +182,7 @@ body:not(#phpbb) pre code {
 
 .highcharts-container svg g.highcharts-button rect {
   fill: #ffffff;
-  stroke: #f07141;
+  stroke: none;
 }
 .highcharts-contextmenu ul {
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
