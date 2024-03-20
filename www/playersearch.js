@@ -2,12 +2,12 @@ var players = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   remote: '/players/?query=%QUERY',
-  limit: 10
+  limit: 12
 });
 
 players.initialize();
 
-$('#playerform .typeahead').typeahead(null, {
+const typeaheadDataset = {
   name: 'players',
   displayKey: 'name',
   source: players.ttAdapter(),
@@ -16,6 +16,12 @@ $('#playerform .typeahead').typeahead(null, {
       return '<p><strong>' + o.name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + '</strong><span class="right">' + o.points + '&nbsp;points</span></p>'
     }
   }
-}).on('typeahead:selected', function(e, data) {
+};
+
+$('#playerform .typeahead').typeahead(null, typeaheadDataset).on('typeahead:selected', function(e, data) {
   $('#playerform').submit();
+});
+
+$('#playerform2 .typeahead').typeahead(null, typeaheadDataset).on('typeahead:selected', function(e, data) {
+  $('#playerform2').submit();
 });
