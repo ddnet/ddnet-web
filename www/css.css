@@ -9,12 +9,14 @@
 :root {
   --bg: #d8efff;
   --bg-block: #ffffff;
+  --fg: black;
   --link: #882222;
 }
 
 html,
 body {
   background-color: var(--bg);
+  color: var(--fg);
   font-family: sans-serif;
   margin: 0;
   padding: 0;
@@ -92,11 +94,6 @@ body:not(#phpbb) .block {
   background-color: #00000012;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-}
-
-body:not(#phpbb) code {
-  background-color: #00000012;
-  border-radius: 5px;
 }
 
 body:not(#phpbb) pre {
@@ -478,6 +475,10 @@ br {
   text-align: center;
 }
 
+.highcharts-container svg g.highcharts-button * {
+  cursor: pointer;
+}
+
 .spacey td {
   padding: 0 1em;
 }
@@ -596,6 +597,7 @@ body:not(#phpbb) .time {
   width: 255px;
 }
 .tt-suggestion {
+  cursor: pointer;
   font-size: 88%;
   line-height: 18px;
   padding: 3px 10px;
@@ -658,6 +660,10 @@ body:not(#phpbb) .time {
 
 .funding-bar {
   width: 80%;
+}
+
+.progress, .progressbar {
+  background-image: linear-gradient(to bottom, #ddd 0%, #eee 100%);
 }
 
 .progressbar {
@@ -783,6 +789,7 @@ body:not(#phpbb) .time {
     margin-left: 0em;
     border-right: 3px solid #ffd246;
     transition-property: border-right-color;
+    z-index: 1;
   }
 
   .contentleft ul {

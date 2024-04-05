@@ -7,12 +7,6 @@
   --bg-block: #555555;
 }
 
-html,
-body {
-  background: var(--bg);
-  color: var(--fg);
-}
-
 .js-calendar-graph-svg {
   fill: var(--fg);
 }
@@ -59,7 +53,7 @@ a:hover {
 section .block,
 section .longblock {
   background: #555555;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -74,12 +68,7 @@ section .longblock {
 }
 
 .news blockquote {
-  border-left: 10px solid var(--link);
-  margin: 1.5em 0px;
-  padding: 0.5em 10px;
   background-color: #4d4d4d;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
 }
 
 .ui-widget-content {
@@ -89,7 +78,7 @@ section .longblock {
 }
 
 .settingscommands tr {
-  border-bottom: 1px solid #222222;
+  border-bottom-color: #222222;
 }
 
 body:not(#phpbb) code {
@@ -99,13 +88,10 @@ body:not(#phpbb) code {
 
 body:not(#phpbb) pre {
   background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  padding: 5px;
 }
 
 body:not(#phpbb) pre code {
   background-color: transparent;
-  padding: 0;
 }
 
 /* ========================= Status ========================= */
@@ -125,17 +111,13 @@ body:not(#phpbb) pre code {
 .table > tfoot > tr > td {
   border-top: 1px solid #222222;
 }
-.progress {
-  background-color: rgba(255, 255, 255, 0.4);
-  background-image: none;
-}
 
 /* ========================= Ranks ========================= */
 .typeahead:focus {
-  border: 2px solid #f07141;
+  border-color: #f07141;
 }
 .tt-dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #333333cc;
 }
 .tt-suggestion.tt-cursor {
   background-color: #f07141;
@@ -159,7 +141,7 @@ body:not(#phpbb) pre code {
 }
 .unfinTable2,
 .unfinTable3 {
-  border-left: 1px solid rgba(0, 0, 0, 0.75) !important;
+  border-left-color: rgba(0, 0, 0, 0.75);
 }
 .unfinTable2 thead,
 .unfinTable3 thead {
@@ -180,7 +162,7 @@ body:not(#phpbb) pre code {
 .unfinTable1 td:not(:last-child),
 .unfinTable2 td:not(:last-child),
 .unfinTable3 td:not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.3) !important;
+  border-right-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 /* ========================= Statistics ========================= */
@@ -196,32 +178,35 @@ body:not(#phpbb) pre code {
 
 .highcharts-container svg g.highcharts-button rect {
   fill: #ffffff;
-  stroke: #f07141;
+  stroke: none;
 }
-.highcharts-container svg g.highcharts-button * {
-  cursor: pointer;
-}
-.highcharts-contextmenu div {
+.highcharts-contextmenu ul {
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
   background: #333333 !important;
   color: #c8c8c8 !important;
 }
-.highcharts-contextmenu div div {
+.highcharts-contextmenu ul li {
   border: none !important;
   box-shadow: none !important;
+  color: #c8c8c8 !important;
 }
-.highcharts-contextmenu div div:hover {
+.highcharts-contextmenu ul li:hover {
   background-color: #f07141 !important;
   color: #000000 !important;
 }
-.highcharts-contextmenu div hr {
+.highcharts-contextmenu ul hr {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .highcharts-container svg g.highcharts-grid path,
 .highcharts-container svg g.highcharts-axis path {
   stroke: #222222;
+}
+
+.highcharts-range-selector {
+  background: #555555;
+  color: #cccccc;
 }
 
 .highcharts-container svg g.highcharts-axis-labels text {
