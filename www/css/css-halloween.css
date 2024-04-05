@@ -7,6 +7,12 @@
   --bg-block: #555555;
 }
 
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
 .js-calendar-graph-svg {
   fill: var(--fg);
 }
