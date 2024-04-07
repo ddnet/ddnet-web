@@ -3,5 +3,6 @@ title: DDraceNetwork
 markdown: kramdown
 highlighter: true
 author:
-  name: deen
+  name: DDNet Team
 include: [".well-known"]
+url: https://ddnet.org
