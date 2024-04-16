@@ -96,7 +96,7 @@ menu: |
   <tr><td>sv_name</td><td>Server name</td><td>&quot;unnamed server&quot;</td><td></td><td></td></tr>
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_ipv4only</td><td>Whether to bind only to ipv4, otherwise bind to all available interfaces</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser, 0 to automatically find a free port in 8303-8310)</td><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser, 0 to automatically find a free port in 8303-8310)</td><td>0</td><td>0</td><td>65535</td></tr>
   <tr><td>sv_hostname</td><td>Server hostname (0.7 only)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Sunny Side Up&quot;</td><td></td><td></td></tr>
   <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>64</td><td>1</td><td>64</td></tr>
@@ -174,6 +174,7 @@ menu: |
   <tr><td>sv_saveswapgames_penalty</td><td>Penalty in seconds for saving or swapping position</td><td>60</td><td>0</td><td>10000</td></tr>
   <tr><td>sv_swap_timeout</td><td>Timeout in seconds before option to swap expires</td><td>180</td><td>0</td><td>10000</td></tr>
   <tr><td>sv_swap</td><td>Enable /swap</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_team0mode</td><td>Enables /team0mode</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_use_sql</td><td>Enables MySQL backend instead of SQLite backend (sv_sqlite_file is still used as fallback write server when no MySQL server is reachable)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_sql_queries_delay</td><td>Delay in seconds between SQL queries of a single player</td><td>1</td><td>0</td><td>20</td></tr>
   <tr><td>sv_sqlite_file</td><td>File to store ranks in case sv_use_sql is turned off or used as backup sql server</td><td>&quot;ddnet-server.sqlite&quot;</td><td></td><td></td></tr>
@@ -243,8 +244,8 @@ menu: |
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Setting</th><th>Description</th><th>Default</th><th>Min</th><th>Max</th></tr>
   <tr><td>ec_bindaddr</td><td>Address to bind the external console to. Anything but &#x27;localhost&#x27; is dangerous</td><td>&quot;localhost&quot;</td><td></td><td></td></tr>
-  <tr><td>ec_port</td><td>Port to use for the external console</td><td>0</td><td>0</td><td>0</td></tr>
-  <tr><td>ec_password</td><td>External console password</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>ec_port</td><td>Port to use for the external console</td><td>0</td><td>0</td><td>65535</td></tr>
+  <tr><td>ec_password</td><td>External console password. This option is required to be set for econ to be enabled.</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>ec_bantime</td><td>The time a client gets banned if econ authentication fails. 0 just closes the connection</td><td>0</td><td>0</td><td>1440</td></tr>
   <tr><td>ec_auth_timeout</td><td>Time in seconds before the the econ authentication times out</td><td>30</td><td>1</td><td>120</td></tr>
   <tr><td>ec_output_level</td><td>Adjusts the amount of information in the external console (-3 = none, -2 = error only, -1 = warn, 0 = info, 1 = debug, 2 = trace)</td><td>0</td><td>-3</td><td>2</td></tr>
@@ -258,7 +259,6 @@ menu: |
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
   <tr><td>access_level</td><td>s[command] ?i[accesslevel]</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
   <tr><td>access_status</td><td>i[accesslevel]</td><td>List all commands which are accessible for admin = 0, moderator = 1, helper = 2, all = 3</td></tr>
-  <tr><td>cmdlist</td><td></td><td>List all commands which are accessible for users</td></tr>
   <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban ip for x minutes for any reason</td></tr>
   <tr><td>ban_range</td><td>s[first ip] s[last ip] ?i[minutes] r[reason]</td><td>Ban ip range for x minutes for any reason</td></tr>
   <tr><td>unban</td><td>s[ip|entry]</td><td>Unban ip/banlist entry</td></tr>
@@ -314,7 +314,6 @@ menu: |
   <tr><td>votes</td><td>?i[page]</td><td>Show all votes (page 0 by default, 20 entries per page)</td></tr>
   <tr><td>dump_antibot</td><td></td><td>Dumps the antibot status</td></tr>
   <tr><td>antibot</td><td>r[command]</td><td>Sends a command to the antibot</td></tr>
-  <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
   <tr><td>kill_pl</td><td>v[id]</td><td>Kills player v and announces the kill</td></tr>
   <tr><td>totele</td><td>i[number]</td><td>Teleports you to teleporter v</td></tr>
   <tr><td>totelecp</td><td>i[number]</td><td>Teleports you to checkpoint teleporter v</td></tr>
@@ -372,12 +371,14 @@ menu: |
   <tr><td>dump_log</td><td>?i[seconds]</td><td>Show logs of the last i seconds</td></tr>
   <tr><td>freezehammer</td><td>v[id]</td><td>Gives a player Freeze Hammer</td></tr>
   <tr><td>unfreezehammer</td><td>v[id]</td><td>Removes Freeze Hammer from a player</td></tr>
+  <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
 </table></div>
 </div>
 <div class="block">
 <h2 id="chat-commands">Chat Commands</h2>
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>cmdlist</td><td></td><td>List all commands which are accessible for users</td></tr>
   <tr><td>credits</td><td></td><td>Shows the credits of the DDNet mod</td></tr>
   <tr><td>rules</td><td></td><td>Shows the server rules</td></tr>
   <tr><td>emote</td><td>?s[emote name] i[duration in seconds]</td><td>Sets your tee&#x27;s eye emote</td></tr>
@@ -385,7 +386,6 @@ menu: |
   <tr><td>settings</td><td>?s[configname]</td><td>Shows gameplay information for this server</td></tr>
   <tr><td>help</td><td>?r[command]</td><td>Shows help to command r, general help if left blank</td></tr>
   <tr><td>info</td><td></td><td>Shows info about this server</td></tr>
-  <tr><td>list</td><td>?s[filter]</td><td>List connected players with optional case-insensitive substring matching filter</td></tr>
   <tr><td>me</td><td>r[message]</td><td>Like the famous irc command &#x27;/me says hi&#x27; will display &#x27;&lt;yourname&gt; says hi&#x27;</td></tr>
   <tr><td>w</td><td>s[player name] r[message]</td><td>Whisper something to someone (private message)</td></tr>
   <tr><td>whisper</td><td>s[player name] r[message]</td><td>Whisper something to someone (private message)</td></tr>
@@ -419,6 +419,7 @@ menu: |
   <tr><td>unlock</td><td></td><td>Unlock a team</td></tr>
   <tr><td>invite</td><td>r[player name]</td><td>Invite a person to a locked team</td></tr>
   <tr><td>join</td><td>r[player name]</td><td>Join the team of the specified player</td></tr>
+  <tr><td>team0mode</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Toggle team between team 0 and team mode. This mode will make your team behave like team 0.</td></tr>
   <tr><td>showothers</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;|&#x27;2&#x27;]</td><td>Whether to show players from other teams or not (off by default), optional i = 0 for off, i = 1 for on, i = 2 for own team only</td></tr>
   <tr><td>showall</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Whether to show players at any distance (off by default), optional i = 0 for off else for on</td></tr>
   <tr><td>specteam</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Whether to show players from other teams when spectating (on by default), optional i = 0 for off else for on</td></tr>
@@ -431,12 +432,10 @@ menu: |
   <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
   <tr><td>tp</td><td>?r[player name]</td><td>Depending on the number of supplied arguments, teleport yourself to; (0.) where you are spectating or aiming; (1.) the specified player name</td></tr>
   <tr><td>teleport</td><td>?r[player name]</td><td>Depending on the number of supplied arguments, teleport yourself to; (0.) where you are spectating or aiming; (1.) the specified player name</td></tr>
-  <tr><td>tpxy</td><td>i[x] i[y]</td><td>Teleport yourself to the specified coordinates</td></tr>
+  <tr><td>tpxy</td><td>f[x] f[y]</td><td>Teleport yourself to the specified coordinates. A tilde (~) can be used to denote your current position, e.g. &#x27;/tpxy ~1 ~&#x27; to teleport one tile to the right</td></tr>
   <tr><td>lasttp</td><td></td><td>Teleport yourself to the last location you teleported to</td></tr>
   <tr><td>tc</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating/or looking if no player name is given</td></tr>
   <tr><td>telecursor</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating/or looking if no player name is given</td></tr>
-  <tr><td>unsolo</td><td></td><td>Puts you out of solo part</td></tr>
-  <tr><td>undeep</td><td></td><td>Puts you out of deep freeze</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself when kill-protected during a long game (use f1, kill for regular kill)</td></tr>
 </table></div>
 </div>
@@ -549,7 +548,7 @@ menu: |
   <tr><td>player_default_eyes</td><td>Player eyes when joining server. 0 = normal, 1 = pain, 2 = happy, 3 = surprise, 4 = angry, 5 = blink</td><td>0</td><td>0</td><td>5</td></tr>
   <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, santa)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>ui_page</td><td>Interface page</td><td>6</td><td>6</td><td>10</td></tr>
+  <tr><td>ui_page</td><td>Interface page</td><td>6</td><td>6</td><td>13</td></tr>
   <tr><td>ui_settings_page</td><td>Interface settings page</td><td>0</td><td>0</td><td>9</td></tr>
   <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>ui_server_address</td><td>Interface server address</td><td>&quot;localhost:8303&quot;</td><td></td><td></td></tr>
@@ -569,13 +568,13 @@ menu: |
   <tr><td>dummy_color_body</td><td>Dummy body color</td><td>65408</td><td></td><td></td></tr>
   <tr><td>dummy_color_feet</td><td>Dummy feet color</td><td>65408</td><td></td><td></td></tr>
   <tr><td>dummy_skin</td><td>Dummy skin</td><td>&quot;default&quot;</td><td></td><td></td></tr>
-  <tr><td>dummy_default_eyes</td><td>Dummy eyes when joining server. 0 = normal, 1 = pain, 2 = happy, 3 = surprise, 4 = angry, 5 = blink</td><td>0</td><td>0</td><td>5</td></tr>
-  <tr><td>cl_dummy</td><td>0 - player / 1 - dummy</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>dummy_default_eyes</td><td>Dummy eyes when joining server (0 = normal, 1 = pain, 2 = happy, 3 = surprise, 4 = angry, 5 = blink)</td><td>0</td><td>0</td><td>5</td></tr>
+  <tr><td>cl_dummy</td><td>Whether you control your player (0) or your dummy (1)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_hammer</td><td>Whether dummy is hammering for a hammerfly</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy or player should stop pressing keys when you switch. 0 = off, 1 = dummy, 2 = player</td><td>0</td><td>0</td><td>2</td></tr>
+  <tr><td>cl_dummy_resetonswitch</td><td>Whether dummy or player should stop pressing keys when you switch (0 = off, 1 = dummy, 2 = player)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>cl_dummy_restore_weapon</td><td>Whether dummy should switch to last weapon after hammerfly</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_copy_moves</td><td>Whether dummy should copy your moves</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_dummy_control</td><td>Whether can you control dummy at the same time (cl_dummy_jump, cl_dummy_fire, cl_dummy_hook)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_dummy_control</td><td>Whether you can control dummy at the same time (cl_dummy_jump, cl_dummy_fire, cl_dummy_hook)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_jump</td><td>Whether dummy is jumping (requires cl_dummy_control 1)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_fire</td><td>Whether dummy is firing (requires cl_dummy_control 1)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_dummy_hook</td><td>Whether dummy is hooking (requires cl_dummy_control 1)</td><td>0</td><td>0</td><td>1</td></tr>
@@ -640,9 +639,7 @@ menu: |
   <tr><td>br_filter_connecting_players</td><td>Filter connecting players</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_serveraddress</td><td>Server address to filter</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_unfinished_map</td><td>Show only servers with unfinished maps</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>br_filter_exclude_communities</td><td>Filter out servers by community</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>br_filter_exclude_countries</td><td>Filter out communities&#x27; servers by country</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>br_filter_exclude_types</td><td>Filter out communities&#x27; servers by gametype</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>br_filter_login</td><td>Filter out servers that require login</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>br_indicate_finished</td><td>Show whether you have finished a DDNet map (transmits your player name to info.ddnet.org/info)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>br_location</td><td>Override location for ping estimation, available: auto, af, as, as:cn, eu, na, oc, sa (Automatic, Africa, Asia, China, Europe, North America, Oceania/Australia, South America</td><td>&quot;auto&quot;</td><td></td><td></td></tr>
   <tr><td>br_cached_best_serverinfo_url</td><td>Do not set this variable, instead create a ddnet-serverlist-urls.cfg next to settings_ddnet.cfg to specify all possible serverlist URLs</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -770,7 +767,7 @@ menu: |
   <tr><td>cl_hook_coll_color_no_coll</td><td>Specifies the color of a hookline that hits nothing.</td><td>65407</td><td></td><td></td></tr>
   <tr><td>cl_hook_coll_color_hookable_coll</td><td>Specifies the color of a hookline that hits hookable tiles.</td><td>6401973</td><td></td><td></td></tr>
   <tr><td>cl_hook_coll_color_tee_coll</td><td>Specifies the color of a hookline that hits tees.</td><td>2817919</td><td></td><td></td></tr>
-  <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_chat_teamcolors</td><td>Show names in chat in team colors</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_reset</td><td>Reset chat when pressing escape</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_old</td><td>Old chat style: No tee, no background</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_size</td><td>Chat font size</td><td>60</td><td>10</td><td>100</td></tr>
@@ -858,7 +855,6 @@ menu: |
   <tr><td>friends</td><td></td><td>List friends</td></tr>
   <tr><td>team</td><td>i[team-id]</td><td>Switch team</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself to restart</td></tr>
-  <tr><td>tune_zone</td><td>i[zone] s[tuning] f[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>dummy_connect</td><td></td><td>Connect dummy</td></tr>
   <tr><td>dummy_disconnect</td><td></td><td>Disconnect dummy</td></tr>
   <tr><td>dummy_reset</td><td></td><td>Reset dummy</td></tr>
