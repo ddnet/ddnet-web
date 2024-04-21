@@ -6,23 +6,21 @@ layout: null
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>{{ site.title }} News</title>
- <link href="{{ site.url }}{{ site.baseurl }}feed/" rel="self"/>
- <link href="{{ site.url }}{{ site.baseurl }}"/>
+ <link href="{{ site.url }}/feed/" rel="self"/>
+ <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>{{ site.url }}</id>
+ <id>{{ site.url }}/</id>
  <author>
    <name>{{ site.author.name }}</name>
-   <email>{{ site.author.email }}</email>
  </author>
 
  {% for post in site.posts limit:20 %}
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="{{ site.url }}{{ site.baseurl }}{{ post.url }}"/>
+   <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html">{{ post.content }}</content>
+   <content type="html"><![CDATA[{{ post.content }}]]></content>
  </entry>
  {% endfor %}
-
 </feed>
