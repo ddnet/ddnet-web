@@ -8,19 +8,21 @@ tag: current
 Current DDNet client translation status showing how many of the messages are translated:
 
 ```
+100% turkish
 100% traditional_chinese
 100% swedish
+100% spanish
 100% slovak
 100% simplified_chinese
 100% german
 100% estonian
 100% czech
-98% turkish
-98% spanish
+100% brazilian_portuguese
+100% azerbaijanese
+99% finnish
 98% russian
-98% brazilian_portuguese
 93% ukrainian
-93% belarusian
+92% belarusian
 88% serbian
 85% galician
 85% french
@@ -35,7 +37,6 @@ Current DDNet client translation status showing how many of the messages are tra
 60% japanese
 58% norwegian
 58% danish
-57% finnish
 57% arabic
 49% bosnian
 46% portuguese
