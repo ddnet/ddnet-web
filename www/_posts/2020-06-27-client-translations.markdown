@@ -18,11 +18,11 @@ Current DDNet client translation status showing how many of the messages are tra
 100% german
 100% french
 100% czech
+100% brazilian_portuguese
 100% azerbaijanese
 99% spanish
 99% finnish
 99% estonian
-99% brazilian_portuguese
 96% polish
 92% belarusian
 88% serbian
