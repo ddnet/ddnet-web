@@ -5,7 +5,7 @@
 #online6, #status6			{ display:none; visibility:hidden; }
 #host , tr td:nth-child(5)			{ display:none; visibility:hidden; }
 #online4, #status4 {max-width: 1.5em }
-#name { max-width: 6.5em; text-align: left; }
+#name { max-width: 3em; text-align: left; }
 #type { max-width: 4.5em; text-align: right; }
 #location { max-width: 3.5em; padding-left: 0.5em; text-align: left; }
 #uptime { max-width: 3.5em; text-align: right; }
