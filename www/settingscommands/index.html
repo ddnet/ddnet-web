@@ -44,6 +44,7 @@ menu: |
 </table></div>
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>tune_zone</td><td>i[zone] s[tuning] f[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune</td><td>s[tuning] ?f[value]</td><td>Tune variable to value or show current value</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] f[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>Which message to display on zone enter; use 0 for normal area</td></tr>
@@ -119,6 +120,7 @@ menu: |
   <tr><td>sv_dnsbl_key</td><td>Optional Authentication Key for the specified DNSBL provider</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_dnsbl_vote</td><td>Block votes by blacklisted addresses</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_dnsbl_ban</td><td>Automatically ban blacklisted addresses</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_dnsbl_ban_reason</td><td>Ban reason for &#x27;sv_dnsbl_ban&#x27;</td><td>&quot;VPN detected, try connecting without. Contact admin if mistaken&quot;</td><td></td><td></td></tr>
   <tr><td>sv_dnsbl_chat</td><td>Don&#x27;t allow chat from blacklisted addresses</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_rcon_vote</td><td>Only allow authed clients to call votes</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_player_demo_record</td><td>Automatically record demos for each player</td><td>0</td><td>0</td><td>1</td></tr>
@@ -255,17 +257,9 @@ menu: |
 <h2 id="server-commands">Server Commands</h2>
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
-  <tr><td>echo</td><td>r[text]</td><td>Echo the text</td></tr>
-  <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
-  <tr><td>access_level</td><td>s[command] ?i[accesslevel]</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
-  <tr><td>access_status</td><td>i[accesslevel]</td><td>List all commands which are accessible for admin = 0, moderator = 1, helper = 2, all = 3</td></tr>
-  <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban ip for x minutes for any reason</td></tr>
-  <tr><td>ban_range</td><td>s[first ip] s[last ip] ?i[minutes] r[reason]</td><td>Ban ip range for x minutes for any reason</td></tr>
-  <tr><td>unban</td><td>s[ip|entry]</td><td>Unban ip/banlist entry</td></tr>
-  <tr><td>unban_range</td><td>s[first ip] s[last ip]</td><td>Unban ip range</td></tr>
-  <tr><td>unban_all</td><td></td><td>Unban all entries</td></tr>
-  <tr><td>bans</td><td>?i[page]</td><td>Show banlist (page 0 by default, 20 entries per page)</td></tr>
-  <tr><td>bans_save</td><td>s[file]</td><td>Save banlist in a file</td></tr>
+  <tr><td>name_ban</td><td>s[name] ?i[distance] ?i[is_substring] ?r[reason]</td><td>Ban a certain nickname</td></tr>
+  <tr><td>name_unban</td><td>s[name]</td><td>Unban a certain nickname</td></tr>
+  <tr><td>name_bans</td><td></td><td>List all name bans</td></tr>
   <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban player with ip/client id for x minutes for any reason</td></tr>
   <tr><td>ban_region</td><td>s[region] s[ip|id] ?i[minutes] r[reason]</td><td>Ban player in a region</td></tr>
   <tr><td>ban_region_range</td><td>s[region] s[first ip] s[last ip] ?i[minutes] r[reason]</td><td>Ban range in a region</td></tr>
@@ -285,6 +279,20 @@ menu: |
   <tr><td>auth_change_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Update a rcon key with prehashed data</td></tr>
   <tr><td>auth_remove</td><td>s[ident]</td><td>Remove a rcon key</td></tr>
   <tr><td>auth_list</td><td></td><td>List all rcon keys</td></tr>
+  <tr><td>reset</td><td>s[config-name]</td><td>Reset a config to its default value</td></tr>
+  <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
+  <tr><td>echo</td><td>r[text]</td><td>Echo the text</td></tr>
+  <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
+  <tr><td>access_level</td><td>s[command] ?i[accesslevel]</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
+  <tr><td>access_status</td><td>i[accesslevel]</td><td>List all commands which are accessible for admin = 0, moderator = 1, helper = 2, all = 3</td></tr>
+  <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
+  <tr><td>ban</td><td>s[ip|id] ?i[minutes] r[reason]</td><td>Ban ip for x minutes for any reason</td></tr>
+  <tr><td>ban_range</td><td>s[first ip] s[last ip] ?i[minutes] r[reason]</td><td>Ban ip range for x minutes for any reason</td></tr>
+  <tr><td>unban</td><td>s[ip|entry]</td><td>Unban ip/banlist entry</td></tr>
+  <tr><td>unban_range</td><td>s[first ip] s[last ip]</td><td>Unban ip range</td></tr>
+  <tr><td>unban_all</td><td></td><td>Unban all entries</td></tr>
+  <tr><td>bans</td><td>?i[page]</td><td>Show banlist (page 1 by default, 20 entries per page)</td></tr>
+  <tr><td>bans_save</td><td>s[file]</td><td>Save banlist in a file</td></tr>
   <tr><td>tune</td><td>s[tuning] ?f[value]</td><td>Tune variable to value or show current value</td></tr>
   <tr><td>toggle_tune</td><td>s[tuning] f[value 1] f[value 2]</td><td>Toggle tune variable</td></tr>
   <tr><td>tune_reset</td><td>?s[tuning]</td><td>Reset all or one tuning variable to default</td></tr>
@@ -297,7 +305,7 @@ menu: |
   <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doubleexplosion@ddnet.tw)</td></tr>
   <tr><td>switch_open</td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
   <tr><td>pause_game</td><td></td><td>Pause/unpause game</td></tr>
-  <tr><td>change_map</td><td>?r[map]</td><td>Change map</td></tr>
+  <tr><td>change_map</td><td>r[map]</td><td>Change map</td></tr>
   <tr><td>random_map</td><td>?i[stars]</td><td>Random map</td></tr>
   <tr><td>random_unfinished_map</td><td>?i[stars]</td><td>Random unfinished map</td></tr>
   <tr><td>restart</td><td>?i[seconds]</td><td>Restart in x seconds (0 = abort)</td></tr>
@@ -305,11 +313,12 @@ menu: |
   <tr><td>say</td><td>r[message]</td><td>Say in chat</td></tr>
   <tr><td>set_team</td><td>i[id] i[team-id] ?i[delay in minutes]</td><td>Set team of player to team</td></tr>
   <tr><td>set_team_all</td><td>i[team-id]</td><td>Set team of all players to team</td></tr>
+  <tr><td>hot_reload</td><td></td><td>Reload the map while preserving the state of tees and teams</td></tr>
   <tr><td>add_vote</td><td>s[name] r[command]</td><td>Add a voting option</td></tr>
   <tr><td>remove_vote</td><td>r[name]</td><td>remove a voting option</td></tr>
   <tr><td>force_vote</td><td>s[name] s[command] ?r[reason]</td><td>Force a voting option</td></tr>
   <tr><td>clear_votes</td><td></td><td>Clears the voting options</td></tr>
-  <tr><td>add_map_votes</td><td></td><td>Automatically adds voting options for all maps</td></tr>
+  <tr><td>add_map_votes</td><td>?s[directory]</td><td>Automatically adds voting options for all maps</td></tr>
   <tr><td>vote</td><td>r[&#x27;yes&#x27;|&#x27;no&#x27;]</td><td>Force a vote to yes/no</td></tr>
   <tr><td>votes</td><td>?i[page]</td><td>Show all votes (page 0 by default, 20 entries per page)</td></tr>
   <tr><td>dump_antibot</td><td></td><td>Dumps the antibot status</td></tr>
@@ -325,6 +334,7 @@ menu: |
   <tr><td>laser</td><td></td><td>Gives a laser to you</td></tr>
   <tr><td>rifle</td><td></td><td>Gives a laser to you</td></tr>
   <tr><td>jetpack</td><td></td><td>Gives jetpack to you</td></tr>
+  <tr><td>setjumps</td><td>i[jumps]</td><td>Gives you as many jumps as you specify</td></tr>
   <tr><td>weapons</td><td></td><td>Gives all weapons to you</td></tr>
   <tr><td>unshotgun</td><td></td><td>Removes the shotgun from you</td></tr>
   <tr><td>ungrenade</td><td></td><td>Removes the grenade launcher from you</td></tr>
@@ -371,7 +381,6 @@ menu: |
   <tr><td>dump_log</td><td>?i[seconds]</td><td>Show logs of the last i seconds</td></tr>
   <tr><td>freezehammer</td><td>v[id]</td><td>Gives a player Freeze Hammer</td></tr>
   <tr><td>unfreezehammer</td><td>v[id]</td><td>Removes Freeze Hammer from a player</td></tr>
-  <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
 </table></div>
 </div>
 <div class="block">
@@ -395,10 +404,12 @@ menu: |
   <tr><td>spec</td><td>?r[player name]</td><td>Toggles spec (if not available behaves as /pause)</td></tr>
   <tr><td>pausevoted</td><td></td><td>Toggles pause on the currently voted player</td></tr>
   <tr><td>specvoted</td><td></td><td>Toggles spec on the currently voted player</td></tr>
-  <tr><td>dnd</td><td></td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
+  <tr><td>dnd</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Toggle Do Not Disturb (no chat and server messages)</td></tr>
+  <tr><td>whispers</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Toggle receiving whispers</td></tr>
   <tr><td>mapinfo</td><td>?r[map]</td><td>Show info about the map with name r gives (current map by default)</td></tr>
   <tr><td>timeout</td><td>?s[code]</td><td>Set timeout protection code s</td></tr>
-  <tr><td>practice</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Enable cheats (currently only /rescue) for your current team&#x27;s run, but you can&#x27;t earn a rank</td></tr>
+  <tr><td>practice</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Enable cheats for your current team&#x27;s run, but you can&#x27;t earn a rank</td></tr>
+  <tr><td>practicecmdlist</td><td></td><td>List all commands that are avaliable in practice mode</td></tr>
   <tr><td>swap</td><td>?r[player name]</td><td>Request to swap your tee with another team member</td></tr>
   <tr><td>save</td><td>?r[code]</td><td>Save team with code r.</td></tr>
   <tr><td>load</td><td>?r[code]</td><td>Load with code r. /load to check your existing saves</td></tr>
@@ -428,8 +439,9 @@ menu: |
   <tr><td>saytimeall</td><td></td><td>Publicly messages everyone your current time in this current running race</td></tr>
   <tr><td>time</td><td></td><td>Privately shows you your current time in this current running race in the broadcast message</td></tr>
   <tr><td>timer</td><td>?s[&#x27;gametimer&#x27;|&#x27;broadcast&#x27;|&#x27;both&#x27;|&#x27;none&#x27;|&#x27;cycle&#x27;]</td><td>Personal Setting of showing time in either broadcast or game/round timer, timer s, where s = broadcast for broadcast, gametimer for game/round timer, cycle for cycle, both for both, none for no timer and nothing to show current status</td></tr>
-  <tr><td>r</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
-  <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze (use sv_rescue 1 to enable this feature)</td></tr>
+  <tr><td>r</td><td></td><td>Teleport yourself out of freeze if auto rescue mode is enabled, otherwise it will set position for rescuing if grounded and teleport you out of freeze if not (use sv_rescue 1 to enable this feature)</td></tr>
+  <tr><td>rescue</td><td></td><td>Teleport yourself out of freeze if auto rescue mode is enabled, otherwise it will set position for rescuing if grounded and teleport you out of freeze if not (use sv_rescue 1 to enable this feature)</td></tr>
+  <tr><td>rescuemode</td><td>?r[&#x27;auto&#x27;|&#x27;manual&#x27;]</td><td>Sets one of the two rescue modes (auto or manual). Prints current mode if no arguments provided</td></tr>
   <tr><td>tp</td><td>?r[player name]</td><td>Depending on the number of supplied arguments, teleport yourself to; (0.) where you are spectating or aiming; (1.) the specified player name</td></tr>
   <tr><td>teleport</td><td>?r[player name]</td><td>Depending on the number of supplied arguments, teleport yourself to; (0.) where you are spectating or aiming; (1.) the specified player name</td></tr>
   <tr><td>tpxy</td><td>f[x] f[y]</td><td>Teleport yourself to the specified coordinates. A tilde (~) can be used to denote your current position, e.g. &#x27;/tpxy ~1 ~&#x27; to teleport one tile to the right</td></tr>
@@ -477,6 +489,7 @@ menu: |
   <tr><td>cl_showhud_healthammo</td><td>Show ingame HUD (Health + Ammo)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_score</td><td>Show ingame HUD (Score)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_timer</td><td>Show ingame HUD (Timer)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_time_cp_diff</td><td>Show ingame HUD (Time Checkpoint Difference)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_dummy_actions</td><td>Show ingame HUD (Dummy Actions)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_player_position</td><td>Show ingame HUD (Player Position)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_player_speed</td><td>Show ingame HUD (Player Speed)</td><td>0</td><td>0</td><td>1</td></tr>
@@ -490,6 +503,7 @@ menu: |
   <tr><td>cl_showemotes</td><td>Show tee emotes</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showchat</td><td>Show chat (2 to always show large chat area)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>cl_show_chat_friends</td><td>Show only chat messages from friends</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_show_chat_team_members_only</td><td>Show only chat messages from team members</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_chat_system</td><td>Show chat messages from the server</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showkillmessages</td><td>Show kill messages</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_finish_messages</td><td>Show finish messages</td><td>1</td><td>0</td><td>1</td></tr>
@@ -548,6 +562,44 @@ menu: |
   <tr><td>player_default_eyes</td><td>Player eyes when joining server. 0 = normal, 1 = pain, 2 = happy, 3 = surprise, 4 = angry, 5 = blink</td><td>0</td><td>0</td><td>5</td></tr>
   <tr><td>cl_skin_prefix</td><td>Replace the skins by skins with this prefix (e.g. kitty, santa)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>cl_fat_skins</td><td>Enable fat skins</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>player7_color_body</td><td>Player body color</td><td>0x1B6F74</td><td></td><td></td></tr>
+  <tr><td>player7_color_feet</td><td>Player feet color</td><td>0x1C873E</td><td></td><td></td></tr>
+  <tr><td>player7_color_marking</td><td>Player marking color</td><td>0xFF0000FF</td><td></td><td></td></tr>
+  <tr><td>player7_color_decoration</td><td>Player decoration color</td><td>0x1B6F74</td><td></td><td></td></tr>
+  <tr><td>player7_color_hands</td><td>Player hands color</td><td>0x1B759E</td><td></td><td></td></tr>
+  <tr><td>player7_color_eyes</td><td>Player eyes color</td><td>0x0000FF</td><td></td><td></td></tr>
+  <tr><td>player7_use_custom_color_body</td><td>Toggles usage of custom colors for body</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>player7_use_custom_color_marking</td><td>Toggles usage of custom colors for marking</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>player7_use_custom_color_decoration</td><td>Toggles usage of custom colors for decoration</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>player7_use_custom_color_hands</td><td>Toggles usage of custom colors for hands</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>player7_use_custom_color_feet</td><td>Toggles usage of custom colors for feet</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>player7_use_custom_color_eyes</td><td>Toggles usage of custom colors for eyes</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>player7_skin</td><td>Player skin</td><td>&quot;default&quot;</td><td></td><td></td></tr>
+  <tr><td>player7_skin_body</td><td>Player skin body</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
+  <tr><td>player7_skin_marking</td><td>Player skin marking</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>player7_skin_decoration</td><td>Player skin decoration</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>player7_skin_hands</td><td>Player skin hands</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
+  <tr><td>player7_skin_feet</td><td>Player skin feet</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
+  <tr><td>player7_skin_eyes</td><td>Player skin eyes</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy7_color_body</td><td>Dummy body color</td><td>0x1B6F74</td><td></td><td></td></tr>
+  <tr><td>dummy7_color_feet</td><td>Dummy feet color</td><td>0x1C873E</td><td></td><td></td></tr>
+  <tr><td>dummy7_color_marking</td><td>Dummy marking color</td><td>0xFF0000FF</td><td></td><td></td></tr>
+  <tr><td>dummy7_color_decoration</td><td>Dummy decoration color</td><td>0x1B6F74</td><td></td><td></td></tr>
+  <tr><td>dummy7_color_hands</td><td>Dummy hands color</td><td>0x1B759E</td><td></td><td></td></tr>
+  <tr><td>dummy7_color_eyes</td><td>Dummy eyes color</td><td>0x0000FF</td><td></td><td></td></tr>
+  <tr><td>dummy7_use_custom_color_body</td><td>Toggles usage of custom colors for body</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>dummy7_use_custom_color_marking</td><td>Toggles usage of custom colors for marking</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>dummy7_use_custom_color_decoration</td><td>Toggles usage of custom colors for decoration</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>dummy7_use_custom_color_hands</td><td>Toggles usage of custom colors for hands</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>dummy7_use_custom_color_feet</td><td>Toggles usage of custom colors for feet</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>dummy7_use_custom_color_eyes</td><td>Toggles usage of custom colors for eyes</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>dummy7_skin</td><td>Dummy skin</td><td>&quot;default&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy7_skin_body</td><td>Dummy skin body</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy7_skin_marking</td><td>Dummy skin marking</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy7_skin_decoration</td><td>Dummy skin decoration</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy7_skin_hands</td><td>Dummy skin hands</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy7_skin_feet</td><td>Dummy skin feet</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
+  <tr><td>dummy7_skin_eyes</td><td>Dummy skin eyes</td><td>&quot;standard&quot;</td><td></td><td></td></tr>
   <tr><td>ui_page</td><td>Interface page</td><td>6</td><td>6</td><td>13</td></tr>
   <tr><td>ui_settings_page</td><td>Interface settings page</td><td>0</td><td>0</td><td>9</td></tr>
   <tr><td>ui_toolbox_page</td><td>Toolbox page</td><td>0</td><td>0</td><td>2</td></tr>
@@ -728,14 +780,13 @@ menu: |
   <tr><td>cl_message_friend</td><td>Enable coloring and the heart for friends</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_message_friend_color</td><td>Friend message color</td><td>65425</td><td></td><td></td></tr>
   <tr><td>conn_timeout</td><td>Network timeout</td><td>100</td><td>5</td><td>1000</td></tr>
-  <tr><td>cl_show_ids</td><td>Whether to show client ids in scoreboard</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_show_ids</td><td>Whether to show client IDs in scoreboard, chat and spectator menu</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_scoreboard_on_death</td><td>Whether to show scoreboard after death or not</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_auto_race_record</td><td>Save the best demo of each race</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_replays</td><td>Enable/disable replays</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_replay_length</td><td>Set the default length of the replays</td><td>30</td><td>10</td><td>0</td></tr>
   <tr><td>cl_race_record_server_control</td><td>Let the server start the race recorder</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_demo_name</td><td>Save the player name within the demo</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_demo_assume_race</td><td>Assume that demos are race demos</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_race_ghost</td><td>Enable ghost</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_race_ghost_server_control</td><td>Let the server start the ghost</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_race_show_ghost</td><td>Show ghost</td><td>1</td><td>0</td><td>1</td></tr>
@@ -743,7 +794,6 @@ menu: |
   <tr><td>cl_race_ghost_strict_map</td><td>Match ghosts by map version instead of only map name</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_race_ghost_save_best</td><td>Save only ghosts that are better than the previous record.</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_race_ghost_alpha</td><td>Visbility of ghosts (alpha value, 0 invisible, 100 fully visible)</td><td>40</td><td>0</td><td>100</td></tr>
-  <tr><td>cl_ddrace_scoreboard</td><td>Enable DDRace Scoreboard</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_others</td><td>Show players in other teams (2 to show own team only)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>cl_show_others_alpha</td><td>Show players in other teams (alpha value, 0 invisible, 100 fully visible)</td><td>40</td><td>0</td><td>100</td></tr>
   <tr><td>cl_overlay_entities</td><td>Overlay game tiles with a percentage of opacity</td><td>0</td><td>0</td><td>100</td></tr>
@@ -804,7 +854,72 @@ menu: |
 <h2 id="client-commands">Client Commands</h2>
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>dummy_connect</td><td></td><td>Connect dummy</td></tr>
+  <tr><td>dummy_disconnect</td><td></td><td>Disconnect dummy</td></tr>
+  <tr><td>dummy_reset</td><td></td><td>Reset dummy</td></tr>
+  <tr><td>quit</td><td></td><td>Quit the client</td></tr>
+  <tr><td>exit</td><td></td><td>Quit the client</td></tr>
+  <tr><td>restart</td><td></td><td>Restart the client</td></tr>
+  <tr><td>minimize</td><td></td><td>Minimize the client</td></tr>
+  <tr><td>connect</td><td>r[host|ip]</td><td>Connect to the specified host/ip</td></tr>
+  <tr><td>disconnect</td><td></td><td>Disconnect from the server</td></tr>
+  <tr><td>ping</td><td></td><td>Ping the current server</td></tr>
+  <tr><td>screenshot</td><td></td><td>Take a screenshot</td></tr>
+  <tr><td>start_video</td><td>?r[file]</td><td>Start recording a video</td></tr>
+  <tr><td>stop_video</td><td></td><td>Stop recording a video</td></tr>
+  <tr><td>rcon</td><td>r[rcon-command]</td><td>Send specified command to rcon</td></tr>
+  <tr><td>rcon_auth</td><td>r[password]</td><td>Authenticate to rcon</td></tr>
+  <tr><td>rcon_login</td><td>s[username] r[password]</td><td>Authenticate to rcon with a username</td></tr>
+  <tr><td>play</td><td>r[file]</td><td>Play back a demo</td></tr>
+  <tr><td>record</td><td>?r[file]</td><td>Start recording a demo</td></tr>
+  <tr><td>stoprecord</td><td></td><td>Stop recording a demo</td></tr>
+  <tr><td>add_demomarker</td><td></td><td>Add demo timeline marker</td></tr>
+  <tr><td>begin_favorite_group</td><td></td><td>Use this before `add_favorite` to group favorites. End with `end_favorite_group`</td></tr>
+  <tr><td>end_favorite_group</td><td></td><td>Use this after `add_favorite` to group favorites. Start with `begin_favorite_group`</td></tr>
+  <tr><td>add_favorite</td><td>s[host|ip] ?s[&#x27;allow_ping&#x27;]</td><td>Add a server as a favorite</td></tr>
+  <tr><td>remove_favorite</td><td>r[host|ip]</td><td>Remove a server from favorites</td></tr>
+  <tr><td>demo_slice_start</td><td></td><td>Mark the beginning of a demo cut</td></tr>
+  <tr><td>demo_slice_end</td><td></td><td>Mark the end of a demo cut</td></tr>
+  <tr><td>demo_play</td><td></td><td>Play/pause the current demo</td></tr>
+  <tr><td>demo_speed</td><td>i[speed]</td><td>Set current demo speed</td></tr>
+  <tr><td>save_replay</td><td>?i[length] ?r[filename]</td><td>Save a replay of the last defined amount of seconds</td></tr>
+  <tr><td>benchmark_quit</td><td>i[seconds] r[file]</td><td>Benchmark frame times for number of seconds to file, then quit</td></tr>
+  <tr><td>add_foe</td><td>s[name] ?s[clan]</td><td>Add a foe</td></tr>
+  <tr><td>remove_foe</td><td>s[name] ?s[clan]</td><td>Remove a foe</td></tr>
+  <tr><td>foes</td><td></td><td>List foes</td></tr>
+  <tr><td>add_friend</td><td>s[name] ?s[clan]</td><td>Add a friend</td></tr>
+  <tr><td>remove_friend</td><td>s[name] ?s[clan]</td><td>Remove a friend</td></tr>
+  <tr><td>friends</td><td></td><td>List friends</td></tr>
+  <tr><td>add_favorite_community</td><td>s[community_id]</td><td>Add a community as a favorite</td></tr>
+  <tr><td>remove_favorite_community</td><td>s[community_id]</td><td>Remove a community from the favorites</td></tr>
+  <tr><td>add_excluded_community</td><td>s[community_id]</td><td>Add a community to the exclusion filter</td></tr>
+  <tr><td>remove_excluded_community</td><td>s[community_id]</td><td>Remove a community from the exclusion filter</td></tr>
+  <tr><td>add_excluded_country</td><td>s[community_id] s[country_code]</td><td>Add a country to the exclusion filter for a specific community</td></tr>
+  <tr><td>remove_excluded_country</td><td>s[community_id] s[country_code]</td><td>Remove a country from the exclusion filter for a specific community</td></tr>
+  <tr><td>add_excluded_type</td><td>s[community_id] s[type]</td><td>Add a type to the exclusion filter for a specific community</td></tr>
+  <tr><td>remove_excluded_type</td><td>s[community_id] s[type]</td><td>Remove a type from the exclusion filter for a specific community</td></tr>
+  <tr><td>leak_ip_address_to_all_servers</td><td></td><td>Leaks your IP address to all servers by pinging each of them, also acquiring the latency in the process</td></tr>
+  <tr><td>reset</td><td>s[config-name]</td><td>Reset a config to its default value</td></tr>
+  <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
+  <tr><td>+toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value via keypress</td></tr>
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
+  <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
+  <tr><td>bind</td><td>s[key] ?r[command]</td><td>Bind key to execute a command or view keybindings</td></tr>
+  <tr><td>binds</td><td>?s[key]</td><td>Print command executed by this keybinding or all binds</td></tr>
+  <tr><td>unbind</td><td>s[key]</td><td>Unbind key</td></tr>
+  <tr><td>unbindall</td><td></td><td>Unbind all keys</td></tr>
+  <tr><td>zoom+</td><td></td><td>Zoom increase</td></tr>
+  <tr><td>zoom-</td><td></td><td>Zoom decrease</td></tr>
+  <tr><td>zoom</td><td>?i</td><td>Change zoom</td></tr>
+  <tr><td>set_view</td><td>i[x]i[y]</td><td>Set camera position to x and y in the map</td></tr>
+  <tr><td>set_view_relative</td><td>i[x]i[y]</td><td>Set camera position relative to current view in the map</td></tr>
+  <tr><td>goto_switch</td><td>i[number]?i[offset]</td><td>View switch found (at offset) with given number</td></tr>
+  <tr><td>goto_tele</td><td>i[number]?i[offset]</td><td>View tele found (at offset) with given number</td></tr>
+  <tr><td>say</td><td>r[message]</td><td>Say in chat</td></tr>
+  <tr><td>say_team</td><td>r[message]</td><td>Say in team chat</td></tr>
+  <tr><td>chat</td><td>s[&#x27;team&#x27;|&#x27;all&#x27;] ?r[message]</td><td>Enable chat with all/team mode</td></tr>
+  <tr><td>+show_chat</td><td></td><td>Show chat</td></tr>
+  <tr><td>echo</td><td>r[message]</td><td>Echo the text in chat window</td></tr>
   <tr><td>toggle_local_console</td><td></td><td>Toggle local console</td></tr>
   <tr><td>toggle_remote_console</td><td></td><td>Toggle remote console</td></tr>
   <tr><td>clear_local_console</td><td></td><td>Clear local console</td></tr>
@@ -813,27 +928,6 @@ menu: |
   <tr><td>dump_remote_console</td><td></td><td>Write remote console contents to a text file</td></tr>
   <tr><td>console_page_up</td><td></td><td>Previous page in console</td></tr>
   <tr><td>console_page_down</td><td></td><td>Next page in console</td></tr>
-  <tr><td>callvote</td><td>s[&#x27;kick&#x27;|&#x27;spectate&#x27;|&#x27;option&#x27;] s[id|option text] ?r[reason]</td><td>Call vote</td></tr>
-  <tr><td>vote</td><td>r[&#x27;yes&#x27;|&#x27;no&#x27;]</td><td>Vote yes/no</td></tr>
-  <tr><td>+emote</td><td></td><td>Open emote selector</td></tr>
-  <tr><td>emote</td><td>i[emote-id]</td><td>Use emote</td></tr>
-  <tr><td>+spectate</td><td></td><td>Open spectator mode selector</td></tr>
-  <tr><td>spectate</td><td>i[spectator-id]</td><td>Switch spectator mode</td></tr>
-  <tr><td>spectate_next</td><td></td><td>Spectate the next player</td></tr>
-  <tr><td>spectate_previous</td><td></td><td>Spectate the previous player</td></tr>
-  <tr><td>spectate_closest</td><td></td><td>Spectate the closest player</td></tr>
-  <tr><td>spectate_multiview</td><td>i[id]</td><td>Add/remove Client-IDs to spectate them exclusively (-1 to reset)</td></tr>
-  <tr><td>zoom+</td><td></td><td>Zoom increase</td></tr>
-  <tr><td>zoom-</td><td></td><td>Zoom decrease</td></tr>
-  <tr><td>zoom</td><td>?i</td><td>Change zoom</td></tr>
-  <tr><td>set_view</td><td>i[x]i[y]</td><td>Set camera position to x and y in the map</td></tr>
-  <tr><td>goto_switch</td><td>i[number]?i[offset]</td><td>View switch found (at offset) with given number</td></tr>
-  <tr><td>goto_tele</td><td>i[number]?i[offset]</td><td>View tele found (at offset) with given number</td></tr>
-  <tr><td>say</td><td>r[message]</td><td>Say in chat</td></tr>
-  <tr><td>say_team</td><td>r[message]</td><td>Say in team chat</td></tr>
-  <tr><td>chat</td><td>s[&#x27;team&#x27;|&#x27;all&#x27;] ?r[message]</td><td>Enable chat with all/team mode</td></tr>
-  <tr><td>+show_chat</td><td></td><td>Show chat</td></tr>
-  <tr><td>echo</td><td>r[message]</td><td>Echo the text in chat window</td></tr>
   <tr><td>+left</td><td></td><td>Move left</td></tr>
   <tr><td>+right</td><td></td><td>Move right</td></tr>
   <tr><td>+jump</td><td></td><td>Jump</td></tr>
@@ -847,44 +941,24 @@ menu: |
   <tr><td>+weapon5</td><td></td><td>Switch to laser</td></tr>
   <tr><td>+nextweapon</td><td></td><td>Switch to next weapon</td></tr>
   <tr><td>+prevweapon</td><td></td><td>Switch to previous weapon</td></tr>
-  <tr><td>add_foe</td><td>s[name] ?s[clan]</td><td>Add a foe</td></tr>
-  <tr><td>remove_foe</td><td>s[name] ?s[clan]</td><td>Remove a foe</td></tr>
-  <tr><td>foes</td><td></td><td>List foes</td></tr>
-  <tr><td>add_friend</td><td>s[name] ?s[clan]</td><td>Add a friend</td></tr>
-  <tr><td>remove_friend</td><td>s[name] ?s[clan]</td><td>Remove a friend</td></tr>
-  <tr><td>friends</td><td></td><td>List friends</td></tr>
+  <tr><td>+emote</td><td></td><td>Open emote selector</td></tr>
+  <tr><td>emote</td><td>i[emote-id]</td><td>Use emote</td></tr>
+  <tr><td>gplay</td><td></td><td>Start playback of ghosts</td></tr>
+  <tr><td>add_favorite_skin</td><td>s[skin_name]</td><td>Add a skin as a favorite</td></tr>
+  <tr><td>remove_favorite_skin</td><td>s[skin_name]</td><td>Remove a skin from the favorites</td></tr>
+  <tr><td>+scoreboard</td><td></td><td>Show scoreboard</td></tr>
+  <tr><td>+spectate</td><td></td><td>Open spectator mode selector</td></tr>
+  <tr><td>spectate</td><td>i[spectator-id]</td><td>Switch spectator mode</td></tr>
+  <tr><td>spectate_next</td><td></td><td>Spectate the next player</td></tr>
+  <tr><td>spectate_previous</td><td></td><td>Spectate the previous player</td></tr>
+  <tr><td>spectate_closest</td><td></td><td>Spectate the closest player</td></tr>
+  <tr><td>spectate_multiview</td><td>i[id]</td><td>Add/remove Client-IDs to spectate them exclusively (-1 to reset)</td></tr>
+  <tr><td>+statboard</td><td></td><td>Show stats</td></tr>
+  <tr><td>callvote</td><td>s[&#x27;kick&#x27;|&#x27;spectate&#x27;|&#x27;option&#x27;] s[id|option text] ?r[reason]</td><td>Call vote</td></tr>
+  <tr><td>vote</td><td>r[&#x27;yes&#x27;|&#x27;no&#x27;]</td><td>Vote yes/no</td></tr>
   <tr><td>team</td><td>i[team-id]</td><td>Switch team</td></tr>
   <tr><td>kill</td><td></td><td>Kill yourself to restart</td></tr>
-  <tr><td>dummy_connect</td><td></td><td>Connect dummy</td></tr>
-  <tr><td>dummy_disconnect</td><td></td><td>Disconnect dummy</td></tr>
-  <tr><td>dummy_reset</td><td></td><td>Reset dummy</td></tr>
-  <tr><td>quit</td><td></td><td>Quit the client</td></tr>
-  <tr><td>exit</td><td></td><td>Quit the client</td></tr>
-  <tr><td>restart</td><td></td><td>Restart the client</td></tr>
-  <tr><td>minimize</td><td></td><td>Minimize the client</td></tr>
-  <tr><td>connect</td><td>r[host|ip]</td><td>Connect to the specified host/ip</td></tr>
-  <tr><td>disconnect</td><td></td><td>Disconnect from the server</td></tr>
-  <tr><td>ping</td><td></td><td>Ping the current server</td></tr>
-  <tr><td>screenshot</td><td></td><td>Take a screenshot</td></tr>
-  <tr><td>start_video</td><td></td><td>Start recording a video</td></tr>
-  <tr><td>stop_video</td><td></td><td>Stop recording a video</td></tr>
-  <tr><td>rcon</td><td>r[rcon-command]</td><td>Send specified command to rcon</td></tr>
-  <tr><td>rcon_auth</td><td>r[password]</td><td>Authenticate to rcon</td></tr>
-  <tr><td>rcon_login</td><td>s[username] r[password]</td><td>Authenticate to rcon with a username</td></tr>
-  <tr><td>play</td><td>r[file]</td><td>Play the file specified</td></tr>
-  <tr><td>record</td><td>?r[file]</td><td>Record to the file</td></tr>
-  <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
-  <tr><td>add_demomarker</td><td></td><td>Add demo timeline marker</td></tr>
-  <tr><td>begin_favorite_group</td><td></td><td>Use this before `add_favorite` to group favorites. End with `end_favorite_group`</td></tr>
-  <tr><td>end_favorite_group</td><td></td><td>Use this after `add_favorite` to group favorites. Start with `begin_favorite_group`</td></tr>
-  <tr><td>add_favorite</td><td>s[host|ip] ?s[&#x27;allow_ping&#x27;]</td><td>Add a server as a favorite</td></tr>
-  <tr><td>remove_favorite</td><td>r[host|ip]</td><td>Remove a server from favorites</td></tr>
-  <tr><td>demo_slice_start</td><td></td><td>Mark the beginning of a cut</td></tr>
-  <tr><td>demo_slice_end</td><td></td><td>Mark the end of a cut</td></tr>
-  <tr><td>demo_play</td><td></td><td>Play demo</td></tr>
-  <tr><td>demo_speed</td><td>i[speed]</td><td>Set demo speed</td></tr>
-  <tr><td>save_replay</td><td>?i[length] ?r[filename]</td><td>Save a replay of the last defined amount of seconds</td></tr>
-  <tr><td>benchmark_quit</td><td>i[seconds] r[file]</td><td>Benchmark frame times for number of seconds to file, then quit</td></tr>
+  <tr><td>ready_change</td><td></td><td>Change ready state (0.7 only)</td></tr>
 </table></div>
 </div>
 <div class="block">
