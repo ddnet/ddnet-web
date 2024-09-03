@@ -4,6 +4,96 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="18.5"><a href="#18.5">DDNet 18.5</a></h3>
+<div class="dlfiles">
+  2024-09-03<br/><br/>
+  <ul>
+    <li><a href="DDNet-18.5-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-18.5-win-arm64.zip">Windows&nbsp;ARM</a></li>
+    <li><a href="DDNet-18.5-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-18.5-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-18.5-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-18.5-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-18.5.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>Support connecting to Teeworlds 0.7 servers</strong> [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] <strong>Color speed in hud based on increase or decrease</strong> [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] <strong>ARM64 Windows support</strong> [<strong>SchrodingerZhu</strong>]</li>
+    <li>[Client] <strong>Add a popup for picking a map for background entities setting</strong> [<strong>furo321</strong>]</li>
+    <li>[Client] <strong>Support composite binds with + commands, fix handling of composite binds with F1-F24 keys</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Server] <strong>Spawn confetti when connecting on your DDNet birthday</strong> [<strong>furo321</strong>]</li>
+    <li>[Server] <strong>Add support for directories with add_map_votes</strong> [<strong>furo321</strong>]</li>
+    <li>[Server] <strong>Add support for triggering map sounds</strong> [<strong>Bamcane</strong>]</li>
+    <li>[Editor&amp;Server] <strong>Add hot_reload command to reload map while preserving state</strong> [<strong>furo321</strong>]</li>
+    <li>[Client] Show server info in password popup [<strong>dobrykafe</strong>]</li>
+    <li>[Client] Spectator clans in scoreboard [<strong>gerdoe-jr</strong>]</li>
+    <li>[Client] New lock indicator [<strong>catseyenebulous</strong>]</li>
+    <li>[Client] Improve cl_show_ids [<strong>Robyt3</strong>]</li>
+    <li>[Client] Improve dummy connecting button and error handling [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix 'auto' GPU identification on hybrid GPU systems [<strong>DynamoFox</strong>]</li>
+    <li>[Client] Check API version before adding GPU to GPU list [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Use text containers to render movement information [<strong>MilkeeyCat</strong>]</li>
+    <li>[Client] Work on improving Android support [<strong>Robyt3</strong>]</li>
+    <li>[Client] Remove multi-line chat [<strong>MilkeeyCat</strong>]</li>
+    <li>[Client] 128 player support in scoreboard and spectator UI [<strong>Robyt3</strong>]</li>
+    <li>[Client] Also trim scoreboard search strings in highlights</li>
+    <li>[Client] Use same Red/Blue team colors for score HUD as for scoreboard [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix CSV header being written multiple times to ddnet-saves.txt [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix memory leak of non-RGBA image data, clear all image info [<strong>Robyt3</strong>]</li>
+    <li>[Client] Smoother menu checker background scrolling on loading screens [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix invalid team count in scoreboard for split teams [<strong>archimede67</strong>]</li>
+    <li>[Client] Only activate double-clicks with left mouse button again [<strong>Robyt3</strong>]</li>
+    <li>[Client] Show warning when connect address cannot be resolved [<strong>Robyt3</strong>]</li>
+    <li>[Client] Show game menu buttons again, even in 5:4, when not on a red/blue-team server</li>
+    <li>[Client] Fix debug HUD units [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Improve bans rcon command pagination [<strong>Rei-Tw</strong>]</li>
+    <li>[Client] Increase max command length in console [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] Scale target position when spectating [<strong>Matodor</strong>]</li>
+    <li>[Client] Make macOS semaphore names more unique, improve assertion [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix save code not being censored in streamer mode [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] Don't allow input in console while it is opening/closing [<strong>furo321</strong>]</li>
+    <li>[Client] Allow reloading current background entities map [<strong>bencie</strong>]</li>
+    <li>[Client] Speed demo up with mouse scroll only if menu is active [<strong>Anime-pdf</strong>]</li>
+    <li>[Editor] Add button to collapse/expand all groups [<strong>furo321</strong>]</li>
+    <li>[Editor] Transfer server settings while using append [<strong>furo321</strong>]</li>
+    <li>[Editor] Fix editor properties not being clamped on + and - button click [<strong>ChillerDragon</strong>]</li>
+    <li>[Client&amp;Server] Fix UDP socket creation/cleanup if opening IPv6 socket fails [<strong>Robyt3</strong>]</li>
+    <li>[Server] Add /whispers to disable whipers (similar to /dnd)</li>
+    <li>[Server] Disallow moving authed players to spec</li>
+    <li>[Server] Fix practice finish time [<strong>StormA</strong>]</li>
+    <li>[Server] Add error message when trying to /swap on forced solo server [<strong>Robyt3</strong>]</li>
+    <li>[Server] Savegame fixes [<strong>Learath2</strong>]</li>
+    <li>[Server] Disallow saving with draggers active</li>
+    <li>[Server] Only apply DNSBL bans once when player joins [<strong>Robyt3</strong>]</li>
+    <li>[Server] Don't show "you've been banned" for VPN bans [<strong>heinrich5991</strong>]</li>
+    <li>[Server] Handle dnsbl and other non-critical stuff only on new ticks</li>
+    <li>[Server] Don't keep state of teammate in team0mode after death [<strong>furo321</strong>]</li>
+    <li>[Tooling] Validate language files for … and non-matching formatters in CI [<strong>furo321</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/18.4...18.5">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="18.4"><a href="#18.4">DDNet 18.4</a></h3>
 <div class="dlfiles">
   2024-07-23<br/><br/>
@@ -53,23 +143,6 @@ title: Downloads - DDraceNetwork
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/18.3.1...18.4">full list of git changes</a>
 </div>
 <br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="18.3"><a href="#18.3">DDNet 18.3.1</a></h3>
 <div class="dlfiles">
   2024-07-04<br/><br/>

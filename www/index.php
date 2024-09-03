@@ -63,6 +63,8 @@ function getOS() {
     $os_platform = 'win64';
   elseif (preg_match('/windows/i', $user_agent))
     $os_platform = 'win32';
+  elseif (elseif (preg_match('/windows.*arm|windows.*arm64/i', $user_agent)) {
+    $os_platform = 'winarm64';
   elseif (preg_match('/linux.*x86_64/i', $user_agent))
     $os_platform = 'lin64';
   elseif (preg_match('/linux.*i686/i', $user_agent))
@@ -74,12 +76,14 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '18.4';
+$version = '18.5';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'win64') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
+} elseif ($user_os == 'winarm64') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win-arm64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'mac') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-macos.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for macOS</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'lin32') {
