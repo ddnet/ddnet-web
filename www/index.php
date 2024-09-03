@@ -63,7 +63,7 @@ function getOS() {
     $os_platform = 'win64';
   elseif (preg_match('/windows/i', $user_agent))
     $os_platform = 'win32';
-  elseif (elseif (preg_match('/windows.*arm|windows.*arm64/i', $user_agent)) {
+  elseif (preg_match('/windows.*arm|windows.*arm64/i', $user_agent))
     $os_platform = 'winarm64';
   elseif (preg_match('/linux.*x86_64/i', $user_agent))
     $os_platform = 'lin64';
