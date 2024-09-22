@@ -4,7 +4,6 @@ title: "DDNet.tw Domain lost, use DDNet.org"
 permalink: /news/old-domain/
 tag: current
 ---
-<h2 id="compromised-domain-notice">DDNet.tw Domain lost, use DDNet.org</h2>
 <p><s>Recently, we lost control of the domain <strong>ddnet.tw</strong> due to a botched transfer between registrars. Older clients (pre 16.4) rely on this domain for info, maps, updates, and more, meaning they are no longer safe to use.</s></p>
 <p><s>A former community member has managed to buy the expired domain. Unfortunately, they refuse to return it, forcing us to discontinue support for these older clients.</s></p>
 <p><s>While we have monitored the situation and have not observed any malicious activity yet, we can't guarantee this will remain the case, and we don't want to take unnecessary risks.</s></p>
