@@ -76,14 +76,16 @@ function getOS() {
 }
 
 $user_os = getOS();
-$version = '18.7';
+$version = '18.8';
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'win64') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'winarm64') {
-  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win-arm64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (64bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win-arm64.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (ARM)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
+} elseif ($user_os == 'and') {
+  print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '.apk">Download DDraceNetwork Client &amp; Server ' . $version . ' for Android</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'mac') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-macos.dmg">Download DDraceNetwork Client &amp; Server ' . $version . ' for macOS</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
 } elseif ($user_os == 'lin32') {
