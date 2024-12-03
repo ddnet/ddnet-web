@@ -11,7 +11,7 @@ tag: current
 We will be releasing secretly tested maps randomly over the month.
 You will be able to earn points by:
 
-- Finishing maps: 10 points per finish
+- Finishing maps: 10 points for finishing each map
 - Ranking into top 10 of one or several maps by the end of the event, ranging from 10 points to 1 point per map depending on your rank
 
 ### How long will it last?
