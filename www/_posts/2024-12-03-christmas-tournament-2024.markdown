@@ -7,17 +7,17 @@ tag: current
 
 👋  It's been a while since we last ran a tournament. Let's fix that with our December 2024 tournament! 🎅
 
-## What are the rules?
+### What are the rules?
 We will be releasing secretly tested maps randomly over the month.
 You will be able to earn points by:
 
 - Finishing maps: 10 points per finish
 - Ranking into top 10 of one or several maps by the end of the event, ranging from 10 points to 1 point per map depending on your rank
 
-## How long will it last?
+### How long will it last?
 Event starts on **Wednesday, December 4, 2024 at 6:00 PM** with the first map release and ends on **Monday, December 30, 2024 at 6:00 PM**!
 
-## How to participate?
+### How to participate?
 Just join any of our server and vote any of the map release through December within the "NEW MAP" subcategory. You can [stay tuned with the rankings](https://ddnet.org/tournaments/christmas2024/).
 
 
