@@ -4,6 +4,79 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="18.8"><a href="#18.8">DDNet 18.8</a></h3>
+<div class="dlfiles">
+  2024-12-08<br/><br/>
+  <ul>
+    <li><a href="DDNet-18.8-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-18.8-win-arm64.zip">Windows&nbsp;ARM</a></li>
+    <li><a href="DDNet-18.8-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-18.8-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-18.8-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-18.8-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-18.8.apk">Android</a></li>
+    <li><a href="DDNet-18.8.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>Android support</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Client] <strong>Add cl_hook_coll_size_other & +hookcoll button in UI</strong> [<strong>SollyBunny</strong>]</li>
+    <li>[Client] <strong>Overhaul console design: replace background, improve contrast</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix cursor drifting when using smooth dyncam and zoom [<strong>TsFreddie</strong>]</li>
+    <li>[Client] Remove self from spectator menu unless in demo [<strong>TsFreddie</strong>]</li>
+    <li>[Client] Visual changes to friends and server tab [<strong>SollyBunny</strong>]</li>
+    <li>[Client] Auto rcon auth both main and dummy [<strong>KebsCS</strong>]</li>
+    <li>[Client] Send password on reconnect [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] Change default q bind to /spec [<strong>KebsCS</strong>]</li>
+    <li>[Client] Fix alignment of dropdown popup menu [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix player info being resent too fast/slow depending on FPS [<strong>Robyt3</strong>]</li>
+    <li>[Client] More efficient glyph uploading, fix crash with very large glyphs and font sizes [<strong>Robyt3</strong>]</li>
+    <li>[Client] Improve map sound/image validation and performance [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix incorrect rendering of menu and entities background maps [<strong>Robyt3</strong>]</li>
+    <li>[Client] Use quad container for race flag in finish infomessages [<strong>Robyt3</strong>]</li>
+    <li>[Client] Make the client able to have tee's without weapons [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] Echo colors persist [<strong>SollyBunny</strong>]</li>
+    <li>[Client] Fix client hanging when rendering text with small maximum width [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix damage indicators being stuck after connecting dummy [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix gametime debug graph when dummy is connected [<strong>Robyt3</strong>]</li>
+    <li>[Client] Allow decimal value for demo_speed command [<strong>TsFreddie</strong>]</li>
+    <li>[Client] Allow float zoom levels [<strong>SollyBunny</strong>]</li>
+    <li>[Client] Fix clipboard not being sanitized when pasting multiple lines [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Replace background texture with noise texture [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Show size of images in editor images list and file browser [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix Save As confirmation, prevent opening empty filename [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix envelope point popup [<strong>MilkeeyCat</strong>]</li>
+    <li>[Server] Implement bans_find command [<strong>Rei-Tw</strong>]</li>
+    <li>[Server] Fix crashes with whisper command [<strong>Robyt3</strong>]</li>
+    <li>[Server] Fix incomplete Teehistorian chunks being written [<strong>Zwelf</strong>]</li>
+    <li>[Server] Add dbg_sql config to hide non-error SQL logs [<strong>ChillerDragon</strong>]</li>
+    <li>[Server] Fix jetpack strength always being set to 0 [<strong>fokkonaut</strong>]</li>
+    <li>[Server] Allow empty map settings [<strong>KebsCS</strong>]</li>
+    <li>[Masterserver] Allow 128 players [<strong>0xfaulty</strong>]</li>
+    <li>[Build] Fix FindMySQL not finding mysql under NixOS [<strong>BlaiZephyr</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/18.7...18.8">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="18.7"><a href="#18.7">DDNet 18.7</a></h3>
 <div class="dlfiles">
   2024-11-08<br/><br/>
@@ -57,23 +130,6 @@ title: Downloads - DDraceNetwork
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/18.6...18.7">full list of git changes</a>
 </div>
 <br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="18.6"><a href="#18.6">DDNet 18.6</a></h3>
 <div class="dlfiles">
   2024-10-06<br/><br/>
