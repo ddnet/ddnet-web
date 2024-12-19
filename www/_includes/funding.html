@@ -4,33 +4,31 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet":  [358, 431 + 60 + 59 + 27, "Insanity, archimede67, Scrumplex & ReD"], // includes vpn
-  "master": [32, 32, "野织"], // hetzner.de
-  "master2": 108, // kamatera.com
-  "db":     [213, 254, "David*°Villa, 番茄炒蛋不 & Zerol Acqua"],
-  "ger2":   "heinrich5991", // hetzner.de
-  "ger10":  [264, 288, "Davide"], // lowhosting.com
-  "pol":    [99, 99, "Teelevision"], // ovh.com
-  "fin1":   270, // hetzner.de
-  "fin2":   135, // hetzner.de
-  "ukr1":   [6, 96], // hostiko.com.ua
+  "ddnet":  421 + 60 + 59 + 27, // includes vpn
+  "master": 47, // hetzner.com
+  "master2": 504, // kamatera.com
+  "master3": 51, // ovh.com
+  "db":     609,
+  "ger2":   "heinrich5991", // hetzner.com
+  "ger10":  288, // lowhosting.com
+  "pol":    99, // ovh.com
+  "fin":    530, // hetzner.com
+  "ukr1":   96, // hostiko.com.ua
   "ukr2":   12, // hostiko.com.ua
   "ukr3":   6, // hostiko.com.ua
-  "rus1":   [547, 547, "BratOK, anonymous, zhn, ByFox & kartofel14"], // myarena.ru
-  "rus2":   [608, 608, "heinrich5991, Exit, Lumpy ◐ω◑ & iwa"], // myarena.ru
-  "rus4":   20, // hetzner.de
-  "rus6":   10, // hetzner.de
-  "tur":    70, // lightnode.com
-  "bhr":    42, // lightnode.com
+  "rus1":   608, // myarena.ru
+  "rus2":   608, // myarena.ru
+  "rus4":   47, // hetzner.com
+  "rus6":   47, // hetzner.com
+  "tur":    108, // lightnode.com
+  "bhr":    61, // lightnode.com
   "irn":    "Murphy",
-  "chl":    [156, 156, "Konsti"], // grupocg.cl
-  "bra1":   [29, 92, "coentro"], // linode.com
-  "bra2":   92, // linode.com
+  "chl":    156, // grupocg.cl
+  "bra1":   97, // linode.com
+  "bra2":   97, // linode.com
   "arg":    "Miguilim",
-  "per":    "Miguilim",
-  "usa2":   [55, 55, "Matrose l_I & Insanity"], // hetzner.com
-  "usa3":   [120, 120, "YupHio & orbilo"], // nfoservers.com
-  "chn":    [12, 537], // www.fxyun.com for CHN0-1
+  "usa2":   55, // hetzner.com
+  "usa3":   120, // nfoservers.com
   "chn2":   "Mind",
   "chn3":   "Mind",
   "chn5":   "琛哥",
@@ -38,18 +36,18 @@ var costs = {
   "chn7":   "mixun",
   "chn8":   "满月",
   "chn10":  "Coke",
-  "twn":    216, // lightnode.com
-  "kor":    276, // vultr.com
-  "sgp":    73, // linode.com
-  "ind":    73, // linode.com
-  "aus":    [43, 43, "Lem0n"], // ovh.com
-  "zaf":    [66, 66, "archimede67"], // ivecloud.co.za
+  "twn":    207, // lightnode.com
+  "kor":    140, // vultr.com
+  "sgp":    70, // linode.com
+  "ind":    70, // linode.com
+  "aus":    43, // ovh.com
+  "zaf":    66, // ivecloud.co.za
 };
-var donated = 1514;
-var yearStr = "2024";
-var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253 + /*2023:*/ 3308;
+var donated = 0;
+var yearStr = "2025";
+var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253 + /*2023:*/ 3308 + /*2024 WIP*/ 4122;
 var donatedOld = 14075;
-var yearStrOld = "2013-23";
+var yearStrOld = "2013-24";
 
 var sum = 0;
 var sumToPay = 0;
