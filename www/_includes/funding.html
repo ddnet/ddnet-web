@@ -5,8 +5,8 @@ var isArray = Array.isArray || function(arr) {
 };
 var costs = {
   "ddnet":  421 + 60 + 59 + 27, // includes vpn
-  "master": 47, // hetzner.com
-  "master3": 51, // ovh.com
+  "master": [47, 47, "Gummibaer12345"], // hetzner.com
+  "master3": [51, 51, "Gummibaer12345"], // ovh.com
   "db":     609,
   "ger1":   288, // lowhosting.com
   "ger2":   "heinrich5991", // hetzner.com
@@ -40,7 +40,7 @@ var costs = {
   "aus":    43, // ovh.com
   "zaf":    66, // ivecloud.co.za
 };
-var donated = 0;
+var donated = 2;
 var yearStr = "2025";
 var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253 + /*2023:*/ 3308 + /*2024 WIP*/ 4973;
 var donatedOld = 18197;
