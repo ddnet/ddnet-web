@@ -26,7 +26,7 @@ menu: |
 DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="https://www.teeworlds.com/">Teeworlds</a> modification with a unique cooperative gameplay. Help each other play through <a href="/releases/">custom maps</a> with up to 64 players, compete against the best in <a href="/tournaments/">international tournaments</a>, design your <a href="/howto/">own maps</a>, or run your <a href="/settingscommands/">own server</a>. The <a href="/status/">official servers</a> are around the world. All <a href="/ranks/">ranks</a> made on official servers are available worldwide and you can <a href="/players/">collect points</a>!
 </p>
 <div class="startvideo"><div class="video-container">
-  <div class="ytplayer" data-id="ID3fzWoWLPs"></div>
+  <div class="ytplayer" data-id="RMmDPoaCsqI"></div>
 </div></div>
 {% comment %}
 <style>
