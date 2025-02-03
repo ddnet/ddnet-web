@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Happy New Year 2025 Photoshoot Result"
+permalink: /news/photoshoot-2025/
+tag: current
+---
+The Photoshoot 2025 is finished! Check out the [final image](/newyear2025/):
+
+[<img class="demo" src="/newyear2025.jpg" />](/newyear2025/)
