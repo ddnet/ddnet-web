@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Master Server Rules - DDraceNetwork
+title: Masterserver Rules - DDraceNetwork
 menu: |
   <ul>
     <li><a href="/#news">News</a> (<a href="/news/">all</a>)</li>
@@ -17,27 +17,27 @@ menu: |
   </ul>
 ---
 <div class="block">
-  <h2 id="master-rules">Master Server Rules</h2>
+  <h2 id="master-rules">Masterserver Rules</h2>
   <p>Some rules has been directly adopted from teeworlds.com:</p>
   <ol>
-    <li>Modified servers should not use standard gametypes (e.g., dm, tdm, ctf, lms, lts).</li>
+    <li>Modified servers should not use standard gametypes (i.e. DM, TDM, CTF, LMS, LTS).</li>
     <li>The player count shown should accurately reflect the number of human players. The maximum player count must indicate the total number of human players that can join.</li>
     <li>Do not host an excessive amount of servers. There is no fixed limit but try to not overdo it. (i.e. there should be people playing on them eventually)</li>
-    <li>Do not host servers purely for advertising purposes (e.g., password-protected servers just for ads). However, including sponsor information or similar details in the server name is fine.</li>
+    <li>Do not host servers purely for advertising purposes (e.g. password-protected servers just for ads). However, including sponsor information or similar details in the server name is fine.</li>
   </ol>
   <p>Additionally, the following rules apply:</p>
   <ol start="5">
-    <li>The Server must be joinable via the official DDNet client without requiring a custom client.</li>
-    <li>Servers with inappropriate content, like maps containing nudity, are strictly prohibited.</li>
+    <li>The Server should be joinable via the latest version of the official DDNet client, not requiring a custom client.</li>
+    <li>Servers should not have content we consider inappropiate, like maps containing human nudity.</li>
     <li>Do not host public servers that encourage or facilitate cheating, including servers meant exclusively for TAS runs.</li>
-    <li>Server names must be unique and should not impersonate or duplicate existing servers.</li>
-    <li>If the server requires account creation and login to play, the <code>requires_login</code> property must be set to <code>True</code> (refer to <a href="https://github.com/ddnet/ddnet/blob/282ea709427b2569ffc66422b8c04b28a9708f9a/src/engine/server/server.cpp#L2507">server.cpp</a>).</li>
+    <li>Server names should be unique and should not impersonate or duplicate existing servers.</li>
+    <li>If the server requires account creation and login to play, the <code>requires_login</code> property must be set to <code>true</code> (refer to <a href="https://github.com/ddnet/ddnet/blob/282ea709427b2569ffc66422b8c04b28a9708f9a/src/engine/server/server.cpp#L2507">server.cpp</a>).</li>
   </ol>
-  <p>This list is not <strong>exhaustive</strong>. Additional rules may be applied <strong>retrospectively</strong> at our discretion, including banning servers that violate the spirit of fair play or good conduct.</p>
-  <p>You can check out the list of master server bans <a href="https://teeworlds.com/master-bans.cfg">here</a> if you have any doubts. If you wish to be notified about issues with your server(s), provide a contact email address in your MOTD or contact us on the official <a href="/discord/">Discord</a> server.</p>
+  <p>This list is not <strong>exhaustive</strong>. Additional rules may be applied <strong>retroactively</strong> at our discretion, including banning servers that violate the spirit of fair play or good conduct.</p>
+  <p>You can check out the list of Teeworlds master server bans at <a href="https://teeworlds.com/master-bans.cfg">https://teeworlds.com/master-bans.cfg</a>. If you wish to be notified about issues with your server, provide a contact email address in your MOTD or contact us on the official <a href="/discord/">Discord</a> server.</p>
 </div>
 <div class="block">
-    <h2 id="master-bans">Current Master bans</h2>
+    <h2 id="master-bans">Current master bans</h2>
 	<pre><code>bans = [
             { address = "44.204.219.193" }, # VIOLATING 3. & 4.
             { address = "45.9.5.233" }, # VIOLATING 2. & 4.
