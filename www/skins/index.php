@@ -276,7 +276,7 @@ title: Skin Database - DDraceNetwork
       let HasSkinImg = false;
       if(SkinMap.has(ChangeSkinNamePure)) {
         let SkinImg = SkinMap.get(ChangeSkinNamePure);
-        if(SkinImg.Loaded) {
+        if(SkinImg.Loaded > 0) {
           document.getElementById("changeskinimg").value = SkinImg.ImgData;
           HasSkinImg = true;
         }
@@ -529,6 +529,25 @@ title: Skin Database - DDraceNetwork
     }
   }
 
+  function DownloadSkin(DownloadSkinListRef) {
+    let CurDownloaded = 0;
+    for(var i = 0; i < DownloadSkinListRef.length; ++i) {
+      var Tmp = DownloadSkinListRef[i];
+      if (Tmp.loading == 0) {
+        CurDownloaded++;
+      }
+    }
+    for(var i = 0; i < DownloadSkinListRef.length; ++i) {
+      var Tmp = DownloadSkinListRef[i];
+      if (Tmp.loading == -1 && CurDownloaded < 16) {
+        Tmp.loading = 0;
+        Tmp.obj.open("GET", Tmp.path);
+        Tmp.obj.send();
+        CurDownloaded++;
+      }
+    }
+  }
+
   function DownloadSkins(AsUHD) {
     var FilteredSkinList = GetSkinsFiltered(false);
     if(DownloadSkinList == null && FilteredSkinList.length > 0) {
@@ -544,26 +563,28 @@ title: Skin Database - DDraceNetwork
         const CurSkinNameImg = CurSkin.name + "." + CurSkin.imgtype;
         const DownloadPath = SkinPath + CurSkinNameImg;
         let SkinAjax = new XMLHttpRequest();
-        let Index = DownloadSkinListRef.push({path: DownloadPath, obj: SkinAjax});
+        let Index = DownloadSkinListRef.push({path: DownloadPath, obj: SkinAjax, loading: -1});
         SkinAjax.responseType = "arraybuffer";
         SkinAjax.onreadystatechange = function (CurSkinNameImg) {
           if (this.readyState == 4) {
             if(this.status == 200) {
               DownloadSkinList.push({ name: CurSkinNameImg, data: new Uint8Array(this.response)});
+              DownloadSkinListRef[Index - 1].loading = 1;
+            }
+            else {
+              console.log("failed to download skin: " + CurSkinNameImg, this.status);
+              DownloadSkinListRef[Index - 1].loading = -2;
             }
             DownloadSkinListStack.pop();
             if(DownloadSkinListStack.length == 0)
               DownloadSkinsImpl();
+            DownloadSkin(DownloadSkinListRef);
           }
         }.bind(SkinAjax, CurSkinNameImg);
       }
       if(DownloadSkinListStack.length == 0)
         DownloadSkinList = null;
-      for(var i = 0; i < DownloadSkinListRef.length; ++i) {
-        var Tmp = DownloadSkinListRef[i];
-        Tmp.obj.open("GET", Tmp.path);
-        Tmp.obj.send();
-      }
+      DownloadSkin(DownloadSkinListRef);
     }
   }
 
@@ -675,6 +696,23 @@ title: Skin Database - DDraceNetwork
     return (new Date()).getTime().toString() + "___" + Math.random().toString(16).slice(2) + "___";
   }
 
+  function CheckSkinDownloaded() {
+    let CurDownloaded = 0;
+    SkinMap.forEach((value) => {
+      if(value.Loaded == 0) {
+        CurDownloaded++;
+      }
+    });
+    SkinMap.forEach((value) => {
+      if(value.Loaded == -1 && CurDownloaded < 16) {
+        value.Loaded = 0;
+        value.AjaxObj.open("GET", value.ImgSrc);
+        value.AjaxObj.send();
+        CurDownloaded++;
+      }
+    });
+  }
+
   function DrawSkinList() {
     var Filter = "";
       
@@ -701,7 +739,7 @@ title: Skin Database - DDraceNetwork
         let Img = new Image();
         let SkinDataBase64 = "";
         let SkinAjax = null;
-        let LoadState = 0;
+        let LoadState = -1;
         SkinAjax = new XMLHttpRequest();
         SkinAjax.responseType = "arraybuffer";
         SkinAjax.onreadystatechange = function (SkinName) {
@@ -714,6 +752,11 @@ title: Skin Database - DDraceNetwork
               SkinMap.set(SkinName, CurItem);
               CurItem.ImgObj.src = "data:image/png;base64," + Base64ImgData;
             }
+            else {
+              console.log("failed to download skin: " + SkinName, this.status);
+              CurItem.Loaded = -2;
+            }
+            CheckSkinDownloaded();
           }
         }.bind(SkinAjax, CurSkin.name);
 
@@ -732,12 +775,7 @@ title: Skin Database - DDraceNetwork
 
     SkinListObj.innerHTML = InnerHTML;
 
-    SkinMap.forEach((value) => {
-      if(value.Loaded == 0) {
-        value.AjaxObj.open("GET", value.ImgSrc);
-        value.AjaxObj.send();
-      }
-    });
+    CheckSkinDownloaded();
 
     SetDownloadLink(FilteredCountDownload, FilteredHDCountDownload);
 
