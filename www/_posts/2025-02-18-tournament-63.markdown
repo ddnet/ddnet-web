@@ -5,7 +5,7 @@ permalink: /news/tournament-63/
 tag: current
 ---
 
-It's time for the first tournament of the year! We will play the brand-new Brutal (★★★★✰) map Naufrage 4 by [SickCunt](https://ddnet.org/mappers/SickCunt/) & [panik](https://ddnet.org/mappers/panik/):
+It's time for the first tournament of the year! We will play the brand-new Brutal (★★★★★) map Naufrage 4 by [SickCunt](https://ddnet.org/mappers/SickCunt/) & [panik](https://ddnet.org/mappers/panik/):
 
 [<img class="demo" src="/Naufrage_4.png" />](/Naufrage_4.png)
 
