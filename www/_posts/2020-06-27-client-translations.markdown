@@ -8,20 +8,20 @@ tag: current
 Current DDNet client translation status showing how many of the messages are translated:
 
 ```
+100% romanian
 100% german
+100% dutch
 99% swedish
-97% romanian
-96% ukrainian
-96% turkish
-96% traditional_chinese
-96% spanish
-96% simplified_chinese
+97% ukrainian
+97% turkish
+97% traditional_chinese
+97% spanish
+97% simplified_chinese
+97% polish
+97% brazilian_portuguese
+97% azerbaijani
 96% portuguese
-96% polish
 96% persian
-96% dutch
-96% brazilian_portuguese
-96% azerbaijani
 95% russian
 95% french
 90% slovak
