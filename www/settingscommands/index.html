@@ -45,8 +45,8 @@ menu: |
   <tr><td>sv_save_worse_scores</td><td>Whether to save worse scores when you already have a better one</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_pauseable</td><td>Whether players can pause their char or not</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td><td>0</td><td>3</td></tr>
-  <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>64</td></tr>
-  <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>64</td><td>1</td><td>64</td></tr>
+  <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>SERVER_64</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>SERVER_64</td><td>1</td><td>SERVER_64</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_no_weak_hook</td><td>Whether to use an alternative calculation for world ticks, that makes the hook behave like all players have strong.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_reset_pickups</td><td>Whether the weapons are reset on passing the start tile or not</td><td>0</td><td>0</td><td>1</td></tr>
@@ -59,6 +59,7 @@ menu: |
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] f[value]</td><td>Tune in zone a variable to value</td></tr>
+  <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doubleexplosion@ddnet.tw)</td></tr>
   <tr><td>tune</td><td>s[tuning] ?f[value]</td><td>Tune variable to value or show current value</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] f[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>tune_zone_enter</td><td>i[zone] r[message]</td><td>Which message to display on zone enter; use 0 for normal area</td></tr>
@@ -75,15 +76,15 @@ menu: |
   <tr><td>sv_motd</td><td>Message of the day to display for the clients</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_gametype</td><td>Game type (ddnet, mod)</td><td>&quot;ddnet&quot;</td><td></td><td></td></tr>
   <tr><td>sv_tournament_mode</td><td>Tournament mode. When enabled, players joins the server as spectator</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_spamprotection</td><td>Spam protection</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_spectator_slots</td><td>Number of slots to reserve for spectators</td><td>0</td><td>0</td><td>64</td></tr>
+  <tr><td>sv_spamprotection</td><td>Spam protection for: team change, chat, skin change, emotes and votes</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_spectator_slots</td><td>Number of slots to reserve for spectators</td><td>0</td><td>0</td><td>SERVER_64</td></tr>
   <tr><td>sv_inactivekick_time</td><td>How many minutes to wait before taking care of inactive players</td><td>0</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_inactivekick</td><td>How to deal with inactive players (0=move to spectator, 1=move to free spectator slot/kick, 2=kick)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>sv_strict_spectate_mode</td><td>Restricts information in spectator mode</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_vote_spectate</td><td>Allow voting to move players to spectators</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_vote_spectate_rejoindelay</td><td>How many minutes to wait before a player can rejoin after being moved to spectators by vote</td><td>3</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_vote_kick</td><td>Allow voting to kick players</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_vote_kick_min</td><td>Minimum number of players required to start a kick vote</td><td>0</td><td>0</td><td>64</td></tr>
+  <tr><td>sv_vote_kick_min</td><td>Minimum number of players required to start a kick vote</td><td>0</td><td>0</td><td>SERVER_64</td></tr>
   <tr><td>sv_vote_kick_bantime</td><td>The time in seconds to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td><td>0</td><td>1440</td></tr>
   <tr><td>sv_join_vote_delay</td><td>Add a delay before recently joined players can call any vote or participate in a kick/spec vote (in seconds)</td><td>300</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td><td>0</td><td>1</td></tr>
@@ -99,7 +100,8 @@ menu: |
   <tr><td>sv_rescue</td><td>Allow /rescue command so players can teleport themselves out of freeze (setting only works in initial config)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_rescue_delay</td><td>Number of seconds between two rescues</td><td>1</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_practice</td><td>Enable practice mode for teams. Means you can use /rescue, but in turn your rank doesn&#x27;t count.</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>dbg_dummies</td><td>Add debug dummies to server (Debug build only)</td><td>0</td><td>0</td><td>64</td></tr>
+  <tr><td>sv_practice_by_default</td><td>Enable use of practice commands by default. Requires sv_test_cmds 1.</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>dbg_dummies</td><td>Add debug dummies to server (Debug build only)</td><td>0</td><td>0</td><td>SERVER_64</td></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>logfile</td><td>Filename to log all output to</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -114,12 +116,13 @@ menu: |
   <tr><td>sv_port</td><td>Port to use for the server (Only ports 8303-8310 work in LAN server browser, 0 to automatically find a free port in 8303-8310)</td><td>0</td><td>0</td><td>65535</td></tr>
   <tr><td>sv_hostname</td><td>Server hostname (0.7 only)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_map</td><td>Map to use on the server</td><td>&quot;Sunny Side Up&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>64</td><td>1</td><td>64</td></tr>
-  <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>4</td><td>1</td><td>64</td></tr>
+  <tr><td>sv_max_clients</td><td>Maximum number of clients that are allowed on a server</td><td>SERVER_64</td><td>1</td><td>SERVER_64</td></tr>
+  <tr><td>sv_max_clients_per_ip</td><td>Maximum number of clients with the same IP that can connect to the server</td><td>4</td><td>1</td><td>SERVER_64</td></tr>
   <tr><td>sv_high_bandwidth</td><td>Use high bandwidth mode. Doubles the bandwidth required for the server. LAN use only</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_register</td><td>Register server with master server for public listing, can also accept a comma-separated list of protocols to register on, like &#x27;ipv4,ipv6&#x27;</td><td>&quot;1&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_register_extra</td><td>Extra headers to send to the register endpoint, comma separated &#x27;Header: Value&#x27; pairs</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_register_extra</td><td>Extra headers to send to the register endpoint, comma-separated &#x27;Header: Value&#x27; pairs</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_register_url</td><td>Masterserver URL to register to</td><td>&quot;https://master1.ddnet.org/ddnet/15/register&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_maps_base_url</td><td>Base path used to provide HTTPS map download URL to the clients</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_password</td><td>Remote console password (full access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_mod_password</td><td>Remote console password for moderators (limited access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rcon_helper_password</td><td>Remote console password for helpers (limited access)</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -144,10 +147,11 @@ menu: |
   <tr><td>sv_sixup</td><td>Enable sixup connections</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_skill_level</td><td>Difficulty level for Teeworlds 0.7 (0: Casual, 1: Normal, 2: Competitive)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>dbg_sql</td><td>Debug SQL</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>http_allow_insecure</td><td>Allow insecure HTTP protocol in addition to the secure HTTPS one. Mostly useful for testing.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_welcome</td><td>Message that will be displayed to players who join the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_reserved_slots</td><td>The number of slots that are reserved for special players</td><td>0</td><td>0</td><td>64</td></tr>
+  <tr><td>sv_reserved_slots</td><td>The number of slots that are reserved for special players</td><td>0</td><td>0</td><td>SERVER_64</td></tr>
   <tr><td>sv_reserved_slots_pass</td><td>The password that is required to use a reserved slot</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_reserved_slots_auth_level</td><td>Minimum rcon auth level needed to use a reserved slot. 4 = rcon auth disabled</td><td>1</td><td>1</td><td>4</td></tr>
   <tr><td>sv_hit</td><td>Whether players can hammer/grenade/laser each other or not</td><td>1</td><td>0</td><td>1</td></tr>
@@ -163,7 +167,7 @@ menu: |
   <tr><td>sv_invite</td><td>Whether players can invite other players to teams</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_invite_frequency</td><td>The minimum allowed delay between invites</td><td>1</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_tele_others_auth_level</td><td>The auth level you need to tele others</td><td>1</td><td>1</td><td>3</td></tr>
-  <tr><td>sv_regional_rankings</td><td>Display regional rankings in /rank and /top5</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>sv_regional_rankings</td><td>Display regional rankings in /rank, /top5 and /top5team</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_emotional_tees</td><td>Whether eye change of tees is enabled with emoticons = 1, not = 0, -1 not at all</td><td>1</td><td>-1</td><td>1</td></tr>
   <tr><td>sv_emoticon_ms_delay</td><td>The time in ms a player has to wait before allowing the next over-head emoticons</td><td>3000</td><td>20</td><td>999999999</td></tr>
   <tr><td>sv_global_emoticon_ms_delay</td><td>The time in ms a player has to wait before allowing the next over-head emoticons that is send to all clients (this config must be higher or equal to sv_emoticon_ms_delay to have an effect)</td><td>3000</td><td>20</td><td>999999999</td></tr>
@@ -177,7 +181,7 @@ menu: |
   <tr><td>sv_vote_kick_delay</td><td>The minimum time in seconds between kick votes</td><td>0</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_vote_yes_percentage</td><td>More than this percentage of players need to agree for a vote to succeed</td><td>50</td><td>1</td><td>99</td></tr>
   <tr><td>sv_vote_majority</td><td> (0) or are ignored (1)</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_vote_max_total</td><td>How many players can participate in a vote at max (0 = no limit)</td><td>0</td><td>0</td><td>64</td></tr>
+  <tr><td>sv_vote_max_total</td><td>How many players can participate in a vote at max (0 = no limit)</td><td>0</td><td>0</td><td>SERVER_64</td></tr>
   <tr><td>sv_vote_veto_time</td><td>Minutes of time on a server until a player can veto map change votes (0 = disabled)</td><td>20</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_kill_delay</td><td>The minimum time in seconds between kills</td><td>1</td><td>0</td><td>9999</td></tr>
   <tr><td>sv_map_window</td><td>Map downloading send-ahead window</td><td>15</td><td>0</td><td>100</td></tr>
@@ -207,11 +211,11 @@ menu: |
   <tr><td>sv_rules_line9</td><td>Rules line 9</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_rules_line10</td><td>Rules line 10</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_team</td><td>Teams configuration (0 = off, 1 = on but optional, 2 = must play only with teams, 3 = forced random team only for you)</td><td>1</td><td>0</td><td>3</td></tr>
-  <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>64</td></tr>
-  <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>64</td><td>1</td><td>64</td></tr>
+  <tr><td>sv_min_team_size</td><td>Minimum team size (finishing in a team smaller than this size gives you no teamrank)</td><td>2</td><td>1</td><td>SERVER_64</td></tr>
+  <tr><td>sv_max_team_size</td><td>Maximum team size</td><td>SERVER_64</td><td>1</td><td>SERVER_64</td></tr>
   <tr><td>sv_map_vote</td><td>Whether to allow /map</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>sv_announcement_filename</td><td>file which will have the announcement, each one at a line</td><td>&quot;announcement.txt&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_announcement_interval</td><td>time(minutes) in which the announcement will be displayed from the announcement file</td><td>300</td><td>1</td><td>9999</td></tr>
+  <tr><td>sv_announcement_filename</td><td>File which contains the announcements, one on each line</td><td>&quot;announcement.txt&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_announcement_interval</td><td>The time (minutes) for how often an announcement will be displayed from the announcement file</td><td>120</td><td>1</td><td>9999</td></tr>
   <tr><td>sv_announcement_random</td><td>Whether announcements are sequential or random</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_old_laser</td><td>Whether lasers can hit you if you shot them and that they pull you towards the bounce origin (0 for all new maps) or lasers can&#x27;t hit you if you shot them, and they pull others towards the shooter</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_slash_me</td><td>Whether /me is active on the server or not</td><td>0</td><td>0</td><td>1</td></tr>
@@ -247,7 +251,7 @@ menu: |
   <tr><td>sv_client_suggestion</td><td>Broadcast to display to players without DDNet client</td><td>&quot;Get DDNet client from DDNet.org to use all features on DDNet!&quot;</td><td></td><td></td></tr>
   <tr><td>sv_client_suggestion_old</td><td>Broadcast to display to players with an old version of DDNet client</td><td>&quot;Your DDNet client is old, update it on DDNet.org!&quot;</td><td></td><td></td></tr>
   <tr><td>sv_client_suggestion_bot</td><td>Broadcast to display to players with a known botting client</td><td>&quot;Your client has bots and can be remotely controlled!\nPlease use another client like DDNet client from DDNet.org&quot;</td><td></td><td></td></tr>
-  <tr><td>sv_banned_versions</td><td>Comma separated list of banned clients to be kicked on join</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>sv_banned_versions</td><td>Comma-separated list of banned clients to be kicked on join</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>sv_netlimit</td><td>Netlimit: Maximum amount of traffic a client is allowed to use (in kb/s)</td><td>0</td><td>0</td><td>10000</td></tr>
   <tr><td>sv_netlimit_alpha</td><td>Netlimit: Alpha of Exponention moving average</td><td>50</td><td>1</td><td>100</td></tr>
   <tr><td>sv_connlimit</td><td>Connlimit: Number of connections an IP is allowed to do in a timespan</td><td>5</td><td>0</td><td>100</td></tr>
@@ -282,6 +286,7 @@ menu: |
   <tr><td>shutdown</td><td>?r[reason]</td><td>Shut down</td></tr>
   <tr><td>logout</td><td></td><td>Logout of rcon</td></tr>
   <tr><td>show_ips</td><td>?i[show]</td><td>Show IP addresses in rcon commands (1 = on, 0 = off)</td></tr>
+  <tr><td>hide_auth_status</td><td>?i[hide]</td><td>Opt out of spectator count and hide auth status to non-authed players (1 = hidden, 0 = shown)</td></tr>
   <tr><td>record</td><td>?s[file]</td><td>Record to a file</td></tr>
   <tr><td>stoprecord</td><td></td><td>Stop recording</td></tr>
   <tr><td>reload</td><td></td><td>Reload the map</td></tr>
@@ -293,8 +298,10 @@ menu: |
   <tr><td>auth_change_p</td><td>s[ident] s[level] s[hash] s[salt]</td><td>Update a rcon key with prehashed data</td></tr>
   <tr><td>auth_remove</td><td>s[ident]</td><td>Remove a rcon key</td></tr>
   <tr><td>auth_list</td><td></td><td>List all rcon keys</td></tr>
+  <tr><td>reload_announcement</td><td></td><td>Reload the announcements</td></tr>
+  <tr><td>reload_maplist</td><td></td><td>Reload the maplist</td></tr>
   <tr><td>reset</td><td>s[config-name]</td><td>Reset a config to its default value</td></tr>
-  <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
+  <tr><td>toggle</td><td>s[config-option] s[value 1] s[value 2]</td><td>Toggle config value</td></tr>
   <tr><td>echo</td><td>r[text]</td><td>Echo the text</td></tr>
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
   <tr><td>access_level</td><td>s[command] ?i[accesslevel]</td><td>Specify command accessibility (admin = 0, moderator = 1, helper = 2, all = 3)</td></tr>
@@ -306,6 +313,7 @@ menu: |
   <tr><td>unban_range</td><td>s[first ip] s[last ip]</td><td>Unban ip range</td></tr>
   <tr><td>unban_all</td><td></td><td>Unban all entries</td></tr>
   <tr><td>bans</td><td>?i[page]</td><td>Show banlist (page 1 by default, 20 entries per page)</td></tr>
+  <tr><td>bans_find</td><td>s[ip]</td><td>Find all ban records for the specified IP address</td></tr>
   <tr><td>bans_save</td><td>s[file]</td><td>Save banlist in a file</td></tr>
   <tr><td>tune</td><td>s[tuning] ?f[value]</td><td>Tune variable to value or show current value</td></tr>
   <tr><td>toggle_tune</td><td>s[tuning] f[value 1] f[value 2]</td><td>Toggle tune variable</td></tr>
@@ -328,6 +336,7 @@ menu: |
   <tr><td>set_team</td><td>i[id] i[team-id] ?i[delay in minutes]</td><td>Set team of player to team</td></tr>
   <tr><td>set_team_all</td><td>i[team-id]</td><td>Set team of all players to team</td></tr>
   <tr><td>hot_reload</td><td></td><td>Reload the map while preserving the state of tees and teams</td></tr>
+  <tr><td>reload_censorlist</td><td></td><td>Reload the censorlist</td></tr>
   <tr><td>add_vote</td><td>s[name] r[command]</td><td>Add a voting option</td></tr>
   <tr><td>remove_vote</td><td>r[name]</td><td>remove a voting option</td></tr>
   <tr><td>force_vote</td><td>s[name] s[command] ?r[reason]</td><td>Force a voting option</td></tr>
@@ -338,8 +347,8 @@ menu: |
   <tr><td>dump_antibot</td><td></td><td>Dumps the antibot status</td></tr>
   <tr><td>antibot</td><td>r[command]</td><td>Sends a command to the antibot</td></tr>
   <tr><td>kill_pl</td><td>v[id]</td><td>Kills player v and announces the kill</td></tr>
-  <tr><td>totele</td><td>i[number]</td><td>Teleports you to teleporter v</td></tr>
-  <tr><td>totelecp</td><td>i[number]</td><td>Teleports you to checkpoint teleporter v</td></tr>
+  <tr><td>totele</td><td>i[number]</td><td>Teleports you to teleporter i</td></tr>
+  <tr><td>totelecp</td><td>i[number]</td><td>Teleports you to checkpoint teleporter i</td></tr>
   <tr><td>tele</td><td>?i[id] ?i[id]</td><td>Teleports player i (or you) to player i (or you to where you look at)</td></tr>
   <tr><td>addweapon</td><td>i[weapon-id]</td><td>Gives weapon with id i to you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, laser = 4, ninja = 5)</td></tr>
   <tr><td>removeweapon</td><td>i[weapon-id]</td><td>removes weapon with id i from you (all = -1, hammer = 0, gun = 1, shotgun = 2, grenade = 3, laser = 4, ninja = 5)</td></tr>
@@ -360,6 +369,9 @@ menu: |
   <tr><td>unninja</td><td></td><td>Removes ninja from you</td></tr>
   <tr><td>super</td><td></td><td>Makes you super</td></tr>
   <tr><td>unsuper</td><td></td><td>Removes super from you</td></tr>
+  <tr><td>invincible</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Toggles invincible mode</td></tr>
+  <tr><td>infinite_jump</td><td></td><td>Gives you infinite jump</td></tr>
+  <tr><td>uninfinite_jump</td><td></td><td>Removes infinite jump from you</td></tr>
   <tr><td>endless_hook</td><td></td><td>Gives you endless hook</td></tr>
   <tr><td>unendless_hook</td><td></td><td>Removes endless hook from you</td></tr>
   <tr><td>solo</td><td></td><td>Puts you into solo part</td></tr>
@@ -423,8 +435,10 @@ menu: |
   <tr><td>mapinfo</td><td>?r[map]</td><td>Show info about the map with name r gives (current map by default)</td></tr>
   <tr><td>timeout</td><td>?s[code]</td><td>Set timeout protection code s</td></tr>
   <tr><td>practice</td><td>?i[&#x27;0&#x27;|&#x27;1&#x27;]</td><td>Enable cheats for your current team&#x27;s run, but you can&#x27;t earn a rank</td></tr>
+  <tr><td>unpractice</td><td></td><td>Kills team and disables practice mode</td></tr>
   <tr><td>practicecmdlist</td><td></td><td>List all commands that are avaliable in practice mode</td></tr>
   <tr><td>swap</td><td>?r[player name]</td><td>Request to swap your tee with another team member</td></tr>
+  <tr><td>cancelswap</td><td></td><td>Cancel your swap request</td></tr>
   <tr><td>save</td><td>?r[code]</td><td>Save team with code r.</td></tr>
   <tr><td>load</td><td>?r[code]</td><td>Load with code r. /load to check your existing saves</td></tr>
   <tr><td>map</td><td>?r[map]</td><td>Vote a map by name</td></tr>
@@ -458,7 +472,7 @@ menu: |
   <tr><td>rescuemode</td><td>?r[&#x27;auto&#x27;|&#x27;manual&#x27;]</td><td>Sets one of the two rescue modes (auto or manual). Prints current mode if no arguments provided</td></tr>
   <tr><td>tp</td><td>?r[player name]</td><td>Depending on the number of supplied arguments, teleport yourself to; (0.) where you are spectating or aiming; (1.) the specified player name</td></tr>
   <tr><td>teleport</td><td>?r[player name]</td><td>Depending on the number of supplied arguments, teleport yourself to; (0.) where you are spectating or aiming; (1.) the specified player name</td></tr>
-  <tr><td>tpxy</td><td>f[x] f[y]</td><td>Teleport yourself to the specified coordinates. A tilde (~) can be used to denote your current position, e.g. &#x27;/tpxy ~1 ~&#x27; to teleport one tile to the right</td></tr>
+  <tr><td>tpxy</td><td>s[x] s[y]</td><td>Teleport yourself to the specified coordinates. A tilde (~) can be used to denote your current position, e.g. &#x27;/tpxy ~1 ~&#x27; to teleport one tile to the right</td></tr>
   <tr><td>lasttp</td><td></td><td>Teleport yourself to the last location you teleported to</td></tr>
   <tr><td>tc</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating/or looking if no player name is given</td></tr>
   <tr><td>telecursor</td><td>?r[player name]</td><td>Teleport yourself to player or to where you are spectating/or looking if no player name is given</td></tr>
@@ -471,7 +485,8 @@ menu: |
   <tr><th>Setting</th><th>Description</th><th>Default</th><th>Min</th><th>Max</th></tr>
   <tr><td>cl_predict</td><td>Predict client movements</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_predict_dummy</td><td>Predict dummy movements</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_antiping_limit</td><td>Antiping limit (0 to disable)</td><td>0</td><td>0</td><td>200</td></tr>
+  <tr><td>cl_antiping_limit</td><td>Adds delay to antiping (0 to disable)</td><td>0</td><td>0</td><td>500</td></tr>
+  <tr><td>cl_antiping_percent</td><td>How far ahead antiping predicts, ignored when antiping limit is used</td><td>100</td><td>0</td><td>100</td></tr>
   <tr><td>cl_antiping</td><td>Enable antiping, i. e. more aggressive prediction.</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_antiping_players</td><td>Predict other player&#x27;s movement more aggressively (only enabled if cl_antiping is set to 1)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_antiping_grenade</td><td>Predict grenades (only enabled if cl_antiping is set to 1)</td><td>1</td><td>0</td><td>1</td></tr>
@@ -480,17 +495,22 @@ menu: |
   <tr><td>cl_antiping_gunfire</td><td>Predict gunfire and show predicted weapon physics (with cl_antiping_grenade 1 and cl_antiping_weapons 1)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_prediction_margin</td><td>Prediction margin in ms (adds latency, can reduce lag from ping jumps)</td><td>10</td><td>1</td><td>300</td></tr>
   <tr><td>cl_sub_tick_aiming</td><td>Send aiming data at sub-tick accuracy</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_touch_controls</td><td>Enable ingame touch controls</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates</td><td>Show name plates</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_afk_emote</td><td>Show zzz emote next to afk players</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_nameplates_always</td><td>Always show name plates disregarding of distance</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_nameplates_always</td><td>Always show name plates regardless of distance</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_teamcolors</td><td>Use team colors for name plates</td><td>1</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_nameplates_size</td><td>Size of the name plates from 0 to 100%</td><td>50</td><td>0</td><td>100</td></tr>
-  <tr><td>cl_nameplates_clan</td><td>Show clan in name plates</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_nameplates_clan_size</td><td>Size of the clan plates from 0 to 100%</td><td>30</td><td>0</td><td>100</td></tr>
-  <tr><td>cl_nameplates_ids</td><td>Show IDs in name plates</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_nameplates_size</td><td>Size of the name plates</td><td>50</td><td>-50</td><td>100</td></tr>
+  <tr><td>cl_nameplates_clan</td><td>Show clan names in name plates</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_nameplates_clan_size</td><td>Size of the clan name in name plates</td><td>30</td><td>-50</td><td>100</td></tr>
+  <tr><td>cl_nameplates_ids</td><td>Show client IDs in name plates</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_nameplates_ids_size</td><td>Size of the client IDs in name plates</td><td>50</td><td>-50</td><td>100</td></tr>
+  <tr><td>cl_nameplates_ids_seperate_line</td><td>Show client IDs on a seperate line in name plates</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_nameplates_offset</td><td>The size of the gap between the tee and the name plate</td><td>30</td><td>10</td><td>100</td></tr>
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_friendmark</td><td>Show friend mark (♥) in name plates</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_strong</td><td>Show strong/weak in name plates (0 - off, 1 - icons, 2 - icons + numbers)</td><td>0</td><td>0</td><td>2</td></tr>
+  <tr><td>cl_nameplates_strong_size</td><td>Size of strong/weak state icons and numbers</td><td>30</td><td>-50</td><td>100</td></tr>
+  <tr><td>cl_afk_emote</td><td>Show zzz emote next to afk players</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 1 to 100%</td><td>100</td><td>1</td><td>100</td></tr>
   <tr><td>cl_streamer_mode</td><td>Censor sensitive information such as /save password</td><td>0</td><td>0</td><td>1</td></tr>
@@ -504,6 +524,7 @@ menu: |
   <tr><td>cl_showhud_score</td><td>Show ingame HUD (Score)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_timer</td><td>Show ingame HUD (Timer)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_time_cp_diff</td><td>Show ingame HUD (Time Checkpoint Difference)</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_showhud_spectator_count</td><td>Show ingame HUD (Spectator Count)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_dummy_actions</td><td>Show ingame HUD (Dummy Actions)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_player_position</td><td>Show ingame HUD (Player Position)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_showhud_player_speed</td><td>Show ingame HUD (Player Speed)</td><td>0</td><td>0</td><td>1</td></tr>
@@ -527,6 +548,9 @@ menu: |
   <tr><td>cl_showpred</td><td>Show ingame prediction time in milliseconds</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_eye_wheel</td><td>Show eye wheel along together with emotes</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_eye_duration</td><td>How long the eyes emotes last</td><td>999999</td><td>1</td><td>999999</td></tr>
+  <tr><td>cl_freeze_stars</td><td>Show old star particles for frozen tees</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_spec_cursor</td><td>Enable the cursor of spectating player if available</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_spec_auto_sync</td><td>Automatically synchronize with spectating players&#x27;s camera setting if available (0 = disable, 1 = enable on reset zoom)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_airjumpindicator</td><td>Show the air jump indicator</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_threadsoundloading</td><td>Load sound files threaded</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_warning_teambalance</td><td>Warn about team balance</td><td>1</td><td>0</td><td>1</td></tr>
@@ -544,6 +568,8 @@ menu: |
   <tr><td>cl_dyncam_stabilizing</td><td>Amount of camera slowdown during fast cursor movement. High value can cause delay in camera movement</td><td>0</td><td>0</td><td>100</td></tr>
   <tr><td>cl_multiview_sensitivity</td><td>Set how fast the camera will move to the desired location (higher = faster)</td><td>100</td><td>0</td><td>200</td></tr>
   <tr><td>cl_multiview_zoom_smoothness</td><td>Set the smoothness of the multi-view zoom (in ms, higher = slower)</td><td>1300</td><td>50</td><td>5000</td></tr>
+  <tr><td>cl_spectator_mouseclicks</td><td>Enables left-click to toggle between spectating the closest player and free-view</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>cl_smooth_spectating_time</td><td>Time of smooth camera switch animation when spectating in ms (0 for off)</td><td>300</td><td>0</td><td>5000</td></tr>
   <tr><td>ed_autosave_interval</td><td>Interval in minutes at which a copy of the current editor map is automatically saved to the &#x27;auto&#x27; folder (0 for off)</td><td>10</td><td>0</td><td>240</td></tr>
   <tr><td>ed_autosave_max</td><td>Maximum number of autosaves that are kept per map name (0 = no limit)</td><td>10</td><td>0</td><td>1000</td></tr>
   <tr><td>ed_smooth_zoom_time</td><td>Time of smooth zoom animation in the editor in ms (0 for off)</td><td>250</td><td>0</td><td>5000</td></tr>
@@ -552,6 +578,9 @@ menu: |
   <tr><td>ed_showkeys</td><td>Show pressed keys</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>ed_align_quads</td><td>Enable/disable quad alignment. When enabled, red lines appear to show how quad/points are aligned and snapped to other quads/points when moving them</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>ed_show_quads_rect</td><td>Show the bounds of the selected quad. In case of multiple quads, it shows the bounds of the englobing rect. Can be helpful when aligning a group of quads</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>ed_auto_map_reload</td><td>Run &#x27;hot_reload&#x27; on the local server while rcon authed on map save</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>ed_layer_selector</td><td>Ctrl+right click tiles to select their layers in the editor</td><td>1</td><td>0</td><td>1</td></tr>
+  <tr><td>ed_show_ingame_entities</td><td>Show how weapons, shields, hearts and flags appear ingame</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_welcome</td><td>Show welcome message indicating the first launch of the client</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_motd_time</td><td>How long to show the server message of the day</td><td>10</td><td>0</td><td>100</td></tr>
   <tr><td>cl_map_download_url</td><td>URL used to download maps (can start with http:// or https://)</td><td>&quot;https://maps.ddnet.org&quot;</td><td></td><td></td></tr>
@@ -629,7 +658,7 @@ menu: |
   <tr><td>gfx_noclip</td><td>Disable clipping</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dummy_name</td><td>Name of the dummy</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>dummy_clan</td><td>Clan of the dummy</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>dummy_country</td><td>Country of the Dummy</td><td>-1</td><td>-1</td><td>1000</td></tr>
+  <tr><td>dummy_country</td><td>Country of the dummy (ISO 3166-1 numeric)</td><td>-1</td><td>-1</td><td>1000</td></tr>
   <tr><td>dummy_use_custom_color</td><td>Toggles usage of custom colors</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dummy_color_body</td><td>Dummy body color</td><td>65408</td><td></td><td></td></tr>
   <tr><td>dummy_color_feet</td><td>Dummy feet color</td><td>65408</td><td></td><td></td></tr>
@@ -657,7 +686,7 @@ menu: |
   <tr><td>dbg_tuning</td><td>Display information about the tuning parameters that affect the own player (0 = off, 1 = show changed, 2 = show all)</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>player_name</td><td>Name of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>player_clan</td><td>Clan of the player</td><td>&quot;&quot;</td><td></td><td></td></tr>
-  <tr><td>player_country</td><td>Country of the player</td><td>-1</td><td>-1</td><td>1000</td></tr>
+  <tr><td>player_country</td><td>Country of the player (ISO 3166-1 numeric)</td><td>-1</td><td>-1</td><td>1000</td></tr>
   <tr><td>password</td><td>Password to the server</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>events</td><td>Enable triggering of events, (eye emotes on some holidays in server, christmas skins in client).</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>steam_name</td><td>Last seen name of the Steam profile</td><td>&quot;&quot;</td><td></td><td></td></tr>
@@ -697,8 +726,8 @@ menu: |
   <tr><td>br_filter_empty</td><td>Filter out empty server in browser</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_spectators</td><td>Filter out spectators from player numbers</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_friends</td><td>Filter out servers with no friends</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>br_filter_country</td><td>Filter out servers with non-matching player country</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>br_filter_country_index</td><td>Player country to filter by in the server browser</td><td>-1</td><td>-1</td><td>999</td></tr>
+  <tr><td>br_filter_country</td><td>Filter out servers with non-matching player country (ISO 3166-1 numeric)</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>br_filter_country_index</td><td>Player country to filter by in the server browser (ISO 3166-1 numeric)</td><td>-1</td><td>-1</td><td>999</td></tr>
   <tr><td>br_filter_pw</td><td>Filter out password protected servers in browser</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_filter_gametype</td><td>Game types to filter</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>br_filter_gametype_strict</td><td>Strict gametype filter</td><td>0</td><td>0</td><td>1</td></tr>
@@ -715,6 +744,8 @@ menu: |
   <tr><td>br_demo_sort</td><td>Sorting column in demo browser</td><td>0</td><td>0</td><td>2</td></tr>
   <tr><td>br_demo_sort_order</td><td>Sorting order in demo browser</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>br_demo_fetch_info</td><td>Whether to auto fetch demo infos on refresh</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>gh_sort</td><td>Sorting column in ghost list</td><td>1</td><td>0</td><td>2</td></tr>
+  <tr><td>gh_sort_order</td><td>Sorting order in ghost list</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>snd_buffer_size</td><td>Sound buffer size (may cause delay if large)</td><td>512</td><td>128</td><td>32768</td></tr>
   <tr><td>snd_rate</td><td>Sound mixing rate</td><td>48000</td><td>5512</td><td>384000</td></tr>
   <tr><td>snd_enable</td><td>Sound enable</td><td>1</td><td>0</td><td>1</td></tr>
@@ -768,7 +799,7 @@ menu: |
   <tr><td>bindaddr</td><td>Address to bind the client/server to</td><td>&quot;&quot;</td><td></td><td></td></tr>
   <tr><td>debug</td><td>Debug mode</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_curl</td><td>Debug curl</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>dbg_graphs</td><td>Performance graphs</td><td>0</td><td>0</td><td>1</td></tr>
+  <tr><td>dbg_graphs</td><td>Show performance graphs</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_gfx</td><td>Show graphic library warnings and errors, if the GPU supports it (0: none, 1: minimal, 2: affects performance, 3: verbose, 4: all)</td><td>0</td><td>0</td><td>4</td></tr>
   <tr><td>dbg_stress</td><td>Stress systems (Debug build only)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>dbg_stress_server</td><td>Server to stress (Debug build only)</td><td>&quot;localhost&quot;</td><td></td><td></td></tr>
@@ -826,7 +857,8 @@ menu: |
   <tr><td>cl_show_ninja</td><td>Show ninja skin</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_show_hook_coll_other</td><td>Show other players&#x27; hook collision line (2 to always show)</td><td>1</td><td>0</td><td>2</td></tr>
   <tr><td>cl_show_hook_coll_own</td><td>Show own players&#x27; hook collision line (2 to always show)</td><td>1</td><td>0</td><td>2</td></tr>
-  <tr><td>cl_hook_coll_size</td><td>Size of hook collision line</td><td>0</td><td>0</td><td>20</td></tr>
+  <tr><td>cl_hook_coll_size</td><td>Width of your own hook collision line</td><td>0</td><td>0</td><td>20</td></tr>
+  <tr><td>cl_hook_coll_size_other</td><td>Width of others&#x27; hook collision line</td><td>0</td><td>0</td><td>20</td></tr>
   <tr><td>cl_hook_coll_alpha</td><td>Alpha of hook collision line (0 invisible, 100 fully visible)</td><td>100</td><td>0</td><td>100</td></tr>
   <tr><td>cl_hook_coll_color_no_coll</td><td>Specifies the color of a hookline that hits nothing.</td><td>65407</td><td></td><td></td></tr>
   <tr><td>cl_hook_coll_color_hookable_coll</td><td>Specifies the color of a hookline that hits hookable tiles.</td><td>6401973</td><td></td><td></td></tr>
@@ -836,7 +868,8 @@ menu: |
   <tr><td>cl_chat_old</td><td>Old chat style: No tee, no background</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_chat_size</td><td>Chat font size</td><td>60</td><td>10</td><td>100</td></tr>
   <tr><td>cl_chat_width</td><td>Chat width</td><td>200</td><td>140</td><td>400</td></tr>
-  <tr><td>cl_show_direction</td><td>Show key presses (1 = other players&#x27;, 2 = also your own, 3 = only your own</td><td>1</td><td>0</td><td>3</td></tr>
+  <tr><td>cl_show_direction</td><td>Show key presses (1 = other players&#x27;, 2 = everyone, 3 = only your own</td><td>1</td><td>0</td><td>3</td></tr>
+  <tr><td>cl_direction_size</td><td>Size of key press icons</td><td>30</td><td>-50</td><td>100</td></tr>
   <tr><td>cl_old_gun_position</td><td>Tees hold gun a bit higher like in TW 0.6.1 and older</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_confirm_disconnect_time</td><td>Confirmation popup before disconnecting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td><td>-1</td><td>1440</td></tr>
   <tr><td>cl_confirm_quit_time</td><td>Confirmation popup before quitting after game time (in minutes, -1 to turn off, 0 to always turn on)</td><td>20</td><td>-1</td><td>1440</td></tr>
@@ -895,7 +928,7 @@ menu: |
   <tr><td>demo_slice_start</td><td></td><td>Mark the beginning of a demo cut</td></tr>
   <tr><td>demo_slice_end</td><td></td><td>Mark the end of a demo cut</td></tr>
   <tr><td>demo_play</td><td></td><td>Play/pause the current demo</td></tr>
-  <tr><td>demo_speed</td><td>i[speed]</td><td>Set current demo speed</td></tr>
+  <tr><td>demo_speed</td><td>f[speed]</td><td>Set current demo speed</td></tr>
   <tr><td>save_replay</td><td>?i[length] ?r[filename]</td><td>Save a replay of the last defined amount of seconds</td></tr>
   <tr><td>benchmark_quit</td><td>i[seconds] r[file]</td><td>Benchmark frame times for number of seconds to file, then quit</td></tr>
   <tr><td>add_foe</td><td>s[name] ?s[clan]</td><td>Add a foe</td></tr>
@@ -908,23 +941,23 @@ menu: |
   <tr><td>remove_favorite_community</td><td>s[community_id]</td><td>Remove a community from the favorites</td></tr>
   <tr><td>add_excluded_community</td><td>s[community_id]</td><td>Add a community to the exclusion filter</td></tr>
   <tr><td>remove_excluded_community</td><td>s[community_id]</td><td>Remove a community from the exclusion filter</td></tr>
-  <tr><td>add_excluded_country</td><td>s[community_id] s[country_code]</td><td>Add a country to the exclusion filter for a specific community</td></tr>
-  <tr><td>remove_excluded_country</td><td>s[community_id] s[country_code]</td><td>Remove a country from the exclusion filter for a specific community</td></tr>
+  <tr><td>add_excluded_country</td><td>s[community_id] s[country_code]</td><td>Add a country to the exclusion filter for a specific community (ISO 3166-1 numeric)</td></tr>
+  <tr><td>remove_excluded_country</td><td>s[community_id] s[country_code]</td><td>Remove a country from the exclusion filter for a specific community (ISO 3166-1 numeric)</td></tr>
   <tr><td>add_excluded_type</td><td>s[community_id] s[type]</td><td>Add a type to the exclusion filter for a specific community</td></tr>
   <tr><td>remove_excluded_type</td><td>s[community_id] s[type]</td><td>Remove a type from the exclusion filter for a specific community</td></tr>
   <tr><td>leak_ip_address_to_all_servers</td><td></td><td>Leaks your IP address to all servers by pinging each of them, also acquiring the latency in the process</td></tr>
   <tr><td>reset</td><td>s[config-name]</td><td>Reset a config to its default value</td></tr>
-  <tr><td>toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value</td></tr>
-  <tr><td>+toggle</td><td>s[config-option] i[value 1] i[value 2]</td><td>Toggle config value via keypress</td></tr>
+  <tr><td>toggle</td><td>s[config-option] s[value 1] s[value 2]</td><td>Toggle config value</td></tr>
+  <tr><td>+toggle</td><td>s[config-option] s[value 1] s[value 2]</td><td>Toggle config value via keypress</td></tr>
   <tr><td>exec</td><td>r[file]</td><td>Execute the specified file</td></tr>
   <tr><td>dbg_lognetwork</td><td></td><td>Log the network</td></tr>
   <tr><td>bind</td><td>s[key] ?r[command]</td><td>Bind key to execute a command or view keybindings</td></tr>
   <tr><td>binds</td><td>?s[key]</td><td>Print command executed by this keybinding or all binds</td></tr>
   <tr><td>unbind</td><td>s[key]</td><td>Unbind key</td></tr>
   <tr><td>unbindall</td><td></td><td>Unbind all keys</td></tr>
-  <tr><td>zoom+</td><td></td><td>Zoom increase</td></tr>
-  <tr><td>zoom-</td><td></td><td>Zoom decrease</td></tr>
-  <tr><td>zoom</td><td>?i</td><td>Change zoom</td></tr>
+  <tr><td>zoom+</td><td>?f[amount]</td><td>Zoom increase</td></tr>
+  <tr><td>zoom-</td><td>?f[amount]</td><td>Zoom decrease</td></tr>
+  <tr><td>zoom</td><td>?f</td><td>Change zoom</td></tr>
   <tr><td>set_view</td><td>i[x]i[y]</td><td>Set camera position to x and y in the map</td></tr>
   <tr><td>set_view_relative</td><td>i[x]i[y]</td><td>Set camera position relative to current view in the map</td></tr>
   <tr><td>goto_switch</td><td>i[number]?i[offset]</td><td>View switch found (at offset) with given number</td></tr>
@@ -934,6 +967,7 @@ menu: |
   <tr><td>chat</td><td>s[&#x27;team&#x27;|&#x27;all&#x27;] ?r[message]</td><td>Enable chat with all/team mode</td></tr>
   <tr><td>+show_chat</td><td></td><td>Show chat</td></tr>
   <tr><td>echo</td><td>r[message]</td><td>Echo the text in chat window</td></tr>
+  <tr><td>clear_chat</td><td></td><td>Clear chat messages</td></tr>
   <tr><td>toggle_local_console</td><td></td><td>Toggle local console</td></tr>
   <tr><td>toggle_remote_console</td><td></td><td>Toggle remote console</td></tr>
   <tr><td>clear_local_console</td><td></td><td>Clear local console</td></tr>
