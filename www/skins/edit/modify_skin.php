@@ -263,8 +263,20 @@ function DoSkinAction($skin_json_file_name, &$skin_json, $explicit_skin_name = "
       $skinindex = 
       array_push(
             $skin_json->skins, 
-            json_decode("{ \"name\": \"$skinname\", \"type\": \"$skintype\", \"hd\": { \"uhd\": ".($skinisuhd || ($skinhdexisted && !$skinhdwasdropped) ? "true" : "false")." },".
-                        "\"creator\": \"$skincreator\", \"license\": \"$skinlicense\", \"bodypart\": \"$skinbodypart\", \"gameversion\": \"$skingameversion\", \"date\": \"$skincreatedate\", \"skinpack\": \"$skinpack\", \"imgtype\": \"png\" }")
+            (object) [
+              "name" => $skinname,
+              "type" => $skintype,
+              "hd" => (object) [
+                  "uhd" => $skinisuhd || ($skinhdexisted && !$skinhdwasdropped)
+              ],
+              "creator" => $skincreator,
+              "license" => $skinlicense,
+              "bodypart" => $skinbodypart,
+              "gameversion" => $skingameversion,
+              "date" => $skincreatedate,
+              "skinpack" => $skinpack,
+              "imgtype" => "png"
+            ]
       ) - 1;
 
       if(!is_dir("../skin"))
