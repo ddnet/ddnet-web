@@ -9,12 +9,14 @@
 :root {
   --bg: #d8efff;
   --bg-block: #ffffff;
+  --fg: #000000;
   --link: #882222;
 }
 
 html,
 body {
   background-color: var(--bg);
+  color: var(--fg);
   font-family: sans-serif;
   margin: 0;
   padding: 0;
