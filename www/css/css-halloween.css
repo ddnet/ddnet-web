@@ -1,10 +1,19 @@
 /* ========================= General ========================= */
 :root {
+  --bg: #2d2d2d;
+  --bg-block: #555555;
+  --border: #0008;
+  --fg: #dfdede;
+  --darken: rgba(0, 0, 0, 0.2);
+  --lighten: rgba(255, 255, 255, 0.4);
   --link: #ffa500;
   --hover: #e19201;
-  --bg: #2d2d2d;
-  --fg: #dfdede;
-  --bg-block: #555555;
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 .js-calendar-graph-svg {
@@ -52,9 +61,9 @@ a:hover {
 
 section .block,
 section .longblock {
-  background: #555555;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  background: var(--bg-block);
+  border: 1px solid var(--border);
+  box-shadow: 0px 0px 10px 5px var(--border);
 }
 
 /* ========================= Home ========================= */
@@ -79,20 +88,20 @@ section .longblock {
 .ui-widget-content {
   border: none !important;
   margin: 2px;
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--lighten);
 }
 
 .settingscommands tr {
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid var(--border);
 }
 
 body:not(#phpbb) code {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--darken);
   border-radius: 5px;
 }
 
 body:not(#phpbb) pre {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--darken);
   border-radius: 5px;
   padding: 5px;
 }
@@ -109,7 +118,7 @@ body:not(#phpbb) pre code {
   background: none;
 }
 .table > thead > tr > th {
-  border-bottom: 2px solid #222222;
+  border-bottom: 2px solid var(--border);
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -117,10 +126,10 @@ body:not(#phpbb) pre code {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  border-top: 1px solid #222222;
+  border-top: 1px solid var(--border);
 }
 .progress {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--lighten);
   background-image: none;
 }
 
@@ -138,7 +147,7 @@ body:not(#phpbb) pre code {
 
 .spacey .tablesorter-header,
 .unfinTable1 .tablesorter-header {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: var(--border) !important;
   background-image: url(/players-data/white-unsorted.gif) !important;
 }
 .spacey .tablesorter-headerAsc,
@@ -179,7 +188,7 @@ body:not(#phpbb) pre code {
 
 /* ========================= Statistics ========================= */
 .highcharts-container svg rect.highcharts-background {
-  fill: #555555;
+  fill: var(--bg-block);
 }
 
 .highcharts-title,
@@ -196,8 +205,8 @@ body:not(#phpbb) pre code {
   cursor: pointer;
 }
 .highcharts-contextmenu div {
-  border: 1px solid rgba(0, 0, 0, 0.2) !important;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid var(--darken) !important;
+  box-shadow: 0 5px 10px var(--darken) !important;
   background: #333333 !important;
   color: #c8c8c8 !important;
 }
@@ -210,32 +219,32 @@ body:not(#phpbb) pre code {
   color: #000000 !important;
 }
 .highcharts-contextmenu div hr {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--darken);
 }
 
 .highcharts-container svg g.highcharts-grid path,
 .highcharts-container svg g.highcharts-axis path {
-  stroke: #222222;
+  stroke: var(--border);
 }
 
 .highcharts-container svg g.highcharts-axis-labels text {
-  color: #cccccc !important;
-  fill: #cccccc !important;
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
 }
 
 .highcharts-container svg g.highcharts-range-input text {
-  color: #cccccc !important;
-  fill: #cccccc !important;
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
 }
 
 .highcharts-container svg g.highcharts-range-label text {
-  color: #cccccc !important;
-  fill: #cccccc !important;
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
 }
 
 .highcharts-container svg g.highcharts-range-selector-buttons text {
-  color: #cccccc !important;
-  fill: #cccccc !important;
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
 }
 
 .highcharts-container svg g.highcharts-button text {
@@ -244,8 +253,8 @@ body:not(#phpbb) pre code {
 }
 
 .highcharts-container svg g.highcharts-legend text {
-  color: #cccccc !important;
-  fill: #cccccc !important;
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
 }
 
 /* ========================= Forum ========================= */
