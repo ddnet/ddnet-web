@@ -170,6 +170,10 @@ a:hover {
   text-decoration: none;
 }
 
+#skinlist .vrow {
+  border-bottom: 1px solid var(--border);
+}
+
 #staff h3 a,
 #staff h4 a {
   color: var(--fg);

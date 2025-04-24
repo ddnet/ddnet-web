@@ -91,6 +91,10 @@ section .longblock {
   background: var(--lighten);
 }
 
+#skinlist .vrow {
+  border-bottom: 1px solid var(--border);
+}
+
 .settingscommands tr {
   border-bottom: 1px solid var(--border);
 }
