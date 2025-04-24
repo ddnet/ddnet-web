@@ -9,8 +9,11 @@
 :root {
   --bg: #d8efff;
   --bg-block: #ffffff;
+  --border: #aaaaaa;
   --fg: #000000;
+  --darken: #00000012;
   --link: #882222;
+  --accent: #aa4444;
 }
 
 html,
@@ -41,7 +44,7 @@ pre {
 
 .block {
   background-color: var(--bg-block);
-  border: 1px solid #aaaaaa;
+  border: 1px solid var(--border);
   padding: 0.5em 1.5em 1em 1.5em;
   position: relative;
   margin: 0 0 1em 0;
@@ -56,8 +59,8 @@ body:not(#phpbb) .block {
 }
 
 .longblock {
-  background-color: #ffffff;
-  border: 1px solid #aaaaaa;
+  background-color: var(--bg-block);
+  border: 1px solid var(--border);
   padding: 0.5em 1.5em 0.5em 1.5em;
   position: relative;
   text-align: justify;
@@ -91,18 +94,18 @@ body:not(#phpbb) .block {
   border-left: 10px solid var(--link);
   margin: 1.5em 0px;
   padding: 0.5em 10px;
-  background-color: #00000012;
+  background-color: var(--darken);
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
 body:not(#phpbb) code {
-  background-color: #00000012;
+  background-color: var(--darken);
   border-radius: 5px;
 }
 
 body:not(#phpbb) pre {
-  background-color: #00000012;
+  background-color: var(--darken);
   border-radius: 5px;
   padding: 5px;
 }
@@ -138,14 +141,14 @@ h1 {
 }
 
 .settingscommands tr {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid var(--border);
 }
 
 a,
 a:link,
 a:visited {
   font-weight: bold;
-  color: #aa4444;
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -159,7 +162,7 @@ a:visited {
 
 a:hover {
   font-weight: bold;
-  color: #882222;
+  color: var(--link);
   text-decoration: none;
 }
 
@@ -169,7 +172,7 @@ a:hover {
 
 #staff h3 a,
 #staff h4 a {
-  color: #000000;
+  color: var(--fg);
 }
 
 ul.staff li {
@@ -280,7 +283,7 @@ ul.staff ul {
 }
 
 body:not(#phpbb) code {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: var(--darken);
   border-radius: 2px;
   font-family: "Courier New", "Courier", monospace;
   padding: 0px 3px 1px 3px;
@@ -567,7 +570,7 @@ body:not(#phpbb) .time {
 .typeahead,
 .tt-query,
 .tt-hint {
-  border: 2px solid #ccc;
+  border: 2px solid var(--border);
   /*border-radius: 8px;*/
   font-size: 100%;
   height: 20px;
@@ -580,7 +583,7 @@ body:not(#phpbb) .time {
   background-color: #fff;
 }
 .typeahead:focus {
-  border: 2px solid #aa4444;
+  border: 2px solid var(--accent);
 }
 .tt-query {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
@@ -603,7 +606,7 @@ body:not(#phpbb) .time {
   padding: 3px 10px;
 }
 .tt-suggestion.tt-cursor {
-  background-color: #aa4444;
+  background-color: var(--accent);
   color: #fff;
 }
 .tt-suggestion p {
@@ -617,7 +620,7 @@ body:not(#phpbb) .time {
   text-align: center;
 }
 #multiple-datasets .league-name {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
   margin: 0 20px 5px;
   padding: 3px 0;
 }
@@ -966,7 +969,7 @@ body:not(#phpbb) .time {
   a:hover, *:visited:hover {
     text-decoration: none;
     background-color: transparent;
-    color: #882222;
+    color: var(--link);
   }
   */
 }
