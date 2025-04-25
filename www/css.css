@@ -170,6 +170,10 @@ a:hover {
   text-decoration: none;
 }
 
+#skinlist .vrow {
+  border-bottom: 1px solid var(--border);
+}
+
 #staff h3 a,
 #staff h4 a {
   color: var(--fg);
@@ -465,10 +469,13 @@ br {
 }
 
 .release {
+  background-color: var(--darken);
   text-align: center;
-  margin: auto;
-  max-width: 390px;
-  vertical-align: top;
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 8px;
+  max-width: 360px;
 }
 
 .div-ranks .block2 p {
