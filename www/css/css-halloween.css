@@ -95,10 +95,6 @@ section .longblock {
   border-bottom: 1px solid var(--border);
 }
 
-.settingscommands tr {
-  border-bottom: 1px solid var(--border);
-}
-
 body:not(#phpbb) code {
   background-color: var(--darken);
   border-radius: 5px;
