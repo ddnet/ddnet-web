@@ -140,8 +140,27 @@ h1 {
   font-size: 125%;
 }
 
-.settingscommands tr {
-  border-bottom: 1px solid var(--border);
+.settingscommands {
+  margin: 15px 0 10px 0;
+  width: 100%;
+  border: 1px solid #777;
+}
+
+.settingscommands td, .settingscommands th {
+  padding: 5px;
+  border-bottom: 1px solid #777;
+}
+
+.settingscommands tr:hover {
+  background: #ccc3;
+}
+
+.settingscommands .colorpreview {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ccc;
+  border-radius: 100%;
 }
 
 a,
