@@ -58,6 +58,7 @@ menu: |
 </table></div>
 <div style="overflow-x: auto;"><table class="settingscommands">
   <tr><th>Command</th><th>Arguments</th><th>Description</th></tr>
+  <tr><td>tune</td><td>s[tuning] ?f[value]</td><td>Tune variable to value</td></tr>
   <tr><td>tune_zone</td><td>i[zone] s[tuning] f[value]</td><td>Tune in zone a variable to value</td></tr>
   <tr><td>mapbug</td><td>s[mapbug]</td><td>Enable map compatibility mode using the specified bug (example: grenade-doubleexplosion@ddnet.tw)</td></tr>
   <tr><td>tune</td><td>s[tuning] ?f[value]</td><td>Tune variable to value or show current value</td></tr>
@@ -85,7 +86,7 @@ menu: |
   <tr><td>sv_vote_spectate_rejoindelay</td><td>How many minutes to wait before a player can rejoin after being moved to spectators by vote</td><td>3</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_vote_kick</td><td>Allow voting to kick players</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>sv_vote_kick_min</td><td>Minimum number of players required to start a kick vote</td><td>0</td><td>0</td><td>SERVER_64</td></tr>
-  <tr><td>sv_vote_kick_bantime</td><td>The time in seconds to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td><td>0</td><td>1440</td></tr>
+  <tr><td>sv_vote_kick_bantime</td><td>The time in minutes to ban a player if kicked by vote. 0 makes it just use kick</td><td>5</td><td>0</td><td>1440</td></tr>
   <tr><td>sv_join_vote_delay</td><td>Add a delay before recently joined players can call any vote or participate in a kick/spec vote (in seconds)</td><td>300</td><td>0</td><td>1000</td></tr>
   <tr><td>sv_old_teleport_weapons</td><td>Teleporting of all weapons (deprecated, use special entities instead)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>sv_old_teleport_hook</td><td>Hook through teleporter (deprecated, use special entities instead)</td><td>0</td><td>0</td><td>1</td></tr>
@@ -405,8 +406,6 @@ menu: |
   <tr><td>vote_no</td><td></td><td></td></tr>
   <tr><td>save_dry</td><td></td><td>Dump the current savestring</td></tr>
   <tr><td>dump_log</td><td>?i[seconds]</td><td>Show logs of the last i seconds</td></tr>
-  <tr><td>freezehammer</td><td>v[id]</td><td>Gives a player Freeze Hammer</td></tr>
-  <tr><td>unfreezehammer</td><td>v[id]</td><td>Removes Freeze Hammer from a player</td></tr>
 </table></div>
 </div>
 <div class="block">
@@ -505,7 +504,7 @@ menu: |
   <tr><td>cl_nameplates_ids</td><td>Show client IDs in name plates</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_ids_size</td><td>Size of the client IDs in name plates</td><td>50</td><td>-50</td><td>100</td></tr>
   <tr><td>cl_nameplates_ids_seperate_line</td><td>Show client IDs on a seperate line in name plates</td><td>0</td><td>0</td><td>1</td></tr>
-  <tr><td>cl_nameplates_offset</td><td>The size of the gap between the tee and the name plate</td><td>30</td><td>10</td><td>100</td></tr>
+  <tr><td>cl_nameplates_offset</td><td>The size of the gap between the tee and the name plate</td><td>30</td><td>10</td><td>50</td></tr>
   <tr><td>cl_nameplates_own</td><td>Show own name plate (useful for demo recording)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_friendmark</td><td>Show friend mark (♥) in name plates</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_nameplates_strong</td><td>Show strong/weak in name plates (0 - off, 1 - icons, 2 - icons + numbers)</td><td>0</td><td>0</td><td>2</td></tr>
@@ -513,6 +512,7 @@ menu: |
   <tr><td>cl_afk_emote</td><td>Show zzz emote next to afk players</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_text_entities</td><td>Render textual entity data</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_text_entities_size</td><td>Size of textual entity data from 1 to 100%</td><td>100</td><td>1</td><td>100</td></tr>
+  <tr><td>cl_text_entities_editor</td><td>Render textual entity data in editor</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>cl_streamer_mode</td><td>Censor sensitive information such as /save password</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>cl_authed_player_color</td><td>Color of name of authenticated player in scoreboard</td><td>5898211</td><td></td><td></td></tr>
   <tr><td>cl_same_clan_color</td><td>Clan color of players with the same clan as you in scoreboard.</td><td>5898211</td><td></td><td></td></tr>
@@ -588,6 +588,7 @@ menu: |
   <tr><td>cl_map_download_low_speed_limit</td><td>HTTP map downloads: Set low speed limit in bytes per second (0 to disable)</td><td>4000</td><td>0</td><td>100000</td></tr>
   <tr><td>cl_map_download_low_speed_time</td><td>HTTP map downloads: Set low speed limit time period (0 to disable)</td><td>3</td><td>0</td><td>100000</td></tr>
   <tr><td>cl_languagefile</td><td>What language file to use</td><td>&quot;&quot;</td><td></td><td></td></tr>
+  <tr><td>cl_skins_loaded_max</td><td>Maximum number of skins that can be loaded at the same time</td><td>512</td><td>256</td><td>8192</td></tr>
   <tr><td>cl_skin_download_url</td><td>URL used to download skins</td><td>&quot;https://skins.ddnet.org/skin/&quot;</td><td></td><td></td></tr>
   <tr><td>cl_skin_community_download_url</td><td>URL used to download community skins</td><td>&quot;https://skins.ddnet.org/skin/community/&quot;</td><td></td><td></td></tr>
   <tr><td>cl_vanilla_skins_only</td><td>Only show skins available in Vanilla Teeworlds</td><td>0</td><td>0</td><td>1</td></tr>
@@ -771,7 +772,6 @@ menu: |
   <tr><td>gfx_desktop_height</td><td>Desktop resolution height for detecting display changes (not recommended to change manually)</td><td>0</td><td>0</td><td>0</td></tr>
   <tr><td>gfx_borderless</td><td>Borderless window (not to be used with fullscreen)</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_fullscreen</td><td>Set fullscreen mode: 0=no fullscreen, 1=pure fullscreen, 2=desktop fullscreen, 3=windowed fullscreen</td><td>0</td><td>0</td><td>3</td></tr>
-  <tr><td>gfx_highdpi</td><td>Enable high-dpi</td><td>1</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_color_depth</td><td>Colors bits for framebuffer (fullscreen only)</td><td>24</td><td>16</td><td>24</td></tr>
   <tr><td>gfx_vsync</td><td>Vertical sync (may cause delay)</td><td>0</td><td>0</td><td>1</td></tr>
   <tr><td>gfx_display_all_video_modes</td><td>Show all video modes</td><td>0</td><td>0</td><td>1</td></tr>
@@ -820,6 +820,8 @@ menu: |
   <tr><td>cl_laser_door_outline_color</td><td>Laser outline color for doors</td><td>7667473</td><td></td><td></td></tr>
   <tr><td>cl_laser_freeze_inner_color</td><td>Laser inner color for freezes</td><td>12001153</td><td></td><td></td></tr>
   <tr><td>cl_laser_freeze_outline_color</td><td>Laser outline color for freezes</td><td>11613223</td><td></td><td></td></tr>
+  <tr><td>cl_laser_dragger_inner_color</td><td>Laser inner color for draggers</td><td>42398</td><td></td><td></td></tr>
+  <tr><td>cl_laser_dragger_outline_color</td><td>Laser outline color for draggers</td><td>57618</td><td></td><td></td></tr>
   <tr><td>cl_kill_message_normal_color</td><td>Kill message normal color</td><td>255</td><td></td><td></td></tr>
   <tr><td>cl_kill_message_highlight_color</td><td>Kill message highlight color</td><td>255</td><td></td><td></td></tr>
   <tr><td>cl_message_friend</td><td>Enable coloring and the heart for friends</td><td>1</td><td>0</td><td>1</td></tr>
@@ -976,6 +978,8 @@ menu: |
   <tr><td>dump_remote_console</td><td></td><td>Write remote console contents to a text file</td></tr>
   <tr><td>console_page_up</td><td></td><td>Previous page in console</td></tr>
   <tr><td>console_page_down</td><td></td><td>Next page in console</td></tr>
+  <tr><td>console_page_top</td><td></td><td>Last page in console</td></tr>
+  <tr><td>console_page_bottom</td><td></td><td>First page in console</td></tr>
   <tr><td>+left</td><td></td><td>Move left</td></tr>
   <tr><td>+right</td><td></td><td>Move right</td></tr>
   <tr><td>+jump</td><td></td><td>Jump</td></tr>
@@ -992,9 +996,9 @@ menu: |
   <tr><td>+emote</td><td></td><td>Open emote selector</td></tr>
   <tr><td>emote</td><td>i[emote-id]</td><td>Use emote</td></tr>
   <tr><td>gplay</td><td></td><td>Start playback of ghosts</td></tr>
+  <tr><td>+scoreboard</td><td></td><td>Show scoreboard</td></tr>
   <tr><td>add_favorite_skin</td><td>s[skin_name]</td><td>Add a skin as a favorite</td></tr>
   <tr><td>remove_favorite_skin</td><td>s[skin_name]</td><td>Remove a skin from the favorites</td></tr>
-  <tr><td>+scoreboard</td><td></td><td>Show scoreboard</td></tr>
   <tr><td>+spectate</td><td></td><td>Open spectator mode selector</td></tr>
   <tr><td>spectate</td><td>i[spectator-id]</td><td>Switch spectator mode</td></tr>
   <tr><td>spectate_next</td><td></td><td>Spectate the next player</td></tr>
