@@ -5,7 +5,7 @@ permalink: /news/tournament-39/
 ---
 New Brutal Tournament on "JustGeneric" by Skeptar will take place on Sunday, September 13 at 20:00 CEST:
 
-[<img class="demo" src="/JustGeneric.png" />](//forum.ddnet.org/viewtopic.php?f=21&t=2241)
+[<img class="demo" src="/_uploads/JustGeneric.png" />](//forum.ddnet.org/viewtopic.php?f=21&t=2241)
 
 There will be a German livestream by the great Hallowed1986!
 

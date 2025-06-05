@@ -29,7 +29,7 @@ Dino           2       280
 ```
 As DDNet is open source we continuously improve the game itself and the client experience. See the recent [changelogs](https://ddnet.org/downloads/) for new features and improvements. You can also contribute to DDNet yourself on [GitHub](https://github.com/ddnet/ddnet), including [client translations](https://ddnet.org/news/client-translations/) in your native language.
 
-<img class="demo" src="/code-changes.png" />
+<img class="demo" src="/_uploads/code-changes.png" />
 
 Come join our community on our [Discord Server](https://ddnet.org/discord)!
 

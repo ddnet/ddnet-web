@@ -7,7 +7,7 @@ tag: current
 
 Happy New Year 2022! We have a special photo capture event for the global DDNet community! Everyone can join one of the New Year Photshoot servers running in most regions now to be part of the community photo! Please only take a photo in one region, duplicates will be deleted.
 
-<img class="demo" src="/newyear.png" />
+<img class="demo" src="/_uploads/newyear.png" />
 
 If you are using DDNet on Steam you can use these links to connect directly to the servers:
 

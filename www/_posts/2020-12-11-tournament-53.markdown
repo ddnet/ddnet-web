@@ -7,7 +7,7 @@ tag: current
 
 I'm happy to present you this year's Christmas Tournament, the Brutal (★★★★✰) map "Arctic Frost" by [Silex](/mappers/Silex/), [Im 'corneum](/mappers/Im-32--39-corneum/) & [louis](/mappers/louis/):
 
-[<img class="demo" src="/Arctic_Frost.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7053)
+[<img class="demo" src="/_uploads/Arctic_Frost.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7053)
 
 The Tournament will be played next week on Sunday, December 20 at 18:00 CET (not this Sunday) on special Tournament servers in every DDNet location. No one has seen the map yet and the first finish will win! Team 0 is allowed.
 
