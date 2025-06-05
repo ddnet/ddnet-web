@@ -7,7 +7,7 @@ tag: current
 
 It's time for the first tournament of the year! We will play the brand-new Brutal (★★★★✰) map DEATHBOW by [Exotix](https://ddnet.org/mappers/Exotix/):
 
-[<img class="demo" src="/DEATHBOW.png" />](/DEATHBOW.png)
+[<img class="demo" src="/assets/DEATHBOW.png" />](/assets/DEATHBOW.png)
 
 The Tournament will be played on Sunday, March 15 at 18:00 CET on special Tournament servers in every DDNet location! No one has seen the map yet and the first finish will win! Team 0 will be allowed.
 
