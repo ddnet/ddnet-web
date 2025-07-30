@@ -6,7 +6,7 @@ tag: current
 ---
 As you might have noticed a new cheat has been discovered with Skep†icism. getting an impossibly good time on the Solo map Escape:
 
-[<img class="demo" src="/solo-cheat.png" />](https://discord.com/channels/252358080522747904/338779500085116938/777620722784665630)
+[<img class="demo" src="/_uploads/solo-cheat.png" />](https://discord.com/channels/252358080522747904/338779500085116938/777620722784665630)
 
 This bug has existed on DDNet for a long time and enabled one to play without solo mode on solo maps by following these easy steps:
 
