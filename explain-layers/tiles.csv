@@ -27,7 +27,6 @@ TileID,Title,Group,Description,Link
 25,Switch Deactivator,switch,Deactivates switch (e.g. deactivates laser door).,
 26,Teleporter,tele,"Teleports to teleporter exit with matching number, resets the teleported tee's hook.",
 27,Teleporter Exit,tele,Exit of various teleporters.,
-28,Speedup,,Speeds up the tee in a specified direction.,
 29,Checkpoint,checkpoint-tele,Sets current checkpoint of tee to the displayed number.,
 30,Checkpoint Teleporter Exit,checkpoint-tele,Teleporter exit for checkpoint teleporter.,
 31,Checkpoint Teleporter,checkpoint-tele,"Teleports to checkpoint teleporter exit with the number matching the current checkpoint of the tee, resets the teleported tee's hook.",

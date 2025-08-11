@@ -30,7 +30,7 @@ OUT_DIR="www/explain"
 	--output "${OUT_DIR}/tele.svg"
 
 ./explain-layers/update_explain_layers.py $ARGS \
-	--explain explain-layers/tiles.csv \
+	--explain explain-layers/speedup.csv \
 	--layer-image "${DDNET_DIR}/data/editor/speedup.png"\
 	--output "${OUT_DIR}/speedup.svg"
 
