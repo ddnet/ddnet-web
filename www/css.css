@@ -750,7 +750,6 @@ body:not(#phpbb) .time {
   }
 
   .title {
-    width: 21em;
     top: 0;
   }
 
@@ -761,6 +760,7 @@ body:not(#phpbb) .time {
 
   .title img {
     width: 100%;
+    margin-left: 16px;
   }
 
   menu {
