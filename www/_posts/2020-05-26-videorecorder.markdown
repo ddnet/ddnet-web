@@ -9,6 +9,6 @@ Thanks to sirius1242 & HMH we now have an official DDNet Client with Video Recor
 
 To record a demo click on Render at the bottom in the demo overview:
 
-<img class="demo" src="/videorecorder.png" />
+<img class="demo" src="/_uploads/videorecorder.png" />
 
 Please report problems on [GitHub](https://github.com/ddnet/ddnet/) or on [Discord](/discord).
