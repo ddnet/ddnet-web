@@ -4,6 +4,98 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="19.4"><a href="#19.4">DDNet 19.4</a></h3>
+<div class="dlfiles">
+  2025-09-09<br/><br/>
+  <ul>
+    <li><a href="DDNet-19.4-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-19.4-win-arm64.zip">Windows&nbsp;ARM</a></li>
+    <li><a href="DDNet-19.4-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-19.4-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-19.4-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-19.4-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-19.4.apk">Android</a></li>
+    <li><a href="DDNet-19.4.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>Touch controls editor</strong> [<strong>K1nop1c0</strong>]</li>
+    <li>[Client] <strong>Support live playback of demos while they are being recorded</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Client] <strong>Add preinputs - improve antiping player prediction</strong> [<strong>KebsCS</strong>]</li>
+    <li>[Editor] <strong>Keyboard support for fonts</strong> [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] <strong>Automatic quad clipping</strong> [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Add tex coords lookup table in order to improve map loading times [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Render 0.7 skins in server browser [<strong>dobrykafe</strong>]</li>
+    <li>[Client] Add debug render option [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Optimize quad rendering by grouping quads [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Improve skin handling performance [<strong>Robyt3</strong>]</li>
+    <li>[Client] Improve debug graphs [<strong>Robyt3</strong>]</li>
+    <li>[Client] Make binds prints the original bind command [<strong>Pioooooo</strong>]</li>
+    <li>[Client] Fix initial server browser refresh being delayed [<strong>Robyt3</strong>]</li>
+    <li>[Client] Add cl_chat_background_color [<strong>SollyBunny</strong>]</li>
+    <li>[Client] Fix and improve demo tuning handling [<strong>KebsCS</strong>]</li>
+    <li>[Client] Enable FrozenLastTick only if prediction supported [<strong>0xfaulty</strong>]</li>
+    <li>[Client] Add message to explain how to disable debug graphs [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix StrongWeak indicator for spec char [<strong>KebsCS</strong>]</li>
+    <li>[Client] Refactor swapchain sync object handling [<strong>Jupeyy</strong>]</li>
+    <li>[Client] Show error message in server browser when no master server found [<strong>Robyt3</strong>]</li>
+    <li>[Client] Predict freeze skin only for local player [<strong>KebsCS</strong>]</li>
+    <li>[Client] Fix hook collision line when a player is next to a tele [<strong>KebsCS</strong>]</li>
+    <li>[Client] Fix community icon pixel border rendering [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix invalid stopper prediction [<strong>KebsCS</strong>]</li>
+    <li>[Client] Fix overlays using wrong visual on borders [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Make demo recorder always record local camera setting [<strong>TsFreddie</strong>]</li>
+    <li>[Client] Delay g_Config.m_UiMousesens update until scrollbar release [<strong>dobrykafe</strong>]</li>
+    <li>[Client] Fix rescue resets switches [<strong>Pioooooo</strong>]</li>
+    <li>[Client] Fallback to 127.0.0.1 or [::1] when resolving localhost [<strong>heinrich5991</strong>]</li>
+    <li>[Client] Show more details in popup when graphics failed to be initialized [<strong>Robyt3</strong>]</li>
+    <li>[Client] Prevent loading server maps and recording demos with invalid names [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix laser bounce delay affecting other laser types beside rifle [<strong>AssassinTee</strong>]</li>
+    <li>[Client&amp;Server] Add support for Websockets with IPv6, network cleanup [<strong>Robyt3</strong>]</li>
+    <li>[Client&amp;Server] Add support for MSVC Edit &amp; Continue (Hot Reload) [<strong>KebsCS</strong>]</li>
+    <li>[Client&amp;Server] Fix handling of empty commands separated by semicolons [<strong>pilonpl</strong>]</li>
+    <li>[Editor] Add button to lock mouse to a single axis in editor [<strong>KebsCS</strong>]</li>
+    <li>[Editor] Add preview of selected game tile in editor tile popup [<strong>KebsCS</strong>]</li>
+    <li>[Editor] Fix incomplete editor grid [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix non-destructive brush with unused tiles [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Improve envelope editor color bar [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix color being transparent when editing multiple layers [<strong>dobrykafe</strong>]</li>
+    <li>[Editor] Only allow editor undo/redo when there is no active item [<strong>dobrykafe</strong>]</li>
+    <li>[Editor&amp;Client] Implement more precise group clipping [<strong>AssassinTee</strong>]</li>
+    <li>[Editor] Record brush draw action when releasing mouse outside of editor [<strong>dobrykafe</strong>]</li>
+    <li>[Server] Allow switching teams after finish [<strong>Scrumplex</strong>]</li>
+    <li>[Server] Use words instead of numbers for access level commands [<strong>ChillerDragon</strong>]</li>
+    <li>[Server] Add ability to disable sv_practice_by_default without server restart [<strong>KebsCS</strong>]</li>
+    <li>[Server] Adjust high bandwidth mode for individual clients [<strong>TsFreddie</strong>]</li>
+    <li>[Server] Fix connection-oriented 0.7 packets being unpacked twice [<strong>Robyt3</strong>]</li>
+    <li>[Server] Add broadcast_pl rcon command [<strong>pilonpl</strong>]</li>
+    <li>[Server] Fix afk state being reset on death [<strong>KebsCS</strong>]</li>
+    <li>[Server] Fix r/w sql server parameters [<strong>Spiritedswordsman</strong>]</li>
+    <li>[Server] Make killer of protected kill get strong hook on respawn [<strong>Pioooooo</strong>]</li>
+    <li>[Server] Add practice command 'back' [<strong>Pioooooo</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/19.3...19.4">full list of git changes</a>
+</div>
+<br/>
+<h3>Other Downloads</h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-win-arm64.zip">Windows&nbsp;ARM</a>, <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a>, <a href="DDNet-nightly.apk">Android</a> (<a href="DDNet-nightly.log">build log</a>)</li>
+  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="19.3"><a href="#19.3">DDNet 19.3</a></h3>
 <div class="dlfiles">
   2025-06-21<br/><br/>
@@ -61,23 +153,6 @@ title: Downloads - DDraceNetwork
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/19.2.1...19.3">full list of git changes</a>
 </div>
 <br/>
-<h3>Other Downloads</h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li id="nightly-builds">Nightly Builds: <a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a>, <a href="DDNet-nightly-win-arm64.zip">Windows&nbsp;ARM</a>, <a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a>, <a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a>, <a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a>, <a href="DDNet-nightly-macos.dmg">macOS</a>, <a href="DDNet-nightly.apk">Android</a> (<a href="DDNet-nightly.log">build log</a>)</li>
-  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="19.2"><a href="#19.2">DDNet 19.2.1</a></h3>
 <div class="dlfiles">
   2025-06-05<br/><br/>
