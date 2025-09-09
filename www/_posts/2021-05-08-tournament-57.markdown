@@ -7,7 +7,7 @@ tag: current
 
 I'm happy to present you this year's fourth Tournament, the Brutal (★✰✰✰✰) map Bollermann by [Cøke](/mappers/C-248-ke/):
 
-[<img class="demo" src="/Bollermann.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7148)
+[<img class="demo" src="/_uploads/Bollermann.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7148)
 
 The Tournament will be played on Sunday, May 16 at 20:00 CEST on special Tournament servers in every DDNet location. No one has seen the map yet and the best time after 90 min will win!
 

@@ -7,7 +7,7 @@ tag: current
 
 I'm happy to present you this year's third Tournament, the Brutal (★★★✰✰) map "Best of Three" by [Tridemy](/mappers/Tridemy/) & [Cøke](/mappers/C-248-ke/):
 
-[<img class="demo" src="/Best_of_Three.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7131)
+[<img class="demo" src="/_uploads/Best_of_Three.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7131)
 
 The Tournament will be played on Sunday, April 25 at 20:00 CEST on special Tournament servers in every DDNet location. No one has seen the map yet and the first finish will win! The map is for 3-player teams only!
 

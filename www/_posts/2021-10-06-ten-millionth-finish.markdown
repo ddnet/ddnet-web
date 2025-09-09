@@ -5,7 +5,7 @@ permalink: /news/ten-millionth-finish/
 tag: current
 ---
 
-[<img class="demo" src="/finishes-10000000.png" />](https://ddnet.org/stats/)
+[<img class="demo" src="/_uploads/finishes-10000000.png" />](https://ddnet.org/stats/)
 
 On Thursday, September 30, DDNet reached its ten millionth finish. It was by [MaKaBaKa](https://ddnet.org/players/MaKaBaKa/) on the map [Cool](https://ddnet.org/maps/Cool/) at 14:26:48 UTC+2.
 

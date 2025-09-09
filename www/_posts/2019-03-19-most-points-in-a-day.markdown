@@ -5,7 +5,7 @@ permalink: /news/most-posts-in-a-day/
 tag: current
 ---
 
-[<img class="demo" src="/points-earned.png" />](https://ddnet.org/stats/)
+[<img class="demo" src="/_uploads/points-earned.png" />](https://ddnet.org/stats/)
 
 On Sunday, March 17 DDNet broke its old record of the most points earned in a day! The points were made on the following server types:
 
