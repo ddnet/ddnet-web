@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A New Year, A Bigger Community"
-permalink: /news/new-year-bigger-community
+permalink: /news/new-year-bigger-community/
 tag: current
 ---
 
