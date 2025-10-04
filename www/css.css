@@ -163,6 +163,31 @@ h1 {
   border-radius: 100%;
 }
 
+.communitiestable {
+  margin: 15px 0 10px 0;
+  width: 100%;
+  border: 1px solid #777;
+}
+
+.communitiestable td, .communitiestable th {
+  padding: 5px;
+  border-bottom: 1px solid #777;
+}
+
+.communitiestable tr:hover {
+  background: #ccc3;
+}
+
+.communitiestable img {
+  height: 24px;
+  margin: 0px 8px 0px 4px;
+}
+
+.communitiestable ul {
+  margin: 0px;
+  padding-inline-start: 20px;
+}
+
 a,
 a:link,
 a:visited {
