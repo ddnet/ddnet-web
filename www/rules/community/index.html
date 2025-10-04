@@ -1,0 +1,190 @@
+---
+layout: default
+title: Community Rules - DDraceNetwork
+menu: |
+  <ul>
+    <li><a href="/#news">News</a> (<a href="/news/">all</a>)</li>
+    <li><a href="/server/">Server&nbsp;Features</a></li>
+    <li><a href="/client/">Client&nbsp;Features</a></li>
+    <li><a href="/map/">Map&nbsp;Features</a></li>
+    <li><a href="/mapping/">Mapping</a></li>
+    <li><a href="/binds/">Useful&nbsp;Binds</a></li>
+    <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
+    <li><a href="/rules/">Rules</a></li>
+    <li><a href="/renames/">Renames</a></li>
+    <li><a href="/funding/">Funding</a></li>
+  </ul>
+---
+<div class="block">
+  <h2 id="community-rules">Community Rules</h2>
+  <ol type="1">
+    <li>
+      <p>The community, its servers and playerbase should be established:</p>
+      <ol type="a">
+        <li>Servers should have been online continuously for at least 30 days.</li>
+        <li>Servers should have at least 30 concurrent players in the last 30 days.</li>
+        <li>Communities should have at least 2 public servers (listed in the server browser and not password-protected).</li>
+        <li>Communities should not be unions of different sub-communities.</li>
+      </ol>
+    </li>
+    <li>
+      <p>Servers must adhere to the <a href="/rules/master/">masterserver rules</a> at all times.</p>
+    </li>
+    <li>
+      <p>Servers and staff must maintain a friendly and SFW atmosphere:</p>
+      <ol type="a">
+        <li>DDNet has an age rating of <em>6 years (fantasy violence)</em> on <a href="https://store.steampowered.com/app/412220/DDNet/">Steam</a>, which must also apply to every official community.</li>
+        <li>Any monetary reward systems are prohibited. Accepting donations is allowed, as long as there are no differences in gameplay between donors and non-donors. Listing donors on a website as well as giving them Discord roles that have no additional permissions (style-only) is allowed.</li>
+        <li>This applies to all game servers as well as any other official presences of the community (Discord servers, social media accounts etc.).</li>
+      </ol>
+    </li>
+    <li>
+      <p>Servers must be actively administered:</p>
+      <ol type="a">
+        <li>
+          <p>Community staff members must not be banned on</p>
+          <ol type="1">
+            <li>DDNet servers globally for major rule violations,</li>
+            <li>the DDNet Discord server, or</li>
+            <li>the <a href="/rules/master/">masterserver</a>.</li>
+          </ol>
+          <p>We will notify the community administration before taking action based on this rule.</p>
+        </li>
+        <li>
+          <p>Administration must communicate in English and respond to contact within reasonable time.</p>
+        </li>
+        <li>
+          <p>Designate one or more administrators as community contacts, that we can readily contact for administrative reasons if we have to.</p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>There should be a clear way to contact administration and a reporting system in place:</p>
+      <ol type="a">
+        <li>Include contact information, like a link to your website or Discord server, in the server’s MOTD (<code>sv_motd</code>).</li>
+        <li>Provide a list of rules and explain how to report rule breaking behavior, for example with a chat command <code>/rules</code> that explains the rules on the server and how to report rule breaking behavior, and/or by adding this information to the server’s MOTD.</li>
+      </ol>
+    </li>
+  </ol>
+  <p>This list is not exhaustive. Additional rules may be applied retroactively at our discretion, including removing communities that violate the spirit of fair play or good conduct. Please contact us as described below, if you have any questions about the rules.</p>
+
+  <h3 id="community-names">Community names</h3>
+  <ul>
+    <li>The community name shown in the client is restricted to at most 63 bytes in UTF-8 encoding.</li>
+    <li>If your community name is not written in latin characters, then also provide a latin transliteration or abbreviation in parenthesis.</li>
+    <li>Consider the length of the community name being shown in the server browser filter.</li>
+    <li>Communities have an internal ID, which must be a unique string consisting of at most 31 lower case latin letters and underscores.</li>
+    <li>We will determine at our discretion whether community names are acceptable.</li>
+  </ul>
+
+  <h3 id="community-icons">Community icons</h3>
+  <ul>
+    <li>The community icon must be a 128x64 pixel RGBA PNG image (max. 50 KiB), which the client should be able to load successfully without error or warning.</li>
+    <li>You can test your icon by temporarily replacing the file <code>data/communityicons/none.png</code> with your icon. Check the console for errors and warnings after starting the client.</li>
+    <li>Test how your icon looks in the client. Avoid details and colors that would not be visible in the client.</li>
+    <li>Try to make your icon representative of your community or its name. Avoid too much similarity with icons of other communities.</li>
+    <li>Use an artstyle similar to the rest of the game.</li>
+    <li>We will determine at our discretion whether community icons are acceptable.</li>
+  </ul>
+
+  <h3 id="community-server-countries-and-types">Community server countries and types</h3>
+  <ul>
+    <li>Servers can be filtered in the server browser by countries/regions and types.</li>
+    <li>Set the country/region flag for each individual server in its server info, by setting the attribute <code>"flag"</code> to an integer representing the country code in ISO 3166-1 numeric format. On DDNet-based servers, the flag can be set with the <code>sv_flag</code> setting in the server configuration. A list of all available flags in ISO 3166-1 numeric can be found in the file <a href="https://github.com/ddnet/ddnet/blob/master/data/countryflags/index.txt"><code>data/countryflags/index.txt</code></a>.</li>
+    <li>Note that the community type filter may be revised or removed in a future version of the DDNet client. Community types are therefore automatically chosen based on the gametype of each individual server as backwards compatibility. Use a descriptive gametype name for each server so that filtering by gametype works.</li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2 id="community-administration">Community Administration</h2>
+  <p>Open an Admin-Mail ticket on our <a href="/discord">Discord server</a> for any issues regarding community servers:</p>
+  <ul>
+    <li>to request creating a community for your servers (please read the above rules carefully and ensure that you satisfy them),</li>
+    <li>to update your own community’s information or icon (please also contact us in advance if you plan to shutdown your community),</li>
+    <li>to report community servers that break the above rules (please provide the server IP address and describe which rule was broken), and</li>
+    <li>for any further questions and concerns about the community rules and administration.</li>
+  </ul>
+</div>
+
+<div class="block">
+  <h2 id="list-of-communities">List of Communities</h2>
+  <div id="communities-table-container"><noscript><p>Please enable JavaScript to see the list of communities.</p></noscript></div>
+  <script type="text/javascript">
+    async function LoadCommunities() {
+      const Response = await fetch('https://info.ddnet.org/info');
+      const Container = document.getElementById('communities-table-container');
+      if(!Response.ok) {
+        const ErrorParagraph = document.createElement('p');
+        ErrorParagraph.textContent = 'Failed to load community information.';
+        Container.replaceChildren(ErrorParagraph);
+        return;
+      }
+
+      const Data = await Response.json();
+      const TableElement = document.createElement('table');
+      TableElement.classList.add('communitiestable');
+
+      const HeaderRow = document.createElement('tr');
+      ['Community', 'Contact (external links)'].forEach(HeaderText => {
+        const HeaderCell = document.createElement('th');
+        HeaderCell.textContent = HeaderText;
+        HeaderRow.appendChild(HeaderCell);
+      });
+      TableElement.appendChild(HeaderRow);
+
+      for(const Community of Data['communities']) {
+        const CommunityRow = document.createElement('tr');
+
+        const CommunityCell = document.createElement('td');
+        const CommunityIcon = document.createElement('img');
+        CommunityIcon.src = Community['icon']['url'];
+        CommunityCell.appendChild(CommunityIcon);
+        CommunityCell.appendChild(document.createTextNode(Community['name']));
+        CommunityRow.appendChild(CommunityCell);
+
+        const ContactCell = document.createElement('td');
+        const ContactList = document.createElement('ul');
+        for(const ContactUrl of Community['contact_urls']) {
+          const ContactItem = document.createElement('li');
+          const ContactHref = document.createElement('a');
+          ContactHref.href = ContactUrl;
+          ContactHref.textContent = ContactUrl;
+          ContactItem.appendChild(ContactHref);
+          ContactList.appendChild(ContactItem);
+        }
+        ContactCell.appendChild(ContactList);
+        CommunityRow.appendChild(ContactCell);
+
+        TableElement.appendChild(CommunityRow);
+      }
+      Container.replaceChildren(TableElement);
+    }
+    LoadCommunities();
+  </script>
+</div>
+
+<div class="block">
+  <h2 id="technical-information-for-community-administrators">Technical information for community administrators</h2>
+  <ul>
+    <li>
+      <p>After we have determined that your community satisfies the criteria, you have to generate two tokens (community token and verification token) in order to identify your community with the masterserver:</p>
+      <ul>
+        <li>Run the script <a href="https://github.com/ddnet/ddnet/blob/master/scripts/generate_community_token.py"><code>scripts/generate_community_token.py</code></a> (with Python 3) to generate both tokens locally.</li>
+        <li>
+          <p>The <em>community token</em> (prefix <code>ddtc</code>) must be stored safely and secretly.</p>
+          <ul>
+            <li>When registering your servers with the masterserver over HTTPS, set the <code>Community-Token</code> header to the community token, in order to associate the server with your community. When hosting DDNet-based servers, this is accomplished with the <code>sv_register_community_token</code> setting in the server configuration.</li>
+            <li>To register older servers with the masterserver, that do not support registering over HTTPS, you can build and then preload <a href="https://github.com/heinrich5991/libtw2/tree/master/httphook-ldpreload">httphook-ldpreload</a> with your server according to the linked instructions.</li>
+          </ul>
+        </li>
+        <li>
+          <p>The <em>verification token</em> (prefix <code>ddvc</code>) should be sent to us in an Admin-Mail ticket when creating your community. We will store the verification token in order to verify the community token sent by your servers.</p>
+        </li>
+        <li>
+          <p>You may generate multiple, separate token pairs for different server locations, to reduce the impact of an individual community token being compromised. Either way, send all your verification tokens to us and keep all your community tokens secret.</p>
+        </li>
+      </ul>
+    </li>
+    <li>If you have reason to believe that your community token has been compromised, report this immediately by opening an Admin-Mail ticket on our Discord server. Generate a new pair of tokens and send us the verification token.</li>
+  </ul>
+</div>
