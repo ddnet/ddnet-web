@@ -1156,7 +1156,7 @@ var Tooltip = /** @class */ (function () {
                 anchorY: anchorY
             });
         });
-        /* If we have a seperate tooltip container, then update the necessary
+        /* If we have a separate tooltip container, then update the necessary
          * container properties.
          * Test that tooltip has its own container and renderer before executing
          * the operation.
