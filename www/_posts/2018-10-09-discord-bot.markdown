@@ -9,19 +9,19 @@ Recently the @DDNet bot on the official [DDNet Discord server](https://ddnet.org
 
 - `$profile <player>` shows a player's points, teamrank points and rank points:
 
-  <img class="demo" src="/profile_Starkiller.png" />
+  <img class="demo" src="/_uploads/profile_Starkiller.png" />
 
 - `$map <map>` shows a map's top finishes and other details:
 
-  <img class="demo" src="/map_profile_Cuboid.png" />
+  <img class="demo" src="/_uploads/map_profile_Cuboid.png" />
 
 - The info channel displays DDNet server statistics:
 
-  <img class="demo" src="/discord_info.png" />
+  <img class="demo" src="/_uploads/discord_info.png" />
 
 - For a while the newest map releases and records have already been announced:
 
-  <img class="demo" src="/discord_records.png" />
+  <img class="demo" src="/_uploads/discord_records.png" />
 
 For the new `$profile` and `$map` feature thanks to Oblikumquat for coding help, Ravie for drawing the game-tiles, Freezestyler for selecting the backgrounds and everyone who tested and suggested ideas. Thanks to Ryozuki for coding help for the info channel server statistics.
 

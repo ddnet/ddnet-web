@@ -7,7 +7,7 @@ tag: current
 
 I'm happy to present you this year's second Tournament, the Solo (★✰✰✰✰) map "Moventer" by [Themix](/mappers/Themix/):
 
-[<img class="demo" src="/Moventer.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7113)
+[<img class="demo" src="/_uploads/Moventer.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=7113)
 
 The Tournament will be played on Sunday, April 4 at 20:00 CEST on special Tournament servers in every DDNet location. No one has seen the map yet and the best time after 60 minutes will win! Since it's a Solo map the map is played alone.
 

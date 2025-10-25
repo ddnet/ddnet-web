@@ -6,7 +6,7 @@ permalink: /news/brutal-birthday-holiday-weekend/
 
 DDNet is now 3 years old and that means it's time for another big tournament this weekend, on August 6 and 7!
 
-[<img class="demo" src="/birthday3.png" />](//forum.ddnet.org/viewtopic.php?f=33&p=42062)
+[<img class="demo" src="/_uploads/birthday3.png" />](//forum.ddnet.org/viewtopic.php?f=33&p=42062)
 
 - Saturday, August 6: From 00:00 to 19:30 CEST we play the old Novice map "*Multimap*" by TPaul. The best team time during this period wins.
 - Saturday, August 6, 20:00 CEST: New Brutal (2\*) map "*Tropical Island*" by RayB. The first team to finish wins.
