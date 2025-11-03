@@ -7,45 +7,8 @@ tag: current
 
 Current DDNet client translation status showing how many of the messages are translated:
 
-```
-100% ukrainian
-100% turkish
-99% traditional_chinese
-99% spanish
-99% slovak
-99% simplified_chinese
-99% russian
-99% polish
-99% czech
-99% brazilian_portuguese
-93% korean
-89% german
-88% swedish
-88% romanian
-88% belarusian
-86% dutch
-86% danish
-86% azerbaijani
-83% portuguese
-83% persian
-82% french
-75% estonian
-73% finnish
-65% serbian
-63% galician
-62% hungarian
-56% serbian_cyrillic
-54% italian
-47% catalan
-44% japanese
-43% norwegian
-43% arabic
-37% bosnian
-21% kyrgyz
-21% greek
-21% esperanto
-20% chuvash
-20% bulgarian
-```
+[<img src="https://hosted.weblate.org/widget/ddnet/multi-auto.svg" alt="Translation status" style="background: #eee; border-radius: 10px;" />](https://hosted.weblate.org/engage/ddnet/)
 
-If you want to help translate: For the translation edit the respective language file in [data/languages](https://github.com/ddnet/ddnet/tree/master/data/languages) and create a [Pull Request on GitHub](https://github.com/ddnet/ddnet/) (or just send it to us on [Discord](/discord/)).
+If you want to help translate: register on [Weblate](https://hosted.weblate.org/engage/ddnet/) to contribute to the translation project.
+Refer to the [Weblate documentation](https://docs.weblate.org/en/latest/index.html) for an introduction into translating with Weblate.
+To suggest adding translation for another language: open an [Issue on GitHub](https://github.com/ddnet/ddnet/issues).
