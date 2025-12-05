@@ -4,54 +4,38 @@ var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 var costs = {
-  "ddnet":  421 + 60 + 59 + 27, // includes vpn
-  "master": [47, 47, "Gummibaer12345"], // hetzner.com
-  "master2": [51, 339, "Gummibaer12345"], // dmit.io
-  "db":     609,
-  "ger1":   [312, 312, "Davide"], // lowhosting.com
+  "ddnet":  757 + 60 + 59 + 27, // includes vpn
+  "master":  43, // hetzner.com
+  "master2":120, // dmit.io
+  "ger1":   288, // lowhosting.com
   "ger2":   "heinrich5991", // hetzner.com
-  "ger3":   260, // lowhosting.com
-  "pol":    [82, 99, "orbilo"], // ovh.com
-  "fin":    60, // hetzner.com
-  "rus1":   [338, 352, "BratOK"], // selectel.ru
-  "rus2":   [187, 608, "BratOK, Voix & Ayanksht"], // myarena.ru
-  "rus4":   29, // hetzner.com
-  "rus6":   29, // hetzner.com
-  "bhr":    61, // lightnode.com
+  "pol":     53, // ovh.com
+  "rus1":    84, // myarena.ru
+  "rus2":   720, // myarena.ru
+  "bhr":     61, // lightnode.com
   "irn":    "Murphy",
-  "chl":    [156, 156, "Konsti"], // grupocg.cl
-  "bra1":   97, // linode.com
-  "bra2":   97, // linode.com
+  "chl":    156, // grupocg.cl
+  "bra":     97, // linode.com
   "arg":    "Miguilim",
-  "usa1":   [87, 100, "IsaacElenbaas"], // nfoservers.com
-  "usa2":   [50, 50, "YupHio"], // hetzner.com
-  "usa3":   [34, 50, "YupHio"], // nfoservers.com
-  "usa4":   [45, 45, "gorp"], // hetzner.com
-  "chn":    [120, 240, "TsFreddie"], // layerstack.com
-  "chn0":   "星辰.",
-  "chn1":   "紫川",
+  "usa1":   100, // nfoservers.com
+  "usa2":    64, // hetzner.com
+  "usa4":    64, // hetzner.com
   "chn2":   "Pioooooo",
   "chn3":   "丁薇",
   "chn4":   "Bamcane",
   "chn5":   "吧唧",
-  "chn6":   "SuY1Ran",
-  "chn7":   "mixun",
-  "chn8":   "满月",
-  "chn9":   "Zerol Acqua",
-  "chn10":  "Coke",
-  "chn11":   "星辰.",
   "twn":    207, // lightnode.com
   "kor":    140, // vultr.com
-  "sgp":    [65, 70, "wik"], // linode.com
-  "ind":    70, // linode.com
-  "aus":    43, // ovh.com
-  "zaf":    [58, 66, "Bloodslain, <BµmM>"], // ivecloud.co.za
+  "sgp":     70, // linode.com
+  "ind":     70, // linode.com
+  "aus":     43, // ovh.com
+  "zaf":     66, // ivecloud.co.za
 };
-var donated = 1508;
-var yearStr = "2025";
-var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253 + /*2023:*/ 3308 + /*2024 WIP*/ 4973;
-var donatedOld = 18187;
-var yearStrOld = "2013-24";
+var donated = 0;
+var yearStr = "2026";
+var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253 + /*2023:*/ 3308 + /*2024:*/ 4973 + /*2025:*/ 4803;
+var donatedOld = 18187 + /*2025:*/ 3140;
+var yearStrOld = "2013-25";
 
 var sum = 0;
 var sumToPay = 0;
