@@ -3,7 +3,7 @@
 var isArray = Array.isArray || function(arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
-var costs = {
+var data = {
   "ddnet":  421 + 60 + 59 + 27, // includes vpn
   "master": [47, 47, "Gummibaer12345"], // hetzner.com
   "master2": [51, 339, "Gummibaer12345"], // dmit.io
@@ -53,62 +53,54 @@ var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/
 var donatedOld = 18187;
 var yearStrOld = "2013-24";
 
-var sum = 0;
-var sumToPay = 0;
-var sumPartSponsored = 0;
 var num = 0
-for (var server in costs) {
-  if (costs.hasOwnProperty(server)) {
-    var val = costs[server];
-    if (val.toFixed) {
-      sum += val;
-      sumToPay += val;
-      num += 1;
-    } else if (isArray(val)) {
-      sum += val[1];
-      sumToPay += val[1] - val[0];
-      sumPartSponsored += val[0];
-      num += 1;
-    }
-  }
-}
-
-var donatedRest = 0;
+var sumCosts = 0;
+var sumDirect = 0;
+var cost = {};
 var paid = {};
-for (var server in costs) {
-  if (costs.hasOwnProperty(server)) {
-    var val = costs[server];
-    paid[server] = 0;
-    if (donatedRest > 0) {
-      paid[server] += donatedRest;
-      donatedRest = 0;
-    }
+for (var server in data) {
+  if (data.hasOwnProperty(server)) {
+    var val = data[server];
     if (val.toFixed) {
-      paid[server] += val * donated / sumToPay;
-      if (paid[server] > val) {
-        donatedRest += paid[server] - val;
-        paid[server] = val;
-      }
+      num += 1;
+      sumCosts += val;
+      cost[server] = val;
+      paid[server] = 0;
     } else if (isArray(val)) {
-      paid[server] += (val[1] - val[0]) * donated / sumToPay + val[0];
-      if (paid[server] > val[1]) {
-        donatedRest += paid[server] - val[1];
-        paid[server] = val[1];
-      }
-    } else {
+      num += 1;
+      sumCosts += val[1];
+      sumDirect += val[0];
+      cost[server] = val[1];
+      paid[server] = val[0];
     }
   }
 }
 
-var total = donated + sumPartSponsored;
-if (total > sum) {
-  donatedOld += total - sum;
-  total = sum;
+var distribute = donated;
+var distributeNext = distribute;
+// this only loops while, in the last run, a server became fully funded
+while (distribute > 1) {
+  for (var server in data) {
+    if (data.hasOwnProperty(server)) {
+      if (data[server].toFixed || isArray(data[server])) {
+        var add = Math.min(cost[server]-paid[server], (distribute / sumCosts) * cost[server]);
+        paid[server] += add;
+        distributeNext -= add;
+      }
+    }
+  }
+  distribute = distributeNext;
+}
+
+var total = donated + sumDirect;
+if (total > sumCosts) {
+  donatedOld += total - sumCosts;
+  total = sumCosts;
 }
 var elements = [];
-var value = 100 * total / sum;
+var value = 100 * total / sumCosts;
 var color = '#F6A828';
-if (total >= sum) {
+if (total >= sumCosts) {
   color = '#37d628';
 }
 elements = document.querySelectorAll("#funding-total");
@@ -119,18 +111,18 @@ elements.forEach(function(element, index, array) {
 elements = document.querySelectorAll("#funding-total .progress-label");
 elements.forEach(function(element, index, array) {
   if (element.textContent !== undefined)
-    element.textContent = total.toFixed() + " € donated / " + sum + " € cost " + yearStr;
+    element.textContent = total.toFixed() + " € donated / " + sumCosts + " € cost " + yearStr;
   else
-    element.innerText = total.toFixed() + " € donated / " + sum + " € cost " + yearStr;
+    element.innerText = total.toFixed() + " € donated / " + sumCosts + " € cost " + yearStr;
 });
 elements = document.querySelectorAll("#funding-total .ui-widget-header");
 elements.forEach(function(element, index, array) {
   element.style.backgroundColor = color;
 });
 
-for (var server in costs) {
-  if (costs.hasOwnProperty(server)) {
-    var val = costs[server];
+for (var server in data) {
+  if (data.hasOwnProperty(server)) {
+    var val = data[server];
     var value = 0;
     var text = '';
     var color = '#F6A828';
