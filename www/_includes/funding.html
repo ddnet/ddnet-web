@@ -47,6 +47,7 @@ var data = {
   "aus":    43, // ovh.com
   "zaf":    [58, 66, "Bloodslain, <BµmM>"], // ivecloud.co.za
 };
+var infraNum = 4; // ddnet ... db
 var donated = 1508;
 var yearStr = "2025";
 var costOld = 1540 + /*2018:*/ 917 + /*2019:*/ 1327 + /*2020:*/ 1118 + /*2021:*/ 2612 + /*2022:*/ 3253 + /*2023:*/ 3308 + /*2024 WIP*/ 4973;
@@ -54,98 +55,154 @@ var donatedOld = 18187;
 var yearStrOld = "2013-24";
 
 var num = 0
-var sumCosts = 0;
+var sumCost = 0;
 var sumDirect = 0;
 var cost = {};
 var paid = {};
+var regionNets = {};
 for (var server in data) {
   if (data.hasOwnProperty(server)) {
+    num += 1;
     var val = data[server];
     if (val.toFixed) {
-      num += 1;
-      sumCosts += val;
+      sumCost += val;
       cost[server] = val;
       paid[server] = 0;
     } else if (isArray(val)) {
-      num += 1;
-      sumCosts += val[1];
+      sumCost += val[1];
       sumDirect += val[0];
       cost[server] = val[1];
       paid[server] = val[0];
     }
-  }
-}
-
-var distribute = donated;
-var distributeNext = distribute;
-// this only loops while, in the last run, a server became fully funded
-while (distribute > 1) {
-  for (var server in data) {
-    if (data.hasOwnProperty(server)) {
-      if (data[server].toFixed || isArray(data[server])) {
-        var add = Math.min(cost[server]-paid[server], (distribute / sumCosts) * cost[server]);
-        paid[server] += add;
-        distributeNext -= add;
-      }
+    else {
+      cost[server] = 0;
+      paid[server] = 0;
+      continue;
+    }
+    if (num > infraNum) {
+      var region = server.replace(/\d+$/, "");
+      regionNets[region] = (regionNets[region] || 0) + (cost[server] - paid[server]);
     }
   }
-  distribute = distributeNext;
 }
+var totalPaid = donated + sumDirect;
 
-var total = donated + sumDirect;
-if (total > sumCosts) {
-  donatedOld += total - sumCosts;
-  total = sumCosts;
-}
-var elements = [];
-var value = 100 * total / sumCosts;
-var color = '#F6A828';
-if (total >= sumCosts) {
-  color = '#37d628';
-}
-elements = document.querySelectorAll("#funding-total");
-elements.forEach(function(element, index, array) {
-  element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
-  element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
-});
-elements = document.querySelectorAll("#funding-total .progress-label");
-elements.forEach(function(element, index, array) {
-  if (element.textContent !== undefined)
-    element.textContent = total.toFixed() + " € donated / " + sumCosts + " € cost " + yearStr;
-  else
-    element.innerText = total.toFixed() + " € donated / " + sumCosts + " € cost " + yearStr;
-});
-elements = document.querySelectorAll("#funding-total .ui-widget-header");
-elements.forEach(function(element, index, array) {
-  element.style.backgroundColor = color;
-});
 
+var distribute = donated;
+var infraCost = 0;
+var infraPaid = 0;
+var i = 0;
 for (var server in data) {
   if (data.hasOwnProperty(server)) {
+    i++;
+    if (i > infraNum) break;
+    infraCost += cost[server];
+    if (cost[server] - paid[server] < distribute) {
+      distribute -= cost[server] - paid[server];
+      paid[server] = cost[server];
+    }
+    else {
+      paid[server] += distribute;
+      distribute = 0;
+    }
+    infraPaid += paid[server];
+  }
+}
+var regionsCost = sumCost - infraCost;
+var regionsPaid = totalPaid - infraPaid;
+
+
+for (var region in regionNets) {
+  if (regionNets[region] == 0) delete regionNets[region];
+}
+orderedRegionNets = Object.keys(regionNets).sort(function(left, right) {
+  return regionNets[right] - regionNets[left];
+});
+console.log("Unmet cost percentages:");
+for (var region of orderedRegionNets) {
+  console.log(region.toUpperCase() + ": " + Math.round(100 * (regionNets[region] / (regionsCost - regionsPaid))) + "%");
+}
+
+
+if (totalPaid > sumCost) {
+  donatedOld += totalPaid - sumCost;
+  totalPaid = sumCost;
+}
+function metaValue(id) {
+  switch(id) {
+    case "funding-total":
+      return 100 *   totalPaid /     sumCost;
+    case "funding-infra":
+      return 100 *   infraPaid /   infraCost;
+    case "funding-regions":
+      return 100 * regionsPaid / regionsCost;
+    default:
+      return 0;
+  }
+}
+function metaText(id) {
+  switch(id) {
+    case "funding-total":
+      return totalPaid.toFixed() + " € donated / " + sumCost + " € cost " + yearStr;
+    case "funding-infra":
+      return   infraPaid.toFixed() + " / " +   infraCost + " €";
+    case "funding-regions":
+      return regionsPaid.toFixed() + " / " + regionsCost + " €";
+    default:
+      return "FIXME";
+  }
+}
+var elements = [];
+elements = document.querySelectorAll("#funding-total, #funding-infra, #funding-regions");
+elements.forEach(function(element, index, array) {
+  var value = metaValue(element.id);
+  var color = '#F6A828';
+  if (value >= 100) {
+    color = '#37d628';
+  }
+  var text = metaText(element.id);
+  element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
+  element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+
+  elements = element.querySelectorAll(".progress-label");
+  elements.forEach(function(element, index, array) {
+    if (element.textContent !== undefined)
+      element.textContent = text;
+    else
+      element.innerText = text;
+  });
+
+  elements = element.querySelectorAll(".ui-widget-header");
+  elements.forEach(function(element, index, array) {
+    element.style.backgroundColor = color;
+  });
+});
+
+var i = 0;
+for (var server in data) {
+  if (data.hasOwnProperty(server)) {
+    i++;
     var val = data[server];
     var value = 0;
     var text = '';
-    var color = '#F6A828';
     if (val.toFixed) {
-      value = 100 * paid[server] / val;
-      text = (paid[server]).toFixed() + " / " + val + " €";
-      if (paid[server] >= val) {
-        color = '#37d628';
-      }
+      text = paid[server].toFixed() + " / " + cost[server].toFixed() + " €";
     } else if (isArray(val)) {
-      value = 100 * paid[server] / val[1];
-      text = (paid[server]).toFixed() + " / " + val[1] + " €";
-      if (paid[server] >= val[1]) {
-        color = '#37d628';
-      }
+      text = paid[server].toFixed() + " / " + cost[server].toFixed() + " €";
       if (val.length > 2) {
         text += " (sponsored by " + val[2] + ")";
       }
     } else {
-      value = 100;
       text = "sponsored by " + val;
+    }
+    var color = '#F6A828';
+    if (paid[server] >= cost[server]) {
       color = '#37d628';
     }
+    else if (i > infraNum) {
+      text += ", " + Math.round(100 * ((cost[server] - paid[server]) / (regionsCost - regionsPaid))) + "% of unmet costs";
+    }
+    var value = (cost[server] > 0) ? 100 * (paid[server] / cost[server]) : 100;
     elements = document.querySelectorAll("#funding-" + server);
     elements.forEach(function(element, index, array) {
       element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
@@ -165,7 +222,7 @@ var value = 100 * donatedOld / costOld;
 color = '#F6A828';
 if (donatedOld >= costOld) {
   color = '#37d628';
-}  
+}
 elements = document.querySelectorAll("#funding-old");
 elements.forEach(function(element, index, array) {
   element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
