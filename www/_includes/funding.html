@@ -57,6 +57,7 @@ var yearStrOld = "2013-24";
 var num = 0
 var sumCost = 0;
 var sumDirect = 0;
+var sumRegionsDirect = 0;
 var cost = {};
 var paid = {};
 var regionNets = {};
@@ -71,6 +72,9 @@ for (var server in data) {
     } else if (isArray(val)) {
       sumCost += val[1];
       sumDirect += val[0];
+      if (num > infraNum) {
+        sumRegionsDirect += val[0];
+      }
       cost[server] = val[1];
       paid[server] = val[0];
     }
@@ -119,6 +123,7 @@ orderedRegionNets = Object.keys(regionNets).sort(function(left, right) {
   return regionNets[right] - regionNets[left];
 });
 console.log("Unmet cost percentages:");
+console.log("(may be much greater than 100% if near goal)");
 for (var region of orderedRegionNets) {
   console.log(region.toUpperCase() + ": " + Math.round(100 * (regionNets[region] / (regionsCost - regionsPaid))) + "%");
 }
@@ -199,9 +204,6 @@ for (var server in data) {
     if (paid[server] >= cost[server] || regionsPaid >= regionsCost) {
       color = '#37d628';
     }
-    else if (i > infraNum) {
-      text += ", " + Math.round(100 * ((cost[server] - paid[server]) / (regionsCost - regionsPaid))) + "% of unmet costs";
-    }
     var value = (cost[server] > 0) ? 100 * (paid[server] / cost[server]) : 100;
     elements = document.querySelectorAll("#funding-" + server);
     elements.forEach(function(element, index, array) {
@@ -210,8 +212,7 @@ for (var server in data) {
       if (i > infraNum && paid[server] < cost[server]) {
           element.lastElementChild.style.float = "left";
           element.lastElementChild.style.border = "0px";
-          value = 100 * ((regionsPaid / regionsCost) * ((cost[server] - paid[server]) / cost[server]));
-          console.log(value);
+          value = 100 * (((regionsPaid - sumRegionsDirect) / (regionsCost - sumRegionsDirect)) * ((cost[server] - paid[server]) / cost[server]));
           element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
           element.lastElementChild.style.opacity = "30%";
           element.lastElementChild.style.float = "left";
