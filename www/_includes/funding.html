@@ -109,7 +109,7 @@ for (var server in data) {
   }
 }
 var regionsCost = sumCost - infraCost;
-var regionsPaid = totalPaid - infraPaid;
+var regionsPaid = Math.min(regionsCost, totalPaid - infraPaid);
 
 
 for (var region in regionNets) {
@@ -196,7 +196,7 @@ for (var server in data) {
       text = "sponsored by " + val;
     }
     var color = '#F6A828';
-    if (paid[server] >= cost[server]) {
+    if (paid[server] >= cost[server] || regionsPaid >= regionsCost) {
       color = '#37d628';
     }
     else if (i > infraNum) {
@@ -207,6 +207,15 @@ for (var server in data) {
     elements.forEach(function(element, index, array) {
       element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
       element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+      if (i > infraNum && paid[server] < cost[server]) {
+          element.lastElementChild.style.float = "left";
+          element.lastElementChild.style.border = "0px";
+          value = 100 * ((regionsPaid / regionsCost) * ((cost[server] - paid[server]) / cost[server]));
+          console.log(value);
+          element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+          element.lastElementChild.style.opacity = "30%";
+          element.lastElementChild.style.float = "left";
+      }
     });
     elements = document.querySelectorAll("#funding-" + server + " .progress-label");
     elements.forEach(function(element, index, array) {
