@@ -6,4 +6,4 @@ tag: current
 ---
 The Photoshoot 2024 is finished! Check out the [final image](/newyear2024/):
 
-[<img class="demo" src="/newyear2024.jpg" />](/newyear2024/)
+[<img class="demo" src="/_uploads/newyear2024.jpg" />](/newyear2024/)
