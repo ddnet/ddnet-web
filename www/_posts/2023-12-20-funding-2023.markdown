@@ -9,4 +9,4 @@ Thanks to all [donors](/funding/) donating a total of 3314 € and sponsoring se
 
 I'm happy to announce we don't take donations any more until next year! Thanks to everyone for donating money and time to make DDNet better!
 
-[<img class="demo" src="/fundingsecured2023.png" />](/funding/)
+[<img class="demo" src="/_uploads/fundingsecured2023.png" />](/funding/)
