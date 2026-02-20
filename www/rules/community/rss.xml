@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+	<channel>
+		<title>DDNet - Community Rules Changelog</title>
+		<link>https://ddnet.org/rules/community/</link>
+		<description>Changes to the DDNet community rules.</description>
+		<language>en-us</language>
+		<lastBuildDate>Fri, 20 Feb 2026 00:00:00 GMT</lastBuildDate>
+		<item>
+			<title>Add changelog and RSS feed</title>
+			<link>https://ddnet.org/rules/community/</link>
+			<guid>community-rules-2026-02-20-1</guid>
+			<pubDate>Fri, 20 Feb 2026 00:00:00 GMT</pubDate>
+			<description><![CDATA[See <a href="https://github.com/ddnet/ddnet-web/pull/359">the PR on GitHub</a> for details.]]></description>
+		</item>
+		<item>
+			<title>Clarify community rule regarding monetary rewards</title>
+			<link>https://ddnet.org/rules/community/</link>
+			<guid>community-rules-2026-02-06-1</guid>
+			<pubDate>Fri, 6 Feb 2026 00:00:00 GMT</pubDate>
+			<description><![CDATA[See <a href="https://github.com/ddnet/ddnet-web/pull/358">the PR on GitHub</a> for details.]]></description>
+		</item>
+		<item>
+			<title>Add official community rules</title>
+			<link>https://ddnet.org/rules/community/</link>
+			<guid>community-rules-2025-02-20-1</guid>
+			<pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate>
+			<description><![CDATA[See <a href="https://github.com/ddnet/ddnet-web/pull/343">the PR on GitHub</a> for details.]]></description>
+		</item>
+	</channel>
+</rss>
