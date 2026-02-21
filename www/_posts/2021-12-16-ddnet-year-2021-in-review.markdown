@@ -14,7 +14,7 @@ We released DDNet [on Steam](https://store.steampowered.com/app/412220/DDraceNet
 
 Using the ratings data from Steam we appear to be on [#621 of all games](https://club.steam250.com/app/412220), [#60 of Free to Play games](https://steam250.com/tag/free_to_play), [#19 of 2D Platformers](https://steam250.com/tag/2d_platformer). It turns out that by combining a few categories on Steam you can quickly get down to only one game existing. DDNet is apparently the only Free to Play Online Co-Op 2D Precision-Platformer:
 
-<img class="demo" src="/steamcategory.png" />
+<img class="demo" src="/_uploads/steamcategory.png" />
 
 Our bad ratings seem to fall into two categories largely, which are both reasonable criticisms from my perspective:
 
@@ -59,7 +59,7 @@ We now have about 1200 players online average (+41% compared to one year ago), 1
 
 Check out this annotated [player-hours development](https://ddnet.org/stats/):
 
-<img class="demo" src="/playersannotated.png" />
+<img class="demo" src="/_uploads/playersannotated.png" />
 
 You can clearly see when the summer vacation and large Chinese holidays like Golden Week occur. The large purple line are our Chinese servers, and you can clearly see their increase in popularity. For the Korean and Taiwanese streams/videos you can also spot where I had to quickly turn new servers on for these locations to handle the incoming new players.
 

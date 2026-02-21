@@ -7,7 +7,7 @@ tag: current
 
 It's time for the fourth tournament of the year! We will play the brand-new Brutal (★★★★★) map Behemoth 2 by [Pulsar](https://ddnet.org/mappers/Pulsar/), [Ravie](https://ddnet.org/mappers/Ravie/) & [Sorah](https://ddnet.org/mappers/Sorah/):
 
-[<img class="demo" src="/Behemoth_2.png" />](//forum.ddnet.org/viewtopic.php?f=14&t=7537)
+[<img class="demo" src="/_uploads/Behemoth_2.png" />](//forum.ddnet.org/viewtopic.php?f=14&t=7537)
 
 The Tournament will be played on Sunday, October 30 at 18:00 CET (summer time end on same day!) on special Tournament servers in every DDNet location! No one has seen the map yet and the first finish will win!
 

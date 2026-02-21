@@ -7,7 +7,7 @@ tag: current
 
 DDNet is turning 7 years old and I am glad to present you with 2 weeks fully packed with 10 maps from Pulsar and Ravie, consisting of 6 regular releases and 4 unique tournaments!
 
-[<img class="demo" src="/7thbirthday2.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=6953)
+[<img class="demo" src="/_uploads/7thbirthday2.png" />](//forum.ddnet.org/viewtopic.php?f=33&t=6953)
 
 The event will begin on Monday, August 3 and end on Sunday, August 16.
 More details with complete schedule on the [forum](//forum.ddnet.org/viewtopic.php?f=33&t=6953).
