@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Tournament #64: DEATHBOW by Exotix"
+permalink: /news/tournament-64/
+tag: current
+---
+
+It's time for the first tournament of the year! We will play the brand-new Brutal (★★★★✰) map DEATHBOW by [Exotix](https://ddnet.org/mappers/Exotix/):
+
+[<img class="demo" src="/DEATHBOW.png" />](/DEATHBOW.png)
+
+The Tournament will be played on Sunday, March 15 at 18:00 CET on special Tournament servers in every DDNet location! No one has seen the map yet and the first finish will win!
+
+Thanks to [catseyenebulous](/players/catseyenebulous/) and [Knuski](/mappers/Knuski/) for testing the map! The results will later be available on the [Tournament page](/tournaments/64/).
