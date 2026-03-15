@@ -6,4 +6,4 @@ tag: current
 ---
 The [Photoshoot from a few weeks ago](/news/happy-new-year-2022/) is finished! Thanks to [TsFreddie](https://github.com/TsFreddie) for creating the [final image](/newyear2022/)!
 
-[<img class="demo" src="/newyear2022.jpg" />](/newyear2022/)
+[<img class="demo" src="/_uploads/newyear2022.jpg" />](/newyear2022/)
