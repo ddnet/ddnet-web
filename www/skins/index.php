@@ -353,6 +353,10 @@ title: Skin Database - DDraceNetwork
 
   var JS_GET = GetParams(document.location.search);
 
+  function SortBy(SortName, DirName) {
+    SetLocationParams(JS_GET['search'] || '', SortName, DirName);
+  }
+
   function GetTableHeaderNameInline(SortName, DisplayName) {
     var Ret = "'', '')";
     if (JS_GET['sort'] == SortName && JS_GET['dir'] == "down")
@@ -592,7 +596,7 @@ title: Skin Database - DDraceNetwork
     var SkinDownloaderObj = document.getElementById("skin_download_link");
 
     var StrAndMode = GetSearchStrAndMode();
-    var SearchStr = StrAndMode.SearchStr;
+    var SearchStr = new Option(StrAndMode.SearchStr).innerHTML;
     var SearchMode = StrAndMode.SearchMode;
     var InnerHTML = "";
     if (SearchMode == "creator") {
@@ -678,13 +682,13 @@ title: Skin Database - DDraceNetwork
   function DrawSkinListHeaderRow() {
     let InnerHTML = '';
     InnerHTML += "<div class='ourgriditemheader ourgriditem1'>";
-    InnerHTML += "</div><div class='ourgriditemheader ourgriditem2'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("name", "Name") + "</a>";
-    InnerHTML += "</div><div class='ourgriditemheader ourgriditem3'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("type", "Group") + "</a>";
-    InnerHTML += "</div><div class='ourgriditemheader ourgriditem4'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("creator", "Creator") + "</a>";
-    InnerHTML += "</div><div class='ourgriditemheader ourgriditem5'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("skin_pack", "Skin Pack") + "</a>";
-    InnerHTML += "</div><div class='ourgriditemheader ourgriditem6'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("release_date", "Release Date") + "</a>";
-    InnerHTML += "</div><div class='ourgriditemheader ourgriditem7'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("license", "License") + "</a>";
-    InnerHTML += "</div><div class='ourgriditemheader ourgriditem8'><a href=\"javascript:SetLocationParams('" + JS_GET['search'] + "', " + GetTableHeaderNameInline("uhd", "UHD") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem2'><a href=\"javascript:SortBy(" + GetTableHeaderNameInline("name", "Name") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem3'><a href=\"javascript:SortBy(" + GetTableHeaderNameInline("type", "Group") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem4'><a href=\"javascript:SortBy(" + GetTableHeaderNameInline("creator", "Creator") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem5'><a href=\"javascript:SortBy(" + GetTableHeaderNameInline("skin_pack", "Skin Pack") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem6'><a href=\"javascript:SortBy(" + GetTableHeaderNameInline("release_date", "Release Date") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem7'><a href=\"javascript:SortBy(" + GetTableHeaderNameInline("license", "License") + "</a>";
+    InnerHTML += "</div><div class='ourgriditemheader ourgriditem8'><a href=\"javascript:SortBy(" + GetTableHeaderNameInline("uhd", "UHD") + "</a>";
     InnerHTML += "</div><div class='ourgriditemheader ourgriditem9'></div>";
     return InnerHTML;
   }
