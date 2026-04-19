@@ -4,6 +4,92 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="19.9"><a href="#19.9">DDNet 19.9</a></h3>
+<div class="dlfiles">
+  2026-04-26<br/><br/>
+  <ul>
+    <li><a href="DDNet-19.9-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-19.9-win-arm64.zip">Windows&nbsp;ARM</a></li>
+    <li><a href="DDNet-19.9-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-19.9-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-19.9-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-19.9-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-19.9.apk">Android</a></li>
+    <li><a href="DDNet-19.9.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>Sort server browser by favorites</strong> [<strong>AssassinTee</strong>]</li>
+    <li>[Client] <strong>Quad clipping for unbuffered backends</strong> [<strong>AssassinTee</strong>]</li>
+    <li>[Client] <strong>Show actual map in Discord activity</strong> [<strong>Robyt3</strong>]</li>
+    <li>[Client&amp;Server] <strong>Rewrite snapshot building and delta in Rust</strong> [<strong>heinrich5991</strong>]</li>
+    <li>[Client] Disable predict events by default, add checkbox in settings [<strong>Pioooooo</strong>]</li>
+    <li>[Client] Keep selected player highlighted while scoreboard popup is open [<strong>Robyt3</strong>]</li>
+    <li>[Client] Add tooltips to demo browser buttons [<strong>ProfSapphire</strong>]</li>
+    <li>[Client] Improve fatal error popups for graphics errors [<strong>Robyt3</strong>]</li>
+    <li>[Client] Prevent binding to escape and hide it as completion option [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix visual hook delay [<strong>Teero888</strong>]</li>
+    <li>[Client] Fix hook collision line of unpredicted players having wrong tunings [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Fix input data not being stored with cl_dummy_control 1 [<strong>KebsCS</strong>]</li>
+    <li>[Client] Fix airjump being detected if you only have 1 jump [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Fix warmup timer positioning [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix default graphics blend mode with OpenGL 1 [<strong>Robyt3</strong>]</li>
+    <li>[Client] Fix client crash connecting to same websockets port after shutdown [<strong>Robyt3</strong>]</li>
+    <li>[Client] Overhaul crash log parsing [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Optimize ingame entities, render entities in switch layer [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Use resize-H/V cursors while using axis lock [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Preserve quad art group for undo/redo [<strong>ProfSapphire</strong>]</li>
+    <li>[Editor] Fix layer/group dragging stuck when loading/clearing map [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix brush selection rectangle being rendered multiple times [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix envelope point clamping when multiple points selected [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Fix speedup angle 0 not reachable with tile adjust hotkey [<strong>Robyt3</strong>]</li>
+    <li>[Client&amp;Server] Fix speedups not working at 0/0 and top left map border [<strong>AssassinTee</strong>]</li>
+    <li>[Client&amp;Server] Implement more precise millisecond time function [<strong>AssassinTee</strong>]</li>
+    <li>[Client&amp;Server] Enable STL debug mode [<strong>Robyt3</strong>]</li>
+    <li>[Server] Give unpractice caller strong hook on respawn [<strong>Pioooooo</strong>]</li>
+    <li>[Server] Fix set_team_ddr and uninvite applying to empty player slots [<strong>Robyt3</strong>]</li>
+    <li>[Server] Make start and end round virtual [<strong>ChillerDragon</strong>]</li>
+    <li>[Server] Add FindPlayerByName() helper [<strong>ChillerDragon</strong>]</li>
+    <li>[Server] Don't assert if weapon = -1 [<strong>qxdFox</strong>]</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/19.8...19.9">full list of git changes</a>
+</div>
+<br/>
+<hr/>
+<h3 id="nightly-builds"><a href="#nightly-builds">Nightly Builds</a></h3>
+<p>Nightly builds are updated every night based on the latest changes in the <a href="https://github.com/ddnet/ddnet">GitHub repository</a>.
+Nightly builds are intended for testing and early access to features and bug fixes, but they might contain new bugs as well.
+If you encounter bugs, please report them by opening an issue on <a href="https://github.com/ddnet/ddnet/issues">GitHub</a> or in the #bugs channel on our <a href="https://ddnet.org/discord">Discord server</a>.</p>
+<ul>
+  <li><a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a></li>
+  <li><a href="DDNet-nightly-win-arm64.zip">Windows&nbsp;ARM</a></li>
+  <li><a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a></li>
+  <li><a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+  <li><a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+  <li><a href="DDNet-nightly-macos.dmg">macOS</a></li>
+  <li><a href="DDNet-nightly.apk">Android</a></li>
+  <li><a href="DDNet-nightly.tar.xz">Source</a></li>
+  <li><a href="DDNet-nightly.log">Build log</a></li>
+</ul>
+<hr/>
+<h3 id="other-downloads"><a href="#other-downloads">Other Downloads</a></h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="19.8"><a href="#19.8">DDNet 19.8.2</a></h3>
 <div class="dlfiles">
   2026-04-19<br/><br/>
@@ -61,39 +147,6 @@ title: Downloads - DDraceNetwork
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/19.7...19.8.2">full list of git changes</a>
 </div>
 <br/>
-<hr/>
-<h3 id="nightly-builds"><a href="#nightly-builds">Nightly Builds</a></h3>
-<p>Nightly builds are updated every night based on the latest changes in the <a href="https://github.com/ddnet/ddnet">GitHub repository</a>.
-Nightly builds are intended for testing and early access to features and bug fixes, but they might contain new bugs as well.
-If you encounter bugs, please report them by opening an issue on <a href="https://github.com/ddnet/ddnet/issues">GitHub</a> or in the #bugs channel on our <a href="https://ddnet.org/discord">Discord server</a>.</p>
-<ul>
-  <li><a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a></li>
-  <li><a href="DDNet-nightly-win-arm64.zip">Windows&nbsp;ARM</a></li>
-  <li><a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a></li>
-  <li><a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
-  <li><a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
-  <li><a href="DDNet-nightly-macos.dmg">macOS</a></li>
-  <li><a href="DDNet-nightly.apk">Android</a></li>
-  <li><a href="DDNet-nightly.tar.xz">Source</a></li>
-  <li><a href="DDNet-nightly.log">Build log</a></li>
-</ul>
-<hr/>
-<h3 id="other-downloads"><a href="#other-downloads">Other Downloads</a></h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="19.7"><a href="#19.7">DDNet 19.7</a></h3>
 <div class="dlfiles">
   2026-01-22<br/><br/>
