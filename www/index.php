@@ -75,7 +75,11 @@ function getOS() {
 }
 
 $user_os = getOS();
+<<<<<<< HEAD
 $version = '19.8.1';
+=======
+$version = '19.9';
+>>>>>>> f9a379ca (Version 19.9)
 
 if ($user_os == 'win32') {
   print '<p class="download"><span class="big"><a href="/downloads/DDNet-' . $version . '-win32.zip">Download DDraceNetwork Client &amp; Server ' . $version . ' for Windows (32bit)</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>';
