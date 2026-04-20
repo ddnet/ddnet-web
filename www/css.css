@@ -155,6 +155,10 @@ h1 {
   background: #ccc3;
 }
 
+.settingscommands tr:has(a:target) {
+  background: #bbf3;
+}
+
 .settingscommands .colorpreview {
   display: inline-block;
   width: 10px;
