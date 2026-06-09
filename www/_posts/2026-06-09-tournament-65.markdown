@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Tournament #65: TheRottingHalls by Pipou, VéNa, tatak & Nehr"
+permalink: /news/tournament-65/
+tag: current
+---
+
+It's time for another great tournament! We will play the brand-new Brutal (★★★✰✰) map TheRottingHalls by [Pipou](https://ddnet.org/mappers/Pipou/), [VéNa](https://ddnet.org/mappers/V-233-Na/), [tatak](https://ddnet.org/mappers/tatak/) & [Nehr](https://ddnet.org/mappers/Nehr/):
+
+[<img class="demo" src="/assets/TheRottingHalls.png" />](/tournaments/65/)
+
+The Tournament will be played on Saturday, June 13 at 20:00 CEST on special Tournament servers in every DDNet location! No one has seen the map yet, only 2 player teams are allowed, and the team with the best time after 2 hours wins!
+
+Thanks to [J$ON](https://ddnet.org/mappers/J-36-ON/) and [Ybivawka~](https://ddnet.org/mappers/Ybivawka~/) for testing the map! The results will later be available on the [Tournament page](/tournaments/65/).
