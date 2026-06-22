@@ -105,18 +105,14 @@
         background-color: #136497;
       }
 
-      #btnSteam img {
+      #btnSteam img,
+      #btnDDNet img {
         width: 20px;
         height: 20px;
       }
 
       #btnDDNet {
         background-color: #609bcc;
-      }
-
-      #btnDDNet img {
-        width: 20px;
-        height: 20px;
       }
 
       @media (max-width: 480px) {
@@ -171,24 +167,45 @@
             changeBackground(getThumbnailUrl(mapName));
           }
 
-          const message = `Join <strong>${clientCount}</strong> player(s) on <strong>${mapName}</strong>. Select your preferred client:`;
-          showModal(name, message, true);
+          const message = document.createElement('span');
+
+          message.append('Join ');
+
+          const players = document.createElement('strong');
+          players.textContent = clientCount;
+          message.append(players);
+
+          message.append(' player(s) on ');
+
+          const map = document.createElement('strong');
+          map.textContent = mapName;
+          message.append(map);
+
+          message.append('.');
+          message.append(document.createElement('br'));
+          message.append('Select your preferred client:');
+          showModal(name, message);
         } catch (error) {
-          showModal('Error', `Could not connect to the master server. You can still try to join <strong>${addr}</strong> below:`, true);
+          const message = document.createElement('span');
+          message.append('Could not connect to the master server.');
+          message.append(document.createElement('br'));
+          message.append('You can still try to join ');
+          const addrStrong = document.createElement('strong');
+          addrStrong.textContent = addr;
+          message.append(addrStrong);
+          message.append(' below:');
+
+          showModal('Error', message);
         }
       });
 
-      let bgX = 0;
-      let bgY = 0;
       const limit = 20;
-      const speed = 0.05;
-
       document.addEventListener('mousemove', e => {
         const centerX = window.innerWidth / 2;
         const centerY = window.innerHeight / 2;
 
-        bgX = ((e.clientX - centerX) / centerX) * limit;
-        bgY = ((e.clientY - centerY) / centerY) * limit;
+        const bgX = ((e.clientX - centerX) / centerX) * limit;
+        const bgY = ((e.clientY - centerY) / centerY) * limit;
 
         document.body.style.setProperty('--x', `${-bgX}px`);
         document.body.style.setProperty('--y', `${-bgY}px`);
@@ -205,8 +222,7 @@
           const servers = data.servers || [];
 
           // Try to match the address (IP:Port)
-          const server = servers.find(s => s.addresses && s.addresses.some(a => a.includes(addr)));
-
+          const server = servers.find(s => s.addresses?.some(a => a.includes(addr)));
           if (!server) return fallback;
 
           return {
@@ -231,21 +247,25 @@
           setTimeout(() => {
             document.body.style.backgroundImage = `url('${newImgUrl}')`;
             overlay.style.opacity = '0';
-          }, 800);
+          }, 600); // this needs to match CSS transition duration
         };
       }
 
-      function showModal(title, message, isHtml = false) {
+      function showModal(title, message) {
         const modal = document.getElementById('DDNet-Connect');
         const modalTitle = document.getElementById('Title');
         const modalMessage = document.getElementById('Description');
 
         modalTitle.textContent = title;
-        if (isHtml) {
-          modalMessage.innerHTML = message;
+
+        modalMessage.replaceChildren();
+
+        if (message instanceof Node) {
+          modalMessage.appendChild(message);
         } else {
           modalMessage.textContent = message;
         }
+
         modal.style.display = 'block';
       }
 
