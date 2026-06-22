@@ -1,113 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Connect to server</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect to Server - DDNet</title>
     <style>
-        body {
-            font-family: 'Arial', 'Helvetica', sans-serif;;
-            background-image: url('bg/banana.png');
-            background-size: cover;
-            background-position: center center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        position: relative;
+        overflow: hidden;
+        background-color: #1a1a1a;
+        background-position: center;
+        background-size: cover;
+        background-image: url('bg/banana.png'); /* tf2 reference? */
+      }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 15%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.5);
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-        }
+      body::before,
+      #bg-overlay {
+        content: '';
+        position: fixed;
+        inset: -20px;
+        background-size: cover;
+        background-position: center;
+        filter: blur(10px) brightness(0.75);
+        z-index: -1;
+        transform: scale(1.1) translate(var(--x, 0px), var(--y, 0px));
+        will-change: transform;
+      }
 
-        h2 {
-            color: #609bcc;
-            margin-top: 5px;
-        }
+      body::before {
+        background-image: inherit;
+      }
 
-        p {
-            color: #495057;
-        }
+      #bg-overlay {
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+      }
 
-        button {
-            background-color: #82befb;
-            color: #fff;
-            width: 100px;
-            height: 30px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            line-height: 10px;
-        }
+      .modal {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        max-width: 450px;
+        width: 90%;
+        text-align: center;
+        backdrop-filter: blur(5px);
+      }
 
-        button:hover {
-            background-color: #6499e2;
+      h2 {
+        color: #136497;
+        margin: 0 0 10px 0;
+        font-size: 1.5rem;
+      }
+
+      p {
+        color: #444;
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      button {
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition:
+          transform 0.2s,
+          filter 0.2s;
+        flex: 1;
+      }
+
+      button:hover {
+        filter: brightness(1.1);
+        transform: translateY(-2px);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      #btnSteam {
+        background-color: #136497;
+      }
+
+      #btnSteam img,
+      #btnDDNet img {
+        width: 20px;
+        height: 20px;
+      }
+
+      #btnDDNet {
+        background-color: #609bcc;
+      }
+
+      @media (max-width: 480px) {
+        .button-container {
+          flex-direction: column;
         }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="bg-overlay"></div>
     <div id="DDNet-Connect" class="modal">
-        <h2 id="Title"></h2>
-        <p id="Description"></p>
-        <button id="btnSteam">Steam</button>
-        <button id="btnDDNet">Standalone</button>
+      <h2 id="Title">Connecting...</h2>
+      <p id="Description">Fetching server information...</p>
+      <div class="button-container">
+        <button id="btnSteam">
+          <img src="icons/steam.png" alt="Steam" />
+          Steam
+        </button>
+        <button id="btnDDNet">
+          <img src="icons/ddnet.png" alt="DDNet" />
+          Standalone
+        </button>
+      </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const addr = (new URLSearchParams(window.location.search).get('addr') || '').replace(/\/$/, '');
+      document.addEventListener('DOMContentLoaded', async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const addr = (urlParams.get('addr') || '').replace(/\/$/, '');
 
-            if (addr) {
-                const title = await getServerName(addr);
-                const message = "Would you like to join via Steam or Standalone?";
-                showModal(title, message);
-
-                document.getElementById('btnSteam').addEventListener('click', () => {
-                    window.location.href = `steam://run/412220//${addr}`;
-                });
-
-                document.getElementById('btnDDNet').addEventListener('click', () => {
-                    window.location.href = `ddnet://${addr}`;
-                });
-            }
-        });
-
-		async function getServerName(addr) {
-			const response = await fetch("https://master1.ddnet.org/ddnet/15/servers.json");
-			const jsondata = await response.json();
-			const serverList = jsondata.servers;
-
-			for (const server of serverList) {
-				const addresses = server.addresses || [];
-				if (addresses.includes(`tw-0.6+udp://${addr}`)) {
-					return server.info.name;
-                }
-            }
-            return "Unknown Server";
-		}
-
-
-        function showModal(title, message) {
-            const modal = document.getElementById('DDNet-Connect');
-            const modalTitle = document.getElementById('Title');
-            const modalMessage = document.getElementById('Description');
-            modalTitle.textContent = title;
-            modalMessage.textContent = message;
-            modal.style.display = 'block';
+        if (!addr) {
+          showModal('Missing Address', 'Please provide a server address in the URL (e.g., ?addr=1.2.3.4:8303)');
+          return;
         }
+
+        const modal = document.getElementById('DDNet-Connect');
+        modal.style.display = 'block';
+
+        document.getElementById('btnSteam').onclick = () => {
+          window.location.href = `steam://run/412220//${addr}/`;
+        };
+
+        document.getElementById('btnDDNet').onclick = () => {
+          window.location.href = `ddnet://${addr}`;
+        };
+
+        try {
+          const { name, mapName, clientCount } = await getDataFromMaster(addr);
+
+          if (mapName && mapName !== 'Unknown Map') {
+            changeBackground(getThumbnailUrl(mapName));
+          }
+
+          const message = document.createElement('span');
+
+          message.append('Join ');
+
+          const players = document.createElement('strong');
+          players.textContent = clientCount;
+          message.append(players);
+
+          message.append(' player(s) on ');
+
+          const map = document.createElement('strong');
+          map.textContent = mapName;
+          message.append(map);
+
+          message.append('.');
+          message.append(document.createElement('br'));
+          message.append('Select your preferred client:');
+          showModal(name, message);
+        } catch (error) {
+          const message = document.createElement('span');
+          message.append('Could not connect to the master server.');
+          message.append(document.createElement('br'));
+          message.append('You can still try to join ');
+          const addrStrong = document.createElement('strong');
+          addrStrong.textContent = addr;
+          message.append(addrStrong);
+          message.append(' below:');
+
+          showModal('Error', message);
+        }
+      });
+
+      const limit = 20;
+      document.addEventListener('mousemove', e => {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        const bgX = ((e.clientX - centerX) / centerX) * limit;
+        const bgY = ((e.clientY - centerY) / centerY) * limit;
+
+        document.body.style.setProperty('--x', `${-bgX}px`);
+        document.body.style.setProperty('--y', `${-bgY}px`);
+      });
+
+      async function getDataFromMaster(addr) {
+        const fallback = { name: 'Unknown Server', mapName: 'Unknown Map', clientCount: '?' };
+
+        try {
+          const response = await fetch('https://master1.ddnet.org/ddnet/15/servers.json');
+          if (!response.ok) return fallback;
+
+          const data = await response.json();
+          const servers = data.servers || [];
+
+          // Try to match the address (IP:Port)
+          const server = servers.find(s => s.addresses?.some(a => a.includes(addr)));
+          if (!server) return fallback;
+
+          return {
+            name: server.info?.name || fallback.name,
+            mapName: server.info?.map?.name || fallback.mapName,
+            clientCount: server.info?.clients?.filter(c => c?.is_player).length ?? fallback.clientCount
+          };
+        } catch (error) {
+          console.error('Master server fetch failed:', error);
+          return fallback;
+        }
+      }
+
+      function changeBackground(newImgUrl) {
+        const img = new Image();
+        img.src = newImgUrl;
+        img.onload = () => {
+          const overlay = document.getElementById('bg-overlay');
+          overlay.style.backgroundImage = `url('${newImgUrl}')`;
+          overlay.style.opacity = '1';
+
+          setTimeout(() => {
+            document.body.style.backgroundImage = `url('${newImgUrl}')`;
+            overlay.style.opacity = '0';
+          }, 600); // this needs to match CSS transition duration
+        };
+      }
+
+      function showModal(title, message) {
+        const modal = document.getElementById('DDNet-Connect');
+        const modalTitle = document.getElementById('Title');
+        const modalMessage = document.getElementById('Description');
+
+        modalTitle.textContent = title;
+
+        modalMessage.replaceChildren();
+
+        if (message instanceof Node) {
+          modalMessage.appendChild(message);
+        } else {
+          modalMessage.textContent = message;
+        }
+
+        modal.style.display = 'block';
+      }
+
+      function getThumbnailUrl(mapName) {
+        const formattedName = mapName.replace(/[^a-zA-Z0-9]/g, '_');
+        return `https://ddnet.org/ranks/maps/${formattedName}.png`;
+      }
     </script>
-</body>
+  </body>
 </html>
