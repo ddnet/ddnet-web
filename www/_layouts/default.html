@@ -38,19 +38,7 @@
       <div class="fade">
         <menu class="contentleft">
         <div class="title"><h1><a href="/"><img class="logobig" alt="DDraceNetwork" src="/ddnet2.svg"/><img class="logosmall" alt="DDraceNetwork" src="/ddnet.svg"/></a></h1></div>
-          <ul class="big">
-            <li><a href="/status/">Status</a></li>
-            <li><a href="/ranks/">Ranks</a></li>
-            <li><a href="/releases/">Map Releases</a></li>
-            <li><a href="/discord">Discord</a> / <a href="//forum.ddnet.org/">Forum</a></li>
-            <li><a href="//wiki.ddnet.org/">Wiki</a></li>
-            <li><a href="/downloads/">Downloads</a> / <a href="/steam/">Steam</a></li>
-            <li><a href="/tournaments/">Tournaments</a></li>
-            <li><a href="/skins/">Skin Database</a></li>
-            <li><a href="/stats/">Statistics</a></li>
-            <li><a href="/staff/">Staff &amp; Contact</a></li>
-            <li><a href="/switch-theme/">Switch Theme</a></li>
-          </ul>
+          {{ site.data.menus.nav | flatify }}
           {{ page.menu | flatify }}
           {{ site.data.menus[page.menu-extern] | flatify }}
         </menu>

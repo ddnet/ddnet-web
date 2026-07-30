@@ -5,19 +5,7 @@ head: |
   <link rel="alternate" type="application/atom+xml" title="DDNet News" href="/feed/" />
   <link rel="stylesheet" href="/funding/jquery-ui-1.8.22.custom.css" />
   <script src="/youtube.js?version=3" type="text/javascript"></script>
-menu: |
-  <ul>
-    <li><a href="#news">News</a> (<a href="/news/">all</a>)</li>
-    <li><a href="/server/">Server&nbsp;Features</a></li>
-    <li><a href="/client/">Client&nbsp;Features</a></li>
-    <li><a href="/map/">Map&nbsp;Features</a></li>
-    <li><a href="/mapping/">Mapping</a></li>
-    <li><a href="/binds/">Useful&nbsp;Binds</a></li>
-    <li><a href="/settingscommands/">Settings&nbsp;&amp;&nbsp;Commands</a></li>
-    <li><a href="/rules/">Rules</a></li>
-    <li><a href="/renames/">Renames</a></li>
-    <li><a href="/funding/">Funding</a></li>
-  </ul>
+menu-extern: subnav
 ---
 <div class="block">
 <h2>DDRace Servers and much more!</h2>
