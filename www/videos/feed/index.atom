@@ -1,0 +1,28 @@
+---
+layout: null
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>{{ site.title }} Videos</title>
+ <link href="{{ site.url }}/videos/feed/" rel="self"/>
+ <link href="{{ site.url }}/videos/"/>
+ {% assign newest = site.data.videos | first %}
+ <updated>{{ newest.date | date_to_xmlschema }}</updated>
+ <id>{{ site.url }}/videos/</id>
+ <author>
+   <name>{{ site.author.name }}</name>
+ </author>
+
+ {% for video in site.data.videos limit:20 %}
+ <entry>
+   <title>{{ video.title | default: video.id | xml_escape }}</title>
+   <link href="https://www.youtube.com/watch?v={{ video.id }}"/>
+   <updated>{{ video.date | date_to_xmlschema }}</updated>
+   <id>https://www.youtube.com/watch?v={{ video.id }}</id>
+   {% if video.author %}<author><name>{{ video.author | xml_escape }}</name></author>{% endif %}
+   <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v={{ video.id }}"><img src="https://i.ytimg.com/vi/{{ video.id }}/hqdefault.jpg" alt="{{ video.title | xml_escape }}"/></a></p>]]></content>
+ </entry>
+ {% endfor %}
+</feed>
