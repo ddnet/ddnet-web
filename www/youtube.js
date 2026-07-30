@@ -19,6 +19,7 @@ window.onload = function() {
           this.style.visibility = 'visible';
         }
       }
+      img.loading = 'lazy';
       img.src = 'https://i.ytimg.com/vi/' + v[n].dataset.id + '/maxresdefault.jpg';
       img.style.visibility = 'hidden';
       div.appendChild(img);

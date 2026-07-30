@@ -1,0 +1,36 @@
+---
+layout: default
+title: Videos - DDraceNetwork
+head: |
+  <link rel="alternate" type="application/atom+xml" title="DDNet Videos" href="/videos/feed/" />
+  <script src="/youtube.js?version=4" type="text/javascript"></script>
+menu-extern: subnav
+---
+<div class="block">
+  <h2>Videos <a href="/videos/feed/"><img width="24" class="image-icon" src="/feed.svg" alt="Feed"/></a></h2>
+  <p>
+    {% assign oldest = site.data.videos | last %}
+    Every video we have featured on the <a href="/">frontpage</a>, newest first. Made by
+    the community, showing off runs, maps, tournaments and trailers from
+    {{ oldest.date | date: "%Y" }} onwards.
+  </p>
+</div>
+
+{% assign years = site.data.videos | group_by_exp: "video", "video.date | date: '%Y'" %}
+{% for year in years %}
+<div class="block">
+  <h3 id="{{ year.name }}">{{ year.name }}</h3>
+  <div class="videogrid">
+    {% for video in year.items %}
+    {% assign author = video.author | default: "" %}
+    <figure class="videogrid-item">
+      <div class="video-container"><div class="ytplayer" data-id="{{ video.id }}"></div></div>
+      <figcaption>
+        <a href="https://www.youtube.com/watch?v={{ video.id }}">{{ video.title | default: "Watch on YouTube" | escape }}</a>
+        <span class="videogrid-meta">{% if author != "" %}{{ author | escape }}, {% endif %}featured {{ video.date | date: "%Y-%m-%d" }}</span>
+      </figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
