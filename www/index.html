@@ -39,7 +39,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
 {% endcomment %}
 <br/>
 <div class="download"><img class="download-button" src="download.svg" alt="Download"/>
-<p class="download"><span class="big"><a id="download-link" href="/downloads/">Download DDraceNetwork Client &amp; Server 19.9</a></span><br/><a href="/downloads/">Other systems and versions, changelogs</a></p>
+<p class="download"><span class="big"><a id="download-link" href="/downloads/">Download DDraceNetwork Client &amp; Server 19.9</a></span><span id="download-other" style="display:none"><br/><a href="/downloads/">Other systems and versions, changelogs</a></span></p>
 <script type="text/javascript">
 (function() {
   var version = '19.9';
@@ -58,6 +58,7 @@ DDraceNetwork (DDNet) is an actively maintained version of DDRace, a <a href="ht
       var link = document.getElementById('download-link');
       link.href = '/downloads/' + builds[i][1];
       link.textContent = 'Download DDraceNetwork Client & Server ' + version + ' for ' + builds[i][2];
+      document.getElementById('download-other').style.display = '';
       break;
     }
   }
