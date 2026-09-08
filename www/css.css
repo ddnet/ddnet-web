@@ -14,6 +14,11 @@
   --darken: #00000012;
   --link: #882222;
   --accent: #aa4444;
+  --funding-bar: #f6a828;
+  --funding-bar-border: #e78f08;
+  --funding-done: #37d628;
+  --funding-trough: #eeeeee;
+  --funding-label-shadow: #ffffff;
 }
 
 html,
@@ -724,6 +729,23 @@ body:not(#phpbb) .time {
   position: relative;
 }
 
+/* the .progressbar prefix is what beats jquery-ui's own .ui-widget rules */
+.progressbar.ui-widget-content {
+  background: var(--funding-trough);
+  border-color: var(--border);
+  color: var(--fg);
+}
+
+.progressbar .ui-progressbar-value {
+  background: var(--funding-bar);
+  border-color: var(--funding-bar-border);
+}
+
+.progressbar .funding-done {
+  background: var(--funding-done);
+  border-color: var(--funding-done);
+}
+
 .progress-label {
   text-align: center;
   float: left;
@@ -732,7 +754,7 @@ body:not(#phpbb) .time {
   width: 100%;
   height: 100%;
   font-weight: bold;
-  text-shadow: 1px 1px 0 #fff;
+  text-shadow: 1px 1px 0 var(--funding-label-shadow);
 }
 
 .ytplayer img {

@@ -143,13 +143,10 @@ var elements = [];
 elements = document.querySelectorAll("#funding-total, #funding-infra, #funding-regions");
 elements.forEach(function(element, index, array) {
   var value = metaValue(element.id);
-  var color = '#F6A828';
-  if (value >= 100) {
-    color = '#37d628';
-  }
+  var done = value >= 100 ? " funding-done" : "";
   var text = metaText(element.id);
   element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
-  element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+  element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + done + '" style="width: ' + (value).toFixed(0) + '%;"></div>');
 
   elements = element.querySelectorAll(".progress-label");
   elements.forEach(function(element, index, array) {
@@ -157,11 +154,6 @@ elements.forEach(function(element, index, array) {
       element.textContent = text;
     else
       element.innerText = text;
-  });
-
-  elements = element.querySelectorAll(".ui-widget-header");
-  elements.forEach(function(element, index, array) {
-    element.style.backgroundColor = color;
   });
 });
 
@@ -182,20 +174,17 @@ for (var server in data) {
     } else {
       text = "sponsored by " + val;
     }
-    var color = '#F6A828';
-    if (paid[server] >= cost[server] || regionsPaid >= regionsCost) {
-      color = '#37d628';
-    }
+    var done = (paid[server] >= cost[server] || regionsPaid >= regionsCost) ? " funding-done" : "";
     var value = (cost[server] > 0) ? 100 * (paid[server] / cost[server]) : 100;
     elements = document.querySelectorAll("#funding-" + server);
     elements.forEach(function(element, index, array) {
       element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
-      element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+      element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + done + '" style="width: ' + (value).toFixed(0) + '%;"></div>');
       if (i > infraNum && paid[server] < cost[server]) {
           element.lastElementChild.style.float = "left";
           element.lastElementChild.style.border = "0px";
           value = 100 * (((regionsPaid - sumRegionsDirect) / (regionsCost - sumRegionsDirect)) * ((cost[server] - paid[server]) / cost[server]));
-          element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+          element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + done + '" style="width: ' + (value).toFixed(0) + '%;"></div>');
           element.lastElementChild.style.opacity = "30%";
           element.lastElementChild.style.float = "left";
       }
@@ -211,14 +200,11 @@ for (var server in data) {
 }
 
 var value = 100 * donatedOld / costOld;
-color = '#F6A828';
-if (donatedOld >= costOld) {
-  color = '#37d628';
-}
+var doneOld = donatedOld >= costOld ? " funding-done" : "";
 elements = document.querySelectorAll("#funding-old");
 elements.forEach(function(element, index, array) {
   element.className += " ui-progressbar ui-widget ui-widget-content ui-corner-all";
-  element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + '" style="width: ' + (value).toFixed(0) + '%; background: ' + color + ';"></div>');
+  element.insertAdjacentHTML("beforeend", '<div class="ui-progressbar-value ui-widget-header ui-corner-left' + (value==100 ? " ui-corner-right" : "") + doneOld + '" style="width: ' + (value).toFixed(0) + '%;"></div>');
 });
 elements = document.querySelectorAll("#funding-old .progress-label");
 elements.forEach(function(element, index, array) {

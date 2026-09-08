@@ -1,0 +1,262 @@
+:root {
+  --bg: #0d1117;
+  --bg-block: #161b22;
+  --bg-raised: #1c2128;
+  --border: #30363d;
+  --fg: #c9d1d9;
+  --fg-muted: #8b949e;
+  --darken: rgba(1, 4, 9, 0.5);
+  --lighten: rgba(255, 255, 255, 0.08);
+  --shadow: rgba(1, 4, 9, 0.7);
+  --link: #82aaff;
+  --hover: #c792ea;
+  --accent-fg: #0d1117;
+  --funding-bar: #3b6fd4;
+  --funding-bar-border: #388bfd;
+  --funding-done: #1f9e8c;
+  --funding-trough: #21262d;
+  --funding-label-shadow: rgba(1, 4, 9, 0.75);
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.js-calendar-graph-svg {
+  fill: var(--fg);
+}
+
+a,
+a:link,
+a:visited {
+  color: var(--link);
+}
+a:hover {
+  color: var(--hover);
+}
+
+.image-icon {
+  filter: invert(1);
+}
+
+.image-icon:hover {
+  /* approximation of --link, retune with https://codepen.io/sosuke/pen/Pjoqqp if it drifts */
+  filter: invert(71%) sepia(29%) saturate(1035%) hue-rotate(191deg)
+    brightness(102%) contrast(101%);
+}
+
+.contentleft {
+  background: transparent
+    linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(1, 4, 9, 0.45) 100%)
+    repeat scroll 0% 0%;
+  box-shadow: -4px 0px 3px rgba(1, 4, 9, 0.15) inset;
+  border-right: 2px solid var(--link);
+  z-index: 1;
+}
+@media (max-width: 1099px) {
+  .fade {
+    background: linear-gradient(to left, var(--bg), rgba(13, 17, 23, 0) 5em);
+  }
+  .contentleft {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    z-index: -1;
+  }
+}
+
+section .block,
+section .longblock {
+  background: var(--bg-block);
+  border: 1px solid var(--border);
+  box-shadow: 0px 0px 10px 2px var(--shadow);
+}
+
+.news h3 a:link,
+.news h3 a:visited {
+  color: var(--link);
+}
+
+.news h3 a:hover {
+  color: var(--hover);
+}
+
+.news blockquote {
+  border-left: 10px solid var(--link);
+  margin: 1.5em 0px;
+  padding: 0.5em 10px;
+  background-color: var(--bg-raised);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.ui-widget-content {
+  border: none !important;
+  margin: 2px;
+  background: var(--lighten);
+}
+
+#skinlist .vrow {
+  border-bottom: 1px solid var(--border);
+}
+
+body:not(#phpbb) code {
+  background-color: var(--darken);
+  border-radius: 5px;
+}
+
+body:not(#phpbb) pre {
+  background-color: var(--darken);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+body:not(#phpbb) pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.table,
+.table-striped > tbody > tr:nth-child(2n + 1) > td,
+.table-striped > tbody > tr:nth-child(2n + 1) > th {
+  background: none;
+}
+.table > thead > tr > th {
+  border-bottom: 2px solid var(--border);
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  border-top: 1px solid var(--border);
+}
+.progress {
+  background-color: var(--lighten);
+  background-image: none;
+}
+
+.typeahead:focus {
+  border: 2px solid var(--link);
+}
+.tt-dropdown-menu {
+  background-color: var(--bg-raised);
+}
+.tt-suggestion.tt-cursor {
+  background-color: var(--link);
+  color: var(--accent-fg);
+}
+
+.spacey .tablesorter-header,
+.unfinTable1 .tablesorter-header {
+  background-color: var(--darken) !important;
+  background-image: url(/players-data/white-unsorted.gif) !important;
+}
+.spacey .tablesorter-headerAsc,
+.unfinTable1 .tablesorter-headerAsc {
+  background-image: url(/players-data/white-asc.gif) !important;
+  background-color: rgba(1, 4, 9, 0.75) !important;
+}
+.spacey .tablesorter-headerDesc,
+.unfinTable1 .tablesorter-headerDesc {
+  background-image: url(/players-data/white-desc.gif) !important;
+  background-color: rgba(1, 4, 9, 0.75) !important;
+}
+.unfinTable2,
+.unfinTable3 {
+  border-left: 1px solid var(--border) !important;
+}
+.unfinTable2 thead,
+.unfinTable3 thead {
+  background-color: rgba(1, 4, 9, 0.45) !important;
+}
+.tablesorter tr:nth-child(even),
+.unfinTable1 tr:nth-child(even),
+.unfinTable2 tr:nth-child(even),
+.unfinTable3 tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+.spacey th:not(:last-child),
+.tablesorter-default th:not(:last-child),
+.unfinTable1 th:not(:last-child),
+.unfinTable2 th:not(:last-child),
+.unfinTable3 th:not(:last-child),
+.tablesorter-default td:not(:last-child),
+.unfinTable1 td:not(:last-child),
+.unfinTable2 td:not(:last-child),
+.unfinTable3 td:not(:last-child) {
+  border-right: 1px solid var(--border) !important;
+}
+
+.highcharts-container svg rect.highcharts-background {
+  fill: var(--bg-block);
+}
+
+.highcharts-title,
+.highcharts-container svg g.highcharts-axis text {
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
+}
+
+.highcharts-container svg g.highcharts-button rect {
+  fill: var(--bg-raised);
+  stroke: var(--link);
+}
+.highcharts-container svg g.highcharts-button * {
+  cursor: pointer;
+}
+.highcharts-contextmenu div {
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 5px 10px var(--shadow) !important;
+  background: var(--bg-raised) !important;
+  color: var(--fg) !important;
+}
+.highcharts-contextmenu div div {
+  border: none !important;
+  box-shadow: none !important;
+}
+.highcharts-contextmenu div div:hover {
+  background-color: var(--link) !important;
+  color: var(--accent-fg) !important;
+}
+.highcharts-contextmenu div hr {
+  border: 1px solid var(--border);
+}
+
+.highcharts-container svg g.highcharts-grid path,
+.highcharts-container svg g.highcharts-axis path {
+  stroke: var(--border);
+}
+
+.highcharts-container svg g.highcharts-axis-labels text {
+  color: var(--fg-muted) !important;
+  fill: var(--fg-muted) !important;
+}
+
+.highcharts-container svg g.highcharts-range-input text {
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
+}
+
+.highcharts-container svg g.highcharts-range-label text {
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
+}
+
+.highcharts-container svg g.highcharts-range-selector-buttons text {
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
+}
+
+.highcharts-container svg g.highcharts-button text {
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
+}
+
+.highcharts-container svg g.highcharts-legend text {
+  color: var(--fg) !important;
+  fill: var(--fg) !important;
+}
