@@ -1,0 +1,2764 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<title>DDNet Teehistorian Replayer</title>
+		<style>
+		body {
+			background: #10161f;
+			font-family: sans-serif;
+		}
+		body, html, #canvas, #output {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			height: 100dvh;
+		}
+		#canvas {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			border: 0;
+			overflow: hidden;
+			display: block;
+		}
+		#output {
+			padding: 10px;
+			overflow: hidden scroll;
+			box-sizing: border-box;
+		}
+		#output .line {
+			border-left: 5px solid;
+			padding-left: 10px;
+		}
+		#overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(20, 25, 40, 0.92);
+			color: #eee;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 10;
+		}
+		/* Watch mode only shows the overlay while the client is still loading,
+		   nothing behind it is worth seeing through, and the wait itself is all
+		   there is to say. The panel comes back to carry an error message. */
+		body.watchmode #overlay {
+			background: #141928;
+		}
+		body.watchmode #panel {
+			display: none;
+		}
+		body.watchmode.failed #panel {
+			display: block;
+		}
+		#loading {
+			display: none;
+			width: min(320px, 70vw);
+			color: #eee;
+			text-align: center;
+			font: 500 15px/1.4 "DejaVu Sans", system-ui, sans-serif;
+		}
+		body.watchmode:not(.failed) #loading {
+			display: block;
+		}
+		#loadingbar {
+			margin-top: 14px;
+			height: 6px;
+			border-radius: 3px;
+			background: rgba(255, 255, 255, 0.15);
+			overflow: hidden;
+		}
+		#loadingbar .fill {
+			width: 0;
+			height: 100%;
+			border-radius: 3px;
+			background: #6fcf6f;
+			transition: width 0.3s;
+		}
+		#panel {
+			max-width: 600px;
+			width: 90%;
+			background: #1c2333;
+			border: 1px solid #39415a;
+			border-radius: 12px;
+			padding: 28px 32px;
+			box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+		}
+		#panel h1 {
+			margin: 0 0 4px 0;
+			font-size: 22px;
+		}
+		#panel .subtitle {
+			color: #9aa4bf;
+			margin-bottom: 18px;
+			font-size: 13px;
+		}
+		#dropzone {
+			border: 2px dashed #4a5578;
+			border-radius: 8px;
+			padding: 34px 16px;
+			text-align: center;
+			cursor: pointer;
+			transition: border-color 0.15s, background 0.15s;
+			font-size: 15px;
+			color: #c8d0e8;
+		}
+		#dropzone:hover, #dropzone.hover {
+			border-color: #8fa4ff;
+			background: rgba(143, 164, 255, 0.06);
+		}
+		#dropzone small {
+			display: block;
+			margin-top: 8px;
+			color: #7d87a8;
+		}
+		#urlrow {
+			margin-top: 12px;
+			display: flex;
+			gap: 8px;
+		}
+		#urlrow input {
+			flex: 1;
+			background: #12182a;
+			color: #dde4f8;
+			border: 1px solid #39415a;
+			border-radius: 6px;
+			padding: 6px 8px;
+			font-size: 13px;
+		}
+		#urlrow button {
+			background: #33406680;
+			color: #dde4f8;
+			border: 1px solid #4a5578;
+			border-radius: 6px;
+			padding: 6px 14px;
+			cursor: pointer;
+			font-size: 13px;
+		}
+		#urlrow button:hover {
+			background: #415080;
+		}
+		#rangerow {
+			margin-top: 12px;
+			font-size: 13px;
+			color: #9aa4bf;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			flex-wrap: wrap;
+		}
+		#rangerow input {
+			background: #12182a;
+			color: #dde4f8;
+			border: 1px solid #39415a;
+			border-radius: 6px;
+			padding: 6px 8px;
+			font-size: 13px;
+			font-family: monospace;
+			width: 130px;
+		}
+		#fileinfo {
+			margin: 14px 0 0 0;
+			font-size: 13px;
+			color: #b6c0dc;
+			line-height: 1.6;
+			display: none;
+		}
+		#fileinfo b {
+			color: #e8ecf8;
+		}
+		#status {
+			margin-top: 14px;
+			font-size: 13px;
+			font-family: monospace;
+			color: #9aa4bf;
+			max-height: 180px;
+			overflow-y: auto;
+			line-height: 1.5;
+		}
+		#status .error {
+			color: #ff7a7a;
+		}
+		#status .ok {
+			color: #7ade8a;
+		}
+		#mapupload, #retryconvert {
+			display: none;
+			margin-top: 12px;
+		}
+		#mapupload button, #retryconvert button, #reopen {
+			background: #33406680;
+			color: #dde4f8;
+			border: 1px solid #4a5578;
+			border-radius: 6px;
+			padding: 8px 14px;
+			cursor: pointer;
+			font-size: 14px;
+		}
+		#mapupload button:hover, #retryconvert button:hover, #reopen:hover {
+			background: #415080;
+		}
+		#reopen {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			z-index: 5;
+			display: none;
+			opacity: 0.65;
+		}
+		#reopen:hover {
+			opacity: 1;
+		}
+		#closepanel {
+			display: none;
+			margin-top: 14px;
+			background: none;
+			color: #7d87a8;
+			border: none;
+			cursor: pointer;
+			font-size: 13px;
+			text-decoration: underline;
+		}
+		input[type=file] {
+			display: none;
+		}
+		/* The client hides the OS cursor to draw its own in-game one, which a
+		   spectating viewer never sees, keep the normal pointer visible
+		   (stylesheet !important wins over the inline style SDL sets) */
+		body.watchmode #canvas {
+			cursor: default !important;
+		}
+		/* Demo controls styled like the ingame demo player: translucent black
+		   panel with rounded corners, white Font Awesome icons (a subset of
+		   the client's own icon font, embedded) */
+		@font-face {
+			font-family: 'ReplayIcons';
+			src: url(data:font/woff2;base64,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) format('woff2');
+		}
+		#demobar {
+			display: none;
+			position: fixed;
+			bottom: max(12px, env(safe-area-inset-bottom));
+			left: 50%;
+			transform: translateX(-50%);
+			/* A definite width, so the two side columns of the row below get
+			   the same share and the playback controls sit in the middle of
+			   the bar rather than in the middle of what is left over */
+			width: min(calc(100vw - 16px), 960px);
+			z-index: 5;
+			flex-direction: column;
+			gap: 2px;
+			padding: 6px;
+			max-width: calc(100vw - 16px);
+			box-sizing: border-box;
+			border-radius: 14px;
+			background: rgba(0, 0, 0, 0.5);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			color: #fff;
+			font-family: "DejaVu Sans", system-ui, sans-serif;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		#demobar {
+			transition: opacity 0.3s;
+		}
+		#demobar.idle {
+			opacity: 0;
+			pointer-events: none;
+		}
+		/* Playback controls in the middle, the other groups to both sides */
+		#demobar .buttons {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+			align-items: center;
+			gap: 12px;
+		}
+		#demobar .group, #demobar .toggles {
+			display: flex;
+			align-items: center;
+			gap: 2px;
+		}
+		#demobar .rowbreak {
+			display: none;
+		}
+		#demobar .group.view {
+			justify-self: end;
+		}
+		/* What is being watched, above the controls */
+		#demotitle {
+			padding: 2px 10px 1px;
+			text-align: center;
+			font-size: 13px;
+			color: rgba(255, 255, 255, 0.8);
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		/* A word about the mouse when free view is chosen, gone after a moment */
+		#hint {
+			display: none;
+			position: fixed;
+			top: 12px;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 6;
+			padding: 8px 14px;
+			border-radius: 10px;
+			background: rgba(0, 0, 0, 0.5);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			color: #fff;
+			font: 600 14px/1.3 "DejaVu Sans", system-ui, sans-serif;
+			pointer-events: none;
+		}
+		#demotitle a {
+			color: inherit;
+			text-decoration: underline;
+			text-decoration-color: rgba(255, 255, 255, 0.35);
+			text-underline-offset: 2px;
+		}
+		#demotitle a:hover {
+			color: #fff;
+			text-decoration-color: rgba(255, 255, 255, 0.8);
+		}
+		#demotitle:empty {
+			display: none;
+		}
+		/* Seek bar across the whole width of the controls, below them */
+		#seekrow {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			padding: 2px 8px 4px;
+			font-size: 12px;
+			font-variant-numeric: tabular-nums;
+		}
+		/* Own slider instead of <input type=range>: identical hit area and
+		   behaviour in every browser, and a 20px tall grab area */
+		.slider {
+			position: relative;
+			height: 20px;
+			cursor: pointer;
+			touch-action: none;
+			flex: 1;
+			min-width: 0;
+		}
+		.slider::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 8px;
+			height: 4px;
+			border-radius: 2px;
+			background: rgba(255, 255, 255, 0.3);
+		}
+		.slider .fill {
+			position: absolute;
+			left: 0;
+			top: 8px;
+			height: 4px;
+			width: 0;
+			border-radius: 2px;
+			background: #fff;
+		}
+		.slider .knob {
+			position: absolute;
+			top: 3px;
+			left: 0;
+			width: 14px;
+			height: 14px;
+			margin-left: -7px;
+			border-radius: 50%;
+			background: #fff;
+			pointer-events: none;
+		}
+		#demobar .group.settings, #demobar .stepper.sound {
+			min-width: 0;
+		}
+		/* The volume takes whatever the row has left over */
+		#demobar .stepper.sound {
+			flex: 1 1 auto;
+		}
+		#demobar #volume {
+			flex: 1 1 auto;
+			width: auto;
+			min-width: 40px;
+			max-width: 220px;
+			margin-right: 6px;
+		}
+		#demobar #volume .knob {
+			width: 12px;
+			height: 12px;
+			margin-left: -6px;
+			top: 4px;
+		}
+		#demobar button, #demobar .buttons a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+			min-width: 44px;
+			height: 40px;
+			padding: 0 10px;
+			border: 0;
+			border-radius: 8px;
+			background: transparent;
+			color: #fff;
+			font: 600 14px/1 "DejaVu Sans", system-ui, sans-serif;
+			text-decoration: none;
+			cursor: pointer;
+			touch-action: manipulation;
+			transition: background 0.1s;
+		}
+		@media (hover: hover) {
+			#demobar button:hover, #demobar .buttons a:hover {
+				background: rgba(255, 255, 255, 0.25);
+			}
+		}
+		#demobar button:active, #demobar .buttons a:active {
+			background: rgba(255, 255, 255, 0.4);
+		}
+		/* display: flex above beats the browser's own [hidden] rule */
+		#demobar button[hidden] {
+			display: none;
+		}
+		/* A toggle that is currently on */
+		#demobar button.on {
+			background: rgba(255, 255, 255, 0.3);
+		}
+		/* The shape the game itself never renders beyond, filled while enforced */
+		#demobar #aspectbutton .rect {
+			display: block;
+			width: 20px;
+			height: 16px;
+			border: 2px solid currentColor;
+			border-radius: 3px;
+			opacity: 0.75;
+		}
+		#demobar #aspectbutton.on .rect {
+			background: currentColor;
+			opacity: 1;
+		}
+		/* The tile grid the entities overlay draws over the map */
+		#demobar #entitiesbutton .grid {
+			display: block;
+			width: 18px;
+			height: 18px;
+			border: 2px solid currentColor;
+			border-radius: 3px;
+			opacity: 0.75;
+			background:
+				linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+				linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+		}
+		#demobar #entitiesbutton.on .grid {
+			opacity: 1;
+		}
+		/* A key, for the presses the client shows next to a tee */
+		#demobar #keysbutton .keycap {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 18px;
+			height: 18px;
+			border: 2px solid currentColor;
+			border-radius: 4px;
+			font-size: 12px;
+			line-height: 1;
+			opacity: 0.5;
+		}
+		#demobar #keysbutton.on .keycap {
+			opacity: 1;
+		}
+		#demobar .icon {
+			font-family: 'ReplayIcons';
+			font-size: 18px;
+			line-height: 1;
+		}
+		/* The icon font is an embedded subset of the client's and has no share
+		   glyph, so this one is drawn like the other shapes in the bar */
+		#demobar .shareicon {
+			display: block;
+			width: 18px;
+			height: 18px;
+			fill: currentColor;
+			stroke: currentColor;
+		}
+		#demobar .label {
+			font-size: 12px;
+			opacity: 0.85;
+		}
+		#demobar .label:empty {
+			display: none;
+		}
+		/* Zoom and the viewport limit stay together, both decide what is shown */
+		#demobar .viewcontrols {
+			display: flex;
+			align-items: center;
+			gap: 2px;
+		}
+		/* A minus, the value, a plus: stepping is one click each way */
+		#demobar .stepper {
+			display: flex;
+			align-items: center;
+			gap: 0;
+		}
+		#demobar .stepper button {
+			min-width: 30px;
+			padding: 0 6px;
+			font-size: 17px;
+		}
+		#demobar #speedvalue {
+			min-width: 46px;
+			text-align: center;
+			font: 600 13px/1 "DejaVu Sans", system-ui, sans-serif;
+			font-variant-numeric: tabular-nums;
+		}
+		/* Always the same width, whether it shows the team icon or a tee */
+		#demobar #camerabutton {
+			width: 52px;
+			min-width: 52px;
+			padding: 0;
+		}
+		#demobar #camerabutton .tee, #demobar #skinbutton .tee {
+			width: 36px;
+			height: 24px;
+		}
+		/* Two rows on a phone. Everything that is not playback sits to one
+		   side of it, six controls against three, which does not fit beside a
+		   centered middle: the view toggles move up to the settings row, so
+		   the second row carries the zoom controls, the playback and the
+		   download. The playback is taken out of the flow and centered on the
+		   bar itself, which is the only way it is centered whatever the two
+		   sides of it are. */
+		/* Between the phone layout and the width the bar wants, the controls
+		   are trimmed so that all three groups still fit on the one row */
+		@media (min-width: 801px) and (max-width: 980px) {
+			#demobar .buttons {
+				gap: 8px;
+			}
+			#demobar button, #demobar .buttons a {
+				min-width: 32px;
+				padding: 0 3px;
+			}
+		}
+		@media (max-width: 800px) {
+			#demobar .buttons {
+				position: relative;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 2px;
+			}
+			#demobar .rowbreak {
+				display: block;
+				order: 2;
+				flex-basis: 100%;
+				height: 0;
+			}
+			/* The groups are flattened into the row, the order below is the
+			   order they are laid out in */
+			#demobar .buttons .group.view,
+			#demobar .viewcontrols {
+				display: contents;
+			}
+			#demobar .buttons .group.playback {
+				order: 1;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			#demobar .buttons .group.settings {
+				order: 0;
+				min-width: 0;
+			}
+			#demobar .toggles {
+				order: 1;
+				margin-left: auto;
+			}
+			#demobar .viewcontrols > .stepper {
+				order: 3;
+			}
+			/* Both to the right end of the second row, sharing before saving */
+			#demobar #skinbutton {
+				order: 4;
+				margin-left: auto;
+			}
+			#demobar #sharebutton {
+				order: 5;
+			}
+			#demobar #downloadbutton {
+				order: 6;
+			}
+			/* Everything as small as it can still be read and hit. The row of
+			   settings is the one that decides whether it all fits, and the
+			   playback may not reach either side of the row below it. */
+			#demobar button, #demobar .buttons a {
+				min-width: 28px;
+				padding: 0 3px;
+				gap: 3px;
+			}
+			#demobar .stepper button {
+				min-width: 24px;
+			}
+			#demobar .buttons .group.playback button {
+				min-width: 34px;
+			}
+			#demobar .group.settings {
+				flex: 1 1 auto;
+			}
+			#demobar #volume {
+				min-width: 36px;
+				margin-right: 2px;
+			}
+			#demobar #speedvalue {
+				min-width: 34px;
+			}
+			#demobar #camerabutton {
+				width: 44px;
+				min-width: 44px;
+			}
+			#demobar #camerabutton .tee, #demobar #skinbutton .tee {
+				width: 30px;
+				height: 20px;
+			}
+			#demobar #aspectbutton .rect {
+				width: 16px;
+				height: 13px;
+			}
+			#demobar #entitiesbutton .grid,
+			#demobar #keysbutton .keycap {
+				width: 14px;
+				height: 14px;
+			}
+		}
+		/* The narrowest phones still in use, everything one step smaller again */
+		@media (max-width: 365px) {
+			#demobar .buttons {
+				gap: 1px;
+			}
+			#demobar button, #demobar .buttons a {
+				min-width: 22px;
+				padding: 0 1px;
+			}
+			#demobar .stepper button {
+				min-width: 20px;
+			}
+			#demobar .buttons .group.playback button {
+				min-width: 30px;
+			}
+			#demobar #volume {
+				min-width: 24px;
+			}
+			#demobar #speedvalue {
+				min-width: 30px;
+			}
+			#demobar #camerabutton {
+				width: 36px;
+				min-width: 36px;
+			}
+		}
+		/* The menus a button in the bar opens, in the same panel as the bar */
+		#cameramenu, #sharemenu, #skinmenu {
+			display: none;
+			position: absolute;
+			bottom: calc(100% + 6px);
+			left: 50%;
+			transform: translateX(-50%);
+			flex-direction: column;
+			gap: 2px;
+			padding: 6px;
+			max-height: min(60vh, calc(100vh - 150px));
+			max-width: calc(100vw - 24px);
+			overflow-y: auto;
+			overscroll-behavior: contain;
+			border-radius: 12px;
+			background: rgba(0, 0, 0, 0.5);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+		}
+		#cameramenu button, #sharemenu button, #skinmenu button {
+			justify-content: flex-start;
+			gap: 10px;
+			height: 38px;
+			flex: none;
+			max-width: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		#cameramenu .tee {
+			flex: none;
+		}
+		#cameramenu button.ranked {
+			font-weight: 700;
+		}
+		#cameramenu .cup {
+			font-family: 'ReplayIcons';
+			font-size: 13px;
+			opacity: 0.9;
+			margin-left: auto;
+			padding-left: 10px;
+		}
+		#skinmenu button.selected,
+		#cameramenu button.selected {
+			background: rgba(255, 255, 255, 0.15);
+		}
+		/* What the cup under the pointer would put on screen */
+		#cameramenu button.preview {
+			background: rgba(255, 255, 255, 0.1);
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+		}
+		#cameramenu .tee {
+			width: 36px;
+			height: 24px;
+		}
+		#cameramenu .icon {
+			width: 36px;
+			text-align: center;
+		}
+		#camerabutton .label {
+			max-width: 110px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		/* Keyboard shortcut overview, toggled with F1 */
+		#help {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 6;
+			padding: 14px 22px 16px;
+			border-radius: 14px;
+			background: rgba(0, 0, 0, 0.7);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			color: #fff;
+			font: 13px/1.7 "DejaVu Sans", system-ui, sans-serif;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		#help h2 {
+			margin: 0 0 6px;
+			font-size: 15px;
+		}
+		#help table {
+			border-collapse: collapse;
+		}
+		#help td {
+			padding: 0 12px 0 0;
+			white-space: nowrap;
+		}
+		#help kbd {
+			display: inline-block;
+			min-width: 1.2em;
+			padding: 0 6px;
+			border-radius: 4px;
+			background: rgba(255, 255, 255, 0.2);
+			font: inherit;
+			text-align: center;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="output" style="display: none"></div>
+		<canvas id="canvas">Canvas not supported.</canvas>
+		<button id="reopen">Load another teehistorian file</button>
+		<div id="demobar" role="toolbar" aria-label="Replay controls">
+			<div id="cameramenu"></div>
+			<div id="sharemenu"></div>
+			<div id="skinmenu"></div>
+			<div id="demotitle"></div>
+			<div class="buttons">
+				<span class="rowbreak"></span>
+				<div class="group settings">
+					<button id="helpbutton" title="Keyboard shortcuts (F1)"><span class="icon">&#xf11c;</span></button>
+					<span class="stepper">
+						<button id="speeddown" title="Slower (↓)">&minus;</button>
+						<button id="speedvalue" title="Reset speed to 1&times;">1&times;</button>
+						<button id="speedup" title="Faster (↑)">+</button>
+					</span>
+					<button id="camerabutton" title="Camera: whole team or one player"><span class="icon">&#xf0c0;</span><canvas class="tee" width="96" height="64" hidden></canvas></button>
+					<span class="stepper sound">
+						<button id="mutebutton" title="Sound on/off"><span class="icon">&#xf6a9;</span></button>
+						<div id="volume" class="slider" title="Volume"><div class="fill"></div><div class="knob"></div></div>
+					</span>
+				</div>
+				<div class="group playback">
+						<button data-cmd="demo_skip -5" title="Back 5 seconds (←)"><span class="icon">&#xf04a;</span></button>
+					<button id="playbutton" data-cmd="demo_play" title="Pause / resume (Space)"><span class="icon">&#xf04c;</span></button>
+						<button data-cmd="demo_skip 5" title="Forward 5 seconds (→)"><span class="icon">&#xf04e;</span></button>
+				</div>
+				<div class="group view">
+					<span class="viewcontrols">
+						<span class="stepper">
+							<button data-cmd="zoom-" data-repeat="1" title="Zoom out (-)">&minus;</button>
+							<button data-cmd="zoom" title="Reset zoom"><span class="icon">&#xf002;</span></button>
+							<button data-cmd="zoom+" data-repeat="1" title="Zoom in (+)">+</button>
+						</span>
+						<span class="toggles">
+							<button id="aspectbutton" title="Respect viewport (V)"><span class="rect"></span></button>
+							<button id="entitiesbutton" title="Show entities (E)"><span class="grid"></span></button>
+							<button id="keysbutton" title="Show key presses (K)"><span class="keycap">&rarr;</span></button>
+						</span>
+					</span>
+					<button id="skinbutton" title="Which skins to show"><canvas class="tee" width="96" height="64"></canvas></button>
+					<button id="sharebutton" title="Copy a link to this run"><svg class="shareicon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.6" stroke="none"/><circle cx="6" cy="12" r="2.6" stroke="none"/><circle cx="18" cy="19" r="2.6" stroke="none"/><path d="M8.4 10.7l7.2-4.2M8.4 13.3l7.2 4.2" fill="none" stroke-width="1.8"/></svg></button>
+					<a id="downloadbutton" title="Download demo"><span class="icon">&#xf019;</span></a>
+				</div>
+			</div>
+			<div id="seekrow">
+				<span id="timenow">0:00</span>
+				<div id="seek" class="slider" title="Jump to a position (0-9: 0 % to 90 %, Home / End)"><div class="fill"></div><div class="knob"></div></div>
+				<span id="timeend">0:00</span>
+			</div>
+		</div>
+		<div id="hint"></div>
+		<div id="help">
+			<h2>Keyboard shortcuts</h2>
+			<table>
+				<tr><td><kbd>Space</kbd></td><td>Pause / resume</td></tr>
+				<tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>5 seconds back / forward</td></tr>
+				<tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Faster / slower</td></tr>
+				<tr><td><kbd>0</kbd> … <kbd>9</kbd></td><td>Jump to 0 % … 90 %</td></tr>
+				<tr><td><kbd>Home</kbd> <kbd>End</kbd></td><td>Jump to the start / end</td></tr>
+				<tr><td><kbd>,</kbd> <kbd>.</kbd></td><td>Previous / next tick</td></tr>
+				<tr><td><kbd>-</kbd> <kbd>+</kbd></td><td>Zoom out / in (also the mouse wheel)</td></tr>
+				<tr><td><kbd>#</kbd></td><td>Reset zoom</td></tr>
+				<tr><td><kbd>V</kbd></td><td>Respect viewport</td></tr>
+				<tr><td><kbd>E</kbd></td><td>Show entities</td></tr>
+				<tr><td><kbd>K</kbd></td><td>Show key presses</td></tr>
+				<tr><td><kbd>F1</kbd></td><td>Show / hide this overview</td></tr>
+			</table>
+		</div>
+		<div id="overlay">
+			<div id="panel">
+				<h1>DDNet Teehistorian Replayer</h1>
+				<div class="subtitle">Upload a teehistorian recording &mdash; the map is fetched automatically and the replay plays right here in your browser.</div>
+				<div id="dropzone">
+					Drop a <b>.teehistorian</b> file here or click to select
+					<small>Compressed recordings (.xz) must be decompressed first</small>
+				</div>
+				<div id="urlrow">
+					<input type="text" id="urlinput" placeholder="… or stream from a URL (https://archive…/region/game-uuid)">
+					<button id="urlgo">Stream</button>
+				</div>
+				<div id="rangerow">
+					Time window (optional):
+					<input type="text" id="starttime" placeholder="start, e.g. 12:00:00">
+					<input type="text" id="endtime" placeholder="end, e.g. 12:30:00">
+				</div>
+				<input type="file" id="fileinput">
+				<input type="file" id="mapinput" accept=".map">
+				<div id="fileinfo"></div>
+				<div id="mapupload"><button>Select map file manually&hellip;</button></div>
+				<div id="retryconvert"><button>Convert with this time window</button></div>
+				<div id="status"></div>
+				<button id="closepanel">Close and return to the running replay</button>
+			</div>
+			<div id="loading"><div id="loadingtext">Downloading the client&hellip;</div><div id="loadingbar"><div class="fill"></div></div></div>
+		</div>
+		<script>
+			var output = document.getElementById('output');
+			function appendOutput(message, bold, textColor, borderColor) {
+				const span = document.createElement("span");
+				span.textContent = message;
+				span.className = "line";
+				if (textColor) {
+					span.style.color = textColor;
+				}
+				if (borderColor) {
+					span.style.borderColor = borderColor;
+				}
+				if (bold) {
+					span.style.fontWeight = "bold";
+				}
+				output.appendChild(span);
+				output.appendChild(document.createElement("br"));
+				output.scrollTop = output.scrollHeight;
+			}
+			function parseAnsiColorRgb(line) {
+				// Only handles RGB format because our logging system only uses that.
+				const match = line.match(/^\x1b\[38;2;(\d+);(\d+);(\d+)m([\s\S]*?)\x1b\[0m$/);
+				if (!match) {
+					return { color: "black", message: line };
+				}
+				const [, r, g, b, message] = match;
+				return { color: `rgb(${r}, ${g}, ${b})`, message: message };
+			}
+			var clientRuntimeReady = null;
+			var signalClientRuntimeReady = null;
+			clientRuntimeReady = new Promise(resolve => { signalClientRuntimeReady = resolve; });
+			// SDL reads window.devicePixelRatio when it creates the canvas and
+			// sizes the drawable by it, so this is the one place deciding the
+			// render resolution. Anything below the screen's own resolution is
+			// upscaled by the browser, which shows on the name plates first, so
+			// phones at 3x render at 3x. The cap is for the screens beyond that,
+			// where the pixels cost battery for a picture nobody can tell apart.
+			const realPixelRatio = window.devicePixelRatio || 1;
+			Object.defineProperty(window, 'devicePixelRatio', { get: () => Math.min(realPixelRatio, 3), configurable: true });
+
+			// What the view buttons toggle, kept for the next visit. Stored in
+			// localStorage and not in a cookie: the page loads ~64 MB of engine
+			// assets and a cookie would ride along with every one of them.
+			const SETTINGS_KEY = 'ddnet-replay-view';
+			// What "zoom" without an argument resets to (cl_default_zoom)
+			const ZOOM_DEFAULT = 10;
+			// Which skins the tees wear: every skin (community), the curated ones
+			// only (default) or none, everybody in the standard tee
+			const SKIN_MODES = ['community', 'default', 'none'];
+			const viewSettings = Object.assign({viewport: false, entities: false, keys: true, volume: 0, zoom: ZOOM_DEFAULT, skins: 'community'}, (() => {
+				try {
+					return JSON.parse(localStorage.getItem(SETTINGS_KEY)) || {};
+				} catch (error) {
+					return {};
+				}
+			})());
+			// The client settings of a skin mode. The community directory holds
+			// every skin and the plain one only the curated ones, the client
+			// fetches from one of the two, and with downloads off it is left
+			// with the skins it ships, vanilla only for "none"
+			function skinConfig(mode) {
+				return mode === 'none' ? ['cl_download_skins 0', 'cl_download_community_skins 0', 'cl_vanilla_skins_only 1'] :
+					mode === 'default' ? ['cl_download_skins 1', 'cl_download_community_skins 0', 'cl_vanilla_skins_only 0'] :
+					['cl_download_skins 1', 'cl_download_community_skins 1', 'cl_vanilla_skins_only 0'];
+			}
+			function setSetting(name, value) {
+				viewSettings[name] = value;
+				try {
+					localStorage.setItem(SETTINGS_KEY, JSON.stringify(viewSettings));
+				} catch (error) {
+					// A private window without storage still plays the demo
+				}
+			}
+
+			// Fill the whole window. A phone screen is far taller than the 5:4
+			// the client clamps its viewport to, and this build turns that
+			// limit off (gfx_limit_aspect_ratio). SDL overwrites the inline
+			// size when the window changes, so keep re-applying with priority
+			// "important". The backing store is SDL's, leave it alone.
+			// The game never shows more than a 5:4 view, so some maps draw
+			// nothing above and below it. Restricting keeps the canvas at that
+			// shape in the middle of the window instead of filling it.
+			let limitAspect = viewSettings.viewport;
+			let canvasWidth = 0, canvasHeight = 0;
+			function layoutCanvas() {
+				const canvas = document.getElementById('canvas');
+				const width = document.documentElement.clientWidth;
+				const windowHeight = window.innerHeight;
+				const height = limitAspect ? Math.min(windowHeight, Math.round(width * 4 / 5)) : windowHeight;
+				canvas.style.setProperty('width', `${width}px`, 'important');
+				canvas.style.setProperty('height', `${height}px`, 'important');
+				canvas.style.setProperty('top', `${Math.round((windowHeight - height) / 2)}px`, 'important');
+				canvas.style.setProperty('left', '0px', 'important');
+				// The canvas is as tall as the window, while the overlay in
+				// front of it is as tall as the document. On a phone the two
+				// differ by the browser's own bars, and the client's loading
+				// screen showed through the strip that was left over.
+				document.getElementById('overlay').style.setProperty('height', `${windowHeight}px`, 'important');
+				// A window at 5:4 or wider is inside the viewport already,
+				// so there is nothing the button could do
+				const aspectButton = document.getElementById('aspectbutton');
+				if(aspectButton) {
+					aspectButton.hidden = width >= windowHeight * 5 / 4;
+				}
+				const Changed = width !== canvasWidth || height !== canvasHeight;
+				canvasWidth = width;
+				canvasHeight = height;
+				return Changed;
+			}
+			layoutCanvas();
+			// SDL sizes the drawable from the canvas CSS size in its own resize
+			// handler, so ours has to run first and synchronously, or the
+			// drawable stays a rotation behind. A phone only settles on its new
+			// dimensions a moment after the event, so look again afterwards and
+			// tell SDL with another resize event when they did change.
+			function onWindowResize() {
+				layoutCanvas();
+				setTimeout(() => {
+					if(layoutCanvas())
+						window.dispatchEvent(new Event('resize'));
+				}, 300);
+			}
+			window.addEventListener('resize', onWindowResize);
+			window.addEventListener('orientationchange', onWindowResize);
+
+			// The client requests pointer lock for its relative mouse mode. A
+			// replay viewer should not capture the mouse while it follows a
+			// tee, the cursor is needed for the controls, so the request is a
+			// no-op then (on the prototype: the engine may hold its own element
+			// reference) and a lock that slips through is released. Free view
+			// is the exception: looking around the map needs the mouse to
+			// keep going past the edge of the window, so there the lock is
+			// real, and Esc, which the browser reserves for it, gives the
+			// cursor back.
+			const requestPointerLockReal = Element.prototype.requestPointerLock;
+			let freeViewLock = false;
+			Element.prototype.requestPointerLock = function(...args) {
+				return freeViewLock ? requestPointerLockReal.apply(this, args) : Promise.resolve();
+			};
+			document.addEventListener('pointerlockchange', () => {
+				if (document.pointerLockElement !== null && !freeViewLock) {
+					document.exitPointerLock();
+				}
+			});
+			// A word at the top of the screen, gone after a moment
+			let hintTimer = null;
+			function showHint(text) {
+				const hint = document.getElementById('hint');
+				hint.textContent = text;
+				hint.style.display = 'block';
+				clearTimeout(hintTimer);
+				hintTimer = setTimeout(() => { hint.style.display = 'none'; }, 4000);
+			}
+
+			// Bump on every deployment of the js/wasm files, and the data tag
+			// only when data/ itself changed: it is 54 of the 64 MB and a
+			// changed name costs every viewer the whole download again
+			const BUILD_TAG = '2026-09-10g';
+			const DATA_TAG = '2026-09-10f';
+			// The list of pre-generated ranks, next to the demos it names
+			const MANIFEST_URL = 'watchable.jsonl';
+			// The asset package drives the bar while it downloads, but only as
+			// far as it has taken time to arrive: out of the browser cache it
+			// is there in a moment, and then the client's own loading, the map
+			// above all, is the whole wait and owns the rest of the bar.
+			// Never let it run backwards.
+			const loadStart = performance.now();
+			function downloadCeiling() {
+				const seconds = (performance.now() - loadStart) / 1000;
+				return 0.15 + 0.75 * Math.min(1, Math.max(0, (seconds - 1.5) / 8));
+			}
+			let loadProgress = 0;
+			function setLoadProgress(fraction) {
+				loadProgress = Math.min(1, Math.max(loadProgress, fraction));
+				document.querySelector('#loadingbar .fill').style.width = `${(loadProgress * 100).toFixed(1)}%`;
+			}
+			// The client and the demo download in parallel, so name whichever
+			// of the two is still missing, then the map the client loads last
+			let clientReady = false;
+			let demoReady = false;
+			// What the client is doing after the download: its own loading
+			// screen walks through components, assets, skins and the map, and
+			// that is most of the wait. Follow it instead of showing one step.
+			let clientStage = '';
+			function updateLoadStage() {
+				document.getElementById('loadingtext').textContent =
+					!clientReady ? 'Downloading the client…' :
+					!demoReady ? 'Downloading the replay…' :
+					clientStage !== '' ? clientStage : 'Loading the map…';
+			}
+			// The client's own steps carry the bar from wherever the download
+			// left it to where playback takes over
+			let clientPhaseBase = null;
+			// The client walks its loading screen forever when it cannot open
+			// the demo it was handed, and the page would wait with it
+			function reportClientFailure(text) {
+				if (typeof text === 'string' && text.includes('playing passed demo file') && text.includes('failed')) {
+					statusError('The client could not read this demo.');
+				}
+			}
+			function pollClientLoading() {
+				if (typeof Module === 'undefined' || !Module.ccall) {
+					return;
+				}
+				let info;
+				try {
+					info = Module.ccall('EmscriptenCallbackLoadingInfo', 'string', [], []);
+				} catch (error) {
+					return; // the runtime is not up yet
+				}
+				if (!info) {
+					return;
+				}
+				const [percent, caption, content] = info.split('\t');
+				const stage = content || caption || '';
+				if (stage !== clientStage) {
+					clientStage = stage;
+					updateLoadStage();
+				}
+				if (clientReady && demoReady && Number(percent) >= 0) {
+					if (clientPhaseBase === null) {
+						clientPhaseBase = loadProgress;
+					}
+					setLoadProgress(clientPhaseBase + (0.98 - clientPhaseBase) * Math.min(1, Number(percent) / 100));
+				}
+			}
+			var Module = {
+				setStatus: function(text) {
+					// "Downloading data... (loaded/total)". Run dependency
+					// counts use the same shape, they are far too small to be
+					// byte counts.
+					const match = /\((\d+)\/(\d+)\)/.exec(text);
+					if (match && Number(match[2]) > 1000) {
+						setLoadProgress(0.05 + (downloadCeiling() - 0.05) * Number(match[1]) / Number(match[2]));
+					}
+				},
+				locateFile: function(path, prefix) {
+					return `${prefix}${path}?v=${path.endsWith('.data') ? DATA_TAG : BUILD_TAG}`;
+				},
+				mainScriptUrlOrBlob: `DDNet.js?v=${BUILD_TAG}`,
+				preRun: [function() {
+					// The client sizes its window from the canvas at startup, do
+					// not request a resolution (it gets clamped against the SDL
+					// screen size and leaves parts of the canvas unrendered).
+					// Cap the frame rate at a vsync-like level, phones overheat
+					// with an uncapped loop.
+					FS.createPath('/', 'home/web_user/.local/share/ddnet', true, true);
+					let config =
+						'cl_show_welcome 0\n' + // the popup would sit in front of the playback
+						'cl_showhud_timer 0\n' + // the seek bar shows the time
+						'gfx_limit_aspect_ratio 0\n' + // use the whole window, phones are far taller than 5:4
+						'gfx_vsync 1\n' +
+						'cl_refresh_rate 60\n';
+					if (new URLSearchParams(location.search).has('demo') || new URLSearchParams(location.search).has('uuid')) {
+						// Watch mode: a clean viewer without game interactions
+						// (the page's own buttons use the console directly)
+						config +=
+							'unbindall\n' +
+						'cl_offline 1\n' + // no server list, no info of the day
+						// The same files as skins.ddnet.org, but on the page's
+						// own origin: a cross-origin isolated page may load
+						// those without the skin host having to allow it
+						'cl_skin_download_url https://ddnet.org/skins/skin/\n' +
+						'cl_skin_community_download_url https://ddnet.org/skins/skin/community/\n' +
+						skinConfig(viewSettings.skins).join('\n') + '\n' +
+							'cl_showhud_spectator 0\n' + // the "Following ..." box
+							'cl_showhud_score 0\n' +
+							'cl_showkillmessages 0\n' +
+							'cl_showchat 0\n' + // only /commands appear as chat anyway
+							'snd_chat 0\n' +
+							`cl_overlay_entities ${viewSettings.entities ? 100 : 0}\n` +
+							`cl_show_direction ${viewSettings.keys ? 1 : 0}\n` +
+							`snd_volume ${viewSettings.volume}\n`; // muted by default, the bar unmutes
+					}
+					FS.writeFile('/home/web_user/.local/share/ddnet/settings_ddnet.cfg', config);
+				}],
+				print: function(text) {
+					console.log(parseAnsiColorRgb(text).message);
+					reportClientFailure(text);
+				},
+				printErr: function(text) {
+					console.error(text);
+					reportClientFailure(text);
+				},
+				onRuntimeInitialized: function() {
+					setLoadProgress(downloadCeiling());
+					clientReady = true;
+					updateLoadStage();
+					signalClientRuntimeReady();
+					// From here the client's own loading screen is the only
+					// thing that knows how far it is
+					const loadingPoll = setInterval(() => {
+						pollClientLoading();
+						// The run is on screen, or the page gave up and said so
+						if ((!waitingForPlayback && playingDemo) || document.body.classList.contains('failed')) {
+							clearInterval(loadingPoll);
+						}
+					}, 100);
+				},
+				onExit: function() {
+					Module['canvas'].style.display = "none";
+					Module['canvas'].style.cursor = "default";
+					document.body.style.cursor = "default";
+					output.style.display = "block";
+					appendOutput("Client closed. Reload the page to restart.", true);
+					const restartButton = document.createElement("button");
+					restartButton.textContent = "Reload page";
+					restartButton.style.marginTop = "10px";
+					restartButton.style.padding = "5px";
+					restartButton.addEventListener('click', e => location.reload());
+					output.appendChild(restartButton);
+					output.scrollTop = output.scrollHeight;
+				},
+				canvas: document.getElementById('canvas')
+			};
+			window.onerror = function(message, url, line, column, error) {
+				appendOutput(message, true, "red");
+				if (error && error.stack) {
+					for (const line of error.stack.split("\n")) {
+						if (line.length > 0) {
+							appendOutput(line, false, "red");
+						}
+					}
+				}
+				// Force stop audio processing because the client does not do so when force quit on
+				// assertion errors and segmentation faults. This would otherwise cause many error
+				// messages to be emitted when audio processing continues after the runtime exited.
+				var SDL2 = Module['SDL2'];
+				if (SDL2 !== undefined) {
+					if (SDL2.audio !== undefined) {
+						if (SDL2.audio.scriptProcessorNode !== undefined) {
+							SDL2.audio.scriptProcessorNode.disconnect();
+						}
+						if (SDL2.audio.silenceTimer !== undefined) {
+							clearInterval(SDL2.audio.silenceTimer);
+						}
+						SDL2.audio = undefined;
+					}
+					if (SDL2.audioContext !== undefined) {
+						SDL2.audioContext.close();
+						SDL2.audioContext = undefined;
+					}
+				}
+				// Force quit the client on errors, because the runtime does not exit otherwise.
+				if (typeof ABORT !== 'undefined' && !ABORT) {
+					Module.ccall('EmscriptenCallbackQuitForce', null, [], []);
+				}
+			};
+			document.addEventListener('keydown', e => {
+				// Browser shortcuts belong to the browser: the client's SDL calls
+				// preventDefault on every key it handles, which would swallow them
+				if (e.ctrlKey || e.metaKey || e.altKey || /^F([2-9]|1[0-2])$/.test(e.key)) {
+					e.stopPropagation();
+					return;
+				}
+				if (!playingDemo) {
+					return;
+				}
+				// Handled here instead of by the client: F1 would open its
+				// console and only the numpad has zoom binds
+				if (e.key === 'Escape') {
+					// The client would open its own menu on top of the replay
+					help.style.display = 'none';
+					cameraMenu.style.display = 'none';
+					shareMenu.style.display = 'none';
+					skinMenu.style.display = 'none';
+				} else if (e.key === 'F1') {
+					toggleHelp();
+				} else if (e.key === 'v' || e.key === 'V') {
+					toggleAspectLimit();
+				} else if (e.key === 'e' || e.key === 'E') {
+					toggleEntities();
+				} else if (e.key === 'k' || e.key === 'K') {
+					toggleKeyPresses();
+				} else if (e.key === '-' || e.key === '+' || e.key === '=') {
+					// One step per press like the numpad keys ingame, a held
+					// key repeats at the pace of the held buttons
+					if (!e.repeat || performance.now() - lastZoomKey >= 200) {
+						lastZoomKey = performance.now();
+						execute(e.key === '-' ? 'zoom-' : 'zoom+');
+					}
+				} else if (e.key === '#') {
+					execute('zoom');
+				} else {
+					return;
+				}
+				e.preventDefault();
+				e.stopPropagation();
+			}, true);
+			Module['canvas'].addEventListener('contextmenu', e => e.preventDefault());
+			// The canvas is only a video surface here, the page's own controls
+			// drive playback: a click reaching the client switches it to free view
+			for (const eventName of ['mousedown', 'mouseup', 'click', 'dblclick']) {
+				document.addEventListener(eventName, event => {
+					if (event.target === Module['canvas']) {
+						event.preventDefault();
+						event.stopPropagation();
+					}
+				}, true);
+			}
+			Module['canvas'].addEventListener('webglcontextcreationerror', e => {
+				appendOutput(`Failed to create WebGL context: ${e.statusMessage || "Unknown error"}`, true, "red");
+			});
+			Module['canvas'].addEventListener('webglcontextlost', e => {
+				appendOutput(`The WebGL context was lost: ${e.statusMessage || "Unknown error"}`, true, "red");
+				Module.ccall('EmscriptenCallbackQuit', null, [], []);
+			});
+
+			// ------------------------------------------------------------------
+			// Teehistorian replayer
+			// ------------------------------------------------------------------
+			const MAP_DOWNLOAD_URL = "https://maps.ddnet.org";
+			// Base URL of archive-server.py for watch mode. The deployed layout
+			// serves the page at .../teehistorian/watch/ and proxies the demo
+			// service at .../teehistorian/demo/ on the same origin.
+			const RANKDEMO_URL = "../demo";
+			const CLIENT_HOME = "/home/web_user/.local/share/ddnet";
+			const TEEHISTORIAN_UUID = [0x69, 0x9d, 0xb1, 0x7b, 0x8e, 0xfb, 0x34, 0xff, 0xb1, 0xd8, 0xda, 0x6f, 0x60, 0xc1, 0x5d, 0xd1];
+			// Without a time window, the produced demo is roughly 2-3x the size of
+			// the recording. Beyond this input size, require a time window so the
+			// tab does not run out of memory.
+			const MAX_FULL_CONVERT_SIZE = 400 * 1024 * 1024;
+
+			const overlay = document.getElementById('overlay');
+			const dropzone = document.getElementById('dropzone');
+			const fileinput = document.getElementById('fileinput');
+			const mapinput = document.getElementById('mapinput');
+			const fileinfo = document.getElementById('fileinfo');
+			const mapupload = document.getElementById('mapupload');
+			const retryconvert = document.getElementById('retryconvert');
+			const statusBox = document.getElementById('status');
+			const reopenButton = document.getElementById('reopen');
+			const closePanelButton = document.getElementById('closepanel');
+			const startTimeInput = document.getElementById('starttime');
+			const endTimeInput = document.getElementById('endtime');
+
+			let busy = false;
+			let playingDemo = false;
+			let demoCounter = 0;
+			// A source is either a File object or a URL string
+			let lastSource = null;
+			let pendingHeader = null;
+			let pendingSource = null;
+
+			function status(message, cls) {
+				const div = document.createElement('div');
+				div.textContent = message;
+				if (cls) {
+					div.className = cls;
+				}
+				statusBox.appendChild(div);
+				statusBox.scrollTop = statusBox.scrollHeight;
+				console.log(`[replayer] ${message}`);
+			}
+			// A demo is stored gzipped and the server says so in its headers, so
+			// the browser unpacks it on the way in. A CDN that cached the file
+			// before that header was there hands the bytes over as they are, and
+			// the client can only say "Error reading demo header": a demo never
+			// starts with the gzip magic, so unpack it here instead.
+			async function demoBytes(response) {
+				const raw = new Uint8Array(await response.arrayBuffer());
+				if (raw.length < 2 || raw[0] !== 0x1f || raw[1] !== 0x8b || typeof DecompressionStream !== 'function') {
+					return raw;
+				}
+				const unpacked = new Blob([raw]).stream().pipeThrough(new DecompressionStream('gzip'));
+				return new Uint8Array(await new Response(unpacked).arrayBuffer());
+			}
+			function statusError(message) {
+				status(message, 'error');
+				busy = false;
+				// Watch mode hides the panel, bring it back to show the error
+				document.body.classList.add('failed');
+			}
+			function clearStatus() {
+				statusBox.textContent = '';
+				fileinfo.style.display = 'none';
+				mapupload.style.display = 'none';
+				retryconvert.style.display = 'none';
+			}
+
+			function parseTimeInput(value) {
+				// Same formats as the converter: seconds, M:SS or H:MM:SS
+				if (!/^\d+(:\d{1,2}){0,2}$/.test(value)) {
+					return null;
+				}
+				return value.split(':').reduce((total, part) => total * 60 + parseInt(part, 10), 0);
+			}
+
+			function parseHeader(data) {
+				if (data.length < 17) {
+					return { error: "File too short to be a teehistorian file." };
+				}
+				const magics = [
+					{ bytes: [0xfd, 0x37, 0x7a, 0x58, 0x5a], name: "xz", hint: "Decompress it first: xz -d <file>" },
+					{ bytes: [0x1f, 0x8b], name: "gzip", hint: "Decompress it first: gzip -d <file>" },
+					{ bytes: [0x28, 0xb5, 0x2f, 0xfd], name: "zstd", hint: "Decompress it first: zstd -d <file>" },
+				];
+				for (const magic of magics) {
+					if (magic.bytes.every((b, i) => data[i] === b)) {
+						return { error: `This is a ${magic.name}-compressed file. ${magic.hint}` };
+					}
+				}
+				if (!TEEHISTORIAN_UUID.every((b, i) => data[i] === b)) {
+					return { error: "Not a teehistorian file (wrong magic bytes)." };
+				}
+				const nul = data.indexOf(0, 16);
+				if (nul < 0) {
+					return { error: "Corrupted teehistorian file (unterminated header)." };
+				}
+				try {
+					const header = JSON.parse(new TextDecoder().decode(data.subarray(16, nul)));
+					return { header: header };
+				} catch (parseError) {
+					return { error: `Corrupted teehistorian header: ${parseError.message}` };
+				}
+			}
+
+			async function fetchMap(header) {
+				if (!header.map_sha256) {
+					status("Old teehistorian version without map_sha256, cannot fetch the map automatically.");
+					return null;
+				}
+				const url = `${MAP_DOWNLOAD_URL}/${encodeURIComponent(header.map_name)}_${header.map_sha256}.map`;
+				status(`Downloading map ${header.map_name} ...`);
+				try {
+					const response = await fetch(url);
+					if (!response.ok) {
+						status(`Map download failed (HTTP ${response.status}).`);
+						return null;
+					}
+					const map = new Uint8Array(await response.arrayBuffer());
+					status(`Map downloaded (${(map.length / 1024).toFixed(0)} KiB).`, 'ok');
+					return map;
+				} catch (fetchError) {
+					status(`Map download failed: ${fetchError.message}`);
+					return null;
+				}
+			}
+
+			async function convert(source, mapData, startTime, endTime) {
+				status("Converting to demo ...");
+				// The tool is built with ASYNCIFY (like the whole client), so main()
+				// can suspend and callMain returns early. Wait for onExit before
+				// reading the result from the filesystem.
+				let signalExit = null;
+				const exitPromise = new Promise(resolve => { signalExit = resolve; });
+				const converter = await createTeehistorian2Demo({
+					locateFile: (path, prefix) => `${prefix}${path}?v=${BUILD_TAG}`,
+					print: text => status(parseAnsiColorRgb(text).message.replace(/^[0-9:\- ]*[IWE] /, "")),
+					printErr: text => status(text, 'error'),
+					onExit: exitCode => signalExit(exitCode),
+				});
+				let inputName;
+				if (typeof source === 'string') {
+					// The converter streams the URL itself and only downloads what it needs
+					inputName = source;
+				} else {
+					// Copy the recording into the converter in slices, so the page never
+					// holds the whole file in a single buffer next to the copy in the
+					// converter's filesystem.
+					inputName = 'input.teehistorian';
+					const SLICE_SIZE = 32 * 1024 * 1024;
+					const stream = converter.FS.open('/input.teehistorian', 'w');
+					for (let offset = 0; offset < source.size; offset += SLICE_SIZE) {
+						const end = Math.min(offset + SLICE_SIZE, source.size);
+						const slice = new Uint8Array(await source.slice(offset, end).arrayBuffer());
+						converter.FS.write(stream, slice, 0, slice.length, offset);
+						if (source.size > 256 * 1024 * 1024 && (offset / SLICE_SIZE) % 8 === 7) {
+							status(`Loading recording: ${(end / 1024 / 1024).toFixed(0)} / ${(source.size / 1024 / 1024).toFixed(0)} MiB ...`);
+						}
+					}
+					converter.FS.close(stream);
+				}
+				converter.FS.writeFile('/map.map', mapData);
+				const args = [inputName, 'map.map', 'output.demo'];
+				if (startTime || endTime) {
+					args.push(startTime || '0');
+					if (endTime) {
+						args.push(endTime);
+					}
+				}
+				try {
+					converter.callMain(args);
+				} catch (exitException) {
+					if (exitException && exitException.name !== 'ExitStatus') {
+						throw exitException;
+					}
+				}
+				const timeout = new Promise(resolve => setTimeout(() => resolve('timeout'), 1800000));
+				const exitCode = await Promise.race([exitPromise, timeout]);
+				if (exitCode !== 0) {
+					status(`Converter exited with ${exitCode}.`, 'error');
+					return null;
+				}
+				try {
+					const demoData = converter.FS.readFile('/output.demo');
+					if (typeof source !== 'string') {
+						converter.FS.unlink('/input.teehistorian');
+					}
+					return demoData;
+				} catch (readError) {
+					return null;
+				}
+			}
+
+			async function playDemo(demoData, name) {
+				await clientRuntimeReady;
+				const demoDir = `${CLIENT_HOME}/demos/teehistorian`;
+				// Create the whole chain, the client may not have created its
+				// data directories yet when the demo arrives quickly
+				FS.createPath('/', demoDir.substring(1), true, true);
+				// Unique name so switching to another replay always triggers a reload
+				demoCounter++;
+				const demoPath = `${demoDir}/${name}_${demoCounter}.demo`;
+				FS.writeFile(demoPath, demoData);
+				Module.ccall('EmscriptenCallbackDropFile', null, ['string'], [demoPath]);
+			}
+
+			// Read the first bytes of a URL (until the header's null terminator is
+			// found) without downloading the whole file. Returns the bytes and the
+			// content length, which is unknown for on-the-fly decompressed streams.
+			async function prefetchUrlHeader(url) {
+				const response = await fetch(url);
+				if (!response.ok || !response.body) {
+					throw new Error(`HTTP ${response.status}`);
+				}
+				const contentLength = response.headers.has('Content-Length') ? parseInt(response.headers.get('Content-Length'), 10) : null;
+				const reader = response.body.getReader();
+				const chunks = [];
+				let total = 0;
+				let sawNul = false;
+				while (total < 8 * 1024 * 1024 && !sawNul) {
+					const { value, done } = await reader.read();
+					if (done) {
+						break;
+					}
+					chunks.push(value);
+					total += value.length;
+					sawNul = value.includes(0);
+				}
+				reader.cancel();
+				const data = new Uint8Array(total);
+				let offset = 0;
+				for (const chunk of chunks) {
+					data.set(chunk, offset);
+					offset += chunk.length;
+				}
+				return { data, contentLength };
+			}
+
+			async function handleTeehistorian(source) {
+				if (busy) {
+					return;
+				}
+				busy = true;
+				lastSource = source;
+				clearStatus();
+				try {
+					const isUrl = typeof source === 'string';
+					let headerData;
+					let sourceSize;
+					if (isUrl) {
+						status(`Fetching ${source} ...`);
+						try {
+							const prefetch = await prefetchUrlHeader(source);
+							headerData = prefetch.data;
+							sourceSize = prefetch.contentLength;
+						} catch (fetchError) {
+							statusError(`Fetching the URL failed: ${fetchError.message}. The server needs to allow cross-origin requests.`);
+							return;
+						}
+					} else {
+						status(`Reading ${source.name} (${(source.size / 1024 / 1024).toFixed(1)} MiB) ...`);
+						headerData = new Uint8Array(await source.slice(0, 8 * 1024 * 1024).arrayBuffer());
+						sourceSize = source.size;
+					}
+					const parsed = parseHeader(headerData);
+					if (parsed.error) {
+						statusError(parsed.error);
+						return;
+					}
+					const header = parsed.header;
+					fileinfo.innerHTML = '';
+					const infoLines = [
+						['Server', header.server_name],
+						['Game type', header.game_type],
+						['Map', header.map_name],
+						['Recorded', header.start_time],
+					];
+					for (const [key, value] of infoLines) {
+						if (value) {
+							const div = document.createElement('div');
+							const b = document.createElement('b');
+							b.textContent = `${key}: `;
+							div.appendChild(b);
+							div.appendChild(document.createTextNode(value));
+							fileinfo.appendChild(div);
+						}
+					}
+					fileinfo.style.display = 'block';
+
+					const startTime = startTimeInput.value.trim();
+					const endTime = endTimeInput.value.trim();
+					for (const [label, value] of [['start', startTime], ['end', endTime]]) {
+						if (value && parseTimeInput(value) === null) {
+							statusError(`Invalid ${label} time '${value}', use seconds, M:SS or H:MM:SS.`);
+							return;
+						}
+					}
+					if (startTime && endTime && parseTimeInput(endTime) <= parseTimeInput(startTime)) {
+						statusError("The end time must be after the start time.");
+						return;
+					}
+					if (sourceSize !== null && sourceSize > MAX_FULL_CONVERT_SIZE && !startTime && !endTime) {
+						status(`This recording is ${(sourceSize / 1024 / 1024).toFixed(0)} MiB and likely covers many hours. ` +
+							`Converting all of it would produce a demo too large for the browser.`, 'error');
+						status("Enter a time window above, then convert. (The full recording can be converted with the native teehistorian2demo tool.)");
+						retryconvert.style.display = 'block';
+						busy = false;
+						return;
+					}
+					if (isUrl && sourceSize === null && !endTime) {
+						status("The length of this stream is unknown (on-the-fly decompression), so an end time is required.", 'error');
+						retryconvert.style.display = 'block';
+						busy = false;
+						return;
+					}
+
+					const mapData = await fetchMap(header);
+					if (mapData === null) {
+						status("Please select the map file manually.");
+						mapupload.style.display = 'block';
+						pendingHeader = header;
+						pendingSource = source;
+						busy = false;
+						return;
+					}
+					await convertAndPlay(source, mapData, header, startTime, endTime);
+				} catch (unexpectedError) {
+					statusError(`Unexpected error: ${unexpectedError.message}`);
+					console.error(unexpectedError);
+				}
+			}
+
+			async function convertAndPlay(source, mapData, header, startTime, endTime) {
+				const demoData = await convert(source, mapData, startTime, endTime);
+				if (demoData === null || demoData.length === 0) {
+					statusError("Conversion failed, no demo was produced.");
+					return;
+				}
+				status(`Demo ready (${(demoData.length / 1024 / 1024).toFixed(1)} MiB), starting playback ...`, 'ok');
+				const safeName = (header.map_name || "replay").replace(/[^A-Za-z0-9_\-]/g, "_");
+				await playDemo(demoData, safeName);
+				playingDemo = true;
+				busy = false;
+				overlay.style.display = 'none';
+				reopenButton.style.display = 'block';
+			}
+
+			dropzone.addEventListener('click', () => fileinput.click());
+			fileinput.addEventListener('change', () => {
+				if (fileinput.files.length > 0) {
+					handleTeehistorian(fileinput.files[0]);
+					fileinput.value = '';
+				}
+			});
+			const urlinput = document.getElementById('urlinput');
+			document.getElementById('urlgo').addEventListener('click', () => {
+				const url = urlinput.value.trim();
+				if (!/^https?:\/\//.test(url)) {
+					statusError("Enter a http(s):// URL.");
+					return;
+				}
+				handleTeehistorian(url);
+			});
+			urlinput.addEventListener('keydown', e => {
+				if (e.key === 'Enter') {
+					document.getElementById('urlgo').click();
+				}
+			});
+			retryconvert.querySelector('button').addEventListener('click', () => {
+				if (lastSource !== null && !busy) {
+					handleTeehistorian(lastSource);
+				}
+			});
+			mapupload.querySelector('button').addEventListener('click', () => mapinput.click());
+			mapinput.addEventListener('change', async () => {
+				if (mapinput.files.length > 0 && pendingSource !== null && !busy) {
+					busy = true;
+					mapupload.style.display = 'none';
+					const mapData = new Uint8Array(await mapinput.files[0].arrayBuffer());
+					await convertAndPlay(pendingSource, mapData, pendingHeader, startTimeInput.value.trim(), endTimeInput.value.trim());
+					mapinput.value = '';
+				}
+			});
+			dropzone.addEventListener('dragover', e => {
+				e.preventDefault();
+				dropzone.classList.add('hover');
+			});
+			dropzone.addEventListener('dragleave', () => dropzone.classList.remove('hover'));
+			dropzone.addEventListener('drop', e => {
+				e.preventDefault();
+				dropzone.classList.remove('hover');
+				if (e.dataTransfer.files.length > 0) {
+					handleTeehistorian(e.dataTransfer.files[0]);
+				}
+			});
+			reopenButton.addEventListener('click', () => {
+				overlay.style.display = 'flex';
+				reopenButton.style.display = 'none';
+				closePanelButton.style.display = playingDemo ? 'block' : 'none';
+			});
+			closePanelButton.addEventListener('click', () => {
+				overlay.style.display = 'none';
+				reopenButton.style.display = 'block';
+			});
+			// Also accept teehistorian files dropped onto the running replay
+			Module['canvas'].addEventListener('dragover', e => {
+				e.preventDefault();
+				e.dataTransfer.dropEffect = "copy";
+			});
+			Module['canvas'].addEventListener('drop', e => {
+				e.preventDefault();
+				if (e.dataTransfer.files.length > 0) {
+					overlay.style.display = 'flex';
+					reopenButton.style.display = 'none';
+					closePanelButton.style.display = 'block';
+					handleTeehistorian(e.dataTransfer.files[0]);
+				}
+			});
+
+			// ------------------------------------------------------------------
+			// Watch mode plays the demo of one rank, the demo only contains the
+			// run's own team and the camera follows the finishing player:
+			//   ?uuid=<game uuid>             a pre-generated rank, everything
+			//                                 else comes out of watchable.jsonl
+			//   ?demo=<url>&cid=<n>           any demo, spelled out
+			//   ?uuid=<game uuid>&time=<seconds>&ts=<finish epoch>&name=<player>
+			//   [&name=...]                    converted by archive-server.py
+			//                                  (--server overrides the service)
+			// ------------------------------------------------------------------
+
+			// The line of watchable.jsonl that belongs to a game uuid. One
+			// recording can hold several ranks, in which case the link says
+			// which one with a time. The manifest is written nightly, so it is
+			// revalidated rather than taken from the browser cache.
+			async function watchableEntry(uuid, time) {
+				// The lines of one recording sit in a small file of their own,
+				// the whole manifest is only fetched for a run that has none
+				let response;
+				try {
+					response = await fetch(`runs/${uuid}.jsonl`, { cache: 'no-cache' });
+					if (!response.ok) {
+						response = await fetch(MANIFEST_URL, { cache: 'no-cache' });
+					}
+				} catch (fetchError) {
+					return null;
+				}
+				if (!response.ok) {
+					return null;
+				}
+				for (const line of (await response.text()).split('\n')) {
+					if (!line.includes(uuid)) {
+						continue;
+					}
+					try {
+						const entry = JSON.parse(line);
+						if (entry.uuid !== uuid || entry.status !== 'ok' || !entry.demo) {
+							continue;
+						}
+						if (time === null || Math.abs(parseFloat(entry.time) - parseFloat(time)) < 0.005) {
+							return entry;
+						}
+					} catch (parseError) {
+					}
+				}
+				return null;
+			}
+
+			function paramsOfEntry(entry) {
+				const params = new URLSearchParams();
+				// The revision keeps a re-scrambled demo from being served out of
+				// a CDN cache that still holds the previous one
+				params.set('demo', `demos/${entry.demo}${entry.rev ? `?v=${entry.rev}` : ''}`);
+				params.set('cid', String(entry.cid));
+				params.set('map', entry.map);
+				params.set('time', entry.time);
+				for (const name of entry.names || []) {
+					params.append('name', name);
+				}
+				for (const finisher of entry.finishers || []) {
+					params.append('finisher', String(finisher));
+				}
+				return params;
+			}
+
+			async function watchRank(params) {
+				busy = true;
+				let url;
+				// A link to a pre-generated rank is its game uuid, and a time
+				// when the same recording holds more than one rank. The
+				// conversion service of archive-server.py is the other user of
+				// uuid links and says so with ts or server.
+				if (!params.get('demo') && params.get('uuid') && !params.get('ts') && !params.get('server')) {
+					const entry = await watchableEntry(params.get('uuid'), params.get('time'));
+					if (entry === null) {
+						statusError("This run is not one of the pre-generated ranks.");
+						busy = false;
+						return;
+					}
+					params = paramsOfEntry(entry);
+					setRunTitle(titleOf(params));
+				}
+				if (params.get('demo')) {
+					url = params.get('demo');
+				} else {
+					const server = params.get('server') || RANKDEMO_URL;
+					const query = new URLSearchParams();
+					for (const key of ['uuid', 'time', 'ts']) {
+						if (params.get(key)) {
+							query.set(key, params.get(key));
+						}
+					}
+					for (const name of params.getAll('name')) {
+						query.append('name', name);
+					}
+					url = `${server}/rankdemo?${query}`;
+				}
+				const names = params.getAll('name').join(', ');
+				status(names !== '' ? `Loading the run of ${names} ...` : "Loading the run ...");
+				let response;
+				try {
+					response = await fetch(url);
+				} catch (fetchError) {
+					statusError(`Loading the run failed: ${fetchError.message}`);
+					busy = false;
+					return;
+				}
+				if (!response.ok) {
+					statusError(response.status === 404 ?
+						"This run is not in the teehistorian archive (yet)." :
+						`Loading the run failed (HTTP ${response.status}).`);
+					busy = false;
+					return;
+				}
+				let meta = {};
+				try {
+					meta = JSON.parse(response.headers.get('X-Rank-Meta') || '{}');
+				} catch (parseError) {
+				}
+				if (params.get('cid') !== null) {
+					meta.cid = parseInt(params.get('cid'), 10);
+				}
+				const demoData = await demoBytes(response);
+				demoReady = true;
+				updateLoadStage();
+				status(`Demo ready (${(demoData.length / 1024 / 1024).toFixed(1)} MiB), starting playback ...`, 'ok');
+				await playDemo(demoData, (meta.map_name || "rank").replace(/[^A-Za-z0-9_\-]/g, "_"));
+				playingDemo = true;
+				busy = false;
+				// The client draws its own loading screen while it loads skins
+				// and the map, laid out for a desktop window. Stay in front of
+				// it until the demo renders, and give up after a while so a
+				// demo that never starts still shows whatever the client did.
+				waitingForPlayback = true;
+				watchCid = meta.cid || 0;
+				rankedNames = params.getAll('name');
+				// Whose rank it is: the players of the team that were there at
+				// the finish. Names are not unique, so the ids decide whenever
+				// the link carries them.
+				rankedIds = params.getAll('finisher');
+				soloRun = rankedNames.length <= 1;
+				// A solo rank belongs to one player, while its demo keeps the
+				// rest of team 0 around it, which the finisher list names too
+				if (soloRun) {
+					rankedIds = [String(watchCid)];
+				}
+				if (meta.cid !== undefined) {
+					// A team run frames the whole team through multi-view, a solo
+					// run stays on its one finisher. The client drops a spectate
+					// command until the demo actually plays, so selectCamera keeps
+					// asking until it reports the camera we want.
+					cameraSelection = soloRun ? String(meta.cid) : 'team';
+					selectCamera(cameraSelection);
+					setTimeout(() => showCameraTee(cameraSelection, null), 4200);
+				}
+				const download = document.getElementById('downloadbutton');
+				download.href = URL.createObjectURL(new Blob([demoData], { type: 'application/octet-stream' }));
+				// "<map> [<seconds>] - <player>, <player> & <player>.demo"
+				download.download = `${titleOf(params, meta, params.get('time') || meta.time)}.demo`.replace(/[\\/:*?"<>|]/g, '_');
+				const title = titleOf(params, meta);
+				renderDemoTitle(params, meta);
+				setRunTitle(title);
+				document.getElementById('demobar').style.display = 'flex';
+				setInterval(updateSeekBar, 100);
+			}
+
+			// Touch-friendly demo controls, executed through the client console.
+			// Every zoom the page makes passes here, which is the only place it
+			// can be followed: the client has no way to report its zoom back,
+			// and the level is kept for the next visit like the volume is.
+			function execute(cmd) {
+				if (cmd === 'zoom+' || cmd === 'zoom-') {
+					setSetting('zoom', Math.min(25, Math.max(0, viewSettings.zoom + (cmd === 'zoom+' ? 1 : -1))));
+				} else if (cmd === 'zoom') {
+					setSetting('zoom', ZOOM_DEFAULT);
+				}
+				Module.ccall('EmscriptenCallbackConsoleExecute', null, ['string'], [cmd]);
+			}
+			// Off by default: a phone screen is far taller than 5:4 and using
+			// all of it is the point
+			function toggleAspectLimit() {
+				limitAspect = !limitAspect;
+				setSetting('viewport', limitAspect);
+				document.getElementById('aspectbutton').classList.toggle('on', limitAspect);
+				if(layoutCanvas()) {
+					window.dispatchEvent(new Event('resize'));
+				}
+			}
+			// The client's "toggle cl_overlay_entities 0 100", set to the value
+			// itself so the button knows which state the client is in
+			function toggleEntities() {
+				setSetting('entities', !viewSettings.entities);
+				document.getElementById('entitiesbutton').classList.toggle('on', viewSettings.entities);
+				execute(`cl_overlay_entities ${viewSettings.entities ? 100 : 0}`);
+			}
+			// cl_show_direction, the arrows next to a tee
+			function toggleKeyPresses() {
+				setSetting('keys', !viewSettings.keys);
+				document.getElementById('keysbutton').classList.toggle('on', viewSettings.keys);
+				execute(`cl_show_direction ${viewSettings.keys ? 1 : 0}`);
+			}
+			// The client's own playback steps (DEMO_SPEEDS in engine/demo.h), so
+			// the buttons and the up/down keys land on the same values
+			const speeds = [0.1, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4, 6, 8, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64];
+			let speed = 1;
+			let speedIndex = speeds.indexOf(1);
+			let muted = viewSettings.volume <= 0;
+			let lastVolume = viewSettings.volume > 0 ? viewSettings.volume : 100;
+			let paused = false;
+			let watchCid = 0;
+			let lastZoomKey = 0;
+			// Font Awesome codepoints of the embedded icon subset
+			const ICONS = { play: '\uf04b', pause: '\uf04c', users: '\uf0c0', volumeHigh: '\uf028', volumeXmark: '\uf6a9', trophy: '\uf091', freeview: '\uf002' };
+			const setIcon = (button, icon) => { button.querySelector('.icon').textContent = ICONS[icon]; };
+			const help = document.getElementById('help');
+			const toggleHelp = () => { help.style.display = help.style.display === 'block' ? 'none' : 'block'; };
+			help.addEventListener('click', () => { help.style.display = 'none'; });
+			for (const button of document.querySelectorAll('#demobar button')) {
+				button.addEventListener('click', () => {
+					let cmd = button.dataset.cmd;
+					if (button.id === 'helpbutton') {
+						toggleHelp();
+						return;
+					} else if (button.id === 'speedvalue') {
+						speedIndex = speeds.indexOf(1);
+						speed = 1;
+						speedValue.textContent = '1×';
+						cmd = 'demo_speed 1';
+					} else if (button.id === 'speeddown' || button.id === 'speedup') {
+						// Step our own index: two quick clicks must move two steps,
+						// even before the client has reported the first one back
+						speedIndex = Math.min(speeds.length - 1, Math.max(0, speedIndex + (button.id === 'speedup' ? 1 : -1)));
+						speed = speeds[speedIndex];
+						speedValue.textContent = `${speed}×`;
+						cmd = `demo_speed ${speed}`;
+					} else if (button.id === 'mutebutton') {
+						muted = !muted;
+						setVolume(muted ? 0 : lastVolume);
+						return;
+					} else if (button.id === 'camerabutton') {
+						toggleCameraMenu();
+						return;
+					} else if (button.id === 'sharebutton') {
+						toggleShareMenu();
+						return;
+					} else if (button.id === 'skinbutton') {
+						toggleSkinMenu();
+						return;
+					} else if (button.id === 'aspectbutton') {
+						toggleAspectLimit();
+						button.blur();
+						return;
+					} else if (button.id === 'entitiesbutton') {
+						toggleEntities();
+						button.blur();
+						return;
+					} else if (button.id === 'keysbutton') {
+						toggleKeyPresses();
+						button.blur();
+						return;
+					}
+					execute(cmd);
+					button.blur();
+				});
+			}
+			// Camera menu: the whole team (multi-view) or one player, listed
+			// with their skin and name from the client's current snapshot
+			const volumeSlider = document.getElementById('volume');
+			function setVolume(value, repaint = true) {
+				value = Math.min(100, Math.max(0, Math.round(value)));
+				muted = value <= 0;
+				if(value > 0) {
+					lastVolume = value;
+				}
+				setSetting('volume', value);
+				if(repaint) {
+					volumeSliderControl.paint(value / 100);
+				}
+				setIcon(document.getElementById('mutebutton'), muted ? 'volumeXmark' : 'volumeHigh');
+				execute(`snd_volume ${value}`);
+			}
+			const cameraMenu = document.getElementById('cameramenu');
+			const cameraButton = document.getElementById('camerabutton');
+			// The button shows the followed player as a tee, never a name, and
+			// keeps its width so the bar never resizes
+			function showCameraTee(id, tee) {
+				const canvas = cameraButton.querySelector('.tee');
+				const icon = cameraButton.querySelector('.icon');
+				if (id === 'team' || id === 'free') {
+					canvas.hidden = true;
+					icon.hidden = false;
+					setIcon(cameraButton, id === 'team' ? 'users' : 'freeview');
+					return;
+				}
+				if (tee === null) {
+					for (const line of Module.ccall('EmscriptenCallbackPlayerInfo', 'string', [], []).split('\n')) {
+						const [otherId, , skin, custom, body, feet] = line.split('\t');
+						if (otherId === String(id)) {
+							tee = { skin, custom: custom === '1', body: Number(body), feet: Number(feet) };
+							break;
+						}
+					}
+				}
+				if (tee === null) {
+					return;
+				}
+				canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+				renderTee(canvas, tee);
+				canvas.hidden = false;
+				icon.hidden = true;
+			}
+			// What a run is called: the map, the time and who ran it
+			function runParts(params, meta = {}, rawTime = null) {
+				const names = params.getAll('name');
+				const time = params.get('time') || meta.time;
+				const seconds = Number(time);
+				// The time is written the way a rank is, minutes:seconds.hundredths
+				const shown = rawTime !== null ? rawTime : (time && !isNaN(seconds) ?
+					`${String(Math.floor(seconds / 60)).padStart(2, '0')}:${(seconds % 60).toFixed(2).padStart(5, '0')}` : time);
+				return { map: meta.map_name || params.get('map') || 'rank', shown, names };
+			}
+			// The site writes a name into a URL by replacing these characters,
+			// and everything above ASCII, with the code point between dashes
+			// (slugify2 in ddnet.py)
+			const SLUG_ESCAPED = new Set(['[', '\t', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*',
+				'\\', '-', '/', '<', '=', '>', '?', '@', ']', '^', '_', '`', '{', '|', '}', ',', '.', ':', '+']);
+			const slugify = name => [...name].map(character =>
+				SLUG_ESCAPED.has(character) || character.codePointAt(0) >= 128 ?
+					`-${character.codePointAt(0)}-` : character).join('');
+			// "<map> [<mm:ss.hh>] - <player>, <player> & <player>", what a run is
+			// called on the page, in the browser tab and in the demo file name
+			function titleOf(params, meta = {}, rawTime = null) {
+				const { map, shown, names } = runParts(params, meta, rawTime);
+				const who = names.length > 1 ?
+					`${names.slice(0, -1).join(', ')} & ${names[names.length - 1]}` : names[0] || '';
+				return `${map}${shown ? ` [${shown}]` : ''}${who ? ` - ${who}` : ''}`;
+			}
+
+			// The client names the browser tab after itself through SDL as soon
+			// as it starts, and again when it loads the map, so the title of
+			// the run is put back every time it does
+			// The title in the bar, with the map and every player linking to
+			// their page on the site. The links open in a new tab, a click may
+			// not take the running replay off the screen.
+			function renderDemoTitle(params, meta) {
+				const { map, shown, names } = runParts(params, meta);
+				const element = document.getElementById('demotitle');
+				const link = (text, href) => {
+					const anchor = document.createElement('a');
+					anchor.textContent = text;
+					anchor.href = href;
+					anchor.target = '_blank';
+					anchor.rel = 'noopener';
+					return anchor;
+				};
+				const parts = [link(map, `https://ddnet.org/maps/${slugify(map)}/`)];
+				if (shown) {
+					parts.push(document.createTextNode(` [${shown}]`));
+				}
+				names.forEach((name, index) => {
+					parts.push(document.createTextNode(index === 0 ? ' - ' : index === names.length - 1 ? ' & ' : ', '));
+					parts.push(link(name, `https://ddnet.org/players/${slugify(name)}/`));
+				});
+				element.replaceChildren(...parts);
+			}
+
+			let runTitle = '';
+			function setRunTitle(title) {
+				runTitle = title;
+				document.title = title;
+			}
+			new MutationObserver(() => {
+				if (runTitle !== '' && document.title !== runTitle) {
+					document.title = runTitle;
+				}
+			}).observe(document.querySelector('title'), { childList: true, characterData: true, subtree: true });
+			let cameraSelection = 'team';
+			let lastPicked = null; // the player a click in the camera menu last landed on
+			// The camera is only really set once the client says so, see
+			// reconcileCamera
+			let cameraAsked = 0;
+			let cameraWanted = false;
+			let cameraDeadline = 0;
+			let soloRun = false;
+			let rankedNames = [];
+			let rankedIds = [];
+			// The wanted camera, written to the client until it sticks: a
+			// spectate command is refused while the demo has not started
+			// playing, and multi-view falls back to free view when it is
+			// activated before the client knows the team of the run.
+			function selectCamera(id) {
+				cameraSelection = id;
+				freeViewLock = id === 'free';
+				if (freeViewLock) {
+					showHint('Click the map to look around, Esc gives the mouse back');
+				} else if (document.pointerLockElement !== null) {
+					document.exitPointerLock();
+				}
+				cameraAsked = 0;
+				cameraWanted = true;
+				cameraDeadline = 0;
+				writeCamera();
+			}
+			// A chosen set of players is a multi-view of exactly them: the client
+			// builds its own set when multi-view goes on, so ours is written
+			// over it once it is up (see reconcileCamera)
+			const cameraIsSet = () => Array.isArray(cameraSelection);
+			const cameraHas = id => cameraIsSet() ? cameraSelection.includes(id) : cameraSelection === id;
+			function writeCamera() {
+				cameraAsked = performance.now();
+				if (cameraIsSet()) {
+					execute(`spectate ${cameraSelection[0]}; spectate_multiview_activate 1`);
+				} else if (cameraSelection === 'team') {
+					execute(`spectate ${watchCid}; spectate_multiview_activate 1`);
+				} else {
+					// -1 is SPEC_FREEVIEW, the camera nobody follows
+					execute(`spectate_multiview_activate 0; spectate ${cameraSelection === 'free' ? -1 : cameraSelection}`);
+				}
+			}
+			function reconcileCamera(playing) {
+				if (!cameraWanted) {
+					return;
+				}
+				// Nothing sticks before the first tick is on screen, and a tab
+				// in the background renders nothing at all: the client makes no
+				// progress there, so give it its time once it runs again
+				if (!playing || document.hidden) {
+					cameraDeadline = 0;
+					return;
+				}
+				if (cameraDeadline === 0) {
+					cameraDeadline = performance.now() + 20000;
+					cameraAsked = 0;
+				}
+				if (performance.now() > cameraDeadline) {
+					cameraWanted = false;
+					return;
+				}
+				const info = Module.ccall('EmscriptenCallbackCameraInfo', 'string', [], []);
+				if (info === '') {
+					return;
+				}
+				const [spectated, multiView] = info.split(' ').map(Number);
+				if (cameraIsSet()) {
+					if (multiView === 1) {
+						// -1 clears the set the client filled in for the team
+						execute('spectate_multiview -1; ' +
+							cameraSelection.map(id => `spectate_multiview ${id}`).join('; '));
+						cameraWanted = false;
+					} else if (performance.now() - cameraAsked > 400) {
+						writeCamera();
+					}
+					return;
+				}
+				// Multi-view picks the tee it follows itself, so the team
+				// camera is reached as soon as it is on
+				const reached = cameraSelection === 'team' ? multiView === 1 :
+					multiView === 0 && spectated === (cameraSelection === 'free' ? -1 : Number(cameraSelection));
+				if (reached) {
+					cameraWanted = false;
+					return;
+				}
+				if (performance.now() - cameraAsked > 400) {
+					writeCamera();
+				}
+			}
+			function toggleCameraMenu() {
+				if (cameraMenu.style.display === 'flex') {
+					cameraMenu.style.display = 'none';
+					return;
+				}
+				cameraMenu.textContent = '';
+				const entries = soloRun ? [] : [['team', 'Whole team', null]];
+				// The camera the client lets go of, to look around the map
+				const freeView = ['free', 'Free view', null];
+				const players = [];
+				for (const line of Module.ccall('EmscriptenCallbackPlayerInfo', 'string', [], []).split('\n')) {
+					const [id, name, skin, custom, body, feet] = line.split('\t');
+					if (name !== undefined) {
+						players.push([id, name, { skin, custom: custom === '1', body: Number(body), feet: Number(feet) }]);
+					}
+				}
+				// The players who set the rank come first, marked with a cup
+				const rankOf = (id, name) => rankedIds.length ? rankedIds.indexOf(String(id)) : rankedNames.indexOf(name);
+				players.sort((a, b) => {
+					const ra = rankOf(a[0], a[1]), rb = rankOf(b[0], b[1]);
+					if ((ra === -1) !== (rb === -1)) {
+						return ra === -1 ? 1 : -1;
+					}
+					return ra === -1 ? 0 : ra - rb;
+				});
+				entries.push(...players, freeView);
+				// The players in menu order, and the one a click last landed on,
+				// so that shift can take the stretch between them
+				const playerIds = () => players.map(([playerId]) => playerId);
+				const markSelected = () => {
+					for (const button of cameraMenu.querySelectorAll('button')) {
+						button.classList.toggle('selected', cameraHas(button.dataset.cameraId));
+					}
+				};
+				for (const [id, name, tee] of entries) {
+					const entry = document.createElement('button');
+					entry.dataset.cameraId = id;
+					entry.className = cameraHas(id) ? 'selected' : '';
+					if (tee === null) {
+						const icon = document.createElement('span');
+						icon.className = 'icon';
+						icon.textContent = id === 'free' ? ICONS.freeview : ICONS.users;
+						entry.appendChild(icon);
+					} else {
+						const canvas = document.createElement('canvas');
+						canvas.className = 'tee';
+						canvas.width = 96;
+						canvas.height = 64;
+						renderTee(canvas, tee);
+						entry.appendChild(canvas);
+					}
+					entry.appendChild(document.createTextNode(name));
+					if (rankOf(id, name) !== -1) {
+						entry.classList.add('ranked');
+						const cup = document.createElement('span');
+						cup.className = 'cup';
+						cup.textContent = ICONS.trophy;
+						const preview = on => {
+							for (const button of cameraMenu.querySelectorAll('button')) {
+								button.classList.toggle('preview', on && rankedIds.includes(button.dataset.cameraId));
+							}
+						};
+						cup.addEventListener('pointerenter', () => preview(true));
+						cup.addEventListener('pointerleave', () => preview(false));
+						entry.appendChild(cup);
+					}
+					entry.addEventListener('click', event => {
+						// The cup is the run itself: watching it means watching
+						// everyone who finished it
+						if (event.target.closest('.cup') && rankedIds.length > 0) {
+							cameraMenu.style.display = 'none';
+							showCameraTee(rankedIds.length > 1 ? 'team' : rankedIds[0], null);
+							selectCamera(rankedIds.length > 1 ? rankedIds.slice() : rankedIds[0]);
+							return;
+						}
+						// Shift or ctrl keeps the menu open and builds a set of
+						// players to watch together, shift taking the whole
+						// stretch from the one picked last, as a list does
+						if (tee !== null && (event.shiftKey || event.ctrlKey || event.metaKey)) {
+							const chosen = cameraIsSet() ? cameraSelection.slice() :
+								(cameraSelection === 'team' || cameraSelection === 'free' ? [] : [cameraSelection]);
+							const at = chosen.indexOf(id);
+							if (event.shiftKey && lastPicked !== null && lastPicked !== id) {
+								const ids = playerIds();
+								const from = ids.indexOf(lastPicked);
+								const to = ids.indexOf(id);
+								if (from !== -1 && to !== -1) {
+									for (const between of ids.slice(Math.min(from, to), Math.max(from, to) + 1)) {
+										if (!chosen.includes(between)) {
+											chosen.push(between);
+										}
+									}
+								}
+							} else if (at === -1) {
+								chosen.push(id);
+							} else {
+								chosen.splice(at, 1);
+							}
+							lastPicked = id;
+							if (chosen.length === 0) {
+								return;
+							}
+							showCameraTee(chosen.length > 1 ? 'team' : chosen[0], chosen.length > 1 ? null : tee);
+							selectCamera(chosen.length > 1 ? chosen : chosen[0]);
+							markSelected();
+							return;
+						}
+						cameraMenu.style.display = 'none';
+						lastPicked = tee === null ? null : id;
+						showCameraTee(id, tee);
+						selectCamera(id);
+					});
+					cameraMenu.appendChild(entry);
+				}
+				cameraMenu.style.display = 'flex';
+				placeMenu(cameraMenu, cameraButton);
+			}
+			// Above the button it belongs to rather than the middle of the bar,
+			// held inside the bar when the menu is wider than the button
+			function placeMenu(menu, button) {
+				const bar = menu.offsetParent || document.getElementById('demobar');
+				const barBox = bar.getBoundingClientRect();
+				const buttonBox = button.getBoundingClientRect();
+				const left = buttonBox.left + buttonBox.width / 2 - barBox.left - menu.offsetWidth / 2;
+				menu.style.transform = 'none';
+				menu.style.left = `${Math.max(6, Math.min(left, barBox.width - menu.offsetWidth - 6))}px`;
+			}
+			document.addEventListener('pointerdown', e => {
+				if (!cameraMenu.contains(e.target) && !cameraButton.contains(e.target)) {
+					cameraMenu.style.display = 'none';
+				}
+				if (!shareMenu.contains(e.target) && !shareButton.contains(e.target)) {
+					shareMenu.style.display = 'none';
+				}
+				if (!skinMenu.contains(e.target) && !skinButton.contains(e.target)) {
+					skinMenu.style.display = 'none';
+				}
+			});
+			// Skin menu: which skins the tees wear, applied to the client at
+			// once, and the tees the page draws itself follow along
+			const skinMenu = document.getElementById('skinmenu');
+			const skinButton = document.getElementById('skinbutton');
+			const drawSkinButton = () => renderTee(skinButton.querySelector('.tee'), { skin: 'default', custom: false, body: 0, feet: 0 });
+			function toggleSkinMenu() {
+				if (skinMenu.style.display === 'flex') {
+					skinMenu.style.display = 'none';
+					return;
+				}
+				skinMenu.replaceChildren();
+				for (const [mode, label] of [['community', 'Community skins'], ['default', 'Default skins'], ['none', 'No skins']]) {
+					const entry = document.createElement('button');
+					entry.textContent = label;
+					entry.className = viewSettings.skins === mode ? 'selected' : '';
+					entry.addEventListener('click', () => {
+						skinMenu.style.display = 'none';
+						setSetting('skins', mode);
+						execute(skinConfig(mode).join('; '));
+						drawSkinButton();
+					});
+					skinMenu.appendChild(entry);
+				}
+				skinMenu.style.display = 'flex';
+				placeMenu(skinMenu, skinButton);
+			}
+			// Share menu: the link of the run, on its own or opening at the
+			// moment the replay stands at
+			const shareMenu = document.getElementById('sharemenu');
+			const shareButton = document.getElementById('sharebutton');
+			function shareUrl(withPosition) {
+				const url = new URL(location.href);
+				url.searchParams.delete('t');
+				url.hash = withPosition ? `t=${position.toFixed(2)}` : '';
+				return url.href;
+			}
+			function toggleShareMenu() {
+				if (shareMenu.style.display === 'flex') {
+					shareMenu.style.display = 'none';
+					return;
+				}
+				shareMenu.replaceChildren();
+				for (const withPosition of [true, false]) {
+					const entry = document.createElement('button');
+					entry.textContent = withPosition ? 'Link to current time' : 'Link to start';
+					entry.addEventListener('click', async () => {
+						try {
+							await navigator.clipboard.writeText(shareUrl(withPosition));
+							entry.textContent = 'Copied';
+						} catch (error) {
+							// A browser that refuses the clipboard leaves the
+							// link to be copied out of the address bar
+							entry.textContent = 'Copying failed';
+						}
+						setTimeout(() => { shareMenu.style.display = 'none'; }, 800);
+					});
+					shareMenu.appendChild(entry);
+				}
+				shareMenu.style.display = 'flex';
+				placeMenu(shareMenu, shareButton);
+			}
+			// Hide the controls after a second without pointer movement, unless
+			// the pointer rests on them or their camera menu is open
+			const demoBar = document.getElementById('demobar');
+			let idleTimer = null;
+			const wakeControls = () => {
+				demoBar.classList.remove('idle');
+				clearTimeout(idleTimer);
+				idleTimer = setTimeout(() => {
+					if (!demoBar.matches(':hover') && cameraMenu.style.display !== 'flex' && shareMenu.style.display !== 'flex' && skinMenu.style.display !== 'flex') {
+						demoBar.classList.add('idle');
+					}
+				}, 1000);
+			};
+			for (const eventName of ['pointermove', 'pointerdown', 'keydown']) {
+				document.addEventListener(eventName, wakeControls);
+			}
+			demoBar.addEventListener('pointerleave', wakeControls);
+			// Tee rendering like the client: the sheet is turned into luma with
+			// the body normalized around its most common value, then tinted
+			// with the body and feet colors (HSL, lightness lifted above 50 %)
+			const skinImages = new Map();
+			function loadSkin(name) {
+				// The same directories the client is allowed, see skinConfig
+				const mode = viewSettings.skins;
+				const key = `${mode}:${name}`;
+				if (!skinImages.has(key)) {
+					skinImages.set(key, new Promise(resolve => {
+						const tryLoad = paths => {
+							const image = new Image();
+							image.onload = () => resolve(image);
+							image.onerror = () => paths.length > 1 ? tryLoad(paths.slice(1)) : resolve(null);
+							image.src = paths[0];
+						};
+						const paths = mode === 'none' ? [] : mode === 'default' ? [`/skins/skin/${name}.png`] :
+							[`/skins/skin/${name}.png`, `/skins/skin/community/${name}.png`];
+						tryLoad([...paths, '/skins/skin/default.png']);
+					}));
+				}
+				return skinImages.get(key);
+			}
+			function hslToRgb(packed) {
+				const h = ((packed >> 16) & 255) / 255, s = ((packed >> 8) & 255) / 255;
+				const l = 0.5 + ((packed & 255) / 255) * 0.5;
+				const q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+				const channel = t => {
+					t = (t + 1) % 1;
+					return t < 1 / 6 ? p + (q - p) * 6 * t : t < 0.5 ? q : t < 2 / 3 ? p + (q - p) * (2 / 3 - t) * 6 : p;
+				};
+				return [channel(h + 1 / 3), channel(h), channel(h - 1 / 3)];
+			}
+			async function renderTee(canvas, tee) {
+				const image = await loadSkin(tee.skin);
+				if (image === null) {
+					return;
+				}
+				const s = image.naturalWidth / 256;
+				let sheet = image;
+				if (tee.custom) {
+					sheet = document.createElement('canvas');
+					sheet.width = image.naturalWidth;
+					sheet.height = image.naturalHeight;
+					const context = sheet.getContext('2d');
+					context.drawImage(image, 0, 0);
+					const pixels = context.getImageData(0, 0, sheet.width, sheet.height);
+					const data = pixels.data;
+					const luma = new Uint8Array(sheet.width * sheet.height);
+					const frequency = new Uint32Array(256);
+					for (let i = 0; i < luma.length; i++) {
+						luma[i] = 0.2126 * data[i * 4] + 0.7152 * data[i * 4 + 1] + 0.0722 * data[i * 4 + 2];
+						if (i % sheet.width < 96 * s && Math.floor(i / sheet.width) < 96 * s && data[i * 4 + 3] > 128) {
+							frequency[luma[i]]++;
+						}
+					}
+					let orgWeight = 1;
+					for (let i = 1; i < 256; i++) {
+						if (frequency[orgWeight] < frequency[i]) {
+							orgWeight = i;
+						}
+					}
+					const newWeight = 192;
+					const bodyColor = hslToRgb(tee.body), feetColor = hslToRgb(tee.feet);
+					for (let i = 0; i < luma.length; i++) {
+						const x = i % sheet.width, y = Math.floor(i / sheet.width);
+						let v = luma[i];
+						if (x < 96 * s && y < 96 * s) {
+							v = v <= orgWeight ? Math.floor(v / orgWeight * newWeight) : Math.floor((v - orgWeight) / (255 - orgWeight) * (255 - newWeight) + newWeight);
+						}
+						const color = x >= 192 * s && y >= 32 * s && y < 96 * s ? feetColor : bodyColor;
+						data[i * 4] = v * color[0];
+						data[i * 4 + 1] = v * color[1];
+						data[i * 4 + 2] = v * color[2];
+					}
+					context.putImageData(pixels, 0, 0);
+				}
+				// Same composition as the skin database page (tee.js)
+				const context = canvas.getContext('2d');
+				context.drawImage(sheet, 192 * s, 64 * s, 64 * s, 32 * s, 8, 32, 64, 30);
+				context.drawImage(sheet, 96 * s, 0, 96 * s, 96 * s, 16, 0, 64, 64);
+				context.drawImage(sheet, 192 * s, 64 * s, 64 * s, 32 * s, 24, 32, 64, 30);
+				context.drawImage(sheet, 192 * s, 32 * s, 64 * s, 32 * s, 8, 32, 64, 30);
+				context.drawImage(sheet, 0, 0, 96 * s, 96 * s, 16, 0, 64, 64);
+				context.drawImage(sheet, 192 * s, 32 * s, 64 * s, 32 * s, 24, 32, 64, 30);
+				context.drawImage(sheet, 64 * s, 96 * s, 32 * s, 32 * s, 39, 18, 26, 26);
+				context.save();
+				context.scale(-1, 1);
+				context.drawImage(sheet, 64 * s, 96 * s, 32 * s, 32 * s, -73, 18, 26, 26);
+				context.restore();
+			}
+			// The seek bar follows the playing demo (polled from the client,
+			// which also keeps the pause icon in sync with the Space key) and
+			// scrubs while dragged
+			const playButton = document.getElementById('playbutton');
+			const speedValue = document.getElementById('speedvalue');
+			const seek = document.getElementById('seek');
+			const timeNow = document.getElementById('timenow');
+			const timeEnd = document.getElementById('timeend');
+			const formatTime = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+			let demoLength = 0; // seconds
+			let seeking = false;
+			let pendingSeek = null; // slider value the client still has to reach
+			let pendingSince = 0;
+			// "t" of the address bar: the position a paused replay stands at,
+			// so the link that is copied then opens at the same moment. The
+			// link of a running replay carries no position. It rides in the
+			// fragment, which a browser never sends: a link that carries a
+			// moment is the same request as the run itself, and so the same
+			// entry in the CDN cache.
+			let shareTime = null;
+			let startTime = null;
+			let position = 0; // seconds into the run, what the seek bar shows
+			// The zoom of the last visit, applied once the replay is running
+			let startZoom = viewSettings.zoom === ZOOM_DEFAULT ? null : viewSettings.zoom;
+			function setShareTime(seconds) {
+				const shown = seconds === null ? null : seconds.toFixed(2);
+				if (shown === shareTime) {
+					return;
+				}
+				shareTime = shown;
+				const url = new URL(location.href);
+				url.searchParams.delete('t');
+				url.hash = shown === null ? '' : `t=${shown}`;
+				history.replaceState(null, '', url);
+			}
+			let seekFraction = 0;
+			let waitingForPlayback = false;
+			let playbackSince = 0;
+			function showReplay() {
+				waitingForPlayback = false;
+				overlay.style.display = 'none';
+			}
+			// A tab in the background renders nothing, so the client makes no
+			// progress there. Wait for the first tick in time on screen, or a
+			// visit that is left and come back to shows the client's own
+			// loading screen instead of ours.
+			let playbackDeadline = 0;
+			function checkPlaybackDeadline() {
+				if (!waitingForPlayback) {
+					return;
+				}
+				if (document.hidden) {
+					playbackDeadline = 0;
+				} else if (playbackDeadline === 0) {
+					playbackDeadline = performance.now() + 15000;
+				} else if (performance.now() > playbackDeadline) {
+					showReplay();
+				}
+			}
+			function updateSeekBar() {
+				let info;
+				try {
+					info = Module.ccall('EmscriptenCallbackDemoInfo', 'string', [], []);
+				} catch (error) {
+					return; // the client is gone, the page says so already
+				}
+				if (info === '') {
+					return;
+				}
+				const [current, first, last, pausedNow, speedNow] = info.split(' ').map(Number);
+				reconcileCamera(current > first);
+				checkPlaybackDeadline();
+				// Skins load in the background, so the tees wear the default
+				// one for the first moment. Wait for them, but never longer
+				// than a second and a half: a skin that is missing on the
+				// client never finishes.
+				if (waitingForPlayback && current > first) {
+					if (playbackSince === 0) {
+						playbackSince = performance.now();
+					}
+					const skinsPending = Module.ccall('EmscriptenCallbackSkinsPending', 'number', [], []);
+					if (skinsPending === 0 || performance.now() - playbackSince > 1500) {
+						showReplay();
+					}
+				}
+				// Follow the client when something else changed the speed (the
+				// up and down keys), but never fight our own stepping
+				if (speedNow > 0 && speedNow !== speed) {
+					speed = speedNow;
+					const known = speeds.indexOf(speed);
+					if (known !== -1) {
+						speedIndex = known;
+					}
+					speedValue.textContent = `${speed}×`;
+				}
+				demoLength = Math.max(1, last - first) / 50;
+				timeEnd.textContent = formatTime(demoLength);
+				if (pendingSeek !== null) {
+					const reached = Math.round(Math.min(1, Math.max(0, (current - first) / 50 / demoLength)) * 1000);
+					if (Math.abs(reached - pendingSeek) <= 5 || performance.now() - pendingSince > 3000) {
+						pendingSeek = null;
+						seeking = false;
+					}
+				}
+				position = (current - first) / 50;
+				if (!seeking) {
+					seekFraction = Math.min(1, Math.max(0, (current - first) / 50 / demoLength));
+					seekSlider.paint(seekFraction);
+					timeNow.textContent = formatTime(position);
+				}
+				if ((pausedNow === 1) !== paused) {
+					paused = pausedNow === 1;
+					setIcon(playButton, paused ? 'play' : 'pause');
+				}
+				// A shared link opens where the run was left standing, so the
+				// position follows every pause, step and seek made while paused
+				setShareTime(paused && !seeking ? (current - first) / 50 : null);
+				if (startZoom !== null && current > first) {
+					const level = startZoom;
+					startZoom = null;
+					execute(`zoom ${level}`);
+				}
+				if (startTime !== null && current > first) {
+					const fraction = Math.min(1, Math.max(0, startTime / demoLength));
+					startTime = null;
+					execute(`demo_seek ${(fraction * 100).toFixed(3)}`);
+					pendingSeek = Math.round(fraction * 1000);
+					pendingSince = performance.now();
+				}
+			}
+			// One driver for both sliders: pointer capture means the drag keeps
+			// working even when the cursor leaves the control
+			function makeSlider(element, onPreview, onCommit) {
+				const fill = element.querySelector('.fill');
+				const knob = element.querySelector('.knob');
+				let dragging = false;
+				const fractionAt = clientX => {
+					const rect = element.getBoundingClientRect();
+					return rect.width <= 0 ? 0 : Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+				};
+				const paint = fraction => {
+					fill.style.width = `${fraction * 100}%`;
+					knob.style.left = `${fraction * 100}%`;
+				};
+				element.addEventListener('pointerdown', event => {
+					dragging = true;
+					element.setPointerCapture(event.pointerId);
+					const fraction = fractionAt(event.clientX);
+					paint(fraction);
+					onPreview(fraction);
+					event.preventDefault();
+				});
+				element.addEventListener('pointermove', event => {
+					const fraction = fractionAt(event.clientX);
+					if (dragging) {
+						paint(fraction);
+						onPreview(fraction);
+					} else {
+						element.title = element.id === 'seek' ? formatTime(fraction * demoLength) : `Volume ${Math.round(fraction * 100)} %`;
+					}
+				});
+				const finish = event => {
+					if (!dragging) {
+						return;
+					}
+					dragging = false;
+					const fraction = fractionAt(event.clientX);
+					paint(fraction);
+					onCommit(fraction);
+				};
+				element.addEventListener('pointerup', finish);
+				element.addEventListener('pointercancel', finish);
+				return { paint };
+			}
+			const seekSlider = makeSlider(seek,
+				fraction => {
+					seeking = true;
+					seekFraction = fraction;
+					timeNow.textContent = formatTime(fraction * demoLength);
+				},
+				fraction => {
+					seekFraction = fraction;
+					execute(`demo_seek ${(fraction * 100).toFixed(3)}`);
+					pendingSeek = Math.round(fraction * 1000);
+					pendingSince = performance.now();
+				});
+			// The wheel zooms, like it does over the game itself. Trackpads
+			// send many small steps, so they are added up to one zoom step.
+			let wheelDelta = 0;
+			window.addEventListener('wheel', event => {
+				if (event.ctrlKey) {
+					return; // the browser's own page zoom
+				}
+				// The panel and the camera menu scroll, only the wheel over the
+				// game zooms
+				if (event.target.closest('#overlay, #cameramenu, #sharemenu, #skinmenu')) {
+					return;
+				}
+				event.preventDefault();
+				wheelDelta += event.deltaY;
+				while (Math.abs(wheelDelta) >= 40) {
+					execute(wheelDelta > 0 ? 'zoom-' : 'zoom+');
+					wheelDelta -= Math.sign(wheelDelta) * 40;
+				}
+			}, { passive: false });
+			const volumeSliderControl = makeSlider(volumeSlider,
+				fraction => setVolume(Math.round(fraction * 100), false),
+				fraction => setVolume(Math.round(fraction * 100), false));
+			// The skin button wears the standard tee, drawn once the skin loader
+			// below it exists
+			drawSkinButton();
+			// The buttons start out showing the settings of the last visit,
+			// which the client was started with
+			document.getElementById('aspectbutton').classList.toggle('on', viewSettings.viewport);
+			document.getElementById('entitiesbutton').classList.toggle('on', viewSettings.entities);
+			document.getElementById('keysbutton').classList.toggle('on', viewSettings.keys);
+			volumeSliderControl.paint(viewSettings.volume / 100);
+			setIcon(document.getElementById('mutebutton'), muted ? 'volumeXmark' : 'volumeHigh');
+			// Zoom buttons repeat while held, like holding the zoom key ingame
+			for (const button of document.querySelectorAll('#demobar button[data-repeat]')) {
+				let repeater = null;
+				const start = event => {
+					event.preventDefault();
+					if (repeater === null) {
+						repeater = setInterval(() => {
+							execute(button.dataset.cmd);
+						}, 200);
+					}
+				};
+				const stop = () => {
+					if (repeater !== null) {
+						clearInterval(repeater);
+						repeater = null;
+					}
+				};
+				button.addEventListener('pointerdown', start);
+				for (const eventName of ['pointerup', 'pointerleave', 'pointercancel']) {
+					button.addEventListener(eventName, stop);
+				}
+			}
+
+			const pageParams = new URLSearchParams(location.search);
+			// Links that were shared while the moment was a query parameter
+			// still open where they say
+			const sharedTime = new URLSearchParams(location.hash.slice(1)).get('t') ?? pageParams.get('t');
+			if (sharedTime !== null) {
+				const seconds = Number(sharedTime);
+				startTime = isNaN(seconds) ? null : Math.max(0, seconds);
+			}
+			if (pageParams.has('uuid') || pageParams.has('demo')) {
+				document.body.classList.add('watchmode');
+				// Hide the manual upload interface, this page only plays one rank
+				for (const id of ['dropzone', 'urlrow', 'rangerow']) {
+					document.getElementById(id).style.display = 'none';
+				}
+				document.querySelector('.subtitle').textContent = 'Watching a rank replay, the demo contains only the finishing team.';
+				// Nothing awaits this, so a throw inside it would leave the
+				// page on its loading screen with nothing to say
+				watchRank(pageParams).catch(error => statusError(`Loading the run failed: ${error.message}`));
+			} else if (!pageParams.has('upload')) {
+				// This page plays one rank. Without one there is nothing to
+				// show: the deployment carries no converter for recordings
+				// that are dropped on it, that is what ?upload=1 is for when
+				// the page is run next to teehistorian2demo.js.
+				document.getElementById('overlay').style.display = 'none';
+			}
+		</script>
+		<script>
+			// Load the engine scripts with the build tag, so a new deployment is
+			// never mixed with CDN/browser-cached files of an old one (an
+			// inconsistent DDNet.js/DDNet.wasm pair crashes at startup)
+			// The converter is only needed to turn a recording into a demo in
+			// the browser, a rank is watched from a demo that already exists
+			// Nothing to load without a rank to play: the client is 63 MB
+			const engineScripts = pageParams.has('upload') ? ['teehistorian2demo.js', 'DDNet.js'] :
+				pageParams.has('uuid') || pageParams.has('demo') ? ['DDNet.js'] : [];
+			for (const src of engineScripts) {
+				const script = document.createElement('script');
+				script.src = `${src}?v=${BUILD_TAG}`;
+				// Without this a failed download leaves the page on its
+				// loading message with nothing in the console
+				script.onerror = () => statusError(`Loading ${src} failed, please reload the page.`);
+				document.body.appendChild(script);
+			}
+		</script>
+	</body>
+</html>

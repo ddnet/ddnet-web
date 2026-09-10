@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex">
+		<title>DDNet Rank Replays</title>
+		<style>
+		body {
+			font-family: system-ui, sans-serif;
+			background: #1b2532;
+			color: #e8edf3;
+			margin: 0 auto;
+			max-width: 48rem;
+			padding: 1rem;
+		}
+		h1 { font-size: 1.3rem; }
+		input {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0.6rem;
+			font-size: 1rem;
+			border-radius: 6px;
+			border: 1px solid #3c4a5d;
+			background: #232f40;
+			color: #e8edf3;
+			margin-bottom: 1rem;
+		}
+		.map { padding: 0.4rem 0; border-bottom: 1px solid #2a3546; }
+		.map b { display: block; }
+		.map a {
+			color: #7fc4ff;
+			text-decoration: none;
+			margin-right: 1rem;
+		}
+		.map small { color: #93a3b5; }
+		#count { color: #93a3b5; margin-bottom: 0.6rem; }
+		</style>
+	</head>
+	<body>
+		<h1>DDNet Rank Replays</h1>
+		<input id="filter" type="search" placeholder="Filter maps or players &hellip;" autofocus>
+		<div id="count">Loading &hellip;</div>
+		<div id="list"></div>
+		<script>
+		const list = document.getElementById('list');
+		const count = document.getElementById('count');
+		const filter = document.getElementById('filter');
+		let maps = new Map();
+
+		function formatTime(seconds) {
+			const minutes = Math.floor(seconds / 60);
+			return `${String(minutes).padStart(2, '0')}:${(seconds - minutes * 60).toFixed(2).padStart(5, '0')}`;
+		}
+
+		function render() {
+			const needle = filter.value.toLowerCase();
+			// Built off the page and put in once: every map of the archive is
+			// in here, and appending them one by one lays the page out again
+			// for each of them
+			const fragment = document.createDocumentFragment();
+			let shown = 0;
+			for (const [mapName, ranks] of maps) {
+				if (needle !== '' && !mapName.toLowerCase().includes(needle) &&
+						!ranks.some(rank => rank.names.some(name => name.toLowerCase().includes(needle)))) {
+					continue;
+				}
+				shown++;
+				const div = document.createElement('div');
+				div.className = 'map';
+				const title = document.createElement('b');
+				title.textContent = mapName;
+				div.appendChild(title);
+				for (const rank of ranks) {
+					const a = document.createElement('a');
+					// The watch page reads the rest of the run out of the same
+					// manifest, so a link is nothing but the game uuid
+					a.href = `./?uuid=${encodeURIComponent(rank.uuid)}`;
+					a.textContent = `▶ ${rank.kind} #${rank.rank || 1} ${formatTime(parseFloat(rank.time))}`;
+					div.appendChild(a);
+					const who = document.createElement('small');
+					who.textContent = rank.names.join(', ');
+					div.appendChild(who);
+					div.appendChild(document.createElement('br'));
+				}
+				fragment.appendChild(div);
+			}
+			list.replaceChildren(fragment);
+			count.textContent = `${shown} maps with watchable top ranks`;
+		}
+
+		async function load() {
+			const response = await fetch('watchable.jsonl');
+			if (!response.ok) {
+				count.textContent = `Failed to load watchable.jsonl (HTTP ${response.status})`;
+				return;
+			}
+			for (const line of (await response.text()).split('\n')) {
+				if (line === '') {
+					continue;
+				}
+				let entry;
+				try {
+					entry = JSON.parse(line);
+				} catch (parseError) {
+					continue;
+				}
+				if (entry.status !== 'ok' || entry.demo === undefined) {
+					continue;
+				}
+				if (!maps.has(entry.map)) {
+					maps.set(entry.map, []);
+				}
+				maps.get(entry.map).push(entry);
+			}
+			maps = new Map([...maps].sort((a, b) => a[0].localeCompare(b[0])));
+			render();
+		}
+
+		filter.addEventListener('input', render);
+		load();
+		</script>
+	</body>
+</html>
