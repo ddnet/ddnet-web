@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<title>DDNet Teehistorian Replayer</title>
+		<title>Watch Top Ranks - DDraceNetwork</title>
 		<style>
 		body {
 			background: #10161f;
@@ -293,6 +293,7 @@
 			justify-self: end;
 		}
 		/* What is being watched, above the controls */
+		/* A title too wide for the bar is scrolled through, see scrollDemoTitle */
 		#demotitle {
 			padding: 2px 10px 1px;
 			text-align: center;
@@ -300,7 +301,6 @@
 			color: rgba(255, 255, 255, 0.8);
 			white-space: nowrap;
 			overflow: hidden;
-			text-overflow: ellipsis;
 		}
 		/* A word about the mouse when free view is chosen, gone after a moment */
 		#hint {
@@ -1004,17 +1004,20 @@
 			// is the exception: looking around the map needs the mouse to
 			// keep going past the edge of the window, so there the lock is
 			// real, and Esc, which the browser reserves for it, gives the
-			// cursor back.
+			// cursor back. iOS Safari has no pointer lock at all: there
+			// pointerLockElement is undefined rather than null and
+			// exitPointerLock does not exist.
 			const requestPointerLockReal = Element.prototype.requestPointerLock;
 			let freeViewLock = false;
 			Element.prototype.requestPointerLock = function(...args) {
-				return freeViewLock ? requestPointerLockReal.apply(this, args) : Promise.resolve();
+				return freeViewLock && requestPointerLockReal ? requestPointerLockReal.apply(this, args) : Promise.resolve();
 			};
 			document.addEventListener('pointerlockchange', () => {
-				if (document.pointerLockElement !== null && !freeViewLock) {
+				if (document.pointerLockElement && !freeViewLock) {
 					document.exitPointerLock();
 				}
 			});
+			document.addEventListener('pointerlockerror', () => showHint('The browser refused to lock the mouse'));
 			// A word at the top of the screen, gone after a moment
 			let hintTimer = null;
 			function showHint(text) {
@@ -1028,8 +1031,8 @@
 			// Bump on every deployment of the js/wasm files, and the data tag
 			// only when data/ itself changed: it is 54 of the 64 MB and a
 			// changed name costs every viewer the whole download again
-			const BUILD_TAG = '2026-09-10g';
-			const DATA_TAG = '2026-09-10f';
+			const BUILD_TAG = '2026-09-12h';
+			const DATA_TAG = '2026-09-12g';
 			// The list of pre-generated ranks, next to the demos it names
 			const MANIFEST_URL = 'watchable.jsonl';
 			// The asset package drives the bar while it downloads, but only as
@@ -1262,12 +1265,18 @@
 			}, true);
 			Module['canvas'].addEventListener('contextmenu', e => e.preventDefault());
 			// The canvas is only a video surface here, the page's own controls
-			// drive playback: a click reaching the client switches it to free view
+			// drive playback: a click reaching the client switches it to free
+			// view. The clicks never reach the engine, so the lock it asked
+			// for when it grabbed the mouse is never requested either, and in
+			// free view a click on the map asks for it here instead.
 			for (const eventName of ['mousedown', 'mouseup', 'click', 'dblclick']) {
 				document.addEventListener(eventName, event => {
 					if (event.target === Module['canvas']) {
 						event.preventDefault();
 						event.stopPropagation();
+						if (eventName === 'mousedown' && freeViewLock && requestPointerLockReal && !document.pointerLockElement) {
+							Promise.resolve(requestPointerLockReal.call(Module['canvas'])).catch(error => showHint(`The browser refused to lock the mouse: ${error.message}`));
+						}
 					}
 				}, true);
 			}
@@ -1389,14 +1398,31 @@
 			}
 
 			async function fetchMap(header) {
-				if (!header.map_sha256) {
-					status("Old teehistorian version without map_sha256, cannot fetch the map automatically.");
+				// maps.ddnet.org names a map after when it was released: <name>_<sha256>
+				// since 2020, <name>_<crc>_<sha256> for the years before, <name>_<crc>
+				// before the server recorded hashes at all
+				const name = encodeURIComponent(header.map_name);
+				const names = [];
+				if (header.map_sha256) {
+					names.push(`${name}_${header.map_sha256}.map`);
+					if (header.map_crc) {
+						names.push(`${name}_${header.map_crc}_${header.map_sha256}.map`);
+					}
+				} else if (header.map_crc) {
+					names.push(`${name}_${header.map_crc}.map`);
+				} else {
+					status("Old teehistorian version without map_sha256 and map_crc, cannot fetch the map automatically.");
 					return null;
 				}
-				const url = `${MAP_DOWNLOAD_URL}/${encodeURIComponent(header.map_name)}_${header.map_sha256}.map`;
 				status(`Downloading map ${header.map_name} ...`);
 				try {
-					const response = await fetch(url);
+					let response = null;
+					for (const fileName of names) {
+						response = await fetch(`${MAP_DOWNLOAD_URL}/${fileName}`);
+						if (response.ok || response.status !== 404) {
+							break;
+						}
+					}
 					if (!response.ok) {
 						status(`Map download failed (HTTP ${response.status}).`);
 						return null;
@@ -1764,6 +1790,16 @@
 				for (const finisher of entry.finishers || []) {
 					params.append('finisher', String(finisher));
 				}
+				if (entry.ts) {
+					params.set('ts', String(entry.ts));
+				}
+				// The names a player had before the rank was moved to a new
+				// name, under which the demo may know the player
+				for (const oldNames of Object.values(entry.aliases || {})) {
+					for (const oldName of oldNames) {
+						params.append('alias', oldName);
+					}
+				}
 				return params;
 			}
 
@@ -1777,7 +1813,13 @@
 				if (!params.get('demo') && params.get('uuid') && !params.get('ts') && !params.get('server')) {
 					const entry = await watchableEntry(params.get('uuid'), params.get('time'));
 					if (entry === null) {
-						statusError("This run is not one of the pre-generated ranks.");
+						// The link names a run the pre-generation does not
+						// have. There is nothing to play, so the page says
+						// that and nothing else: no title, no subtitle about
+						// a replay that is not there.
+						document.querySelector('h1').hidden = true;
+						document.querySelector('.subtitle').textContent = '';
+						statusError('Run not found');
 						busy = false;
 						return;
 					}
@@ -1838,14 +1880,20 @@
 				waitingForPlayback = true;
 				watchCid = meta.cid || 0;
 				rankedNames = params.getAll('name');
+				rankedAliases = params.getAll('alias');
 				// Whose rank it is: the players of the team that were there at
 				// the finish. Names are not unique, so the ids decide whenever
 				// the link carries them.
 				rankedIds = params.getAll('finisher');
 				soloRun = rankedNames.length <= 1;
 				// A solo rank belongs to one player, while its demo keeps the
-				// rest of team 0 around it, which the finisher list names too
-				if (soloRun) {
+				// rest of team 0 around it, which the finisher list names too.
+				// A solo rank of a team run shares the team's demo, whose
+				// finishers are the whole team and whose camera target is the
+				// team's: the rank's own player is the finisher carrying its
+				// name, which is known once the demo names its tees.
+				soloCidPending = soloRun && rankedIds.length > 1;
+				if (soloRun && !soloCidPending) {
 					rankedIds = [String(watchCid)];
 				}
 				if (meta.cid !== undefined) {
@@ -2021,7 +2069,11 @@
 				// The time is written the way a rank is, minutes:seconds.hundredths
 				const shown = rawTime !== null ? rawTime : (time && !isNaN(seconds) ?
 					`${String(Math.floor(seconds / 60)).padStart(2, '0')}:${(seconds % 60).toFixed(2).padStart(5, '0')}` : time);
-				return { map: meta.map_name || params.get('map') || 'rank', shown, names };
+				// When the run was finished, the way the rank pages show it
+				const ts = Number(params.get('ts'));
+				const when = ts > 0 ? new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Berlin', dateStyle: 'short', timeStyle: 'short' })
+					.format(new Date(ts * 1000)) : '';
+				return { map: meta.map_name || params.get('map') || 'rank', shown, when, names };
 			}
 			// The site writes a name into a URL by replacing these characters,
 			// and everything above ASCII, with the code point between dashes
@@ -2031,13 +2083,18 @@
 			const slugify = name => [...name].map(character =>
 				SLUG_ESCAPED.has(character) || character.codePointAt(0) >= 128 ?
 					`-${character.codePointAt(0)}-` : character).join('');
-			// "<map> [<mm:ss.hh>] - <player>, <player> & <player>", what a run is
-			// called on the page, in the browser tab and in the demo file name
+			// "<map> [<mm:ss.hh>, <finished at>] - <player>, <player> & <player>",
+			// what a run is called on the page, in the browser tab and in the
+			// demo file name
+			function bracketOf(shown, when) {
+				const inside = [shown, when].filter(part => part).join(', ');
+				return inside ? ` [${inside}]` : '';
+			}
 			function titleOf(params, meta = {}, rawTime = null) {
-				const { map, shown, names } = runParts(params, meta, rawTime);
+				const { map, shown, when, names } = runParts(params, meta, rawTime);
 				const who = names.length > 1 ?
 					`${names.slice(0, -1).join(', ')} & ${names[names.length - 1]}` : names[0] || '';
-				return `${map}${shown ? ` [${shown}]` : ''}${who ? ` - ${who}` : ''}`;
+				return `${map}${bracketOf(shown, when)}${who ? ` - ${who}` : ''}`;
 			}
 
 			// The client names the browser tab after itself through SDL as soon
@@ -2047,7 +2104,7 @@
 			// their page on the site. The links open in a new tab, a click may
 			// not take the running replay off the screen.
 			function renderDemoTitle(params, meta) {
-				const { map, shown, names } = runParts(params, meta);
+				const { map, shown, when, names } = runParts(params, meta);
 				const element = document.getElementById('demotitle');
 				const link = (text, href) => {
 					const anchor = document.createElement('a');
@@ -2058,20 +2115,52 @@
 					return anchor;
 				};
 				const parts = [link(map, `https://ddnet.org/maps/${slugify(map)}/`)];
-				if (shown) {
-					parts.push(document.createTextNode(` [${shown}]`));
+				if (shown || when) {
+					parts.push(document.createTextNode(bracketOf(shown, when)));
 				}
 				names.forEach((name, index) => {
 					parts.push(document.createTextNode(index === 0 ? ' - ' : index === names.length - 1 ? ' & ' : ', '));
 					parts.push(link(name, `https://ddnet.org/players/${slugify(name)}/`));
 				});
 				element.replaceChildren(...parts);
+				scrollDemoTitle();
 			}
+			// A title wider than the bar is not cut short, it scrolls to its
+			// end, rests, and starts over from the left
+			let titleScroll = 0;
+			function scrollDemoTitle() {
+				const element = document.getElementById('demotitle');
+				const run = ++titleScroll;
+				element.scrollLeft = 0;
+				const overflow = () => element.scrollWidth - element.clientWidth;
+				if (overflow() <= 0) {
+					return;
+				}
+				const REST = 2000; // ms at either end
+				const SPEED = 40; // px per second
+				let start = null;
+				const step = now => {
+					if (run !== titleScroll) {
+						return;
+					}
+					if (overflow() <= 0) {
+						element.scrollLeft = 0;
+						return;
+					}
+					start ??= now;
+					const cycle = REST + overflow() / SPEED * 1000 + REST;
+					const at = (now - start) % cycle - REST;
+					element.scrollLeft = Math.max(0, Math.min(overflow(), at / 1000 * SPEED));
+					requestAnimationFrame(step);
+				};
+				requestAnimationFrame(step);
+			}
+			window.addEventListener('resize', scrollDemoTitle);
 
 			let runTitle = '';
 			function setRunTitle(title) {
-				runTitle = title;
-				document.title = title;
+				runTitle = `${title} - Watch Top Ranks - DDraceNetwork`;
+				document.title = runTitle;
 			}
 			new MutationObserver(() => {
 				if (runTitle !== '' && document.title !== runTitle) {
@@ -2086,8 +2175,23 @@
 			let cameraWanted = false;
 			let cameraDeadline = 0;
 			let soloRun = false;
+			let soloCidPending = false;
 			let rankedNames = [];
+			let rankedAliases = [];
 			let rankedIds = [];
+			// The finisher whose name is the solo rank's, or one the player
+			// had before, once the demo names its tees. The database strips
+			// trailing spaces from a name, the recording keeps them.
+			function soloCidByName() {
+				const wanted = new Set([...rankedNames, ...rankedAliases].map(name => name.trimEnd()));
+				for (const line of Module.ccall('EmscriptenCallbackPlayerInfo', 'string', [], []).split('\n')) {
+					const [id, name] = line.split('\t');
+					if (name !== undefined && rankedIds.includes(id) && wanted.has(name.trimEnd())) {
+						return id;
+					}
+				}
+				return null;
+			}
 			// The wanted camera, written to the client until it sticks: a
 			// spectate command is refused while the demo has not started
 			// playing, and multi-view falls back to free view when it is
@@ -2097,7 +2201,7 @@
 				freeViewLock = id === 'free';
 				if (freeViewLock) {
 					showHint('Click the map to look around, Esc gives the mouse back');
-				} else if (document.pointerLockElement !== null) {
+				} else if (document.pointerLockElement) {
 					document.exitPointerLock();
 				}
 				cameraAsked = 0;
@@ -2138,7 +2242,23 @@
 				}
 				if (performance.now() > cameraDeadline) {
 					cameraWanted = false;
+					if (soloCidPending) {
+						soloCidPending = false;
+						rankedIds = [String(watchCid)];
+					}
 					return;
+				}
+				if (soloCidPending) {
+					const id = soloCidByName();
+					if (id === null) {
+						return;
+					}
+					soloCidPending = false;
+					watchCid = Number(id);
+					rankedIds = [id];
+					cameraSelection = id;
+					cameraAsked = 0;
+					showCameraTee(id, null);
 				}
 				const info = Module.ccall('EmscriptenCallbackCameraInfo', 'string', [], []);
 				if (info === '') {

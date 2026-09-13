@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="noindex">
-		<title>DDNet Rank Replays</title>
+		<title>Watch Top Ranks - DDraceNetwork</title>
 		<style>
 		body {
 			font-family: system-ui, sans-serif;
@@ -53,6 +53,14 @@
 			return `${String(minutes).padStart(2, '0')}:${(seconds - minutes * 60).toFixed(2).padStart(5, '0')}`;
 		}
 
+		// The site writes a name into a URL by replacing these characters,
+		// and everything above ASCII, with the code point between dashes
+		// (slugify2 in ddnet.py)
+		const SLUG_ESCAPED = new Set(['[', '\t', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*',
+			'\\', '-', '/', '<', '=', '>', '?', '@', ']', '^', '_', '`', '{', '|', '}', ',', '.', ':', '+']);
+		const slugify = name => [...name].map(character =>
+			SLUG_ESCAPED.has(character) || character.codePointAt(0) >= 128 ?
+				`-${character.codePointAt(0)}-` : character).join('');
 		function render() {
 			const needle = filter.value.toLowerCase();
 			// Built off the page and put in once: every map of the archive is
@@ -69,14 +77,18 @@
 				const div = document.createElement('div');
 				div.className = 'map';
 				const title = document.createElement('b');
-				title.textContent = mapName;
+				const mapLink = document.createElement('a');
+				mapLink.textContent = mapName;
+				mapLink.href = `https://ddnet.org/maps/${slugify(mapName)}/`;
+				title.appendChild(mapLink);
 				div.appendChild(title);
 				for (const rank of ranks) {
 					const a = document.createElement('a');
 					// The watch page reads the rest of the run out of the same
 					// manifest, so a link is nothing but the game uuid
 					a.href = `./?uuid=${encodeURIComponent(rank.uuid)}`;
-					a.textContent = `▶ ${rank.kind} #${rank.rank || 1} ${formatTime(parseFloat(rank.time))}`;
+					// A demo kept for the links to it after its rank was deleted
+					a.textContent = `▶ ${rank.kind} #${rank.rank || 1} ${formatTime(parseFloat(rank.time))}${rank.kept === 'deleted' ? ' (deleted)' : ''}`;
 					div.appendChild(a);
 					const who = document.createElement('small');
 					who.textContent = rank.names.join(', ');
@@ -112,6 +124,12 @@
 					maps.set(entry.map, []);
 				}
 				maps.get(entry.map).push(entry);
+			}
+			// The solo ranks of a team run's members link the team's demo,
+			// the team rank is the one row for that run
+			for (const [mapName, ranks] of maps) {
+				const teamDemos = new Set(ranks.filter(rank => rank.kind === 'team').map(rank => rank.demo));
+				maps.set(mapName, ranks.filter(rank => rank.kind === 'team' || !teamDemos.has(rank.demo)));
 			}
 			maps = new Map([...maps].sort((a, b) => a[0].localeCompare(b[0])));
 			render();
