@@ -100,15 +100,19 @@ if (!String.prototype.formatString) {
               start_date = new Date(settings.start_date);
           }
 
-          end_date = new Date(start_date);
-          end_date.setMonth(end_date.getMonth() + 12);
-          end_date.setDate(end_date.getDate() - 1);
+          if (settings.end_date == null) {
+              end_date = new Date(start_date);
+              end_date.setMonth(end_date.getMonth() + 12);
+              end_date.setDate(end_date.getDate() - 1);
+          } else {
+              end_date = new Date(settings.end_date);
+          }
 
           var loop_html = "";
           var step = 13;
 
           var month_position = [];
-          month_position.push({month_index: start_date.getMonth(), x: 0 });
+          month_position.push({month_index: start_date.getMonth(), year: start_date.getFullYear(), x: 0 });
           var using_month = start_date.getMonth();
 
 
@@ -127,7 +131,7 @@ if (!String.prototype.formatString) {
 
               if ( start_date.getDay() == 0 && month_in_day != using_month ){
                   using_month = month_in_day;
-                  month_position.push({month_index: using_month, x: g_x });
+                  month_position.push({month_index: using_month, year: start_date.getFullYear(), x: g_x });
               }
               var count = getCount( data_date );
               var color = getColor( count );
@@ -146,6 +150,8 @@ if (!String.prototype.formatString) {
               }            
           }
 
+          var columns = item_html == null ? week : week + 1;
+
           if(item_html != null) {
               item_html += "</g>";
               loop_html += item_html;
@@ -161,6 +167,10 @@ if (!String.prototype.formatString) {
           for (  var i =0; i < month_position.length; i++){
             var item = month_position[i];
             var month_name =  settings.month_names[ item.month_index ];
+            //Tell the years apart when the graph spans more than one
+            if ( item.month_index == 0 ){
+              month_name = item.year;
+            }
             loop_html += '<text x="'+ item.x +'" y="-8" class="month">'+ month_name +'</text>';
           }
 
@@ -169,9 +179,10 @@ if (!String.prototype.formatString) {
                         // '<text text-anchor="middle" class="wday" dx="-10" dy="48">{0}</text>'.formatString( settings.h_days[1] )+
                         '<text text-anchor="middle" class="wday" dx="-12" dy="89">{0}</text>'.formatString( settings.h_days[2] );
           
-          //Fixed size for now with width= 721 and height = 110
+          //One column per week, plus the left labels and a little slack on the right
+          var width = 30 + columns * step;
           var wire_html = 
-            '<svg width="721" height="110" viewBox="0 0 721 110"  class="js-calendar-graph-svg">'+
+            '<svg width="'+ width +'" height="110" viewBox="0 0 '+ width +' 110"  class="js-calendar-graph-svg">'+
               '<g transform="translate(20, 20)">'+
                 loop_html +
               '</g>'+
@@ -237,6 +248,8 @@ if (!String.prototype.formatString) {
           },
           click: null,
           start_date: null,
+          //If set null, ends 12 months after start_date
+          end_date: null,
           //List of name months
           month_names: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
           h_days : ['M','','S'],
