@@ -1,16 +1,21 @@
 $(function(){
     // add parser for `time` column
     $.tablesorter.addParser({
-        id: 'time_min_sec',
+        id: 'race_time',
         is: function(s) {
             // return false so this parser is not auto detected
             return false;
         },
         format: function(s) {
-            // remove colon
-            return s.replace(/:/,'');
+            // 05:43.62 and 01:05:43.62 alike as the seconds they are. Taking
+            // the colon out of a time only ever made a number of a run that
+            // was under an hour
+            var parts = s.split(':'), seconds = 0, i;
+            for (i = 0; i < parts.length; i++)
+                seconds = seconds * 60 + parseFloat(parts[i]);
+            return isNaN(seconds) ? '' : seconds;
         },
-        type: 'digit'
+        type: 'numeric'
     });
 
     // tablesorter for `finished maps` tables
@@ -18,7 +23,6 @@ $(function(){
             emptyTo: 'bottom',
             sortReset: 'true',
             headers: {
-                4 : { sorter: 'time_min_sec' },
                 5 : { sortInitialOrder: 'desc' },
             }
     });
