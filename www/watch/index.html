@@ -58,6 +58,11 @@
 		body.watchmode.failed #panel {
 			display: block;
 		}
+		/* A link to a run that is not there says only that, so the panel is
+		   the one line and nothing above it, centred like everything else */
+		body.notfound #status {
+			margin-top: 0;
+		}
 		#loading {
 			display: none;
 			width: min(320px, 70vw);
@@ -1818,7 +1823,8 @@
 						// that and nothing else: no title, no subtitle about
 						// a replay that is not there.
 						document.querySelector('h1').hidden = true;
-						document.querySelector('.subtitle').textContent = '';
+						document.querySelector('.subtitle').hidden = true;
+						document.body.classList.add('notfound');
 						statusError('Run not found');
 						busy = false;
 						return;
