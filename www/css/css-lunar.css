@@ -16,6 +16,9 @@
   --funding-done: #1f9e8c;
   --funding-trough: #21262d;
   --funding-label-shadow: rgba(1, 4, 9, 0.75);
+  --bar-success: #196c2e;
+  --bar-warning: #8a5a00;
+  --bar-danger: #b62324;
 }
 
 html,
@@ -136,6 +139,22 @@ body:not(#phpbb) pre code {
 }
 .progress {
   background-color: var(--lighten);
+  background-image: none;
+}
+.progress-bar {
+  color: var(--fg);
+  text-shadow: 1px 1px 0 var(--funding-label-shadow);
+}
+.progress-bar-success {
+  background-color: var(--bar-success);
+  background-image: none;
+}
+.progress-bar-warning {
+  background-color: var(--bar-warning);
+  background-image: none;
+}
+.progress-bar-danger {
+  background-color: var(--bar-danger);
   background-image: none;
 }
 
