@@ -4,6 +4,93 @@ title: Downloads - DDraceNetwork
 ---
 <div class="block">
 <h2 id="downloads">Downloads</h2>
+<h3 id="20.1"><a href="#20.1">DDNet 20.1</a></h3>
+<div class="dlfiles">
+  2026-09-26<br/><br/>
+  <ul>
+    <li><a href="DDNet-20.1-win64.zip">Windows&nbsp;64bit</a></li>
+    <li><a href="DDNet-20.1-win-arm64.zip">Windows&nbsp;ARM</a></li>
+    <li><a href="DDNet-20.1-win32.zip">Windows&nbsp;32bit</a></li>
+    <li><a href="DDNet-20.1-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+    <li><a href="DDNet-20.1-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+    <li><a href="DDNet-20.1-macos.dmg">macOS (arm64&nbsp;&amp;&nbsp;x86-64)</a></li>
+    <li><a href="DDNet-20.1.apk">Android</a></li>
+    <li><a href="DDNet-20.1-emscripten.tar.xz">Emscripten (WASM)</a> (<a href="https://client.ddnet.org/20.1/">Launch</a>)</li>
+    <li><a href="DDNet-20.1.tar.xz">Source</a></li>
+  </ul>
+</div>
+<div class="dlinfo">
+  <strong>Changelog</strong>
+  <ul>
+    <li>[Client] <strong>Predict static laser doors without antiping</strong> [<strong>Ryozuki</strong>]</li>
+    <li>[Tooling] <strong>map_render</strong> [<strong>AssassinTee</strong>]</li>
+    <li>[Client] <strong>iOS support</strong> (not released yet) [<strong>Pioooooo</strong>]</li>
+    <li>[Client] Add loading bar to map loading [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Show freeze pickups as snowflakes</li>
+    <li>[Client] Improve performance for low refresh/update rates, handle input earlier</li>
+    <li>[Client] Make spectate menu more legible [<strong>dropalways</strong>]</li>
+    <li>[Client] Adjust team scoreboard for 128 players [<strong>fokkonaut</strong>]</li>
+    <li>[Client] Add scoreboard cursor hint [<strong>AssassinTee</strong>]</li>
+    <li>[Client] Dismiss MOTD by clicking outside of it, tap mod alert to dismiss</li>
+    <li>[Client] Show back button in console</li>
+    <li>[Client] Convert credits to a client popup, update list of common contributors</li>
+    <li>[Client] List unmodified binds before binds with modifiers in controls settings [<strong>ASKLL-STAR</strong>]</li>
+    <li>[Client] Keep sound running when no audio device is available [<strong>Ryozuki</strong>]</li>
+    <li>[Client] Fix touch and mouse position when the viewport is clamped to 5:4 [<strong>Ryozuki</strong>]</li>
+    <li>[Client] Fix invisible laser with antiping and sv_old_laser 1 [<strong>ChillerDragon</strong>]</li>
+    <li>[Client] Graphics and shader fixes, fix incorrect texture resampling with Vulkan and OpenGL 3.3 [<strong>Robyt3</strong>]</li>
+    <li>[Editor] Add more font typer binds and other improvements [<strong>AssassinTee</strong>]</li>
+    <li>[Editor] Don't flip/rotate the brush when Ctrl+N/M/R/T is pressed [<strong>7487</strong>]</li>
+    <li>[Editor] Fix a crash in the brush picker [<strong>not6</strong>]</li>
+    <li>[Client&amp;Server] Release ground hooks that lost their tile when loading a tee [<strong>Ryozuki</strong>]</li>
+    <li>[Server] Support vanilla 0.6 clients again </strong> [<strong>fokkonaut</strong>]</li>
+    <li>[Server] Optimize 128 player servers [<strong>Ryozuki</strong>]</li>
+    <li>[Server] Allow rejoining from any client, allow id usage from more clients [<strong>fokkonaut</strong>]</li>
+    <li>[Server] Send min and max team size in game info, send supported number of teams through gameinfoex [<strong>fokkonaut</strong>]</li>
+    <li>[Server] Allow clients to reconnect reliably, fix reconnecting to previously used slot</li>
+    <li>[Server] Fix team ranks of large teams being cut off, fail saving teams instead of corrupting savegame</li>
+    <li>[Server] Allow passing "all" as argument to kick [<strong>ChillerDragon</strong>]</li>
+    <li>[Server] Rate limit /timecp queries [<strong>Robyt3</strong>]</li>
+    <li>[Server] Fix tele not using position of target player [<strong>Robyt3</strong>]</li>
+    <li>[Infra.] Use precompiled headers for faster builds</li>
+  </ul>
+  and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/20.0...20.1">full list of git changes</a>
+</div>
+<br/>
+<hr/>
+<h3 id="nightly-builds"><a href="#nightly-builds">Nightly Builds</a></h3>
+<p>Nightly builds are updated every night based on the latest changes in the <a href="https://github.com/ddnet/ddnet">GitHub repository</a>.
+Nightly builds are intended for testing and early access to features and bug fixes, but they might contain new bugs as well.
+If you encounter bugs, please report them by opening an issue on <a href="https://github.com/ddnet/ddnet/issues">GitHub</a> or in the #bugs channel on our <a href="https://ddnet.org/discord">Discord server</a>.</p>
+<ul>
+  <li><a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a></li>
+  <li><a href="DDNet-nightly-win-arm64.zip">Windows&nbsp;ARM</a></li>
+  <li><a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a></li>
+  <li><a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
+  <li><a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
+  <li><a href="DDNet-nightly-macos.dmg">macOS</a></li>
+  <li><a href="DDNet-nightly.apk">Android</a></li>
+  <li><a href="DDNet-nightly-emscripten.tar.xz">Emscripten (WASM)</a> — <a href="https://client.ddnet.org/nightly/">Launch web version</a></li>
+  <li><a href="DDNet-nightly.tar.xz">Source</a></li>
+  <li><a href="DDNet-nightly.log">Build log</a></li>
+</ul>
+<hr/>
+<h3 id="other-downloads"><a href="#other-downloads">Other Downloads</a></h3>
+<ul>
+  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
+  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
+  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
+  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
+  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
+  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
+  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
+  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
+  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
+  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
+</ul>
+</div>
+<div class="block">
+<h2 id="old-downloads">Old Versions</h2>
 <h3 id="20.0"><a href="#20.0">DDNet 20.0</a></h3>
 <div class="dlfiles">
   2026-08-27<br/><br/>
@@ -71,41 +158,6 @@ title: Downloads - DDraceNetwork
   </ul>
   and a lot of smaller fixes, see the <a href="https://github.com/ddnet/ddnet/compare/19.9...20.0">full list of git changes</a>
 </div>
-<br/>
-<hr/>
-<h3 id="nightly-builds"><a href="#nightly-builds">Nightly Builds</a></h3>
-<p>Nightly builds are updated every night based on the latest changes in the <a href="https://github.com/ddnet/ddnet">GitHub repository</a>.
-Nightly builds are intended for testing and early access to features and bug fixes, but they might contain new bugs as well.
-If you encounter bugs, please report them by opening an issue on <a href="https://github.com/ddnet/ddnet/issues">GitHub</a> or in the #bugs channel on our <a href="https://ddnet.org/discord">Discord server</a>.</p>
-<ul>
-  <li><a href="DDNet-nightly-win64.zip">Windows&nbsp;64bit</a></li>
-  <li><a href="DDNet-nightly-win-arm64.zip">Windows&nbsp;ARM</a></li>
-  <li><a href="DDNet-nightly-win32.zip">Windows&nbsp;32bit</a></li>
-  <li><a href="DDNet-nightly-linux_x86.tar.xz">Linux&nbsp;x86</a></li>
-  <li><a href="DDNet-nightly-linux_x86_64.tar.xz">Linux&nbsp;x86-64</a></li>
-  <li><a href="DDNet-nightly-macos.dmg">macOS</a></li>
-  <li><a href="DDNet-nightly.apk">Android</a></li>
-  <li><a href="DDNet-nightly-emscripten.tar.xz">Emscripten (WASM)</a> — <a href="https://client.ddnet.org/nightly/">Launch web version</a></li>
-  <li><a href="DDNet-nightly.tar.xz">Source</a></li>
-  <li><a href="DDNet-nightly.log">Build log</a></li>
-</ul>
-<hr/>
-<h3 id="other-downloads"><a href="#other-downloads">Other Downloads</a></h3>
-<ul>
-  <li><a href="https://store.steampowered.com/app/412220/DDraceNetwork/">Steam package</a></li>
-  <li><a href="https://flathub.org/apps/tw.ddnet.ddnet">Flatpak package</a></li>
-  <li><a href="https://packages.debian.org/search?keywords=ddnet">Debian packages</a></li>
-  <li><a href="https://packages.ubuntu.com/search?keywords=ddnet&searchon=names&section=all">Ubuntu packages</a></li>
-  <li><a href="https://aur.archlinux.org/packages/?O=0&SeB=nd&K=ddnet&outdated=&SB=n&SO=a&PP=50&do_Search=Go">ArchLinux AUR packages</a>, <a href="https://wiki.archlinux.org/index.php/DDRaceNetwork">ArchWiki</a></li>
-  <li>Hashes for download verification: <a href="sha256sums.txt">SHA256</a></li>
-  <li>Git repositories: <a href="https://github.com/ddnet/ddnet">DDNet Client &amp; Server</a>, <a href="https://github.com/ddnet/ddnet-maps">Maps</a> (including configs, <a href="https://github.com/ddnet/ddnet-maps/archive/master.zip">download all maps</a>), <a href="https://github.com/ddnet/ddnet-scripts">Scripts</a>, <a href="https://github.com/ddnet/ddnet-libs">Libs</a></li>
-  <li>Raw list of all DDNet ranks, team ranks and maps: <a href="/stats/ddnet-stats.zip">CSV</a>, <a href="/stats/ddnet-sql.zip">SQL</a></li>
-  <li>Map download server: <a href="https://maps.ddnet.org/">List of all maps</a>, <a href="https://maps.ddnet.org/compilations/">Map compilations</a></li>
-  <li><a href="http://www.foveon.de/sonstiges/opusdrop/index.htm">OpusDrop</a> (Convert sound files to Opus for DDNet maps)</li>
-</ul>
-</div>
-<div class="block">
-<h2 id="old-downloads">Old Versions</h2>
 <h3 id="19.9"><a href="#19.9">DDNet 19.9</a></h3>
 <div class="dlfiles">
   2026-07-09<br/><br/>
