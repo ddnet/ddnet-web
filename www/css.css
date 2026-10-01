@@ -985,9 +985,10 @@ body:not(#phpbb) .time {
   }
 
   .dlfiles li {
-    display: inline;
-    padding-right: 1em;
-    padding-left: 1em;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: 1px solid var(--link);
+    border-radius: 50vh;
   }
 
   .dlfiles li:before {
