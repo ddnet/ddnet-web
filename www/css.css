@@ -754,6 +754,9 @@ body:not(#phpbb) .time {
   height: 100%;
   font-weight: bold;
   text-shadow: 1px 1px 0 var(--funding-label-shadow);
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .ytplayer img {
