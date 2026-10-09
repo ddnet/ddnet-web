@@ -7,5 +7,5 @@ tag: current
 
 Congrats to [台灣男童ONE](https://ddnet.org/players/-21488--28771--30007--31461-ONE/) for being the first person to have achieved 10,000 points, all from finishing maps in one day!
 
-[<img class="demo" src="/assets/10k-1.png" />](/assets/10k-1.png)
-[<img class="demo" src="/assets/10k-2.png" />](/assets/10k-2.png)
+[<img class="demo" src="/assets/10k-1.png" width="1208" height="1018" loading="lazy" />](/assets/10k-1.png)
+[<img class="demo" src="/assets/10k-2.png" width="2328" height="1010" loading="lazy" />](/assets/10k-2.png)
