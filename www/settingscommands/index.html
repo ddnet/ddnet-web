@@ -322,15 +322,12 @@ menu: |
   <tr><td><a id="server-echo" href="#server-echo">echo</a></td><td>r[text]</td><td>Echo the text</td></tr>
   <tr><td><a id="server-endless_hook" href="#server-endless_hook">endless_hook</a></td><td></td><td>Gives you endless hook</td></tr>
   <tr><td><a id="server-exec" href="#server-exec">exec</a></td><td>r[file]</td><td>Execute the specified file</td></tr>
-  <tr><td><a id="server-file_test_cmd" href="#server-file_test_cmd">file_test_cmd</a></td><td></td><td>test</td></tr>
   <tr><td><a id="server-force_high_bandwidth_on_spectate" href="#server-force_high_bandwidth_on_spectate">force_high_bandwidth_on_spectate</a></td><td>?i[enable]</td><td>Force high bandwidth mode when spectating (1 = on, 0 = off)</td></tr>
   <tr><td><a id="server-force_pause" href="#server-force_pause">force_pause</a></td><td>v[id] i[seconds]</td><td>Force i to pause for i seconds</td></tr>
   <tr><td><a id="server-force_unpause" href="#server-force_unpause">force_unpause</a></td><td>v[id]</td><td>Set force-pause timer of i to 0.</td></tr>
   <tr><td><a id="server-force_vote" href="#server-force_vote">force_vote</a></td><td>s[name] s[command] ?r[reason]</td><td>Force a voting option</td></tr>
   <tr><td><a id="server-freeze" href="#server-freeze">freeze</a></td><td></td><td>Puts you into freeze</td></tr>
   <tr><td><a id="server-grenade" href="#server-grenade">grenade</a></td><td></td><td>Gives a grenade launcher to you</td></tr>
-  <tr><td><a id="server-hello_test" href="#server-hello_test">hello_test</a></td><td></td><td>test</td></tr>
-  <tr><td><a id="server-help_test" href="#server-help_test">help_test</a></td><td></td><td>test</td></tr>
   <tr><td><a id="server-hide_auth_status" href="#server-hide_auth_status">hide_auth_status</a></td><td>?i[hide]</td><td>Opt out of spectator count and hide auth status to non-authed players (1 = hidden, 0 = shown)</td></tr>
   <tr><td><a id="server-hot_reload" href="#server-hot_reload">hot_reload</a></td><td></td><td>Reload the map while preserving the state of tees and teams</td></tr>
   <tr><td><a id="server-infinite_jump" href="#server-infinite_jump">infinite_jump</a></td><td></td><td>Gives you infinite jump</td></tr>
@@ -385,23 +382,6 @@ menu: |
   <tr><td><a id="server-super" href="#server-super">super</a></td><td></td><td>Makes you super</td></tr>
   <tr><td><a id="server-switch_open" href="#server-switch_open">switch_open</a></td><td>i[switch]</td><td>Whether a switch is deactivated by default (otherwise activated)</td></tr>
   <tr><td><a id="server-tele" href="#server-tele">tele</a></td><td>?v[id] ?v[id]</td><td>Teleports player i (or you) to player i (or you to where you look at)</td></tr>
-  <tr><td><a id="server-test_chain" href="#server-test_chain">test_chain</a></td><td></td><td>test</td></tr>
-  <tr><td><a id="server-test_cmd" href="#server-test_cmd">test_cmd</a></td><td></td><td>test</td></tr>
-  <tr><td><a id="server-test_cmd2" href="#server-test_cmd2">test_cmd2</a></td><td></td><td>test</td></tr>
-  <tr><td><a id="server-test_color" href="#server-test_color">test_color</a></td><td>ssssssss</td><td>test</td></tr>
-  <tr><td><a id="server-test_echo" href="#server-test_echo">test_echo</a></td><td></td><td>test</td></tr>
-  <tr><td><a id="server-test_float" href="#server-test_float">test_float</a></td><td>sss</td><td>test</td></tr>
-  <tr><td><a id="server-test_int" href="#server-test_int">test_int</a></td><td>sss</td><td>test</td></tr>
-  <tr><td><a id="server-test_opt" href="#server-test_opt">test_opt</a></td><td>s?ss</td><td>test</td></tr>
-  <tr><td><a id="server-test_rem" href="#server-test_rem">test_rem</a></td><td>sss</td><td>test</td></tr>
-  <tr><td><a id="server-test_str" href="#server-test_str">test_str</a></td><td>sss</td><td>test</td></tr>
-  <tr><td><a id="server-test_victim" href="#server-test_victim">test_victim</a></td><td>v</td><td>test</td></tr>
-  <tr><td><a id="server-test_victim_all" href="#server-test_victim_all">test_victim_all</a></td><td>v</td><td>test</td></tr>
-  <tr><td><a id="server-test_victim_empty" href="#server-test_victim_empty">test_victim_empty</a></td><td>v</td><td>test</td></tr>
-  <tr><td><a id="server-test_victim_invalid" href="#server-test_victim_invalid">test_victim_invalid</a></td><td>v</td><td>test</td></tr>
-  <tr><td><a id="server-test_victim_mixed" href="#server-test_victim_mixed">test_victim_mixed</a></td><td>vv</td><td>test</td></tr>
-  <tr><td><a id="server-test_victim_opt" href="#server-test_victim_opt">test_victim_opt</a></td><td>?v</td><td>test</td></tr>
-  <tr><td><a id="server-test_victim_two" href="#server-test_victim_two">test_victim_two</a></td><td>vv</td><td>test</td></tr>
   <tr><td><a id="server-toggle" href="#server-toggle">toggle</a></td><td>s[config] s[value 1] s[value 2]</td><td>Toggle config value</td></tr>
   <tr><td><a id="server-toggle_tune" href="#server-toggle_tune">toggle_tune</a></td><td>s[tuning] f[value 1] f[value 2]</td><td>Toggle tune variable</td></tr>
   <tr><td><a id="server-totele" href="#server-totele">totele</a></td><td>i[number]</td><td>Teleports you to teleporter i</td></tr>
@@ -970,7 +950,6 @@ menu: |
   <tr><td><a id="client-+weapon3" href="#client-+weapon3">+weapon3</a></td><td></td><td>Switch to shotgun</td></tr>
   <tr><td><a id="client-+weapon4" href="#client-+weapon4">+weapon4</a></td><td></td><td>Switch to grenade</td></tr>
   <tr><td><a id="client-+weapon5" href="#client-+weapon5">+weapon5</a></td><td></td><td>Switch to laser</td></tr>
-  <tr><td><a id="client-SCOREBOARD_CURSOR_BIND_NAME" href="#client-SCOREBOARD_CURSOR_BIND_NAME">SCOREBOARD_CURSOR_BIND_NAME</a></td><td></td><td>Toggle scoreboard cursor</td></tr>
   <tr><td><a id="client-add_demomarker" href="#client-add_demomarker">add_demomarker</a></td><td></td><td>Add demo timeline marker</td></tr>
   <tr><td><a id="client-add_excluded_community" href="#client-add_excluded_community">add_excluded_community</a></td><td>s[community_id]</td><td>Add a community to the exclusion filter</td></tr>
   <tr><td><a id="client-add_excluded_country" href="#client-add_excluded_country">add_excluded_country</a></td><td>s[community_id] s[country_code]</td><td>Add a country to the exclusion filter for a specific community (ISO 3166-1 numeric)</td></tr>
@@ -1056,6 +1035,7 @@ menu: |
   <tr><td><a id="client-toggle" href="#client-toggle">toggle</a></td><td>s[config] s[value 1] s[value 2]</td><td>Toggle config value</td></tr>
   <tr><td><a id="client-toggle_local_console" href="#client-toggle_local_console">toggle_local_console</a></td><td></td><td>Toggle local console</td></tr>
   <tr><td><a id="client-toggle_remote_console" href="#client-toggle_remote_console">toggle_remote_console</a></td><td></td><td>Toggle remote console</td></tr>
+  <tr><td><a id="client-toggle_scoreboard_cursor" href="#client-toggle_scoreboard_cursor">toggle_scoreboard_cursor</a></td><td></td><td>Toggle scoreboard cursor</td></tr>
   <tr><td><a id="client-tp_dummy_to_cursor" href="#client-tp_dummy_to_cursor">tp_dummy_to_cursor</a></td><td></td><td>Practice: teleport the other tee to your cursor</td></tr>
   <tr><td><a id="client-tp_to_cursor" href="#client-tp_to_cursor">tp_to_cursor</a></td><td></td><td>Practice: teleport yourself to your cursor</td></tr>
   <tr><td><a id="client-unbind" href="#client-unbind">unbind</a></td><td>s[key]</td><td>Unbind key</td></tr>
